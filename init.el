@@ -1,5 +1,8 @@
 ;;; This file is part of Danil <danil@kutkevich.org> home.
 
+;; Danil <http://emacswiki.org/DotEmacsDotD>,
+;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
+
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines nil) ;wrap long lines
@@ -148,6 +151,7 @@
                   "quickrun"
                   "rainbow-delimiters"
                   "rainbow-mode"
+                  "rbenv"
                   "re-builder"
                   "recentf"
                   "recentf-ido-find-file"
@@ -160,7 +164,6 @@
                   "ruby-pry"
                   "ruby-refactor"
                   "ruby-tools"
-                  "rvm"
                   "sass-mode"
                   "savehist"
                   "saveplace"
