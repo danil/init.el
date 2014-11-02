@@ -1,8 +1,5 @@
-Dotfiles
-========
-
-This is my dotfiles, including shell environment, emacs configuration,
-and other misc scripts.
+Emacs configs
+=============
 
 Copying
 -------
