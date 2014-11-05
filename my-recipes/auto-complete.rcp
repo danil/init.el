@@ -10,7 +10,6 @@
   (custom-set-variables
    '(ac-sources
      '(ac-source-abbrev
-       ac-source-dabbrev
        ac-source-words-in-buffer
        ac-source-words-in-same-mode-buffers
        ac-source-files-in-current-dir
