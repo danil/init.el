@@ -9,7 +9,9 @@
                                 "\\.irbrc\\'"
                                 "\\.prawn\\'"
                                 "\\.rake\\'"
-                                "\\.thor\\'")
+                                "\\.rb\\.erb\\'"
+                                "\\.thor\\'"
+                                "\\.yml\\.erb\\'")
   (my-hooks-with-truncate-lines 'ruby-mode-hook)
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
