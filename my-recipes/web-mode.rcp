@@ -4,9 +4,11 @@
   (my-add-auto-mode-to-patterns 'web-mode
                                 "\\.as[cp]x\\'"
                                 "\\.djhtml\\'"
-                                "\\.erb\\'"
+                                "\\.ejs\\'"
                                 "\\.html\\'"
+                                "\\.html\\.erb\\'"
                                 "\\.jsp\\'"
                                 "\\.jst\\.ejs\\'"
                                 "\\.phtml\\'"
+                                "\\.rhtml\\'"
                                 "\\.tpl\\.php\\'"))
