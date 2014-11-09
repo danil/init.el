@@ -28,10 +28,12 @@
                       'lua-mode-hook
                       'makefile-gmake-mode-hook
                       'markdown-mode-hook
+                      'nginx-mode-hook
                       'nxml-mode-hook
                       'perl-mode-hook
                       'php-mode-hook
                       'python-mode-hook
+                      'rhtml-mode-hook
                       'ruby-mode-hook
                       'rust-mode-hook
                       'sass-mode-hook

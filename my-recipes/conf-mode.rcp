@@ -14,8 +14,10 @@
                                 "/dunstrc\\'"
                                 "/etc/fstab\\'"
                                 "/hosts\\'"
+                                "/htoprc\\'"
                                 "/locale.gen\\'"
                                 "/mimeapps.list\\'"
+                                "/robots.txt\\'"
                                 "/securetty\\'"
                                 "/share/applications/defaults\\.list\\'"
                                 "/sshd_config\\'"
@@ -34,6 +36,7 @@
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"
                                 "/etc/env.d/"
+                                "/etc/init.d/"
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\.keywords\\'"
                                 "/etc/portage/package\\.mask\\'"

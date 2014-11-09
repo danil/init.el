@@ -1,5 +1,8 @@
 ;;; This file is part of Danil <danil@kutkevich.org> home.
 
+;; Danil <http://emacswiki.org/DotEmacsDotD>,
+;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
+
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines nil) ;wrap long lines
@@ -40,7 +43,6 @@
                   "apache-mode"
                   "auto-complete"
                   "auto-complete-chunk"
-                  "auto-complete-css"
                   "auto-complete-emacs-lisp"
                   "auto-complete-etags"
                   "auto-complete-nxml"
@@ -112,12 +114,13 @@
                   "isearch"
                   "jade-mode"
                   "js-mode"
-                  "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+                  "js2-mode"
+                  "json-mode"
                   "json-reformat"
                   "kill-emacs"
                   "kill-ring"
                   "kill-ring-ido"
-                  "less" ;do not remove, used for generic scroll!
+                  "less"
                   "less-css-mode"
                   "linum"
                   "linum-format"
@@ -146,6 +149,7 @@
                   "quickrun"
                   "rainbow-delimiters"
                   "rainbow-mode"
+                  "rbenv"
                   "re-builder"
                   "recentf"
                   "recentf-ido-find-file"
@@ -158,7 +162,6 @@
                   "ruby-pry"
                   "ruby-refactor"
                   "ruby-tools"
-                  "rvm"
                   "sass-mode"
                   "savehist"
                   "saveplace"
@@ -181,6 +184,8 @@
                   "winner-mode"
                   "yaml-mode"
                   "yascroll"
+                  "yasnippet"
+                  "yasnippets"
                   ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 
