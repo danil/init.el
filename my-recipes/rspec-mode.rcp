@@ -4,5 +4,5 @@
 (my-after-init
   (add-hook 'dired-mode-hook 'rspec-dired-mode)
   (my-eval-after-load 'rspec-mode
-    (setq rspec-use-rake-when-possible nil)
-    (setq rspec-use-rvm 1)))
+    ;; (setq rspec-use-rvm t)
+    (setq rspec-use-rake-when-possible nil)))
