@@ -35,6 +35,7 @@
                     conf-unix-mode
                     conf-xdefaults-mode
                     css-mode
+                    dockerfile-mode
                     emacs-lisp-mode
                     fish-mode
                     git-commit-mode

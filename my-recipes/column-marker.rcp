@@ -10,6 +10,7 @@
                       'coffee-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
+                      'dockerfile-mode-hook
                       'emacs-lisp-mode-hook
                       'fish-mode-hook
                       'git-commit-mode-hook
