@@ -3,7 +3,7 @@
                                 "/Capfile\\'"
                                 "/Gemfile\\'"
                                 "/Guardfile\\'"
-                                "/Vagrantfile\\'"
+                                "/[vV]agrantfile\\'"
                                 "/[rR]akefile\\'"
                                 "\\.atex\\'"
                                 "\\.gemspec\\'"
