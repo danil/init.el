@@ -70,6 +70,7 @@
                   "direx"
                   "discover-my-major"
                   "disp-table"
+                  "dockerfile-mode"
                   "ebuild-mode"
                   "ediff"
                   "emacs-lisp-mode"

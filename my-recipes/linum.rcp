@@ -13,6 +13,7 @@
                       'css-mode-hook
                       'csv-mode-hook
                       'dired-mode-hook
+                      'dockerfile-mode-hook
                       'emacs-lisp-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook
