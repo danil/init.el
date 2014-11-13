@@ -19,6 +19,7 @@
                         'css-mode-hook
                         'dired-mode-hook
                         'dockerfile-mode-hook
+                        'ferm-mode-hook
                         'fish-mode-hook
                         'git-commit-mode-hook
                         'haml-mode-hook

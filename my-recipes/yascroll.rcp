@@ -15,6 +15,7 @@
                       'css-mode-hook
                       'dockerfile-mode-hook
                       'emacs-lisp-mode-hook
+                      'ferm-mode-hook
                       'fish-mode-hook
                       'git-commit-mode-hook
                       'haml-mode-hook

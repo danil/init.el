@@ -79,6 +79,7 @@
                   "etags-select"
                   "ethan-wspace"
                   "expand-region"
+                  "ferm-mode"
                   "files"
                   "files-backup"
                   "fill"
