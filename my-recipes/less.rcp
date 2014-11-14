@@ -19,6 +19,7 @@
                         'css-mode-hook
                         'dired-mode-hook
                         'dockerfile-mode-hook
+                        'ferm-mode-hook
                         'fish-mode-hook
                         'git-commit-mode-hook
                         'haml-mode-hook
@@ -37,6 +38,7 @@
                         'magit-commit-mode-hook
                         'magit-diff-mode-hook
                         'magit-log-mode-hook
+                        'magit-process-mode-hook
                         'magit-status-mode-hook
                         'makefile-gmake-mode-hook
                         'markdown-mode-hook
