@@ -1,6 +1,8 @@
 (my-add-to-packages 'clojure-mode)
 
 (my-after-init
+  (my-add-auto-mode-to-patterns 'clojure-mode "/\\.lein-env\\'")
+
   (my-hooks-with-truncate-lines 'clojure-mode-hook)
 
   (my-eval-after-load 'clojure-mode
