@@ -2,5 +2,4 @@
 
 (autoload 'ferm-mode "ferm-mode" nil t)
 
-(my-after-init
-  (my-add-auto-mode-to-patterns 'ferm-mode "\\.firewall\\.rules\\'"))
+(my-after-init (my-add-auto-mode-to-patterns 'ferm-mode "\\.rules\\'"))
