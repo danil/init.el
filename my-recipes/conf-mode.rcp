@@ -35,6 +35,7 @@
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"
+                                "/etc/eixrc/"
                                 "/etc/env.d/"
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\.keywords\\'"
