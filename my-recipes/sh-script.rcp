@@ -13,4 +13,9 @@
   ;; Logrotate scripts.
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/etc/logrotate.d/"
-                                "\\.logrotate\\'"))
+                                "\\.logrotate\\'")
+
+  ;; Gentoo.
+  (my-add-auto-mode-to-patterns 'shell-script-mode
+                                "/etc/init.d/"
+                                "/etc/local.d/.+\\.\\(start\\|stop\\)"))
