@@ -35,8 +35,8 @@
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"
+                                "/etc/eixrc/"
                                 "/etc/env.d/"
-                                "/etc/init.d/"
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\.keywords\\'"
                                 "/etc/portage/package\\.mask\\'"
@@ -49,4 +49,5 @@
                                 "/profiles/repo_name\\'"
                                 "\\world\\'")
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
+  (my-add-auto-mode-to-patterns 'conf-colon-mode "/rsyncd.secrets\\'")
   (my-hooks-with-truncate-lines 'conf-mode-hook))

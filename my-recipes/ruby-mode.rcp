@@ -4,6 +4,8 @@
                                 "/Gemfile\\'"
                                 "/Guardfile\\'"
                                 "/[rR]akefile\\'"
+                                "/[vV]agrantfile.proxy\\'"
+                                "/[vV]agrantfile\\'"
                                 "\\.atex\\'"
                                 "\\.gemspec\\'"
                                 "\\.irbrc\\'"
