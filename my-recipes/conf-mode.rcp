@@ -13,10 +13,12 @@
                                 "/conkyrc_top\\'"
                                 "/dunstrc\\'"
                                 "/etc/fstab\\'"
+                                "/etc/mailutils\\.d/"
                                 "/etc/mail/aliases\\'"
                                 "/hosts\\'"
                                 "/htoprc\\'"
                                 "/locale.gen\\'"
+                                "/mailutils\\.rc\\'"
                                 "/mimeapps.list\\'"
                                 "/robots.txt\\'"
                                 "/securetty\\'"
@@ -35,9 +37,9 @@
                                 "\\parcelliterc\\'")
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
-                                "/etc/conf.d/"
+                                "/etc/conf\\.d/"
                                 "/etc/eixrc/"
-                                "/etc/env.d/"
+                                "/etc/env\\.d/"
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\.keywords\\'"
                                 "/etc/portage/package\\.mask\\'"
