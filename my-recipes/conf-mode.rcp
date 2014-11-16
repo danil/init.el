@@ -13,6 +13,7 @@
                                 "/conkyrc_top\\'"
                                 "/dunstrc\\'"
                                 "/etc/fstab\\'"
+                                "/etc/mail/aliases\\'"
                                 "/hosts\\'"
                                 "/htoprc\\'"
                                 "/locale.gen\\'"

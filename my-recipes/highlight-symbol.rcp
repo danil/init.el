@@ -4,6 +4,7 @@
 (global-set-key (my-kbd "s s n") 'my-highlight-symbol-next-with-repeat)
 (global-set-key (my-kbd "s s p") 'my-highlight-symbol-prev-with-repeat)
 (global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
+
 (my-after-init
   (my-add-mode-to-hooks 'highlight-symbol-mode
                         'awk-mode-hook
