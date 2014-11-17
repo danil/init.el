@@ -4,6 +4,7 @@
 ;; (global-set-key (kbd "C-v") 'less-scroll-up-line)
 ;; (global-set-key (kbd "M-p") 'scroll-down-command)
 ;; (global-set-key (kbd "M-n") 'scroll-up-command)
+
 (my-after-init
   (my-add-mode-to-hooks 'less-minor-mode-on
                         'Info-mode-hook
