@@ -1,0 +1,8 @@
+(fset 'my-kbd-macro-fhir-replace
+   "\C-u\C-a\C-n\C-@\C-e\C-[w\C-u\C-a\C-p\C-@\C-e\C-[w\C-c\C-f1\C-[<\C-[%\C-y\C-m\C-y\C-[y\C-myyyyyyyyyyyyy")
+
+(fset 'my-kbd-macro-fhir-replace-all
+   "\C-u\C-a\C-n\C-@\C-e\C-[w\C-u\C-a\C-p\C-@\C-e\C-[w\C-c\C-f1\C-[<\C-[%\C-y\C-m\C-y\C-[y\C-m!")
+
+(fset 'my-kbd-macro-fhir-copy-en-line
+   "\C-e\C-a\C-@\C-s \C-m\C-b\C-[w\C-c\C-f2\C-[gg\C-y\C-m\C-@\C-n\C-[w\C-c\C-f1\C-a\C-y\C-n\C-o\C-n\C-s")
