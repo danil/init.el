@@ -22,6 +22,75 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
+(setq my-safe-modes-hooks '(
+                            ;; mail-mode-hook
+                            ;; whitespace-mode-hook
+                            awk-mode-hook
+                            c-mode-hook
+                            change-log-mode-hook
+                            coffee-mode-hook
+                            conf-mode-hook
+                            css-mode-hook
+                            dockerfile-mode-hook
+                            ferm-mode-hook
+                            fish-mode-hook
+                            git-commit-mode-hook
+                            haml-mode-hook
+                            haskell-mode-hook
+                            html-mode-hook
+                            jade-mode-hook
+                            java-mode-hook
+                            js-mode-hook
+                            js2-mode-hook
+                            less-css-mode-hook
+                            lisp-mode-hook
+                            lua-mode-hook
+                            makefile-gmake-mode-hook
+                            markdown-mode-hook
+                            nginx-mode-hook
+                            nxml-mode-hook
+                            org-mode-hook
+                            pascal-mode-hook
+                            perl-mode-hook
+                            php-mode-hook
+                            python-mode-hook
+                            rhtml-mode-hook
+                            ruby-mode-hook
+                            rust-mode-hook
+                            sass-mode-hook
+                            sgml-mode-hook
+                            sh-mode-hook
+                            sieve-mode-hook
+                            sql-mode-hook
+                            text-mode-hook
+                            web-mode-hook
+                            xml-mode-hook
+                            yaml-mode-hook
+                            ))
+
+(setq my-programming-modes-hooks (append my-safe-modes-hooks
+                                         '(clojure-mode-hook
+                                           emacs-lisp-mode-hook)))
+
+(setq my-read-only-modes-hooks  (append my-safe-modes-hooks
+                                        '(
+                                          Info-mode-hook
+                                          Man-mode-hook
+                                          ag-mode-hook
+                                          cider-stacktrace-mode-hook
+                                          compilation-mode-hook
+                                          dired-mode-hook
+                                          help-mode-hook
+                                          ibuffer-mode-hook
+                                          magit-branch-manager-mode-hook
+                                          magit-commit-mode-hook
+                                          magit-diff-mode-hook
+                                          magit-log-mode-hook
+                                          magit-process-mode-hook
+                                          magit-status-mode-hook
+                                          occur-mode-hook
+                                          )))
+
 ;;; My packages (el-get <http://github.com/dimitri/el-get>).
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)

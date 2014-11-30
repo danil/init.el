@@ -1,7 +1,7 @@
 ;;; Hide Show minor mode <http://www.emacswiki.org/emacs/HideShow>.
-(my-add-mode-to-hooks 'hs-minor-mode
-                      'ruby-mode-hook)
 (my-after-init
+  (my-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
+
   (my-eval-after-load 'hs-minor-mode
     ;; (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)
 
