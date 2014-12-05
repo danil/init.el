@@ -32,7 +32,7 @@
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
-(defun my-add-mode-to-hooks (mode &rest hooks)
+(defun my-add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 

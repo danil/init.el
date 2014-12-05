@@ -1,5 +1,6 @@
 (my-add-to-packages 'auto-complete)
 (my-add-to-packages 'auto-complete-chunk)
+
 ;; (my-after-init
 ;;   (my-eval-after-load 'auto-complete-config
 ;;     (my-add-mode-to-hooks (lambda ()
@@ -8,5 +9,5 @@
 ;;                             ;; (setq ac-chunk-list
 ;;                             ;;       '("os.path.abspath" "os.path.altsep" "os.path.basename"))
 ;;                             )
-;;                           'python-mode-hook
-;;                           'ruby-mode-hook)))
+;;                            '(python-mode-hook
+;;                              ruby-mode-hook))))
