@@ -109,6 +109,7 @@
 (dolist (recipe '(
                   "my-recipe-helpers"
                   "ag"
+                  "ac-html"
                   "apache-mode"
                   "auto-complete"
                   "auto-complete-chunk"
