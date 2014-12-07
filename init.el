@@ -25,6 +25,7 @@
 (setq my-safe-modes-hooks '(
                             ;; mail-mode-hook
                             ;; whitespace-mode-hook
+                            autoconf-mode-hook
                             awk-mode-hook
                             c-mode-hook
                             change-log-mode-hook
