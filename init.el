@@ -201,6 +201,7 @@
                   "lua-mode"
                   "magit"
                   "magit-blame"
+                  "make-mode"
                   "markdown-mode"
                   "multiple-cursors"
                   "my-backspace-fix"
