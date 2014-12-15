@@ -25,12 +25,14 @@
 (setq my-safe-modes-hooks '(
                             ;; mail-mode-hook
                             ;; whitespace-mode-hook
+                            autoconf-mode-hook
                             awk-mode-hook
                             c-mode-hook
                             change-log-mode-hook
                             coffee-mode-hook
                             conf-mode-hook
                             css-mode-hook
+                            diff-mode-hook
                             dockerfile-mode-hook
                             ferm-mode-hook
                             fish-mode-hook
@@ -72,24 +74,24 @@
                                          '(clojure-mode-hook
                                            emacs-lisp-mode-hook)))
 
-(setq my-read-only-modes-hooks  (append my-safe-modes-hooks
-                                        '(
-                                          Info-mode-hook
-                                          Man-mode-hook
-                                          ag-mode-hook
-                                          cider-stacktrace-mode-hook
-                                          compilation-mode-hook
-                                          dired-mode-hook
-                                          help-mode-hook
-                                          ibuffer-mode-hook
-                                          magit-branch-manager-mode-hook
-                                          magit-commit-mode-hook
-                                          magit-diff-mode-hook
-                                          magit-log-mode-hook
-                                          magit-process-mode-hook
-                                          magit-status-mode-hook
-                                          occur-mode-hook
-                                          )))
+(setq my-read-only-modes-hooks (append my-safe-modes-hooks
+                                       '(
+                                         Info-mode-hook
+                                         Man-mode-hook
+                                         ag-mode-hook
+                                         cider-stacktrace-mode-hook
+                                         compilation-mode-hook
+                                         dired-mode-hook
+                                         help-mode-hook
+                                         ibuffer-mode-hook
+                                         magit-branch-manager-mode-hook
+                                         magit-commit-mode-hook
+                                         magit-diff-mode-hook
+                                         magit-log-mode-hook
+                                         magit-process-mode-hook
+                                         magit-status-mode-hook
+                                         occur-mode-hook
+                                         )))
 
 ;;; My packages (el-get <http://github.com/dimitri/el-get>).
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -200,6 +202,7 @@
                   "lua-mode"
                   "magit"
                   "magit-blame"
+                  "make-mode"
                   "markdown-mode"
                   "multiple-cursors"
                   "my-backspace-fix"

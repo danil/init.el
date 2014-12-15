@@ -23,6 +23,7 @@
                                            "my-auto-complete/dict")
                                    default-directory))
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+                    autoconf-mode
                     awk-mode
                     c-mode
                     cider-mode
@@ -35,6 +36,7 @@
                     conf-unix-mode
                     conf-xdefaults-mode
                     css-mode
+                    diff-mode
                     dockerfile-mode
                     ebuild-mode
                     emacs-lisp-mode
