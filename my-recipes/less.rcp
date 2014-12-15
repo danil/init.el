@@ -17,6 +17,7 @@
                   (not (delq nil (mapcar (lambda (regex)
                                            (string-match regex my-file-name))
                                          '(
+                                           "^COMMIT_EDITMSG$"
                                            "^\\.loaddefs\\.el$"
                                            "autoloads\\.el$"
                                            )))))
@@ -31,6 +32,7 @@
                  )
          (less-minor-mode-on))))
    '(clojure-mode-hook
+     diff-mode-hook
      emacs-lisp-mode-hook))
 
   ;; (my-eval-after-load 'less

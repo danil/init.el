@@ -32,7 +32,6 @@
                             coffee-mode-hook
                             conf-mode-hook
                             css-mode-hook
-                            diff-mode-hook
                             dockerfile-mode-hook
                             ferm-mode-hook
                             fish-mode-hook
