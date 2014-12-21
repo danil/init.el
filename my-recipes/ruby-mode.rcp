@@ -9,6 +9,7 @@
                                 "\\.atex\\'"
                                 "\\.gemspec\\'"
                                 "\\.irbrc\\'"
+                                "\\.mdlrc\\'"
                                 "\\.prawn\\'"
                                 "\\.rake\\'"
                                 "\\.rb\\.erb\\'"
