@@ -18,4 +18,6 @@
   ;; Gentoo.
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/etc/init.d/"
-                                "/etc/local.d/.+\\.\\(start\\|stop\\)"))
+                                "/etc/local.d/.+\\.\\(start\\|stop\\)")
+  ;; dwm.
+  (my-add-auto-mode-to-patterns 'shell-script-mode "/dwmrc\\'"))
