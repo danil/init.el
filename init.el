@@ -248,6 +248,7 @@
                   "smart-mode-line"
                   "smex"
                   "sort"
+                  "sql-postgres"
                   "subword-mode"
                   "text-mode"
                   "undo-tree"
