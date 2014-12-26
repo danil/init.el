@@ -4,8 +4,10 @@
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/\\.ackrc\\'"
                                 "/\\.bash_aliases\\'"
+                                "/\\.bpkgrc\\'"
                                 "/\\.lessfilter\\'"
-                                "/\\.xprofile\\'")
+                                "/\\.xprofile\\'"
+                                "/dwmrc\\'")
   ;; Cron.
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/anacrontab\\'"
@@ -18,6 +20,4 @@
   ;; Gentoo.
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/etc/init.d/"
-                                "/etc/local.d/.+\\.\\(start\\|stop\\)")
-  ;; dwm.
-  (my-add-auto-mode-to-patterns 'shell-script-mode "/dwmrc\\'"))
+                                "/etc/local.d/.+\\.\\(start\\|stop\\)"))
