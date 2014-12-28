@@ -243,6 +243,7 @@
                   "scss-mode"
                   "sgml-mode"
                   "sh-script"
+                  "shell"
                   "simp"
                   "simple"
                   "smart-mode-line"
