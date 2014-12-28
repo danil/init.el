@@ -12,5 +12,5 @@
                  (not less-minor-mode))
              (buffer-file-name))
     (call-interactively 'save-buffer)
-    (cider-load-current-buffer))
+    (cider-load-buffer))
   (call-interactively 'less-minor-mode))
