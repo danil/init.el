@@ -20,25 +20,6 @@
                                                   :inverse-video nil)))))
 
   (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
-  (dolist (my-hidden-modes '(
-                            " AC" ;auto-complete-mode
-                            " ARev" ;auto-revert-mode
-                            " Abbrev" ;abbrev-mode
-                            " Helm" ;helm-mode
-                            " MRev" ;magit-auto-revert-mode
-                            " Rbow" ;rainbow-mode
-                            " RubyRef" ;ruby-refactor-mode
-                            " SP" ;smartparens-mode
-                            " Undo-Tree" ;undo-tree-mode
-                            " end" ;ruby-end-mode
-                            " gg" ;git-gutter-mode
-                            " hl-s" ;highlight-symbol-mode
-                            " hs" ;hideshow
-                            " ing" ;indent-guide-mode
-                            " pair" ;autopair
-                            " rt" ;ruby-tools-mode
-                            " yas";yas-minor-mode aka yasnippet
-                            )) (add-to-list 'sml/hidden-modes my-hidden-modes))
 
   (dolist (my-path-to-replace
            '(("^:S\\(V?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":S\\1:\\2\\3:")

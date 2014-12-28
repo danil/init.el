@@ -5,7 +5,7 @@
 
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
-(set-default 'truncate-lines nil) ;wrap long lines
+(set-default 'truncate-lines t) ;wrap long lines
 
 (setq calendar-week-start-day t)
 (setq system-time-locale "C")
@@ -170,6 +170,7 @@
                   "helm-ls-git"
                   "helm-swoop"
                   "help"
+                  "help-mode"
                   "hi-lock"
                   "hideshow"
                   "highlight-current-line"
@@ -242,7 +243,7 @@
                   "scss-mode"
                   "sgml-mode"
                   "sh-script"
-                  "sieve-mode"
+                  "shell"
                   "simp"
                   "simple"
                   "smart-mode-line"
@@ -250,7 +251,6 @@
                   "sort"
                   "sql-postgres"
                   "subword-mode"
-                  "text-mode"
                   "undo-tree"
                   "uniquify"
                   "web-mode"
