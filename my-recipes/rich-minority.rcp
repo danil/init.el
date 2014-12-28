@@ -1,6 +1,28 @@
 (my-add-to-packages 'rich-minority)
+
 (my-after-init
   (dolist (my-highlighted-modes '(
                                  ("\\` Less\\'" 'face 'font-lock-warning-face)
                                  ))
-    (add-to-list 'rm-text-properties my-highlighted-modes)))
+    (add-to-list 'rm-text-properties my-highlighted-modes))
+
+  (dolist (my-hidden-modes '(
+                             " ," ;wtf!???
+                             " AC" ;auto-complete-mode
+                             " ARev" ;auto-revert-mode
+                             " Abbrev" ;abbrev-mode
+                             " Helm" ;helm-mode
+                             " MRev" ;magit-auto-revert-mode
+                             " Rbow" ;rainbow-mode
+                             " RubyRef" ;ruby-refactor-mode
+                             " SP" ;smartparens-mode
+                             " Undo-Tree" ;undo-tree-mode
+                             " end" ;ruby-end-mode
+                             " gg" ;git-gutter-mode
+                             " hl-s" ;highlight-symbol-mode
+                             " hs" ;hideshow
+                             " ing" ;indent-guide-mode
+                             " pair" ;autopair
+                             " rt" ;ruby-tools-mode
+                             " yas";yas-minor-mode aka yasnippet
+                             )) (add-to-list 'rm-blacklist my-hidden-modes)))

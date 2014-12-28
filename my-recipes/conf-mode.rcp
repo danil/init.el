@@ -36,6 +36,7 @@
                                 "\\.xxkbrc\\'"
                                 "\\parcelliterc\\'"
                                 "\\torrc\\'")
+
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf\\.d/"
@@ -52,6 +53,6 @@
                                 "/profiles/package.mask\\'"
                                 "/profiles/repo_name\\'"
                                 "\\world\\'")
+
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
-  (my-add-auto-mode-to-patterns 'conf-colon-mode "/rsyncd.secrets\\'")
-  (my-hooks-with-truncate-lines 'conf-mode-hook))
+  (my-add-auto-mode-to-patterns 'conf-colon-mode "/rsyncd.secrets\\'"))

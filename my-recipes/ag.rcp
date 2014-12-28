@@ -7,7 +7,6 @@
 (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
 
 (my-after-init
-  (my-hooks-with-truncate-lines 'ag-mode-hook)
   (my-eval-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")
