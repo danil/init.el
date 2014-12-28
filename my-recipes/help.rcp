@@ -1,3 +1,14 @@
 ;;; My help
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
-(my-after-init (global-set-key (my-kbd "?") 'help-command))
+(my-after-init
+  (global-set-key (my-kbd "?") 'help-command)
+
+  (my-eval-after-load 'help
+    (define-key help-map "f" 'my-describe-function)))
+
+(defun my-describe-function (&optional arg)
+  (interactive "P")
+  (if arg
+      (call-interactively 'describe-function)
+    ;; <http://emacsredux.com/blog/2014/06/18/quickly-find-emacs-lisp-sources>.
+    (call-interactively 'find-function)))
