@@ -11,4 +11,7 @@
                                 "\\.jst\\.ejs\\'"
                                 "\\.phtml\\'"
                                 "\\.rhtml\\'"
-                                "\\.tpl\\.php\\'"))
+                                "\\.tpl\\.php\\'")
+
+  (my-eval-after-load 'web-mode
+    (define-key web-mode-map (kbd "C-c C-f") nil)))
