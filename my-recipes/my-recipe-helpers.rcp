@@ -14,13 +14,14 @@
      '(progn ,@body)))
 
 ;; (defmacro my-eval-if-defined-or-after-load (symbol feature &rest body)
-;;   "If function SYMBOL definded or after FEATURE is loaded,
-;;  evaluate BODY."
+;;   "If function SYMBOL definded or variable SYMBOL defined or after
+;;  FEATURE is loaded, evaluate BODY."
 ;;   (declare (indent defun))
-;;   `(if (fboundp ,symbol)
-;;        '(progn ,@body)
-;;      (eval-after-load ,feature
-;;        '(progn ,@body))))
+;;   ;; (if (or (fboundp 'js-mode-map) (boundp 'js-mode-map))
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)
+;;   ;;   (with-eval-after-load 'js
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)))
+;; )
 
 (defun my-add-auto-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
