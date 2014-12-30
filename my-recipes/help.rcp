@@ -1,3 +1,11 @@
 ;;; My help
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
-(my-after-init (global-set-key (my-kbd "?") 'help-command))
+(my-after-init
+  (global-set-key (my-kbd "?") 'help-command)
+
+  (my-eval-after-load 'help
+    (define-key help-map "f" 'my-describe-function)
+
+    (define-key help-map "?" nil)
+    (global-set-key (my-kbd "? ? ?") 'help-for-help)
+    (global-set-key (my-kbd "? ? m") 'woman)))
