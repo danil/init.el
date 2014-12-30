@@ -3,7 +3,8 @@
 (my-add-auto-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
 
 (my-after-init
-  (custom-set-variables '(coffee-tab-width 2))
+  (custom-set-variables ;; '(coffee-command "/home/danil/node_modules/.bin/coffee")
+                        '(coffee-tab-width 2))
 
   (my-eval-after-load 'coffee-mode
     ;; (set (make-local-variable 'tab-width) 2)
