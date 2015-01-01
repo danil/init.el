@@ -3,22 +3,31 @@
 
 (defun navigation-mode ()
   (interactive)
-  (let ((repeat-key-str (format-kbd-macro (vector last-input-event) nil)))
-    (while repeat-key-str
-      (message "Type j or k to repeat")
+
+  (let* ((one-more-repeat t)
+         (keynames '("j" "k"))
+         (keynames-str (mapconcat 'identity keynames ", ")))
+
+    (while one-more-repeat
+      (message "Type %s to repeat" keynames-str)
+
       (let* ((event (read-event))
-             (foo-key-str (format-kbd-macro (vector event) nil)))
+             (keyname (format-kbd-macro (vector event) nil)))
         (clear-this-command-keys t)
-        (if (or (equal foo-key-str "j") (equal foo-key-str "k"))
+
+        (if (member keyname keynames)
             (progn
-              (cond ((equal foo-key-str "j")
+              (cond ((equal keyname "j")
                      (condition-case nil
                          (scroll-up-line)
                        (end-of-buffer)))
-                    ((equal foo-key-str "k")
+
+                    ((equal keyname "k")
                      (condition-case nil
                          (scroll-down-line)
                        (beginning-of-buffer))))
+
               (setq last-input-event nil))
-          (setq repeat-key-str nil)
+
+          (setq one-more-repeat nil)
           (push last-input-event unread-command-events))))))
