@@ -150,7 +150,6 @@
                   "erise"
                   "etags-select"
                   "ethan-wspace"
-                  "evil"
                   "expand-region"
                   "ferm-mode"
                   "files"
