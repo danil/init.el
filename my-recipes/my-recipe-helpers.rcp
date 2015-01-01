@@ -1,3 +1,11 @@
+(autoload '-difference "dash" nil t)
+
+(defun my-add-to-packages (&rest packages)
+  (dolist (package packages)
+    (add-to-list 'my-packages package)))
+
+(my-add-to-packages 'dash)
+
 (defun my-kbd (key) (kbd (concat "C-c C-f " key)))
 
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
@@ -36,10 +44,6 @@
 (defun my-add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
-
-(defun my-add-to-packages (&rest packages)
-  (dolist (package packages)
-    (add-to-list 'my-packages package)))
 
 (defun my-autoload-file-on-functions (file-name &rest functions)
   "Autoload `file-name' if one of the given `functions' called."
