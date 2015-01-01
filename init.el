@@ -211,6 +211,7 @@
                   "my-color-theme"
                   "my-project"
                   "my-tags"
+                  "navigation-mode"
                   "nginx-mode"
                   "nodejs-repl"
                   "nvm"

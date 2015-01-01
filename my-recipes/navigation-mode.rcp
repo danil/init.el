@@ -1,0 +1,24 @@
+(my-after-init
+  (global-set-key (my-kbd "C-f") 'navigation-mode))
+
+(defun navigation-mode ()
+  (interactive)
+  (let ((repeat-key-str (format-kbd-macro (vector last-input-event) nil)))
+    (while repeat-key-str
+      (message "Type j or k to repeat")
+      (let* ((event (read-event))
+             (foo-key-str (format-kbd-macro (vector event) nil)))
+        (clear-this-command-keys t)
+        (if (or (equal foo-key-str "j") (equal foo-key-str "k"))
+            (progn
+              (cond ((equal foo-key-str "j")
+                     (condition-case nil
+                         (scroll-up-line)
+                       (end-of-buffer)))
+                    ((equal foo-key-str "k")
+                     (condition-case nil
+                         (scroll-down-line)
+                       (beginning-of-buffer))))
+              (setq last-input-event nil))
+          (setq repeat-key-str nil)
+          (push last-input-event unread-command-events))))))
