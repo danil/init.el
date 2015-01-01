@@ -17,15 +17,13 @@
 
         (if (member keyname keynames)
             (progn
-              (cond ((equal keyname "j")
-                     (condition-case nil
-                         (scroll-up-line)
-                       (end-of-buffer)))
+              (cond ((equal keyname "j") (condition-case nil
+                                             (scroll-up-line)
+                                           (end-of-buffer)))
 
-                    ((equal keyname "k")
-                     (condition-case nil
-                         (scroll-down-line)
-                       (beginning-of-buffer))))
+                    ((equal keyname "k") (condition-case nil
+                                             (scroll-down-line)
+                                           (beginning-of-buffer))))
 
               (setq last-input-event nil))
 
