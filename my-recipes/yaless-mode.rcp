@@ -5,8 +5,8 @@
   (interactive)
 
   (let* ((one-more-repeat t)
-         (keynames '("j" "k"))
-         (keynames-str (mapconcat 'identity keynames " or ")))
+         (keynames '("j" "k" "f" "b" "n" "p"))
+         (keynames-str (mapconcat 'identity keynames ", ")))
 
     (while one-more-repeat
       (message "Type %s to repeat" keynames-str)
@@ -23,7 +23,12 @@
 
                     ((equal keyname "k") (condition-case nil
                                              (scroll-down-line)
-                                           (beginning-of-buffer))))
+                                           (beginning-of-buffer)))
+
+                    ((equal keyname "f") (forward-char))
+                    ((equal keyname "b") (backward-char))
+                    ((equal keyname "n") (next-line))
+                    ((equal keyname "p") (previous-line)))
 
               (setq last-input-event nil))
 
