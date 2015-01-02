@@ -1,7 +1,7 @@
 (my-after-init
-  (global-set-key (my-kbd "C-f") 'navigation-mode))
+  (global-set-key (my-kbd "C-f") 'yaless-mode))
 
-(defun navigation-mode ()
+(defun yaless-mode ()
   (interactive)
 
   (let* ((one-more-repeat t)
