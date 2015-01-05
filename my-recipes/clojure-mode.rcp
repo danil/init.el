@@ -4,7 +4,16 @@
   (my-add-auto-mode-to-patterns 'clojure-mode "/\\.lein-env\\'")
 
   (my-eval-after-load 'clojure-mode
-    (define-key clojure-mode-map (my-kbd "C-f") 'my-clojure-less-minor-mode)))
+    (define-key clojure-mode-map (my-kbd "C-f") 'clojure-yaless-mode-on)))
+
+(defun clojure-yaless-mode-on ()
+  (interactive)
+
+  (when (and (buffer-file-name))
+    (call-interactively 'save-buffer)
+    (cider-load-buffer))
+
+  (call-interactively 'yaless-mode))
 
 (defun my-clojure-less-minor-mode ()
   (interactive)
