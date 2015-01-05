@@ -2,7 +2,8 @@
   (my-eval-after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)
     (define-key emacs-lisp-mode-map (my-kbd "! l b") 'my-eval-buffer)
-    (define-key emacs-lisp-mode-map (my-kbd "! l r") 'my-eval-region)))
+    (define-key emacs-lisp-mode-map (my-kbd "! l r") 'my-eval-region)
+    (define-key emacs-lisp-mode-map (my-kbd "c f") 'byte-compile-file)))
 
 (defun my-eval-buffer ()
   (interactive)
