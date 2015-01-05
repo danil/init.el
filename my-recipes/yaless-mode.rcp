@@ -1,5 +1,15 @@
 (my-after-init
-  (global-set-key (my-kbd "C-f") 'yaless-mode))
+  (global-set-key (my-kbd "C-f") 'yaless-mode-on))
+
+(defun yaless-mode-on ()
+  (interactive)
+
+  (when (and (buffer-file-name))
+    ;; (buffer-modified-p)
+    ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
+    (call-interactively 'save-buffer))
+
+  (call-interactively 'yaless-mode))
 
 (defun yaless-mode ()
   (interactive)
