@@ -150,11 +150,9 @@
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))
 
-(setq sico-recipes-directory (concat user-emacs-directory "my-recipes"))
-
 (defun my-recipes (recipes)
   (dolist (recipe recipes)
-    (load-file (format "%s/%s.rcp" sico-recipes-directory recipe))))
+    (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe))))
 
 (defun my-el-get (packages)
   (dolist (package packages)
