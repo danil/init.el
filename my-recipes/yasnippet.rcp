@@ -1,5 +1,3 @@
-(my-add-to-packages 'yasnippet)
-
 (autoload 'yas-reload-all "yasnippet" nil t)
 
 (my-after-init

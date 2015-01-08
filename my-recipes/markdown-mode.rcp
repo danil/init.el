@@ -1,5 +1,3 @@
-(my-add-to-packages 'markdown-mode)
-
 (my-after-init
   (my-add-auto-mode-to-patterns 'markdown-mode
                                 "/README\\'"

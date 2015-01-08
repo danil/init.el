@@ -1,6 +1,3 @@
-(my-add-to-packages 'ample-regexps)
-(my-add-to-packages 'lua-mode)
-
 (my-after-init
   (my-add-auto-mode-to-patterns 'lua-mode "\\.ws\\'")
 

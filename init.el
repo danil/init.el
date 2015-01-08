@@ -106,167 +106,216 @@
 ;;       (concat user-emacs-directory "my-el-get/init-files"))
 (setq my-packages (append (mapcar 'el-get-source-name el-get-sources)))
 
-;;; My recipes.
-(setq my-recipes-names '(
-                         "my-recipe-helpers"
-                         "ag"
-                         "ac-html"
-                         "apache-mode"
-                         "auto-complete"
-                         "auto-complete-chunk"
-                         "auto-complete-emacs-lisp"
-                         "auto-complete-etags"
-                         "auto-complete-nxml"
-                         "bash-completion"
-                         "browse-kill-ring"
-                         "calendar"
+(autoload '-difference "dash" nil t)
 
-                         ;; Clojure.
-                         "cider" ;clojure-mode dependency ;manual upgrade
-                         "clojure-mode" ;manual upgrade
-                         "smartparens"
+(defun my-add-to-packages (&rest packages)
+  (dolist (package packages)
+    (add-to-list 'my-packages package)))
 
-                         "cc-vars"
-                         "coffee-mode"
-                         "column-marker"
-                         "compile"
-                         "conf-mode"
-                         "crontab-mode"
-                         "css"
-                         "csv-mode"
-                         "deft"
-                         "desktop"
-                         "diff-mode"
-                         "dired"
-                         "dired-reuse-directory-buffer"
-                         "direx"
-                         "discover-my-major"
-                         "disp-table"
-                         "dockerfile-mode"
-                         "ebuild-mode"
-                         "ediff"
-                         "emacs-lisp-mode"
-                         "env"
-                         "erise"
-                         "etags-select"
-                         "ethan-wspace"
-                         "expand-region"
-                         "ferm-mode"
-                         "files"
-                         "files-backup"
-                         "fill"
-                         "findr"
-                         "fiplr"
-                         "fish-mode"
-                         "git-commit-mode"
-                         "git-gutter"
-                         "git-modes"
-                         "git-timemachine"
-                         "gitignore-mode"
-                         "haml-mode"
-                         "helm"
-                         "helm-ag"
-                         "helm-descbinds"
-                         "helm-git-grep"
-                         "helm-ls-git"
-                         "helm-swoop"
-                         "help"
-                         "help-mode"
-                         "hi-lock"
-                         "hideshow"
-                         "highlight-current-line"
-                         "highlight-symbol"
-                         "ibuffer"
-                         "ido"
-                         "ido-preview"
-                         "ido-ubiquitous"
-                         "ido-vertical-mode"
-                         "ido-yes-or-no"
-                         "ielm"
-                         "indent"
-                         "indent-guide"
-                         "info"
-                         "interprogram"
-                         "isearch"
-                         "jade-mode"
-                         "js-mode"
-                         "js2-mode"
-                         "json-mode"
-                         "json-reformat"
-                         "kill-emacs"
-                         "kill-ring"
-                         "kill-ring-ido"
-                         "less-css-mode"
-                         "linum"
-                         "linum-format"
-                         "lisp-mode"
-                         "lua-mode"
-                         "magit"
-                         "magit-blame"
-                         "make-mode"
-                         "markdown-mode"
-                         "multiple-cursors"
-                         "my-backspace-fix"
-                         "my-beginning-of-line"
-                         "my-color-theme"
-                         "my-project"
-                         "my-tags"
-                         "nginx-mode"
-                         "nodejs-repl"
-                         "nvm"
-                         "occur-mode"
-                         "org-mode" ;manual upgrade
-                         "org-reveal"
-                         "paren"
-                         "password-cache"
-                         "point-stack"
-                         "pomohist"
-                         "pretty-lambdada"
-                         "quickrun"
-                         "rainbow-delimiters"
-                         "rainbow-mode"
-                         "rbenv"
-                         "re-builder"
-                         "recentf"
-                         "recentf-ido-find-file"
-                         "rich-minority"
-                         "rinari"
-                         "rspec-compilation-mode"
-                         "rspec-mode"
-                         "ruby-hash-syntax"
-                         "ruby-mode"
-                         "ruby-pry"
-                         "ruby-refactor"
-                         "ruby-tools"
-                         "sass-mode"
-                         "savehist"
-                         "saveplace"
-                         "scss-mode"
-                         "sgml-mode"
-                         "sh-script"
-                         "shell"
-                         "simp"
-                         "simple"
-                         "smart-mode-line"
-                         "smex"
-                         "sort"
-                         "sql-postgres"
-                         "subword-mode"
-                         "undo-tree"
-                         "uniquify"
-                         "web-mode"
-                         "window"
-                         "window-numbering"
-                         "winner-mode"
-                         "yaless-mode"
-                         "yaml-mode"
-                         "yascroll"
-                         "yasnippet"
-                         "yasnippets"
-                         ))
+(my-add-to-packages 'dash)
 
-(dolist (recipe my-recipes-names)
-  (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
+(defun my-kbd (key) (kbd (concat "C-c C-f " key)))
+
+;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
+(defmacro my-after-init (&rest body)
+  "After loading all the init files, evaluate BODY."
+  (declare (indent defun))
+  `(add-hook 'after-init-hook
+             '(lambda () ,@body)))
+
+(defmacro my-eval-after-load (feature &rest body)
+  "After FEATURE is loaded, evaluate BODY."
+  (declare (indent defun))
+  `(eval-after-load ,feature
+     '(progn ,@body)))
+
+;; (defmacro my-eval-if-defined-or-after-load (symbol feature &rest body)
+;;   "If function SYMBOL definded or variable SYMBOL defined or after
+;;  FEATURE is loaded, evaluate BODY."
+;;   (declare (indent defun))
+;;   ;; (if (or (fboundp 'js-mode-map) (boundp 'js-mode-map))
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)
+;;   ;;   (with-eval-after-load 'js
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)))
+;; )
+
+(defun my-add-auto-mode-to-patterns (mode &rest patterns)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (pattern patterns)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+(defun my-add-pattern-to-auto-modes (pattern &rest modes)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (mode modes)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+(defun my-add-mode-to-hooks (mode hooks)
+  "Add `MODE' to all given `HOOKS'."
+  (dolist (hook hooks) (add-hook hook mode)))
+
+(defun my-autoload-file-on-functions (file-name &rest functions)
+  "Autoload `file-name' if one of the given `functions' called."
+  (dolist (function-name functions)
+    (autoload function-name file-name nil t)))
+
+(setq sico-recipes-directory (concat user-emacs-directory "my-recipes"))
+
+(load-file (concat user-emacs-directory "el-get/dash/dash.el"))
+(require 'dash)
+
+(defun sico-load (recipes)
+  "(sico-load '((ac-html auto-complite) (el-get ac-html))"
+
+  (let* ((more-than-one-recipe-type (listp (first recipes)))
+
+         (el-get-recipes (when (and more-than-one-recipe-type
+                                    (> (length recipes) 1))
+                           (cdr (--first (equal (first it) 'el-get)
+                                         recipes))))
+
+         (my-recipes (if more-than-one-recipe-type (first recipes) recipes)))
+
+    (dolist (recipe my-recipes)
+      (load-file (format "%s/%s.rcp" sico-recipes-directory recipe)))
+
+    (dolist (recipe el-get-recipes) (my-add-to-packages recipe))))
+
+(my-add-to-packages 'apache-mode)
+(my-add-to-packages 'auto-complete-emacs-lisp)
+(my-add-to-packages 'auto-complete-etags)
+(my-add-to-packages 'auto-complete-nxml)
+(my-add-to-packages 'browse-kill-ring)
+(my-add-to-packages 'crontab-mode)
+(my-add-to-packages 'csv-mode)
+(my-add-to-packages 'ebuild-mode)
+(my-add-to-packages 'findr)
+(my-add-to-packages 'jade-mode)
+(my-add-to-packages 'less-css-mode)
+(my-add-to-packages 'sass-mode)
+
+(sico-load '((ag) (el-get ag)))
+(sico-load '((auto-complete ac-html) (el-get ac-html)))
+(sico-load '((auto-complete auto-complete-chunk) (el-get auto-complete-chunk)))
+(sico-load '((bash-completion) (el-get bash-completion)))
+(sico-load '((calendar)))
+(sico-load '((cc-vars)))
+(sico-load '((clojure-mode cider smartparens) (el-get clojure-mode cider smartparens)))
+(sico-load '((coffee-mode) (el-get coffee-mode)))
+(sico-load '((column-marker) (el-get column-marker)))
+(sico-load '((compile)))
+(sico-load '((conf-mode)))
+(sico-load '((css)))
+(sico-load '((deft) (el-get deft)))
+(sico-load '((desktop)))
+(sico-load '((diff-mode)))
+(sico-load '((dired dired-reuse-directory-buffer)))
+(sico-load '((dired direx) (el-get direx)))
+(sico-load '((discover-my-major) (el-get discover-my-major)))
+(sico-load '((disp-table)))
+(sico-load '((dockerfile-mode) (el-get dockerfile-mode)))
+(sico-load '((ediff)))
+(sico-load '((emacs-lisp-mode)))
+(sico-load '((env)))
+(sico-load '((erise) (el-get erise)))
+(sico-load '((etags-select) (el-get etags-select)))
+(sico-load '((ethan-wspace) (el-get ethan-wspace)))
+(sico-load '((expand-region) (el-get expand-region)))
+(sico-load '((ferm-mode) (el-get ferm-mode)))
+(sico-load '((files)))
+(sico-load '((files-backup)))
+(sico-load '((fill)))
+(sico-load '((fiplr) (el-get fiplr)))
+(sico-load '((fish-mode) (el-get fish-mode)))
+(sico-load '((git-gutter) (el-get git-gutter)))
+(sico-load '((git-timemachine) (el-get git-timemachine)))
+(sico-load '((gitignore-mode) (el-get git-modes)))
+(sico-load '((haml-mode) (el-get haml-mode))) ;depends from ruby-mode due to ruby-toggle-hash-syntax
+(sico-load '((helm helm-ag) (el-get helm-ag)))
+(sico-load '((helm helm-descbinds) (el-get helm-descbinds)))
+(sico-load '((helm helm-git-grep) (el-get helm-git-grep)))
+(sico-load '((helm helm-ls-git) (el-get helm-ls-git)))
+(sico-load '((helm helm-swoop) (el-get helm-swoop)))
+(sico-load '((help)))
+(sico-load '((help-mode)))
+(sico-load '((hi-lock)))
+(sico-load '((hideshow)))
+(sico-load '((highlight-current-line)))
+(sico-load '((highlight-symbol) (el-get highlight-symbol)))
+(sico-load '((ibuffer)))
+(sico-load '((ido ido-preview) (el-get ido-preview)))
+(sico-load '((ido ido-ubiquitous) (el-get ido-ubiquitous)))
+(sico-load '((ido ido-vertical-mode) (el-get ido-vertical-mode)))
+(sico-load '((ido ido-yes-or-no) (el-get ido-yes-or-no)))
+(sico-load '((ido kill-ring-ido) (el-get kill-ring-ido)))
+(sico-load '((ido recentf recentf-ido-find-file)))
+(sico-load '((ielm)))
+(sico-load '((indent)))
+(sico-load '((indent-guide) (el-get indent-guide)))
+(sico-load '((info)))
+(sico-load '((interprogram)))
+(sico-load '((isearch)))
+(sico-load '((js-mode js2-mode) (el-get js2-mode)))
+(sico-load '((json-mode json-reformat) (el-get json-mode json-reformat)))
+(sico-load '((kill-emacs)))
+(sico-load '((kill-ring)))
+(sico-load '((linum linum-format)))
+(sico-load '((lisp-mode)))
+(sico-load '((lua-mode) (el-get lua-mode)))
+(sico-load '((magit magit-blame) (el-get magit)))
+(sico-load '((make-mode)))
+(sico-load '((markdown-mode) (el-get markdown-mode)))
+(sico-load '((multiple-cursors) (el-get multiple-cursors)))
+(sico-load '((my-backspace-fix)))
+(sico-load '((my-beginning-of-line)))
+(sico-load '((my-color-theme)))
+(sico-load '((my-project)))
+(sico-load '((my-tags)))
+(sico-load '((nginx-mode) (el-get nginx-mode)))
+(sico-load '((nodejs-repl) (el-get nodejs-repl)))
+(sico-load '((nvm) (el-get nvm)))
+(sico-load '((occur-mode)))
+(sico-load '((org-mode org-reveal) (el-get org-reveal)))
+(sico-load '((org-mode) (el-get org-mode)))
+(sico-load '((paren)))
+(sico-load '((password-cache)))
+(sico-load '((point-stack) (el-get point-stack)))
+(sico-load '((pomohist)))
+(sico-load '((pretty-lambdada) (el-get pretty-lambdada)))
+(sico-load '((quickrun) (el-get quickrun)))
+(sico-load '((rainbow-delimiters) (el-get rainbow-delimiters)))
+(sico-load '((rainbow-mode) (el-get rainbow-mode)))
+(sico-load '((rbenv) (el-get rbenv)))
+(sico-load '((re-builder)))
+(sico-load '((recentf)))
+(sico-load '((ruby-mode rinari) (el-get rinari)))
+(sico-load '((ruby-mode rspec-mode rspec-compilation-mode) (el-get ruby-hash-syntax rspec-mode)))
+(sico-load '((ruby-mode ruby-pry) (el-get ruby-pry)))
+(sico-load '((ruby-mode ruby-refactor) (el-get ruby-refactor)))
+(sico-load '((ruby-mode ruby-tools) (el-get ruby-tools)))
+(sico-load '((ruby-mode) (el-get ruby-hash-syntax)))
+(sico-load '((savehist)))
+(sico-load '((saveplace)))
+(sico-load '((scss-mode) (el-get scss-mode)))
+(sico-load '((sgml-mode)))
+(sico-load '((sh-script)))
+(sico-load '((shell)))
+(sico-load '((simp) (el-get simp)))
+(sico-load '((simple)))
+(sico-load '((smart-mode-line rich-minority) (el-get smart-mode-line rich-minority)))
+(sico-load '((smex) (el-get smex)))
+(sico-load '((sort)))
+(sico-load '((sql-postgres)))
+(sico-load '((subword-mode)))
+(sico-load '((undo-tree) (el-get undo-tree)))
+(sico-load '((uniquify)))
+(sico-load '((web-mode) (el-get web-mode)))
+(sico-load '((window)))
+(sico-load '((window-numbering) (el-get window-numbering)))
+(sico-load '((winner-mode)))
+(sico-load '((yaless-mode)))
+(sico-load '((yaml-mode) (el-get yaml-mode)))
+(sico-load '((yascroll) (el-get yascroll)))
+(sico-load '((yasnippet yasnippets) (el-get yasnippet yasnippets)))
 
 ;;; Install/remove my packages (see above).
 (el-get-cleanup my-packages) ;remove all packages absent from `my-packages'

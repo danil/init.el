@@ -1,5 +1,3 @@
-(my-add-to-packages 'async)
-(my-add-to-packages 'helm)
 (my-after-init
   ;; (global-set-key (kbd "C-x b") 'helm-mini)
   ;; (global-set-key (kbd "M-x") 'helm-M-x)

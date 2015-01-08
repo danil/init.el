@@ -1,5 +1,3 @@
-(my-add-to-packages 'evil)
-
 (my-after-init
   (custom-set-variables '(evil-auto-indent nil)
                         '(evil-shift-width 2)

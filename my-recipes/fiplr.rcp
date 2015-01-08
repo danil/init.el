@@ -1,8 +1,8 @@
-(my-add-to-packages 'grizzl)
-(my-add-to-packages 'fiplr)
 (autoload 'fiplr-find-file "fiplr" nil t)
-(global-set-key (my-kbd "f f") 'fiplr-find-file)
+
 (my-after-init
+  (global-set-key (my-kbd "f f") 'fiplr-find-file)
+
   (my-eval-after-load 'fiplr
     (setq fiplr-ignored-globs
           '((directories (

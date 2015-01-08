@@ -1,10 +1,10 @@
-(my-add-to-packages 'ethan-wspace)
-
 (my-after-init
   (my-eval-after-load 'ethan-wspace
     (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
+
     (cond ((equal frame-background-mode 'dark)
-           (set-face-background 'ethan-wspace-face "gray15")
-           ))
+           (set-face-background 'ethan-wspace-face "gray15")))
+
     (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
+
     (global-ethan-wspace-mode t)))

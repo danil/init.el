@@ -1,5 +1,3 @@
-(my-add-to-packages 'yascroll)
-
 (autoload 'yascroll-bar-mode "yascroll" nil t)
 
 (my-after-init

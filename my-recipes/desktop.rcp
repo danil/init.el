@@ -5,6 +5,7 @@
 (my-after-init
   (global-set-key (my-kbd "d s") 'save-my-desktop)
   (global-set-key (my-kbd "d l") 'load-my-desktop)
+
   (setq desktop-path '("~/.emacs.d/")
         desktop-dirname "~/.emacs.d/"
         desktop-base-file-name "emacs-desktop"

@@ -10,11 +10,14 @@
 current position of point, then move it to the beginning of text on
 the current line."
   (interactive "P")
+
   (if arg
       (beginning-of-line-text)
-    (let ((pt (point)))
+
+    (let ((my-point (point)))
       (beginning-of-line)
-      (when (eq pt (point))
+
+      (when (eq my-point (point))
         (beginning-of-line-text)))))
 
 ;; (my-after-init

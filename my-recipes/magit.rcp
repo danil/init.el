@@ -1,6 +1,3 @@
-(my-add-to-packages 'cl-lib 'git-modes)
-(my-add-to-packages 'magit)
-
 (my-after-init
   (global-set-key (my-kbd "v l L") 'magit-log-long)
   (global-set-key (my-kbd "v l f") 'magit-file-log)

@@ -1,5 +1,3 @@
-(my-add-to-packages 'web-mode)
-
 (my-after-init
   (my-add-auto-mode-to-patterns 'web-mode
                                 "\\.as[cp]x\\'"

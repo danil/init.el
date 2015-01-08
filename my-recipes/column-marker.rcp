@@ -1,5 +1,3 @@
-(my-add-to-packages 'column-marker)
-
 (autoload 'column-marker-1 "column-marker" nil t)
 
 (my-after-init

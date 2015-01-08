@@ -1,4 +1,3 @@
-(my-add-to-packages 'grizzl)
 ;; (my-after-init
 ;;   (add-hook 'grizzl-mode-hook
 ;;             (lambda ()
