@@ -1,5 +1,3 @@
-(my-add-to-packages 'highlight-parentheses)
-
 (my-after-init
   (my-add-mode-to-hooks 'highlight-parentheses-mode
                          my-programming-modes-hooks))

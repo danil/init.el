@@ -1,5 +1,3 @@
-(my-add-to-packages 'nvm)
-
 (autoload 'nvm-use "nvm" nil t)
 (autoload 'nvm-use-for "nvm" nil t)
 

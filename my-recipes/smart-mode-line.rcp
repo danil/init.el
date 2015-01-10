@@ -1,21 +1,11 @@
-(my-add-to-packages 'dash 'rich-minority)
-(my-add-to-packages 'smart-mode-line)
-
 (autoload 'sml/setup "smart-mode-line" nil t)
 
 (my-after-init
   (setq sml/theme frame-background-mode)
   (setq sml/no-confirm-load-theme t)
+
   (sml/setup)
-  ;; (custom-set-variables '(sml/read-only-char "R"))
-  (custom-set-faces '(sml/read-only ((((background dark))
-                                      :foreground "red"
-                                      :background "white"
-                                      :weight bold
-                                      )
-                                     (((background light))
-                                      :foreground "red"
-                                      :weight bold))))
+
   (custom-set-faces '(sml/global ((t (:foreground "gray60"
                                                   :inverse-video nil)))))
 
@@ -33,4 +23,5 @@
              ("^~/src/vendor/molinos/" ":SVM:")
              ("^~/src/vendor/avers/" ":SVP:")
              ("^~/src/vendor/johnstudio/" ":SVJ:")))
+
     (add-to-list 'sml/replacer-regexp-list my-path-to-replace)))

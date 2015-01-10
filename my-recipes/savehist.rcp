@@ -2,6 +2,7 @@
 ;;; <http://emacswiki.org/SessionManagement>.
 (my-after-init
   (savehist-mode t)
+
   (my-eval-after-load 'savehist
     (setq savehist-additional-variables '(compile-command
                                           kill-ring

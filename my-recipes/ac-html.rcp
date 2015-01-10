@@ -1,6 +1,3 @@
-(my-add-to-packages 'ac-html)
-(my-add-to-packages 'auto-complete)
-
 (my-after-init
   ;; Html in web-mode.
   (my-add-mode-to-hooks (lambda ()

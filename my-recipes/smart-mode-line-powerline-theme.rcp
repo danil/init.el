@@ -1,2 +1,0 @@
-(my-add-to-packages 'smart-mode-line powerline)
-(my-add-to-packages 'smart-mode-line-powerline-theme)

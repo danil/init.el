@@ -1,8 +1,6 @@
-(my-add-to-packages 'coffee-mode)
-
-(my-add-auto-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
-
 (my-after-init
+  (my-add-auto-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
+
   (custom-set-variables '(coffee-tab-width 2))
 
   (my-eval-after-load 'coffee-mode

@@ -1,5 +1,3 @@
-(my-add-to-packages 'expand-region)
-
 (my-after-init
   (my-autoload-file-on-functions "expand-region"
                                  'er/expand-region

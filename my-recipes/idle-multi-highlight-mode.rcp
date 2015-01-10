@@ -1,5 +1,3 @@
-(my-add-to-packages 'idle-multi-highlight-mode)
-
 (custom-set-variables
  '(idle-multi-highlight-idle-time 0.7))
 

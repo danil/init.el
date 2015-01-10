@@ -1,4 +1,2 @@
-(my-add-to-packages 'autopair)
-
 (my-after-init
   (my-add-mode-to-hooks my-programming-modes-hooks))

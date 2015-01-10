@@ -1,9 +1,10 @@
-(my-add-to-packages 'indent-guide)
-
-(my-add-mode-to-hooks 'indent-guide-mode my-programming-modes-hooks)
-
 (my-after-init
+  (my-add-mode-to-hooks 'indent-guide-mode
+                        (-difference my-programming-modes-hooks
+                                     '(org-mode-hook text-mode-hook)))
+
   (my-eval-after-load 'indent-guide
     (set-face-foreground 'indent-guide-face "slateblue")
+
     (setq indent-guide-char "\u00B7") ;"·" - interpunct or middle dot or middot
     (setq indent-guide-delay 0.7)))
