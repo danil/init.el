@@ -318,7 +318,7 @@
                          ("melpa" . "http://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("SC"   . "http://joseito.republika.pl/sunrise-commander/")))
+                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
