@@ -1,3 +1,5 @@
+(autoload 'kill-ring-ido "kill-ring-ido" nil t)
+
 (my-after-init
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)
 
