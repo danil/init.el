@@ -1,7 +1,5 @@
 ;;; Multi Web Mode
 ;;; <http://www.emacswiki.org/emacs/MultipleModes#toc4>.
-(my-add-to-packages 'multi-web-mode)
-
 (my-after-init
   (multi-web-global-mode t)
   (my-eval-after-load 'multi-web-mode

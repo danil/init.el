@@ -1,0 +1,5 @@
+(custom-set-variables
+ '(sql-postgres-login-params (quote ((user :default "danil")
+                                     (database :default "danil")
+                                     (port :default 5432)
+                                     server))))

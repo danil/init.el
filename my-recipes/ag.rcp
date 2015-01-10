@@ -1,5 +1,3 @@
-(my-add-to-packages 'ag)
-
 (global-set-key (my-kbd "f s s") 'ag)
 (global-set-key (my-kbd "f s r") 'ag-regexp)
 (global-set-key (my-kbd "f p s") 'ag-dired)
@@ -7,7 +5,6 @@
 (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
 
 (my-after-init
-  (my-hooks-with-truncate-lines 'ag-mode-hook)
   (my-eval-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")

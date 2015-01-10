@@ -1,6 +1,3 @@
-(my-add-to-packages 'auto-complete 'cider)
-(my-add-to-packages 'ac-cider)
-
 (my-after-init
   (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
   (add-hook 'cider-mode-hook 'ac-cider-setup)

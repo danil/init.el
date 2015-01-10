@@ -1,5 +1,3 @@
-(my-add-to-packages 'less)
-
 ;; (global-set-key (kbd "M-v") 'less-scroll-down-line)
 ;; (global-set-key (kbd "C-v") 'less-scroll-up-line)
 ;; (global-set-key (kbd "M-p") 'scroll-down-command)
@@ -17,6 +15,7 @@
                   (not (delq nil (mapcar (lambda (regex)
                                            (string-match regex my-file-name))
                                          '(
+                                           "^COMMIT_EDITMSG$"
                                            "^\\.loaddefs\\.el$"
                                            "autoloads\\.el$"
                                            )))))
@@ -31,6 +30,7 @@
                  )
          (less-minor-mode-on))))
    '(clojure-mode-hook
+     diff-mode-hook
      emacs-lisp-mode-hook))
 
   ;; (my-eval-after-load 'less
@@ -43,6 +43,7 @@
   ;;   (global-set-key (kbd "M-S-v") 'scroll-down-command)
   ;;   (global-set-key (kbd "C-S-v") 'scroll-up-command))
   (global-set-key (my-kbd "C-f") 'my-less-minor-mode-toggle)
+
   (my-eval-after-load 'less
     (define-key less-minor-mode-map (kbd "G") nil)
     (define-key less-minor-mode-map (kbd "SPC") nil)

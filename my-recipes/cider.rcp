@@ -1,6 +1,3 @@
-(my-add-to-packages 'dash 'queue 'clojure-mode 'pkg-info)
-(my-add-to-packages 'cider)
-
 (custom-set-variables '(cider-mode-line " cider"))
 
 (my-after-init

@@ -2,6 +2,7 @@
 
 (my-after-init
   (ido-mode 'both) ;for buffers and files
+
   (custom-set-variables '(ido-max-window-height 25))
   ;; (custom-set-variables '(ido-decorations
   ;;                         '( "{ " " }"

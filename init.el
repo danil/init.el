@@ -5,7 +5,7 @@
 
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
-(set-default 'truncate-lines nil) ;wrap long lines
+(set-default 'truncate-lines t) ;wrap long lines
 
 (setq calendar-week-start-day t)
 (setq system-time-locale "C")
@@ -25,6 +25,7 @@
 (setq my-safe-modes-hooks '(
                             ;; mail-mode-hook
                             ;; whitespace-mode-hook
+                            autoconf-mode-hook
                             awk-mode-hook
                             c-mode-hook
                             change-log-mode-hook
@@ -72,198 +73,265 @@
                                          '(clojure-mode-hook
                                            emacs-lisp-mode-hook)))
 
-(setq my-read-only-modes-hooks  (append my-safe-modes-hooks
-                                        '(
-                                          Info-mode-hook
-                                          Man-mode-hook
-                                          ag-mode-hook
-                                          cider-stacktrace-mode-hook
-                                          compilation-mode-hook
-                                          dired-mode-hook
-                                          help-mode-hook
-                                          ibuffer-mode-hook
-                                          magit-branch-manager-mode-hook
-                                          magit-commit-mode-hook
-                                          magit-diff-mode-hook
-                                          magit-log-mode-hook
-                                          magit-process-mode-hook
-                                          magit-status-mode-hook
-                                          occur-mode-hook
-                                          )))
+(setq my-read-only-modes-hooks (append my-safe-modes-hooks
+                                       '(
+                                         Info-mode-hook
+                                         Man-mode-hook
+                                         ag-mode-hook
+                                         cider-stacktrace-mode-hook
+                                         compilation-mode-hook
+                                         dired-mode-hook
+                                         help-mode-hook
+                                         ibuffer-mode-hook
+                                         magit-branch-manager-mode-hook
+                                         magit-commit-mode-hook
+                                         magit-diff-mode-hook
+                                         magit-log-mode-hook
+                                         magit-process-mode-hook
+                                         magit-status-mode-hook
+                                         occur-mode-hook
+                                         )))
 
-;;; My packages (el-get <http://github.com/dimitri/el-get>).
+(defun my-kbd (key) (kbd (concat "C-c C-f " key)))
+
+;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
+(defmacro my-after-init (&rest body)
+  "After loading all the init files, evaluate BODY."
+  (declare (indent defun))
+  `(add-hook 'after-init-hook
+             '(lambda () ,@body)))
+
+(defmacro my-eval-after-load (feature &rest body)
+  "After FEATURE is loaded, evaluate BODY."
+  (declare (indent defun))
+  `(eval-after-load ,feature
+     '(progn ,@body)))
+
+;; (defmacro my-eval-if-defined-or-after-load (symbol feature &rest body)
+;;   "If function SYMBOL definded or variable SYMBOL defined or after
+;;  FEATURE is loaded, evaluate BODY."
+;;   (declare (indent defun))
+;;   ;; (if (or (fboundp 'js-mode-map) (boundp 'js-mode-map))
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)
+;;   ;;   (with-eval-after-load 'js
+;;   ;;     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl)))
+;; )
+
+(defun my-add-auto-mode-to-patterns (mode &rest patterns)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (pattern patterns)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+(defun my-add-pattern-to-auto-modes (pattern &rest modes)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (mode modes)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+(defun my-add-mode-to-hooks (mode hooks)
+  "Add `MODE' to all given `HOOKS'."
+  (dolist (hook hooks) (add-hook hook mode)))
+
+(defun my-autoload-file-on-functions (file-name &rest functions)
+  "Autoload `file-name' if one of the given `functions' called."
+  (dolist (function-name functions)
+    (autoload function-name file-name nil t)))
+
+(setq my-elpa-packages ())
+
+(defun my-elpa (packages)
+  (dolist (package packages) (add-to-list 'my-elpa-packages package)))
+
+(my-elpa '(apache-mode))
+(my-elpa '(auto-complete-nxml))
+(my-elpa '(browse-kill-ring))
+(my-elpa '(crontab-mode))
+(my-elpa '(csv-mode))
+(my-elpa '(dash))
+(my-elpa '(findr))
+(my-elpa '(gitconfig-mode))
+(my-elpa '(jade-mode))
+(my-elpa '(less-css-mode))
+(my-elpa '(sass-mode))
+
+(setq my-el-get-packages ())
+
+(defun my-el-get (packages)
+  (dolist (package packages) (add-to-list 'my-el-get-packages package)))
+
+(my-el-get '(auto-complete-emacs-lisp))
+(my-el-get '(auto-complete-etags))
+(my-el-get '(ebuild-mode))
+
+(setq my-recipes ())
+
+(defun my-recipes (recipes)
+  (dolist (recipe recipes) (add-to-list 'my-recipes recipe)))
+
+(my-recipes '(ag)) (my-elpa '(ag))
+(my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
+(my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
+(my-recipes '(bash-completion)) (my-elpa '(bash-completion))
+(my-recipes '(calendar))
+(my-recipes '(cc-vars))
+(my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
+(my-recipes '(coffee-mode)) (my-elpa '(coffee-mode))
+(my-recipes '(column-marker)) (my-elpa '(column-marker))
+(my-recipes '(compile))
+(my-recipes '(conf-mode))
+(my-recipes '(css))
+(my-recipes '(deft)) (my-elpa '(deft))
+(my-recipes '(desktop))
+(my-recipes '(diff-mode))
+(my-recipes '(dired dired-reuse-directory-buffer))
+(my-recipes '(dired direx)) (my-elpa '(direx))
+(my-recipes '(discover-my-major)) (my-elpa '(discover-my-major))
+(my-recipes '(disp-table))
+(my-recipes '(dockerfile-mode)) (my-elpa '(dockerfile-mode))
+(my-recipes '(ediff))
+(my-recipes '(emacs-lisp-mode))
+(my-recipes '(env))
+(my-recipes '(erise)) (my-el-get '(erise))
+(my-recipes '(etags-select)) (my-elpa '(etags-select))
+(my-recipes '(ethan-wspace)) (my-elpa '(ethan-wspace))
+(my-recipes '(expand-region)) (my-elpa '(expand-region))
+(my-recipes '(ferm-mode)) (my-el-get '(ferm-mode))
+(my-recipes '(files))
+(my-recipes '(files-backup))
+(my-recipes '(fill))
+(my-recipes '(fiplr)) (my-elpa '(fiplr))
+(my-recipes '(fish-mode)) (my-elpa '(fish-mode))
+(my-recipes '(git-gutter)) (my-elpa '(git-gutter))
+(my-recipes '(git-timemachine)) (my-elpa '(git-timemachine))
+(my-recipes '(gitignore-mode)) (my-elpa '(gitignore-mode))
+(my-recipes '(haml-mode)) (my-elpa '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
+(my-recipes '(helm helm-ag)) (my-elpa '(helm-ag))
+(my-recipes '(helm helm-descbinds)) (my-elpa '(helm-descbinds))
+(my-recipes '(helm helm-git-grep)) (my-elpa '(helm-git-grep))
+(my-recipes '(helm helm-ls-git)) (my-elpa '(helm-ls-git))
+(my-recipes '(helm helm-swoop)) (my-elpa '(helm-swoop))
+(my-recipes '(help))
+(my-recipes '(help-mode))
+(my-recipes '(hi-lock))
+(my-recipes '(hideshow))
+(my-recipes '(highlight-current-line))
+(my-recipes '(highlight-symbol)) (my-elpa '(highlight-symbol))
+(my-recipes '(ibuffer))
+(my-recipes '(ido ido-preview)) (my-el-get '(ido-preview))
+(my-recipes '(ido ido-ubiquitous)) (my-elpa '(ido-ubiquitous))
+(my-recipes '(ido ido-vertical-mode)) (my-elpa '(ido-vertical-mode))
+(my-recipes '(ido ido-yes-or-no)) (my-el-get '(ido-yes-or-no))
+(my-recipes '(ido kill-ring-ido)) (my-elpa '(kill-ring-ido))
+(my-recipes '(ido recentf recentf-ido-find-file))
+(my-recipes '(ielm))
+(my-recipes '(indent))
+(my-recipes '(indent-guide)) (my-elpa '(indent-guide))
+(my-recipes '(info))
+(my-recipes '(interprogram))
+(my-recipes '(isearch))
+(my-recipes '(js-mode js2-mode)) (my-elpa '(js2-mode))
+(my-recipes '(json-mode json-reformat)) (my-elpa '(json-mode json-reformat))
+(my-recipes '(kill-emacs))
+(my-recipes '(kill-ring))
+(my-recipes '(linum linum-format))
+(my-recipes '(lisp-mode))
+(my-recipes '(lua-mode)) (my-elpa '(lua-mode))
+(my-recipes '(magit magit-blame)) (my-elpa '(magit))
+(my-recipes '(make-mode))
+(my-recipes '(markdown-mode)) (my-elpa '(markdown-mode))
+(my-recipes '(multiple-cursors)) (my-elpa '(multiple-cursors))
+(my-recipes '(my-backspace-fix))
+(my-recipes '(my-beginning-of-line))
+(my-recipes '(my-color-theme))
+(my-recipes '(my-project))
+(my-recipes '(my-tags))
+(my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
+(my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
+(my-recipes '(nvm)) (my-elpa '(nvm))
+(my-recipes '(occur-mode))
+(my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
+(my-recipes '(org-mode)) (my-elpa '(org))
+(my-recipes '(paren))
+(my-recipes '(password-cache))
+(my-recipes '(point-stack)) (my-elpa '(point-stack))
+(my-recipes '(pomohist))
+(my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
+(my-recipes '(quickrun)) (my-elpa '(quickrun))
+(my-recipes '(rainbow-delimiters)) (my-elpa '(rainbow-delimiters))
+(my-recipes '(rainbow-mode)) (my-elpa '(rainbow-mode))
+(my-recipes '(rbenv)) (my-elpa '(rbenv))
+(my-recipes '(re-builder))
+(my-recipes '(recentf))
+(my-recipes '(ruby-mode rinari)) (my-elpa '(rinari))
+(my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(ruby-hash-syntax rspec-mode))
+(my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
+(my-recipes '(ruby-mode ruby-refactor)) (my-elpa '(ruby-refactor))
+(my-recipes '(ruby-mode ruby-tools)) (my-elpa '(ruby-tools))
+(my-recipes '(ruby-mode)) (my-elpa '(ruby-hash-syntax))
+(my-recipes '(savehist))
+(my-recipes '(saveplace))
+(my-recipes '(scss-mode)) (my-elpa '(scss-mode))
+(my-recipes '(sgml-mode))
+(my-recipes '(sh-script))
+(my-recipes '(shell))
+(my-recipes '(simp)) (my-elpa '(simp))
+(my-recipes '(simple))
+(my-recipes '(smart-mode-line rich-minority)) (my-elpa '(smart-mode-line rich-minority))
+(my-recipes '(smex)) (my-elpa '(smex))
+(my-recipes '(sort))
+(my-recipes '(sql-postgres))
+(my-recipes '(subword-mode))
+(my-recipes '(undo-tree)) (my-elpa '(undo-tree))
+(my-recipes '(uniquify))
+(my-recipes '(web-mode)) (my-elpa '(web-mode))
+(my-recipes '(window))
+(my-recipes '(window-numbering)) (my-elpa '(window-numbering))
+(my-recipes '(winner-mode))
+(my-recipes '(yaless-mode))
+(my-recipes '(yaml-mode)) (my-elpa '(yaml-mode))
+(my-recipes '(yascroll)) (my-elpa '(yascroll))
+(my-recipes '(yasnippet yasnippets)) (my-elpa '(yasnippet)) (my-el-get '(yasnippets))
+
+;;; Install/remove El-get packages <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
+
 (add-to-list 'el-get-recipe-path
              (concat user-emacs-directory "my-el-get/recipes"))
 ;; (setq el-get-user-package-directory
 ;;       (concat user-emacs-directory "my-el-get/init-files"))
-(setq my-packages (append (mapcar 'el-get-source-name el-get-sources)))
 
-;;; My recipes.
-(dolist (recipe '(
-                  "my-recipe-helpers"
-                  "ag"
-                  "ac-html"
-                  "apache-mode"
-                  "auto-complete"
-                  "auto-complete-chunk"
-                  "auto-complete-emacs-lisp"
-                  "auto-complete-etags"
-                  "auto-complete-nxml"
-                  "bash-completion"
-                  "browse-kill-ring"
-                  "calendar"
+(let ((packages (append (mapcar 'el-get-source-name el-get-sources)
+                        my-el-get-packages)))
+  (el-get-cleanup packages) ;remove all packages absent from `packages'
+  (el-get 'sync packages))
 
-                  ;; Clojure.
-                  "cider" ;clojure-mode dependency ;manual upgrade
-                  "clojure-mode" ;manual upgrade
-                  "smartparens"
+;;; Install/remove ELPA packages
+;;; <http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312>.
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
 
-                  "cc-vars"
-                  "coffee-mode"
-                  "column-marker"
-                  "conf-mode"
-                  "crontab-mode"
-                  "css"
-                  "csv-mode"
-                  "deft"
-                  "desktop"
-                  "diff-mode"
-                  "dired"
-                  "dired-reuse-directory-buffer"
-                  "direx"
-                  "discover-my-major"
-                  "disp-table"
-                  "dockerfile-mode"
-                  "ebuild-mode"
-                  "ediff"
-                  "emacs-lisp-mode"
-                  "env"
-                  "erise"
-                  "etags-select"
-                  "ethan-wspace"
-                  "expand-region"
-                  "ferm-mode"
-                  "files"
-                  "files-backup"
-                  "fill"
-                  "findr"
-                  "fiplr"
-                  "fish-mode"
-                  "git-commit-mode"
-                  "git-gutter"
-                  "git-modes"
-                  "git-timemachine"
-                  "gitignore-mode"
-                  "haml-mode"
-                  "helm"
-                  "helm-ag"
-                  "helm-descbinds"
-                  "helm-git-grep"
-                  "helm-ls-git"
-                  "helm-swoop"
-                  "help"
-                  "hi-lock"
-                  "hideshow"
-                  "highlight-current-line"
-                  "highlight-symbol"
-                  "ibuffer"
-                  "ido"
-                  "ido-preview"
-                  "ido-ubiquitous"
-                  "ido-vertical-mode"
-                  "ido-yes-or-no"
-                  "indent"
-                  "indent-guide"
-                  "info"
-                  "interprogram"
-                  "isearch"
-                  "jade-mode"
-                  "js-mode"
-                  "js2-mode"
-                  "json-mode"
-                  "json-reformat"
-                  "kill-emacs"
-                  "kill-ring"
-                  "kill-ring-ido"
-                  "less"
-                  "less-css-mode"
-                  "linum"
-                  "linum-format"
-                  "lisp-mode"
-                  "lua-mode"
-                  "magit"
-                  "magit-blame"
-                  "markdown-mode"
-                  "multiple-cursors"
-                  "my-backspace-fix"
-                  "my-beginning-of-line"
-                  "my-color-theme"
-                  "my-project"
-                  "my-tags"
-                  "nginx-mode"
-                  "nodejs-repl"
-                  "nvm"
-                  "occur-mode"
-                  "org-mode" ;manual upgrade
-                  "org-reveal"
-                  "paren"
-                  "password-cache"
-                  "point-stack"
-                  "pomohist"
-                  "pretty-lambdada"
-                  "quickrun"
-                  "rainbow-delimiters"
-                  "rainbow-mode"
-                  "rbenv"
-                  "re-builder"
-                  "recentf"
-                  "recentf-ido-find-file"
-                  "rich-minority"
-                  "rinari"
-                  "rspec-compilation-mode"
-                  "rspec-mode"
-                  "ruby-hash-syntax"
-                  "ruby-mode"
-                  "ruby-pry"
-                  "ruby-refactor"
-                  "ruby-tools"
-                  "sass-mode"
-                  "savehist"
-                  "saveplace"
-                  "scss-mode"
-                  "sgml-mode"
-                  "sh-script"
-                  "sieve-mode"
-                  "simp"
-                  "simple"
-                  "smart-mode-line"
-                  "smex"
-                  "sort"
-                  "subword-mode"
-                  "text-mode"
-                  "undo-tree"
-                  "uniquify"
-                  "web-mode"
-                  "window"
-                  "window-numbering"
-                  "winner-mode"
-                  "yaml-mode"
-                  "yascroll"
-                  "yasnippet"
-                  "yasnippets"
-                  ))
-  (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
+(package-initialize) ;activate all the packages (in particular autoloads)
 
-;;; Install/remove my packages (see above).
-(el-get-cleanup my-packages) ;remove all packages absent from `my-packages'
-(el-get 'sync my-packages)
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents)) ;fetch the list of packages available
+
+(dolist (package my-elpa-packages)
+  (unless (package-installed-p package)
+    (package-install package))) ;install the missing packages
+
+;;; Load my recipes.
+(autoload '-difference "dash" nil t)
+(dolist (recipe my-recipes)
+  (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.

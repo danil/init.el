@@ -1,6 +1,3 @@
-(my-add-to-packages 'popup 'fuzzy)
-(my-add-to-packages 'auto-complete)
-
 (my-after-init
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
@@ -23,6 +20,7 @@
                                            "my-auto-complete/dict")
                                    default-directory))
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+                    autoconf-mode
                     awk-mode
                     c-mode
                     cider-mode
@@ -35,6 +33,7 @@
                     conf-unix-mode
                     conf-xdefaults-mode
                     css-mode
+                    diff-mode
                     dockerfile-mode
                     ebuild-mode
                     emacs-lisp-mode

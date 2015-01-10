@@ -1,4 +1,3 @@
-(my-add-to-packages 'point-stack)
 (my-after-init
   (global-set-key (my-kbd "m p h s") 'point-stack-push)
   (global-set-key (my-kbd "m p h b") 'my-point-stack-pop-with-repeat)

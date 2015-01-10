@@ -1,6 +1,3 @@
-(my-add-to-packages 'helm)
-(my-add-to-packages 'helm-swoop)
-
 (my-after-init
   (global-set-key (my-kbd "m h f s") 'my-helm-swoop))
 

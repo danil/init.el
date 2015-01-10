@@ -1,6 +1,8 @@
 (my-after-init
   (custom-set-variables '(winner-dont-bind-my-keys t))
+
   (when (fboundp 'winner-mode) (winner-mode t))
+
   (my-eval-after-load 'winner
     (global-set-key (my-kbd "w u") 'my-winner-undo)
     (global-set-key (my-kbd "w r") 'my-winner-redo)))

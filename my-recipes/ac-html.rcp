@@ -1,9 +1,7 @@
-(my-add-to-packages 'ac-html)
-(my-add-to-packages 'auto-complete)
-
 (my-after-init
   ;; Html in web-mode.
   (my-add-mode-to-hooks (lambda ()
+                          (require 'ac-haml)
                           (dolist (my-sources '(ac-source-html-attribute-value
                                                 ac-source-html-tag
                                                 ac-source-html-attribute))
