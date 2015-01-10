@@ -141,7 +141,6 @@
 (defun my-elpa (packages)
   (dolist (package packages) (add-to-list 'my-elpa-packages package)))
 
-;; (my-elpa '(package-safe-delete))
 (my-elpa '(apache-mode))
 (my-elpa '(auto-complete-nxml))
 (my-elpa '(browse-kill-ring))
