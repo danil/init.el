@@ -285,7 +285,7 @@
 (my-recipes '(uniquify))
 (my-recipes '(web-mode)) (my-elpa '(web-mode))
 (my-recipes '(window))
-(my-recipes '(window-numbering)) (my-el-get '(window-numbering))
+(my-recipes '(window-numbering)) (my-elpa '(window-numbering))
 (my-recipes '(winner-mode))
 (my-recipes '(yaless-mode))
 (my-recipes '(yaml-mode)) (my-elpa '(yaml-mode))
