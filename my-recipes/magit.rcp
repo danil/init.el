@@ -16,6 +16,7 @@
     ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
     (setq magit-completing-read-function 'magit-ido-completing-read)
 
+    (define-key magit-commit-mode-map (kbd "C-c C-f") nil)
     (define-key magit-diff-mode-map (kbd "C-c C-f") nil))
 
   (add-hook
