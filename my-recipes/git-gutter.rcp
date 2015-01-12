@@ -1,5 +1,3 @@
-(my-add-to-packages 'git-gutter)
-
 (global-set-key (my-kbd "v h k") 'git-gutter:revert-hunk)
 (global-set-key (my-kbd "v h n") 'my-git-gutter-next-diff)
 (global-set-key (my-kbd "v h p") 'my-git-gutter-previous-diff)

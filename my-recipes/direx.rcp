@@ -1,4 +1,3 @@
-(my-add-to-packages 'direx)
 (my-after-init
   (global-set-key (kbd "C-x d") 'my-dired))
 

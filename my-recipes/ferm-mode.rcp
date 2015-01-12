@@ -1,5 +1,3 @@
-(my-add-to-packages 'ferm-mode)
-
 (autoload 'ferm-mode "ferm-mode" nil t)
 
 (my-after-init

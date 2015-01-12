@@ -1,6 +1,7 @@
 *#
 *.#*
 *~
+.cask/
 .mc-lists.el
 ac-comphist.dat
 el-get/

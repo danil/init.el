@@ -1,5 +1,3 @@
-(my-add-to-packages 'quickrun)
-
 (my-after-init
   (global-set-key (my-kbd "! b") 'my-quickrun)
   (global-set-key (my-kbd "! r") 'my-quickrun-region)

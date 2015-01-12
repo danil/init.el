@@ -1,6 +1,3 @@
-(my-add-to-packages 'noflet)
-(my-add-to-packages 'ido-preview)
-
 (add-hook 'ido-setup-hook
   (lambda ()
     ;; (define-key ido-completion-map (kbd "C-M-p")

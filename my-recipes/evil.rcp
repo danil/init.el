@@ -1,0 +1,20 @@
+(my-after-init
+  (custom-set-variables '(evil-auto-indent nil)
+                        '(evil-shift-width 2)
+                        '(evil-toggle-key (my-kbd "C-f")))
+
+  (evil-mode 1)
+
+  (loop for (mode . state) in '(
+                                (ag-mode . emacs)
+                                (eshell-mode . emacs)
+                                (inferior-emacs-lisp-mode . emacs)
+                                (inferior-python-mode . emacs)
+                                (inferior-scheme-mode . emacs)
+                                (org-mode . emacs)
+                                (shell-mode . emacs)
+                                (slime-repl-mode . emacs)
+                                (term-mode . emacs)
+                                (wdired-mode . emacs)
+                                )
+        do (evil-set-initial-state mode state)))

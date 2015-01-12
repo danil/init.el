@@ -1,6 +1,3 @@
-(my-add-to-packages 'auto-complete)
-(my-add-to-packages 'auto-complete-css)
-
 (autoload 'ac-css-setup "auto-complete-css" nil t)
 
 (my-after-init

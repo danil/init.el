@@ -1,5 +1,3 @@
-(my-add-to-packages 'cl-lib 'git-modes)
-(my-add-to-packages 'magit)
 (my-after-init
   (global-set-key (my-kbd "v l L") 'magit-log-long)
   (global-set-key (my-kbd "v l f") 'magit-file-log)
@@ -7,12 +5,20 @@
   (global-set-key (my-kbd "v s s") 'magit-status)
   (global-set-key (my-kbd "v s f") 'magit-show)
   (global-set-key (my-kbd "v s c") 'magit-show-commit)
+
   (my-eval-after-load 'magit
     (define-key magit-mode-map (my-kbd "v s s 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (my-kbd "v s s 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (my-kbd "v s s 3") 'magit-show-level-3-all)
     (define-key magit-mode-map (my-kbd "v s s 4") 'magit-show-level-4-all)
-    (setq magit-completing-read-function 'magit-ido-completing-read)) ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
+
+    ;; Use ido to look for branches
+    ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
+    (setq magit-completing-read-function 'magit-ido-completing-read)
+
+    (define-key magit-commit-mode-map (kbd "C-c C-f") nil)
+    (define-key magit-diff-mode-map (kbd "C-c C-f") nil))
+
   (add-hook
    'magit-mode-hook
    (lambda ()

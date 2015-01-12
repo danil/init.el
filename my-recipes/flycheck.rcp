@@ -1,5 +1,2 @@
-(my-add-to-packages 's 'dash 'cl-lib 'f 'pkg-info)
-(my-add-to-packages 'flycheck)
-
 (my-after-init
   (my-add-mode-to-hooks 'flycheck-mode my-programming-modes-hooks))

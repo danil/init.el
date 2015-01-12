@@ -1,4 +1,3 @@
-(my-add-to-packages 'readline-complete)
 (my-after-init
   (setq explicit-shell-file-name "bash")
   (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))

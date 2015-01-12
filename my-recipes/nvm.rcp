@@ -1,3 +1,8 @@
-(my-add-to-packages 'nvm)
 (autoload 'nvm-use "nvm" nil t)
-;; (nvm-use "0.10")
+(autoload 'nvm-use-for "nvm" nil t)
+
+(my-after-init
+  ;; (nvm-use "0.11")
+
+  ;; Use Node.js version from ~/.nvmrc
+  (nvm-use-for))

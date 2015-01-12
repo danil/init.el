@@ -1,5 +1,3 @@
-(my-add-to-packages 'company-mode)
-
 (my-add-mode-to-hooks 'company-mode my-programming-modes-hooks)
 
 (custom-set-variables

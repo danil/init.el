@@ -3,6 +3,7 @@
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (my-after-init
   (my-backspace-fix)
+
   (my-eval-after-load 'term-mode (my-backspace-fix)))
 
 (defun my-backspace-fix ()

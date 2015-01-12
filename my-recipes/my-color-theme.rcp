@@ -1,14 +1,18 @@
 ;;; My color theme.
 ;;; Color light and dark themes toggle
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
+
 ;; (setq frame-background-mode 'light)
 (setq frame-background-mode 'dark)
+
 (defface my-default '((t :inherit default))
   "Face name to use for my customization."
   :group 'my-default)
+
 (set-face-attribute 'header-line nil :inherit nil)
 ;; (set-face-background 'region nil)
 ;; (set-background-color "#0f0f0f")
+
 (set-cursor-color "red") ;#aa0000
 
 (defface helm-selection

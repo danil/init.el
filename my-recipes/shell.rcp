@@ -1,0 +1,3 @@
+(my-after-init
+  (my-eval-after-load 'shell
+    (define-key shell-mode-map (kbd "C-c C-f") nil)))

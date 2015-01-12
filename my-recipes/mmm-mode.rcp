@@ -1,4 +1,3 @@
-(my-add-to-packages 'mmm-mode)
 (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t)
 
 (my-after-init
