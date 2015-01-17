@@ -1,6 +1,10 @@
 Emacs configs
 =============
 
+My emacs config separated into recipes files.
+Recipes files loads in `init.el`
+and initialize via hooks or via `eval-after-load`.
+
 Copying
 -------
 
