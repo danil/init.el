@@ -335,7 +335,6 @@
 (dolist (recipe my-recipes)
   (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
 
-(transient-mark-mode 1) ;Transient Mark mode <http://emacswiki.org/TransientMarkMode>
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
