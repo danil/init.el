@@ -5,6 +5,14 @@ My emacs configuration separated into recipes files.
 Recipes files loads in `init.el`
 and initialize via hooks or via `eval-after-load`.
 
+Features
+--------
+
+* [KISS][]
+* 100% usable in terminal
+
+[KISS]: http://en.wikipedia.org/wiki/KISS_principle
+
 Copying
 -------
 
