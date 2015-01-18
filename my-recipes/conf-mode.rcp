@@ -55,4 +55,7 @@
                                 "\\world\\'")
 
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
-  (my-add-auto-mode-to-patterns 'conf-colon-mode "/rsyncd.secrets\\'"))
+
+  (my-add-auto-mode-to-patterns 'conf-colon-mode
+                                "/rsyncd.secrets\\'"
+                                "\\.pgpass\\'"))

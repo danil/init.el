@@ -4,6 +4,6 @@
   (global-set-key (my-kbd "b l t") 'toggle-truncate-lines)
   (global-set-key (my-kbd "r c l") 'count-lines-region)
 
-  ;; Column number mode
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
-  (setq column-number-mode t))
+  (setq column-number-mode t) ;column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
+  (transient-mark-mode t) ;transient mark mode <http://emacswiki.org/TransientMarkMode>
+  )

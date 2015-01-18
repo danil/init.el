@@ -238,11 +238,13 @@
 (my-recipes '(magit magit-blame)) (my-elpa '(magit))
 (my-recipes '(make-mode))
 (my-recipes '(markdown-mode)) (my-elpa '(markdown-mode))
+(my-recipes '(menu-bar))
 (my-recipes '(multiple-cursors)) (my-elpa '(multiple-cursors))
 (my-recipes '(my-backspace-fix))
 (my-recipes '(my-beginning-of-line))
 (my-recipes '(my-color-theme))
 (my-recipes '(my-project))
+(my-recipes '(my-repeat-last-key-command))
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
@@ -333,34 +335,6 @@
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
   (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
-
-;;; Setting key with repeat
-;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
-(defmacro my-with-repeat-while-press-last-key (&rest body)
-  "Execute BODY and repeat while the user presses the last key."
-  (declare (indent 0))
-  `(let* ((repeat-key (and (> (length (this-single-command-keys)) 1)
-                           last-input-event))
-          (repeat-key-str (format-kbd-macro (vector repeat-key) nil)))
-     ,@body
-     (while repeat-key
-       (message "Type %s to repeat again" repeat-key-str)
-       (let ((event (read-event)))
-         (clear-this-command-keys t)
-         (if (equal event repeat-key)
-             (progn ,@body
-                    (setq last-input-event nil))
-           (setq repeat-key nil)
-           (push last-input-event unread-command-events))))))
-
-(transient-mark-mode 1) ;Transient Mark mode <http://emacswiki.org/TransientMarkMode>
-;(set-keyboard-coding-system 'mule-utf-8)
-;(set-default-coding-systems 'utf-8)
-;(set-terminal-coding-system 'utf-8)
-;(modify-coding-system-alist 'file "/home/danil/src/vendor/prohq/avers/" 'utf-8)
-;(set-language-environment 'cyrillic-koi8)
-
-(menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
