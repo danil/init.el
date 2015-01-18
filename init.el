@@ -238,6 +238,7 @@
 (my-recipes '(magit magit-blame)) (my-elpa '(magit))
 (my-recipes '(make-mode))
 (my-recipes '(markdown-mode)) (my-elpa '(markdown-mode))
+(my-recipes '(menu-bar))
 (my-recipes '(multiple-cursors)) (my-elpa '(multiple-cursors))
 (my-recipes '(my-backspace-fix))
 (my-recipes '(my-beginning-of-line))
@@ -334,14 +335,6 @@
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
   (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
-
-;(set-keyboard-coding-system 'mule-utf-8)
-;(set-default-coding-systems 'utf-8)
-;(set-terminal-coding-system 'utf-8)
-;(modify-coding-system-alist 'file "/home/danil/src/vendor/prohq/avers/" 'utf-8)
-;(set-language-environment 'cyrillic-koi8)
-
-(menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
