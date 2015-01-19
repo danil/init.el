@@ -4,10 +4,10 @@
   (my-eval-after-load 'clojure-mode
     (define-key clojure-mode-map (my-kbd "C-f") 'clojure-yaless-mode-on)))
 
-(defun clojure-yaless-mode-on ()
-  (interactive)
+(defun clojure-yaless-mode-on (&optional arg)
+  (interactive "P")
 
-  (when (and (buffer-file-name))
+  (when (and (not arg) (buffer-file-name))
     (call-interactively 'save-buffer)
     (cider-load-buffer))
 

@@ -1,10 +1,22 @@
 Emacs configs
 =============
 
+My emacs configuration separated into recipes files.  
+Recipes files loads in `init.el`
+and initialize via hooks or via `eval-after-load`.
+
+Features
+--------
+
+* [KISS][]
+* 100% usable in terminal
+
+[KISS]: http://en.wikipedia.org/wiki/KISS_principle
+
 Copying
 -------
 
-Copyright (C) 2014 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2014, 2015 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

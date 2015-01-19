@@ -1,0 +1,2 @@
+(set-default-coding-systems 'utf-8)
+(set-language-environment 'cyrillic-koi8)
