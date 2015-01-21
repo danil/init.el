@@ -7,11 +7,13 @@
 
 (defun my-quickrun (&optional arg)
   (interactive "P")
+
   (if (equal arg '(4)) ;universal-argument <http://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html>, <http://www.gnu.org/software/emacs/manual/html_node/emacs/Arguments.html>
-      (quickrun-with-arg)
-    (quickrun)))
+      (call-interactively 'quickrun-with-arg)
+    (call-interactively 'quickrun)))
 
 (defun my-quickrun-region (&optional arg)
   (interactive "P")
-  (if arg (quickrun-replace-region)
-    (quickrun-region)))
+
+  (if arg (call-interactively 'quickrun-replace-region)
+    (call-interactively 'quickrun-region)))
