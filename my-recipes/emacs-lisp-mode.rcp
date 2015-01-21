@@ -7,10 +7,10 @@
 
 (defun my-eval-buffer ()
   (interactive)
-  (eval-buffer)
-  (message (format "Evaled %s" (buffer-name))))
+  (message (format "Eval: %s" (buffer-name)))
+  (eval-buffer))
 
 (defun my-eval-region (start end)
   (interactive "r")
-  (eval-region start end)
-  (message "Region evaled"))
+  (message "Eval region")
+  (eval-region start end))
