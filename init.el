@@ -152,6 +152,7 @@
 (my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
+(my-elpa '(speed-type))
 
 (setq my-el-get-packages ())
 
