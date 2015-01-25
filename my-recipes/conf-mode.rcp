@@ -30,6 +30,7 @@
                                 "\\.cnf\\'"
                                 "\\.eixrc\\'"
                                 "\\.features\\'" ;cucumber features
+                                "\\.feed2imaprc\\'"
                                 "\\.gtkrc.mine\\'"
                                 "\\.pkla\\'"
                                 "\\.skippyrc\\'"
