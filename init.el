@@ -149,7 +149,6 @@
 (my-elpa '(dash))
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
-(my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
@@ -162,16 +161,19 @@
 (my-el-get '(auto-complete-emacs-lisp))
 (my-el-get '(auto-complete-etags))
 (my-el-get '(ebuild-mode))
+(my-el-get '(jade-mode))
 
 (setq my-recipes ())
 
 (defun my-recipes (recipes)
   (dolist (recipe recipes) (add-to-list 'my-recipes recipe)))
 
+;; (my-recipes '(auto-complete ac-html ac-html-bootstrap)) (my-elpa '(ac-html-bootstrap))
 (my-recipes '(ag)) (my-elpa '(ag))
 (my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
 (my-recipes '(bash-completion)) (my-elpa '(bash-completion))
+(my-recipes '(browse-url))
 (my-recipes '(calendar))
 (my-recipes '(cc-vars))
 (my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
@@ -365,15 +367,6 @@
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
-
-;;; Browse Url with Epiphany.
-;; (setq browse-url-browser-function 'browse-url-epiphany)
-
-;; (setq browse-url-browser-function 'browse-url-generic
-;;   browse-url-generic-program "epiphany"
-;;   browse-url-generic-args '("--new-tab"))
-(setq browse-url-browser-function 'browse-url-generic
-  browse-url-generic-program "google-chrome")
 
 ;;; Spelling.
 ;(setq-default ispell-program-name "/usr/bin/aspell")
