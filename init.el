@@ -152,6 +152,7 @@
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
+(my-elpa '(twittering-mode))
 
 (setq my-el-get-packages ())
 
@@ -173,7 +174,6 @@
 (my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
 (my-recipes '(bash-completion)) (my-elpa '(bash-completion))
-(my-recipes '(browse-url))
 (my-recipes '(calendar))
 (my-recipes '(cc-vars))
 (my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
