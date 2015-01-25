@@ -152,7 +152,6 @@
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
-(my-elpa '(twittering-mode))
 
 (setq my-el-get-packages ())
 
@@ -285,6 +284,7 @@
 (my-recipes '(sort))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
+(my-recipes '(twittering-mode)) (my-elpa '(twittering-mode))
 (my-recipes '(undo-tree)) (my-elpa '(undo-tree))
 (my-recipes '(uniquify))
 (my-recipes '(web-mode)) (my-elpa '(web-mode))
