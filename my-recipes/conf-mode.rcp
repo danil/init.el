@@ -13,6 +13,7 @@
                                 "/conkyrc_top\\'"
                                 "/dunstrc\\'"
                                 "/etc/fstab\\'"
+                                "/etc/logrotate\\.d/"
                                 "/etc/mail/aliases\\'"
                                 "/etc/mailutils\\.d/"
                                 "/fail2ban/.*\\.local\\'"
