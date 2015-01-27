@@ -84,6 +84,8 @@
     (setq ac-disable-faces (quote (font-lock-doc-face))))
 
   (my-eval-after-load 'auto-complete
+    ;; Remove auto-complet from enter/return keys
+    ;; <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
     (define-key ac-completing-map "\r" nil)
     (define-key ac-completing-map [return] nil))
 
