@@ -83,6 +83,10 @@
     (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
     (setq ac-disable-faces (quote (font-lock-doc-face))))
 
+  (my-eval-after-load 'auto-complete
+    (define-key ac-completing-map "\r" nil)
+    (define-key ac-completing-map [return] nil))
+
   (my-add-mode-to-hooks (lambda ()
                            (add-to-list 'ac-sources
                                         'ac-source-css-property))

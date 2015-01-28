@@ -1,3 +1,5 @@
+;;; alternative: less-minor-mode <http://emacswiki.org/emacs/less.el>
+
 (my-after-init
   (global-set-key (my-kbd "C-f") 'yaless-mode-on))
 
