@@ -2,6 +2,10 @@
                             (my-diff-facelift)
                             (define-key diff-mode-shared-map (kbd "k") nil)))
 
+(my-after-init
+  (my-eval-after-load 'diff-mode
+   (define-key diff-mode-map "\C-c\C-f" nil)))
+
 (defun my-diff-facelift ()
   (cond ((equal frame-background-mode 'light)
          )
