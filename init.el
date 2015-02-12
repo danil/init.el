@@ -174,6 +174,7 @@
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
 (my-recipes '(bash-completion)) (my-elpa '(bash-completion))
 (my-recipes '(calendar))
+(my-recipes '(cc-mode))
 (my-recipes '(cc-vars))
 (my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
 (my-recipes '(coffee-mode)) (my-elpa '(coffee-mode))
