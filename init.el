@@ -36,6 +36,7 @@
                             ferm-mode-hook
                             fish-mode-hook
                             git-commit-mode-hook
+                            go-mode-hook
                             haml-mode-hook
                             haskell-mode-hook
                             html-mode-hook
@@ -149,6 +150,7 @@
 (my-elpa '(dash))
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
+(my-elpa '(go-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
