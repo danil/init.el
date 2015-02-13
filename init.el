@@ -254,6 +254,7 @@
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
 (my-recipes '(nvm)) (my-elpa '(nvm))
+(my-recipes '(nxml-mode))
 (my-recipes '(occur-mode))
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
