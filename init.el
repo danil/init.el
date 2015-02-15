@@ -50,6 +50,7 @@
                             makefile-gmake-mode-hook
                             markdown-mode-hook
                             nginx-mode-hook
+                            nroff-mode-hook
                             nxml-mode-hook
                             org-mode-hook
                             pascal-mode-hook
