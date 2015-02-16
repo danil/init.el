@@ -57,6 +57,7 @@
                     markdown-mode
                     mustache-mode
                     nginx-mode
+                    nroff-mode
                     nxml-mode
                     org-mode
                     perl-mode
