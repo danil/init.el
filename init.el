@@ -36,6 +36,7 @@
                             ferm-mode-hook
                             fish-mode-hook
                             git-commit-mode-hook
+                            go-mode-hook
                             haml-mode-hook
                             haskell-mode-hook
                             html-mode-hook
@@ -49,6 +50,7 @@
                             makefile-gmake-mode-hook
                             markdown-mode-hook
                             nginx-mode-hook
+                            nroff-mode-hook
                             nxml-mode-hook
                             org-mode-hook
                             pascal-mode-hook
@@ -149,6 +151,7 @@
 (my-elpa '(dash))
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
+(my-elpa '(go-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
@@ -174,6 +177,7 @@
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
 (my-recipes '(bash-completion)) (my-elpa '(bash-completion))
 (my-recipes '(calendar))
+(my-recipes '(cc-mode))
 (my-recipes '(cc-vars))
 (my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
 (my-recipes '(coffee-mode)) (my-elpa '(coffee-mode))
@@ -251,6 +255,7 @@
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
 (my-recipes '(nvm)) (my-elpa '(nvm))
+(my-recipes '(nxml-mode))
 (my-recipes '(occur-mode))
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
