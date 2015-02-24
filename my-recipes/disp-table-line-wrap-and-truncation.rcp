@@ -1,5 +1,4 @@
-;; Set line-wrap and line-truncation character
-;; <http://emacswiki.org/emacs/LineWrap>,
+;; Set line-wrap and line-truncation characters
 ;; <http://en.wikipedia.org/wiki/Arrow_(symbol)>.
 
 (unless standard-display-table
@@ -9,13 +8,15 @@
   '((t (:background "slateblue")))
   "My custom face for the wrap glyphs.")
 
-;; Truncation.
+;; Truncation
+;; <http://stackoverflow.com/questions/8370778/remove-glyph-at-end-of-truncated-lines#8371037>.
 (set-display-table-slot standard-display-table
                         0
                         (make-glyph-code ?→ ;rightwards Arrow U+2192
                                          'my-wrap-and-truncation-glyph-face))
 
-;; Wrap.
+;; Wrap
+;; <http://emacswiki.org/emacs/LineWrap>.
 (set-display-table-slot standard-display-table
                         'wrap
                         (make-glyph-code ?← ;leftwards arrow U+2190
