@@ -1,0 +1,22 @@
+;; Set line-wrap and line-truncation character
+;; <http://emacswiki.org/emacs/LineWrap>,
+;; <http://en.wikipedia.org/wiki/Arrow_(symbol)>.
+
+(unless standard-display-table
+  (setq standard-display-table (make-display-table)))
+
+(defface my-wrap-and-truncation-glyph-face
+  '((t (:background "slateblue")))
+  "My custom face for the wrap glyphs.")
+
+;; Truncation.
+(set-display-table-slot standard-display-table
+                        0
+                        (make-glyph-code ?→ ;rightwards Arrow U+2192
+                                         'my-wrap-and-truncation-glyph-face))
+
+;; Wrap.
+(set-display-table-slot standard-display-table
+                        'wrap
+                        (make-glyph-code ?← ;leftwards arrow U+2190
+                                         'my-wrap-and-truncation-glyph-face))
