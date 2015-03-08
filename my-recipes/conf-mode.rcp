@@ -13,7 +13,6 @@
                                 "/conkyrc_top\\'"
                                 "/dunstrc\\'"
                                 "/etc/fstab\\'"
-                                "/etc/logrotate\\.d/"
                                 "/etc/mail/aliases\\'"
                                 "/etc/mailutils\\.d/"
                                 "/fail2ban/.*\\.local\\'"
@@ -39,6 +38,11 @@
                                 "\\.xxkbrc\\'"
                                 "\\parcelliterc\\'"
                                 "\\torrc\\'")
+
+  ;; Logrotate scripts.
+  (my-add-auto-mode-to-patterns 'conf-mode
+                                "/etc/logrotate\\.d/"
+                                "\\.logrotate\\'")
 
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
