@@ -33,6 +33,7 @@
                                 "\\.feed2imaprc\\'"
                                 "\\.gtkrc.mine\\'"
                                 "\\.pkla\\'"
+                                "\\.service\\'" ;systemd script
                                 "\\.skippyrc\\'"
                                 "\\.theme\\'"
                                 "\\.xxkbrc\\'"
