@@ -10,10 +10,6 @@
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/anacrontab\\'"
                                 "/crontab\\'")
-  ;; Logrotate scripts.
-  (my-add-auto-mode-to-patterns 'shell-script-mode
-                                "/etc/logrotate.d/"
-                                "\\.logrotate\\'")
 
   ;; Gentoo.
   (my-add-auto-mode-to-patterns 'shell-script-mode
