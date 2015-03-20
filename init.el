@@ -153,6 +153,7 @@
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
 (my-elpa '(less-css-mode))
+(my-elpa '(list-unicode-display))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
