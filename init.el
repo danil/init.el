@@ -267,6 +267,7 @@
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
 (my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
+(my-recipes '(python))
 (my-recipes '(quickrun)) (my-elpa '(quickrun))
 (my-recipes '(rainbow-delimiters)) (my-elpa '(rainbow-delimiters))
 (my-recipes '(rainbow-mode)) (my-elpa '(rainbow-mode))
