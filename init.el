@@ -64,6 +64,7 @@
                             sgml-mode-hook
                             sh-mode-hook
                             sieve-mode-hook
+                            slim-mode-hook
                             sql-mode-hook
                             text-mode-hook
                             web-mode-hook
@@ -287,9 +288,11 @@
 (my-recipes '(shell))
 (my-recipes '(simp)) (my-elpa '(simp))
 (my-recipes '(simple))
+(my-recipes '(slim-mode)) (my-elpa '(slim-mode))
 (my-recipes '(smart-mode-line rich-minority)) (my-elpa '(smart-mode-line rich-minority))
 (my-recipes '(smex)) (my-elpa '(smex))
 (my-recipes '(sort))
+(my-recipes '(sql-mode))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
 (my-recipes '(swiper)) (my-elpa '(swiper))
