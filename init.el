@@ -153,6 +153,7 @@
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
 (my-elpa '(less-css-mode))
+(my-elpa '(list-unicode-display))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
@@ -290,6 +291,7 @@
 (my-recipes '(sort))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
+(my-recipes '(swiper)) (my-elpa '(swiper))
 (my-recipes '(twittering-mode)) (my-elpa '(twittering-mode))
 (my-recipes '(undo-tree)) (my-elpa '(undo-tree))
 (my-recipes '(uniquify))
