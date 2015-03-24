@@ -64,6 +64,7 @@
                             sgml-mode-hook
                             sh-mode-hook
                             sieve-mode-hook
+                            slim-mode-hook
                             sql-mode-hook
                             text-mode-hook
                             web-mode-hook
@@ -155,6 +156,7 @@
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
 (my-elpa '(sass-mode))
+(my-elpa '(slim-mode))
 (my-elpa '(speed-type))
 
 (setq my-el-get-packages ())
