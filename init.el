@@ -291,6 +291,7 @@
 (my-recipes '(smart-mode-line rich-minority)) (my-elpa '(smart-mode-line rich-minority))
 (my-recipes '(smex)) (my-elpa '(smex))
 (my-recipes '(sort))
+(my-recipes '(sql-mode))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
 (my-recipes '(swiper)) (my-elpa '(swiper))
