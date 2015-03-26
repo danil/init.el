@@ -1,0 +1,2 @@
+(my-after-init
+  (global-set-key (my-kbd "m s") 'swiper))
