@@ -67,6 +67,7 @@
                             slim-mode-hook
                             sql-mode-hook
                             text-mode-hook
+                            toml-mode-hook
                             web-mode-hook
                             xml-mode-hook
                             yaml-mode-hook
@@ -144,6 +145,7 @@
 (defun my-elpa (packages)
   (dolist (package packages) (add-to-list 'my-elpa-packages package)))
 
+(my-elpa '(ac-etags))
 (my-elpa '(apache-mode))
 (my-elpa '(auto-complete-nxml))
 (my-elpa '(browse-kill-ring))
@@ -153,8 +155,10 @@
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
+(my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
+(my-elpa '(pt))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
@@ -164,9 +168,7 @@
   (dolist (package packages) (add-to-list 'my-el-get-packages package)))
 
 (my-el-get '(auto-complete-emacs-lisp))
-(my-el-get '(auto-complete-etags))
 (my-el-get '(ebuild-mode))
-(my-el-get '(jade-mode))
 
 (setq my-recipes ())
 

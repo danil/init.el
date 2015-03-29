@@ -76,6 +76,7 @@
                     sql-interactive-mode
                     sql-mode
                     text-mode
+                    toml-mode
                     web-mode
                     xml-mode
                     yaml-mode
