@@ -155,6 +155,7 @@
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
+(my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
 (my-elpa '(sass-mode))
@@ -167,7 +168,6 @@
 
 (my-el-get '(auto-complete-emacs-lisp))
 (my-el-get '(ebuild-mode))
-(my-el-get '(jade-mode))
 
 (setq my-recipes ())
 
