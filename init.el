@@ -67,6 +67,7 @@
                             slim-mode-hook
                             sql-mode-hook
                             text-mode-hook
+                            toml-mode-hook
                             web-mode-hook
                             xml-mode-hook
                             yaml-mode-hook
