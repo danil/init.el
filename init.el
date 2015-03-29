@@ -158,6 +158,7 @@
 (my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
+(my-elpa '(pt))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
