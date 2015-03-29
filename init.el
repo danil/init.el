@@ -144,6 +144,7 @@
 (defun my-elpa (packages)
   (dolist (package packages) (add-to-list 'my-elpa-packages package)))
 
+(my-elpa '(ac-etags))
 (my-elpa '(apache-mode))
 (my-elpa '(auto-complete-nxml))
 (my-elpa '(browse-kill-ring))
@@ -164,7 +165,6 @@
   (dolist (package packages) (add-to-list 'my-el-get-packages package)))
 
 (my-el-get '(auto-complete-emacs-lisp))
-(my-el-get '(auto-complete-etags))
 (my-el-get '(ebuild-mode))
 (my-el-get '(jade-mode))
 
