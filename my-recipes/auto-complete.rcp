@@ -31,6 +31,7 @@
                     conf-mode
                     conf-space-mode
                     conf-unix-mode
+                    conf-windows-mode
                     conf-xdefaults-mode
                     css-mode
                     diff-mode
