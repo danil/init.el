@@ -9,7 +9,7 @@
 
   (when (and (not arg) (buffer-file-name))
     (call-interactively 'save-buffer)
-    (cider-load-buffer))
+    (when (fboundp 'cider-load-buffer) (cider-load-buffer)))
 
   (call-interactively 'yaless-mode))
 
