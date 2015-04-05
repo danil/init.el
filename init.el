@@ -259,7 +259,7 @@
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
-(my-recipes '(nvm)) (my-elpa '(nvm))
+(my-recipes '(nvm)) (my-el-get '(nvm))
 (my-recipes '(nxml-mode))
 (my-recipes '(occur-edit-mode))
 (my-recipes '(occur-mode))
