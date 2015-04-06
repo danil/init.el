@@ -227,6 +227,7 @@
 (my-recipes '(highlight-current-line))
 (my-recipes '(highlight-symbol)) (my-elpa '(highlight-symbol))
 (my-recipes '(ibuffer))
+(my-recipes '(ido flx-ido)) (my-elpa '(flx-ido))
 (my-recipes '(ido ido-preview)) (my-el-get '(ido-preview))
 (my-recipes '(ido ido-ubiquitous)) (my-elpa '(ido-ubiquitous))
 (my-recipes '(ido ido-vertical-mode)) (my-elpa '(ido-vertical-mode))
