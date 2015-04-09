@@ -235,7 +235,6 @@
 (my-recipes '(ido recentf recentf-ido-find-file))
 (my-recipes '(ielm))
 (my-recipes '(indent))
-(my-recipes '(indent-guide)) (my-elpa '(indent-guide))
 (my-recipes '(info))
 (my-recipes '(interprogram))
 (my-recipes '(isearch))
