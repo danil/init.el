@@ -3,4 +3,6 @@
 (my-after-init
   (my-add-mode-to-hooks 'yascroll-bar-mode
                         (-difference my-read-only-modes-hooks
-                                     '(org-mode-hook text-mode-hook))))
+                                     '(org-mode-hook
+                                       text-mode-hook
+                                       dired-mode-hook))))
