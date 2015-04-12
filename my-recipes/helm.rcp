@@ -2,7 +2,6 @@
   ;; (global-set-key (kbd "C-x b") 'helm-mini)
   ;; (global-set-key (kbd "M-x") 'helm-M-x)
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-helm)
-  (global-set-key (my-kbd "m h ? ? m") 'helm-man-woman)
   (global-set-key (my-kbd "m h f f") 'my-helm-find)
   (global-set-key (my-kbd "m h f g") 'helm-do-grep)
   (global-set-key (my-kbd "m h f l") 'helm-locate)
