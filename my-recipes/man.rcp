@@ -1,0 +1,7 @@
+(my-after-init
+  (global-set-key (my-kbd "m m m") 'my-man))
+
+(defun my-man (&optional arg)
+  (interactive "P")
+
+  (call-interactively (if (not arg) 'helm-man-woman 'man)))

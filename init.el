@@ -64,8 +64,10 @@
                             sgml-mode-hook
                             sh-mode-hook
                             sieve-mode-hook
+                            slim-mode-hook
                             sql-mode-hook
                             text-mode-hook
+                            toml-mode-hook
                             web-mode-hook
                             xml-mode-hook
                             yaml-mode-hook
@@ -143,6 +145,7 @@
 (defun my-elpa (packages)
   (dolist (package packages) (add-to-list 'my-elpa-packages package)))
 
+(my-elpa '(ac-etags))
 (my-elpa '(apache-mode))
 (my-elpa '(auto-complete-nxml))
 (my-elpa '(browse-kill-ring))
@@ -152,7 +155,10 @@
 (my-elpa '(findr))
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
+(my-elpa '(jade-mode))
 (my-elpa '(less-css-mode))
+(my-elpa '(list-unicode-display))
+(my-elpa '(pt))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
@@ -162,9 +168,7 @@
   (dolist (package packages) (add-to-list 'my-el-get-packages package)))
 
 (my-el-get '(auto-complete-emacs-lisp))
-(my-el-get '(auto-complete-etags))
 (my-el-get '(ebuild-mode))
-(my-el-get '(jade-mode))
 
 (setq my-recipes ())
 
@@ -216,6 +220,7 @@
 (my-recipes '(helm helm-git-grep)) (my-elpa '(helm-git-grep))
 (my-recipes '(helm helm-ls-git)) (my-elpa '(helm-ls-git))
 (my-recipes '(helm helm-swoop)) (my-elpa '(helm-swoop))
+(my-recipes '(helm man)) (my-elpa '(helm))
 (my-recipes '(help))
 (my-recipes '(help-mode))
 (my-recipes '(hi-lock))
@@ -231,7 +236,6 @@
 (my-recipes '(ido recentf recentf-ido-find-file))
 (my-recipes '(ielm))
 (my-recipes '(indent))
-(my-recipes '(indent-guide)) (my-elpa '(indent-guide))
 (my-recipes '(info))
 (my-recipes '(interprogram))
 (my-recipes '(isearch))
@@ -255,8 +259,9 @@
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
-(my-recipes '(nvm)) (my-elpa '(nvm))
+(my-recipes '(nvm)) (my-el-get '(nvm))
 (my-recipes '(nxml-mode))
+(my-recipes '(occur-edit-mode))
 (my-recipes '(occur-mode))
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
@@ -265,6 +270,7 @@
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
 (my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
+(my-recipes '(python))
 (my-recipes '(quickrun)) (my-elpa '(quickrun))
 (my-recipes '(rainbow-delimiters)) (my-elpa '(rainbow-delimiters))
 (my-recipes '(rainbow-mode)) (my-elpa '(rainbow-mode))
@@ -285,11 +291,14 @@
 (my-recipes '(shell))
 (my-recipes '(simp)) (my-elpa '(simp))
 (my-recipes '(simple))
+(my-recipes '(slim-mode)) (my-elpa '(slim-mode))
 (my-recipes '(smart-mode-line rich-minority)) (my-elpa '(smart-mode-line rich-minority))
 (my-recipes '(smex)) (my-elpa '(smex))
 (my-recipes '(sort))
+(my-recipes '(sql-mode))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
+(my-recipes '(swiper)) (my-elpa '(swiper))
 (my-recipes '(twittering-mode)) (my-elpa '(twittering-mode))
 (my-recipes '(undo-tree)) (my-elpa '(undo-tree))
 (my-recipes '(uniquify))
@@ -297,6 +306,7 @@
 (my-recipes '(window))
 (my-recipes '(window-numbering)) (my-elpa '(window-numbering))
 (my-recipes '(winner-mode))
+(my-recipes '(woman))
 (my-recipes '(yaless-mode))
 (my-recipes '(yaml-mode)) (my-elpa '(yaml-mode))
 (my-recipes '(yascroll)) (my-elpa '(yascroll))
