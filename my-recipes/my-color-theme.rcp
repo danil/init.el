@@ -15,6 +15,11 @@
 
 (set-cursor-color "red") ;#aa0000
 
+(defface ido-only-match
+  '((((background dark)) :background nil))
+  "Face used by Ido for highlighting only match."
+  :group 'ido)
+
 (defface helm-selection
   '((((background dark)) :background nil :underline t)
     (((background light)) :background nil :underline t))
