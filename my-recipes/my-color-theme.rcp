@@ -16,7 +16,7 @@
 (set-cursor-color "red") ;#aa0000
 
 (defface ido-only-match
-  '((((background dark)) :background nil))
+  '((t (:inherit ido-first-match)))
   "Face used by Ido for highlighting only match."
   :group 'ido)
 
