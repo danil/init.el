@@ -53,10 +53,12 @@
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\..*\\'"
                                 "/etc/portage/profile/use\\.mask\\'"
+                                "/etc/portage/sets/"
                                 "/portage/package\\.license\\'"
                                 "/profiles/categories\\'"
                                 "/profiles/package.mask\\'"
                                 "/profiles/repo_name\\'"
+                                "/var/lib/portage/world_sets\\'"
                                 "\\world\\'")
 
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
