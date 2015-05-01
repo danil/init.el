@@ -12,16 +12,16 @@
   (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
 
   (dolist (my-path-to-replace
-           '(("^:S\\(V?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":S\\1:\\2\\3:")
-             ("^:S\\(V?\\):\\(c\\|cpp\\|el\\|md\\|js\\|python\\|ruby\\|go\\|org\\)/"
-              ":S\\1:")
-             ("^~/src/" ":S:")
-             ("^~/src/vendor/" ":SV:")
-             ("^:SV\\([^:]\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/"
-              ":SV\\1:\\2\\3:")
-             ("^~/src/vendor/waveaccess/" ":SVW:")
-             ("^~/src/vendor/molinos/" ":SVM:")
-             ("^~/src/vendor/avers/" ":SVP:")
-             ("^~/src/vendor/johnstudio/" ":SVJ:")))
+           '(("^:s\\(v?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":s\\1:\\2\\3:")
+             ("^:s\\(v?\\):\\(c\\|cpp\\|el\\|md\\|js\\|python\\|ruby\\|go\\|org\\)/"
+              ":s\\1:")
+             ("^~/src/" ":s:")
+             ("^~/src/vendor/" ":sv:")
+             ("^:\\(medapp\\|molinos\\|avers\\|johnstudio\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/"
+              ":\\1:\\2\\3:")
+             ("^~/src/vendor/waveaccess/" ":medapp:")
+             ("^~/src/vendor/molinos/" ":molinos:")
+             ("^~/src/vendor/avers/" ":avers:")
+             ("^~/src/vendor/johnstudio/" ":johnstudio:")))
 
     (add-to-list 'sml/replacer-regexp-list my-path-to-replace)))
