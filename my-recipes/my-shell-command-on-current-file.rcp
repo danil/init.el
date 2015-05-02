@@ -6,7 +6,8 @@
       (call-interactively 'shell-command)
     (call-interactively 'my-shell-command-on-current-file)))
 
-;; <http://stackoverflow.com/questions/11264811/emacs-equivalent-to-vims#11266694>
+;; Equivalent to vim's `%`
+;; <http://stackoverflow.com/questions/11264811/emacs-equivalent-to-vims#11266694>.
 (defun my-shell-command-on-current-file (command &optional output-buffer error-buffer)
   "Run a shell command on the current file (or marked dired files).
 In the shell command, the file(s) will be substituted wherever a '%' is."
