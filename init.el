@@ -256,6 +256,7 @@
 (my-recipes '(my-color-theme))
 (my-recipes '(my-project))
 (my-recipes '(my-repeat-last-key-command))
+(my-recipes '(my-shell-command-on-current-file))
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
