@@ -1,0 +1,6 @@
+(my-after-init
+  (my-eval-after-load 'elpa-mirror
+    (setq elpamr-default-output-directory "/var/elpa/packages"
+          elpamr-email "danil@kutkevich.org"
+          elpamr-repository-name "kutkevich"
+          elpamr-repository-path "http://elpa.kutkevich.org")))

@@ -199,6 +199,7 @@
 (my-recipes '(disp-table-vertical-border))
 (my-recipes '(dockerfile-mode)) (my-elpa '(dockerfile-mode))
 (my-recipes '(ediff))
+(my-recipes '(elpa-mirror)) (my-elpa '(elpa-mirror))
 (my-recipes '(emacs-lisp-mode))
 (my-recipes '(env))
 (my-recipes '(erise)) (my-el-get '(erise))
@@ -333,14 +334,13 @@
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")
-                         ;; ("kutkevich" . "http://elpa.kutkevich.org/packages/")
-                         ))
+(setq package-archives '(;; ("ELPA" . "http://tromey.com/elpa/")
+                         ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ;; ("melpa" . "http://melpa.org/packages/")
+                         ;; ("gnu" . "http://elpa.gnu.org/packages/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ;; ("SC" . "http://joseito.republika.pl/sunrise-commander/")
+                         ("kutkevich" . "http://elpa.kutkevich.org/packages/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
