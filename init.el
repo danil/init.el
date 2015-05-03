@@ -267,7 +267,6 @@
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
 (my-recipes '(paren))
-(my-recipes '(password-cache))
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
 (my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
@@ -339,7 +338,9 @@
                          ("melpa" . "http://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
+                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")
+                         ;; ("kutkevich" . "http://elpa.kutkevich.org/packages/")
+                         ))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
