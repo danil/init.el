@@ -199,6 +199,7 @@
 (my-recipes '(disp-table-vertical-border))
 (my-recipes '(dockerfile-mode)) (my-elpa '(dockerfile-mode))
 (my-recipes '(ediff))
+(my-recipes '(elpa-mirror)) (my-elpa '(elpa-mirror))
 (my-recipes '(emacs-lisp-mode))
 (my-recipes '(env))
 (my-recipes '(erise)) (my-el-get '(erise))
