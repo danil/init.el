@@ -199,6 +199,7 @@
 (my-recipes '(disp-table-vertical-border))
 (my-recipes '(dockerfile-mode)) (my-elpa '(dockerfile-mode))
 (my-recipes '(ediff))
+(my-recipes '(elpa-mirror)) (my-elpa '(elpa-mirror))
 (my-recipes '(emacs-lisp-mode))
 (my-recipes '(env))
 (my-recipes '(erise)) (my-el-get '(erise))
@@ -256,6 +257,7 @@
 (my-recipes '(my-color-theme))
 (my-recipes '(my-project))
 (my-recipes '(my-repeat-last-key-command))
+(my-recipes '(my-shell-command-on-current-file))
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
@@ -266,10 +268,10 @@
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
 (my-recipes '(paren))
-(my-recipes '(password-cache))
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
 (my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
+(my-recipes '(projectile projectile-rails)) (my-elpa '(projectile-rails))
 (my-recipes '(python))
 (my-recipes '(quickrun)) (my-elpa '(quickrun))
 (my-recipes '(rainbow-delimiters)) (my-elpa '(rainbow-delimiters))
@@ -277,7 +279,6 @@
 (my-recipes '(rbenv)) (my-elpa '(rbenv))
 (my-recipes '(re-builder))
 (my-recipes '(recentf))
-(my-recipes '(ruby-mode rinari)) (my-elpa '(rinari))
 (my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(ruby-hash-syntax rspec-mode))
 (my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
 (my-recipes '(ruby-mode ruby-refactor)) (my-elpa '(ruby-refactor))
@@ -332,20 +333,23 @@
   (el-get-cleanup packages) ;remove all packages absent from `packages'
   (el-get 'sync packages))
 
-;;; Install/remove ELPA packages
-;;; <http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312>.
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
+;;; ELPA packages.
+(setq package-archives '(;; ("ELPA" . "http://tromey.com/elpa/")
+                         ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ;; ("melpa" . "http://melpa.org/packages/")
+                         ;; ("gnu" . "http://elpa.gnu.org/packages/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ;; ("SC" . "http://joseito.republika.pl/sunrise-commander/")
+                         ("kutkevich" . "http://elpa.kutkevich.org/packages/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
 (or (file-exists-p package-user-dir)
     (package-refresh-contents)) ;fetch the list of packages available
 
+;;; Install/remove ELPA packages
+;;; <http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name#10093312>,
+;;; <http://wikemacs.org/wiki/Package.el#How_to_use_it_with_a_custom_build>.
 (dolist (package my-elpa-packages)
   (unless (package-installed-p package)
     (package-install package))) ;install the missing packages
