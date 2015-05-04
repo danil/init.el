@@ -159,6 +159,7 @@
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
 (my-elpa '(pt))
+(my-elpa '(ruby-guard))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 
@@ -279,7 +280,6 @@
 (my-recipes '(rbenv)) (my-elpa '(rbenv))
 (my-recipes '(re-builder))
 (my-recipes '(recentf))
-(my-recipes '(ruby-guard))
 (my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(ruby-hash-syntax rspec-mode))
 (my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
 (my-recipes '(ruby-mode ruby-refactor)) (my-elpa '(ruby-refactor))
