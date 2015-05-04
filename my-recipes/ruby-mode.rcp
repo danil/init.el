@@ -2,6 +2,8 @@
   (my-add-auto-mode-to-patterns 'ruby-mode
                                 "/Capfile\\'"
                                 "/Gemfile\\'"
+                                "/Guardfile.private.example\\'"
+                                "/Guardfile.private\\'"
                                 "/Guardfile\\'"
                                 "/[rR]akefile\\'"
                                 "/[vV]agrantfile.proxy\\'"
