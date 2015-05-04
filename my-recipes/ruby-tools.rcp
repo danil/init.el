@@ -27,6 +27,7 @@
                                            sgml-mode-hook
                                            sh-mode-hook
                                            shell-mode-hook
+                                           slim-mode-hook
                                            sql-mode-hook
                                            xml-mode-hook
                                            yaml-mode-hook
