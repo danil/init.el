@@ -279,6 +279,7 @@
 (my-recipes '(rbenv)) (my-elpa '(rbenv))
 (my-recipes '(re-builder))
 (my-recipes '(recentf))
+(my-recipes '(ruby-guard))
 (my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(ruby-hash-syntax rspec-mode))
 (my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
 (my-recipes '(ruby-mode ruby-refactor)) (my-elpa '(ruby-refactor))
@@ -334,13 +335,14 @@
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(setq package-archives '(;; ("ELPA" . "http://tromey.com/elpa/")
+(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")
+                         ;; ("ELPA" . "http://tromey.com/elpa/")
                          ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
                          ;; ("melpa" . "http://melpa.org/packages/")
                          ;; ("gnu" . "http://elpa.gnu.org/packages/")
                          ;; ("marmalade" . "http://marmalade-repo.org/packages/")
                          ;; ("SC" . "http://joseito.republika.pl/sunrise-commander/")
-                         ("kutkevich" . "http://elpa.kutkevich.org/packages/")))
+                         ))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
