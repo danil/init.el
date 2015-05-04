@@ -12,12 +12,13 @@
 ;; <http://stackoverflow.com/questions/8370778/remove-glyph-at-end-of-truncated-lines#8371037>.
 (set-display-table-slot standard-display-table
                         0
-                        (make-glyph-code ?→ ;rightwards Arrow U+2192
+                        (make-glyph-code ?→ ;U+2192 rightwards arrow
                                          'my-wrap-and-truncation-glyph-face))
 
 ;; Wrap
 ;; <http://emacswiki.org/emacs/LineWrap>.
 (set-display-table-slot standard-display-table
                         'wrap
-                        (make-glyph-code ?← ;leftwards arrow U+2190
+                        (make-glyph-code ?← ;U+2190 leftwards arrow
+                                         ;; ?↵ ;U+21B5 crarr, downwards arrow with corner, leftwards (carriage return)
                                          'my-wrap-and-truncation-glyph-face))
