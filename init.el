@@ -162,6 +162,7 @@
 (my-elpa '(ruby-guard))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
+(my-elpa '(ztree))
 
 (setq my-el-get-packages ())
 
@@ -335,14 +336,13 @@
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")
-                         ;; ("ELPA" . "http://tromey.com/elpa/")
-                         ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ;; ("melpa" . "http://melpa.org/packages/")
-                         ;; ("gnu" . "http://elpa.gnu.org/packages/")
-                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ;; ("SC" . "http://joseito.republika.pl/sunrise-commander/")
-                         ))
+(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
+;; (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")
+;;                          ("melpa" . "http://melpa.org/packages/")
+;;                          ("gnu" . "http://elpa.gnu.org/packages/")
+;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
+;;                          ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
