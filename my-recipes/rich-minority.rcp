@@ -19,6 +19,7 @@
                                " SP" ;smartparens-mode
                                " Undo-Tree" ;undo-tree-mode
                                " end" ;ruby-end-mode
+                               " ew:mnlt" ;ethan-wspace (highlight trailing whitespace)
                                " gg" ;git-gutter-mode
                                " hl-s" ;highlight-symbol-mode
                                " hs" ;hideshow
