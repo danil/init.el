@@ -1,0 +1,4 @@
+(autoload 'string-inflection-cycle "string-inflection")
+
+(my-after-init
+  (global-set-key (my-kbd "s i i") 'string-inflection-cycle))
