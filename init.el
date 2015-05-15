@@ -194,8 +194,10 @@
 (my-elpa '(list-unicode-display))
 (my-elpa '(pt))
 (my-elpa '(ruby-guard))
+(my-elpa '(rust-mode))
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
+(my-elpa '(systemd))
 (my-elpa '(ztree))
 
 (setq my-el-get-packages ())
