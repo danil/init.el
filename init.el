@@ -96,6 +96,40 @@
                                          occur-mode-hook
                                          )))
 
+(setq my-ruby-tools-hooks '(
+                            awk-mode-hook
+                            coffee-mode-hook
+                            conf-mode-hook
+                            conf-space-mode-hook
+                            conf-xdefaults-mode-hook
+                            css-mode-hook
+                            emacs-lisp-mode-hook
+                            haml-mode-hook
+                            haskell-mode-hook
+                            html-mode-hook
+                            java-mode-hook
+                            js-mode-hook
+                            lisp-mode-hook
+                            lua-mode-hook
+                            makefile-gmake-mode-hook
+                            markdown-mode-hook
+                            nxml-mode-hook
+                            org-mode-hook
+                            perl-mode-hook
+                            php-mode-hook
+                            rhtml-mode-hook
+                            ruby-mode-hook
+                            sass-mode-hook
+                            scss-mode-hook
+                            sgml-mode-hook
+                            sh-mode-hook
+                            shell-mode-hook
+                            slim-mode-hook
+                            sql-mode-hook
+                            xml-mode-hook
+                            yaml-mode-hook
+                            ))
+
 (defun my-kbd (key) (kbd (concat "C-c C-f " key)))
 
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
@@ -282,11 +316,12 @@
 (my-recipes '(rbenv)) (my-elpa '(rbenv))
 (my-recipes '(re-builder))
 (my-recipes '(recentf))
-(my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(ruby-hash-syntax rspec-mode))
+(my-recipes '(ruby-hash-syntax)) (my-elpa '(ruby-hash-syntax))
+(my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(rspec-mode))
 (my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
 (my-recipes '(ruby-mode ruby-refactor)) (my-elpa '(ruby-refactor))
 (my-recipes '(ruby-mode ruby-tools)) (my-elpa '(ruby-tools))
-(my-recipes '(ruby-mode)) (my-elpa '(ruby-hash-syntax))
+(my-recipes '(ruby-mode))
 (my-recipes '(savehist))
 (my-recipes '(saveplace))
 (my-recipes '(scss-mode)) (my-elpa '(scss-mode))
