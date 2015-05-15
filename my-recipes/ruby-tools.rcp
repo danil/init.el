@@ -1,37 +1,5 @@
 (my-after-init
-  (my-add-mode-to-hooks 'ruby-tools-mode '(
-                                           awk-mode-hook
-                                           coffee-mode-hook
-                                           conf-mode-hook
-                                           conf-space-mode-hook
-                                           conf-xdefaults-mode-hook
-                                           css-mode-hook
-                                           emacs-lisp-mode-hook
-                                           haml-mode-hook
-                                           haskell-mode-hook
-                                           html-mode-hook
-                                           java-mode-hook
-                                           js-mode-hook
-                                           lisp-mode-hook
-                                           lua-mode-hook
-                                           makefile-gmake-mode-hook
-                                           markdown-mode-hook
-                                           nxml-mode-hook
-                                           org-mode-hook
-                                           perl-mode-hook
-                                           php-mode-hook
-                                           rhtml-mode-hook
-                                           ruby-mode-hook
-                                           sass-mode-hook
-                                           scss-mode-hook
-                                           sgml-mode-hook
-                                           sh-mode-hook
-                                           shell-mode-hook
-                                           slim-mode-hook
-                                           sql-mode-hook
-                                           xml-mode-hook
-                                           yaml-mode-hook
-                                           ))
+  (my-add-mode-to-hooks 'ruby-tools-mode my-ruby-tools-hooks)
 
   (my-eval-after-load 'ruby-tools
     ;; Remove keys from a minor-mode keymap
