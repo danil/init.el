@@ -198,6 +198,7 @@
 (my-elpa '(sass-mode))
 (my-elpa '(speed-type))
 (my-elpa '(systemd))
+(my-elpa '(toml-mode))
 (my-elpa '(ztree))
 
 (setq my-el-get-packages ())
