@@ -308,6 +308,7 @@
 (my-recipes '(org-mode org-reveal)) (my-el-get '(org-reveal))
 (my-recipes '(org-mode)) (my-elpa '(org))
 (my-recipes '(paren))
+(my-recipes '(php-mode)) (my-elpa '(php-mode))
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
 (my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
