@@ -109,6 +109,7 @@
                             html-mode-hook
                             java-mode-hook
                             js-mode-hook
+                            js2-mode-hook
                             lisp-mode-hook
                             lua-mode-hook
                             makefile-gmake-mode-hook
