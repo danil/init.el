@@ -1,0 +1,19 @@
+(autoload 'highlight-frame-toggle "highlight-global" nil t)
+(autoload 'clear-highlight-frame "highlight-global" nil t)
+
+(defgroup idle-highlight-global nil
+  "Automatic and manual symbols highlighting"
+  :group 'faces
+  :group 'matching
+  :group 'highlight-global)
+
+(defface idle-highlight-global-face
+  '((((class color) (background dark))
+     (:inherit match :background "OrangeRed3"))
+    (((class color) (background light))
+     (:inherit match)))
+  "Face used by `idle-highlight-global-mode'."
+  :group 'idle-highlight-global)
+
+(custom-set-variables
+ '(highlight-global-faces '(('idle-highlight-global-face . 0))))
