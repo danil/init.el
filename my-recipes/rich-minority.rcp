@@ -11,6 +11,7 @@
                                " AC" ;auto-complete-mode
                                " ARev" ;auto-revert-mode
                                " Abbrev" ;abbrev-mode
+                               " Anzu" ;anzu-mode
                                " Helm" ;helm-mode
                                " MRev" ;magit-auto-revert-mode
                                " Rails" ;projectile-rails
