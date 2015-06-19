@@ -217,6 +217,7 @@
 
 ;; (my-recipes '(auto-complete ac-html ac-html-bootstrap)) (my-elpa '(ac-html-bootstrap))
 (my-recipes '(ag)) (my-elpa '(ag))
+(my-recipes '(anzu)) (my-elpa '(anzu))
 (my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
 (my-recipes '(bash-completion)) (my-elpa '(bash-completion))
