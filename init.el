@@ -1,4 +1,38 @@
-;;; This file is part of Danil <danil@kutkevich.org> home.
+;;; init.el --- This file is part of Danil <danil@kutkevich.org> home.
+
+;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Author: Danil <danil@kutkevich.org>
+;; Version: 0.0.0
+;; Package-Requires: ()
+;; Keywords: convenience
+;; URL: http://danil.kutkevich.org/p/el/init.el
+
+;;; Commentary:
+
+;; Please see README.md for documentation, or read it online at
+;; http://danil.kutkevich.org/p/el/init.el
+
+;;; License:
+
+;; This file is not part of GNU Emacs.
+;; However, it is distributed under the same license.
+
+;; GNU Emacs is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3, or (at your option)
+;; any later version.
+
+;; GNU Emacs is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
 
 ;; Danil <http://emacswiki.org/DotEmacsDotD>,
 ;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
@@ -7,7 +41,7 @@
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
 
-(setq calendar-week-start-day t)
+(defvar calendar-week-start-day t)
 (setq system-time-locale "C")
 
 (global-font-lock-mode t)
@@ -22,62 +56,62 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
-(setq my-safe-modes-hooks '(
-                            ;; mail-mode-hook
-                            ;; whitespace-mode-hook
-                            autoconf-mode-hook
-                            awk-mode-hook
-                            c-mode-hook
-                            change-log-mode-hook
-                            coffee-mode-hook
-                            conf-mode-hook
-                            css-mode-hook
-                            dockerfile-mode-hook
-                            ferm-mode-hook
-                            fish-mode-hook
-                            git-commit-mode-hook
-                            go-mode-hook
-                            haml-mode-hook
-                            haskell-mode-hook
-                            html-mode-hook
-                            jade-mode-hook
-                            java-mode-hook
-                            js-mode-hook
-                            js2-mode-hook
-                            less-css-mode-hook
-                            lisp-mode-hook
-                            lua-mode-hook
-                            makefile-gmake-mode-hook
-                            markdown-mode-hook
-                            nginx-mode-hook
-                            nroff-mode-hook
-                            nxml-mode-hook
-                            org-mode-hook
-                            pascal-mode-hook
-                            perl-mode-hook
-                            php-mode-hook
-                            python-mode-hook
-                            rhtml-mode-hook
-                            ruby-mode-hook
-                            rust-mode-hook
-                            sass-mode-hook
-                            sgml-mode-hook
-                            sh-mode-hook
-                            sieve-mode-hook
-                            slim-mode-hook
-                            sql-mode-hook
-                            text-mode-hook
-                            toml-mode-hook
-                            web-mode-hook
-                            xml-mode-hook
-                            yaml-mode-hook
-                            ))
+(defvar my-safe-modes-hooks '(
+                              ;; mail-mode-hook
+                              ;; whitespace-mode-hook
+                              autoconf-mode-hook
+                              awk-mode-hook
+                              c-mode-hook
+                              change-log-mode-hook
+                              coffee-mode-hook
+                              conf-mode-hook
+                              css-mode-hook
+                              dockerfile-mode-hook
+                              ferm-mode-hook
+                              fish-mode-hook
+                              git-commit-mode-hook
+                              go-mode-hook
+                              haml-mode-hook
+                              haskell-mode-hook
+                              html-mode-hook
+                              jade-mode-hook
+                              java-mode-hook
+                              js-mode-hook
+                              js2-mode-hook
+                              less-css-mode-hook
+                              lisp-mode-hook
+                              lua-mode-hook
+                              makefile-gmake-mode-hook
+                              markdown-mode-hook
+                              nginx-mode-hook
+                              nroff-mode-hook
+                              nxml-mode-hook
+                              org-mode-hook
+                              pascal-mode-hook
+                              perl-mode-hook
+                              php-mode-hook
+                              python-mode-hook
+                              rhtml-mode-hook
+                              ruby-mode-hook
+                              rust-mode-hook
+                              sass-mode-hook
+                              sgml-mode-hook
+                              sh-mode-hook
+                              sieve-mode-hook
+                              slim-mode-hook
+                              sql-mode-hook
+                              text-mode-hook
+                              toml-mode-hook
+                              web-mode-hook
+                              xml-mode-hook
+                              yaml-mode-hook
+                              ))
 
-(setq my-programming-modes-hooks (append my-safe-modes-hooks
+(defvar my-programming-modes-hooks (append my-safe-modes-hooks
                                          '(clojure-mode-hook
                                            emacs-lisp-mode-hook)))
 
-(setq my-read-only-modes-hooks (append my-safe-modes-hooks
+(defvar my-read-only-modes-hooks (append my-safe-modes-hooks
                                        '(
                                          Info-mode-hook
                                          Man-mode-hook
@@ -96,7 +130,7 @@
                                          occur-mode-hook
                                          )))
 
-(setq my-ruby-tools-hooks '(
+(defvar my-ruby-tools-hooks '(
                             awk-mode-hook
                             coffee-mode-hook
                             conf-mode-hook
@@ -171,11 +205,11 @@
   (dolist (hook hooks) (add-hook hook mode)))
 
 (defun my-autoload-file-on-functions (file-name &rest functions)
-  "Autoload `file-name' if one of the given `functions' called."
+  "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))
 
-(setq my-elpa-packages ())
+(defvar my-elpa-packages ())
 
 (defun my-elpa (packages)
   (dolist (package packages) (add-to-list 'my-elpa-packages package)))
@@ -202,7 +236,7 @@
 (my-elpa '(toml-mode))
 (my-elpa '(ztree))
 
-(setq my-el-get-packages ())
+(defvar my-el-get-packages ())
 
 (defun my-el-get (packages)
   (dolist (package packages) (add-to-list 'my-el-get-packages package)))
@@ -210,7 +244,7 @@
 (my-el-get '(auto-complete-emacs-lisp))
 (my-el-get '(ebuild-mode))
 
-(setq my-recipes ())
+(defvar my-recipes ())
 
 (defun my-recipes (recipes)
   (dolist (recipe recipes) (add-to-list 'my-recipes recipe)))
@@ -249,6 +283,7 @@
 (my-recipes '(expand-region)) (my-elpa '(expand-region))
 (my-recipes '(ferm-mode)) (my-el-get '(ferm-mode))
 (my-recipes '(files))
+(my-recipes '(flycheck)) (my-elpa '(flycheck))
 (my-recipes '(files-backup))
 (my-recipes '(fill))
 (my-recipes '(fiplr)) (my-elpa '(fiplr))
@@ -367,24 +402,26 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+(defvar el-get-recipe-path)
 (add-to-list 'el-get-recipe-path
              (concat user-emacs-directory "my-el-get/recipes"))
 ;; (setq el-get-user-package-directory
 ;;       (concat user-emacs-directory "my-el-get/init-files"))
 
+(defvar el-get-sources)
 (let ((packages (append (mapcar 'el-get-source-name el-get-sources)
                         my-el-get-packages)))
   (el-get-cleanup packages) ;remove all packages absent from `packages'
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
-;; (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")
-;;                          ("melpa" . "http://melpa.org/packages/")
-;;                          ("gnu" . "http://elpa.gnu.org/packages/")
-;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                          ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
+(defvar package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
+(defvar package-archives '(("ELPA" . "http://tromey.com/elpa/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
@@ -418,7 +455,7 @@
 
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
-(setq comint-input-ring-size 10000)
+(defvar comint-input-ring-size 10000)
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
@@ -435,7 +472,7 @@
 ;;; Spelling.
 ;(setq-default ispell-program-name "/usr/bin/aspell")
 ;(setq-default ispell-program-name "/usr/bin/hunspell")
-(setq ispell-dictionary "ru")
+(defvar ispell-dictionary "ru")
 
 ;;; InteractiveSpell.
 ;(setq ispell-dictionary "german")
@@ -445,7 +482,7 @@
 ;(setq tramp-default-method "ssh")
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
-(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
+(defvar cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
 ;;; <http://www.emacswiki.org/emacs/AnsiColor>
@@ -583,3 +620,5 @@
 ;;           "#"))
 ;;     (expand-file-name
 ;;      (concat "#%" (buffer-name) "#"))))
+
+;;; init.el ends here
