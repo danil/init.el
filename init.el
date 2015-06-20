@@ -41,7 +41,7 @@
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
 
-(defvar calendar-week-start-day t)
+(setq calendar-week-start-day t)
 (setq system-time-locale "C")
 
 (global-font-lock-mode t)
@@ -108,62 +108,62 @@
                               ))
 
 (defvar my-programming-modes-hooks (append my-safe-modes-hooks
-                                         '(clojure-mode-hook
-                                           emacs-lisp-mode-hook)))
+                                           '(clojure-mode-hook
+                                             emacs-lisp-mode-hook)))
 
 (defvar my-read-only-modes-hooks (append my-safe-modes-hooks
-                                       '(
-                                         Info-mode-hook
-                                         Man-mode-hook
-                                         ag-mode-hook
-                                         cider-stacktrace-mode-hook
-                                         compilation-mode-hook
-                                         dired-mode-hook
-                                         help-mode-hook
-                                         ibuffer-mode-hook
-                                         magit-branch-manager-mode-hook
-                                         magit-commit-mode-hook
-                                         magit-diff-mode-hook
-                                         magit-log-mode-hook
-                                         magit-process-mode-hook
-                                         magit-status-mode-hook
-                                         occur-mode-hook
-                                         )))
+                                         '(
+                                           Info-mode-hook
+                                           Man-mode-hook
+                                           ag-mode-hook
+                                           cider-stacktrace-mode-hook
+                                           compilation-mode-hook
+                                           dired-mode-hook
+                                           help-mode-hook
+                                           ibuffer-mode-hook
+                                           magit-branch-manager-mode-hook
+                                           magit-commit-mode-hook
+                                           magit-diff-mode-hook
+                                           magit-log-mode-hook
+                                           magit-process-mode-hook
+                                           magit-status-mode-hook
+                                           occur-mode-hook
+                                           )))
 
 (defvar my-ruby-tools-hooks '(
-                            awk-mode-hook
-                            coffee-mode-hook
-                            conf-mode-hook
-                            conf-space-mode-hook
-                            conf-xdefaults-mode-hook
-                            css-mode-hook
-                            emacs-lisp-mode-hook
-                            haml-mode-hook
-                            haskell-mode-hook
-                            html-mode-hook
-                            java-mode-hook
-                            js-mode-hook
-                            js2-mode-hook
-                            lisp-mode-hook
-                            lua-mode-hook
-                            makefile-gmake-mode-hook
-                            markdown-mode-hook
-                            nxml-mode-hook
-                            org-mode-hook
-                            perl-mode-hook
-                            php-mode-hook
-                            rhtml-mode-hook
-                            ruby-mode-hook
-                            sass-mode-hook
-                            scss-mode-hook
-                            sgml-mode-hook
-                            sh-mode-hook
-                            shell-mode-hook
-                            slim-mode-hook
-                            sql-mode-hook
-                            xml-mode-hook
-                            yaml-mode-hook
-                            ))
+                              awk-mode-hook
+                              coffee-mode-hook
+                              conf-mode-hook
+                              conf-space-mode-hook
+                              conf-xdefaults-mode-hook
+                              css-mode-hook
+                              emacs-lisp-mode-hook
+                              haml-mode-hook
+                              haskell-mode-hook
+                              html-mode-hook
+                              java-mode-hook
+                              js-mode-hook
+                              js2-mode-hook
+                              lisp-mode-hook
+                              lua-mode-hook
+                              makefile-gmake-mode-hook
+                              markdown-mode-hook
+                              nxml-mode-hook
+                              org-mode-hook
+                              perl-mode-hook
+                              php-mode-hook
+                              rhtml-mode-hook
+                              ruby-mode-hook
+                              sass-mode-hook
+                              scss-mode-hook
+                              sgml-mode-hook
+                              sh-mode-hook
+                              shell-mode-hook
+                              slim-mode-hook
+                              sql-mode-hook
+                              xml-mode-hook
+                              yaml-mode-hook
+                              ))
 
 (defun my-kbd (key) (kbd (concat "C-c C-f " key)))
 
@@ -402,26 +402,26 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-(defvar el-get-recipe-path)
+(setq el-get-recipe-path)
 (add-to-list 'el-get-recipe-path
              (concat user-emacs-directory "my-el-get/recipes"))
 ;; (setq el-get-user-package-directory
 ;;       (concat user-emacs-directory "my-el-get/init-files"))
 
-(defvar el-get-sources)
+(setq el-get-sources)
 (let ((packages (append (mapcar 'el-get-source-name el-get-sources)
                         my-el-get-packages)))
   (el-get-cleanup packages) ;remove all packages absent from `packages'
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(defvar package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
-(defvar package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
+(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
+;; (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")
+;;                          ("melpa" . "http://melpa.org/packages/")
+;;                          ("gnu" . "http://elpa.gnu.org/packages/")
+;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
+;;                          ("SC" . "http://joseito.republika.pl/sunrise-commander/")))
 
 (package-initialize) ;activate all the packages (in particular autoloads)
 
@@ -455,7 +455,7 @@
 
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
-(defvar comint-input-ring-size 10000)
+(setq comint-input-ring-size 10000)
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
@@ -472,7 +472,7 @@
 ;;; Spelling.
 ;(setq-default ispell-program-name "/usr/bin/aspell")
 ;(setq-default ispell-program-name "/usr/bin/hunspell")
-(defvar ispell-dictionary "ru")
+(setq ispell-dictionary "ru")
 
 ;;; InteractiveSpell.
 ;(setq ispell-dictionary "german")
@@ -482,7 +482,7 @@
 ;(setq tramp-default-method "ssh")
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
-(defvar cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
+(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
 ;;; <http://www.emacswiki.org/emacs/AnsiColor>
