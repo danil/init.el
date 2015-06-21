@@ -52,7 +52,6 @@
                                " ARev" ;auto-revert-mode
                                " Abbrev" ;abbrev-mode
                                " Anzu" ;anzu-mode
-                               " FlyC" ;flycheck-mod
                                " Helm" ;helm-mode
                                " MRev" ;magit-auto-revert-mode
                                " Rails" ;projectile-rails
