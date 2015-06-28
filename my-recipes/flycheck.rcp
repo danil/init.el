@@ -33,7 +33,8 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(custom-set-variables '(flycheck-disabled-checkers '(ruby-rubylint)))
+(custom-set-variables '(flycheck-disabled-checkers '(ruby-rubylint))
+                      '(flycheck-idle-change-delay 1.5))
 
 (my-after-init
   (my-add-mode-to-hooks 'flycheck-mode my-programming-modes-hooks))
