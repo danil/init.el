@@ -335,6 +335,7 @@
 (my-recipes '(my-repeat-last-key-command))
 (my-recipes '(my-shell-command-on-current-file))
 (my-recipes '(my-string-inflections))
+(my-recipes '(my-sum-numbers-in-region))
 (my-recipes '(my-tags))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
