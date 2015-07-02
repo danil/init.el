@@ -347,7 +347,6 @@
 (my-recipes '(paren))
 (my-recipes '(php-mode)) (my-elpa '(php-mode))
 (my-recipes '(point-stack)) (my-elpa '(point-stack))
-(my-recipes '(pomohist))
 (my-recipes '(pretty-lambdada)) (my-elpa '(pretty-lambdada))
 (my-recipes '(projectile projectile-rails)) (my-elpa '(projectile-rails))
 (my-recipes '(python))
