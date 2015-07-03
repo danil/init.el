@@ -4,7 +4,7 @@
                                 "\\.djhtml\\'"
                                 "\\.ejs\\'"
                                 "\\.html\\'"
-                                "\\.html\\.erb\\'"
+                                "\\.\\(html\\|js\\)\\.erb\\'"
                                 "\\.jsp\\'"
                                 "\\.jst\\.ejs\\'"
                                 "\\.phtml\\'"
