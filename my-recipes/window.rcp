@@ -37,7 +37,7 @@
 ;; Split vertical by default
 ;; <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>.
 (custom-set-variables '(split-height-threshold nil)
-                      '(split-width-threshold 16))
+                      '(split-width-threshold 64))
 
 (my-after-init
   (global-set-key (my-kbd "b b") 'bury-buffer-with-repeat)
