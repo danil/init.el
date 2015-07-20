@@ -34,5 +34,14 @@
 
 ;;; Code:
 (my-after-init
-  (global-set-key (my-kbd "v b") 'magit-blame-mode))
+  (global-set-key (my-kbd "v b") 'my-magit-blame))
+
+(defun my-magit-blame (&optional arg)
+  "My magit blame wrapper.
+If ARG provided then blame with popup menu."
+
+  (interactive "P")
+
+  (if arg (call-interactively 'magit-blame-popup)
+    (call-interactively 'magit-blame)))
 ;;; magit-blame.rcp ends here
