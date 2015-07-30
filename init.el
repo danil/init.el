@@ -225,6 +225,7 @@
 (my-elpa '(gitconfig-mode))
 (my-elpa '(go-mode))
 (my-elpa '(jade-mode))
+(my-elpa '(jsfmt)) ; javascript formater
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
 (my-elpa '(pt))
