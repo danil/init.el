@@ -23,6 +23,7 @@
                     autoconf-mode
                     awk-mode
                     c-mode
+                    change-log-mode
                     cider-mode
                     cider-repl-mode
                     clojure-mode
