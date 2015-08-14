@@ -409,7 +409,7 @@
   (el-get 'sync packages))
 
 ;;; ELPA packages.
-(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/packages/")))
+(setq package-archives '(("kutkevich" . "http://elpa.kutkevich.org/mirror/")))
 ;; (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
 ;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")
 ;;                          ("melpa" . "http://melpa.org/packages/")
