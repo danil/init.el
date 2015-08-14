@@ -251,6 +251,7 @@
   (dolist (recipe recipes) (add-to-list 'my-recipes recipe)))
 
 ;; (my-recipes '(auto-complete ac-html ac-html-bootstrap)) (my-elpa '(ac-html-bootstrap))
+(my-recipes '(add-log))
 (my-recipes '(ag)) (my-elpa '(ag))
 (my-recipes '(anzu)) (my-elpa '(anzu))
 (my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
