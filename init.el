@@ -306,6 +306,7 @@
 (my-recipes '(ido ido-yes-or-no)) (my-el-get '(ido-yes-or-no))
 (my-recipes '(ido kill-ring-ido)) (my-elpa '(kill-ring-ido))
 (my-recipes '(ido recentf recentf-ido-find-file))
+(my-recipes '(ido-describe-bindings))
 (my-recipes '(ielm))
 (my-recipes '(indent))
 (my-recipes '(info))
