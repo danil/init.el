@@ -319,6 +319,7 @@
 (my-recipes '(lisp-mode))
 (my-recipes '(lua-mode)) (my-elpa '(lua-mode))
 (my-recipes '(magit magit-blame)) (my-elpa '(magit))
+(my-recipes '(magit magit-log)) (my-elpa '(magit))
 (my-recipes '(make-mode))
 (my-recipes '(markdown-mode)) (my-elpa '(markdown-mode))
 (my-recipes '(menu-bar))
