@@ -1,18 +1,56 @@
+;;; highlight-symbol.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+
+;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Author: Danil <danil@kutkevich.org>
+;; Version: 0.0.0
+;; Package-Requires: ()
+;; Keywords: convenience
+;; URL: http://danil.kutkevich.org/p/el/init.el
+
+;;; Commentary:
+
+;; Please see README.md for documentation, or read it online at
+;; http://danil.kutkevich.org/p/el/init.el
+
+;;; License:
+
+;; This file is not part of GNU Emacs.
+;; However, it is distributed under the same license.
+
+;; GNU Emacs is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3, or (at your option)
+;; any later version.
+
+;; GNU Emacs is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
+(custom-set-variables '(highlight-symbol-highlight-single-occurrence-p nil)
+                      '(highlight-symbol-idle-delay 0.7)
+                      '(highlight-symbol-ignore-list '()))
+
 (my-after-init
   ;; (global-set-key (my-kbd "y ") 'highlight-symbol-at-point)
   (global-set-key (my-kbd "s s n") 'my-highlight-symbol-next-with-repeat)
   (global-set-key (my-kbd "s s p") 'my-highlight-symbol-prev-with-repeat)
   (global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
 
-  (my-add-mode-to-hooks 'highlight-symbol-mode my-programming-modes-hooks)
+  ;; (my-eval-after-load 'highlight-symbol
+  ;;   (cond ((equal frame-background-mode 'dark)
+  ;;          (set-face-background 'highlight-symbol-face
+  ;;                               "OrangeRed3") ;maroon3 ;yellow3
+  ;;          (set-face-foreground 'highlight-symbol-face
+  ;;                               "black"))))
 
-  (my-eval-after-load 'highlight-symbol
-    (setq highlight-symbol-idle-delay 0.7)
-    (cond ((equal frame-background-mode 'dark)
-           (set-face-background 'highlight-symbol-face
-                                "OrangeRed3") ;maroon3 ;yellow3
-           (set-face-foreground 'highlight-symbol-face
-                                "black")))))
+  (my-add-mode-to-hooks 'highlight-symbol-mode my-programming-modes-hooks))
 
 (defun my-highlight-symbol-next-with-repeat ()
   (interactive)
@@ -23,3 +61,4 @@
   (interactive)
   (my-with-repeat-while-press-last-key
     (highlight-symbol-prev)))
+;;; highlight-symbol.rcp ends here
