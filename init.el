@@ -338,6 +338,7 @@
 (my-recipes '(nxml-mode))
 (my-recipes '(occur-edit-mode))
 (my-recipes '(occur-mode))
+(my-recipes '(org-mode org-ac)) (my-elpa '(org-ac))
 (my-recipes '(org-mode)) (my-elpa '(org))
 (my-recipes '(paren))
 (my-recipes '(php-mode)) (my-elpa '(php-mode))
