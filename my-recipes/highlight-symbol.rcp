@@ -33,32 +33,15 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
                       '(highlight-symbol-idle-delay 0.7)
                       '(highlight-symbol-ignore-list '()))
 
 (my-after-init
-  ;; (global-set-key (my-kbd "y ") 'highlight-symbol-at-point)
-  (global-set-key (my-kbd "s s n") 'my-highlight-symbol-next-with-repeat)
-  (global-set-key (my-kbd "s s p") 'my-highlight-symbol-prev-with-repeat)
+  (global-set-key (my-kbd "s s n") 'highlight-symbol-nav-mode)
   (global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
-
-  ;; (my-eval-after-load 'highlight-symbol
-  ;;   (cond ((equal frame-background-mode 'dark)
-  ;;          (set-face-background 'highlight-symbol-face
-  ;;                               "OrangeRed3") ;maroon3 ;yellow3
-  ;;          (set-face-foreground 'highlight-symbol-face
-  ;;                               "black"))))
 
   (my-add-mode-to-hooks 'highlight-symbol-mode my-programming-modes-hooks))
 
-(defun my-highlight-symbol-next-with-repeat ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (highlight-symbol-next)))
-
-(defun my-highlight-symbol-prev-with-repeat ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (highlight-symbol-prev)))
 ;;; highlight-symbol.rcp ends here
