@@ -297,7 +297,6 @@
 (my-recipes '(help-mode))
 (my-recipes '(hi-lock))
 (my-recipes '(hideshow))
-(my-recipes '(highlight-current-line))
 (my-recipes '(highlight-symbol)) (my-elpa '(highlight-symbol)) ;(my-recipes '(idle-highlight-global-mode highlight-global)) (my-el-get '(idle-highlight-global-mode highlight-global))
 (my-recipes '(ibuffer))
 (my-recipes '(ido ido-describe-bindings)) (my-elpa '(ido-describe-bindings))
