@@ -229,6 +229,7 @@
 (my-elpa '(less-css-mode))
 (my-elpa '(list-unicode-display))
 (my-elpa '(pt))
+(my-elpa '(quelpa))
 (my-elpa '(ruby-guard))
 (my-elpa '(rust-mode))
 (my-elpa '(sass-mode))
