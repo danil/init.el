@@ -292,6 +292,7 @@
 (my-recipes '(git-gutter)) (my-elpa '(git-gutter))
 (my-recipes '(git-timemachine)) (my-elpa '(git-timemachine))
 (my-recipes '(gitignore-mode)) (my-elpa '(gitignore-mode))
+(my-recipes '(goto-last-change)) (my-elpa '(goto-last-change))
 (my-recipes '(haml-mode)) (my-elpa '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipes '(help))
 (my-recipes '(help-mode))
