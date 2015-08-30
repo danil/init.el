@@ -33,7 +33,8 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(custom-set-variables '(ido-vertical-define-keys 'C-n-and-C-p-only))
+(custom-set-variables '(ido-vertical-define-keys 'C-n-and-C-p-only)
+                      '(ido-vertical-show-count t))
 
 (my-after-init
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
