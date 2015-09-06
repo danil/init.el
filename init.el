@@ -354,6 +354,7 @@
 (my-recipes '(rbenv)) (my-elpa '(rbenv))
 (my-recipes '(re-builder))
 (my-recipes '(recentf))
+(my-recipes '(replace))
 (my-recipes '(ruby-hash-syntax)) (my-elpa '(ruby-hash-syntax))
 (my-recipes '(ruby-mode rspec-mode rspec-compilation-mode)) (my-elpa '(rspec-mode))
 (my-recipes '(ruby-mode ruby-pry)) (my-el-get '(ruby-pry))
