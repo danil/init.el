@@ -376,6 +376,7 @@
 (my-recipes '(sql-mode))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
+(my-recipes '(transpose-frame)) (my-elpa '(transpose-frame))
 (my-recipes '(twittering-mode)) (my-elpa '(twittering-mode))
 (my-recipes '(undo-tree)) (my-elpa '(undo-tree))
 (my-recipes '(uniquify))
