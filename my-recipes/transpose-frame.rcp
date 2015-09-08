@@ -37,6 +37,12 @@
 (autoload 'transpose-frame "transpose-frame" nil t)
 
 (my-after-init
-  (global-set-key (my-kbd "t f f") 'transpose-frame))
+  (global-set-key (my-kbd "t f f") 'transpose-frame-with-repeat))
+
+(defun transpose-frame-with-repeat ()
+  "`transpose-frame' function with repeat by press last key."
+
+  (interactive)
+  (my-with-repeat-while-press-last-key (transpose-frame)))
 
 ;;; transpose-frame.rcp ends here
