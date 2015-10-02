@@ -33,13 +33,15 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (my-after-init
   (my-add-auto-mode-to-patterns 'web-mode
+                                "\\.\\(html\\|text\\)\\.erb\\'"
                                 "\\.as[cp]x\\'"
                                 "\\.djhtml\\'"
                                 "\\.ejs\\'"
                                 "\\.html\\'"
-                                "\\.\\(html\\|js\\|text\\)\\.erb\\'"
+                                "\\.js.erb\\'"
                                 "\\.jsp\\'"
                                 "\\.jst\\.ejs\\'"
                                 "\\.phtml\\'"
@@ -48,4 +50,5 @@
 
   (my-eval-after-load 'web-mode
     (define-key web-mode-map (kbd "C-c C-f") nil)))
+
 ;;; web-mode.rcp ends here
