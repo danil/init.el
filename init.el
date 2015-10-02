@@ -324,6 +324,7 @@
 (my-recipes '(make-mode))
 (my-recipes '(markdown-mode)) (my-elpa '(markdown-mode))
 (my-recipes '(menu-bar))
+;; (my-recipes '(mmm-mode)) (my-elpa '(mmm-mode))
 (my-recipes '(multiple-cursors)) (my-elpa '(multiple-cursors))
 (my-recipes '(my-backspace-fix))
 (my-recipes '(my-beginning-of-line))
