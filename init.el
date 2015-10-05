@@ -270,6 +270,7 @@
 (my-recipes '(deft)) (my-elpa '(deft))
 (my-recipes '(desktop))
 (my-recipes '(diff-mode))
+(my-recipes '(diffview)) (my-elpa '(diffview))
 (my-recipes '(dired dired-reuse-directory-buffer))
 (my-recipes '(dired direx)) (my-elpa '(direx))
 (my-recipes '(discover-my-major)) (my-elpa '(discover-my-major))
