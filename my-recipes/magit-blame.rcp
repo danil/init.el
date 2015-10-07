@@ -33,6 +33,9 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
+(custom-set-variables '(magit-blame-heading-format "%-20a %H %C %s"))
+
 (my-after-init
   (global-set-key (my-kbd "v b") 'my-magit-blame))
 
@@ -44,4 +47,5 @@ If ARG provided then blame with popup menu."
 
   (if arg (call-interactively 'magit-blame-popup)
     (call-interactively 'magit-blame)))
+
 ;;; magit-blame.rcp ends here
