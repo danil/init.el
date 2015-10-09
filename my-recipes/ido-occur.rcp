@@ -33,6 +33,8 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (my-after-init
   (global-set-key (my-kbd "f o o") 'ido-occur))
+
 ;;; ido-occur.rcp ends here
