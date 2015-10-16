@@ -42,6 +42,7 @@
                     ferm-mode
                     fish-mode
                     git-commit-mode
+                    gitconfig-mode
                     gitignore-mode
                     haml-mode
                     haskell-mode
