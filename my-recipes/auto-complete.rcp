@@ -76,6 +76,7 @@
                     sh-mode
                     shell-mode
                     sieve-mode
+                    slim-mode
                     sql-interactive-mode
                     sql-mode
                     text-mode
