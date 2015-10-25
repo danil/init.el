@@ -5,6 +5,7 @@
                                 "/\\.bash_aliases\\'"
                                 "/\\.bpkgrc\\'"
                                 "/\\.lessfilter\\'"
+                                "/\\.mkshrc\\'"
                                 "/\\.xprofile\\'"
                                 "/dwmrc\\'")
   ;; Cron.
