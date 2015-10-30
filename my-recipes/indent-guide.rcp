@@ -1,8 +1,0 @@
-(custom-set-variables '(indent-guide-face ((t (:foreground "slateblue"))))
-                      '(indent-guide-char "\u00B7") ;"·" - interpunct or middle dot or middot
-                      '(indent-guide-delay 0.7))
-
-(my-after-init
-  (my-add-mode-to-hooks 'indent-guide-mode
-                        (-difference my-programming-modes-hooks
-                                     '(org-mode-hook text-mode-hook))))

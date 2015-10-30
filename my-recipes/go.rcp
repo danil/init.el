@@ -1,4 +1,0 @@
-(my-after-init
-  ;; <http://emacswiki.org/emacs/ExecPath>.
-  (setenv "PATH" (concat (getenv "PATH") ":~/go/bin"))
-  (setq exec-path (append exec-path '("~/go/bin"))))

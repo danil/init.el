@@ -1,6 +1,0 @@
-(my-after-init
-  (my-eval-after-load 'ido
-    (require 'flx-ido)
-    (flx-ido-mode 1)
-    (setq ido-enable-flex-matching t) ;disable ido faces to see flx highlights
-    (setq ido-use-faces nil)))

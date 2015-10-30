@@ -1,7 +1,0 @@
-;; ^ +\([0-9]+\): [^/]+>\([^<]+\).*$
-
-(fset 'my-kbd-macro-fhir-copy-en-line
-   "\C-e\C-a\C-@\C-s \C-m\C-b\C-[w\C-xo\C-[gg\C-y\C-m\C-@\C-n\C-[w\C-xo\C-a\C-y\C-p\C-[xquery-replace-regexp\C-m^ +<[^/]+>\\([^<]+\\).*$\C-m\\1\C-my\C-e\C-a\C-[xquery-replace-regexp\C-m^[0-9]+ \C-m\C-my\C-e\C-a\C-m\C-x\C-s")
-
-(fset 'my-kbd-macro-fhir-replace
-   "\C-u\C-a\C-n\C-@\C-e\C-[w\C-u\C-a\C-p\C-@\C-e\C-[w\C-xo\C-[<\C-[%\C-y\C-m\C-y\C-[y\C-m!\C-x\C-s\C-xo\C-n\C-n\C-n")

@@ -1,4 +1,0 @@
-;;; Cointains deprecatd (require 'assoc)
-;;; <http://www.emacswiki.org/emacs-en/assoc-deprecated>.
-
-(my-after-init (global-pointback-mode))

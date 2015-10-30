@@ -1,6 +1,0 @@
-(my-add-mode-to-hooks 'company-mode my-programming-modes-hooks)
-
-(custom-set-variables
- '(company-idle-delay .1)
- '(company-minimum-prefix-length 2)
- '(company-transformers '(company-sort-by-occurrence)))
