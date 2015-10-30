@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; sql.rcp --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -35,21 +35,20 @@
 ;;; Code:
 
 (my-after-init
-  ;; Uniquify
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
+  ;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
+  (defun my-sql-save-history-hook ()
+    (let ((lval 'sql-input-ring-file-name)
+          (rval 'sql-product))
+      (if (symbol-value rval)
+          (let ((filename
+                 (concat "~/.emacs.d/sql/"
+                         (symbol-name (symbol-value rval))
+                         "-history.sql")))
+            (set (make-local-variable lval) filename))
+        (error
+         (format "SQL history will not be saved because %s is nil"
+                 (symbol-name rval))))))
 
-  (require 'uniquify)
+  (add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook))
 
-  (custom-set-variables '(uniquify-min-dir-content 20))
-
-  (my-eval-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
-     )))
-
-;;; uniquify.rcp ends here
+;;; sql.rcp ends here

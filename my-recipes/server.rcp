@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; server.rcp --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -35,21 +35,9 @@
 ;;; Code:
 
 (my-after-init
-  ;; Uniquify
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
+  ;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
+  ;; (remove-hook 'kill-buffer-query-functions
+  ;;              'server-kill-buffer-query-function)
+  )
 
-  (require 'uniquify)
-
-  (custom-set-variables '(uniquify-min-dir-content 20))
-
-  (my-eval-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
-     )))
-
-;;; uniquify.rcp ends here
+;;; server.rcp ends here

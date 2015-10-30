@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; viper.rcp --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -34,22 +34,14 @@
 
 ;;; Code:
 
+(require 'viper)
+
 (my-after-init
-  ;; Uniquify
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
+  (setq viper-toggle-key "\C-q") ;changing viper-toggle-key <http://emacswiki.org/ViperMode#toc14>
 
-  (require 'uniquify)
+  ;; Deactivate Viper for a single buffers
+  ;; <http://emacswiki.org/emacs/ViperMode#toc9>.
+  ;; (viper-change-state-to-emacs)
+  (setq viper-mode t))
 
-  (custom-set-variables '(uniquify-min-dir-content 20))
-
-  (my-eval-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
-     )))
-
-;;; uniquify.rcp ends here
+;;; viper.rcp ends here

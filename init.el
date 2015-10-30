@@ -254,6 +254,7 @@
 ;; (my-recipes '(auto-complete ac-html ac-html-bootstrap)) (my-elpa '(ac-html-bootstrap))
 (my-recipes '(add-log))
 (my-recipes '(ag)) (my-elpa '(ag))
+(my-recipes '(ansi-color))
 (my-recipes '(anzu)) (my-elpa '(anzu))
 (my-recipes '(auto-complete ac-html)) (my-elpa '(ac-html))
 (my-recipes '(auto-complete auto-complete-chunk)) (my-elpa '(auto-complete-chunk))
@@ -264,9 +265,11 @@
 (my-recipes '(clojure-mode cider smartparens)) (my-elpa '(clojure-mode cider smartparens))
 (my-recipes '(coffee-mode)) (my-elpa '(coffee-mode))
 (my-recipes '(column-marker)) (my-elpa '(column-marker))
+(my-recipes '(comint))
 (my-recipes '(compile))
 (my-recipes '(conf-mode))
 (my-recipes '(css))
+(my-recipes '(cua))
 (my-recipes '(deft)) (my-elpa '(deft))
 (my-recipes '(desktop))
 (my-recipes '(diff-mode))
@@ -285,12 +288,13 @@
 (my-recipes '(etags-select)) (my-elpa '(etags-select))
 (my-recipes '(ethan-wspace)) (my-elpa '(ethan-wspace))
 (my-recipes '(expand-region)) (my-elpa '(expand-region))
+(my-recipes '(faces))
 (my-recipes '(ferm-mode)) (my-el-get '(ferm-mode))
 (my-recipes '(files))
-(my-recipes '(flycheck)) (my-elpa '(flycheck))
 (my-recipes '(files-backup))
 (my-recipes '(fill))
 (my-recipes '(fish-mode)) (my-elpa '(fish-mode))
+(my-recipes '(flycheck)) (my-elpa '(flycheck))
 (my-recipes '(git-gutter)) (my-elpa '(git-gutter))
 (my-recipes '(git-timemachine)) (my-elpa '(git-timemachine))
 (my-recipes '(gitignore-mode)) (my-elpa '(gitignore-mode))
@@ -313,6 +317,7 @@
 (my-recipes '(info))
 (my-recipes '(interprogram))
 (my-recipes '(isearch))
+(my-recipes '(ispell))
 (my-recipes '(js-mode js2-mode)) (my-elpa '(js2-mode))
 (my-recipes '(json-mode json-reformat)) (my-elpa '(json-mode json-reformat))
 (my-recipes '(kill-emacs))
@@ -336,6 +341,7 @@
 (my-recipes '(my-string-inflections))
 (my-recipes '(my-sum-numbers-in-region))
 (my-recipes '(my-tags))
+(my-recipes '(my-uniquify))
 (my-recipes '(nginx-mode)) (my-elpa '(nginx-mode))
 (my-recipes '(nodejs-repl)) (my-elpa '(nodejs-repl))
 (my-recipes '(nvm)) (my-el-get '(nvm))
@@ -375,6 +381,7 @@
 (my-recipes '(smart-mode-line rich-minority)) (my-elpa '(smart-mode-line rich-minority))
 (my-recipes '(smex)) (my-elpa '(smex))
 (my-recipes '(sort))
+(my-recipes '(sql))
 (my-recipes '(sql-mode))
 (my-recipes '(sql-postgres))
 (my-recipes '(subword-mode))
@@ -439,168 +446,6 @@
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
   (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
-
-;; ;;; <http://emacswiki.org/ScrollBar>.
-;; (scroll-bar-mode -1)
-;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(cond ((equal frame-background-mode 'dark)
-       (set-face-background 'scroll-bar "white")
-       (set-face-foreground 'scroll-bar "gray")
-       ))
-
-;;; AnsiColor (Emacs terminal related stuff)
-;;; <http://emacswiki.org/AnsiColor>.
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode) ;filenames with line numbers linkable
-
-;;; Comint mode (which shell mode and sql mode based on)
-;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
-(setq comint-input-ring-size 10000)
-;; (add-hook 'sql-interactive-mode-hook
-;;           (function (lambda () (setq comint-input-ring-size 10000))))
-
-;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
-;; (iswitchb-mode 1)
-;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
-;;                                "*Completions*" "*Ibuffer*"))
-;(setq iswitchb-default-method 'samewindow)
-
-;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
-;; (remove-hook 'kill-buffer-query-functions
-;;              'server-kill-buffer-query-function)
-
-;;; Spelling.
-;(setq-default ispell-program-name "/usr/bin/aspell")
-;(setq-default ispell-program-name "/usr/bin/hunspell")
-(setq ispell-dictionary "ru")
-
-;;; InteractiveSpell.
-;(setq ispell-dictionary "german")
-
-;;; TRAMP.
-;;; <http://emacswiki.org/TrampMode>.
-;(setq tramp-default-method "ssh")
-
-;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
-(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
-
-;;; ANSI SGR (Select Graphic Rendition) escape sequences
-;;; <http://www.emacswiki.org/emacs/AnsiColor>
-(require 'ansi-color)
-(defun my-show-ansi-color ()
-  "Process ANSI color codes in region."
-  (interactive)
-  (ansi-color-apply-on-region (region-beginning) (region-end)))
-;;; ANSI SRG in shell command output
-;:; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
-(defadvice display-message-or-buffer (before ansi-color activate)
-  "Process ANSI color codes in shell output."
-  (let ((buf (ad-get-arg 0)))
-    (and (bufferp buf)
-         (string= (buffer-name buf) "*Shell Command Output*")
-         (with-current-buffer buf
-           (ansi-color-apply-on-region (point-min) (point-max))))))
-
-;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-(global-set-key (my-kbd "s u") 'uniquify-all-lines-region)
-(defun uniquify-all-lines-region (start end)
-  "Find duplicate lines in region START to END keeping first occurrence."
-  (interactive "*r")
-  (save-excursion
-    (let ((end (copy-marker end)))
-      (while
-          (progn
-            (goto-char start)
-            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
-        (replace-match "\\1\n\\2")))))
-(defun uniquify-all-lines-buffer ()
-  "Delete duplicate lines in buffer and keep first occurrence."
-  (interactive "*")
-  (uniquify-all-lines-region (point-min) (point-max)))
-
-;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
-(defun my-sql-save-history-hook ()
-  (let ((lval 'sql-input-ring-file-name)
-        (rval 'sql-product))
-    (if (symbol-value rval)
-        (let ((filename
-               (concat "~/.emacs.d/sql/"
-                       (symbol-name (symbol-value rval))
-                       "-history.sql")))
-          (set (make-local-variable lval) filename))
-      (error
-       (format "SQL history will not be saved because %s is nil"
-               (symbol-name rval))))))
-(add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
-
-;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
-(autoload 'mew "mew" nil t)
-(autoload 'mew-send "mew" nil t)
-;; ;; Optional setup (e.g. C-xm for sending a message):
-;; (autoload 'mew-user-agent-compose "mew" nil t)
-;; (if (boundp 'mail-user-agent)
-;;     (setq mail-user-agent 'mew-user-agent))
-;; (if (fboundp 'define-mail-user-agent)
-;;     (define-mail-user-agent
-;;       'mew-user-agent
-;;       'mew-user-agent-compose
-;;       'mew-draft-send-message
-;;       'mew-draft-kill
-;;       'mew-send-hook))
-
-
-;;; Auto Fill Mode
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
-;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
-
-;;; DVC.
-;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
-;(autoload 'dvc-status "dvc-load" nil t)
-;(setq dvc-tips-enabled nil)
-
-;;; psvn.
-; Set up autoloads for psvn (svn directory edit mode for emacs)
-;(autoload 'svn-status "psvn" nil t)
-
-;;; Icicles -- enhances minibuffer completion
-;;; <http://emacsmirror.org/package/icicles.html>,
-;;; <http://emacswiki.org/emacs/Icicles>.
-;; (add-to-list 'load-path "~/share/emacs/site-lisp/icicles")
-;; (autoload 'icicle-mode "icicles" "Enhances minibuffer completion" t)
-
-;; ;;; Viper.
-;; ;;; Changing viper-toggle-key <http://emacswiki.org/ViperMode#toc14>
-;; (setq viper-toggle-key "\C-q")
-;; ;;; Deactivate Viper for a single buffers
-;; ;;; <http://emacswiki.org/emacs/ViperMode#toc9>.
-;; ;;(viper-change-state-to-emacs)
-;; (setq viper-mode t)
-;; (require 'viper)
-
-;;; jabber.el
-;; Set up autoloads for jabber.el
-;(require 'jabber)
-;; (autoload 'jabber-connect "jabber" nil t)
-;; (setq jabber-account-list (quote (("danilkutkevich@jabber.org"))))
-;; (setq jabber-history-enabled t)
-
-;; Flymake <http://emacswiki.org/FlyMake>.
-;; Don't want flymake mode for ruby regions in rhtml files and also on
-;; read only files.
-;; (add-hook 'ruby-mode-hook
-;;   '(lambda () (if (and (not (null buffer-file-name))
-;;                        (file-writable-p buffer-file-name))
-;;                   (flymake-mode))))
-
-;; (setq interpreter-mode-alist
-;;      (cons '("ruby" . ruby-mode) interpreter-mode-alist))
-;; (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-;; (autoload 'inf-ruby-keys "inf-ruby"
-;;  "Set local key defs for inf-ruby in ruby-mode")
-;; (add-hook 'ruby-mode-hook
-;;          '(lambda ()
-;;             (inf-ruby-keys)
-;;             ))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
