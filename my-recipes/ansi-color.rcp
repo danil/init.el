@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; ansi-color.rcp --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -35,21 +35,30 @@
 ;;; Code:
 
 (my-after-init
-  ;; Uniquify
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
+  (require 'ansi-color)
 
-  (require 'uniquify)
+  ;; AnsiColor (Emacs terminal related stuff)
+  ;; <http://emacswiki.org/AnsiColor>.
+  (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+  ;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode) ;filenames with line numbers linkable
 
-  (custom-set-variables '(uniquify-min-dir-content 20))
+  ;; ANSI SGR (Select Graphic Rendition) escape sequences
+  ;; <http://www.emacswiki.org/emacs/AnsiColor>
 
-  (my-eval-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
-     )))
+  (defun my-show-ansi-color ()
+    "Process ANSI color codes in region."
+    (interactive)
+    (ansi-color-apply-on-region (region-beginning) (region-end)))
 
-;;; uniquify.rcp ends here
+  ;; ANSI SRG in shell command output
+  ;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
+  (defadvice display-message-or-buffer (before ansi-color activate)
+    "Process ANSI color codes in shell output."
+    (let ((buf (ad-get-arg 0)))
+      (and (bufferp buf)
+           (string= (buffer-name buf) "*Shell Command Output*")
+           (with-current-buffer buf
+             (ansi-color-apply-on-region (point-min) (point-max))))))
+  )
+
+;;; ansi-color.rcp ends here

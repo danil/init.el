@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; my-uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -35,21 +35,24 @@
 ;;; Code:
 
 (my-after-init
-  ;; Uniquify
-  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
+  ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
+  (global-set-key (my-kbd "s u") 'uniquify-all-lines-region)
+  )
 
-  (require 'uniquify)
+(defun uniquify-all-lines-region (start end)
+  "Find duplicate lines in region START to END keeping first occurrence."
+  (interactive "*r")
+  (save-excursion
+    (let ((end (copy-marker end)))
+      (while
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
 
-  (custom-set-variables '(uniquify-min-dir-content 20))
+(defun uniquify-all-lines-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (uniquify-all-lines-region (point-min) (point-max)))
 
-  (my-eval-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
-     )))
-
-;;; uniquify.rcp ends here
+;;; my-uniquify.rcp ends here
