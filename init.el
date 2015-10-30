@@ -447,23 +447,4 @@
 (dolist (recipe my-recipes)
   (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
 
-;; ;; Redefining the make-auto-save-file-name function in order to get
-;; ;; autosave files sent to a single directory.  Note that this function
-;; ;; looks first to determine if you have a ~/.autosaves/ directory.  If
-;; ;; you do not it proceeds with the standard auto-save procedure.
-;; (defun make-auto-save-file-name ()
-;;   "Return file name to use for auto-saves of current buffer.."
-;;   (if buffer-file-name
-;;       (if (file-exists-p "~/.autosaves/")
-;;           (concat (expand-file-name "~/.autosaves/") "#"
-;;                   (replace-regexp-in-string "/" "!" buffer-file-name)
-;;                   "#")
-;;          (concat
-;;           (file-name-directory buffer-file-name)
-;;           "#"
-;;           (file-name-nondirectory buffer-file-name)
-;;           "#"))
-;;     (expand-file-name
-;;      (concat "#%" (buffer-name) "#"))))
-
 ;;; init.el ends here
