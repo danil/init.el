@@ -445,7 +445,7 @@
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
-  (load-file (format "%s/my-recipes/%s.rcp" user-emacs-directory recipe)))
+  (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
