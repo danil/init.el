@@ -1,4 +1,4 @@
-;;; my-shell-command-on-current-file.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-my-shell-command-on-current-file.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -68,4 +68,4 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
    "%%?"
    (lambda (s) (if (string= s "%%") "%" str))
    command nil t))
-;;; my-shell-command-on-current-file.rcp ends here
+;;; init-my-shell-command-on-current-file.el ends here

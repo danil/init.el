@@ -1,4 +1,4 @@
-;;; uniquify.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-uniquify.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -52,4 +52,4 @@
      ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
      )))
 
-;;; uniquify.rcp ends here
+;;; init-uniquify.el ends here

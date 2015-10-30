@@ -1,4 +1,4 @@
-;;; emacs-lisp-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-emacs-lisp-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -51,4 +51,4 @@
   (message "Eval region")
   (eval-region start end))
 
-;;; emacs-lisp-mode.rcp ends here
+;;; init-emacs-lisp-mode.el ends here

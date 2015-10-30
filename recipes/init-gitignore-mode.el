@@ -1,4 +1,4 @@
-;;; gitignore-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-gitignore-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -36,4 +36,4 @@
 ;;; Git modes <https://github.com/magit/git-modes>.
 (dolist (pattern (list (rx "/.gitignore_global" string-end)))
   (add-to-list 'auto-mode-alist (cons pattern 'gitignore-mode)))
-;;; gitignore-mode.rcp ends here
+;;; init-gitignore-mode.el ends here

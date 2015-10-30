@@ -1,4 +1,4 @@
-;;; ido-vertical-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ido-vertical-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -39,4 +39,4 @@
 (my-after-init
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (my-eval-after-load 'ido (ido-vertical-mode t))))
-;;; ido-vertical-mode.rcp ends here
+;;; init-ido-vertical-mode.el ends here

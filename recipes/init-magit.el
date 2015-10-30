@@ -1,4 +1,4 @@
-;;; magit-blame.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-magit-blame.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -57,4 +57,4 @@
 ;; (defun my-magit-show (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg (magit-show-commit) (magit-show)))
-;;; magit.rcp ends here
+;;; init-magit.el ends here

@@ -1,4 +1,4 @@
-;;; my-sum-numbers-in-region.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-my-sum-numbers-in-region.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -42,4 +42,4 @@
                       (split-string (buffer-substring start
                                                       end))
                       :key #'string-to-number)))
-;;; my-sum-numbers-in-region.rcp ends here
+;;; init-my-sum-numbers-in-region.el ends here

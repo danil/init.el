@@ -1,4 +1,4 @@
-;;; diffview.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-diffview.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -36,4 +36,4 @@
 
 ;; ??????????
 
-;;; diffview.rcp ends here
+;;; init-diffview.el ends here

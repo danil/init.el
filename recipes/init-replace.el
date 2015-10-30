@@ -1,4 +1,4 @@
-;;; replace.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-replace.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -39,4 +39,4 @@
     (global-set-key (my-kbd "l f") 'flush-lines)
     (global-set-key (my-kbd "l k") 'keep-lines)))
 
-;;; replace.rcp ends here
+;;; init-replace.el ends here

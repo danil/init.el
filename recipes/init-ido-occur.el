@@ -1,4 +1,4 @@
-;;; ido-occur.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ido-occur.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -37,4 +37,4 @@
 (my-after-init
   (global-set-key (my-kbd "f o o") 'ido-occur))
 
-;;; ido-occur.rcp ends here
+;;; init-ido-occur.el ends here
