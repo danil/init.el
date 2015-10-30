@@ -1,2 +1,0 @@
-(my-after-init
-  (global-set-key (my-kbd "s s") 'smartscan-mode))

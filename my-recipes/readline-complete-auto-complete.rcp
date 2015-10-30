@@ -1,4 +1,0 @@
-(my-after-init
-  (add-to-list 'ac-modes 'shell-mode)
-
-  (add-hook 'shell-mode-hook 'ac-rlc-setup-sources))

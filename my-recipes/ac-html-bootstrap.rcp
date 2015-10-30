@@ -1,2 +1,0 @@
-(my-after-init
-  (my-eval-after-load 'ac-html (ac-html-bootstrap+)))

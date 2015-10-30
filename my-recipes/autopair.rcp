@@ -1,2 +1,0 @@
-(my-after-init
-  (my-add-mode-to-hooks my-programming-modes-hooks))

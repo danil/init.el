@@ -1,9 +1,0 @@
-(my-after-init
-  (my-eval-after-load 'dired
-    (define-key dired-mode-map "\M-!" 'my-dired-smart-shell-command)))
-
-(defun my-dired-smart-shell-command (&optional arg)
-  (interactive "P")
-  (if arg
-      (call-interactively 'dired-smart-shell-command)
-    (call-interactively 'my-shell-command-on-current-file)))

@@ -1,4 +1,0 @@
-(autoload 'helm-descbinds-install "helm-descbinds")
-
-(my-after-init
-  (global-set-key (my-kbd "m h ? b") 'helm-descbinds))

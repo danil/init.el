@@ -1,4 +1,0 @@
-(custom-set-variables
- '(idle-highlight-global-idle-time 0.7))
-
-(my-after-init (idle-highlight-global-mode))
