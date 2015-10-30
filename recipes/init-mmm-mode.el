@@ -1,4 +1,4 @@
-;;; mmm-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-mmm-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -88,4 +88,4 @@
 ;;                                   "\\.r?html\\'"
 ;;                                   "\\.r?html\\.erb\\'")))
 
-;;; mmm-mode.rcp ends here
+;;; init-mmm-mode.el ends here

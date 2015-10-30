@@ -1,4 +1,4 @@
-;;; smart-mode-line.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-smart-mode-line.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -65,4 +65,4 @@
     ("^~/src/vendor/johnstudio/" ":johnstudio:"))
 
   "My smart-mode-line replacements.")
-;;; smart-mode-line.rcp ends here
+;;; init-smart-mode-line.el ends here

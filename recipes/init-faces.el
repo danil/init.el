@@ -1,4 +1,4 @@
-;;; faces.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-faces.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -42,4 +42,4 @@
          (set-face-background 'scroll-bar "white")
          (set-face-foreground 'scroll-bar "gray"))))
 
-;;; faces.rcp ends here
+;;; init-faces.el ends here

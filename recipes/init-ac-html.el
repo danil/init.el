@@ -1,4 +1,4 @@
-;;; ac-html.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ac-html.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -86,4 +86,4 @@
   (add-hook 'slim-mode-hook 'ac-slim-enable)
   (my-add-mode-to-hooks 'ac-html-enable '(html-mode-hook web-mode-hook)))
 
-;;; ac-html.rcp ends here
+;;; init-ac-html.el ends here

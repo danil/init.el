@@ -1,4 +1,4 @@
-;;; js2-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-js2-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -45,4 +45,4 @@
   (my-eval-after-load 'js2-mode
     (define-key js2-mode-map (kbd "C-c C-f") nil)))
 
-;;; js-mode.rcp ends here
+;;; init-js-mode.el ends here

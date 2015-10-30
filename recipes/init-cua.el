@@ -1,4 +1,4 @@
-;;; cua.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-cua.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -39,4 +39,4 @@
   (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
   )
 
-;;; cua.rcp ends here
+;;; init-cua.el ends here

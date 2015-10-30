@@ -1,4 +1,4 @@
-;;; web-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-web-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -51,4 +51,4 @@
   (my-eval-after-load 'web-mode
     (define-key web-mode-map (kbd "C-c C-f") nil)))
 
-;;; web-mode.rcp ends here
+;;; init-web-mode.el ends here

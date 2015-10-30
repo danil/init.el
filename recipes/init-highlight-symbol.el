@@ -1,4 +1,4 @@
-;;; highlight-symbol.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-highlight-symbol.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -44,4 +44,4 @@
 
   (my-add-mode-to-hooks 'highlight-symbol-mode my-programming-modes-hooks))
 
-;;; highlight-symbol.rcp ends here
+;;; init-highlight-symbol.el ends here

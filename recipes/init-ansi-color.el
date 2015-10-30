@@ -1,4 +1,4 @@
-;;; ansi-color.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ansi-color.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -61,4 +61,4 @@
              (ansi-color-apply-on-region (point-min) (point-max))))))
   )
 
-;;; ansi-color.rcp ends here
+;;; init-ansi-color.el ends here

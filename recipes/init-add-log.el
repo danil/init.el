@@ -1,4 +1,4 @@
-;;; add-log.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-add-log.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -36,4 +36,4 @@
 (my-after-init
   (my-eval-after-load 'add-log
     (define-key change-log-mode-map (kbd "C-c C-f") nil)))
-;;; add-log.rcp ends here
+;;; init-add-log.el ends here

@@ -1,4 +1,4 @@
-;;; transpose-frame.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-transpose-frame.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -45,4 +45,4 @@
   (interactive)
   (my-with-repeat-while-press-last-key (transpose-frame)))
 
-;;; transpose-frame.rcp ends here
+;;; init-transpose-frame.el ends here

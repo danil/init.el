@@ -1,4 +1,4 @@
-;;; ispell.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ispell.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -42,4 +42,4 @@
   ;; (setq ispell-dictionary "german")
   )
 
-;;; ispell.rcp ends here
+;;; init-ispell.el ends here

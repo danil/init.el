@@ -1,4 +1,4 @@
-;;; org-ac.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-org-ac.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -34,4 +34,4 @@
 
 ;;; Code:
 (my-after-init (org-ac/config-default))
-;;; org-ac.rcp ends here
+;;; init-org-ac.el ends here

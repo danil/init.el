@@ -1,4 +1,4 @@
-;;; window.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-window.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -46,4 +46,4 @@
 (defun bury-buffer-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key (bury-buffer)))
-;;; window.rcp ends here
+;;; init-window.el ends here

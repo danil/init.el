@@ -1,4 +1,4 @@
-;;; ruby-mode.rcp --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ruby-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -220,4 +220,4 @@ If the result is do-end block, it will always be multiline."
 ;;             (inf-ruby-keys)
 ;;             ))
 
-;;; ruby-mode.rcp ends here
+;;; init-ruby-mode.el ends here
