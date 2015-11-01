@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-magit-blame.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,31 +33,18 @@
 
 ;;; Code:
 
-(require 'my-init)
-(require 'ag)
+(custom-set-variables '(magit-blame-heading-format "%-20a %C %s %H"))
 
 (my-after-init
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (global-set-key (my-kbd "v b") 'my-magit-blame))
 
-  (my-eval-after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+(defun my-magit-blame (&optional arg)
+  "My magit blame wrapper.
+If ARG provided then blame with popup menu."
 
-(defun my-ag-kill-buffers (&optional arg)
   (interactive "P")
 
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
+  (if arg (call-interactively 'magit-blame-popup)
+    (call-interactively 'magit-blame)))
 
-(provide 'init-ag)
-
-;;; init-ag.el ends here
+;;; init-magit-blame.el ends here

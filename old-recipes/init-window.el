@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-window.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,31 +33,16 @@
 
 ;;; Code:
 
-(require 'my-init)
-(require 'ag)
+;; Split vertical by default
+;; <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>.
+(custom-set-variables '(split-height-threshold nil)
+                      '(split-width-threshold 64))
 
 (my-after-init
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (global-set-key (my-kbd "b b") 'bury-buffer-with-repeat)
+  (global-set-key (my-kbd "b r n") 'rename-buffer))
 
-  (my-eval-after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
-
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
-
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
-
-(provide 'init-ag)
-
-;;; init-ag.el ends here
+(defun bury-buffer-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key (bury-buffer)))
+;;; init-window.el ends here
