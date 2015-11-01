@@ -33,9 +33,6 @@
 
 ;;; Code:
 
-(require 'my-init)
-(require 'ag)
-
 (my-after-init
   (global-set-key (my-kbd "f s s") 'ag)
   (global-set-key (my-kbd "f s r") 'ag-regexp)
@@ -52,12 +49,9 @@
 
 (defun my-ag-kill-buffers (&optional arg)
   (interactive "P")
-
   (if arg
       (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
     (ag-kill-other-buffers)
     (message "All ag-mode buffers other than the current buffer killed")))
-
-(provide 'init-ag)
 
 ;;; init-ag.el ends here

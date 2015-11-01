@@ -1,9 +1,7 @@
 Emacs configs
 =============
 
-My emacs configuration separated into recipes files.  
-Recipes files loads in `init.el`
-and initialize via hooks or via `eval-after-load`.
+My emacs configuration.
 
 Features
 --------
