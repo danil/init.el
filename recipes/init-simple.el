@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-simple.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -34,25 +34,12 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  ;; (setq line-number-mode t)
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+  (setq column-number-mode t) ;column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
+  (transient-mark-mode t) ;transient mark mode <http://emacswiki.org/TransientMarkMode>
+  (global-set-key (my-kbd "b l t") 'toggle-truncate-lines)
+  ;; (global-set-key (my-kbd "g l") 'goto-line)
+  (global-set-key (my-kbd "r c l") 'count-lines-region))
 
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
-
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
-
-;;; init-ag.el ends here
+;;; init-simple.el ends here

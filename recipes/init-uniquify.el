@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-uniquify.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -34,25 +34,21 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  ;; Uniquify
+  ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
+  ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+  (require 'uniquify)
 
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
+  (custom-set-variables '(uniquify-min-dir-content 20))
 
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
+  (my-init--after-load 'uniquify
+    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
+    (setq
+     uniquify-buffer-name-style 'post-forward ;'forward
+     uniquify-separator "  " ;":"
+     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
+     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
+     )))
 
-;;; init-ag.el ends here
+;;; init-uniquify.el ends here

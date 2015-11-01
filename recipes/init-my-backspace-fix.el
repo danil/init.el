@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-my-backspace-fix.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,26 +33,18 @@
 
 ;;; Code:
 
+;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
+
+;; (global-set-key [(control h)] 'delete-backward-char)
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (my-backspace-fix)
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+  (my-init--after-load 'term-mode (my-backspace-fix)))
 
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
+(defun my-backspace-fix ()
+  (keyboard-translate ?\C-h ?\C-?)
+  (define-key key-translation-map [?\C-h] [?\C-?]))
 
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
-
-;;; init-ag.el ends here
+(defun my-backspace-fix-i ()
+  (interactive) (my-backspace-fix))
+;;; init-my-backspace-fix.el ends here

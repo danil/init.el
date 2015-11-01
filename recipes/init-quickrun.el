@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-quickrun.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -34,25 +34,21 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (global-set-key (my-kbd "! b") 'my-quickrun)
+  (global-set-key (my-kbd "! r") 'my-quickrun-region)
+  (global-set-key (my-kbd "! s") 'quickrun-shell))
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
-
-(defun my-ag-kill-buffers (&optional arg)
+(defun my-quickrun (&optional arg)
   (interactive "P")
 
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
+  (if (equal arg '(4)) ;universal-argument <http://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html>, <http://www.gnu.org/software/emacs/manual/html_node/emacs/Arguments.html>
+      (call-interactively 'quickrun-with-arg)
+    (call-interactively 'quickrun)))
 
-;;; init-ag.el ends here
+(defun my-quickrun-region (&optional arg)
+  (interactive "P")
+
+  (if arg (call-interactively 'quickrun-replace-region)
+    (call-interactively 'quickrun-region)))
+
+;;; init-quickrun.el ends here

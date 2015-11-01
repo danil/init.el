@@ -58,15 +58,17 @@
 
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
 ;;;###autoload
-(defmacro my-after-init (&rest body)
+(defmacro my-init--hook (&rest body)
   "After loading all the init files, evaluate BODY."
+
   (declare (indent defun))
   `(add-hook 'after-init-hook
              '(lambda () ,@body)))
 
 ;;;###autoload
-(defmacro my-eval-after-load (feature &rest body)
+(defmacro my-init--after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
+
   (declare (indent defun))
   `(eval-after-load ,feature
      '(progn ,@body)))
@@ -82,24 +84,26 @@
 ;; )
 
 ;;;###autoload
-(defun my-add-auto-mode-to-patterns (mode &rest patterns)
+(defun my-init--add-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun my-add-pattern-to-auto-modes (pattern &rest modes)
+(defun my-init--add-pattern-to-modes (pattern &rest modes)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun my-add-mode-to-hooks (mode hooks)
+(defun my-init--add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 
 ;;;###autoload
-(defun my-autoload-file-on-functions (file-name &rest functions)
+(defun my-init--autoload-file-on-functions (file-name &rest functions)
   "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))

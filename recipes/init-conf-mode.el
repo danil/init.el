@@ -1,0 +1,67 @@
+(my-init--hook
+  (my-init--add-mode-to-patterns 'conf-mode
+                                "/\\.config/skippy-xd/skippy-xd\\.rc\\'"
+                                "/\\.curlrc\\'"
+                                "/\\.gtkrc-2.0\\'"
+                                "/\\.inputrc\\'"
+                                "/\\.moc/keymap\\'"
+                                "/\\.npmrc\\'"
+                                "/\\.rvmrc\\'"
+                                "/\\.screenrc\\'"
+                                "/\\.tigrc\\'"
+                                "/conkyrc_calendar\\'"
+                                "/conkyrc_top\\'"
+                                "/dunstrc\\'"
+                                "/etc/fstab\\'"
+                                "/etc/mail/aliases\\'"
+                                "/etc/mailutils\\.d/"
+                                "/fail2ban/.*\\.local\\'"
+                                "/hosts\\'"
+                                "/htoprc\\'"
+                                "/locale.gen\\'"
+                                "/mailutils\\.rc\\'"
+                                "/mimeapps.list\\'"
+                                "/robots.txt\\'"
+                                "/securetty\\'"
+                                "/share/applications/defaults\\.list\\'"
+                                "/sshd_config\\'"
+                                "/sudoers\\'"
+                                "/tint2rc\\'"
+                                "\\.cnf\\'"
+                                "\\.eixrc\\'"
+                                "\\.features\\'" ;cucumber features
+                                "\\.feed2imaprc\\'"
+                                "\\.gtkrc.mine\\'"
+                                "\\.pkla\\'"
+                                "\\.skippyrc\\'"
+                                "\\.theme\\'"
+                                "\\.xxkbrc\\'"
+                                "\\parcelliterc\\'"
+                                "\\torrc\\'")
+
+  ;; Logrotate scripts.
+  (my-init--add-mode-to-patterns 'conf-mode
+                                "/etc/logrotate\\.d/"
+                                "\\.logrotate\\'")
+
+  ;; Gentoo configs.
+  (my-init--add-mode-to-patterns 'conf-mode
+                                "/etc/conf\\.d/"
+                                "/etc/eixrc/"
+                                "/etc/env\\.d/"
+                                "/etc/portage/env/"
+                                "/etc/portage/package\\..*\\'"
+                                "/etc/portage/profile/use\\.mask\\'"
+                                "/etc/portage/sets/"
+                                "/portage/package\\.license\\'"
+                                "/profiles/categories\\'"
+                                "/profiles/package.mask\\'"
+                                "/profiles/repo_name\\'"
+                                "/var/lib/portage/world_sets\\'"
+                                "\\world\\'")
+
+  (my-init--add-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
+
+  (my-init--add-mode-to-patterns 'conf-colon-mode
+                                "/rsyncd.secrets\\'"
+                                "\\.pgpass\\'"))

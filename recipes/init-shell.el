@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-shell.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -34,25 +34,20 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (global-set-key (my-kbd "t t") 'shell)
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+  (my-init--after-load 'shell
+    (define-key shell-mode-map (kbd "C-c C-f") nil)
+    (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear)))
 
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
+(defun my-shell-clear ()
+  "Clear current shell from prompt to `point-min'."
 
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
+  (interactive)
+  (goto-char (point-max))
+  (search-backward "@")
+  (beginning-of-line)
+  (kill-region (point-min) (point))
+  (goto-char (point-max)))
 
-;;; init-ag.el ends here
+;;; init-shell.el ends here
