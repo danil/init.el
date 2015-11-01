@@ -368,6 +368,6 @@
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
-  (load-file (format "%s/old-recipes/init-%s.el" user-emacs-directory recipe)))
+  (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
 
 ;;; init.el ends here

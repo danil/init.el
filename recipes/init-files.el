@@ -1,9 +1,9 @@
-;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-files.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
+;; Package-Requires: ((my-init))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,26 +33,25 @@
 
 ;;; Code:
 
-(my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+(my-init--hook (global-set-key (my-kbd "b r r") 'revert-buffer))
 
-  (my-init--after-load 'ag
-    ;; (cond ((equal frame-background-mode 'dark)
-    ;;        ;; (set-face-background 'ag-match-face "green3")
-    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+;; ;; Redefining the make-auto-save-file-name function in order to get
+;; ;; autosave files sent to a single directory.  Note that this function
+;; ;; looks first to determine if you have a ~/.autosaves/ directory.  If
+;; ;; you do not it proceeds with the standard auto-save procedure.
+;; (defun make-auto-save-file-name ()
+;;   "Return file name to use for auto-saves of current buffer.."
+;;   (if buffer-file-name
+;;       (if (file-exists-p "~/.autosaves/")
+;;           (concat (expand-file-name "~/.autosaves/") "#"
+;;                   (replace-regexp-in-string "/" "!" buffer-file-name)
+;;                   "#")
+;;          (concat
+;;           (file-name-directory buffer-file-name)
+;;           "#"
+;;           (file-name-nondirectory buffer-file-name)
+;;           "#"))
+;;     (expand-file-name
+;;      (concat "#%" (buffer-name) "#"))))
 
-(defun my-ag-kill-buffers (&optional arg)
-  (interactive "P")
-
-  (if arg
-      (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
-    (ag-kill-other-buffers)
-    (message "All ag-mode buffers other than the current buffer killed")))
-
-;;; init-ag.el ends here
+;;; init-files.el ends here
