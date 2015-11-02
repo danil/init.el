@@ -11,6 +11,7 @@
 ;; (depends-on "auto-complete-emacs-lisp" "Auto-complete sources for emacs lisp") ;<http://www.cx4a.org/pub/auto-complete-emacs-lisp.el>
 ;; (depends-on "ebuild-mode" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 ;; (depends-on "erise")
+;; (depends-on "lfe-mode")
 ;; (depends-on "mmm-mode")
 ;; (depends-on "org-readme")
 
