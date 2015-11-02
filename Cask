@@ -9,7 +9,7 @@
 ;; (source org)
 
 ;; (depends-on "auto-complete-emacs-lisp" "Auto-complete sources for emacs lisp") ;<http://www.cx4a.org/pub/auto-complete-emacs-lisp.el>
-;; (depends-on "ebuild-mode" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
+;; (depends-on "ebuild-mode" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 ;; (depends-on "erise")
 ;; (depends-on "mmm-mode")
 ;; (depends-on "org-readme")
@@ -93,6 +93,8 @@
 (depends-on "quickrun")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
+
+(depends-on "minitest")
 (depends-on "rbenv")
 (depends-on "rspec-mode")
 (depends-on "ruby-guard")
@@ -100,6 +102,7 @@
 (depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO")) "Pry support within Emacs")
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
+
 (depends-on "rust-mode")
 (depends-on "sass-mode")
 (depends-on "scss-mode")
