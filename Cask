@@ -29,7 +29,6 @@
 (depends-on "anzu")
 (depends-on "apache-mode")
 (depends-on "bash-completion")
-(depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "cider" "0.9.1")
 (depends-on "clojure-mode")
@@ -68,7 +67,11 @@
 (depends-on "jsfmt")
 (depends-on "json-mode")
 (depends-on "json-reformat")
+
+(depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido")
+(depends-on "noflet")
+
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "lua-mode")
