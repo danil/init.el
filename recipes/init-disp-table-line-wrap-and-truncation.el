@@ -45,7 +45,7 @@
 
 
 (defface my-wrap-glyph-face
-  '((t (:background "green3"))) ;light green
+  '((t (:background "green4"))) ;light green
   "My custom face for the wrap glyphs.")
 
 ;; Truncation
