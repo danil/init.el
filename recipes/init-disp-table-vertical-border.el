@@ -39,6 +39,6 @@
   (setq standard-display-table (make-display-table)))
 
 (set-display-table-slot standard-display-table
-                        'vertical-border (make-glyph-code ?\u200B)) ;(make-glyph-code 32) ;?|))
+                        'vertical-border (make-glyph-code 32)) ; ?\u200B zero width space ;(make-glyph-code 32) ;?|))
 
 ;;; init-disp-table-vertical-border.el ends here
