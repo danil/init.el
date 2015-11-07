@@ -81,7 +81,7 @@
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
 (depends-on "nodejs-repl")
-(depends-on "nvm" :git "https://github.com/danil/nvm.el" :files ("nvm.el") "Manage Node versions within Emacs")
+(depends-on "nvm")
 (depends-on "org" "20151005")
 (depends-on "org-ac")
 (depends-on "package-build")
