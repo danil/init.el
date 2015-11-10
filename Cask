@@ -8,19 +8,17 @@
 ;; (source melpa)
 ;; (source org)
 
-;; (depends-on "auto-complete-emacs-lisp" "Auto-complete sources for emacs lisp") ;<http://www.cx4a.org/pub/auto-complete-emacs-lisp.el>
-;; (depends-on "ebuild-mode" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 ;; (depends-on "erise")
 ;; (depends-on "lfe-mode")
 ;; (depends-on "mmm-mode")
 ;; (depends-on "org-readme")
 
-;; (depends-on "ac-html-bootstrap")
-(depends-on "ac-etags")
-
 (depends-on "ac-html" "0.31")
 (depends-on "web-completion-data") ;used by ad-html
 
+;; (depends-on "ac-html-bootstrap")
+;; (depends-on "auto-complete-emacs-lisp" :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" "Auto-complete sources for emacs lisp")
+(depends-on "ac-etags")
 (depends-on "auto-complete")
 (depends-on "auto-complete-chunk")
 (depends-on "auto-complete-nxml")
@@ -43,6 +41,7 @@
 (depends-on "direx")
 (depends-on "discover-my-major")
 (depends-on "dockerfile-mode")
+(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git"  "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
