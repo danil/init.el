@@ -1,19 +1,19 @@
 (source "kutkevich" "http://elpa.kutkevich.org/mirror/")
 
-;; (source "ELPA" "http://tromey.com/elpa/")
-;; (source "melpa-stable" "http://stable.melpa.org/packages/")
-;; (source SC)
-;; (source gnu)
-;; (source marmalade)
-;; (source melpa)
-;; (source org)
+(source "ELPA" "http://tromey.com/elpa/")
+(source "melpa-stable" "http://stable.melpa.org/packages/")
+(source SC)
+(source gnu)
+(source marmalade)
+(source melpa)
+(source org)
 
 ;; (depends-on "erise")
 ;; (depends-on "lfe-mode")
 ;; (depends-on "mmm-mode")
 ;; (depends-on "org-readme")
 
-(depends-on "ac-html" "0.31")
+(depends-on "ac-html" :git "https://github.com/cheunghy/ac-html.git" :ref "v0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
 
 ;; (depends-on "ac-html-bootstrap")
@@ -29,7 +29,7 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
-(depends-on "cider" "0.9.1")
+(depends-on "cider" :git "https://github.com/clojure-emacs/cider.git" :ref "v0.9.1" ) ;i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
@@ -62,8 +62,10 @@
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
+
+;;; JavaScript.
 (depends-on "jade-mode")
-(depends-on "js2-mode" "20150909")
+(depends-on "js2-mode" :git "https://github.com/mooz/js2-mode.git" :ref "20150909") ;new version show to many error highlightings
 (depends-on "jsfmt")
 (depends-on "json-mode")
 (depends-on "json-reformat")
@@ -79,9 +81,14 @@
 (depends-on "markdown-mode")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
+
+;;; Node.js.
 (depends-on "nodejs-repl")
+
+(depends-on "dash-functional") ;required by nvm
 (depends-on "nvm")
-(depends-on "org" "20151005")
+
+(depends-on "org" "20151005") ;fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
 (depends-on "org-ac")
 (depends-on "package-build")
 (depends-on "php-mode")
