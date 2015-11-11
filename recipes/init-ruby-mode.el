@@ -57,16 +57,19 @@
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
-  ;; Ruby indentation fix
-  ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
+
   (my-init--after-load 'ruby-mode
     (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
+
     ;; My keyboard macroses.
     ;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
-    (fset 'my-kbd-macro-ruby-string-to-symbol
-          "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
     ;; (fset 'my-kbd-macro-ruby-new-hash-syntax
     ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+    (fset 'my-kbd-macro-ruby-string-to-symbol
+          "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
+
+    ;; Ruby indentation fix
+    ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
     (defadvice ruby-indent-line (after line-up-args activate)
       (let (indent prev-indent arg-indent)
         (save-excursion
