@@ -62,7 +62,8 @@
                                " SP" ;smartparens-mode
                                " Undo-Tree" ;undo-tree-mode
                                " end" ;ruby-end-mode
-                               " ew:mnlt" ;ethan-wspace (highlight trailing whitespace)
+                               " ew:mnl" ;ethan-wspace find NO errors in Makefile, C or Go sources
+                               " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
                                " gg" ;git-gutter-mode
                                " hl-s" ;highlight-symbol-mode
                                " hs" ;hideshow
