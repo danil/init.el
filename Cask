@@ -102,6 +102,7 @@
 (depends-on "rainbow-mode")
 
 (depends-on "minitest")
+(depends-on "multi-compile")
 (depends-on "rbenv")
 (depends-on "rspec-mode")
 (depends-on "ruby-guard")
