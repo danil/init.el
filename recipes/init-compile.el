@@ -34,7 +34,7 @@
 ;;; Code:
 
 (my-init--hook
-  ;; (global-set-key (my-kbd "! c") 'compile)
+  (global-set-key (my-kbd "! c") 'compile)
 
   (my-init--after-load 'compile
     (define-key compilation-mode-map "\C-c\C-f" nil)))
