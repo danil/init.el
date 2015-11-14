@@ -241,6 +241,7 @@
 (my-recipe '(git-gutter))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
+(my-recipe '(gotest))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(help))
 (my-recipe '(help-mode))

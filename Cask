@@ -55,6 +55,7 @@
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 (depends-on "go-mode")
+(depends-on "gotest")
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
 (depends-on "ido-describe-bindings")
