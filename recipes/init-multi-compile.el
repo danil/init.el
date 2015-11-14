@@ -36,11 +36,18 @@
 ;;; <https://github.com/ReanGD/emacs-multi-compile#sample-configuration>.
 (custom-set-variables
  '(multi-compile-alist
-   '((go-mode . (("go-compile" . "go build")
-                 ("go-install" . "go install")))
-     (rust-mode . (("rust-debug" . "cargo run")
-                   ("rust-release" . "cargo run --release")
-                   ("rust-test" . "cargo test"))))))
+   '((go-mode . (("go build" . "go build")
+                 ("go test" . "go test")))
+     (ruby-mode . (("rspec" . "bundle exec rspec")
+                   ("rake db:migrate" . "bundle exec rake db:migrate")
+                   ("rake db:migrate RAILS_ENV=test" . "bundle exec rake db:migrate RAILS_ENV=test")
+                   ("rake db:rollback" . "bundle exec rake db:rollback")
+                   ("rake db:rollback RAILS_ENV=test" . "bundle exec rake db:rollback RAILS_ENV=test")
+                   ("bundle install" . "bundle install")
+                   ("bundle update" . "bundle update")))
+     (rust-mode . (("rust debug" . "cargo run")
+                   ("rust release" . "cargo run --release")
+                   ("rust test" . "cargo test"))))))
 
 (my-init--hook
   (global-set-key (my-kbd "! m") 'multi-compile-run))
