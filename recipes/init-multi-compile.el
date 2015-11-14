@@ -36,7 +36,10 @@
 ;;; <https://github.com/ReanGD/emacs-multi-compile#sample-configuration>.
 (custom-set-variables
  '(multi-compile-alist
-   '((go-mode . (("go build" . "go build")
+   '(("/Cask\\'" . (("cask install" . "cd %dir && cask --verbose install")
+                    ("cask outdated" . "cd %dir && cask --verbose outdated")
+                    ("cask install" . "cd %dir && cask --verbose update")))
+     (go-mode . (("go build" . "go build")
                  ("go test" . "go test")))
      (ruby-mode . (("rspec" . "bundle exec rspec")
                    ("rake db:migrate" . "bundle exec rake db:migrate")
