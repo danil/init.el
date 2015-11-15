@@ -217,6 +217,7 @@
 (my-recipe '(diffview))
 
 (my-recipe '(dired))
+(my-recipe '(dired-rainbow))
 (my-recipe '(dired-reuse-directory-buffer))
 (my-recipe '(direx))
 
