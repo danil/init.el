@@ -239,6 +239,7 @@
 (my-recipe '(fill))
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
+(my-recipe '(flycheck-rust))
 (my-recipe '(git-gutter))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))

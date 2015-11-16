@@ -51,6 +51,7 @@
 (depends-on "findr")
 (depends-on "fish-mode")
 (depends-on "flycheck")
+(depends-on "flycheck-rust")
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
