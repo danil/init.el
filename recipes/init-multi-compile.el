@@ -49,9 +49,11 @@
                    ("bundle install" . "bundle install")
                    ("bundle outdated" . "bundle outdated")
                    ("bundle update" . "bundle update")))
-     (rust-mode . (("rust debug" . "cargo run")
-                   ("rust release" . "cargo run --release")
-                   ("rust test" . "cargo test"))))))
+     (rust-mode . (("rustc" . "rustc %path")
+                   ;; ("rust debug" . "cargo run")
+                   ;; ("rust release" . "cargo run --release")
+                   ;; ("rust test" . "cargo test")
+                   )))))
 
 (my-init--hook
   (global-set-key (my-kbd "! m") 'multi-compile-run))
