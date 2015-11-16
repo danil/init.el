@@ -47,6 +47,7 @@
                    ("rake db:rollback" . "bundle exec rake db:rollback")
                    ("rake db:rollback RAILS_ENV=test" . "bundle exec rake db:rollback RAILS_ENV=test")
                    ("bundle install" . "bundle install")
+                   ("bundle outdated" . "bundle outdated")
                    ("bundle update" . "bundle update")))
      (rust-mode . (("rust debug" . "cargo run")
                    ("rust release" . "cargo run --release")
