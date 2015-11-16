@@ -38,7 +38,7 @@
  '(multi-compile-alist
    '(("/Cask\\'" . (("cask install" . "cd %dir && cask --verbose install")
                     ("cask outdated" . "cd %dir && cask --verbose outdated")
-                    ("cask install" . "cd %dir && cask --verbose update")))
+                    ("cask update" . "cd %dir && cask --verbose update")))
      (go-mode . (("go build" . "go build")
                  ("go test" . "go test")))
      (ruby-mode . (("rspec" . "bundle exec rspec")
