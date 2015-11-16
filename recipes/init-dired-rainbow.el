@@ -36,6 +36,7 @@
 (my-init--hook
   (my-init--after-load 'dired
     (require 'dired-rainbow)
+    (dired-rainbow-define archive "red" ("gz" "tar" "xz"))
     (dired-rainbow-define-chmod executable-unix "Green" "-.*x.*")))
 
 ;;; init-dired-rainbow.el ends here
