@@ -353,6 +353,7 @@
 (my-recipe '(sql-mode))
 (my-recipe '(sql-postgres))
 (my-recipe '(subword-mode))
+(my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
 (my-recipe '(twittering-mode))
 (my-recipe '(undo-tree))
