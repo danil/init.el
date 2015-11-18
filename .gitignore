@@ -1,7 +1,6 @@
 /.cask
 /.mc-lists.el
 /ac-comphist.dat
-/el-get
 /elpa
 /emacs-desktop
 /emacs-desktop.lock
@@ -9,7 +8,6 @@
 /helm-adaptive-history
 /history
 /my-auto-complete
-/my-el-get
 /quelpa
 /saved-places
 /sql
