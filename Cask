@@ -38,7 +38,6 @@
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
-(depends-on "dired-rainbow")
 (depends-on "direx")
 (depends-on "discover-my-major")
 (depends-on "dockerfile-mode")
