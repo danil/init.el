@@ -21,9 +21,9 @@
 (defun my-git-gutter-next-diff ()
   (interactive)
   (my-with-repeat-while-press-last-key
-    (call-interactively 'git-gutter:next-diff)))
+    (call-interactively 'git-gutter:next-hunk)))
 
 (defun my-git-gutter-previous-diff ()
   (interactive)
   (my-with-repeat-while-press-last-key
-    (call-interactively 'git-gutter:previous-diff)))
+    (call-interactively 'git-gutter:previous-hunk)))
