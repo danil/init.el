@@ -32,6 +32,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (custom-set-variables '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
 
 (autoload 'sml/setup "smart-mode-line" nil t)
@@ -42,8 +43,8 @@
 
   (sml/setup)
 
-  (custom-set-faces '(sml/global ((t (:foreground "gray60"
-                                                  :inverse-video nil)))))
+  (custom-set-faces '(sml/global ((t (:foreground "gray60" :inverse-video nil)))))
+  (custom-set-faces '(sml/projectile ((t (:weight normal :inherit sml/filename))))) ;:inherit warning
 
   ;; (dolist (my-path-to-replace my-sml-replacements)
   ;;   (add-to-list 'sml/replacer-regexp-list my-path-to-replace))
@@ -64,4 +65,5 @@
     ("^~/src/vendor/johnstudio/" ":johnstudio:"))
 
   "My smart-mode-line replacements.")
+
 ;;; init-smart-mode-line.el ends here
