@@ -44,6 +44,7 @@
                     git-commit-mode
                     gitconfig-mode
                     gitignore-mode
+                    go-mode
                     haml-mode
                     haskell-mode
                     html-mode

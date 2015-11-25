@@ -55,6 +55,7 @@
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
+(depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "gotest")
 (depends-on "haml-mode")
