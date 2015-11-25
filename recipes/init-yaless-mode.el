@@ -52,10 +52,10 @@
   (interactive)
 
   (let* ((one-more-repeat t)
-         (keynames '("j" "k" "f" "b" "n" "p" "u" "d" "0" "^" "$" "g" "G")))
+         (keynames '("j" "k" "h" "l" "n" "p" "u" "d" "0" "^" "$" "g" "G")))
 
     (while one-more-repeat
-      (message "Scroll: j k u d; move: f b n p; line begin/end: 0 ^ $; buffer begin/end: g G")
+      (message "Scroll: j k u d; move: h l n p; line begin/end: 0 ^ $; buffer begin/end: g G")
 
       (let* ((event (read-event))
              (keyname (format-kbd-macro (vector event) nil)))
@@ -79,8 +79,8 @@
                                              (scroll-up)
                                            (end-of-buffer)))
 
-                    ((equal keyname "f") (forward-char))
-                    ((equal keyname "b") (backward-char))
+                    ((equal keyname "h") (backward-char))
+                    ((equal keyname "l") (forward-char))
                     ((equal keyname "n") (next-line))
                     ((equal keyname "p") (previous-line))
 
