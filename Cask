@@ -57,6 +57,7 @@
 (depends-on "gitignore-mode")
 (depends-on "go-autocomplete")
 (depends-on "go-mode")
+(depends-on "go-projectile")
 (depends-on "gotest")
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
