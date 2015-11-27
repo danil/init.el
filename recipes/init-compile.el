@@ -33,6 +33,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(compilation-scroll-output t))
+
 (my-init--hook
   (global-set-key (my-kbd "! c") 'compile)
 
