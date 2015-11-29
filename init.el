@@ -296,6 +296,7 @@
 (my-recipe '(my-backspace-fix))
 (my-recipe '(my-beginning-of-line))
 (my-recipe '(my-color-theme))
+(my-recipe '(my-make-indirect-buffer))
 (my-recipe '(my-project))
 (my-recipe '(my-repeat-last-key-command))
 (my-recipe '(my-shell-command-on-current-file))
