@@ -50,7 +50,6 @@
 (depends-on "findr")
 (depends-on "fish-mode")
 (depends-on "flycheck")
-(depends-on "flycheck-rust")
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
@@ -115,7 +114,10 @@
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 
+;; (depends-on "racer")
+(depends-on "flycheck-rust")
 (depends-on "rust-mode")
+
 (depends-on "sass-mode")
 (depends-on "scss-mode")
 (depends-on "simp")
