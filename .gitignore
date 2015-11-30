@@ -7,9 +7,12 @@
 /eshell
 /helm-adaptive-history
 /history
+/ido.last
 /my-auto-complete
 /quelpa
+/recentf
 /saved-places
+/smex-items
 /sql
 /tramp
 /url
