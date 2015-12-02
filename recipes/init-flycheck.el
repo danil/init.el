@@ -36,42 +36,6 @@
                       '(flycheck-idle-change-delay 1.5))
 
 (my-init--hook
-  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks)
-
-  (my-init--after-load 'flycheck
-    (flycheck-define-checker jade
-      "A Jade syntax checker using the Jade compiler.
-
-See URL `http://jade-lang.com'."
-      :command ("/home/danil/node_modules/.bin/jade")
-      :standard-input t
-      :error-patterns
-      ((error line-start
-              "Error: Jade:" line (zero-or-more not-newline) "\n"
-              (one-or-more (and (zero-or-more not-newline) "|"
-                                (zero-or-more not-newline) "\n"))
-              (zero-or-more not-newline) "\n" (message) line-end))
-      :modes jade-mode)
-
-    (flycheck-define-checker less
-      "A LESS syntax checker using lessc.
-
-At least version 1.4 of lessc is required.
-
-See URL `http://lesscss.org'."
-      :command ("/home/danil/node_modules/.bin/lessc" "--lint" "--no-color"
-                ;; We need `source-inplace' to resolve relative `data-uri' paths,
-                ;; see https://github.com/flycheck/flycheck/issues/471
-                source-inplace)
-      :error-patterns
-      ((error line-start (one-or-more word) ":"
-              (message)
-              " in "
-              (file-name)
-
-              " on line " line
-              ", column " column ":"
-              line-end))
-      :modes less-css-mode)))
+  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
 
 ;;; init-flycheck.el ends here
