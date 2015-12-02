@@ -36,6 +36,21 @@
                       '(flycheck-idle-change-delay 1.5))
 
 (my-init--hook
-  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
+  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks)
+
+  (my-init--after-load 'flycheck
+    (flycheck-define-checker jade
+      "A Jade syntax checker using the Jade compiler.
+
+See URL `http://jade-lang.com'."
+      :command ("/home/danil/node_modules/.bin/jade")
+      :standard-input t
+      :error-patterns
+      ((error line-start
+              "Error: Jade:" line (zero-or-more not-newline) "\n"
+              (one-or-more (and (zero-or-more not-newline) "|"
+                                (zero-or-more not-newline) "\n"))
+              (zero-or-more not-newline) "\n" (message) line-end))
+      :modes jade-mode)))
 
 ;;; init-flycheck.el ends here
