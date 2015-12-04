@@ -290,6 +290,7 @@
 
 (my-recipe '(make-mode))
 (my-recipe '(markdown-mode))
+(my-recipe '(mediawiki))
 (my-recipe '(menu-bar))
 (my-recipe '(multi-compile))
 (my-recipe '(multiple-cursors))

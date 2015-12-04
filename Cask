@@ -82,6 +82,7 @@
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
+(depends-on "mediawiki")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
 
