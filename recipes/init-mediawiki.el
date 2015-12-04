@@ -51,4 +51,7 @@
                            ""
                            "Main Page"))))
 
+(my-init--hook
+  (my-init--add-mode-to-patterns 'mediawiki-mode "\\.mw\\'"))
+
 ;;; init-mediawiki.el ends here
