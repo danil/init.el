@@ -52,6 +52,9 @@
                            "Main Page"))))
 
 (my-init--hook
-  (my-init--add-mode-to-patterns 'mediawiki-mode "\\.mw\\'"))
+  (my-init--add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
+
+  (add-hook 'mediawiki-mode-hook
+            (lambda () (define-key mediawiki-mode-map "\C-x\C-s" 'save-buffer))))
 
 ;;; init-mediawiki.el ends here
