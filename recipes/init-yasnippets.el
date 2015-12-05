@@ -34,8 +34,20 @@
 ;;; Code:
 
 (my-init--hook
- (my-init--after-load 'yasnippet
-                      (add-to-list 'yas-snippet-dirs
-                                   (el-get-package-directory "yasnippets"))))
+  (my-init--after-load 'yasnippet
+    (add-to-list 'yas-snippet-dirs
+                 (let* ((pkg 'yasnippets)
+
+                        (desc (or
+                               (if (package-desc-p pkg) pkg)
+                               (cadr (assq pkg package-alist))
+                               (let ((built-in (assq pkg package--builtins)))
+                                 (if built-in
+                                     (package--from-builtin built-in)
+                                   (cadr (assq pkg package-archive-contents))))))
+
+                        (pkg-dir (if desc (package-desc-dir desc))))
+
+                   pkg-dir))))
 
 ;;; init-yasnippets.el ends here
