@@ -60,6 +60,7 @@
                     magit-log-edit-mode
                     makefile-gmake-mode
                     markdown-mode
+                    mediawiki-mode
                     mustache-mode
                     nginx-mode
                     nroff-mode

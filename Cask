@@ -54,10 +54,13 @@
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
+
 (depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "go-projectile")
+(depends-on "go-snippets")
 (depends-on "gotest")
+
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
 (depends-on "ido-describe-bindings")
@@ -68,7 +71,7 @@
 
 ;;; JavaScript.
 (depends-on "jade-mode")
-(depends-on "js2-mode" :git "https://github.com/mooz/js2-mode.git" :ref "20150909") ;new version show to many error highlightings
+(depends-on "js2-mode")
 (depends-on "jsfmt")
 (depends-on "json-mode")
 (depends-on "json-reformat")

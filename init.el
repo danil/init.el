@@ -92,6 +92,7 @@
      lua-mode-hook
      makefile-gmake-mode-hook
      markdown-mode-hook
+     mediawiki-mode-hook
      nginx-mode-hook
      nroff-mode-hook
      nxml-mode-hook
