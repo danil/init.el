@@ -33,6 +33,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(mode-require-final-newline nil)) ;otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
+
 (my-init--hook (global-set-key (my-kbd "b r r") 'revert-buffer))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
