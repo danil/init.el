@@ -35,6 +35,10 @@
 
 (autoload 'js2-mode "js2-mode" nil t)
 
+(custom-set-variables
+ ;; '(js2-highlight-level 3)
+ '(js2-mode-show-strict-warnings nil))
+
 (my-init--hook
   (my-init--add-mode-to-patterns 'js2-mode
                                 "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
