@@ -29,7 +29,7 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
-(depends-on "cider" :git "https://github.com/clojure-emacs/cider.git" :ref "v0.10.0") ;i do not want upgrade "cider-nrepl plugin"
+(depends-on "cider") ;i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
