@@ -1,6 +1,7 @@
 /.cask
 /.mc-lists.el
 /ac-comphist.dat
+/bookmarks
 /elpa
 /emacs-desktop
 /emacs-desktop.lock
