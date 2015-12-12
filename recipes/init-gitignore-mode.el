@@ -32,7 +32,11 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-;;; Git modes <https://github.com/magit/git-modes>.
-(dolist (pattern (list (rx "/.gitignore_global" string-end)))
-  (add-to-list 'auto-mode-alist (cons pattern 'gitignore-mode)))
+
+(my-init--hook
+  ;; Git modes <https://github.com/magit/git-modes>.
+  (my-init--add-mode-to-patterns 'gitignore-mode
+                                "/.agignore\\'"
+                                "/.gitignore_global\\'"))
+
 ;;; init-gitignore-mode.el ends here
