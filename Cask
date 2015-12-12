@@ -103,6 +103,7 @@
 (depends-on "pretty-lambdada")
 (depends-on "projectile")
 (depends-on "projectile-rails")
+(depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
 (depends-on "quelpa")
 (depends-on "quickrun")
 (depends-on "rainbow-delimiters")
