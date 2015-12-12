@@ -32,6 +32,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (my-init--hook
   (global-set-key (my-kbd "? b") 'my-describe-bindings))
 
