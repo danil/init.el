@@ -12,6 +12,7 @@
 ;; (depends-on "lfe-mode")
 ;; (depends-on "mmm-mode")
 ;; (depends-on "org-readme")
+;; (depends-on "yafolding")
 
 (depends-on "ac-html" :git "https://github.com/cheunghy/ac-html.git" :ref "v0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
