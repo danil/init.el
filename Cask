@@ -84,7 +84,7 @@
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "lua-mode")
-(depends-on "magit" :git "https://github.com/magit/magit.git" :ref "2.3.1")
+(depends-on "magit" "2.3.1")
 (depends-on "markdown-mode")
 (depends-on "mediawiki")
 (depends-on "multiple-cursors")
