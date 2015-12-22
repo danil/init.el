@@ -185,6 +185,7 @@
 
 ;; (my-recipe '(erise))
 ;; (my-recipe '(mmm-mode))
+;; (my-recipe '(flycheck-rust)) ;buggy(
 
 (my-recipe '(add-log))
 (my-recipe '(ag))
@@ -239,7 +240,6 @@
 (my-recipe '(fill))
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
-(my-recipe '(flycheck-rust))
 (my-recipe '(git-gutter))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))

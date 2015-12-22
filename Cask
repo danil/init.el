@@ -121,7 +121,7 @@
 (depends-on "ruby-tools")
 
 ;; (depends-on "racer")
-(depends-on "flycheck-rust")
+;; (depends-on "flycheck-rust") ;buggy(
 (depends-on "rust-mode")
 
 (depends-on "sass-mode")
