@@ -14,7 +14,7 @@
 ;; (depends-on "org-readme")
 ;; (depends-on "yafolding")
 
-(depends-on "ac-html" :git "https://github.com/cheunghy/ac-html.git" :ref "v0.31") ;i can not setup new version
+(depends-on "ac-html" "0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
 
 ;; (depends-on "ac-html-bootstrap")
@@ -30,7 +30,7 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
-(depends-on "cider") ;i do not want upgrade "cider-nrepl plugin"
+(depends-on "cider" "0.10.0") ;i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
