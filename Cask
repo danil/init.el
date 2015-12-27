@@ -85,6 +85,7 @@
 (depends-on "list-unicode-display")
 (depends-on "lua-mode")
 (depends-on "magit" "2.3.1")
+(depends-on "magit-popup" "2.3.1")
 (depends-on "markdown-mode")
 (depends-on "mediawiki")
 (depends-on "multiple-cursors")
