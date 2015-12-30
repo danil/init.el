@@ -198,6 +198,7 @@
 (my-recipe '(auto-complete-chunk))
 
 (my-recipe '(bash-completion))
+;; (my-recipe '(buffer-list-update-hook))
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
 (my-recipe '(cc-vars))
@@ -254,12 +255,15 @@
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
 (my-recipe '(ibuffer))
 
+(my-recipe '(crm-custom))
 (my-recipe '(ido))
 (my-recipe '(ido-describe-bindings))
 (my-recipe '(ido-occur))
 (my-recipe '(ido-ubiquitous))
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
+(my-recipe '(smex))
+
 (my-recipe '(kill-ring-ido))
 (my-recipe '(recentf))
 (my-recipe '(recentf-ido-find-file))
@@ -352,7 +356,6 @@
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
 
-(my-recipe '(smex))
 (my-recipe '(sort))
 (my-recipe '(sql))
 (my-recipe '(sql-mode))

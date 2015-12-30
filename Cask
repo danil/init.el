@@ -64,11 +64,14 @@
 
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
+
+(depends-on "crm-custom")
 (depends-on "ido-describe-bindings")
 (depends-on "ido-occur")
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
+(depends-on "smex")
 
 ;;; JavaScript.
 (depends-on "jade-mode")
@@ -134,7 +137,6 @@
 (depends-on "rich-minority")
 
 (depends-on "smartparens")
-(depends-on "smex")
 (depends-on "speed-type")
 (depends-on "systemd")
 (depends-on "toml-mode")
