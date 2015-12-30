@@ -41,7 +41,7 @@
 
  '(ido-max-window-height 25)
 
- '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~src"))
+ '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~/src"))
  '(ido-case-fold t) ;be case-insensitive
 
  '(ido-enable-last-directory-history t) ;remember last used dirs
@@ -63,8 +63,38 @@
 (my-init--hook
   (ido-mode 'both) ;for buffers and files
 
+  (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
+
   (my-init--after-load 'ido
     ;; When using ido, the confirmation is rather annoying.
     (custom-set-variables '(confirm-nonexistent-file-or-buffer nil))))
+
+(defun my-switch-to-buffer (&optional arg)
+  "Use `switch-to-buffer' or `my-switch-to-buffer-for-current-mode' if `ARG'."
+
+  (interactive "P")
+
+  (if arg
+      (my-switch-to-buffer-for-current-mode)
+    (ido-switch-buffer)))
+
+(defun my-switch-to-buffer-for-current-mode ()
+  "Limit ido to the current major mode."
+
+  (interactive)
+
+  (let ((current-mode major-mode))
+
+    (switch-to-buffer
+     (ido-completing-read (format "%s buffer: " current-mode)
+                          (save-excursion
+                            (delq
+                             nil (mapcar (lambda (buf)
+                                           (when (buffer-live-p buf)
+                                             (with-current-buffer buf
+                                               (and (eq major-mode current-mode)
+                                                    (buffer-name buf)))))
+
+                                         (buffer-list))))))))
 
 ;;; init-ido.el ends here
