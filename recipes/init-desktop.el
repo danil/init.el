@@ -56,7 +56,9 @@
   (call-interactively 'desktop-save-in-desktop-dir))
 
 (defun load-my-desktop ()
-  "Load the desktop and enable autosaving."
+  "Load the desktop."
+
   (interactive)
   (call-interactively 'desktop-read))
+
 ;;; init-desktop.el ends here
