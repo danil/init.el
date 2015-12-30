@@ -32,10 +32,12 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (custom-set-variables '(ido-vertical-define-keys 'C-n-and-C-p-only)
                       '(ido-vertical-show-count t))
 
 (my-init--hook
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (my-init--after-load 'ido (ido-vertical-mode t))))
+
 ;;; init-ido-vertical-mode.el ends here
