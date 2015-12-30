@@ -52,6 +52,7 @@
 
 (defun save-my-desktop ()
   "Save the desktop."
+
   (interactive)
   (call-interactively 'desktop-save-in-desktop-dir))
 
