@@ -45,4 +45,5 @@
 (defun bury-buffer-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key (bury-buffer)))
+
 ;;; init-window.el ends here
