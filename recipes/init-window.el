@@ -43,6 +43,8 @@
   (global-set-key (my-kbd "b r n") 'rename-buffer))
 
 (defun bury-buffer-with-repeat ()
+  "Bury current bufer and if repeat then bury next current buffer."
+
   (interactive)
   (my-with-repeat-while-press-last-key (bury-buffer)))
 
