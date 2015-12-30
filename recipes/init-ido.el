@@ -78,6 +78,7 @@
       (my-switch-to-buffer-for-current-mode)
     (ido-switch-buffer)))
 
+;; <http://www.emacswiki.org/emacs/InteractivelyDoThings#toc6>.
 (defun my-switch-to-buffer-for-current-mode ()
   "Limit ido to the current major mode."
 
