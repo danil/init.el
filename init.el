@@ -211,6 +211,7 @@
 (my-recipe '(column-marker))
 (my-recipe '(comint))
 (my-recipe '(compile))
+(my-recipe '(completion-ignored-extensions))
 (my-recipe '(conf-mode))
 (my-recipe '(css))
 (my-recipe '(cua))
