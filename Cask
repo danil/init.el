@@ -17,6 +17,15 @@
 (depends-on "ac-html" "0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
 
+(depends-on "cider" "0.10.0") ;i do not want upgrade "cider-nrepl plugin"
+(depends-on "clojure-mode")
+
+(depends-on "magit" "2.3.1")
+(depends-on "magit-popup" "2.3.1")
+
+(depends-on "org" "20150929") ;fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
+(depends-on "org-ac")
+
 ;; (depends-on "ac-html-bootstrap")
 ;; (depends-on "auto-complete-emacs-lisp" :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" "Auto-complete sources for emacs lisp")
 (depends-on "ac-etags")
@@ -30,8 +39,6 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
-(depends-on "cider" "0.10.0") ;i do not want upgrade "cider-nrepl plugin"
-(depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
 (depends-on "crontab-mode")
@@ -42,7 +49,7 @@
 (depends-on "direx")
 (depends-on "discover-my-major")
 (depends-on "dockerfile-mode")
-(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git"  "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
+(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
@@ -87,8 +94,6 @@
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "lua-mode")
-(depends-on "magit" "2.3.1")
-(depends-on "magit-popup" "2.3.1")
 (depends-on "markdown-mode")
 (depends-on "mediawiki")
 (depends-on "multiple-cursors")
@@ -100,8 +105,6 @@
 (depends-on "dash-functional") ;required by nvm
 (depends-on "nvm")
 
-(depends-on "org" "20151005") ;fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
-(depends-on "org-ac")
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "point-stack")
