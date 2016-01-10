@@ -1,6 +1,6 @@
 ;;; init.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((cask) (my-init))
@@ -198,7 +198,6 @@
 (my-recipe '(auto-complete-chunk))
 
 (my-recipe '(bash-completion))
-;; (my-recipe '(buffer-list-update-hook))
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
 (my-recipe '(cc-vars))
