@@ -73,6 +73,7 @@
 (depends-on "highlight-symbol")
 
 (depends-on "crm-custom")
+(depends-on "ido-clever-match")
 (depends-on "ido-describe-bindings")
 (depends-on "ido-occur")
 (depends-on "ido-ubiquitous")
@@ -147,6 +148,7 @@
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "unicode-troll-stopper")
+;; (depends-on "vlf")
 (depends-on "web-mode")
 (depends-on "window-numbering")
 (depends-on "yaml-mode")

@@ -43,6 +43,9 @@
 (setq calendar-week-start-day t)
 (setq system-time-locale "C")
 
+;; Number of bytes of consing between garbage collections.
+(setq gc-cons-threshold 700000000) ;700 megabyte
+
 (global-font-lock-mode t)
 
 ;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
@@ -257,6 +260,7 @@
 
 (my-recipe '(crm-custom))
 (my-recipe '(ido))
+(my-recipe '(ido-clever-match))
 (my-recipe '(ido-describe-bindings))
 (my-recipe '(ido-occur))
 (my-recipe '(ido-ubiquitous))
