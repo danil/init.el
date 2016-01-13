@@ -370,6 +370,7 @@
 (my-recipe '(twittering-mode))
 (my-recipe '(undo-tree))
 (my-recipe '(uniquify))
+(my-recipe '(vlf))
 (my-recipe '(web-mode))
 (my-recipe '(window))
 (my-recipe '(window-numbering))
