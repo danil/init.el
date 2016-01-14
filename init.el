@@ -44,7 +44,7 @@
 (setq system-time-locale "C")
 
 ;; Number of bytes of consing between garbage collections.
-(setq gc-cons-threshold 300000000) ;300 megabyte
+(setq gc-cons-threshold 4000000) ;4 megabyte
 
 (global-font-lock-mode t)
 
