@@ -34,9 +34,8 @@
 ;;; Code:
 
 (custom-set-variables
- '(setq deft-directory "~/Dropbox/deft") ;<http://jblevins.org/projects/deft>
- '(setq deft-extension "md")
- '(setq deft-text-mode 'markdown-mode))
+ '(deft-directory "~/Dropbox/deft") ;<http://jblevins.org/projects/deft>
+ '(deft-extensions '("md" "markdown" "org" "txt" "text")))
 
 (my-init--hook
   (global-set-key (my-kbd "x d") 'my-deft)
