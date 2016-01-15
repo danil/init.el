@@ -36,32 +36,27 @@
 ;; Interactively do things.
 
 (custom-set-variables
- ;; '(ido-save-directory-list-file "~/.emacs.d/cache/ido.last")
+ ;; '(ido-decorations '( "{ " " }" " | " " | ..." "[ " " ]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
  ;; '(ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*")) ;ignore these guys
-
- '(ido-max-window-height 25)
-
- '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~/src"))
+ ;; '(ido-save-directory-list-file "~/.emacs.d/cache/ido.last")
+ ;; '(ido-use-virtual-buffers t) ;if Recentf is enabled
  '(ido-case-fold t) ;be case-insensitive
-
+ '(ido-confirm-unique-completion t) ;wait for RET, even with unique completion
+ '(ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
  '(ido-enable-last-directory-history t) ;remember last used dirs
+ '(ido-max-directory-size 100000)
+ '(ido-max-prospects 500) ;don't spam my minibuffer
+ '(ido-max-window-height 25)
  '(ido-max-work-directory-list 300) ;should be enough
  '(ido-max-work-file-list 200) ;remember many
+ '(ido-mode 'both)
  '(ido-use-filename-at-point nil) ;don't use filename at point (annoying)
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
-
- '(ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
- '(ido-max-prospects 500) ;don't spam my minibuffer
- '(ido-confirm-unique-completion t) ;wait for RET, even with unique completion
-
- ;; '(ido-decorations '( "{ " " }" " | " " | ..." "[ " " ]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
-
- '(ido-everywhere t)
- ;; '(ido-use-virtual-buffers t) ;if Recentf is enabled
- '(ido-max-directory-size 100000))
+ '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~/src")))
 
 (my-init--hook
   (ido-mode 'both) ;for buffers and files
+  (ido-everywhere t)
 
   (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
 
