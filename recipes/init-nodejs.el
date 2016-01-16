@@ -1,4 +1,4 @@
-;;; init-nvm.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-nodejs.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -33,15 +33,19 @@
 
 ;;; Code:
 
-(autoload 'nvm-use "nvm" nil t)
-(autoload 'nvm-use-for "nvm" nil t)
-
-;; (custom-set-variables '(nvm-dir (f-full "~/n/n")))
-
 (my-init--hook
-  ;; (nvm-use "0.11")
+  ;; <http://stackoverflow.com/questions/18392303/adding-binary-path-to-emacs-path#18393068>.
+  (setenv "PATH" (concat (getenv "PATH")
+                         ":"
+                         (expand-file-name "~/.nvm/versions/node/v5.0.0/bin")))
+  (setq exec-path (append exec-path
+                          (list (expand-file-name "~/.nvm/versions/node/v5.0.0/bin"))))
 
-  ;; Use Node.js version from ~/.nvmrc
-  (nvm-use-for))
+  (setenv "PATH" (concat
+                  (getenv "PATH")
+                  ":"
+                  (expand-file-name "~/node_modules/.bin")))
+  (setq exec-path (append exec-path
+                          (list (expand-file-name "~/node_modules/.bin")))))
 
-;;; init-nvm.el ends here
+;;; init-nodejs ends here
