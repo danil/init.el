@@ -99,13 +99,7 @@
 (depends-on "mediawiki")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
-
-;;; Node.js.
 (depends-on "nodejs-repl")
-
-(depends-on "dash-functional") ;required by nvm
-(depends-on "nvm")
-
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "point-stack")
