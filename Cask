@@ -103,7 +103,6 @@
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "point-stack")
-(depends-on "pretty-lambdada")
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)

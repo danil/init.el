@@ -325,7 +325,6 @@
 (my-recipe '(paren))
 (my-recipe '(php-mode))
 (my-recipe '(point-stack))
-(my-recipe '(pretty-lambdada))
 
 (my-recipe '(projectile))
 (my-recipe '(projectile-rails))
