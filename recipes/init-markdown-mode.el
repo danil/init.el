@@ -40,6 +40,7 @@
   (my-init--add-mode-to-patterns 'markdown-mode
                                 "/README\\'"
                                 "/mutt[-a-zA-Z0-9]+\\'"
+                                "\\.litcoffee\\'"
                                 "\\.markdown\\'"
                                 "\\.md\\'"
                                 "\\.mdown\\'")
