@@ -20,8 +20,8 @@
 (depends-on "cider" "0.10.0") ;i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 
-(depends-on "magit" "2.3.1")
-(depends-on "magit-popup" "2.3.1")
+(depends-on "magit")
+(depends-on "magit-popup")
 
 (depends-on "org" "20150929") ;fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
 (depends-on "org-ac")
