@@ -36,6 +36,8 @@
 ;; The common sources for all modes
 ;; <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>.
 (custom-set-variables
+ '(ac-comphist-file (expand-file-name (concat "~/.emacs.var"
+                                              "/ac-comphist.dat")))
  '(ac-sources
    '(ac-source-abbrev
      ac-source-words-in-buffer
