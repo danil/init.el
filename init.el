@@ -242,6 +242,7 @@
 (my-recipe '(files))
 (my-recipe '(files-backup))
 (my-recipe '(fill))
+(my-recipe '(find-temp-file))
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
 (my-recipe '(git-gutter))

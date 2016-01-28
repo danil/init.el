@@ -55,6 +55,7 @@
 (depends-on "ethan-wspace")
 (depends-on "expand-region")
 (depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el") "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>")
+(depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
 (depends-on "flycheck")
