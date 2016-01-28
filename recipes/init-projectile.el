@@ -1,6 +1,6 @@
 ;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init))
@@ -35,7 +35,14 @@
 
 (custom-set-variables
  ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-mode-line nil))
+ '(projectile-mode-line nil)
+
+ ;; (my-init--after-load 'projectile
+ ;;   (setq projectile-project-root-files-bottom-up
+ ;;         (append projectile-project-root-files-bottom-up
+ ;;                 '("profiles" ; Gentoo portage overlay
+ ;;                   ))))
+ )
 
 (my-init--hook (projectile-global-mode))
 
