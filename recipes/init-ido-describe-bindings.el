@@ -34,7 +34,8 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "? b") 'my-describe-bindings))
+  (my-init--after-load 'help
+    (define-key help-map (kbd "b") 'my-describe-bindings)))
 
 (defun my-describe-bindings (&optional arg)
   "My `describe-bindings' wrapper.
