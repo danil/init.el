@@ -34,7 +34,10 @@
 ;;; Code:
 
 (my-init--hook
-  (my-init--add-mode-to-patterns 'emacs-lisp-mode "/Cask\\'")
+  (my-init--add-mode-to-patterns 'emacs-lisp-mode
+                                 "/Cask\\'"
+                                 "/\\.emacs\\.d/bookmarks\\'"
+                                 "/ac-comphist\\.dat\\'")
 
   (my-init--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)
