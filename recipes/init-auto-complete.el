@@ -116,6 +116,7 @@
                     shell-mode
                     sieve-mode
                     slim-mode
+                    snippet-mode
                     sql-interactive-mode
                     sql-mode
                     text-mode
