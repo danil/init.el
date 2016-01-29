@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: table
+# key: table
+# --
+table
+  tbody
+    tr
+      td$0
