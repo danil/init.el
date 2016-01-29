@@ -190,6 +190,7 @@
 ;; (my-recipe '(mmm-mode))
 ;; (my-recipe '(flycheck-rust)) ;buggy(
 
+(my-recipe '(abbrev))
 (my-recipe '(add-log))
 (my-recipe '(ag))
 (my-recipe '(ansi-color))
