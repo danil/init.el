@@ -37,6 +37,7 @@
   (my-init--add-mode-to-patterns 'emacs-lisp-mode
                                  "/Cask\\'"
                                  "/\\.emacs\\.d/bookmarks\\'"
+                                 "/\\.?abbrev_defs\\'"
                                  "/ac-comphist\\.dat\\'")
 
   (my-init--after-load 'lisp-mode
