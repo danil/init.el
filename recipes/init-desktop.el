@@ -1,6 +1,6 @@
 ;;; init-desktop.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init))
@@ -40,10 +40,10 @@
 (custom-set-variables
  '(desktop-base-file-name (convert-standard-filename "emacs-desktop"))
  '(desktop-base-lock-name (convert-standard-filename "emacs-desktop.lock"))
- '(desktop-dirname "~/.emacs.d/")
+ '(desktop-dirname "~/.emacs.var/")
  '(desktop-globals-to-save '(desktop-missing-file-warning search-ring regexp-search-ring register-alist file-name-history))
  '(desktop-locals-to-save '(desktop-locals-to-save)) ; Itself! Think it over.
- '(desktop-path '(user-emacs-directory "~/.emacs.d/"))
+ '(desktop-path '(user-emacs-directory "~/.emacs.var/"))
  '(desktop-restore-frames nil))
 
 (my-init--hook
