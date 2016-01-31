@@ -33,7 +33,19 @@
 
 ;;; Code:
 
-(custom-set-variables '(mode-require-final-newline nil)) ;otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
+(custom-set-variables
+ '(mode-require-final-newline nil) ;otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
+
+ ;; Get rid of annoying backups, temporary files and autosaves
+ ;; (Built-in backup settings
+ ;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>).
+ '(backup-by-copying t) ;don't clobber symlinks
+ '(backup-directory-alist '(("." . "~/.emacs.d/backups"))) ;don't litter my fs tree
+ '(delete-old-versions t)
+ '(kept-new-versions 6)
+ '(kept-old-versions 2)
+ '(version-control t) ;use versioned backups
+ )
 
 (my-init--hook (global-set-key (my-kbd "b r r") 'revert-buffer))
 

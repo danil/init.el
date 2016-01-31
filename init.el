@@ -241,7 +241,6 @@
 (my-recipe '(faces))
 (my-recipe '(ferm-mode))
 (my-recipe '(files))
-(my-recipe '(files-backup))
 (my-recipe '(fill))
 (my-recipe '(find-temp-file))
 (my-recipe '(fish-mode))
