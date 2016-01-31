@@ -40,7 +40,7 @@
  ;; (Built-in backup settings
  ;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>).
  '(backup-by-copying t) ;don't clobber symlinks
- '(backup-directory-alist '(("." . "~/.emacs.d/backups"))) ;don't litter my fs tree
+ '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;don't litter my fs tree
  '(delete-old-versions t)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
