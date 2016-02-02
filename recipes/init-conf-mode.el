@@ -41,6 +41,7 @@
                                 "/\\.inputrc\\'"
                                 "/\\.moc/keymap\\'"
                                 "/\\.npmrc\\'"
+                                "/\\.offlineimaprc\\'"
                                 "/\\.rvmrc\\'"
                                 "/\\.screenrc\\'"
                                 "/\\.tigrc\\'"
