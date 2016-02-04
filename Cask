@@ -74,6 +74,7 @@
 (depends-on "highlight-symbol")
 
 (depends-on "crm-custom")
+(depends-on "css-comb") ;css formater
 (depends-on "ido-clever-match")
 (depends-on "ido-describe-bindings")
 (depends-on "ido-occur")
