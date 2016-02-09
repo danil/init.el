@@ -137,10 +137,10 @@
     (define-key ac-completing-map [return] nil))
 
   (my-init--add-mode-to-hooks (lambda ()
-                           (add-to-list 'ac-sources
-                                        'ac-source-css-property))
-                         '(less-css-mode-hook
-                           sass-mode-hook
-                           scss-mode-hook)))
+                                (add-to-list 'ac-sources
+                                             'ac-source-css-property))
+                              '(less-css-mode-hook
+                                sass-mode-hook
+                                scss-mode-hook)))
 
 ;;; init-auto-complete.el ends here
