@@ -44,6 +44,11 @@
   :group 'my-init)
 
 ;;;###autoload
+(defcustom my-init--auto-completion-modes-hooks '()
+  "My auto completion hooks."
+  :group 'my-init)
+
+;;;###autoload
 (defcustom my-init--read-only-modes-hooks '()
   "My read only modes hooks."
   :group 'my-init)

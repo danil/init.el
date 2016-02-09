@@ -125,6 +125,10 @@
            '(clojure-mode-hook
              emacs-lisp-mode-hook)))
 
+ '(my-init--auto-completion-modes-hooks
+   (append my-init--programming-modes-hooks
+           '(shell-mode-hook)))
+
  '(my-init--read-only-modes-hooks
    (append my-init--safe-modes-hooks
            '(
