@@ -198,6 +198,7 @@
 
 ;; (my-recipe '(ac-html-bootstrap))
 (my-recipe '(ac-html))
+(my-recipe '(ac-ispell))
 (my-recipe '(auto-complete))
 (my-recipe '(auto-complete-chunk))
 

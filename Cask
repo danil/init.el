@@ -29,6 +29,7 @@
 ;; (depends-on "ac-html-bootstrap")
 ;; (depends-on "auto-complete-emacs-lisp" :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" "Auto-complete sources for emacs lisp")
 (depends-on "ac-etags")
+(depends-on "ac-ispell")
 (depends-on "auto-complete")
 (depends-on "auto-complete-chunk")
 (depends-on "auto-complete-nxml")
