@@ -33,6 +33,10 @@
 
 ;;; Code:
 
+(custom-set-variables
+ '(ac-ispell-requires 5) ;Minimum input for starting completion.
+ )
+
 (my-init--hook
   (my-init--add-mode-to-hooks 'my-ac-ispell-setup
                               my-init--programming-modes-hooks))
