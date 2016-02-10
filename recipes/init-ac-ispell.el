@@ -34,7 +34,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(ac-ispell-requires 5) ;Minimum input for starting completion.
+ '(ac-ispell-requires 1) ;Minimum input for starting completion.
  )
 
 (my-init--hook
@@ -43,6 +43,10 @@
 
 (defun my-ac-ispell-setup ()
   (ac-ispell-setup)
-  (ac-ispell-ac-setup))
+
+  (add-to-list 'ac-sources 'ac-source-ispell t)
+
+  (when (> ac-ispell-fuzzy-limit 0)
+    (add-to-list 'ac-sources 'ac-source-ispell-fuzzy t)))
 
 ;;; init-ac-ispell.el ends here
