@@ -36,8 +36,18 @@
 (custom-set-variables
  '(deft-auto-save-interval 30.0) ; Idle time in seconds before automatically saving buffers opened by Deft. Set to zero to disable.
  '(deft-directory "~/Dropbox/deft") ; <http://jblevins.org/projects/deft>
- '(deft-extensions '("md" "markdown" "org" "mv" "txt")) ; Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
+ '(deft-extensions '("md" "markdown" "org" "mw" "txt")) ; Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
  '(deft-recursive t) ; Recursively search for files in subdirectories when non-nil.
+ '(deft-strip-title-regexp
+    (concat "\\(?:"
+            "^%+" ; line beg with %
+            "\\|^Title:[\t ]*" ; MultiMarkdown metadata
+            "\\|^#\\+TITLE: *" ; org-mode title
+            "\\|^[#* ]+" ; line beg with #, * and/or space
+            "\\|-\\*-[[:alpha:]]+-\\*-" ; -*- .. -*- lines
+            "\\|[={']+" ; MediaWiki markup == Header == or {{Infobox or '''Bold'''
+            "\\|#+" ; line with just # chars
+            "$\\)")) ;Regular expression to remove from file titles. Presently, it removes leading LaTeX comment delimiters, leading and trailing hash marks from Markdown ATX headings, leading astersisks from Org Mode headings, and Emacs mode lines of the form -*-mode-*-.
  )
 
 (my-init--hook
