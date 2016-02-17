@@ -35,7 +35,9 @@
 
 (my-init--hook
   (my-init--add-mode-to-hooks 'rainbow-delimiters-mode
-                              my-init--programming-modes-hooks))
+                              my-init--programming-modes-hooks)
+
+  (add-hook 'window-setup-hook 'my-setup-rainbow-delimiters))
 
 ;; <https://yoo2080.wordpress.com/2013/12/21/small-rainbow-delimiters-tutorial/#sec-5-1>.
 (defun my-setup-rainbow-delimiters ()
