@@ -203,6 +203,7 @@
 (my-recipe '(abbrev))
 (my-recipe '(add-log))
 (my-recipe '(ag))
+(my-recipe '(align))
 (my-recipe '(ansi-color))
 (my-recipe '(anzu))
 
