@@ -54,6 +54,10 @@
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; ;;; Files without extension
+;; ;;; <https://www.reddit.com/r/emacs/comments/41sazw/associate_major_mode_with_files_without_extensions/#thing_t1_cz6kxgi>.
+;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
+
 ;;; My custom variables.
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
