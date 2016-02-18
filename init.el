@@ -33,6 +33,12 @@
 
 ;;; Code:
 
+;;; Files without extension.
+;;; Use regexp "\\`[^.]+\\'" and `auto-mode-alist` function to
+;;; associate mode with file without extension.
+;;; For example `/path/to/file`.
+;;; <https://www.reddit.com/r/emacs/comments/41sazw/associate_major_mode_with_files_without_extensions/#thing_t1_cz6kxgi>.
+
 ;; Danil <http://emacswiki.org/DotEmacsDotD>,
 ;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
 
@@ -53,10 +59,6 @@
 ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
-
-;; ;;; Files without extension
-;; ;;; <https://www.reddit.com/r/emacs/comments/41sazw/associate_major_mode_with_files_without_extensions/#thing_t1_cz6kxgi>.
-;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
 
 ;;; My custom variables.
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
