@@ -37,8 +37,6 @@
   (my-init--add-mode-to-hooks 'rainbow-delimiters-mode
                               my-init--programming-modes-hooks)
 
-  ;; (add-hook 'window-setup-hook 'my-setup-rainbow-delimiters)
-
   (my-init--after-load 'rainbow-delimiters
     ;; <https://ericscrivner.me/2015/06/better-emacs-rainbow-delimiters-color-scheme/>.
     (custom-set-faces
@@ -54,18 +52,5 @@
      '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
      '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
      '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1")))))))
-
-;; <https://yoo2080.wordpress.com/2013/12/21/small-rainbow-delimiters-tutorial/#sec-5-1>.
-(defun my-setup-rainbow-delimiters ()
-  "Using stronger colors for `rainbow-delimiters'."
-
-  (interactive)
-  (require 'cl-lib)
-  (require 'color)
-  (cl-loop
-   for index from 1 to rainbow-delimiters-max-face-count
-   do
-   (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
-     (cl-callf color-saturate-name (face-foreground face) 30))))
 
 ;;; init-rainbow-delimiters.el ends here
