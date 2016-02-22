@@ -263,6 +263,7 @@
 (my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
 (my-recipe '(gotest))
+(my-recipe '(grep))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(help))
 (my-recipe '(help-mode))
