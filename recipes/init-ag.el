@@ -34,11 +34,11 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f s s") 'ag)
-  (global-set-key (my-kbd "f s r") 'ag-regexp)
-  (global-set-key (my-kbd "f p s") 'ag-dired)
-  (global-set-key (my-kbd "f p r") 'ag-dired-regexp)
   (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (global-set-key (my-kbd "f a p r") 'ag-dired-regexp)
+  (global-set-key (my-kbd "f a p s") 'ag-dired)
+  (global-set-key (my-kbd "f a s r") 'ag-regexp)
+  (global-set-key (my-kbd "f a s s") 'ag)
 
   (my-init--after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
