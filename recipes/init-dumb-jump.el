@@ -38,9 +38,31 @@
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
     (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
 
-    (define-key dumb-jump-mode-map (my-kbd "f d g") 'dumb-jump-go)
-    (define-key dumb-jump-mode-map (my-kbd "f d p") 'dumb-jump-back))
+    (define-key dumb-jump-mode-map (my-kbd "f d") 'my-dumb-jump))
 
   (dumb-jump-mode))
+
+(defun my-dumb-jump ()
+  (interactive)
+
+  (let* ((one-more-repeat t)
+         (keynames '("j" "k")))
+
+    (while one-more-repeat
+      (message "Dumb jump: `j' jump to the definition; `k' jumps back")
+
+      (let* ((event (read-event))
+             (keyname (format-kbd-macro (vector event) nil)))
+        (clear-this-command-keys t)
+
+        (if (member keyname keynames)
+            (progn
+              (cond ((equal keyname "j") (dumb-jump-go))
+                    ((equal keyname "k") (dumb-jump-back)))
+
+              (setq last-input-event nil))
+
+          (setq one-more-repeat nil)
+          (push last-input-event unread-command-events))))))
 
 ;;; init-dumb-jump.el ends here
