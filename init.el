@@ -243,6 +243,7 @@
 (my-recipe '(disp-table-line-wrap-and-truncation))
 (my-recipe '(disp-table-vertical-border))
 (my-recipe '(dockerfile-mode))
+(my-recipe '(dumb-jump))
 (my-recipe '(ediff))
 (my-recipe '(elpa-mirror))
 (my-recipe '(emacs-lisp-mode))

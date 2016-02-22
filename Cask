@@ -50,6 +50,7 @@
 (depends-on "direx")
 (depends-on "discover-my-major")
 (depends-on "dockerfile-mode")
+(depends-on "dumb-jump")
 (depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
