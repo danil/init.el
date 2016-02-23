@@ -42,7 +42,8 @@
   (rbenv-use-corresponding))
 
 (defun my-rbenv--modeline-with-face (current-ruby)
-  (unless (equal current-ruby "system")
-    (list (propertize current-ruby 'face 'rbenv-active-ruby-face))))
+  "Show `CURRENT-RUBY' version in mode line."
+
+  (list "R" current-ruby))
 
 ;;; init-rbenv.el ends here
