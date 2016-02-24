@@ -238,6 +238,7 @@
 (my-recipe '(dired))
 (my-recipe '(dired-reuse-directory-buffer))
 (my-recipe '(direx))
+(my-recipe '(wdired))
 
 (my-recipe '(discover-my-major))
 (my-recipe '(disp-table-line-wrap-and-truncation))
