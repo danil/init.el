@@ -114,6 +114,7 @@
      ruby-mode-hook
      rust-mode-hook
      sass-mode-hook
+     sed-mode-hook
      sgml-mode-hook
      sh-mode-hook
      sieve-mode-hook
