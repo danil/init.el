@@ -102,6 +102,7 @@
 (depends-on "markdown-mode")
 (depends-on "mediawiki")
 (depends-on "multiple-cursors")
+(depends-on "mustache-mode")
 (depends-on "narrow-indirect")
 (depends-on "nginx-mode")
 (depends-on "nodejs-repl")
