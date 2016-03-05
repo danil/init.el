@@ -54,10 +54,10 @@
   (interactive)
 
   (let* ((one-more-repeat t)
-         (keynames '("h" "j" "k" "l" "u" "d")))
+         (keynames '("n" "p" "N" "P" "u" "d")))
 
     (while one-more-repeat
-      (message "Scroll up/down: j/k; half page: h/l; full page: u/d")
+      (message "Scroll down/up: n/p; half page: N/L; full page: d/u")
 
       (let* ((event (read-event))
              (keyname (format-kbd-macro (vector event) nil)))
@@ -65,29 +65,29 @@
 
         (if (member keyname keynames)
             (progn
-              (cond ((equal keyname "j") (condition-case nil
+              (cond ((equal keyname "n") (condition-case nil
                                              (scroll-up-line)
                                            (end-of-buffer)))
 
-                    ((equal keyname "k") (condition-case nil
+                    ((equal keyname "p") (condition-case nil
                                              (scroll-down-line)
                                            (beginning-of-buffer)))
 
-                    ((equal keyname "h") (condition-case nil
+                    ((equal keyname "N") (condition-case nil
                                              (my-scroll-up-half)
                                            (end-of-buffer)))
 
-                    ((equal keyname "l") (condition-case nil
+                    ((equal keyname "P") (condition-case nil
                                              (my-scroll-down-half)
-                                           (beginning-of-buffer)))
-
-                    ((equal keyname "u") (condition-case nil
-                                             (scroll-down)
                                            (beginning-of-buffer)))
 
                     ((equal keyname "d") (condition-case nil
                                              (scroll-up)
-                                           (end-of-buffer))))
+                                           (end-of-buffer)))
+
+                    ((equal keyname "u") (condition-case nil
+                                             (scroll-down)
+                                           (beginning-of-buffer))))
 
               (setq last-input-event nil))
 
