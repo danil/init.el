@@ -1,5 +1,5 @@
 (my-init--hook
-  (my-init--add-mode-to-hooks 'ruby-tools-mode my-init--ruby-tools-hooks)
+  (my-init--add-mode-to-hooks 'ruby-tools-mode my-init--ruby-tools-modes-hooks)
 
   (my-init--after-load 'ruby-tools
     ;; Remove keys from a minor-mode keymap

@@ -101,6 +101,7 @@
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
 (depends-on "mediawiki")
+(depends-on "modalka")
 (depends-on "multiple-cursors")
 (depends-on "mustache-mode")
 (depends-on "narrow-indirect")

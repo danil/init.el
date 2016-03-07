@@ -73,124 +73,144 @@
 (require 'my-init "~/.emacs.d/my-init.el")
 
 (custom-set-variables
- '(my-init--safe-modes-hooks
+ '(my-init--safe-modes
    '(
-     ;; mail-mode-hook
-     ;; whitespace-mode-hook
-     autoconf-mode-hook
-     awk-mode-hook
-     c-mode-hook
-     change-log-mode-hook
-     coffee-mode-hook
-     conf-mode-hook
-     css-mode-hook
-     dockerfile-mode-hook
-     ferm-mode-hook
-     fish-mode-hook
-     git-commit-mode-hook
-     go-mode-hook
-     haml-mode-hook
-     haskell-mode-hook
-     html-mode-hook
-     jade-mode-hook
-     java-mode-hook
-     js-mode-hook
-     js2-mode-hook
-     less-css-mode-hook
-     lisp-mode-hook
-     lua-mode-hook
-     makefile-gmake-mode-hook
-     markdown-mode-hook
-     mediawiki-mode-hook
-     nginx-mode-hook
-     nroff-mode-hook
-     nxml-mode-hook
-     org-mode-hook
-     pascal-mode-hook
-     perl-mode-hook
-     php-mode-hook
-     python-mode-hook
-     rhtml-mode-hook
-     ruby-mode-hook
-     rust-mode-hook
-     sass-mode-hook
-     sed-mode-hook
-     sgml-mode-hook
-     sh-mode-hook
-     sieve-mode-hook
-     slim-mode-hook
-     sql-mode-hook
-     text-mode-hook
-     toml-mode-hook
-     web-mode-hook
-     xml-mode-hook
-     yaml-mode-hook
+     ;; mail-mode
+     ;; whitespace-mode
+     autoconf-mode
+     awk-mode
+     c-mode
+     change-log-mode
+     coffee-mode
+     conf-mode
+     css-mode
+     dockerfile-mode
+     ferm-mode
+     fish-mode
+     git-commit-mode
+     go-mode
+     haml-mode
+     haskell-mode
+     html-mode
+     jade-mode
+     java-mode
+     js-mode
+     js2-mode
+     less-css-mode
+     lisp-mode
+     lua-mode
+     makefile-gmake-mode
+     markdown-mode
+     mediawiki-mode
+     nginx-mode
+     nroff-mode
+     nxml-mode
+     org-mode
+     pascal-mode
+     perl-mode
+     php-mode
+     python-mode
+     rhtml-mode
+     ruby-mode
+     rust-mode
+     sass-mode
+     sed-mode
+     sgml-mode
+     sh-mode
+     sieve-mode
+     slim-mode
+     sql-mode
+     text-mode
+     toml-mode
+     web-mode
+     xml-mode
+     yaml-mode
      ))
 
- '(my-init--programming-modes-hooks
-   (append my-init--safe-modes-hooks
-           '(clojure-mode-hook
-             emacs-lisp-mode-hook)))
+ '(my-init--programming-modes
+   (append my-init--safe-modes
+           '(clojure-mode
+             emacs-lisp-mode)))
 
- '(my-init--auto-completion-modes-hooks
-   (append my-init--programming-modes-hooks
-           '(shell-mode-hook)))
+ '(my-init--auto-completion-modes
+   (append my-init--programming-modes
+           '(shell-mode)))
 
- '(my-init--read-only-modes-hooks
-   (append my-init--safe-modes-hooks
+ '(my-init--read-only-modes
+   (append my-init--safe-modes
            '(
-             Info-mode-hook
-             Man-mode-hook
-             ag-mode-hook
-             cider-stacktrace-mode-hook
-             compilation-mode-hook
-             dired-mode-hook
-             help-mode-hook
-             ibuffer-mode-hook
-             magit-branch-manager-mode-hook
-             magit-commit-mode-hook
-             magit-diff-mode-hook
-             magit-log-mode-hook
-             magit-process-mode-hook
-             magit-status-mode-hook
-             occur-mode-hook
+             Info-mode
+             Man-mode
+             ag-mode
+             cider-stacktrace-mode
+             compilation-mode
+             dired-mode
+             help-mode
+             ibuffer-mode
+             magit-branch-manager-mode
+             magit-commit-mode
+             magit-diff-mode
+             magit-log-mode
+             magit-process-mode
+             magit-status-mode
+             occur-mode
              )))
 
- '(my-init--ruby-tools-hooks
+ '(my-init--ruby-tools-modes
    '(
-     awk-mode-hook
-     coffee-mode-hook
-     conf-mode-hook
-     conf-space-mode-hook
-     conf-xdefaults-mode-hook
-     css-mode-hook
-     emacs-lisp-mode-hook
-     haml-mode-hook
-     haskell-mode-hook
-     html-mode-hook
-     java-mode-hook
-     js-mode-hook
-     js2-mode-hook
-     lisp-mode-hook
-     lua-mode-hook
-     makefile-gmake-mode-hook
-     markdown-mode-hook
-     nxml-mode-hook
-     org-mode-hook
-     perl-mode-hook
-     php-mode-hook
-     rhtml-mode-hook
-     ruby-mode-hook
-     sass-mode-hook
-     scss-mode-hook
-     sgml-mode-hook
-     sh-mode-hook
-     shell-mode-hook
-     slim-mode-hook
-     sql-mode-hook
-     xml-mode-hook
-     yaml-mode-hook
+     awk-mode
+     coffee-mode
+     conf-mode
+     conf-space-mode
+     conf-xdefaults-mode
+     css-mode
+     emacs-lisp-mode
+     haml-mode
+     haskell-mode
+     html-mode
+     java-mode
+     js-mode
+     js2-mode
+     lisp-mode
+     lua-mode
+     makefile-gmake-mode
+     markdown-mode
+     nxml-mode
+     org-mode
+     perl-mode
+     php-mode
+     rhtml-mode
+     ruby-mode
+     sass-mode
+     scss-mode
+     sgml-mode
+     sh-mode
+     shell-mode
+     slim-mode
+     sql-mode
+     xml-mode
+     yaml-mode
      )))
+
+(dolist (mode my-init--safe-modes)
+  (add-to-list 'my-init--safe-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--programming-modes)
+  (add-to-list 'my-init--programming-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--auto-completion-modes)
+  (add-to-list 'my-init--auto-completion-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--read-only-modes)
+  (add-to-list 'my-init--read-only-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--ruby-tools-modes)
+  (add-to-list 'my-init--ruby-tools-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
 
 (defvar my-recipes ())
 
@@ -273,6 +293,7 @@
 (my-recipe '(hi-lock))
 (my-recipe '(hideshow))
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
+(my-recipe '(hl-line))
 (my-recipe '(ibuffer))
 
 (my-recipe '(crm-custom))
@@ -318,6 +339,7 @@
 (my-recipe '(markdown-mode))
 (my-recipe '(mediawiki))
 (my-recipe '(menu-bar))
+(my-recipe '(modalka))
 (my-recipe '(multi-compile))
 (my-recipe '(multiple-cursors))
 (my-recipe '(my-backspace-fix))
@@ -392,7 +414,6 @@
 (my-recipe '(window-numbering))
 (my-recipe '(winner-mode))
 (my-recipe '(woman))
-(my-recipe '(yaless-mode))
 (my-recipe '(yaml-mode))
 (my-recipe '(yascroll))
 (my-recipe '(yasnippet))

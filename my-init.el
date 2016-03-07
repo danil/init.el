@@ -1,6 +1,6 @@
 ;;; my-init.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ()
@@ -34,6 +34,31 @@
 ;;; Code:
 
 ;;;###autoload
+(defcustom my-init--safe-modes '()
+  "My modes with many minor modes enabled."
+  :group 'my-init)
+
+;;;###autoload
+(defcustom my-init--programming-modes '()
+  "My programming modes."
+  :group 'my-init)
+
+;;;###autoload
+(defcustom my-init--auto-completion-modes '()
+  "My auto completion."
+  :group 'my-init)
+
+;;;###autoload
+(defcustom my-init--read-only-modes '()
+  "My read only modes."
+  :group 'my-init)
+
+;;;###autoload
+(defcustom my-init--ruby-tools-modes '()
+  "My ruby tools modes."
+  :group 'my-init)
+
+;;;###autoload
 (defcustom my-init--safe-modes-hooks '()
   "My hooks."
   :group 'my-init)
@@ -54,9 +79,10 @@
   :group 'my-init)
 
 ;;;###autoload
-(defcustom my-init--ruby-tools-hooks '()
-  "My ruby tools hooks."
+(defcustom my-init--ruby-tools-modes-hooks '()
+  "My ruby tools modes hooks."
   :group 'my-init)
+
 
 ;;;###autoload
 (defun my-kbd (key) (kbd (concat "C-c C-f " key)))
