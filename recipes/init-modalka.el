@@ -33,75 +33,38 @@
 
 ;;; Code:
 
-;; (custom-set-variables '(modalka-excluded-modes '(dired-mode ibuffer-mode magit-status-mode)))
-
 (global-set-key (kbd "M-SPC") (lambda () (interactive) (modalka-mode t)))
-
-;; (defun my-modalka-mode-exit-on-space ()
-;;   "Exit modalka-mode or insert space."
-;;    (interactive)
-;;    (cond (modalka-mode
-;;           (modalka-mode nil)
-;;           (insert " "))))
 
 ;; (global-set-key (kbd "M-SPC") 'modalka-mode)
 ;; (global-set-key (kbd "C-M-SPC") 'just-one-space)
 
 (defun my-on-modalka-enable ()
   "Callback on modalka enable."
-  (hl-line-mode -1)
-  ;; (global-hl-line-mode -1)
-  ;; (make-local-variable 'global-hl-line-mode)
-  ;; (setq global-hl-line-mode -1)
-  )
+  (hl-line-mode -1))
 
 (defun my-on-modalka-disable ()
   "Callback on modalka disable."
   (when (and (not (minibufferp))
              (member major-mode my-init--modal-modes))
-    (hl-line-mode 1))
-  ;; (global-hl-line-mode 1)
-  ;; (make-local-variable 'global-hl-line-mode)
-  ;; (setq global-hl-line-mode 1)
-  )
+    (hl-line-mode 1)))
 
 (my-init--hook
   (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
                               my-init--modal-modes-hooks)
   (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
 
-  ;; (modalka-global-mode 1)
-
   (my-init--after-load 'modalka
     (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
     ;; (modalka-define-kbd "SPC" "C-SPC") ;DEL ESC RET TAB
-    ;; (define-key modalka-mode-map (kbd "SPC") #'just-one-space)
-    ;; (define-key modalka-mode-map (kbd "SPC") #'my-modalka-mode-exit-on-space)
-    ;; (define-key modalka-mode-map (kbd "SPC") #'modalka-mode)
     (define-key modalka-mode-map (kbd "SPC") (lambda ()
                                                (interactive)
                                                (modalka-mode -1)
                                                (my-on-modalka-disable)))
 
-    ;; (define-key modalka-mode-map (kbd "b") #'backward-char)
-    ;; (define-key modalka-mode-map (kbd "f") #'forward-char)
-    ;; (define-key modalka-mode-map (kbd "n") #'next-line)
-    ;; (define-key modalka-mode-map (kbd "p") #'previous-line)
-
+    ;; Nested prefixed namespaces.
     (define-key modalka-mode-map (kbd "c") mode-specific-map)
     (define-key modalka-mode-map (kbd "x") ctl-x-map)
-
-    ;; (global-set-key (kbd "<menu> x") ctl-x-map)
-    ;; (define-key modalka-mode-map (kbd "x") (lambda () (interactive) (kbd "C-x")))
-    ;; (define-key modalka-mode-map (kbd "x") (lambda () (interactive) (call-interactively (kbd "C-x"))))
-    ;; (define-key modalka-mode-map (kbd "x") (lambda () (interactive) (call-interactively (global-key-binding "\C-x"))))
-    ;; (modalka-define-key "x" (kbd "C-x"))
-    ;; (modalka-define-key "x" (global-key-binding "\C-x"))
-    ;; (modalka-define-key "x" ctl-x-map)
-    ;; (define-key modalka-mode-map (kbd "x") ctl-x-map)
-    ;; (define-key modalka-mode-map (kbd "x") (lambda () (global-key-binding "\C-x")))
-    ;; (global-set-key (kbd "x") (lookup-key global-map (kbd "C-x")))
 
     ;; First row.
     (modalka-define-kbd "`" "C-`")
@@ -212,9 +175,5 @@
     (modalka-define-kbd "V" "C-S-v")
     (modalka-define-kbd "W" "C-S-w")
     (modalka-define-kbd "Y" "C-S-y")))
-
-;; (defun my-on-modalka-enable ()
-;;   "Highlight `mode-line' according to `modalka-mode'."
-;;   (custom-set-variables '(sml/theme (if modalka-mode 'dark 'light))))
 
 ;;; init-modalka.el ends here
