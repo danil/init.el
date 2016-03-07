@@ -36,6 +36,9 @@
                       '(flycheck-idle-change-delay 1.5))
 
 (my-init--hook
-  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
+  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks)
+
+  (my-init--after-load 'flycheck
+    (set-face-attribute 'flycheck-warning nil :underline nil)))
 
 ;;; init-flycheck.el ends here
