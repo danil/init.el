@@ -36,6 +36,6 @@
 (my-init--hook
   (my-init--after-load 'hl-line
     (set-face-background 'highlight nil)
-    (set-face-attribute hl-line-face nil :inverse-video t)))
+    (set-face-attribute hl-line-face nil :underline t)))
 
 ;;; init-hl-line.el ends here
