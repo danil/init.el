@@ -34,26 +34,8 @@
 ;;; Code:
 
 (my-init--hook
-  ;; (global-hl-line-mode)
-  ;; (make-variable-buffer-local 'global-hl-line-mode)
-
   (my-init--after-load 'hl-line
     (set-face-background 'highlight nil)
-    (set-face-attribute hl-line-face nil :inverse-video t))
-
-  ;; (add-hook 'change-major-mode-hook (lambda ()
-  ;;                                     (interactive)
-  ;;                                     (make-local-variable 'global-hl-line-mode)
-  ;;                                     (setq global-hl-line-mode -1)))
-
-  ;; (if global-hl-line-mode
-  ;;     (dolist (hook '(ediff-mode-hook term-mode-hook))
-  ;;       ;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
-  ;;       (add-hook hook (lambda ()
-  ;;                        (interactive)
-  ;;                        (make-local-variable 'global-hl-line-mode)
-  ;;                        (setq global-hl-line-mode)))))
-
-  )
+    (set-face-attribute hl-line-face nil :inverse-video t)))
 
 ;;; init-hl-line.el ends here
