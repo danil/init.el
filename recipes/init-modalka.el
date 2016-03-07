@@ -33,7 +33,15 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-SPC") (lambda () (interactive) (modalka-mode t)))
+(global-set-key (kbd "M-SPC") (lambda ()
+                                (interactive)
+
+                                (when (and (buffer-file-name))
+                                  ;; (buffer-modified-p)
+                                  ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
+                                  (call-interactively 'save-buffer))
+
+                                (modalka-mode t)))
 
 ;; (global-set-key (kbd "M-SPC") 'modalka-mode)
 ;; (global-set-key (kbd "C-M-SPC") 'just-one-space)
