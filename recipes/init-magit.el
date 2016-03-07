@@ -50,7 +50,9 @@
     ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
     (setq magit-completing-read-function 'magit-ido-completing-read)
 
-    (define-key magit-diff-mode-map (kbd "C-c C-f") nil)))
+    (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
+
+    (set-face-background 'magit-section-highlight nil)))
 
 ;;; TODO: Pass appropriate arguments to highlight-regexp.
 ;; (defun my-magit-show (&optional arg)
