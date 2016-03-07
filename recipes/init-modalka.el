@@ -73,7 +73,7 @@
   ;; (modalka-global-mode 1)
 
   (my-init--after-load 'modalka
-    ;; (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " ↑")
+    (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
     ;; (modalka-define-kbd "SPC" "C-SPC") ;DEL ESC RET TAB
     ;; (define-key modalka-mode-map (kbd "SPC") #'just-one-space)

@@ -70,7 +70,7 @@
                         ("\\` FlyC-\\'" 'display " F-") ;flycheck-mode: Flycheck did not find any syntax checker for the current buffer. Try C-c ! v (flycheck-verify-setup) to find out why.
                         ("\\` FlyC\?\\'" 'display " F?") ;flycheck-mode: The syntax check had a dubious result. The definition of the syntax checker may be flawed. Inspect the ‘*Messages*’ buffer for details.
                         ("\\` FlyC\\'" 'display " F") ;flycheck-mode: there are no errors in the current buffer
-                        ("\\`↑\\'" 'display " M") ;modalka-mode
+                        ("\\` M\\'" 'face 'font-lock-warning-face) ;modalka-mode
                         ;; ("\\` FlyC:3/5\\'" 'display " ") ;flycheck-mode: there are three errors and five warnings in the current buffer
                         ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
                         )))
