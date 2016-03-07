@@ -190,7 +190,13 @@
      sql-mode
      xml-mode
      yaml-mode
-     )))
+     ))
+
+ '(my-init--modal-modes (append my-init--programming-modes
+                                '(
+                                  ;; shell-mode
+                                  ;; sql-interactive-mode
+                                  ))))
 
 (dolist (mode my-init--safe-modes)
   (add-to-list 'my-init--safe-modes-hooks
@@ -210,6 +216,10 @@
 
 (dolist (mode my-init--ruby-tools-modes)
   (add-to-list 'my-init--ruby-tools-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--modal-modes)
+  (add-to-list 'my-init--modal-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
 (defvar my-recipes ())

@@ -58,7 +58,7 @@
 (defun my-on-modalka-disable ()
   "Callback on modalka disable."
   (when (and (not (minibufferp))
-             (member major-mode my-init--programming-modes))
+             (member major-mode my-init--modal-modes))
     (hl-line-mode 1))
   ;; (global-hl-line-mode 1)
   ;; (make-local-variable 'global-hl-line-mode)
@@ -66,7 +66,8 @@
   )
 
 (my-init--hook
-  (my-init--add-mode-to-hooks 'modalka-mode my-init--programming-modes-hooks)
+  (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
+                              my-init--modal-modes-hooks)
   (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
 
   ;; (modalka-global-mode 1)

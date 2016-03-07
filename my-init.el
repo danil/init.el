@@ -58,6 +58,10 @@
   "My ruby tools modes."
   :group 'my-init)
 
+(defcustom my-init--modal-modes '()
+  "My modal modes."
+  :group 'my-init)
+
 ;;;###autoload
 (defcustom my-init--safe-modes-hooks '()
   "My hooks."
@@ -83,6 +87,9 @@
   "My ruby tools modes hooks."
   :group 'my-init)
 
+(defcustom my-init--modal-modes-hooks '()
+  "My modal modes hooks."
+  :group 'my-init)
 
 ;;;###autoload
 (defun my-kbd (key) (kbd (concat "C-c C-f " key)))
