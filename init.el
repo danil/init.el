@@ -85,6 +85,7 @@
      conf-mode
      css-mode
      dockerfile-mode
+     ebuild-mode
      ferm-mode
      fish-mode
      git-commit-mode
