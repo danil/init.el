@@ -4,7 +4,9 @@
 
 (my-init--hook
   (my-init--after-load 'diff-mode
-   (define-key diff-mode-map "\C-c\C-f" nil)))
+    (define-key diff-mode-map "\C-c\C-f" nil)
+    (define-key diff-mode-map (kbd "M-SPC") nil)
+    (define-key diff-mode-map (kbd "SPC") nil)))
 
 (defun my-diff-facelift ()
   (cond ((equal frame-background-mode 'light)
