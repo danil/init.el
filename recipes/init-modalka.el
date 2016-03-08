@@ -35,18 +35,20 @@
 
 (global-set-key (kbd "M-SPC") 'my-modalka-enable)
 
-;; (global-set-key (kbd "M-SPC") 'modalka-mode)
-;; (global-set-key (kbd "C-M-SPC") 'just-one-space)
+(defun my-modalka-enable (&optional arg)
+  "Enable `modalka-mode' or run `just-one-space' if `ARG'."
 
-(defun my-modalka-enable ()
-  (interactive)
+  (interactive "P")
 
-  (when (and (buffer-file-name))
-    ;; (buffer-modified-p)
-    ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
-    (call-interactively 'save-buffer))
+  (if arg
+      (just-one-space 1)
 
-  (modalka-mode t))
+    (when (and (buffer-file-name))
+      ;; (buffer-modified-p)
+      ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
+      (call-interactively 'save-buffer))
+
+    (modalka-mode t)))
 
 (defun my-on-modalka-enable ()
   "Callback on modalka enable."
