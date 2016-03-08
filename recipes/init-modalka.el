@@ -33,22 +33,22 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-SPC") 'my-modalka-enable)
+(global-set-key (kbd "M-SPC g") 'my-modalka-enable)
 
-(defun my-modalka-enable (&optional arg)
-  "Enable `modalka-mode' or run `just-one-space' if `ARG'."
+(defun my-modalka-enable ()
+  "Enable `modalka-mode'."
+  (interactive)
 
-  (interactive "P")
-
-  (if arg
-      (just-one-space 1)
+  (if (minibufferp)
+      (keyboard-escape-quit)
 
     (when (and (buffer-file-name))
       ;; (buffer-modified-p)
       ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
       (call-interactively 'save-buffer))
 
-    (modalka-mode t)))
+    (modalka-mode t)
+    (keyboard-quit)))
 
 (defun my-on-modalka-enable ()
   "Callback on modalka enable."

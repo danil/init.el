@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((cask) (my-init))
+;; Package-Requires: ((cask) (myinit))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -70,7 +70,7 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-(require 'my-init "~/.emacs.d/my-init.el")
+(require 'myinit "~/.emacs.d/myinit.el")
 
 (custom-set-variables
  '(my-init--safe-modes
@@ -363,6 +363,7 @@
 (my-recipe '(my-sum-numbers-in-region))
 (my-recipe '(my-tags))
 (my-recipe '(my-uniquify))
+(my-recipe '(myinit))
 (my-recipe '(narrow-indirect))
 (my-recipe '(nginx-mode))
 (my-recipe '(nodejs))
