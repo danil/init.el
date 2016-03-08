@@ -40,6 +40,9 @@
   (transient-mark-mode t) ;transient mark mode <http://emacswiki.org/TransientMarkMode>
   (global-set-key (my-kbd "b l t") 'toggle-truncate-lines)
   ;; (global-set-key (my-kbd "g l") 'goto-line)
-  (global-set-key (my-kbd "r c l") 'count-lines-region))
+  (global-set-key (my-kbd "r c l") 'count-lines-region)
+
+  (my-init--after-load 'simple
+    (define-key special-mode-map " " nil)))
 
 ;;; init-simple.el ends here
