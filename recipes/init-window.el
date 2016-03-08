@@ -41,6 +41,9 @@
 (global-set-key (kbd "C-v") #'scroll-up-line)
 (global-set-key (kbd "M-v") #'scroll-down-line)
 
+(global-set-key (kbd "C-S-v") #'scroll-up)
+(global-set-key (kbd "M-V") #'scroll-down)
+
 (my-init--hook
   (global-set-key (my-kbd "b b") 'bury-buffer-with-repeat)
   (global-set-key (my-kbd "b r n") 'rename-buffer))
