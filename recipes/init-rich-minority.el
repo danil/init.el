@@ -44,6 +44,7 @@
                   " Anzu" ;anzu-mode
                   " Helm" ;helm-mode
                   " MRev" ;magit-auto-revert-mode
+                  " Myinit" ;myinit-mode
                   " Rails" ;projectile-rails
                   " Rbow" ;rainbow-mode
                   " RubyRef" ;ruby-refactor-mode
