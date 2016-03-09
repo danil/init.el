@@ -121,6 +121,7 @@
      sieve-mode
      slim-mode
      sql-mode
+     systemd-mode
      text-mode
      toml-mode
      web-mode
