@@ -83,6 +83,7 @@
      change-log-mode
      coffee-mode
      conf-mode
+     conf-space-mode
      css-mode
      dockerfile-mode
      ebuild-mode
