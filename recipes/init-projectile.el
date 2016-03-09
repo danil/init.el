@@ -35,15 +35,18 @@
 
 (custom-set-variables
  ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-mode-line nil)
+ '(projectile-mode-line nil))
 
- ;; (my-init--after-load 'projectile
- ;;   (setq projectile-project-root-files-bottom-up
- ;;         (append projectile-project-root-files-bottom-up
- ;;                 '("profiles" ; Gentoo portage overlay
- ;;                   ))))
- )
+(my-init--hook
+  ;; (my-init--after-load 'projectile
+  ;;   (setq projectile-project-root-files-bottom-up
+  ;;         (append projectile-project-root-files-bottom-up
+  ;;                 '("profiles" ; Gentoo portage overlay
+  ;;                   ))))
 
-(my-init--hook (projectile-global-mode))
+  (my-init--after-load 'projectile
+    (define-key myinit-mode-map (kbd "M-SPC c p") projectile-command-map))
+
+  (projectile-global-mode))
 
 ;;; init-projectile.el ends here
