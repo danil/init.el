@@ -33,7 +33,13 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-SPC g") 'my-modalka-enable)
+(my-init--hook
+  (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
+                              my-init--modal-modes-hooks)
+  (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
+
+  (my-init--after-load 'myinit
+    (define-key myinit-mode-map (kbd "M-SPC g") 'my-modalka-enable)))
 
 (defun my-modalka-enable ()
   "Enable `modalka-mode'."
@@ -61,10 +67,6 @@
     (hl-line-mode 1)))
 
 (my-init--hook
-  (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
-                              my-init--modal-modes-hooks)
-  (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
-
   (my-init--after-load 'modalka
     (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
