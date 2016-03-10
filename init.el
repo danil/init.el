@@ -427,7 +427,6 @@
 (my-recipe '(window))
 (my-recipe '(window-numbering))
 (my-recipe '(winner-mode))
-(my-recipe '(woman))
 (my-recipe '(yaml-mode))
 (my-recipe '(yascroll))
 (my-recipe '(yasnippet))
