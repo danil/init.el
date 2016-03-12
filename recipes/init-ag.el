@@ -35,10 +35,13 @@
 
 (my-init--hook
   (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
-  (global-set-key (my-kbd "f a p r") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a p s") 'ag-dired)
-  (global-set-key (my-kbd "f a s r") 'ag-regexp)
-  (global-set-key (my-kbd "f a s s") 'ag)
+
+  (global-set-key (my-kbd "f a S") 'ag-regexp)
+  (global-set-key (my-kbd "f a s") 'ag)
+  (global-set-key (my-kbd "f a t") 'ag-files)
+
+  (global-set-key (my-kbd "f a D") 'ag-dired-regexp)
+  (global-set-key (my-kbd "f a d") 'ag-dired)
 
   (my-init--after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
