@@ -35,6 +35,8 @@
 
 (my-init--hook
   (my-init--add-mode-to-patterns 'conf-mode
+                                "/Pipfile2\\'"
+                                "/Pipfile3\\'"
                                 "/Pipfile\\'"
                                 "/\\.config/skippy-xd/skippy-xd\\.rc\\'"
                                 "/\\.curlrc\\'"
