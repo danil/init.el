@@ -100,6 +100,7 @@
                     mediawiki-mode
                     mustache-mode
                     nginx-mode
+                    nodejs-repl-mode
                     nroff-mode
                     nxml-mode
                     org-mode

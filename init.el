@@ -90,6 +90,8 @@
      ferm-mode
      fish-mode
      git-commit-mode
+     gitconfig-mode
+     gitignore-mode
      go-mode
      haml-mode
      haskell-mode
@@ -98,6 +100,7 @@
      java-mode
      js-mode
      js2-mode
+     json-mode
      less-css-mode
      lisp-mode
      lua-mode
@@ -105,6 +108,7 @@
      markdown-mode
      mediawiki-mode
      nginx-mode
+     nodejs-repl-mode
      nroff-mode
      nxml-mode
      org-mode
