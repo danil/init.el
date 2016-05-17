@@ -41,6 +41,8 @@
   (global-set-key (my-kbd "s s n") 'highlight-symbol-nav-mode)
   (global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
 
-  (my-init--add-mode-to-hooks 'highlight-symbol-mode my-init--programming-modes-hooks))
+  (my-init--add-mode-to-hooks 'highlight-symbol-mode
+                              (-union my-init--programming-modes-hooks
+                                      '(shell-mode-hook))))
 
 ;;; init-highlight-symbol.el ends here
