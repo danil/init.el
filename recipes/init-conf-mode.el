@@ -55,6 +55,7 @@
                                 "/etc/mail/aliases\\'"
                                 "/etc/mailutils\\.d/"
                                 "/fail2ban/.*\\.local\\'"
+                                "/inventor\\(y\\|ies\\)/[^.]*\\'"
                                 "/hosts\\'"
                                 "/htoprc\\'"
                                 "/locale.gen\\'"
