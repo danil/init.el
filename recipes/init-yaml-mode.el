@@ -34,6 +34,9 @@
 ;;; Code:
 
 (my-init--hook
-  (my-init--add-mode-to-patterns 'yaml-mode "\\.ya?ml\\'" "\\.ya?ml.example\\'"))
+  (my-init--add-mode-to-patterns 'yaml-mode
+                                 "/\\(group\\|host\\)_vars/[^.]*\\'"
+                                 "\\.ya?ml.example\\'"
+                                 "\\.ya?ml\\'"))
 
 ;;; init-yaml-mode.el ends here
