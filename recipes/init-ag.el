@@ -47,8 +47,9 @@
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")
     ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (setq ag-reuse-window 't)
-    (set 'ag-highlight-search t)))
+    (add-to-list 'ag-arguments "--width=5000")
+    (set 'ag-highlight-search t)
+    (setq ag-reuse-window 't)))
 
 (defun my-ag-kill-buffers (&optional arg)
   (interactive "P")
