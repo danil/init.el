@@ -37,9 +37,9 @@
   ;; <http://stackoverflow.com/questions/18392303/adding-binary-path-to-emacs-path#18393068>.
   (setenv "PATH" (concat (getenv "PATH")
                          ":"
-                         (expand-file-name "~/.nvm/versions/node/v6.2.0/bin")))
+                         (expand-file-name "~/n/bin")))
   (setq exec-path (append exec-path
-                          (list (expand-file-name "~/.nvm/versions/node/v6.2.0/bin"))))
+                          (list (expand-file-name "~/n/bin"))))
 
   (setenv "PATH" (concat
                   (getenv "PATH")
