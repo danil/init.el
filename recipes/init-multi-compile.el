@@ -40,7 +40,7 @@
                     ("cask install" . "cd %dir && cask --verbose install")
                     ("cask update" . "cd %dir && cask --verbose update")))
      (go-mode . (("go build" . "go build -v -x ./...")
-                 ("go test" . "go vet ./... && errcheck -verbose -asserts ./... && unconvert -v . && golint -set_exit_status ./...")
+                 ("go test" . "go vet ./... && errcheck -verbose -asserts ./... && unconvert -v . && golint -set_exit_status ./... && go test -v ./...")
                  ("go clean" . "go clean")))
      (makefile-mode . (("make" . "make")
                        ("make --jobs=9" . "make --jobs=5")
