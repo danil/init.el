@@ -34,6 +34,22 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f o o") 'ido-occur))
+  (global-set-key (my-kbd "f o o") 'ido-occur)
+  (global-set-key (my-kbd "f o p") 'ido-occur-at-point)
+
+  (my-init--after-load "isearch"
+    (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
+
+(defun ido-occur-at-point ()
+  "Open ido-occur at point."
+  (interactive)
+  (ido-occur (symbol-name (symbol-at-point))))
+
+(defun ido-occur-from-isearch ()
+  "Open ido-occur from isearch."
+  (interactive)
+  (ido-occur (if isearch-regexp
+                 isearch-string
+               (regexp-quote isearch-string))))
 
 ;;; init-ido-occur.el ends here
