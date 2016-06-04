@@ -68,15 +68,15 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
   (shell-command command output-buffer error-buffer))
 
 (defun my-expand-command-by-string (command path-to-file path-to-dir)
-"Replace `%` and `@` in COMMAND by PATH-TO-FILE and PATH-TO-DIR."
+  "Replace `%` and `@` in COMMAND by PATH-TO-FILE and PATH-TO-DIR."
 
   (replace-regexp-in-string
    "\\(%%?\\|@@?\\)"
 
    (lambda (s) (cond ((string= s "%%") "%")
-                ((string= s "@@") "@")
-                ((string= s "%") path-to-file)
-                ((string= s "@") path-to-dir)))
+                     ((string= s "@@") "@")
+                     ((string= s "%") path-to-file)
+                     ((string= s "@") path-to-dir)))
 
    command nil t))
 
