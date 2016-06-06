@@ -36,7 +36,7 @@
 ;; Hide Show minor mode (a-la folding)
 ;; <http://www.emacswiki.org/emacs/HideShow>.
 (my-init--hook
-  (my-init--add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
+  ;; (my-init--add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 
   (my-init--after-load 'hs-minor-mode
     ;; (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)
