@@ -45,6 +45,7 @@
 
 ;; Equivalent to vim's `%`
 ;; <http://stackoverflow.com/questions/11264811/emacs-equivalent-to-vims#11266694>.
+;; TODO: Set dedicated buffers for each command/file via `output-buffer`.
 (defun my-shell-command-on-current-file (command &optional output-buffer error-buffer)
   "Run a shell COMMAND on file(s) using OUTPUT-BUFFER and ERROR-BUFFER.
 Run a shell COMMAND on the current file or marked dired files.
