@@ -36,6 +36,8 @@
 (global-set-key (kbd "M-!") 'my-shell-command)
 
 (defun my-shell-command (&optional arg)
+  "Run my custom `shell-command' or `shell-command' if ARG."
+
   (interactive "P")
   (if arg
       (call-interactively 'shell-command)
@@ -44,7 +46,8 @@
 ;; Equivalent to vim's `%`
 ;; <http://stackoverflow.com/questions/11264811/emacs-equivalent-to-vims#11266694>.
 (defun my-shell-command-on-current-file (command &optional output-buffer error-buffer)
-  "Run a shell COMMAND on the current file (or marked dired files).
+  "Run a shell COMMAND on file(s) using OUTPUT-BUFFER and ERROR-BUFFER.
+Run a shell COMMAND on the current file or marked dired files.
 In the shell command, the file(s) will be substituted wherever a '%' is."
   (interactive (list (read-from-minibuffer "Shell command: "
                                            nil nil nil 'shell-command-history)
@@ -54,30 +57,23 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
   (cond ((buffer-file-name)
          (setq command (my-expand-command-by-string
                         command
-                        (buffer-file-name)
-                        (file-name-directory (buffer-file-name)))))
+                        (buffer-file-name))))
 
         ((and (equal major-mode 'dired-mode)
               (save-excursion (dired-move-to-filename)))
          (let ((path-to-file (mapconcat 'identity (dired-get-marked-files) " ")))
            (setq command (my-expand-command-by-string
                           command
-                          path-to-file
-                          (file-name-directory path-to-file))))))
+                          path-to-file)))))
 
   (shell-command command output-buffer error-buffer))
 
-(defun my-expand-command-by-string (command path-to-file path-to-dir)
-  "Replace `%` and `@` in COMMAND by PATH-TO-FILE and PATH-TO-DIR."
+(defun my-expand-command-by-string (command path-to-file)
+  "Replace `%` in COMMAND by PATH-TO-FILE."
 
   (replace-regexp-in-string
-   "\\(%%?\\|@@?\\)"
-
-   (lambda (s) (cond ((string= s "%%") "%")
-                     ((string= s "@@") "@")
-                     ((string= s "%") path-to-file)
-                     ((string= s "@") path-to-dir)))
-
+   "%%?"
+   (lambda (s) (if (string= s "%%") "%" path-to-file))
    command nil t))
 
 ;;; init-my-shell-command-on-current-file.el ends here
