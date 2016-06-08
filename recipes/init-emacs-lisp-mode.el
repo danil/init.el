@@ -36,9 +36,10 @@
 (my-init--hook
   (my-init--add-mode-to-patterns 'emacs-lisp-mode
                                  "/Cask\\'"
-                                 "/\\.emacs\\.d/bookmarks\\'"
                                  "/\\.?abbrev_defs\\'"
-                                 "/ac-comphist\\.dat\\'")
+                                 "/\\.emacs\\.d/bookmarks\\'"
+                                 "/ac-comphist\\.dat\\'"
+                                 "\\.el\\.\\(tpl\\|template\\)\\'")
 
   (my-init--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)
