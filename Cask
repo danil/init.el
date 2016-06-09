@@ -36,7 +36,7 @@
 (depends-on "auto-complete-pcmp")
 
 (depends-on "ag")
-(depends-on "anzu")
+(depends-on "anzu") ;isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
