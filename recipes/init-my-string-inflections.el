@@ -76,6 +76,7 @@ e.g. `HelloWorldString'."
   (interactive)
   (my-with-repeat-while-press-last-key
     (my-humanize-symbol)))
+
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
 C-style naming, e.g. `hello_world_string',
