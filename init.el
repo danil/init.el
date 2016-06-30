@@ -270,6 +270,7 @@
 (my-recipe '(conf-mode))
 (my-recipe '(css))
 (my-recipe '(cua))
+(my-recipe '(cycle-quotes))
 (my-recipe '(deft))
 (my-recipe '(desktop))
 (my-recipe '(diff-mode))

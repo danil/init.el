@@ -44,6 +44,7 @@
 (depends-on "column-marker")
 (depends-on "crontab-mode")
 (depends-on "csv-mode")
+(depends-on "cycle-quotes")
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
