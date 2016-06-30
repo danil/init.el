@@ -34,8 +34,8 @@
 ;;; Code:
 
 (my-init--hook
-  (define-key myinit-map (kbd "f o o") 'ido-occur)
-  (define-key myinit-map (kbd "f o p") 'ido-occur-at-point)
+  (define-key myinit-map (kbd "f o") 'ido-occur)
+  (define-key myinit-map (kbd "f O") 'ido-occur-at-point)
 
   (my-init--after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
