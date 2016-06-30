@@ -47,7 +47,8 @@
  '(version-control t) ;use versioned backups
  )
 
-(my-init--hook (global-set-key (my-kbd "b r r") 'revert-buffer))
+(my-init--hook
+  (define-key myinit-map (kbd "b r r") 'revert-buffer))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function

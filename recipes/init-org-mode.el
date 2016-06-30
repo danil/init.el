@@ -4,7 +4,7 @@
 
 (my-init--hook
   (my-init--after-load 'org
-    (define-key org-mode-map "\C-c\C-f" nil)
+    ;; (define-key org-mode-map "\C-c\C-f" nil)
 
     (setq org-log-done t)
 

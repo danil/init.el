@@ -47,8 +47,8 @@
  '(desktop-restore-frames nil))
 
 (my-init--hook
-  (global-set-key (my-kbd "d s") 'save-my-desktop)
-  (global-set-key (my-kbd "d l") 'load-my-desktop))
+  (define-key myinit-map (kbd "d s") 'save-my-desktop)
+  (define-key myinit-map (kbd "d l") 'load-my-desktop))
 
 (defun save-my-desktop ()
   "Save the desktop."

@@ -38,8 +38,8 @@
                       '(highlight-symbol-ignore-list '()))
 
 (my-init--hook
-  (global-set-key (my-kbd "s s n") 'highlight-symbol-nav-mode)
-  (global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
+  (define-key myinit-map (kbd "s s n") 'highlight-symbol-nav-mode)
+  (define-key myinit-map (kbd "s s r") 'highlight-symbol-query-replace)
 
   (my-init--add-mode-to-hooks 'highlight-symbol-mode
                               (-union my-init--programming-modes-hooks

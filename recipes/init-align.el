@@ -34,7 +34,7 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "r a c w") 'my-align-whitespace))
+  (define-key myinit-map (kbd "r a c w") 'my-align-whitespace))
 
 ;; <http://pragmaticemacs.com/emacs/aligning-text/>.
 (defun my-align-whitespace (start end)

@@ -33,6 +33,7 @@
 
 ;;; Code:
 
-(global-set-key (my-kbd "r f") 'fill-region)
+(my-init--hook
+  (global-set-key (my-kbd "r f") 'fill-region))
 
 ;;; init-fill.el ends here

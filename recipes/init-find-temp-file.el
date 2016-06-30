@@ -34,7 +34,7 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "x t") 'find-temp-file)
+  (define-key myinit-map (kbd "x t") 'find-temp-file)
 
   (my-init--after-load 'find-temp-file
     ;; Default template for temporary files.

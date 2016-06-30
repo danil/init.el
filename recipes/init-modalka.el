@@ -34,12 +34,11 @@
 ;;; Code:
 
 (my-init--hook
+  (define-key myinit-map (kbd "C-v") 'my-modalka-enable)
+
   (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
                               my-init--modal-modes-hooks)
-  (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
-
-  (my-init--after-load 'myinit
-    (define-key myinit-mode-map (kbd "M-SPC g") 'my-modalka-enable)))
+  (add-hook 'modalka-mode-hook 'my-on-modalka-enable))
 
 (defun my-modalka-enable ()
   "Enable `modalka-mode'."
@@ -70,7 +69,7 @@
   (my-init--after-load 'modalka
     (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
-    ;; (modalka-define-kbd "SPC" "C-SPC") ;DEL ESC RET TAB
+    ;; (modalka-define-kbd "SPC" "C-v") ;DEL ESC RET TAB
     (define-key modalka-mode-map (kbd "SPC") (lambda ()
                                                (interactive)
                                                (modalka-mode -1)

@@ -44,12 +44,12 @@
             (occur-rename-buffer t)))
 
 (my-init--hook
+  ;; (my-init--after-load "replace"
+  ;;   (define-key occur-mode-map (kbd "\C-c\C-f") nil))
+
   (global-set-key (kbd "M-s o") nil)
   (global-set-key (kbd "M-s o o") 'my-occur)
-  (global-set-key (kbd "M-s o k") 'my-occur-kill-buffers)
-
-  (my-init--after-load "replace"
-    (define-key occur-mode-map (kbd "\C-c\C-f") nil)))
+  (global-set-key (kbd "M-s o k") 'my-occur-kill-buffers))
 
 (defun my-occur (&optional arg)
   (interactive "P")

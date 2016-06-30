@@ -37,14 +37,15 @@
 ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
 
 (my-init--hook
-  (global-set-key (my-kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
+  (define-key myinit-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
 
   (my-init--after-load 'help
     (define-key help-map "f" 'my-describe-function)
 
     (define-key help-map "?" nil)
-    (global-set-key (my-kbd "? ? ?") 'help-for-help)
-    (global-set-key (my-kbd "? ? m") 'woman)))
+    (define-key help-map (kbd "? ?") 'help-for-help)
+    (define-key help-map (kbd "? m") 'man)
+    (define-key help-map (kbd "? w") 'woman)))
 
 (defun my-describe-function (&optional arg)
   (interactive "P")

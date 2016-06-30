@@ -37,6 +37,12 @@
   (my-init--add-mode-to-hooks 'rainbow-delimiters-mode
                               my-init--programming-modes-hooks)
 
+  ;; (my-init--add-mode-to-hooks (lambda ()
+  ;;                               (when (or (not (boundp 'rainbow-delimiters-mode))
+  ;;                                         (not (eq rainbow-delimiters-mode t)))
+  ;;                                 (rainbow-delimiters-mode)))
+  ;;                             my-init--programming-modes-hooks)
+
   (my-init--after-load 'rainbow-delimiters
     ;; <https://ericscrivner.me/2015/06/better-emacs-rainbow-delimiters-color-scheme/>.
     (custom-set-faces

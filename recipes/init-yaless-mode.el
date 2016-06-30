@@ -35,8 +35,10 @@
 
 ;;; alternative: less-minor-mode <http://emacswiki.org/emacs/less.el>
 
+;;; TODO: Move to trash branch (not yaless-mode not used).
+
 (my-init--hook
-  (global-set-key (my-kbd "C-f") 'yaless-mode-on))
+  (define-key myinit-map (kbd "C-f") 'yaless-mode-on))
 
 (defun yaless-mode-on ()
   (interactive)

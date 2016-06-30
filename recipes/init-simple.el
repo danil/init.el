@@ -33,18 +33,18 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-SPC SPC") 'just-one-space)
-
 (my-init--hook
+  (define-key myinit-map (kbd "b l t") 'toggle-truncate-lines)
+  (define-key myinit-map (kbd "r c l") 'count-lines-region)
+
+  ;; (my-init--after-load 'simple
+  ;;   ;; (define-key visual-line-mode-map "C-SPC" nil)
+  ;;   (define-key special-mode-map " " nil))
+
   ;; (setq line-number-mode t)
 
   (setq column-number-mode t) ;column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
   (transient-mark-mode t) ;transient mark mode <http://emacswiki.org/TransientMarkMode>
-
-  (global-set-key (my-kbd "b l t") 'toggle-truncate-lines)
-  (global-set-key (my-kbd "r c l") 'count-lines-region)
-
-  (my-init--after-load 'simple
-    (define-key special-mode-map " " nil)))
+  )
 
 ;;; init-simple.el ends here

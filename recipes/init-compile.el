@@ -36,9 +36,9 @@
 (custom-set-variables '(compilation-scroll-output t))
 
 (my-init--hook
-  (global-set-key (my-kbd "! c") 'compile)
+  ;; (my-init--after-load 'compile
+  ;;   (define-key compilation-mode-map "\C-c\C-f" nil))
 
-  (my-init--after-load 'compile
-    (define-key compilation-mode-map "\C-c\C-f" nil)))
+  (define-key myinit-map (kbd "! c") 'compile))
 
 ;;; init-compile.el ends here

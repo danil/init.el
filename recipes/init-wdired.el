@@ -35,6 +35,7 @@
 
 (my-init--hook
   (my-init--after-load 'dired
+    (define-key dired-mode-map (kbd "C-v") nil)
     (define-key dired-mode-map (my-kbd "x w") 'wdired-change-to-wdired-mode)))
 
 ;;; init-wdired.el ends here

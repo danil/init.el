@@ -51,10 +51,10 @@
  )
 
 (my-init--hook
-  (global-set-key (my-kbd "x d") 'my-deft)
+  ;; (my-init--after-load 'deft
+  ;;   (define-key deft-mode-map (kbd "C-c C-f") nil))
 
-  (my-init--after-load 'deft
-    (define-key deft-mode-map (kbd "C-c C-f") nil)))
+  (define-key myinit-map (kbd "x d") 'my-deft))
 
 (defun my-deft (&optional arg)
   "Open `deft' list or create `deft' item if `ARG'."

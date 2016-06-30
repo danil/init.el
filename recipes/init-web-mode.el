@@ -47,7 +47,8 @@
                                 "\\.rhtml\\'"
                                 "\\.tpl\\.php\\'")
 
- (my-init--after-load 'web-mode
-                      (define-key web-mode-map (kbd "C-c C-f") nil)))
+ ;; (my-init--after-load 'web-mode
+ ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
+ )
 
 ;;; init-web-mode.el ends here

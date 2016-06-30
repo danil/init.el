@@ -34,9 +34,9 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "! b") 'my-quickrun)
-  (global-set-key (my-kbd "! r") 'my-quickrun-region)
-  (global-set-key (my-kbd "! s") 'quickrun-shell))
+  (define-key myinit-map (kbd "! b") 'my-quickrun)
+  (define-key myinit-map (kbd "! r") 'my-quickrun-region)
+  (define-key myinit-map (kbd "! s") 'quickrun-shell))
 
 (defun my-quickrun (&optional arg)
   (interactive "P")

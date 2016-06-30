@@ -35,7 +35,7 @@
 
 (my-init--hook
   ;; (my-init--after-load 'dockerfile-mode
-  ;;   (define-key myinit-mode-map (kbd "M-SPC m") dockerfile-mode-map))
+  ;;   (define-key myinit-mode-map (kbd "C-v m") dockerfile-mode-map))
 
   (my-init--add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
 

@@ -33,24 +33,24 @@
 
 ;;; Code:
 (my-init--hook
-  (global-set-key (my-kbd "v l L") 'magit-log-long)
-  (global-set-key (my-kbd "v l f") 'magit-file-log)
-  (global-set-key (my-kbd "v l l") 'magit-log)
-  (global-set-key (my-kbd "v s s") 'magit-status)
-  (global-set-key (my-kbd "v s f") 'magit-show)
-  (global-set-key (my-kbd "v s c") 'magit-show-commit)
+  (define-key myinit-map (kbd "v l L") 'magit-log-long)
+  (define-key myinit-map (kbd "v l f") 'magit-file-log)
+  (define-key myinit-map (kbd "v l l") 'magit-log)
+  (define-key myinit-map (kbd "v s") 'magit-status)
+  (define-key myinit-map (kbd "v S f") 'magit-show)
+  (define-key myinit-map (kbd "v S c") 'magit-show-commit)
 
   (my-init--after-load 'magit
-    (define-key magit-mode-map (my-kbd "v s s 1") 'magit-show-level-1-all)
-    (define-key magit-mode-map (my-kbd "v s s 2") 'magit-show-level-2-all)
-    (define-key magit-mode-map (my-kbd "v s s 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (my-kbd "v s s 4") 'magit-show-level-4-all)
+    (define-key magit-mode-map (my-kbd "v S 1") 'magit-show-level-1-all)
+    (define-key magit-mode-map (my-kbd "v S 2") 'magit-show-level-2-all)
+    (define-key magit-mode-map (my-kbd "v S 3") 'magit-show-level-3-all)
+    (define-key magit-mode-map (my-kbd "v S 4") 'magit-show-level-4-all)
 
     ;; Use ido to look for branches
     ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
     (setq magit-completing-read-function 'magit-ido-completing-read)
 
-    (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
+    ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
 
     (set-face-background 'magit-section-highlight nil)))
 

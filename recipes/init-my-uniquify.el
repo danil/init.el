@@ -35,7 +35,7 @@
 
 (my-init--hook
   ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-  (global-set-key (my-kbd "s u") 'uniquify-all-lines-region)
+  (define-key myinit-map (kbd "s u") 'uniquify-all-lines-region)
   )
 
 (defun uniquify-all-lines-region (start end)

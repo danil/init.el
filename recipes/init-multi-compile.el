@@ -65,6 +65,6 @@
                    )))))
 
 (my-init--hook
-  (global-set-key (my-kbd "! m") 'multi-compile-run))
+  (define-key myinit-map (kbd "! m") 'multi-compile-run))
 
 ;;; init-multi-compile.el ends here

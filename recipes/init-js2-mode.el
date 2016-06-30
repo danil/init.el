@@ -40,12 +40,12 @@
  '(js2-mode-show-strict-warnings nil))
 
 (my-init--hook
+  ;; (my-init--after-load 'js2-mode
+  ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))
+
   (my-init--add-mode-to-patterns 'js2-mode
                                 "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
                                 ;; "\\.js.erb\\'"
-                                "\\.js\\'")
-
-  (my-init--after-load 'js2-mode
-    (define-key js2-mode-map (kbd "C-c C-f") nil)))
+                                "\\.js\\'"))
 
 ;;; init-js-mode.el ends here

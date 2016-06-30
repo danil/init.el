@@ -34,10 +34,9 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "t t") 'shell)
+  (define-key myinit-map (kbd "t t") 'shell)
 
   (my-init--after-load 'shell
-    (define-key shell-mode-map (kbd "C-c C-f") nil)
     (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear)))
 
 (defun my-shell-clear (&optional arg)

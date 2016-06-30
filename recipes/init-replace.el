@@ -35,7 +35,7 @@
 
 (my-init--hook
   (my-init--after-load 'lisp-mode
-    (global-set-key (my-kbd "l f") 'flush-lines)
-    (global-set-key (my-kbd "l k") 'keep-lines)))
+    (define-key myinit-map (kbd "l f") 'flush-lines)
+    (define-key myinit-map (kbd "l k") 'keep-lines)))
 
 ;;; init-replace.el ends here

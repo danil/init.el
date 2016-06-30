@@ -32,7 +32,9 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(my-init--hook
-  (my-init--after-load 'add-log
-    (define-key change-log-mode-map (kbd "C-c C-f") nil)))
+
+;; (my-init--hook
+;;   (my-init--after-load 'add-log
+;;     (define-key change-log-mode-map (kbd "C-c C-f") nil)))
+
 ;;; init-add-log.el ends here

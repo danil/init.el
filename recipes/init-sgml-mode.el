@@ -39,6 +39,7 @@
                                  "\\.lp\\'"
                                  "\\.op\\'")
   (my-init--after-load 'sgml-mode
-    (define-key sgml-mode-map "\C-c\C-f" nil)))
+    ;; (define-key sgml-mode-map "\C-c\C-f" nil)
+    (define-key sgml-mode-map "\C-v" nil)))
 
 ;;; init-sql-mode.el ends here

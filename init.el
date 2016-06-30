@@ -72,6 +72,9 @@
 
 (require 'myinit "~/.emacs.d/myinit.el")
 
+(defvar myinit-map (make-sparse-keymap)
+  "Default keymap for myinit commands.")
+
 (custom-set-variables
  '(my-init--safe-modes
    '(
@@ -163,7 +166,7 @@
              occur-mode
              )))
 
- '(my-init--ruby-tools-modes
+ '(my-init--toggle-quotes-modes
    '(
      awk-mode
      coffee-mode
@@ -221,8 +224,8 @@
   (add-to-list 'my-init--read-only-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--ruby-tools-modes)
-  (add-to-list 'my-init--ruby-tools-modes-hooks
+(dolist (mode my-init--toggle-quotes-modes)
+  (add-to-list 'my-init--toggle-quotes-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
 (dolist (mode my-init--modal-modes)
@@ -239,7 +242,6 @@
 ;; (my-recipe '(flycheck-rust)) ;buggy(
 
 (my-recipe '(abbrev))
-(my-recipe '(add-log))
 (my-recipe '(ag))
 (my-recipe '(align))
 (my-recipe '(ansi-color))
@@ -278,7 +280,6 @@
 (my-recipe '(direx))
 (my-recipe '(wdired))
 
-(my-recipe '(discover-my-major))
 (my-recipe '(disp-table-line-wrap-and-truncation))
 (my-recipe '(disp-table-vertical-border))
 (my-recipe '(dockerfile-mode))
@@ -303,10 +304,8 @@
 (my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
 (my-recipe '(gotest))
-(my-recipe '(grep))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(help))
-(my-recipe '(help-mode))
 (my-recipe '(hi-lock))
 (my-recipe '(hideshow))
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
@@ -350,7 +349,6 @@
 
 (my-recipe '(magit))
 (my-recipe '(magit-blame))
-(my-recipe '(magit-log))
 
 (my-recipe '(make-mode))
 (my-recipe '(markdown-mode))
@@ -374,13 +372,10 @@
 (my-recipe '(nginx-mode))
 (my-recipe '(nodejs))
 (my-recipe '(nodejs-repl))
-(my-recipe '(nxml-mode))
-(my-recipe '(occur-edit-mode))
 (my-recipe '(occur-mode))
 (my-recipe '(org-mode org-ac))
 (my-recipe '(org-mode))
 (my-recipe '(paren))
-(my-recipe '(php-mode))
 (my-recipe '(point-stack))
 
 (my-recipe '(projectile))
@@ -411,7 +406,6 @@
 (my-recipe '(shell))
 (my-recipe '(simp))
 (my-recipe '(simple))
-(my-recipe '(slim-mode))
 
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
@@ -423,7 +417,6 @@
 (my-recipe '(subword-mode))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
-(my-recipe '(twittering-mode))
 (my-recipe '(undo-tree))
 (my-recipe '(uniquify))
 (my-recipe '(vlf))
@@ -440,5 +433,8 @@
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
   (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
+
+(myinit-global-mode 1)
+(my-init--hook (global-set-key (kbd "C-v") myinit-map))
 
 ;;; init.el ends here

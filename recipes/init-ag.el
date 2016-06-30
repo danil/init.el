@@ -1,6 +1,6 @@
 ;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init) (ag))
@@ -34,14 +34,14 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
+  (define-key myinit-map (kbd "f a k") 'my-ag-kill-buffers)
 
-  (global-set-key (my-kbd "f a S") 'ag-regexp)
-  (global-set-key (my-kbd "f a s") 'ag)
-  (global-set-key (my-kbd "f a t") 'ag-files)
+  (define-key myinit-map (kbd "f a S") 'ag-regexp)
+  (define-key myinit-map (kbd "f a s") 'ag)
+  (define-key myinit-map (kbd "f a t") 'ag-files)
 
-  (global-set-key (my-kbd "f a D") 'ag-dired-regexp)
-  (global-set-key (my-kbd "f a d") 'ag-dired)
+  (define-key myinit-map (kbd "f a D") 'ag-dired-regexp)
+  (define-key myinit-map (kbd "f a d") 'ag-dired)
 
   (my-init--after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)

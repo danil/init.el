@@ -36,7 +36,7 @@
 (custom-set-variables '(magit-blame-heading-format "%-20a %C %s %H"))
 
 (my-init--hook
-  (global-set-key (my-kbd "v b") 'my-magit-blame))
+  (define-key myinit-map (kbd "v b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.

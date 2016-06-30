@@ -33,8 +33,8 @@
 
 ;;; Code:
 
-(my-init--hook
-  (my-init--after-load 'grep
-    (define-key grep-mode-map (kbd "C-c C-f") nil)))
+;; (my-init--hook
+;;   (my-init--after-load 'grep
+;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-grep.el ends here

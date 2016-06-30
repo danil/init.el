@@ -38,15 +38,15 @@
 (custom-set-variables '(split-height-threshold nil)
                       '(split-width-threshold 64))
 
-(global-set-key (kbd "C-v") #'scroll-up-line)
-(global-set-key (kbd "M-v") #'scroll-down-line)
+;; (global-set-key (kbd "C-v") #'scroll-up-line)
+;; (global-set-key (kbd "M-v") #'scroll-down-line)
 
-(global-set-key (kbd "C-S-v") #'scroll-up)
-(global-set-key (kbd "M-V") #'scroll-down)
+;; (global-set-key (kbd "C-S-v") #'scroll-up)
+;; (global-set-key (kbd "M-V") #'scroll-down)
 
 (my-init--hook
-  (global-set-key (my-kbd "b b") 'bury-buffer-with-repeat)
-  (global-set-key (my-kbd "b r n") 'rename-buffer))
+  (define-key myinit-map (kbd "b b") 'bury-buffer-with-repeat)
+  (define-key myinit-map (kbd "b r n") 'rename-buffer))
 
 (defun bury-buffer-with-repeat ()
   "Bury current bufer and if repeat then bury next current buffer."

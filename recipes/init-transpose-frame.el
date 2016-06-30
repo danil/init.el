@@ -34,7 +34,7 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "t") 'my-transpose-frame))
+  (define-key myinit-map (kbd "t") 'my-transpose-frame))
 
 (defun my-transpose-frame ()
   (interactive)

@@ -34,9 +34,9 @@
 ;;; Code:
 
 (my-init--hook
-  (global-set-key (my-kbd "v h k") 'git-gutter:revert-hunk)
-  (global-set-key (my-kbd "v h n") 'my-git-gutter-next-diff)
-  (global-set-key (my-kbd "v h p") 'my-git-gutter-previous-diff)
+  (define-key myinit-map (kbd "v h k") 'git-gutter:revert-hunk)
+  (define-key myinit-map (kbd "v h n") 'my-git-gutter-next-diff)
+  (define-key myinit-map (kbd "v h p") 'my-git-gutter-previous-diff)
 
   ;; (my-init--after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))

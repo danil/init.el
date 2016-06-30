@@ -171,7 +171,7 @@ Otherwise use `list'."
   :group 'my-init)
 
 ;;;###autoload
-(defcustom my-init--ruby-tools-modes '()
+(defcustom my-init--toggle-quotes-modes '()
   "My ruby tools modes."
   :group 'my-init)
 
@@ -200,7 +200,7 @@ Otherwise use `list'."
   :group 'my-init)
 
 ;;;###autoload
-(defcustom my-init--ruby-tools-modes-hooks '()
+(defcustom my-init--toggle-quotes-modes-hooks '()
   "My ruby tools modes hooks."
   :group 'my-init)
 
@@ -262,11 +262,8 @@ Otherwise use `list'."
 
 ;;;###autoload
 (defun my-kbd (key)
-  "My key bindings start with \"M-SPC f\" and follow by `KEY'."
-  (kbd (concat "M-SPC f " key)))
-
-(global-set-key (kbd "M-SPC") nil)
-
+  "My key bindings start with \\<<C-v>> follow by `KEY'."
+  (kbd (concat "C-v " key)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

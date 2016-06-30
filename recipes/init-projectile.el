@@ -44,8 +44,8 @@
   ;;                 '("profiles" ; Gentoo portage overlay
   ;;                   ))))
 
-  (my-init--after-load 'projectile
-    (define-key myinit-mode-map (kbd "M-SPC c p") projectile-command-map))
+  ;; (my-init--after-load 'projectile
+  ;;   (define-key myinit-mode-map (kbd "C-v c p") projectile-command-map))
 
   (projectile-global-mode))
 
