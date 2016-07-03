@@ -34,7 +34,7 @@
 ;;; Code:
 
 (my-init--hook
-  (define-key myinit-map (kbd "s o f") 'sort-fields)
-  (define-key myinit-map (kbd "s o l") 'sort-lines))
+  (define-key myinit-map (kbd "l S f") 'sort-fields)
+  (define-key myinit-map (kbd "l s") 'sort-lines))
 
 ;;; init-sort.el ends here
