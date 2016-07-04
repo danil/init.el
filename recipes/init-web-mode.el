@@ -35,6 +35,7 @@
 
 (my-init--hook
  (my-init--add-mode-to-patterns 'web-mode
+                                "/src/vendor/narus/.+\\.jsx?\\'"
                                 "\\.\\(html\\|text\\)\\.erb\\'"
                                 "\\.as[cp]x\\'"
                                 "\\.djhtml\\'"
@@ -49,6 +50,7 @@
 
  ;; (my-init--after-load 'web-mode
  ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
- )
+
+ (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
 
 ;;; init-web-mode.el ends here
