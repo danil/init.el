@@ -1,6 +1,6 @@
 ;;; init-web-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2014-2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init))
@@ -35,7 +35,7 @@
 
 (my-init--hook
  (my-init--add-mode-to-patterns 'web-mode
-                                "/src/vendor/narus/.+\\.jsx?\\'"
+                                "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
                                 "\\.\\(html\\|text\\)\\.erb\\'"
                                 "\\.as[cp]x\\'"
                                 "\\.djhtml\\'"
