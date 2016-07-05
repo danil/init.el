@@ -1,6 +1,6 @@
 ;;; init-flycheck-rust.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2014-2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init))
@@ -32,6 +32,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (my-init--hook (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;;; init-flycheck-rust.el ends here
