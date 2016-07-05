@@ -33,7 +33,8 @@
 
 ;;; Code:
 (my-init--hook
-  (define-key myinit-map (kbd "v d") 'magit-diff)
+  (define-key myinit-map (kbd "v d") 'magit-diff-buffer-file)
+  (define-key myinit-map (kbd "v D") 'magit-diff)
 
   (define-key myinit-map (kbd "v l L") 'magit-log-long)
   (define-key myinit-map (kbd "v l f") 'magit-file-log)
