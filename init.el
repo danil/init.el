@@ -299,6 +299,7 @@
 (my-recipe '(find-temp-file))
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
+(my-recipe '(flycheck-bashate))
 (my-recipe '(git-gutter))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
@@ -351,8 +352,10 @@
 (my-recipe '(magit))
 (my-recipe '(magit-blame))
 
-(my-recipe '(make-mode))
 (my-recipe '(markdown-mode))
+;; (my-recipe '(markdownfmt))
+
+(my-recipe '(make-mode))
 (my-recipe '(mediawiki))
 (my-recipe '(menu-bar))
 (my-recipe '(modalka))

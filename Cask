@@ -61,6 +61,7 @@
 (depends-on "findr")
 (depends-on "fish-mode")
 (depends-on "flycheck")
+(depends-on "flycheck-bashate")
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
@@ -118,6 +119,7 @@
 (depends-on "quickrun")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
+;; (depends-on "restclient")
 
 (depends-on "minitest")
 (depends-on "multi-compile")
