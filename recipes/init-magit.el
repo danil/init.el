@@ -33,9 +33,12 @@
 
 ;;; Code:
 (my-init--hook
+  (define-key myinit-map (kbd "v d") 'magit-diff)
+
   (define-key myinit-map (kbd "v l L") 'magit-log-long)
   (define-key myinit-map (kbd "v l f") 'magit-file-log)
   (define-key myinit-map (kbd "v l l") 'magit-log)
+
   (define-key myinit-map (kbd "v s") 'magit-status)
   (define-key myinit-map (kbd "v S f") 'magit-show)
   (define-key myinit-map (kbd "v S c") 'magit-show-commit)
