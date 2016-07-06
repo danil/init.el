@@ -119,7 +119,7 @@
 (depends-on "quickrun")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
-;; (depends-on "restclient")
+(depends-on "restclient")
 
 (depends-on "minitest")
 (depends-on "multi-compile")

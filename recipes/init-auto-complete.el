@@ -107,6 +107,7 @@
                     perl-mode
                     php-mode
                     python-mode
+                    restclient-mode
                     rhtml-mode
                     ruby-mode
                     rust-mode
