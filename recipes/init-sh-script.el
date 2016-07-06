@@ -39,6 +39,7 @@
                                 "/\\.ackrc\\'"
                                 "/\\.bash_aliases\\'"
                                 "/\\.bpkgrc\\'"
+                                "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
                                 "/\\.lessfilter\\'"
                                 "/\\.mkshrc\\'"
                                 "/\\.xprofile\\'"
