@@ -34,14 +34,13 @@
 ;;; Code:
 
 (my-init--hook
-  (define-key myinit-map (kbd "f a k") 'my-ag-kill-buffers)
+  (define-key myinit-map (kbd "f a") 'ag)
 
-  (define-key myinit-map (kbd "f a S") 'ag-regexp)
-  (define-key myinit-map (kbd "f a s") 'ag)
-  (define-key myinit-map (kbd "f a t") 'ag-files)
-
-  (define-key myinit-map (kbd "f a D") 'ag-dired-regexp)
-  (define-key myinit-map (kbd "f a d") 'ag-dired)
+  (define-key myinit-map (kbd "f A D") 'ag-dired-regexp)
+  (define-key myinit-map (kbd "f A d") 'ag-dired)
+  (define-key myinit-map (kbd "f A f") 'ag-files)
+  (define-key myinit-map (kbd "f A k") 'my-ag-kill-buffers)
+  (define-key myinit-map (kbd "f A r") 'ag-regexp)
 
   (my-init--after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
