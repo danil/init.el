@@ -1,6 +1,6 @@
 ;;; init-flycheck.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2014-2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2014-2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((my-init))
@@ -32,13 +32,26 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (custom-set-variables '(flycheck-disabled-checkers '(ruby-rubylint))
                       '(flycheck-idle-change-delay 1.5))
 
 (my-init--hook
-  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks)
+  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
 
-  (my-init--after-load 'flycheck
-    (set-face-attribute 'flycheck-warning nil :underline nil)))
+(with-eval-after-load 'flycheck
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+
+  ;; ;; Disable jshint since we prefer eslint checking.
+  ;; (setq-default flycheck-disabled-checkers
+  ;;               (append flycheck-disabled-checkers
+  ;;                       '(javascript-jshint)))
+
+  ;; ;; Disable json-jsonlist checking for json files.
+  ;; (setq-default flycheck-disabled-checkers
+  ;;               (append flycheck-disabled-checkers
+  ;;                       '(json-jsonlist)))
+
+  (set-face-attribute 'flycheck-warning nil :underline nil))
 
 ;;; init-flycheck.el ends here
