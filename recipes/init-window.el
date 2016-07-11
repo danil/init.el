@@ -42,8 +42,8 @@
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
 
-  (global-set-key (kbd "<left>") #'scroll-down)
-  (global-set-key (kbd "<right>") #'scroll-up)
+  (global-set-key (kbd "<left>") #'scroll-right)
+  (global-set-key (kbd "<right>") #'scroll-left)
 
   (define-key myinit-map (kbd "b b") 'bury-buffer-with-repeat)
   (define-key myinit-map (kbd "b r n") 'rename-buffer))
