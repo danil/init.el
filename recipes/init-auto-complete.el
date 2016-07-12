@@ -137,7 +137,10 @@
     ;; Remove auto-complet from enter/return keys
     ;; <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
     (define-key ac-completing-map "\r" nil)
-    (define-key ac-completing-map [return] nil))
+    (define-key ac-completing-map [return] nil)
+
+    (define-key ac-complete-mode-map "\C-n" 'ac-next)
+    (define-key ac-complete-mode-map "\C-p" 'ac-previous))
 
   (my-init--add-mode-to-hooks (lambda ()
                                 (add-to-list 'ac-sources
