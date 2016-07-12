@@ -1,9 +1,9 @@
-;;; init-markdown-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-markdownfmt.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init))
+;; Package-Requires: ((my-init) (ag))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,23 +33,10 @@
 
 ;;; Code:
 
-(custom-set-variables
- '(markdown-command "blackfriday-tool"))
+;; (add-hook 'markdown-mode-hook #'markdownfmt-enable-on-save)
 
 (my-init--hook
-  (my-init--add-mode-to-patterns 'markdown-mode
-                                "/README\\'"
-                                "/mutt[-a-zA-Z0-9]+\\'"
-                                "\\.markdown\\'"
-                                "\\.md\\'"
-                                "\\.mdown\\'")
+  (my-init--after-load 'markdown-mode
+    (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))
 
- (my-init--after-load 'markdown-mode
-   (require 'eww) ;used for eww-mode live preview
-
-   ;; Unset markdown-next-wiki-link and markdown-previous-wiki-link
-   ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-   (define-key markdown-mode-map "\M-n" nil)
-   (define-key markdown-mode-map "\M-p" nil)))
-
-;;; init-markdown-mode.el ends here
+;;; init-markdownfmt.el ends here

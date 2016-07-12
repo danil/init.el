@@ -40,7 +40,6 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
-(depends-on "coffee-mode")
 (depends-on "column-marker")
 (depends-on "crontab-mode")
 (depends-on "csv-mode")
@@ -88,11 +87,13 @@
 (depends-on "smex")
 
 ;;; JavaScript.
+(depends-on "coffee-mode")
 (depends-on "jade-mode")
 (depends-on "js2-mode")
 (depends-on "jsfmt")
 (depends-on "json-mode")
 (depends-on "json-reformat")
+(depends-on "literate-coffee-mode")
 
 (depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido")
@@ -102,6 +103,7 @@
 (depends-on "list-unicode-display")
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
+(depends-on "markdownfmt")
 (depends-on "mediawiki")
 (depends-on "modalka")
 (depends-on "multiple-cursors")

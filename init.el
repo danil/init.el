@@ -106,6 +106,7 @@
      json-mode
      less-css-mode
      lisp-mode
+     litcoffee-mode
      lua-mode
      makefile-gmake-mode
      markdown-mode
@@ -263,7 +264,6 @@
 (my-recipe '(clojure-mode))
 (my-recipe '(smartparens))
 
-(my-recipe '(coffee-mode))
 (my-recipe '(column-marker))
 (my-recipe '(comint))
 (my-recipe '(compile))
@@ -336,6 +336,8 @@
 (my-recipe '(isearch))
 (my-recipe '(ispell))
 
+;; JavaScript.
+(my-recipe '(coffee-mode))
 (my-recipe '(js-mode))
 (my-recipe '(js2-mode))
 (my-recipe '(json-mode))
@@ -354,7 +356,7 @@
 (my-recipe '(magit-blame))
 
 (my-recipe '(markdown-mode))
-;; (my-recipe '(markdownfmt))
+(my-recipe '(markdownfmt))
 
 (my-recipe '(make-mode))
 (my-recipe '(mediawiki))

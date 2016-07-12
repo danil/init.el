@@ -93,6 +93,7 @@
                     json-mode
                     less-css-mode
                     lisp-mode
+                    litcoffee-mode
                     lua-mode
                     magit-log-edit-mode
                     makefile-gmake-mode
