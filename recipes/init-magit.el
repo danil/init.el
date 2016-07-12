@@ -40,9 +40,10 @@
   (define-key myinit-map (kbd "v l f") 'magit-file-log)
   (define-key myinit-map (kbd "v l l") 'magit-log)
 
-  (define-key myinit-map (kbd "v s") 'magit-status)
-  (define-key myinit-map (kbd "v S f") 'magit-show)
-  (define-key myinit-map (kbd "v S c") 'magit-show-commit)
+  (define-key myinit-map (kbd "v s") 'magit-show-commit)
+  (define-key myinit-map (kbd "v S c") 'magit-show)
+
+  (define-key myinit-map (kbd "V") 'magit-status)
 
   (my-init--after-load 'magit
     (define-key magit-mode-map (my-kbd "v S 1") 'magit-show-level-1-all)
