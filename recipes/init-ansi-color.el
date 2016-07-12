@@ -1,10 +1,8 @@
 ;;; init-ansi-color.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2015 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
-;; Version: 0.0.1
-;; Package-Requires: ((my-init))
-;; Keywords: convenience
+;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
 
 ;;; Commentary:
@@ -59,5 +57,13 @@
            (with-current-buffer buf
              (ansi-color-apply-on-region (point-min) (point-max))))))
   )
+
+;; ;; <http://stackoverflow.com/questions/13397737/ansi-coloring-in-compilation-mode#20788581>.
+;; (ignore-errors
+;;   (require 'ansi-color)
+;;   (defun my-colorize-compilation-buffer ()
+;;     (when (eq major-mode 'compilation-mode)
+;;       (ansi-color-apply-on-region compilation-filter-start (point-max))))
+;;   (add-hook 'compilation-filter-hook 'my-colorize-compilation-buffer))
 
 ;;; init-ansi-color.el ends here
