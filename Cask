@@ -2,9 +2,7 @@
 
 (source "ELPA" "http://tromey.com/elpa/")
 (source "melpa-stable" "http://stable.melpa.org/packages/")
-(source SC)
 (source gnu)
-(source marmalade)
 (source melpa)
 (source org)
 
