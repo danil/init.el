@@ -34,6 +34,6 @@
 ;;; Code:
 
 (my-init--hook
-  (define-key myinit-map (kbd "v r r") 'git-timemachine))
+  (define-key myinit-map (kbd "v r") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here
