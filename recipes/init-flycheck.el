@@ -38,8 +38,6 @@
   (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
 
 (with-eval-after-load 'flycheck
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
-
   ;; ;; Disable jshint since we prefer eslint checking.
   ;; (setq-default flycheck-disabled-checkers
   ;;               (append flycheck-disabled-checkers
@@ -50,6 +48,8 @@
   ;;               (append flycheck-disabled-checkers
   ;;                       '(json-jsonlist)))
 
-  (set-face-attribute 'flycheck-warning nil :underline nil))
+  ;; (set-face-attribute 'flycheck-warning nil :underline nil)
+
+  (flycheck-add-mode 'javascript-eslint 'web-mode))
 
 ;;; init-flycheck.el ends here
