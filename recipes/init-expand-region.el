@@ -2,9 +2,7 @@
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
-;; Version: 0.0.1
-;; Package-Requires: ((my-init) (ag))
-;; Keywords: convenience
+;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
 
 ;;; Commentary:
