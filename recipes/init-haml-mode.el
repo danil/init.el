@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-haml-mode)
+
+(defun init-haml-mode ()
+  "Init."
+
   (my-init--after-load 'haml-mode
     ;; (my-init--after-load 'ruby-mode
     ;;   (define-key haml-mode-map (my-kbd "m r h") 'ruby-toggle-hash-syntax))

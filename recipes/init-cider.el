@@ -33,7 +33,11 @@
 
 (custom-set-variables '(cider-mode-line " cider"))
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-cider)
+
+;; (defun init-cider ()
+;;   "Init."
+
 ;;   (my-init--after-load 'cider-mode
 ;;     (define-key cider-mode-map (kbd "C-c C-f") nil)))
 

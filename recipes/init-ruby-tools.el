@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ruby-tools)
+
+(defun init-ruby-tools ()
+  "Init."
+
   ;; (add-hook 'text-mode-hook 'auto-fill-mode)
 
   ;;    haml-mode

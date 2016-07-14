@@ -33,7 +33,10 @@
 
 ;;; alternative: less-minor-mode <http://emacswiki.org/emacs/less.el>
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-twittering-mode)
+
+;; (defun init-twittering-mode ()
+;;   "Init."
 ;;   (my-init--after-load 'twittering-mode
 ;;     (define-key twittering-mode-map (kbd "C-c C-f") nil)))
 

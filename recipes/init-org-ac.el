@@ -30,5 +30,12 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(my-init--hook (org-ac/config-default))
+
+(add-hook 'after-init-hook 'init-org-ac)
+
+(defun init-org-ac ()
+  "Init."
+
+ (org-ac/config-default))
+
 ;;; init-org-ac.el ends here

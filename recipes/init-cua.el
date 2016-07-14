@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-cua)
+
+(defun init-cua ()
+  "Init."
+
   ;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
   (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
   )

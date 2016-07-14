@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-grep)
+
+;; (defun init-grep ()
+;;   "Init."
+
 ;;   (my-init--after-load 'grep
 ;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))
 

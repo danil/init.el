@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-comint)
+
+(defun init-comint ()
+  "Init."
+
   ;; Comint mode (which shell mode and sql mode based on)
   ;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
   (setq comint-input-ring-size 10000)

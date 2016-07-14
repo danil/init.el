@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-git-gutter)
+
+(defun init-git-gutter ()
+  "Init."
+
   (define-key myinit-map (kbd "v h k") 'git-gutter:revert-hunk)
   (define-key myinit-map (kbd "v h n") 'my-git-gutter-next-diff)
   (define-key myinit-map (kbd "v h p") 'my-git-gutter-previous-diff)

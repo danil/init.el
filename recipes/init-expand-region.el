@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-expand-region)
+
+(defun init-expand-region ()
+  "Init."
+
  (my-init--autoload-file-on-functions "expand-region"
                                       'er/expand-region
                                       'er/mark-comment

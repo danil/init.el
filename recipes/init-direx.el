@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-direx)
+
+(defun init-direx ()
+  "Init."
+
   (global-set-key (kbd "C-x d") 'my-dired))
 
 (defun my-dired (&optional arg)

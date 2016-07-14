@@ -35,7 +35,11 @@
                       '(highlight-symbol-idle-delay 0.7)
                       '(highlight-symbol-ignore-list '()))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-highlight-symbol)
+
+(defun init-highlight-symbol ()
+  "Init."
+
   (define-key myinit-map (kbd "s s n") 'highlight-symbol-nav-mode)
   (define-key myinit-map (kbd "s s r") 'highlight-symbol-query-replace)
 

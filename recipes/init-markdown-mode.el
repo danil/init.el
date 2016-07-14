@@ -34,7 +34,11 @@
 (custom-set-variables
  '(markdown-command "blackfriday-tool"))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-markdown-mode)
+
+(defun init-markdown-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'markdown-mode
                                 "/README\\'"
                                 "/mutt[-a-zA-Z0-9]+\\'"

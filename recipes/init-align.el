@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-align)
+
+(defun init-align ()
+  "Init."
+
   (define-key myinit-map (kbd "r a c w") 'my-align-whitespace))
 
 ;; <http://pragmaticemacs.com/emacs/aligning-text/>.

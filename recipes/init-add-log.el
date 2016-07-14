@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-add-log)
+
+(defun init-add-log ()
+  "Init."
+
 ;;   (my-init--after-load 'add-log
 ;;     (define-key change-log-mode-map (kbd "C-c C-f") nil)))
 

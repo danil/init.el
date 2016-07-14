@@ -30,7 +30,11 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(my-init--hook
+(add-hook 'after-init-hook 'init-magit)
+
+(defun init-magit ()
+  "Init."
+
   (define-key myinit-map (kbd "v d") 'magit-diff-buffer-file)
   (define-key myinit-map (kbd "v D") 'magit-diff)
 

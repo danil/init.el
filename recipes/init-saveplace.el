@@ -37,7 +37,11 @@
  '(save-place-file "~/.emacs.var/places") ; Name of the file that records `save-place-alist' value.
  '(save-place-limit 10000))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-saveplace)
+
+(defun init-saveplace ()
+  "Init."
+
   (require 'saveplace)
 
   (my-init--after-load 'saveplace

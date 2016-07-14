@@ -33,7 +33,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-dockerfile-mode)
+
+(defun init-dockerfile-mode ()
+  "Init."
+
   ;; (my-init--after-load 'dockerfile-mode
   ;;   (define-key myinit-mode-map (kbd "C-v m") dockerfile-mode-map))
 

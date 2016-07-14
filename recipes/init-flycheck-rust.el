@@ -31,6 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(add-hook 'after-init-hook 'init-flycheck-rust)
+
+(defun init-flycheck-rust ()
+  "Init."
+
+ (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;;; init-flycheck-rust.el ends here

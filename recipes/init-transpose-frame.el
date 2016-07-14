@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-transpose-frame)
+
+(defun init-transpose-frame ()
+  "Init."
+
   (define-key myinit-map (kbd "t") 'my-transpose-frame))
 
 (defun my-transpose-frame ()

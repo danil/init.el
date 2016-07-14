@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-emacs-lisp-mode)
+
+(defun init-emacs-lisp-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'emacs-lisp-mode
                                  "/Cask\\'"
                                  "/\\.?abbrev_defs\\'"

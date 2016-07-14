@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-simple)
+
+(defun init-simple ()
+  "Init."
+
   (define-key myinit-map (kbd "b l t") 'toggle-truncate-lines)
   (define-key myinit-map (kbd "r c l") 'count-lines-region)
 

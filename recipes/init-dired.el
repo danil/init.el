@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-dired)
+
+(defun init-dired ()
+  "Init."
+
   (my-init--after-load 'dired
     (setq dired-listing-switches "-alh")))
 

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-sh-script)
+
+(defun init-sh-script ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'shell-script-mode
                                 "/Procfile\\'"
                                 "/\\.ackrc\\'"

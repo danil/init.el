@@ -45,7 +45,11 @@
  '(version-control t) ;use versioned backups
  )
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-files)
+
+(defun init-files ()
+  "Init."
+
   (define-key myinit-map (kbd "b r r") 'revert-buffer))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get

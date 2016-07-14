@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-hi-lock)
+
+(defun init-hi-lock ()
+  "Init."
+
   (define-key myinit-map (kbd "b h r") 'my-highlight-regexp))
 
 (defun my-highlight-regexp (&optional arg)

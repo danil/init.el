@@ -35,7 +35,11 @@
 
 (autoload 'sml/setup "smart-mode-line" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-smart-mode-line)
+
+(defun init-smart-mode-line ()
+  "Init."
+
   (setq sml/theme frame-background-mode)
   (setq sml/no-confirm-load-theme t)
 

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-nodejs)
+
+(defun init-nodejs ()
+  "Init."
+
   ;; <http://stackoverflow.com/questions/18392303/adding-binary-path-to-emacs-path#18393068>.
   (setenv "PATH" (concat (getenv "PATH")
                          ":"

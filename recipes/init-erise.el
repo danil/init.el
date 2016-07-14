@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-erise)
+
+(defun init-erise ()
+  "Init."
+
   ;; (my-init--after-load 'erise
   ;;   (setq erise-key-length-limit 30)
   ;;   (setq erise-shell-command "erise"))

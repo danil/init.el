@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ansi-color)
+
+(defun init-ansi-color ()
+  "Init."
+
   (require 'ansi-color)
 
   ;; AnsiColor (Emacs terminal related stuff)

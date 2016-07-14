@@ -208,15 +208,6 @@ Otherwise use `list'."
   "My modal modes hooks."
   :group 'my-init)
 
-;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
-;;;###autoload
-(defmacro my-init--hook (&rest body)
-  "After loading all the init files, evaluate BODY."
-
-  (declare (indent defun))
-  `(add-hook 'after-init-hook
-             '(lambda () ,@body)))
-
 ;;;###autoload
 (defmacro my-init--after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-point-stack)
+
+(defun init-point-stack ()
+  "Init."
+
   (define-key myinit-map (kbd "m p h s") 'point-stack-push)
   (define-key myinit-map (kbd "m p h b") 'my-point-stack-pop-with-repeat)
   (define-key myinit-map (kbd "m p h f") 'my-point-stack-forward-stack-pop-with-repeat))

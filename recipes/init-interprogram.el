@@ -1,4 +1,8 @@
-(my-init--hook
+(add-hook 'after-init-hook 'init-interprogram)
+
+(defun init-interprogram ()
+  "Init."
+
   ;; If emacs is run in a terminal, the clipboard- functions have no
   ;; effect. Instead, we use of xsel, see
   ;; http://www.vergenet.net/~conrad/software/xsel/ -- "a command-line

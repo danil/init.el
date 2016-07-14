@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-uniquify)
+
+(defun init-uniquify ()
+  "Init."
+
   ;; Uniquify
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.

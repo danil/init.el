@@ -39,7 +39,11 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-web-mode)
+
+(defun init-web-mode ()
+  "Init."
+
  (my-init--add-mode-to-patterns 'web-mode
                                 "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
                                 "\\.\\(html\\|text\\)\\.erb\\'"

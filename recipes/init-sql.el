@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-sql)
+
+(defun init-sql ()
+  "Init."
+
   (add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
 
   (my-init--after-load 'sql

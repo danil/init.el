@@ -36,7 +36,11 @@
 (custom-set-variables '(split-height-threshold nil)
                       '(split-width-threshold 64))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-window)
+
+(defun init-window ()
+  "Init."
+
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
 

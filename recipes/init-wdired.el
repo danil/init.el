@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-wdired)
+
+(defun init-wdired ()
+  "Init."
+
   (my-init--after-load 'dired
     (define-key dired-mode-map (kbd "C-v") nil)
     (define-key dired-mode-map (my-kbd "x w") 'wdired-change-to-wdired-mode)))

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ac-html)
+
+(defun init-ac-html ()
+  "Init."
+
   ;; (my-init--add-mode-to-hooks (lambda ()
   ;;                         (require 'ac-html)
   ;;                         (require 'ac-html-default-data-provider)

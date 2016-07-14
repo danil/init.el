@@ -33,7 +33,11 @@
 
 (custom-set-variables '(magit-blame-heading-format "%-20a %C %s %H"))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-magit-blame)
+
+(defun init-magit-blame ()
+  "Init."
+
   (define-key myinit-map (kbd "v b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)

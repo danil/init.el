@@ -33,7 +33,11 @@
 
 (autoload 'turn-on-pretty-lambda-mode "pretty-lambdada" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-pretty-lambdada)
+
+(defun init-pretty-lambdada ()
+  "Init."
+
   (my-init--add-mode-to-hooks 'turn-on-pretty-lambda-mode
                               '(emacs-lisp-mode-hook lisp-mode-hook)))
 

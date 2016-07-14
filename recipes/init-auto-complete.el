@@ -45,7 +45,11 @@
      ac-source-dictionary
      ac-source-yasnippet)))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-auto-complete)
+
+(defun init-auto-complete ()
+  "Init."
+
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
 

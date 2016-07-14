@@ -42,7 +42,11 @@
 ;; (global-set-key (kbd "C-c f f") 'simp-project-find-file)
 ;; (global-set-key (kbd "C-c f g") 'simp-project-rgrep)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-simp)
+
+(defun init-simp ()
+  "Init."
+
   (my-init--after-load 'simp
     (if (fboundp 'ido-mode)
         (setq simp-completing-read-command 'ido-completing-read)

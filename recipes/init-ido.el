@@ -52,7 +52,11 @@
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
  '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~/src")))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ido)
+
+(defun init-ido ()
+  "Init."
+
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)
 

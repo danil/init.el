@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-completion-ignored-extensions)
+
+(defun init-completion-ignored-extensions ()
+  "Init."
+
   ;; <http://endlessparentheses.com/improving-emacs-file-name-completion.html>.
   (mapc (lambda (ignored-extension)
           (add-to-list 'completion-ignored-extensions ignored-extension))

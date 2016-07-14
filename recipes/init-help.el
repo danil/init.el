@@ -34,7 +34,11 @@
 ;; My help
 ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-help)
+
+(defun init-help ()
+  "Init."
+
   (define-key myinit-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
 
   (my-init--after-load 'help

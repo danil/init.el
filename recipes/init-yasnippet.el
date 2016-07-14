@@ -37,7 +37,11 @@
 
 (autoload 'yas-reload-all "yasnippet" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-yasnippet)
+
+(defun init-yasnippet ()
+  "Init."
+
   (yas-reload-all)
 
   (my-init--after-load 'yasnippet

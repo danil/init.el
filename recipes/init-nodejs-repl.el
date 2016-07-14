@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-nodejs-repl)
+
+(defun init-nodejs-repl ()
+  "Init."
+
   ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
 
   (my-init--after-load 'js

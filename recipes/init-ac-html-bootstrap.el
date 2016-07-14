@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ac-html-bootstrap)
+
+(defun init-ac-html-bootstrap ()
+  "Init."
+
   (my-init--after-load 'ac-html (ac-html-bootstrap+)))
 
 ;;; init-ac-html-bootstrap.el ends here

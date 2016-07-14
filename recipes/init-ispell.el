@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ispell)
+
+(defun init-ispell ()
+  "Init."
+
   ;; (setq-default ispell-program-name "/usr/bin/aspell")
   ;; (setq-default ispell-program-name "/usr/bin/hunspell")
   (setq ispell-dictionary "ru")

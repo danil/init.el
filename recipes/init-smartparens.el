@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-smartparens)
+
+(defun init-smartparens ()
+  "Init."
+
   (my-init--add-mode-to-hooks (lambda ()
                           (turn-on-smartparens-mode)
                           (turn-on-show-smartparens-mode))

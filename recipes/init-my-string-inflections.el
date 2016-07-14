@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-my-string-inflections)
+
+(defun init-my-string-inflections ()
+  "Init."
+
   (define-key myinit-map (kbd "s i i") 'my-toggle-camelcase-and-underscore-with-repeat)
   (define-key myinit-map (kbd "s i h") 'my-humanize-symbol-with-repeat))
 

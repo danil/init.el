@@ -35,7 +35,11 @@
                             (my-diff-facelift)
                             (define-key diff-mode-shared-map (kbd "k") nil)))
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-diff-mode)
+
+;; (defun init-diff-mode ()
+;;   "Init."
+
 ;;   (my-init--after-load 'diff-mode
 ;;     (define-key diff-mode-map "\C-c\C-f" nil)))
 

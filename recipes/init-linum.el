@@ -2,7 +2,11 @@
 
 (autoload 'linum-mode "linum" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-linum)
+
+(defun init-linum ()
+  "Init."
+
   (my-init--add-mode-to-hooks (lambda ()
                           (let ((my-number-of-lines (count-lines (point-min)
                                                                  (point-max))))

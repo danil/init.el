@@ -30,10 +30,16 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(my-init--hook
+
+(add-hook 'after-init-hook 'init-elpa-mirror)
+
+(defun init-elpa-mirror ()
+  "Init."
+
   (my-init--after-load 'elpa-mirror
     (setq elpamr-default-output-directory "/var/elpa/mirror"
           elpamr-email "danil@kutkevich.org"
           elpamr-repository-name "kutkevich"
           elpamr-repository-path "http://elpa.kutkevich.org")))
+
 ;;; init-elpa-mirror.el ends here

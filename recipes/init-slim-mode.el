@@ -31,7 +31,10 @@
 
 ;;; Code:
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-slim-mode)
+
+;; (defun init-slim-mode ()
+;;   "Init."
 ;;   (my-init--after-load 'slim-mode
 ;;     (define-key slim-mode-map (kbd "\C-c\C-f") nil)))
 

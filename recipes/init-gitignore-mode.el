@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-gitignore-mode)
+
+(defun init-gitignore-mode ()
+  "Init."
+
   ;; Git modes <https://github.com/magit/git-modes>.
   (my-init--add-mode-to-patterns 'gitignore-mode
                                 "/.agignore\\'"

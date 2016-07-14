@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-recentf-ido-find-file)
+
+(defun init-recentf-ido-find-file ()
+  "Init."
+
   (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file))
 
 ;; <http://www.emacswiki.org/emacs/RecentFiles#toc5>.

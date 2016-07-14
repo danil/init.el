@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-conf-mode)
+
+(defun init-conf-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'conf-mode
                                 "/Pipfile2\\'"
                                 "/Pipfile3\\'"

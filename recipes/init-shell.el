@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-shell)
+
+(defun init-shell ()
+  "Init."
+
   (define-key myinit-map (kbd "t t") 'shell)
 
   (my-init--after-load 'shell

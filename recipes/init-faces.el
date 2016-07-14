@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-faces)
+
+(defun init-faces ()
+  "Init."
+
   ;; ;;; <http://emacswiki.org/ScrollBar>.
   ;; (scroll-bar-mode -1)
   ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.

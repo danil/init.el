@@ -1,6 +1,10 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-projectile-rails)
+
+(defun init-projectile-rails ()
+  "Init."
+
   (my-init--after-load 'projectile-rails
 
     ;; Override rails server arguments.

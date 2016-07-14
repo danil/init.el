@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-winner-mode)
+
+(defun init-winner-mode ()
+  "Init."
+
   (custom-set-variables '(winner-dont-bind-my-keys t))
 
   (when (fboundp 'winner-mode) (winner-mode t))

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-fill)
+
+(defun init-fill ()
+  "Init."
+
   (global-set-key (my-kbd "r f") 'fill-region))
 
 ;;; init-fill.el ends here

@@ -2,7 +2,11 @@
 ;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
 ;;; <http://emacswiki.org/RecentFiles>.
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-recentf)
+
+(defun init-recentf ()
+  "Init."
+
   (recentf-mode t)
 
   (my-init--after-load 'recentf-mode

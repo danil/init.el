@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-my-uniquify)
+
+(defun init-my-uniquify ()
+  "Init."
+
   ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
   (define-key myinit-map (kbd "s u") 'uniquify-all-lines-region)
   )

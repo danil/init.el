@@ -31,6 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook (require 'go-autocomplete))
+(add-hook 'after-init-hook 'init-go-autocomplete)
+
+(defun init-go-autocomplete ()
+  "Init."
+
+ (require 'go-autocomplete))
 
 ;;; init-go-autocomplete.el ends here

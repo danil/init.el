@@ -1,6 +1,10 @@
 (autoload 'ferm-mode "ferm-mode" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ferm-mode)
+
+(defun init-ferm-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'ferm-mode
                                 "/etc/iptables/rules.v[46]"
                                 "\\.rules\\'"))

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ag)
+
+(defun init-ag ()
+  "Init."
+
   (define-key myinit-map (kbd "f a") 'ag)
 
   (define-key myinit-map (kbd "f A D") 'ag-dired-regexp)

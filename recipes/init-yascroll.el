@@ -33,7 +33,11 @@
 
 (autoload 'yascroll-bar-mode "yascroll" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-yascroll)
+
+(defun init-yascroll ()
+  "Init."
+
   (my-init--add-mode-to-hooks 'yascroll-bar-mode
                         (-difference my-init--read-only-modes-hooks
                                      '(magit-status-mode-hook

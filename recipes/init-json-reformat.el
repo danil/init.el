@@ -33,7 +33,11 @@
 
 (autoload 'json-reformat-region "json-reformat" nil t)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-json-reformat)
+
+(defun init-json-reformat ()
+  "Init."
+
   (define-key myinit-map (kbd "m j j r") 'json-reformat-region))
 
 ;;; init-json-reformat.el ends here

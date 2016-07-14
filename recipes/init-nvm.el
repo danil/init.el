@@ -36,7 +36,11 @@
 
 ;; (custom-set-variables '(nvm-dir (f-full "~/n/n")))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-nvm)
+
+(defun init-nvm ()
+  "Init."
+
   ;; (nvm-use "0.11")
 
   ;; Use Node.js version from ~/.nvmrc

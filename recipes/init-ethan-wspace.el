@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ethan-wspace)
+
+(defun init-ethan-wspace ()
+  "Init."
+
   (global-ethan-wspace-mode t)
 
   (my-init--after-load 'ethan-wspace

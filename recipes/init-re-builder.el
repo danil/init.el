@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-re-builder)
+
+(defun init-re-builder ()
+  "Init."
+
   (define-key myinit-map (kbd "b r b") 're-builder))
 
 ;;; init-ag.el ends here

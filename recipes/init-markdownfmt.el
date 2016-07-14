@@ -33,7 +33,11 @@
 
 ;; (add-hook 'markdown-mode-hook #'markdownfmt-enable-on-save)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-markdownfmt)
+
+(defun init-markdownfmt ()
+  "Init."
+
   (my-init--after-load 'markdown-mode
     (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))
 

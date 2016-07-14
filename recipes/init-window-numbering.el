@@ -36,7 +36,11 @@
 
 (custom-set-variables '(window-numbering-format "%s "))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-window-numbering)
+
+(defun init-window-numbering ()
+  "Init."
+
   (window-numbering-mode)
 
   (my-init--after-load 'window-numbering

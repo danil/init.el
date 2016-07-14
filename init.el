@@ -443,6 +443,6 @@
   (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
 
 (myinit-global-mode 1)
-(my-init--hook (global-set-key (kbd "C-v") myinit-map))
+(add-hook 'after-init-hook (lambda () (global-set-key (kbd "C-v") myinit-map)))
 
 ;;; init.el ends here

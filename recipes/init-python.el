@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-python)
+
+(defun init-python ()
+  "Init."
+
   ;; (my-init--after-load 'python
   ;;   (define-key python-mode-map (kbd "C-c C-f") nil))
 

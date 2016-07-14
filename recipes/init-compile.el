@@ -33,7 +33,11 @@
 
 (custom-set-variables '(compilation-scroll-output t))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-compile)
+
+(defun init-compile ()
+  "Init."
+
   ;; (my-init--after-load 'compile
   ;;   (define-key compilation-mode-map "\C-c\C-f" nil))
 

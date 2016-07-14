@@ -31,39 +31,17 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-modalka)
+
+(defun init-modalka ()
+  "Init."
+
   (define-key myinit-map (kbd "C-v") 'my-modalka-enable)
 
   (my-init--add-mode-to-hooks (lambda () (modalka-mode 1))
                               my-init--modal-modes-hooks)
-  (add-hook 'modalka-mode-hook 'my-on-modalka-enable))
+  (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
 
-(defun my-modalka-enable ()
-  "Enable `modalka-mode'."
-  (interactive)
-
-  (if (minibufferp)
-      (keyboard-escape-quit)
-
-    (when (and (buffer-file-name))
-      ;; (buffer-modified-p)
-      ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
-      (call-interactively 'save-buffer))
-
-    (modalka-mode t)
-    (keyboard-quit)))
-
-(defun my-on-modalka-enable ()
-  "Callback on modalka enable."
-  (hl-line-mode -1))
-
-(defun my-on-modalka-disable ()
-  "Callback on modalka disable."
-  (when (and (not (minibufferp))
-             (member major-mode my-init--modal-modes))
-    (hl-line-mode 1)))
-
-(my-init--hook
   (my-init--after-load 'modalka
     (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
@@ -186,5 +164,30 @@
     (modalka-define-kbd "V" "C-S-v")
     (modalka-define-kbd "W" "C-S-w")
     (modalka-define-kbd "Y" "C-S-y")))
+
+(defun my-modalka-enable ()
+  "Enable `modalka-mode'."
+  (interactive)
+
+  (if (minibufferp)
+      (keyboard-escape-quit)
+
+    (when (and (buffer-file-name))
+      ;; (buffer-modified-p)
+      ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
+      (call-interactively 'save-buffer))
+
+    (modalka-mode t)
+    (keyboard-quit)))
+
+(defun my-on-modalka-enable ()
+  "Callback on modalka enable."
+  (hl-line-mode -1))
+
+(defun my-on-modalka-disable ()
+  "Callback on modalka disable."
+  (when (and (not (minibufferp))
+             (member major-mode my-init--modal-modes))
+    (hl-line-mode 1)))
 
 ;;; init-modalka.el ends here

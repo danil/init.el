@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-gotest)
+
+(defun init-gotest ()
+  "Init."
+
   (my-init--after-load 'go-mode
     (define-key go-mode-map (kbd "C-c , v") 'go-test-current-file)
     (define-key go-mode-map (kbd "C-c , s") 'go-test-current-test)

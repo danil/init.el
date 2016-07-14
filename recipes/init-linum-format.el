@@ -2,7 +2,11 @@
 ;;; Separating line numbers from text
 ;;; <http://www.emacswiki.org/emacs/LineNumbers#toc7>.
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-linum-format)
+
+(defun init-linum-format ()
+  "Init."
+
   (my-init--after-load 'linum
     (unless window-system
       (setq linum-format 'my-linum-format))

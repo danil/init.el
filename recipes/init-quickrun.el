@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-quickrun)
+
+(defun init-quickrun ()
+  "Init."
+
   (define-key myinit-map (kbd "! b") 'my-quickrun)
   (define-key myinit-map (kbd "! r") 'my-quickrun-region)
   (define-key myinit-map (kbd "! s") 'quickrun-shell))

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-myinit)
+
+;; (defun init-myinit ()
+;;   "Init."
+
 ;;   (myinit-global-mode 1)
 
 ;;   ;; (my-init--after-load 'myinit

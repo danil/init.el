@@ -34,6 +34,11 @@
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
-(my-init--hook (global-anzu-mode t))
+(add-hook 'after-init-hook 'init-anzu)
+
+(defun init-anzu ()
+  "Init."
+
+ (global-anzu-mode t))
 
 ;;; init-anzu.el ends here

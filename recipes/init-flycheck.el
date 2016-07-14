@@ -34,7 +34,11 @@
 (custom-set-variables '(flycheck-disabled-checkers '(ruby-rubylint))
                       '(flycheck-idle-change-delay 1.5))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-flycheck)
+
+(defun init-flycheck ()
+  "Init."
+
   (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
 
 (with-eval-after-load 'flycheck

@@ -31,6 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook (ido-clever-match-enable))
+(add-hook 'after-init-hook 'init-ido-clever-match)
+
+(defun init-ido-clever-match ()
+  "Init."
+
+ (ido-clever-match-enable))
 
 ;;; init-ido-clever-match.el ends here

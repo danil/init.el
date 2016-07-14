@@ -62,7 +62,11 @@
                    ;; ("rust test" . "cargo test")
                    )))))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-multi-compile)
+
+(defun init-multi-compile ()
+  "Init."
+
   (define-key myinit-map (kbd "! m") 'multi-compile-run))
 
 ;;; init-multi-compile.el ends here

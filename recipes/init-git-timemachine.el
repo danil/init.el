@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-git-timemachine)
+
+(defun init-git-timemachine ()
+  "Init."
+
   (define-key myinit-map (kbd "v r") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here

@@ -31,6 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook (require 'vlf-setup))
+(add-hook 'after-init-hook 'init-vlf)
+
+(defun init-vlf ()
+  "Init."
+
+ (require 'vlf-setup))
 
 ;;; init-vlf.el ends here

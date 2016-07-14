@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-;; (my-init--hook
+;; (add-hook 'after-init-hook 'init-php-mode)
+
+;; (defun init-php-mode ()
+;;   "Init."
+
 ;;   (my-init--after-load 'php-mode
 ;;     (define-key php-mode-map (kbd "C-c C-f") nil)))
 

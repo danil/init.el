@@ -39,7 +39,11 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ibuffer)
+
+(defun init-ibuffer ()
+  "Init."
+
   (my-init--after-load 'ibuffer
     ;; (setq ibuffer-use-other-window 1)
     ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.

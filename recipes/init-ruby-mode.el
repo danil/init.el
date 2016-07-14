@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ruby-mode)
+
+(defun init-ruby-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'ruby-mode
                                  "/Capfile\\'"
                                  "/Gemfile\\'"

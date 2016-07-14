@@ -35,7 +35,11 @@
 ;; <http://blog.senny.ch/blog/2013/02/11/use-the-right-ruby-with-emacs-and-rbenv>.
 (custom-set-variables '(rbenv-modeline-function 'my-rbenv--modeline-with-face))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-rbenv)
+
+(defun init-rbenv ()
+  "Init."
+
   (global-rbenv-mode)
   (rbenv-use-corresponding))
 

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-ido-occur)
+
+(defun init-ido-occur ()
+  "Init."
+
   (define-key myinit-map (kbd "f o") 'ido-occur)
   (define-key myinit-map (kbd "f O") 'ido-occur-at-point)
 

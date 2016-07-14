@@ -48,7 +48,11 @@
             "$\\)")) ;Regular expression to remove from file titles. Presently, it removes leading LaTeX comment delimiters, leading and trailing hash marks from Markdown ATX headings, leading astersisks from Org Mode headings, and Emacs mode lines of the form -*-mode-*-.
  )
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-deft)
+
+(defun init-deft ()
+  "Init."
+
   ;; (my-init--after-load 'deft
   ;;   (define-key deft-mode-map (kbd "C-c C-f") nil))
 

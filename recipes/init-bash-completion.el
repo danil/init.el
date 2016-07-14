@@ -39,7 +39,11 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-bash-completion)
+
+(defun init-bash-completion ()
+  "Init."
+
   (autoload 'bash-completion-dynamic-complete "bash-completion"
     "BASH completion hook")
 

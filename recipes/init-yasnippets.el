@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-yasnippets)
+
+(defun init-yasnippets ()
+  "Init."
+
   (my-init--after-load 'yasnippet
     (add-to-list 'yas-snippet-dirs
                  (let* ((pkg 'yasnippets)

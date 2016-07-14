@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-sort)
+
+(defun init-sort ()
+  "Init."
+
   (define-key myinit-map (kbd "l S f") 'sort-fields)
   (define-key myinit-map (kbd "l s") 'sort-lines))
 

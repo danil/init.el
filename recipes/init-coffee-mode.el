@@ -34,7 +34,11 @@
 (custom-set-variables '(coffee-tab-width 2))
 (add-hook 'coffee-mode-hook 'turn-off-auto-fill) ;get rid of annoying auto-fill-mode in coffee-mode
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-coffee-mode)
+
+(defun init-coffee-mode ()
+  "Init."
+
   (my-init--add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
 
   (my-init--after-load 'coffee-mode

@@ -31,7 +31,11 @@
 
 ;;; Code:
 
-(my-init--hook
+(add-hook 'after-init-hook 'init-hl-line)
+
+(defun init-hl-line ()
+  "Init."
+
   (my-init--after-load 'hl-line
     (set-face-background 'highlight nil)
     (set-face-attribute hl-line-face nil :underline t)))
