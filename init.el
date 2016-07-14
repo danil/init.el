@@ -262,13 +262,13 @@
 
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))
-(my-recipe '(smartparens))
 
 (my-recipe '(column-marker))
 (my-recipe '(comint))
 (my-recipe '(compile))
 (my-recipe '(completion-ignored-extensions))
 (my-recipe '(conf-mode))
+(my-recipe '(corral)) ;smartparens replacement (quotes/parentheses/delimiters manager)
 (my-recipe '(css))
 (my-recipe '(cua))
 (my-recipe '(cycle-quotes))

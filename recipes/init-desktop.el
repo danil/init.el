@@ -44,9 +44,12 @@
  '(desktop-path '(user-emacs-directory "~/.emacs.var/"))
  '(desktop-restore-frames nil))
 
-(my-init--hook
-  (define-key myinit-map (kbd "d s") 'save-my-desktop)
-  (define-key myinit-map (kbd "d l") 'load-my-desktop))
+(add-hook 'after-init-hook 'init-desktop)
+
+(defun init-desktop ()
+  "Init."
+  (define-key myinit-map (kbd "D s") 'save-my-desktop)
+  (define-key myinit-map (kbd "D l") 'load-my-desktop))
 
 (defun save-my-desktop ()
   "Save the desktop."

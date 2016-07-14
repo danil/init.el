@@ -39,6 +39,7 @@
 (depends-on "bash-completion")
 (depends-on "cask")
 (depends-on "column-marker")
+(depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
 (depends-on "crontab-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
