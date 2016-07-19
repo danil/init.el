@@ -38,4 +38,4 @@
 
   (define-key myinit-map (kbd "b r b") 're-builder))
 
-;;; init-ag.el ends here
+;;; init-re-builder.el ends here
