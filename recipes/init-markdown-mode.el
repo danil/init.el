@@ -31,8 +31,7 @@
 
 ;;; Code:
 
-(custom-set-variables
- '(markdown-command "blackfriday-tool"))
+(custom-set-variables '(markdown-command "blackfriday-tool"))
 
 (add-hook 'after-init-hook 'init-markdown-mode)
 

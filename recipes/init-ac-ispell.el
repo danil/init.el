@@ -31,9 +31,7 @@
 
 ;;; Code:
 
-(custom-set-variables
- '(ac-ispell-requires 1) ;Minimum input for starting completion.
- )
+(custom-set-variables '(ac-ispell-requires 1)) ;minimum input for starting completion
 
 (add-hook 'after-init-hook 'init-ac-ispell)
 

@@ -33,8 +33,7 @@
 
 ;; Split vertical by default
 ;; <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>.
-(custom-set-variables '(split-height-threshold nil)
-                      '(split-width-threshold 64))
+(custom-set-variables '(split-height-threshold nil) '(split-width-threshold 64))
 
 (add-hook 'after-init-hook 'init-window)
 
