@@ -36,7 +36,7 @@
 (defun init-hi-lock ()
   "Init."
 
-  (define-key myinit-map (kbd "b h r") 'my-highlight-regexp))
+  (define-key myinit-map (kbd "b h") 'my-highlight-regexp))
 
 (defun my-highlight-regexp (&optional arg)
   (interactive "P")

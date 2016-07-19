@@ -46,8 +46,8 @@
   (global-set-key (kbd "<left>") #'scroll-right)
   (global-set-key (kbd "<right>") #'scroll-left)
 
-  (define-key myinit-map (kbd "b b") 'bury-buffer-with-repeat)
-  (define-key myinit-map (kbd "b r n") 'rename-buffer))
+  (define-key myinit-map (kbd "B") 'bury-buffer-with-repeat)
+  (define-key myinit-map (kbd "b n") 'rename-buffer))
 
 (defun bury-buffer-with-repeat ()
   "Bury current bufer and if repeat then bury next current buffer."

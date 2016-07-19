@@ -36,7 +36,7 @@
 (defun init-simple ()
   "Init."
 
-  (define-key myinit-map (kbd "b l t") 'toggle-truncate-lines)
+  (define-key myinit-map (kbd "b t") 'toggle-truncate-lines)
   (define-key myinit-map (kbd "r c l") 'count-lines-region)
 
   ;; (my-init--after-load 'simple
