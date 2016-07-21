@@ -15,3 +15,7 @@
 ## Install folding mode [origami][]
 
 [origami]: https://github.com/gregsexton/origami.el
+
+## Install php auto complete [ac-php][]
+
+[ac-php]: https://github.com/xcwen/ac-php
