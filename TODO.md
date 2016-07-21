@@ -19,3 +19,7 @@
 ## Install php auto complete [ac-php][]
 
 [ac-php]: https://github.com/xcwen/ac-php
+
+## Install python formater
+
+<https://github.com/google/yapf>
