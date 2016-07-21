@@ -146,7 +146,6 @@
 (depends-on "rich-minority")
 
 (depends-on "sed-mode")
-(depends-on "smartparens")
 (depends-on "speed-type")
 (depends-on "systemd")
 (depends-on "toml-mode")
