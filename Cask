@@ -71,6 +71,7 @@
 (depends-on "go-snippets")
 (depends-on "gotest")
 
+(depends-on "google-translate")
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
 

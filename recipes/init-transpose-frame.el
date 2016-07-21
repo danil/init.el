@@ -36,7 +36,7 @@
 (defun init-transpose-frame ()
   "Init."
 
-  (define-key myinit-map (kbd "t") 'my-transpose-frame))
+  (define-key myinit-map (kbd "T") 'my-transpose-frame))
 
 (defun my-transpose-frame ()
   (interactive)
