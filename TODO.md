@@ -23,3 +23,12 @@
 ## Install python formater
 
 <https://github.com/google/yapf>
+
+## Create comint-mode wrapper for [genius][]
+
+* <https://www.masteringemacs.org/article/comint-writing-command-interpreter>
+* <https://github.com/andrewmains12/subshell-proc>
+* <https://www.emacswiki.org/emacs/ComintMode>
+* <https://www.emacswiki.org/emacs/ComintModes>
+
+[genius]: http://www.jirka.org/genius.html
