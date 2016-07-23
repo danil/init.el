@@ -276,6 +276,7 @@
 (my-recipe '(desktop))
 (my-recipe '(diff-mode))
 (my-recipe '(diffview))
+(my-recipe '(dim))
 
 (my-recipe '(dired))
 (my-recipe '(dired-reuse-directory-buffer))
