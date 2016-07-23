@@ -1,10 +1,5 @@
 # TODO
 
-## Install [string-inflection][] or [fix-word][]
-
-[fix-word]: https://github.com/mrkkrp/fix-word
-[string-inflection]: https://github.com/akicho8/string-inflection
-
 ## Install [dim][] or [cyphejor][]
 
 <http://emacs.stackexchange.com/questions/16545/make-names-of-major-modes-shorter-in-the-mode-line>
@@ -16,13 +11,18 @@
 
 [origami]: https://github.com/gregsexton/origami.el
 
+## Install python formater
+
+<https://github.com/google/yapf>
+
 ## Install php auto complete [ac-php][]
 
 [ac-php]: https://github.com/xcwen/ac-php
 
-## Install python formater
+## Install [string-inflection][] or [fix-word][]
 
-<https://github.com/google/yapf>
+[fix-word]: https://github.com/mrkkrp/fix-word
+[string-inflection]: https://github.com/akicho8/string-inflection
 
 ## Create comint-mode wrapper for [genius][]
 
@@ -32,3 +32,7 @@
 * <https://www.emacswiki.org/emacs/ComintModes>
 
 [genius]: http://www.jirka.org/genius.html
+
+## Try projectile replacement [find-file-in-project][]
+
+[find-file-in-project]: https://github.com/technomancy/find-file-in-project
