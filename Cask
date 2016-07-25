@@ -112,6 +112,7 @@
 (depends-on "narrow-indirect")
 (depends-on "nginx-mode")
 (depends-on "nodejs-repl")
+(depends-on "origami")
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "point-stack")

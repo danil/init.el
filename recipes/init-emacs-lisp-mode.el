@@ -44,10 +44,8 @@
                                  "\\.el\\.\\(tpl\\|template\\)\\'")
 
   (my-init--after-load 'lisp-mode
-    (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)
     (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
-    (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
-    (define-key emacs-lisp-mode-map (my-kbd "c f") 'byte-compile-file)))
+    (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)))
 
 (defun my-eval-buffer ()
   (interactive)

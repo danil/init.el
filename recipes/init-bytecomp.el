@@ -1,4 +1,4 @@
-;;; init-ido-occur.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-bytecomp.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,27 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ido-occur)
+(add-hook 'after-init-hook 'init-bytecomp)
 
-(defun init-ido-occur ()
+(defun init-bytecomp ()
   "Init."
 
-  (define-key myinit-map (kbd "s o") 'ido-occur)
-  (define-key myinit-map (kbd "s O") 'ido-occur-at-point)
+  (my-init--after-load 'lisp-mode
+    (define-key emacs-lisp-mode-map (my-kbd "! f") 'byte-compile-file)))
 
-  (my-init--after-load "isearch"
-    (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
-
-(defun ido-occur-at-point ()
-  "Open ido-occur at point."
-  (interactive)
-  (ido-occur (symbol-name (symbol-at-point))))
-
-(defun ido-occur-from-isearch ()
-  "Open ido-occur from isearch."
-  (interactive)
-  (ido-occur (if isearch-regexp
-                 isearch-string
-               (regexp-quote isearch-string))))
-
-;;; init-ido-occur.el ends here
+;;; init-bytecomp.el ends here

@@ -1,4 +1,4 @@
-;;; init-ido-occur.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-origami.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,27 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ido-occur)
+(add-hook 'after-init-hook 'init-origami)
 
-(defun init-ido-occur ()
+(defun init-origami ()
   "Init."
 
-  (define-key myinit-map (kbd "s o") 'ido-occur)
-  (define-key myinit-map (kbd "s O") 'ido-occur-at-point)
+  (my-init--add-mode-to-hooks 'origami-mode
+                              my-init--programming-modes-hooks)
 
-  (my-init--after-load "isearch"
-    (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
+  (my-init--after-load 'origami
+    (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)
+    (define-key origami-mode-map (my-kbd "F") 'origami-toggle-all-nodes)))
 
-(defun ido-occur-at-point ()
-  "Open ido-occur at point."
-  (interactive)
-  (ido-occur (symbol-name (symbol-at-point))))
-
-(defun ido-occur-from-isearch ()
-  "Open ido-occur from isearch."
-  (interactive)
-  (ido-occur (if isearch-regexp
-                 isearch-string
-               (regexp-quote isearch-string))))
-
-;;; init-ido-occur.el ends here
+;;; init-origami.el ends here

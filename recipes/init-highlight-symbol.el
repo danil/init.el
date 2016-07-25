@@ -40,8 +40,8 @@
 (defun init-highlight-symbol ()
   "Init."
 
-  (define-key myinit-map (kbd "s s n") 'highlight-symbol-nav-mode)
-  (define-key myinit-map (kbd "s s r") 'highlight-symbol-query-replace)
+  (define-key myinit-map (kbd "c S") 'highlight-symbol-nav-mode)
+  (define-key myinit-map (kbd "c s") 'highlight-symbol-query-replace)
 
   (my-init--add-mode-to-hooks 'highlight-symbol-mode
                               (-union my-init--programming-modes-hooks

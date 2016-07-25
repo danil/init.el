@@ -37,8 +37,7 @@
   "Init."
 
   ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-  (define-key myinit-map (kbd "s u") 'uniquify-all-lines-region)
-  )
+  (define-key myinit-map (kbd "c u") 'uniquify-all-lines-region))
 
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."

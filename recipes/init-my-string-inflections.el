@@ -36,8 +36,8 @@
 (defun init-my-string-inflections ()
   "Init."
 
-  (define-key myinit-map (kbd "s i i") 'my-toggle-camelcase-and-underscore-with-repeat)
-  (define-key myinit-map (kbd "s i h") 'my-humanize-symbol-with-repeat))
+  (define-key myinit-map (kbd "c i") 'my-toggle-camelcase-and-underscore-with-repeat)
+  (define-key myinit-map (kbd "c I") 'my-humanize-symbol-with-repeat))
 
 ;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,

@@ -256,6 +256,7 @@
 (my-recipe '(ac-ispell))
 
 (my-recipe '(bash-completion))
+(my-recipe '(bytecomp))
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
 (my-recipe '(cc-vars))
@@ -384,6 +385,7 @@
 (my-recipe '(occur-mode))
 (my-recipe '(org-mode org-ac))
 (my-recipe '(org-mode))
+(my-recipe '(origami))
 (my-recipe '(paren))
 (my-recipe '(point-stack))
 
