@@ -1,9 +1,5 @@
 # TODO
 
-## Install folding mode [origami][]
-
-[origami]: https://github.com/gregsexton/origami.el
-
 ## Install python formater
 
 <https://github.com/google/yapf>
