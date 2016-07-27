@@ -41,7 +41,9 @@
 
   (my-init--after-load 'origami
     (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)
-    (define-key origami-mode-map (my-kbd "F") 'origami-toggle-all-nodes)
+
+    (define-key origami-mode-map (my-kbd "F c") 'origami-close-all-nodes)
+    (define-key origami-mode-map (my-kbd "F o") 'origami-open-all-nodes)
 
     (cond ((equal frame-background-mode 'dark)
        (set-face-attribute 'origami-fold-replacement-face nil
