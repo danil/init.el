@@ -437,8 +437,8 @@
 (my-recipe '(window-numbering))
 (my-recipe '(winner-mode))
 (my-recipe '(yaml-mode))
-(my-recipe '(yascroll))
 (my-recipe '(yasnippet))
+;; (my-recipe '(yascroll))
 ;; (my-recipe '(yasnippets))
 
 ;;; Load my recipes.
