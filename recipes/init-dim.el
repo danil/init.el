@@ -44,6 +44,7 @@
      (js2-mode ".js2")
      (js2-mode ".js2")
      (markdown-mode ".md")
+     (python-mode ".py")
      (sh-mode ".sh")
      )))
 
