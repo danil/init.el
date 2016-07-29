@@ -68,6 +68,7 @@
 
 (depends-on "go-autocomplete")
 (depends-on "go-mode")
+(depends-on "go-playground")
 (depends-on "go-projectile")
 (depends-on "go-snippets")
 (depends-on "gotest")
