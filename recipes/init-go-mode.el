@@ -39,6 +39,8 @@
   "Init."
 
   (my-init--after-load 'go-mode
-    (add-hook 'before-save-hook #'gofmt-before-save)))
+    (add-hook 'before-save-hook #'gofmt-before-save)
+
+    (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point)))
 
 ;;; init-go-mode.el ends here
