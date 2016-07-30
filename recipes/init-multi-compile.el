@@ -40,7 +40,7 @@
      (go-mode . (("go build" . "go build -v -x ./...")
                  ("go clean" . "go clean")
                  ("go run" . "go run -v %file-name")
-                 ("go test" . "go vet ./... && errcheck -verbose -asserts ./... && unconvert -v . && golint -set_exit_status ./... && go test -v ./... && gocyclo -over 25 ./ && ineffassign ./")))
+                 ("go test" . "go vet ./... && errcheck -verbose -asserts ./... && unconvert -v . && golint -set_exit_status ./... && go test -v ./... && gocyclo -over 25 ./ && ineffassign ./ && misspell -error ./* ./*/* ./*/*/* ./*/*/*/* ./*/*/*/*/* ./*/*/*/*/*/* ./*/*/*/*/*/*/*")))
      (makefile-mode . (("make" . "make")
                        ("make --jobs=9" . "make --jobs=5")
                        ("make install" . "make install")
