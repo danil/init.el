@@ -5,6 +5,10 @@
 Org mode readme exporter to files headers
 <https://github.com/smaximov/org-commentary>
 
+## Try suggest.el
+
+<https://github.com/Wilfred/suggest.el>
+
 ## Install python formater
 
 <https://github.com/google/yapf>
