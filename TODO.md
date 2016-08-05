@@ -1,6 +1,6 @@
 # TODO
 
-## Install
+## Install org-commentary
 
 Org mode readme exporter to files headers
 <https://github.com/smaximov/org-commentary>
