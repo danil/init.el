@@ -37,7 +37,8 @@
   "Init."
 
   (my-init--after-load 'hl-line
-    (set-face-background 'highlight nil)
-    (set-face-attribute hl-line-face nil :underline t)))
+    ;; (set-face-background 'highlight nil)
+
+    (set-face-attribute hl-line-face nil :inherit nil :underline t)))
 
 ;;; init-hl-line.el ends here

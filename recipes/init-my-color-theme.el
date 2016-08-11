@@ -122,7 +122,7 @@
        (set-face-attribute 'match nil
                            :foreground "black"
                            :background "maroon3")
-       (set-face-background 'highlight "#002b36")
+       ;; (set-face-background 'highlight "#002b36")
        ;; (set-face-attribute 'isearch-fail nil :foreground "black")
        (set-face-foreground 'success "Green4") ;Green1
        (set-face-foreground 'warning "red") ;DarkOrange
