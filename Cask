@@ -86,6 +86,7 @@
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
+(depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
 (depends-on "smex")
 
 ;;; JavaScript.
@@ -108,7 +109,7 @@
 (depends-on "markdownfmt")
 (depends-on "mediawiki")
 (depends-on "modalka")
-(depends-on "multiple-cursors")
+;; (depends-on "multiple-cursors")
 (depends-on "mustache-mode")
 (depends-on "narrow-indirect")
 (depends-on "nginx-mode")

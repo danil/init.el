@@ -317,7 +317,6 @@
 (my-recipe '(hideshow))
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
 (my-recipe '(hl-line))
-(my-recipe '(ibuffer))
 
 (my-recipe '(crm-custom))
 (my-recipe '(ido))
@@ -333,6 +332,8 @@
 (my-recipe '(recentf))
 (my-recipe '(recentf-ido-find-file))
 
+(my-recipe '(ibuffer))
+(my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (my-recipe '(ielm))
 (my-recipe '(indent))
 (my-recipe '(info))
@@ -367,7 +368,6 @@
 (my-recipe '(menu-bar))
 (my-recipe '(modalka))
 (my-recipe '(multi-compile))
-(my-recipe '(multiple-cursors))
 (my-recipe '(my-backspace-fix))
 (my-recipe '(my-beginning-of-line))
 (my-recipe '(my-color-theme))

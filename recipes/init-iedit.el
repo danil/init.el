@@ -1,4 +1,4 @@
-;;; init-highlight-symbol.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-iedit.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,20 +31,13 @@
 
 ;;; Code:
 
-(custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
-                      '(highlight-symbol-idle-delay 0.7)
-                      '(highlight-symbol-ignore-list '()))
+(add-hook 'after-init-hook 'init-iedit)
 
-(add-hook 'after-init-hook 'init-highlight-symbol)
-
-(defun init-highlight-symbol ()
+(defun init-iedit ()
   "Init."
 
-  (define-key myinit-map (kbd "c S i") 'highlight-symbol-query-replace)
-  (define-key myinit-map (kbd "c S n") 'highlight-symbol-nav-mode)
+  (define-key myinit-map (kbd "c s") 'iedit-mode)
 
-  (my-init--add-mode-to-hooks 'highlight-symbol-mode
-                              (-union my-init--programming-modes-hooks
-                                      '(shell-mode-hook))))
+  (define-key myinit-map (kbd "c S r") 'iedit-rectangle-mode))
 
-;;; init-highlight-symbol.el ends here
+;;; init-iedit.el ends here
