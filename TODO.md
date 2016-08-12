@@ -17,6 +17,10 @@ Org mode readme exporter to files headers
 
 [ac-php]: https://github.com/xcwen/ac-php
 
+## Try `buttercup` testing lib
+
+<https://github.com/jorgenschaefer/emacs-buttercup>
+
 ## Install [string-inflection][] or [fix-word][]
 
 [fix-word]: https://github.com/mrkkrp/fix-word
