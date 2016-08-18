@@ -204,6 +204,10 @@
      yaml-mode
      ))
 
+ '(my-init--highlighted-digits-modes
+   (append my-init--programming-modes
+           '(shell-mode)))
+
  '(my-init--modal-modes (append my-init--programming-modes
                                 '(
                                   ;; shell-mode
@@ -228,6 +232,10 @@
 
 (dolist (mode my-init--toggle-quotes-modes)
   (add-to-list 'my-init--toggle-quotes-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
+(dolist (mode my-init--highlighted-digits-modes)
+  (add-to-list 'my-init--highlighted-digits-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
 (dolist (mode my-init--modal-modes)

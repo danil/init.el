@@ -175,6 +175,11 @@ Otherwise use `list'."
   "My ruby tools modes."
   :group 'my-init)
 
+;;;###autoload
+(defcustom my-init--highlighted-digits-modes '()
+  "My modes with highlight digits."
+  :group 'my-init)
+
 (defcustom my-init--modal-modes '()
   "My modal modes."
   :group 'my-init)
@@ -202,6 +207,11 @@ Otherwise use `list'."
 ;;;###autoload
 (defcustom my-init--toggle-quotes-modes-hooks '()
   "My ruby tools modes hooks."
+  :group 'my-init)
+
+;;;###autoload
+(defcustom my-init--highlighted-digits-modes-hooks '()
+  "My hooks with highlight digits."
   :group 'my-init)
 
 (defcustom my-init--modal-modes-hooks '()
