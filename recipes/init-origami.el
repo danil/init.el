@@ -36,9 +36,6 @@
 (defun init-origami ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'origami-mode
-                              my-init--programming-modes-hooks)
-
   (my-init--after-load 'origami
     (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)
 
