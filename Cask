@@ -46,6 +46,7 @@
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
+(depends-on "digit-groups")
 (depends-on "dim")
 (depends-on "direx")
 (depends-on "dockerfile-mode")

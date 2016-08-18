@@ -277,6 +277,7 @@
 (my-recipe '(desktop))
 (my-recipe '(diff-mode))
 (my-recipe '(diffview))
+(my-recipe '(digit-groups))
 (my-recipe '(dim))
 
 (my-recipe '(dired))
