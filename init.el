@@ -439,6 +439,7 @@
 (my-recipe '(winner-mode))
 (my-recipe '(yaml-mode))
 (my-recipe '(yasnippet))
+;; (my-recipe '(yafolding))
 ;; (my-recipe '(yascroll))
 ;; (my-recipe '(yasnippets))
 
