@@ -45,13 +45,14 @@
 
   (sml/setup)
 
+  (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
   (custom-set-faces '(sml/global ((t (:foreground "gray60" :inverse-video nil)))))
-  (custom-set-faces '(sml/projectile ((t (:weight normal :inherit sml/filename))))) ;:inherit warning
+  (custom-set-faces '(sml/position-percentage ((t (:weight bold :inherit sml/read-only)))))
+  (custom-set-faces '(sml/projectile ((t (:weight normal :inherit sml/filename)))))
 
   ;; (dolist (my-path-to-replace my-sml-replacements)
   ;;   (add-to-list 'sml/replacer-regexp-list my-path-to-replace))
-
-  (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix))))))
+  )
 
 (defvar my-sml-replacements
   '(("^:s\\(v?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":s\\1:\\2\\3:")
