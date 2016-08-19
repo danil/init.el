@@ -1,5 +1,9 @@
 # TODO
 
+## Align smart-mode-line percentage
+
+Left align "file scroll" percentage
+
 ## Try el2markdown
 
 Convert Emacs Lisp comments to MarkDown
