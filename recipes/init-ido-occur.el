@@ -36,8 +36,8 @@
 (defun init-ido-occur ()
   "Init."
 
-  (define-key myinit-map (kbd "s o") 'ido-occur)
-  (define-key myinit-map (kbd "s O") 'ido-occur-at-point)
+  (define-key myinit-map (kbd "s o") 'ido-occur-at-point)
+  (define-key myinit-map (kbd "s O") 'ido-occur)
 
   (my-init--after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
