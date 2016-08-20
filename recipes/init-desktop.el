@@ -36,10 +36,10 @@
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
 
 (custom-set-variables
- '(desktop-base-file-name (convert-standard-filename "emacs-desktop"))
- '(desktop-base-lock-name (convert-standard-filename "emacs-desktop.lock"))
+ '(desktop-base-file-name (convert-standard-filename "desktop"))
+ '(desktop-base-lock-name (convert-standard-filename "desktop.lock"))
  '(desktop-dirname "~/.emacs.var/")
- '(desktop-globals-to-save '(desktop-missing-file-warning search-ring regexp-search-ring register-alist file-name-history))
+ '(desktop-globals-to-save '())
  '(desktop-locals-to-save '(desktop-locals-to-save)) ; Itself! Think it over.
  '(desktop-path '(user-emacs-directory "~/.emacs.var/"))
  '(desktop-restore-frames nil))
