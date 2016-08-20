@@ -406,11 +406,11 @@
 (my-recipe '(quickrun))
 (my-recipe '(rainbow-delimiters))
 (my-recipe '(rainbow-mode))
-(my-recipe '(restclient))
 (my-recipe '(rbenv))
 (my-recipe '(re-builder))
 (my-recipe '(recentf))
 (my-recipe '(replace))
+(my-recipe '(restclient))
 
 (my-recipe '(rspec-compilation-mode))
 (my-recipe '(rspec-mode))
