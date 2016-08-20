@@ -429,6 +429,7 @@
 (my-recipe '(simp))
 (my-recipe '(simple))
 
+(my-recipe '(mode-line))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
 
