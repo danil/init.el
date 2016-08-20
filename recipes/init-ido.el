@@ -48,9 +48,10 @@
  '(ido-max-work-directory-list 300) ;should be enough
  '(ido-max-work-file-list 200) ;remember many
  '(ido-mode 'both)
+ '(ido-save-directory-list-file "~/.emacs.var/ido.last")
  '(ido-use-filename-at-point nil) ;don't use filename at point (annoying)
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
- '(ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~/src")))
+ '(ido-work-directory-list '("~/" "~/src" "~/Dropbox/deft")))
 
 (add-hook 'after-init-hook 'init-ido)
 
