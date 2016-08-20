@@ -31,7 +31,9 @@
 
 ;;; Code:
 
-(custom-set-variables '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
+(custom-set-variables
+ '(sml/name-width '(0 . 44))
+ '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
 
 (autoload 'sml/setup "smart-mode-line" nil t)
 
