@@ -36,6 +36,7 @@
 
 (custom-set-variables
  '(savehist-additional-variables '(compile-command
+                                   compile-history
                                    kill-ring
                                    regexp-search-ring
                                    search-ring))
