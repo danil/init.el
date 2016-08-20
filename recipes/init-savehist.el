@@ -37,9 +37,16 @@
 (custom-set-variables
  '(savehist-additional-variables '(compile-command
                                    compile-history
+                                   dired-regexp-history
+                                   dired-shell-command-history
+                                   file-name-history
                                    kill-ring
+                                   minibuffer-history
+                                   query-replace-history
+                                   regexp-history
                                    regexp-search-ring
-                                   search-ring))
+                                   search-ring
+                                   shell-command-history))
  '(savehist-file "~/.emacs.var/history"))
 
 (add-hook 'after-init-hook 'init-savehist)
