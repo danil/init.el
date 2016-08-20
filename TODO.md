@@ -26,6 +26,10 @@ Org mode readme exporter to files headers
 
 [ac-php]: https://github.com/xcwen/ac-php
 
+## Try `eslint-fix`
+
+<https://github.com/codesuki/eslint-fix>
+
 ## Try `buttercup` testing lib
 
 <https://github.com/jorgenschaefer/emacs-buttercup>
