@@ -31,16 +31,12 @@
 
 ;;; Code:
 
+;;; Comint mode (which shell mode and sql mode based on)
+;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
+
+(custom-set-variables '(comint-input-ring-size 10000))
+
 (add-hook 'after-init-hook 'init-comint)
-
-(defun init-comint ()
-  "Init."
-
-  ;; Comint mode (which shell mode and sql mode based on)
-  ;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
-  (setq comint-input-ring-size 10000)
-  ;; (add-hook 'sql-interactive-mode-hook
-  ;;           (function (lambda () (setq comint-input-ring-size 10000))))
-  )
+(defun init-comint () "Init.")
 
 ;;; init-comint.el ends here
