@@ -124,9 +124,6 @@
 (depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
 (depends-on "quelpa")
 (depends-on "quickrun")
-(depends-on "rainbow-delimiters")
-(depends-on "rainbow-mode")
-(depends-on "restclient")
 
 (depends-on "minitest")
 (depends-on "multi-compile")
@@ -150,6 +147,9 @@
 (depends-on "smart-mode-line")
 (depends-on "rich-minority")
 
+(depends-on "rainbow-delimiters")
+(depends-on "rainbow-mode")
+(depends-on "restclient")
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")
