@@ -37,6 +37,51 @@
 (custom-set-variables '(comint-input-ring-size 10000))
 
 (add-hook 'after-init-hook 'init-comint)
-(defun init-comint () "Init.")
+
+(defun init-comint ()
+  "Init."
+
+  (add-hook 'comint-mode-hook 'turn-on-comint-history)
+  (add-hook 'kill-buffer-hook 'comint-write-input-ring)
+  (add-hook 'kill-emacs-hook 'comint-write-input-ring-all-buffers))
+
+;;; Persistent inferior comint command history
+;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>
+
+(defun fn-on-all-buffers (fn)
+  "Run `FN' function on each buffer."
+
+  (mapc (lambda (buffer)
+          (with-current-buffer buffer
+            (funcall fn)))
+        (buffer-list)))
+
+(defun comint-write-input-ring-all-buffers ()
+  "Run `comint-write-input-ring' function on each buffer."
+
+  (fn-on-all-buffers 'comint-write-input-ring))
+
+(defun comint-write-history-on-exit (process event)
+  "Write `PROCESS' history to the file on `EVENT'.
+Write comint `comint-input-ring' associated with `PROCESS'
+to the file on `EVENT'."
+
+  (comint-write-input-ring)
+  (let ((buf (process-buffer process)))
+    (when (buffer-live-p buf)
+      (with-current-buffer buf
+        (insert (format "\nProcess %s %s" process event))))))
+
+(defun turn-on-comint-history ()
+  "Assign hook on sentinel event."
+
+  (let ((process (get-buffer-process (current-buffer))))
+    (when process
+      (setq comint-input-ring-file-name
+            (format "~/.emacs.var/inferior-%s-history"
+                    (process-name process)))
+      (comint-read-input-ring)
+      (set-process-sentinel process
+                            #'comint-write-history-on-exit))))
 
 ;;; init-comint.el ends here
