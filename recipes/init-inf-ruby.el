@@ -40,7 +40,7 @@
   "Init."
 
   (init-comint--create-history-fn "init-inf-ruby--turn-on-history"
-                                  "~/.emacs.var/inferior-ruby-history")
+                                  "~/.irb-history")
   (add-hook 'inf-ruby-mode-hook 'init-inf-ruby--turn-on-history))
 
 ;;; init-inf-ruby.el ends here

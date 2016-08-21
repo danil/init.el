@@ -47,7 +47,7 @@
   (when (equal (buffer-name) "*redis*")
     (let ((process (get-buffer-process (current-buffer))))
       (when process
-        (setq comint-input-ring-file-name "~/.emacs.var/inferior-redis-history")
+        (setq comint-input-ring-file-name "~/.rediscli_history")
         (comint-read-input-ring)
         (set-process-sentinel process #'init-comint--write-history)))))
 

@@ -45,7 +45,7 @@
     (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
   (init-comint--create-history-fn "init-nodejs-repl--turn-on-history"
-                                  "~/.emacs.var/inferior-nodejs-history")
+                                  "~/.node_repl_history")
   (add-hook 'nodejs-repl-mode-hook 'init-nodejs-repl--turn-on-history))
 
 ;;; init-nodejs-repl.el ends here
