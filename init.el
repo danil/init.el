@@ -146,7 +146,7 @@
 
  '(my-init--auto-completion-modes
    (append my-init--programming-modes
-           '(shell-mode)))
+           '(shell-mode telnet-mode)))
 
  '(my-init--read-only-modes
    (append my-init--safe-modes
@@ -440,6 +440,7 @@
 (my-recipe '(sql-mode))
 (my-recipe '(sql-postgres))
 (my-recipe '(subword-mode))
+(my-recipe '(telnet))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
 (my-recipe '(undo-tree))

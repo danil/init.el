@@ -124,6 +124,7 @@
                     snippet-mode
                     sql-interactive-mode
                     sql-mode
+                    telnet-mode
                     text-mode
                     toml-mode
                     web-mode
