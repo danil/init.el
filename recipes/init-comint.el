@@ -41,7 +41,6 @@
 (defun init-comint ()
   "Init."
 
-  (add-hook 'comint-mode-hook 'init-comint--turn-on-history)
   (add-hook 'kill-buffer-hook 'comint-write-input-ring)
   (add-hook 'kill-emacs-hook 'init-comint--write-history-each-buffer))
 
@@ -72,15 +71,17 @@ to the file on `EVENT'."
       (with-current-buffer buf
         (insert (format "\nProcess %s %s" process event))))))
 
-(defun init-comint--turn-on-history ()
-  "Set history file name and assign hook on sentinel event."
+(defmacro init-comint--create-history-fn (defun-name history-file)
+  "Create `DEFUN-NAME' function which assign `HISTORY-FILE' and hook event.
+Create function named `DEFUN-NAME' which assign `HISTORY-FILE' to input ring
+and assign hook on sentinel event."
 
-  (let ((process (get-buffer-process (current-buffer))))
-    (when process
-      (setq comint-input-ring-file-name
-            (format "~/.emacs.var/inferior-%s-history"
-                    (process-name process)))
-      (comint-read-input-ring)
-      (set-process-sentinel process #'init-comint--write-history))))
+  (let ((funsymbol (intern defun-name)))
+    `(defun ,funsymbol ()
+       (let ((process (get-buffer-process (current-buffer))))
+         (when process
+           (setq comint-input-ring-file-name ,history-file)
+           (comint-read-input-ring)
+           (set-process-sentinel process #'init-comint--write-history))))))
 
 ;;; init-comint.el ends here

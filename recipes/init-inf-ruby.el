@@ -1,4 +1,4 @@
-;;; init-nodejs-repl.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-inf-ruby.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,21 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-nodejs-repl)
+;;; Comint mode (which shell mode and sql mode based on)
+;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(defun init-nodejs-repl ()
+(add-hook 'after-init-hook 'init-inf-ruby)
+
+(defun init-inf-ruby ()
   "Init."
 
-  ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
+  (init-comint--create-history-fn "init-inf-ruby--turn-on-history"
+                                  "~/.emacs.var/inferior-ruby-history")
+  (add-hook 'inf-ruby-mode-hook 'init-inf-ruby--turn-on-history))
 
-  (my-init--after-load 'js
-    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
-
-  (my-init--after-load 'js2-mode
-    (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
-
-  (init-comint--create-history-fn "init-nodejs-repl--turn-on-history"
-                                  "~/.emacs.var/inferior-nodejs-history")
-  (add-hook 'nodejs-repl-mode-hook 'init-nodejs-repl--turn-on-history))
-
-;;; init-nodejs-repl.el ends here
+;;; init-inf-ruby.el ends here

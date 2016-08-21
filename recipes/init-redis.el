@@ -1,4 +1,4 @@
-;;; init-nodejs-repl.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-redis.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,21 +31,24 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-nodejs-repl)
+;;; Comint mode (which shell mode and sql mode based on)
+;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(defun init-nodejs-repl ()
+(add-hook 'after-init-hook 'init-redis)
+
+(defun init-redis ()
   "Init."
 
-  ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
+  (add-hook 'comint-mode-hook 'init-redis--turn-on-history))
 
-  (my-init--after-load 'js
-    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
+(defun init-redis--turn-on-history ()
+  "Set Redis history file path and assign hook on sentinel event."
 
-  (my-init--after-load 'js2-mode
-    (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
+  (when (equal (buffer-name) "*redis*")
+    (let ((process (get-buffer-process (current-buffer))))
+      (when process
+        (setq comint-input-ring-file-name "~/.emacs.var/inferior-redis-history")
+        (comint-read-input-ring)
+        (set-process-sentinel process #'init-comint--write-history)))))
 
-  (init-comint--create-history-fn "init-nodejs-repl--turn-on-history"
-                                  "~/.emacs.var/inferior-nodejs-history")
-  (add-hook 'nodejs-repl-mode-hook 'init-nodejs-repl--turn-on-history))
-
-;;; init-nodejs-repl.el ends here
+;;; init-redis.el ends here
