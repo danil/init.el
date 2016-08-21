@@ -18,10 +18,7 @@ Org mode readme exporter to files headers
 
 <https://github.com/Wilfred/suggest.el>
 
-## Save `comint-mode` history
-
-* <http://emacs.stackexchange.com/questions/9720/savehist-the-comint-input-ring>
-* <http://emacs.stackexchange.com/questions/4221/remembering-history-between-sessions-in-inferior-emacs-lisp-mode>
+## Fix postgresql comint history
 
 ## Install python formater
 
