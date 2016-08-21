@@ -68,6 +68,7 @@
 (defun my-linum-format (line)
   (concat
    (propertize (format linum-format-fmt line) 'face 'linum)
-   (propertize " " 'face 'my-line-numbers-separator)))
+   ;; (propertize " " 'face 'my-line-numbers-separator)
+   ))
 
 ;;; init-linum-format.el ends here
