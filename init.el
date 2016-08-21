@@ -146,7 +146,11 @@
 
  '(my-init--auto-completion-modes
    (append my-init--programming-modes
-           '(shell-mode telnet-mode)))
+           '(
+             redis-cli-mode
+             shell-mode
+             telnet-mode
+             )))
 
  '(my-init--read-only-modes
    (append my-init--safe-modes

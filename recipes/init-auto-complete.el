@@ -110,6 +110,7 @@
                     perl-mode
                     php-mode
                     python-mode
+                    redis-cli-mode
                     restclient-mode
                     rhtml-mode
                     ruby-mode
