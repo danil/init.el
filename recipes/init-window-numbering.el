@@ -34,8 +34,6 @@
 (autoload 'window-numbering-mode "window-numbering"
   "Numbered window shortcuts" t)
 
-(custom-set-variables '(window-numbering-format "%s "))
-
 (add-hook 'after-init-hook 'init-window-numbering)
 
 (defun init-window-numbering ()

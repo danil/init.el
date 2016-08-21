@@ -50,6 +50,8 @@ Org mode readme exporter to files headers
 
 [genius]: http://www.jirka.org/genius.html
 
+## Place `window-numbering` in mode-line near scroll position percentage
+
 ## Try projectile replacement [find-file-in-project][]
 
 [find-file-in-project]: https://github.com/technomancy/find-file-in-project
