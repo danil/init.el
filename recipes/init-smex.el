@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(smex-history-length 3000)
+ '(smex-history-length 1000)
  '(smex-save-file  "~/.emacs.var/smex-items"))
 
 (global-set-key (kbd "M-x") 'smex)
