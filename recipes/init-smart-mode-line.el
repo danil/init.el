@@ -49,6 +49,7 @@
 
   (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
   (custom-set-faces '(sml/global ((t (:foreground "gray60" :inverse-video nil)))))
+  (custom-set-faces '(sml/line-number ((t (:weight normal)))))
   (custom-set-faces '(sml/position-percentage ((t (:inherit sml/read-only)))))
   (custom-set-faces '(sml/projectile ((t (:weight normal :inherit sml/filename)))))
 
