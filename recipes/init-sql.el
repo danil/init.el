@@ -36,10 +36,26 @@
 (defun init-sql ()
   "Init."
 
-  (add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
+  (add-hook 'sql-login-hook 'init-sql--turn-on-history)
 
   (my-init--after-load 'sql
     (define-key sql-interactive-mode-map (my-kbd "C-l") 'my-sql-shell-clear)))
+
+;;; SQL inferior comint mode history
+;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
+;;; <http://www.emacswiki.org/emacs/SqlMode#toc3>.
+(defun init-sql--turn-on-history ()
+  "Set SQL history file path and assign hook on sentinel event."
+
+  (let* ((product (symbol-name (symbol-value 'sql-product)))
+
+         (history-file (cond ((equal product "postgres") "~/.psql_history"))))
+
+    (let ((process (get-buffer-process (current-buffer))))
+      (when process
+        (setq comint-input-ring-file-name history-file)
+        (comint-read-input-ring)
+        (set-process-sentinel process #'init-comint--write-history)))))
 
 (defun my-sql-shell-clear (&optional arg)
   "Delete output from `SQl' shell or kill output from `SQL' shell if `ARG'.
@@ -58,18 +74,5 @@ Clearing by `delete-region' or by `kill-region' if `ARG'."
   (delete-region (point-min) (point))
 
   (goto-char (point-max)))
-
-;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
-(defun my-sql-save-history-hook ()
-  (let ((lval 'sql-input-ring-file-name)
-        (rval 'sql-product))
-    (if (symbol-value rval)
-        (let ((filename
-               (format "~/.emacs.var/sql/%s-history"
-                    (symbol-name (symbol-value rval)))))
-          (set (make-local-variable lval) filename))
-      (error
-       (format "SQL history will not be saved because %s is nil"
-               (symbol-name rval))))))
 
 ;;; init-sql.el ends here
