@@ -434,16 +434,17 @@
 (my-recipe '(shell))
 (my-recipe '(simp))
 (my-recipe '(simple))
+(my-recipe '(sort))
+(my-recipe '(subword-mode))
 
 (my-recipe '(mode-line))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
 
-(my-recipe '(sort))
 (my-recipe '(sql))
 (my-recipe '(sql-mode))
 (my-recipe '(sql-postgres))
-(my-recipe '(subword-mode))
+
 (my-recipe '(telnet))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
