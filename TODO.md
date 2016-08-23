@@ -18,8 +18,6 @@ Org mode readme exporter to files headers
 
 <https://github.com/Wilfred/suggest.el>
 
-## Fix postgresql comint history
-
 ## Install python formater
 
 <https://github.com/google/yapf>
