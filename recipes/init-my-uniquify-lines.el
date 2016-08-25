@@ -49,11 +49,13 @@
           (progn
             (goto-char start)
             (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
-        (replace-match "\\1\n\\2")))))
+        (replace-match "\\1\n\\2"))))
+  (message "Region lines unique."))
 
 (defun my-uniquify-lines-buffer ()
   "Delete duplicate lines in buffer and keep first occurrence."
   (interactive "*")
-  (my-uniquify-lines-region (point-min) (point-max)))
+  (my-uniquify-lines-region (point-min) (point-max))
+  (message "Buffer lines unique."))
 
 ;;; init-my-uniquify-lines.el ends here
