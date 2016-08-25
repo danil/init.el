@@ -392,7 +392,7 @@
 (my-recipe '(my-string-inflections))
 (my-recipe '(my-sum-numbers-in-region))
 (my-recipe '(my-tags))
-(my-recipe '(my-uniquify))
+(my-recipe '(my-uniquify-lines))
 (my-recipe '(myinit))
 (my-recipe '(narrow-indirect))
 (my-recipe '(nginx-mode))

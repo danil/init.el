@@ -1,4 +1,4 @@
-;;; init-my-uniquify.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-my-uniquify-lines.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -36,10 +36,11 @@
 (defun init-my-uniquify ()
   "Init."
 
-  ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-  (define-key myinit-map (kbd "c u") 'uniquify-all-lines-region))
+  (define-key myinit-map (kbd "l U") 'my-uniquify-lines-buffer)
+  (define-key myinit-map (kbd "l u") 'my-uniquify-lines-region))
 
-(defun uniquify-all-lines-region (start end)
+;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
+(defun my-uniquify-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
   (interactive "*r")
   (save-excursion
@@ -50,9 +51,9 @@
             (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
         (replace-match "\\1\n\\2")))))
 
-(defun uniquify-all-lines-buffer ()
+(defun my-uniquify-lines-buffer ()
   "Delete duplicate lines in buffer and keep first occurrence."
   (interactive "*")
-  (uniquify-all-lines-region (point-min) (point-max)))
+  (my-uniquify-lines-region (point-min) (point-max)))
 
-;;; init-my-uniquify.el ends here
+;;; init-my-uniquify-lines.el ends here
