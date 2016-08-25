@@ -48,9 +48,8 @@
  (my-init--after-load 'markdown-mode
    (require 'eww) ;used for eww-mode live preview
 
-   ;; Unset markdown-next-wiki-link and markdown-previous-wiki-link
-   ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-   (define-key markdown-mode-map "\M-n" nil)
-   (define-key markdown-mode-map "\M-p" nil)))
+   (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
+   (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
+   (define-key markdown-mode-map (kbd "TAB") nil)))
 
 ;;; init-markdown-mode.el ends here
