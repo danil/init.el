@@ -255,8 +255,10 @@
 ;; (my-recipe '(mmm-mode))
 ;; (my-recipe '(flycheck-rust)) ;buggy(
 
+(my-recipe '(ag)) ;the silver searcher (ack replacement) <https://github.com/ggreer/the_silver_searcher>
+(my-recipe '(pt)) ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
+
 (my-recipe '(abbrev))
-(my-recipe '(ag))
 (my-recipe '(align))
 (my-recipe '(ansi-color))
 (my-recipe '(anzu))
