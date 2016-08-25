@@ -40,7 +40,7 @@
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
     (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
 
-    (define-key dumb-jump-mode-map (my-kbd "s d") 'my-dumb-jump))
+    (define-key dumb-jump-mode-map (my-kbd "j d") 'my-dumb-jump))
 
   (dumb-jump-mode))
 

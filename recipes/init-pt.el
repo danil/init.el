@@ -36,9 +36,9 @@
 (defun init-pt ()
   "Init."
 
-  (define-key myinit-map (kbd "s p") 'pt-regexp)
+  (define-key myinit-map (kbd "j p") 'pt-regexp)
 
-  (define-key myinit-map (kbd "s P f") 'pt-regexp-file-pattern)
-  (define-key myinit-map (kbd "s P p") 'projectile-pt))
+  (define-key myinit-map (kbd "j P f") 'pt-regexp-file-pattern)
+  (define-key myinit-map (kbd "j P p") 'projectile-pt))
 
 ;;; init-pt.el ends here

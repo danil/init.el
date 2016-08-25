@@ -389,6 +389,7 @@
 (my-recipe '(my-project))
 (my-recipe '(my-repeat-last-key-command))
 (my-recipe '(my-shell-command-on-current-file))
+(my-recipe '(my-sort))
 (my-recipe '(my-string-inflections))
 (my-recipe '(my-sum-numbers-in-region))
 (my-recipe '(my-tags))
