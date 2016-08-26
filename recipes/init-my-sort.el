@@ -38,8 +38,6 @@
 (defun init-my-sort ()
   "Init."
 
-  (define-key myinit-map (kbd "s") 'my-sort-words)
-
   (define-key myinit-map (kbd "S c") 'my-sort-chars)
   (define-key myinit-map (kbd "S s") 'my-sort-symbols)
   (define-key myinit-map (kbd "S w") 'my-sort-words))

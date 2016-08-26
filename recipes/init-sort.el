@@ -36,7 +36,7 @@
 (defun init-sort ()
   "Init."
 
-  (define-key myinit-map (kbd "l S") 'sort-fields)
-  (define-key myinit-map (kbd "l s") 'sort-lines))
+  (define-key myinit-map (kbd "s") 'sort-lines)
+  (define-key myinit-map (kbd "S f") 'sort-fields))
 
 ;;; init-sort.el ends here
