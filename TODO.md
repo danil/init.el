@@ -1,5 +1,7 @@
 # TODO
 
+## Remove `point-stack`
+
 ## Align smart-mode-line percentage
 
 Left align "file scroll" percentage
