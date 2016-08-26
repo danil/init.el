@@ -40,13 +40,29 @@
 (defun init-window ()
   "Init."
 
+  (global-set-key (kbd "C-x 4 0") 'my-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
+
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
 
   (global-set-key (kbd "<left>") #'scroll-right)
   (global-set-key (kbd "<right>") #'scroll-left)
 
-  (define-key myinit-map (kbd "B") 'bury-buffer)
-  (define-key myinit-map (kbd "b n") 'rename-buffer))
+  (define-key myinit-map (kbd "b") 'bury-buffer)
+  (define-key myinit-map (kbd "B n") 'rename-buffer))
+
+;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
+(defun my-delete-window-maybe-kill-buffer ()
+  "Delete selected window.
+If no other window shows its buffer, kill the buffer too."
+  (interactive)
+
+  (let* ((w (selected-window))
+         (b (window-buffer w)))
+
+    (if (equal (length (window-list)) 1)
+        (kill-buffer b)
+      (delete-window w)
+      (unless (get-buffer-window b 'visible) (kill-buffer b)))))
 
 ;;; init-window.el ends here
