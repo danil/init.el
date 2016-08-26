@@ -33,7 +33,7 @@
 
 (custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
                       '(highlight-symbol-idle-delay 0.7)
-                      '(highlight-symbol-ignore-list '("[*]" "[-$+=][-$+=]+")))
+                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
 
 (add-hook 'after-init-hook 'init-highlight-symbol)
 
