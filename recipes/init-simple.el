@@ -36,8 +36,8 @@
 (defun init-simple ()
   "Init."
 
-  (define-key myinit-map (kbd "b t") 'toggle-truncate-lines)
-  (define-key myinit-map (kbd "r c l") 'count-lines-region)
+  (define-key myinit-map (kbd "l c") 'count-words-region)
+  (define-key myinit-map (kbd "l t") 'toggle-truncate-lines)
 
   ;; (my-init--after-load 'simple
   ;;   ;; (define-key visual-line-mode-map "C-SPC" nil)
