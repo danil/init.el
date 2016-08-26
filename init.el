@@ -447,6 +447,7 @@
 (my-recipe '(sql))
 (my-recipe '(sql-mode))
 (my-recipe '(sql-postgres))
+(my-recipe '(sqlup-mode))
 
 (my-recipe '(telnet))
 (my-recipe '(toml-mode))

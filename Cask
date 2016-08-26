@@ -15,7 +15,7 @@
 (depends-on "ac-html" "0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
 
-(depends-on "cider" "0.10.0") ;i do not want upgrade "cider-nrepl plugin"
+(depends-on "cider") ;i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 
 (depends-on "magit")
@@ -143,6 +143,7 @@
 (depends-on "scss-mode")
 (depends-on "simp")
 (depends-on "slim-mode")
+(depends-on "sqlup-mode")
 
 (depends-on "smart-mode-line")
 (depends-on "rich-minority")
