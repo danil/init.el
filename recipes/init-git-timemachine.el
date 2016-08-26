@@ -36,6 +36,6 @@
 (defun init-git-timemachine ()
   "Init."
 
-  (define-key myinit-map (kbd "v r") 'git-timemachine))
+  (define-key myinit-map (kbd "V r") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here

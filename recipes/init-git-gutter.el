@@ -36,9 +36,9 @@
 (defun init-git-gutter ()
   "Init."
 
-  (define-key myinit-map (kbd "v h k") 'git-gutter:revert-hunk)
-  (define-key myinit-map (kbd "v h n") 'my-git-gutter-next-diff)
-  (define-key myinit-map (kbd "v h p") 'my-git-gutter-previous-diff)
+  (define-key myinit-map (kbd "V h k") 'git-gutter:revert-hunk)
+  (define-key myinit-map (kbd "V h n") 'my-git-gutter-next-diff)
+  (define-key myinit-map (kbd "V h p") 'my-git-gutter-previous-diff)
 
   ;; (my-init--after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))

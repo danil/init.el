@@ -38,7 +38,7 @@
 (defun init-magit-blame ()
   "Init."
 
-  (define-key myinit-map (kbd "v b") 'my-magit-blame))
+  (define-key myinit-map (kbd "V b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.
