@@ -33,17 +33,20 @@
 
 (custom-set-variables
  '(mode-line-format '("%e"
+                      " "
+                      mode-line-position
+                      ":"
                       mode-line-front-space
                       mode-line-mule-info
                       mode-line-client
                       mode-line-modified
                       mode-line-remote
                       mode-line-frame-identification
-                      mode-line-position
                       mode-line-buffer-identification
                       ;; sml/pos-id-separator
                       (vc-mode vc-mode)
-                      sml/pre-modes-separator
+                      " "
+                      ;; sml/pre-modes-separator
                       mode-line-modes
                       mode-line-misc-info
                       mode-line-end-spaces)))
