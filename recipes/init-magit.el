@@ -35,23 +35,24 @@
 (defun init-magit ()
   "Init."
 
-  (define-key myinit-map (kbd "v d") 'magit-diff-buffer-file)
-  (define-key myinit-map (kbd "v D") 'magit-diff)
+  (define-key myinit-map (kbd "v") 'magit-status)
 
-  (define-key myinit-map (kbd "v l L") 'magit-log-long)
-  (define-key myinit-map (kbd "v l f") 'magit-file-log)
-  (define-key myinit-map (kbd "v l l") 'magit-log)
+  (define-key myinit-map (kbd "V d") 'magit-diff-buffer-file)
+  (define-key myinit-map (kbd "V D") 'magit-diff)
 
-  (define-key myinit-map (kbd "v s") 'magit-show-commit)
-  (define-key myinit-map (kbd "v S c") 'magit-show)
+  (define-key myinit-map (kbd "V l") 'magit-log)
 
-  (define-key myinit-map (kbd "V") 'magit-status)
+  (define-key myinit-map (kbd "V L l") 'magit-log-long)
+  (define-key myinit-map (kbd "V L f") 'magit-file-log)
+
+  (define-key myinit-map (kbd "V s") 'magit-show-commit)
+  (define-key myinit-map (kbd "V S c") 'magit-show)
 
   (my-init--after-load 'magit
-    (define-key magit-mode-map (my-kbd "v S 1") 'magit-show-level-1-all)
-    (define-key magit-mode-map (my-kbd "v S 2") 'magit-show-level-2-all)
-    (define-key magit-mode-map (my-kbd "v S 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (my-kbd "v S 4") 'magit-show-level-4-all)
+    (define-key magit-mode-map (my-kbd "V S 1") 'magit-show-level-1-all)
+    (define-key magit-mode-map (my-kbd "V S 2") 'magit-show-level-2-all)
+    (define-key magit-mode-map (my-kbd "V S 3") 'magit-show-level-3-all)
+    (define-key magit-mode-map (my-kbd "V S 4") 'magit-show-level-4-all)
 
     ;; Use ido to look for branches
     ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
