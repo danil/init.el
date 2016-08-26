@@ -43,10 +43,8 @@
                       mode-line-remote
                       mode-line-frame-identification
                       mode-line-buffer-identification
-                      ;; sml/pos-id-separator
                       (vc-mode vc-mode)
                       " "
-                      ;; sml/pre-modes-separator
                       mode-line-modes
                       mode-line-misc-info
                       mode-line-end-spaces)))
