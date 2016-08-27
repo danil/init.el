@@ -48,20 +48,17 @@
   (global-set-key (kbd "<left>") #'scroll-right)
   (global-set-key (kbd "<right>") #'scroll-left)
 
-  (define-key myinit-map (kbd "b") 'bury-buffer)
+  (define-key myinit-map (kbd "b") 'my-bury-buffer-maybe-delete-window)
 
-  (define-key myinit-map (kbd "B b") 'my-delete-window-and-bury-buffer)
+  (define-key myinit-map (kbd "B b") 'bury-buffer)
   (define-key myinit-map (kbd "B n") 'rename-buffer))
 
-(defun my-delete-window-and-bury-buffer ()
+(defun my-bury-buffer-maybe-delete-window ()
   "Delete selected window and bury buffer."
   (interactive)
 
-  (let* ((w (selected-window))
-         (b (window-buffer w)))
-
-    (when (> (length (window-list)) 1) (delete-window w))
-    (bury-buffer b)))
+  (when (> (length (window-list)) 1) (delete-window (selected-window)))
+  (bury-buffer))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
 (defun my-delete-window-maybe-kill-buffer ()
