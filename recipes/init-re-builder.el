@@ -36,6 +36,6 @@
 (defun init-re-builder ()
   "Init."
 
-  (define-key myinit-map (kbd "b R") 're-builder))
+  (define-key myinit-map (kbd "B R") 're-builder))
 
 ;;; init-re-builder.el ends here

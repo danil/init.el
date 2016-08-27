@@ -36,9 +36,9 @@
 (defun init-multiple-cursors ()
   "Init."
 
-  (define-key myinit-map (kbd "b m c a") 'mc/mark-all-like-this)
-  (define-key myinit-map (kbd "b m c n") 'my-mc/mark-next-like-this)
-  (define-key myinit-map (kbd "b m c p") 'my-mc/mark-previous-like-this))
+  (define-key myinit-map (kbd "B m c a") 'mc/mark-all-like-this)
+  (define-key myinit-map (kbd "B m c n") 'my-mc/mark-next-like-this)
+  (define-key myinit-map (kbd "B m c p") 'my-mc/mark-previous-like-this))
 
 (defun my-mc/mark-next-like-this ()
   (interactive)
