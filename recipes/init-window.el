@@ -54,11 +54,11 @@
 
 (defun my-bury-buffer-maybe-delete-window (&optional arg)
   "Bury current buffer.
-Delete selected window if no `ARG' and other windows present."
+Delete selected window if `ARG' and other windows present."
   (interactive "P")
 
   (bury-buffer)
-  (when (and (not arg)
+  (when (and arg
              (> (length (window-list)) 1))
     (delete-window (selected-window))))
 
