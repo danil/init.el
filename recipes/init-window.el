@@ -53,18 +53,15 @@
   (define-key myinit-map (kbd "B b") 'bury-buffer)
   (define-key myinit-map (kbd "B n") 'rename-buffer))
 
-(defun my-bury-buffer-maybe-delete-window ()
+(defun my-bury-buffer-maybe-delete-window (&optional arg)
   "Bury current buffer.
-Delete selected window if other windows present."
-  (interactive)
+Delete selected window if no `ARG' and other windows present."
+  (interactive "P")
 
-  (if (equal (length (window-list)) 1)
-      (bury-buffer)
-
-    (let* ((w (selected-window))
-           (b (window-buffer w)))
-      (delete-window w)
-      (bury-buffer b))))
+  (bury-buffer)
+  (when (and (not arg)
+             (> (length (window-list)) 1))
+    (delete-window (selected-window))))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
 (defun my-delete-window-maybe-kill-buffer ()
