@@ -40,7 +40,7 @@
 (defun init-window ()
   "Init."
 
-  (global-set-key (kbd "C-x 4 0") 'my-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
+  (global-set-key (kbd "C-x 4 0") 'my-maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
 
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
@@ -50,7 +50,6 @@
 
   (define-key myinit-map (kbd "b") 'my-bury-buffer-maybe-delete-window)
 
-  (define-key myinit-map (kbd "B b") 'bury-buffer)
   (define-key myinit-map (kbd "B n") 'rename-buffer))
 
 (defun my-bury-buffer-maybe-delete-window (&optional arg)
@@ -64,17 +63,22 @@ Delete selected window if no `ARG' and other windows present."
     (delete-window (selected-window))))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
-(defun my-delete-window-maybe-kill-buffer ()
-  "Delete selected window.
+(defun my-maybe-delete-window-maybe-kill-buffer (&optional arg)
+  "Delete selected window unless `ARG'.
 If no other window shows it buffer, kill the buffer too."
-  (interactive)
+  (interactive "P")
 
   (let* ((w (selected-window))
          (b (window-buffer w)))
 
-    (if (equal (length (window-list)) 1)
-        (kill-buffer b)
-      (delete-window w)
-      (unless (get-buffer-window b 'visible) (kill-buffer b)))))
+    (when (and (not arg)
+               (> (length (window-list)) 1))
+
+      (delete-window w))
+
+    (when (or arg
+              (not (get-buffer-window b 'visible)))
+
+      (kill-buffer b))))
 
 ;;; init-window.el ends here
