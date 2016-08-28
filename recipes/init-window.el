@@ -77,6 +77,7 @@ If no other window shows it buffer, kill the buffer too."
       (delete-window w))
 
     (when (or arg
+              (= (length (window-list)) 1)
               (not (get-buffer-window b 'visible)))
 
       (kill-buffer b))))
