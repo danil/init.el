@@ -150,8 +150,9 @@
 
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
-(depends-on "restclient")
+(depends-on "recentf-ext")
 (depends-on "redis")
+(depends-on "restclient")
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")

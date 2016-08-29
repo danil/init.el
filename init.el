@@ -418,6 +418,7 @@
 (my-recipe '(rainbow-mode))
 (my-recipe '(re-builder))
 (my-recipe '(recentf))
+(my-recipe '(recentf-ext))
 (my-recipe '(redis))
 (my-recipe '(replace))
 (my-recipe '(restclient))
