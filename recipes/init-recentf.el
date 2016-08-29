@@ -37,7 +37,7 @@
 
 (custom-set-variables
  '(recentf-auto-cleanup 'never)
- '(recentf-max-menu-items 5000)
+ '(recentf-max-menu-items 9000)
  '(recentf-max-saved-items nil) ;Maximum number of items of the recent list that will be saved. A nil value means to save the whole list.
  '(recentf-save-file "~/.emacs.var/recentf"))
 
