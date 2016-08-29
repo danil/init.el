@@ -59,3 +59,5 @@ Org mode readme exporter to files headers
 ## Try `better-shell`
 
 <https://github.com/killdash9/better-shell>
+
+## Remove `my-kbd` function
