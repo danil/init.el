@@ -75,6 +75,9 @@
 (defvar myinit-map (make-sparse-keymap)
   "Default keymap for myinit commands.")
 
+(defvar myinit-exec-map (make-sparse-keymap)
+  "Exec keymap for myinit commands.")
+
 (custom-set-variables
  '(my-init--safe-modes
    '(
@@ -471,6 +474,14 @@
   (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
 
 (myinit-global-mode 1)
-(add-hook 'after-init-hook (lambda () (global-set-key (kbd "C-v") myinit-map)))
+
+(add-hook 'after-init-hook 'init-init)
+
+(defun init-init ()
+  "Init."
+
+  (define-key myinit-map (kbd "x") myinit-exec-map)
+
+  (global-set-key (kbd "C-v") myinit-map))
 
 ;;; init.el ends here

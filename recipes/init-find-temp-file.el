@@ -36,7 +36,7 @@
 (defun init-find-temp-file ()
   "Init."
 
-  (define-key myinit-map (kbd "x t") 'find-temp-file)
+  (define-key myinit-exec-map (kbd "t") 'find-temp-file)
 
   (my-init--after-load 'find-temp-file
     ;; Default template for temporary files.
