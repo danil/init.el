@@ -416,7 +416,6 @@
 (my-recipe '(quickrun))
 (my-recipe '(rainbow-delimiters))
 (my-recipe '(rainbow-mode))
-(my-recipe '(rbenv))
 (my-recipe '(re-builder))
 (my-recipe '(recentf))
 (my-recipe '(redis))
@@ -424,6 +423,7 @@
 (my-recipe '(restclient))
 
 (my-recipe '(inf-ruby))
+(my-recipe '(rbenv))
 (my-recipe '(rspec-compilation-mode))
 (my-recipe '(rspec-mode))
 (my-recipe '(ruby-hash-syntax))
