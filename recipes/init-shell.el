@@ -36,7 +36,7 @@
 (defun init-shell ()
   "Init."
 
-  ;; (define-key myinit-map (kbd "?????") 'shell)
+  (define-key myinit-exec-map (kbd "s") 'shell)
 
   (my-init--after-load 'shell
     (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear)))
