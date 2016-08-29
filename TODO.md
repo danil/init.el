@@ -55,3 +55,7 @@ Org mode readme exporter to files headers
 ## Try projectile replacement [find-file-in-project][]
 
 [find-file-in-project]: https://github.com/technomancy/find-file-in-project
+
+## Try `better-shell`
+
+<https://github.com/killdash9/better-shell>
