@@ -32,8 +32,8 @@
 ;;; Code:
 
 (custom-set-variables
- '(sml/col-number-format "%2c")
- '(sml/line-number-format "%2l")
+ '(sml/col-number-format "%c")
+ '(sml/line-number-format "%l")
  '(sml/name-width '(0 . 44))
  '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
 
