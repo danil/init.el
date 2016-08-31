@@ -43,6 +43,7 @@ Org mode readme exporter to files headers
 
 ## Create comint-mode wrapper for [genius][]
 
+* <https://github.com/emacs-pe/redis.el>
 * <https://www.masteringemacs.org/article/comint-writing-command-interpreter>
 * <https://github.com/andrewmains12/subshell-proc>
 * <https://www.emacswiki.org/emacs/ComintMode>
