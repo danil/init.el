@@ -75,6 +75,7 @@
                     conf-xdefaults-mode
                     css-mode
                     diff-mode
+                    dired-mode
                     dockerfile-mode
                     ebuild-mode
                     emacs-lisp-mode
@@ -128,6 +129,7 @@
                     telnet-mode
                     text-mode
                     toml-mode
+                    wdired-mode
                     web-mode
                     xml-mode
                     yaml-mode

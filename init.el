@@ -153,6 +153,7 @@
              redis-cli-mode
              shell-mode
              telnet-mode
+             wdired-mode
              )))
 
  '(my-init--read-only-modes
