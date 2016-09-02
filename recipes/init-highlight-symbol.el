@@ -35,13 +35,19 @@
                       '(highlight-symbol-idle-delay 0.7)
                       '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
 
+(defcustom init-highlight-symbol-hooks (-union my-init--programming-modes-hooks
+                                               '(shell-mode-hook))
+  "Hooks called `highlight-symbol'."
+  :group 'my-init)
+
+(dolist (hook init-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
+
 (add-hook 'after-init-hook 'init-highlight-symbol)
 
 (defun init-highlight-symbol ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'highlight-symbol-mode
-                              (-union my-init--programming-modes-hooks
-                                      '(shell-mode-hook))))
+  (with-eval-after-load 'highlight-symbol
+    (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))
 
 ;;; init-highlight-symbol.el ends here
