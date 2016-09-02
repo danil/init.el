@@ -39,8 +39,7 @@
   "My `linume-mode' max number of lines."
   :group 'myinit)
 
-(defcustom myinit-linum-hooks (-difference myinit-programming-modes-hooks
-                                           '(org-mode-hook text-mode-hook))
+(defcustom myinit-linum-hooks (-difference myinit-programming-modes-hooks '(org-mode-hook))
   "Hooks associated with `linum-mode'."
   :group 'myinit)
 
