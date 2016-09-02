@@ -40,7 +40,7 @@
 
   (when (fboundp 'winner-mode) (winner-mode t))
 
-  (my-init--after-load 'winner
+  (myinit--after-load 'winner
     (define-key myinit-map (kbd "w u") 'my-winner-undo)
     (define-key myinit-map (kbd "w r") 'my-winner-redo)))
 

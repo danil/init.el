@@ -38,14 +38,14 @@
 (defun init-markdown-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'markdown-mode
+  (myinit--add-mode-to-patterns 'markdown-mode
                                 "/README\\'"
                                 "/mutt[-a-zA-Z0-9]+\\'"
                                 "\\.markdown\\'"
                                 "\\.md\\'"
                                 "\\.mdown\\'")
 
- (my-init--after-load 'markdown-mode
+ (myinit--after-load 'markdown-mode
    (require 'eww) ;used for eww-mode live preview
 
    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link

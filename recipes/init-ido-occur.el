@@ -39,7 +39,7 @@
   (define-key myinit-map (kbd "j o") 'ido-occur-at-point)
   (define-key myinit-map (kbd "j O") 'ido-occur)
 
-  (my-init--after-load "isearch"
+  (myinit--after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
 
 ;;; init-ido-occur.el ends here

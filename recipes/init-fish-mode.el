@@ -3,4 +3,4 @@
 (defun init-fish-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'fish-mode "\\.fish\\'"))
+  (myinit--add-mode-to-patterns 'fish-mode "\\.fish\\'"))

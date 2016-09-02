@@ -36,8 +36,8 @@
 (defun init-haml-mode ()
   "Init."
 
-  (my-init--after-load 'haml-mode
-    ;; (my-init--after-load 'ruby-mode
+  (myinit--after-load 'haml-mode
+    ;; (myinit--after-load 'ruby-mode
     ;;   (define-key haml-mode-map (my-kbd "m r h") 'ruby-toggle-hash-syntax))
 
     ;; (define-key haml-mode-map "\C-c\C-f" nil)

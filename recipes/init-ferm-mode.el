@@ -5,6 +5,6 @@
 (defun init-ferm-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'ferm-mode
+  (myinit--add-mode-to-patterns 'ferm-mode
                                 "/etc/iptables/rules.v[46]"
                                 "\\.rules\\'"))

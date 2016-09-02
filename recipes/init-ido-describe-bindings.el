@@ -36,7 +36,7 @@
 (defun init-ido-describe-bindings ()
   "Init."
 
-  (my-init--after-load 'help
+  (myinit--after-load 'help
     (define-key help-map (kbd "b") 'my-describe-bindings)))
 
 (defun my-describe-bindings (&optional arg)

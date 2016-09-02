@@ -36,7 +36,7 @@
 (defun init-yasnippets ()
   "Init."
 
-  (my-init--after-load 'yasnippet
+  (myinit--after-load 'yasnippet
     (add-to-list 'yas-snippet-dirs
                  (let* ((pkg 'yasnippets)
 

@@ -43,9 +43,9 @@
   ;;    ruby-mode
   ;;    slim-mode
 
-  ;; (my-init--add-mode-to-hooks 'ruby-tools-mode my-init--ruby-tools-modes-hooks)
+  ;; (myinit--add-mode-to-hooks 'ruby-tools-mode myinit--ruby-tools-modes-hooks)
 
-  (my-init--after-load 'ruby-tools
+  (myinit--after-load 'ruby-tools
     ;; Remove keys from a minor-mode keymap
     ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
     (define-key ruby-tools-mode-map (kbd "C-'")  nil)

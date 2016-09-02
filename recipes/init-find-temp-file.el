@@ -38,7 +38,7 @@
 
   (define-key myinit-exec-map (kbd "t") 'find-temp-file)
 
-  (my-init--after-load 'find-temp-file
+  (myinit--after-load 'find-temp-file
     ;; Default template for temporary files.
     ;; %N: prefix taken from `find-temp-file-prefix'
     ;; %S: shortened sha-1 of the extension

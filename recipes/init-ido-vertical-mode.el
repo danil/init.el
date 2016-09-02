@@ -40,6 +40,6 @@
   "Init."
 
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
-    (my-init--after-load 'ido (ido-vertical-mode t))))
+    (myinit--after-load 'ido (ido-vertical-mode t))))
 
 ;;; init-ido-vertical-mode.el ends here

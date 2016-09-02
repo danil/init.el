@@ -46,7 +46,7 @@
 (defun init-occur-mode ()
   "Init."
 
-  ;; (my-init--after-load "replace"
+  ;; (myinit--after-load "replace"
   ;;   (define-key occur-mode-map (kbd "\C-c\C-f") nil))
 
   (global-set-key (kbd "M-s o") nil)

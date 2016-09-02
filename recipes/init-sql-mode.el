@@ -3,5 +3,5 @@
 (defun init-sql-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'sql-mode
+  (myinit--add-mode-to-patterns 'sql-mode
                                 "/\.?psqlrc\\'"))

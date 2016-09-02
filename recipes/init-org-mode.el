@@ -7,7 +7,7 @@
 (defun init-org-mode ()
   "Init."
 
-  (my-init--after-load 'org
+  (myinit--after-load 'org
     ;; (define-key org-mode-map "\C-c\C-f" nil)
 
     (setq org-log-done t)
@@ -15,7 +15,7 @@
     ;; Org-mode with Ido (interactively do things).
     (if (featurep 'ido-mode)
         (setq org-completion-use-ido t)
-      (my-init--after-load 'ido
+      (myinit--after-load 'ido
         (setq org-completion-use-ido t)))
 
     ;; Org Clock.

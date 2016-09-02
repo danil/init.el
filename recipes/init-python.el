@@ -36,9 +36,9 @@
 (defun init-python ()
   "Init."
 
-  ;; (my-init--after-load 'python
+  ;; (myinit--after-load 'python
   ;;   (define-key python-mode-map (kbd "C-c C-f") nil))
 
-  (my-init--add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
+  (myinit--add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
 
 ;;; init-python.el ends here

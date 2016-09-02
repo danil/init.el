@@ -37,7 +37,7 @@
 
 ;; (defun init-twittering-mode ()
 ;;   "Init."
-;;   (my-init--after-load 'twittering-mode
+;;   (myinit--after-load 'twittering-mode
 ;;     (define-key twittering-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-twittering-mode.el ends here

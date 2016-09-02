@@ -36,7 +36,7 @@
 (defun init-digit-groups ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'digit-groups-mode
-                              my-init--highlighted-digits-modes-hooks))
+  (myinit--add-mode-to-hooks 'digit-groups-mode
+                              myinit--highlighted-digits-modes-hooks))
 
 ;;; init-digit-groups.el ends here

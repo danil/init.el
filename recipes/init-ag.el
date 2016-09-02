@@ -44,7 +44,7 @@
   (define-key myinit-map (kbd "j A k") 'my-ag-kill-buffers)
   (define-key myinit-map (kbd "j A r") 'ag-regexp)
 
-  (my-init--after-load 'ag
+  (myinit--after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")
     ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))

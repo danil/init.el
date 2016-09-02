@@ -36,9 +36,9 @@
 (defun init-json-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'json-mode "\\.bowerrc\\'")
+  (myinit--add-mode-to-patterns 'json-mode "\\.bowerrc\\'")
 
-  ;; (my-init--after-load 'json-mode
+  ;; (myinit--after-load 'json-mode
   ;;   (define-key json-mode-map (kbd "C-c C-f") nil)
   ;;   (define-key json-mode-map (kbd "C-c C-p") nil))
   )

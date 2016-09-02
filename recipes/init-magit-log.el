@@ -36,7 +36,7 @@
 (defun init-magit-log ()
   "Init."
 
-;;   (my-init--after-load 'magit-log
+;;   (myinit--after-load 'magit-log
 ;;     (define-key magit-log-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-magit-log.el ends here

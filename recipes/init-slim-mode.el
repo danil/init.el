@@ -35,7 +35,7 @@
 
 ;; (defun init-slim-mode ()
 ;;   "Init."
-;;   (my-init--after-load 'slim-mode
+;;   (myinit--after-load 'slim-mode
 ;;     (define-key slim-mode-map (kbd "\C-c\C-f") nil)))
 
 ;;; init-slim-mode.el ends here

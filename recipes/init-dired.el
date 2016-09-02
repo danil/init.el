@@ -36,7 +36,7 @@
 (defun init-dired ()
   "Init."
 
-  (my-init--after-load 'dired
+  (myinit--after-load 'dired
     (setq dired-listing-switches "-alh")))
 
 ;;; init-dired.el ends here

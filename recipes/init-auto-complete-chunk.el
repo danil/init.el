@@ -36,8 +36,8 @@
 ;; (defun init-auto-complete-chunk ()
 ;;   "Init."
 
-;;   (my-init--after-load 'auto-complete-config
-;;     (my-init--add-mode-to-hooks (lambda ()
+;;   (myinit--after-load 'auto-complete-config
+;;     (myinit--add-mode-to-hooks (lambda ()
 ;;                             ;; Make sure `ac-source-chunk-list' comes first.
 ;;                             (setq ac-sources (append '(ac-source-chunk-list) ac-sources))
 ;;                             ;; (setq ac-chunk-list

@@ -38,10 +38,10 @@
 (defun init-column-marker ()
   "Init."
 
-  (my-init--add-mode-to-hooks (lambda () (column-marker-1 79))
-                              my-init--programming-modes-hooks)
+  (myinit--add-mode-to-hooks (lambda () (column-marker-1 79))
+                              myinit--programming-modes-hooks)
 
-  (my-init--after-load 'column-marker
+  (myinit--after-load 'column-marker
     (cond ((equal frame-background-mode 'light)
            (set-face-background 'column-marker-1 "gray80"))
 

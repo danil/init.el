@@ -3,7 +3,7 @@
 (defun init-calendar ()
   "Init."
 
-  (my-init--after-load 'calendar
+  (myinit--after-load 'calendar
     ;; Week numbers <http://www.emacswiki.org/emacs/CalendarWeekNumbers#toc1>.
     (copy-face font-lock-constant-face 'calendar-iso-week-face)
     (set-face-foreground 'calendar-iso-week-face "gray40")

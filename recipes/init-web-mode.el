@@ -44,7 +44,7 @@
 (defun init-web-mode ()
   "Init."
 
- (my-init--add-mode-to-patterns 'web-mode
+ (myinit--add-mode-to-patterns 'web-mode
                                 "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
                                 "\\.\\(html\\|text\\)\\.erb\\'"
                                 "\\.as[cp]x\\'"
@@ -59,7 +59,7 @@
                                 "\\.rhtml\\'"
                                 "\\.tpl\\.php\\'")
 
- ;; (my-init--after-load 'web-mode
+ ;; (myinit--after-load 'web-mode
  ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
 
  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))

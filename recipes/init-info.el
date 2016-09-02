@@ -3,4 +3,4 @@
 (defun init-info ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'Info-mode "\\.info\\'"))
+  (myinit--add-mode-to-patterns 'Info-mode "\\.info\\'"))

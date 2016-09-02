@@ -36,7 +36,7 @@
 (defun init-bytecomp ()
   "Init."
 
-  (my-init--after-load 'lisp-mode
+  (myinit--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (my-kbd "! f") 'byte-compile-file)))
 
 ;;; init-bytecomp.el ends here

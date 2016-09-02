@@ -36,7 +36,7 @@
 ;; (defun init-grep ()
 ;;   "Init."
 
-;;   (my-init--after-load 'grep
+;;   (myinit--after-load 'grep
 ;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-grep.el ends here

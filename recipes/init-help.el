@@ -41,7 +41,7 @@
 
   (define-key myinit-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
 
-  (my-init--after-load 'help
+  (myinit--after-load 'help
     (define-key help-map "f" 'my-describe-function)
 
     (define-key help-map "?" nil)

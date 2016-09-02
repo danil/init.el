@@ -40,7 +40,7 @@
 ;; (defun init-diff-mode ()
 ;;   "Init."
 
-;;   (my-init--after-load 'diff-mode
+;;   (myinit--after-load 'diff-mode
 ;;     (define-key diff-mode-map "\C-c\C-f" nil)))
 
 (defun my-diff-facelift ()

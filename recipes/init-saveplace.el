@@ -44,7 +44,7 @@
 
   (require 'saveplace)
 
-  (my-init--after-load 'saveplace
+  (myinit--after-load 'saveplace
     (setq-default save-place t)))
 
 ;;; init-saveplace.el ends here

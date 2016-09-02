@@ -47,10 +47,10 @@
 (defun init-simp ()
   "Init."
 
-  (my-init--after-load 'simp
+  (myinit--after-load 'simp
     (if (fboundp 'ido-mode)
         (setq simp-completing-read-command 'ido-completing-read)
-      (my-init--after-load 'ido
+      (myinit--after-load 'ido
         (setq simp-completing-read-command 'ido-completing-read)))
 
     (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>

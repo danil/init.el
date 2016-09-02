@@ -38,7 +38,7 @@
 (defun init-go-mode ()
   "Init."
 
-  (my-init--after-load 'go-mode
+  (myinit--after-load 'go-mode
     (add-hook 'before-save-hook #'gofmt-before-save)
 
     (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point)))

@@ -36,7 +36,7 @@
 (defun init-sh-script ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'shell-script-mode
+  (myinit--add-mode-to-patterns 'shell-script-mode
                                 "/Procfile\\'"
                                 "/\\.ackrc\\'"
                                 "/\\.bash_aliases\\'"
@@ -47,12 +47,12 @@
                                 "/\\.xprofile\\'"
                                 "/dwmrc\\'")
   ;; Cron.
-  (my-init--add-mode-to-patterns 'shell-script-mode
+  (myinit--add-mode-to-patterns 'shell-script-mode
                                 "/anacrontab\\'"
                                 "/crontab\\'")
 
   ;; Gentoo.
-  (my-init--add-mode-to-patterns 'shell-script-mode
+  (myinit--add-mode-to-patterns 'shell-script-mode
                                 "/etc/init.d/"
                                 "/etc/local.d/.+\\.\\(start\\|stop\\)"))
 

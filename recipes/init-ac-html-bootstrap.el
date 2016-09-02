@@ -36,6 +36,6 @@
 (defun init-ac-html-bootstrap ()
   "Init."
 
-  (my-init--after-load 'ac-html (ac-html-bootstrap+)))
+  (myinit--after-load 'ac-html (ac-html-bootstrap+)))
 
 ;;; init-ac-html-bootstrap.el ends here

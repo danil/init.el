@@ -53,7 +53,7 @@
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
 
-  (my-init--after-load 'auto-complete-config
+  (myinit--after-load 'auto-complete-config
     (add-to-list 'ac-dictionary-directories
                  (expand-file-name (concat user-emacs-directory
                                            "my-auto-complete/dict")
@@ -139,7 +139,7 @@
     (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
     (setq ac-disable-faces (quote (font-lock-doc-face))))
 
-  (my-init--after-load 'auto-complete
+  (myinit--after-load 'auto-complete
     ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
     ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
@@ -148,7 +148,7 @@
     (define-key ac-completing-map "\r" nil)
     (define-key ac-completing-map [return] nil))
 
-  (my-init--add-mode-to-hooks (lambda ()
+  (myinit--add-mode-to-hooks (lambda ()
                                 (add-to-list 'ac-sources
                                              'ac-source-css-property))
                               '(less-css-mode-hook

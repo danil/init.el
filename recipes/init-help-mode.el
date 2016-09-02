@@ -36,7 +36,7 @@
 ;; (defun init-help-mode ()
 ;;   "Init."
 
-;;   (my-init--after-load 'help-mode
+;;   (myinit--after-load 'help-mode
 ;;     (define-key help-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-help-mode.el ends here

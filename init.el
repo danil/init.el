@@ -79,7 +79,7 @@
   "Exec keymap for myinit commands.")
 
 (custom-set-variables
- '(my-init--safe-modes
+ '(myinit--safe-modes
    '(
      ;; mail-mode
      ;; whitespace-mode
@@ -142,13 +142,13 @@
      yaml-mode
      ))
 
- '(my-init--programming-modes
-   (append my-init--safe-modes
+ '(myinit--programming-modes
+   (append myinit--safe-modes
            '(clojure-mode
              emacs-lisp-mode)))
 
- '(my-init--auto-completion-modes
-   (append my-init--programming-modes
+ '(myinit--auto-completion-modes
+   (append myinit--programming-modes
            '(
              redis-cli-mode
              shell-mode
@@ -156,8 +156,8 @@
              wdired-mode
              )))
 
- '(my-init--read-only-modes
-   (append my-init--safe-modes
+ '(myinit--read-only-modes
+   (append myinit--safe-modes
            '(
              Info-mode
              Man-mode
@@ -176,7 +176,7 @@
              occur-mode
              )))
 
- '(my-init--toggle-quotes-modes
+ '(myinit--toggle-quotes-modes
    '(
      awk-mode
      coffee-mode
@@ -212,42 +212,42 @@
      yaml-mode
      ))
 
- '(my-init--highlighted-digits-modes
-   (append my-init--programming-modes
+ '(myinit--highlighted-digits-modes
+   (append myinit--programming-modes
            '(shell-mode)))
 
- '(my-init--modal-modes (append my-init--programming-modes
-                                '(
-                                  ;; shell-mode
-                                  ;; sql-interactive-mode
-                                  ))))
+ '(myinit--modal-modes (append myinit--programming-modes
+                               '(
+                                 ;; shell-mode
+                                 ;; sql-interactive-mode
+                                 ))))
 
-(dolist (mode my-init--safe-modes)
-  (add-to-list 'my-init--safe-modes-hooks
+(dolist (mode myinit--safe-modes)
+  (add-to-list 'myinit--safe-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--programming-modes)
-  (add-to-list 'my-init--programming-modes-hooks
+(dolist (mode myinit--programming-modes)
+  (add-to-list 'myinit--programming-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--auto-completion-modes)
-  (add-to-list 'my-init--auto-completion-modes-hooks
+(dolist (mode myinit--auto-completion-modes)
+  (add-to-list 'myinit--auto-completion-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--read-only-modes)
-  (add-to-list 'my-init--read-only-modes-hooks
+(dolist (mode myinit--read-only-modes)
+  (add-to-list 'myinit--read-only-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--toggle-quotes-modes)
-  (add-to-list 'my-init--toggle-quotes-modes-hooks
+(dolist (mode myinit--toggle-quotes-modes)
+  (add-to-list 'myinit--toggle-quotes-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--highlighted-digits-modes)
-  (add-to-list 'my-init--highlighted-digits-modes-hooks
+(dolist (mode myinit--highlighted-digits-modes)
+  (add-to-list 'myinit--highlighted-digits-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode my-init--modal-modes)
-  (add-to-list 'my-init--modal-modes-hooks
+(dolist (mode myinit--modal-modes)
+  (add-to-list 'myinit--modal-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
 (defvar my-recipes ())

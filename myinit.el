@@ -151,75 +151,75 @@ Otherwise use `list'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;###autoload
-(defcustom my-init--safe-modes '()
+(defcustom myinit--safe-modes '()
   "My modes with many minor modes enabled."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--programming-modes '()
+(defcustom myinit--programming-modes '()
   "My programming modes."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--auto-completion-modes '()
+(defcustom myinit--auto-completion-modes '()
   "My auto completion."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--read-only-modes '()
+(defcustom myinit--read-only-modes '()
   "My read only modes."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--toggle-quotes-modes '()
+(defcustom myinit--toggle-quotes-modes '()
   "My ruby tools modes."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--highlighted-digits-modes '()
+(defcustom myinit--highlighted-digits-modes '()
   "My modes with highlight digits."
-  :group 'my-init)
+  :group 'myinit)
 
-(defcustom my-init--modal-modes '()
+(defcustom myinit--modal-modes '()
   "My modal modes."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--safe-modes-hooks '()
+(defcustom myinit--safe-modes-hooks '()
   "My hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--programming-modes-hooks '()
+(defcustom myinit--programming-modes-hooks '()
   "My programming modes hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--auto-completion-modes-hooks '()
+(defcustom myinit--auto-completion-modes-hooks '()
   "My auto completion hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--read-only-modes-hooks '()
+(defcustom myinit--read-only-modes-hooks '()
   "My read only modes hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--toggle-quotes-modes-hooks '()
+(defcustom myinit--toggle-quotes-modes-hooks '()
   "My ruby tools modes hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defcustom my-init--highlighted-digits-modes-hooks '()
+(defcustom myinit--highlighted-digits-modes-hooks '()
   "My hooks with highlight digits."
-  :group 'my-init)
+  :group 'myinit)
 
-(defcustom my-init--modal-modes-hooks '()
+(defcustom myinit--modal-modes-hooks '()
   "My modal modes hooks."
-  :group 'my-init)
+  :group 'myinit)
 
 ;;;###autoload
-(defmacro my-init--after-load (feature &rest body)
+(defmacro myinit--after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
 
   (declare (indent defun))
@@ -237,26 +237,26 @@ Otherwise use `list'."
 ;; )
 
 ;;;###autoload
-(defun my-init--add-mode-to-patterns (mode &rest patterns)
+(defun myinit--add-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun my-init--add-pattern-to-modes (pattern &rest modes)
+(defun myinit--add-pattern-to-modes (pattern &rest modes)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun my-init--add-mode-to-hooks (mode hooks)
+(defun myinit--add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 
 ;;;###autoload
-(defun my-init--autoload-file-on-functions (file-name &rest functions)
+(defun myinit--autoload-file-on-functions (file-name &rest functions)
   "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))

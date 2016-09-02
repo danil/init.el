@@ -38,7 +38,7 @@
 (defun init-ielm ()
   "Init."
 
-  (my-init--after-load 'lisp-mode
+  (myinit--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)))
 
 ;;; init-ielm.el ends here

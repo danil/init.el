@@ -37,7 +37,7 @@
   "Init."
 
   ;; Git modes <https://github.com/magit/git-modes>.
-  (my-init--add-mode-to-patterns 'gitignore-mode
+  (myinit--add-mode-to-patterns 'gitignore-mode
                                 "/.agignore\\'"
                                 "/.gitignore_global\\'"))
 

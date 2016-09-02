@@ -36,7 +36,7 @@
 (defun init-expand-region ()
   "Init."
 
- (my-init--autoload-file-on-functions "expand-region"
+ (myinit--autoload-file-on-functions "expand-region"
                                       'er/expand-region
                                       'er/mark-comment
                                       'er/mark-defun

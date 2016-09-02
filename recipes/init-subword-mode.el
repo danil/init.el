@@ -3,6 +3,6 @@
 (defun init-subword-mode ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'subword-mode
-                         (append my-init--programming-modes-hooks
+  (myinit--add-mode-to-hooks 'subword-mode
+                         (append myinit--programming-modes-hooks
                                  '(ag-mode-hook ibuffer-mode-hook))))

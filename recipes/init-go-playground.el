@@ -36,12 +36,12 @@
 (defun init-go-playground ()
   "Init."
 
-  (my-init--after-load 'go-playground
+  (myinit--after-load 'go-playground
     (define-key go-playground-mode-map (kbd "C-c C-z")
       'go-playground-remove-current-snippet)
     (define-key go-playground-mode-map (kbd "C-j") 'go-playground-save-and-run))
 
-  (my-init--after-load 'go-mode
+  (myinit--after-load 'go-mode
     (define-key go-mode-map (kbd "C-c C-z") 'go-playground)))
 
 ;;; init-go-playground.el ends here

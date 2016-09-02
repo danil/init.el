@@ -36,7 +36,7 @@
 (defun init-hl-line ()
   "Init."
 
-  (my-init--after-load 'hl-line
+  (myinit--after-load 'hl-line
     ;; (set-face-background 'highlight nil)
 
     (set-face-attribute hl-line-face nil :inherit nil :underline t)))

@@ -38,7 +38,7 @@
 
 ;;   (myinit-global-mode 1)
 
-;;   ;; (my-init--after-load 'myinit
+;;   ;; (myinit--after-load 'myinit
 ;;   ;;   ;; Nested prefixed namespaces.
 ;;   ;;   (define-key myinit-mode-map (kbd "C-v c") mode-specific-map)
 ;;   ;;   (define-key myinit-mode-map (kbd "C-v x") ctl-x-map)

@@ -36,10 +36,10 @@
 (defun init-clojure-mode ()
   "Init."
 
-  ;; (my-init--after-load 'clojure-mode
+  ;; (myinit--after-load 'clojure-mode
   ;;   (define-key clojure-mode-map (my-kbd "C-v") 'clojure-yaless-mode-on))
 
-  (my-init--add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
+  (myinit--add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
 
 ;; (defun clojure-yaless-mode-on (&optional arg)
 ;;   (interactive "P")

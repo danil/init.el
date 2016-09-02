@@ -12,7 +12,7 @@
 (defun init-rainbow-mode ()
   "Init."
 
-  (my-init--add-mode-to-hooks (lambda () (rainbow-mode t)) '(css-mode-hook
+  (myinit--add-mode-to-hooks (lambda () (rainbow-mode t)) '(css-mode-hook
                                                   less-css-mode-hook
                                                   nxml-mode-hook
                                                   php-mode-hook

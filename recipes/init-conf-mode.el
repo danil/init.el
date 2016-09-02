@@ -36,7 +36,7 @@
 (defun init-conf-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'conf-mode
+  (myinit--add-mode-to-patterns 'conf-mode
                                 "/Pipfile2\\'"
                                 "/Pipfile3\\'"
                                 "/Pipfile\\'"
@@ -83,12 +83,12 @@
                                 "\\torrc\\'")
 
   ;; Logrotate scripts.
-  (my-init--add-mode-to-patterns 'conf-mode
+  (myinit--add-mode-to-patterns 'conf-mode
                                 "/etc/logrotate\\.d/"
                                 "\\.logrotate\\'")
 
   ;; Gentoo configs.
-  (my-init--add-mode-to-patterns 'conf-mode
+  (myinit--add-mode-to-patterns 'conf-mode
                                 "/etc/conf\\.d/"
                                 "/etc/eixrc/"
                                 "/etc/env\\.d/"
@@ -103,9 +103,9 @@
                                 "/var/lib/portage/world_sets\\'"
                                 "\\world\\'")
 
-  (my-init--add-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
+  (myinit--add-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
 
-  (my-init--add-mode-to-patterns 'conf-colon-mode
+  (myinit--add-mode-to-patterns 'conf-colon-mode
                                 "/rsyncd.secrets\\'"
                                 "\\.pgpass\\'"))
 

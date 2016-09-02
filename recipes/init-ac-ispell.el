@@ -38,8 +38,8 @@
 (defun init-ac-ispell ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'my-ac-ispell-setup
-                              my-init--auto-completion-modes-hooks))
+  (myinit--add-mode-to-hooks 'my-ac-ispell-setup
+                              myinit--auto-completion-modes-hooks))
 
 (defun my-ac-ispell-setup ()
   (ac-ispell-setup)

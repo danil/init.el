@@ -40,7 +40,7 @@
 (defun init-linum-format ()
   "Init."
 
-  (my-init--after-load 'linum
+  (myinit--after-load 'linum
     (unless window-system
       (setq linum-format 'my-linum-format))
 

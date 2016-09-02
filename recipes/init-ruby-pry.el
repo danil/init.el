@@ -1,1 +1,1 @@
-(my-init--after-load 'ruby-pry (require 'pry))
+(myinit--after-load 'ruby-pry (require 'pry))

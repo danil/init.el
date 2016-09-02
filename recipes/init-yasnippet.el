@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((my-init))
+;; Package-Requires: ((myinit))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -44,7 +44,7 @@
 
   (yas-reload-all)
 
-  (my-init--after-load 'yasnippet
+  (myinit--after-load 'yasnippet
     ;; How to fix Yasnippet and Autocomplete tab key collision
     ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -52,6 +52,6 @@
     ;; Set Yasnippet's key binding to shift+tab
     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
-  (my-init--add-mode-to-hooks 'yas-minor-mode my-init--programming-modes-hooks))
+  (myinit--add-mode-to-hooks 'yas-minor-mode myinit--programming-modes-hooks))
 
 ;;; init-yasnippet.el ends here

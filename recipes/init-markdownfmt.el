@@ -38,7 +38,7 @@
 (defun init-markdownfmt ()
   "Init."
 
-  (my-init--after-load 'markdown-mode
+  (myinit--after-load 'markdown-mode
     (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))
 
 ;;; init-markdownfmt.el ends here

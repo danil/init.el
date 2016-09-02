@@ -44,7 +44,7 @@
 (defun init-ibuffer ()
   "Init."
 
-  (my-init--after-load 'ibuffer
+  (myinit--after-load 'ibuffer
     ;; (setq ibuffer-use-other-window 1)
     ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
     (define-key ibuffer-mode-map "\M-g" nil) ;ibuffer-jump-to-buffer

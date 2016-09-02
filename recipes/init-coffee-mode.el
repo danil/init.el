@@ -39,9 +39,9 @@
 (defun init-coffee-mode ()
   "Init."
 
-  (my-init--add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
+  (myinit--add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
 
-  (my-init--after-load 'coffee-mode
+  (myinit--after-load 'coffee-mode
     (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
           (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode))))
 

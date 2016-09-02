@@ -38,10 +38,10 @@
 
   ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
 
-  (my-init--after-load 'js
+  (myinit--after-load 'js
     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
-  (my-init--after-load 'js2-mode
+  (myinit--after-load 'js2-mode
     (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
   (init-comint--create-history-fn "init-nodejs-repl--turn-on-history"

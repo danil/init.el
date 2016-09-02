@@ -36,7 +36,7 @@
 (defun init-erise ()
   "Init."
 
-  ;; (my-init--after-load 'erise
+  ;; (myinit--after-load 'erise
   ;;   (setq erise-key-length-limit 30)
   ;;   (setq erise-shell-command "erise"))
 

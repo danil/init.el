@@ -36,7 +36,7 @@
 (defun init-elpa-mirror ()
   "Init."
 
-  (my-init--after-load 'elpa-mirror
+  (myinit--after-load 'elpa-mirror
     (setq elpamr-default-output-directory "/var/elpa/mirror"
           elpamr-email "danil@kutkevich.org"
           elpamr-repository-name "kutkevich"

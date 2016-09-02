@@ -38,7 +38,7 @@
 ;; (defun init-cider ()
 ;;   "Init."
 
-;;   (my-init--after-load 'cider-mode
+;;   (myinit--after-load 'cider-mode
 ;;     (define-key cider-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-cider.el ends here

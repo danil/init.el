@@ -38,14 +38,14 @@
 
   (global-ethan-wspace-mode t)
 
-  (my-init--after-load 'ethan-wspace
+  (myinit--after-load 'ethan-wspace
     (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
     ;; (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
 
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'ethan-wspace-face "gray15")))
 
-    (my-init--add-mode-to-hooks (lambda () (setq ethan-wspace-errors
+    (myinit--add-mode-to-hooks (lambda () (setq ethan-wspace-errors
                                             (remove 'tabs ethan-wspace-errors)))
 
                                 '(c-mode-hook

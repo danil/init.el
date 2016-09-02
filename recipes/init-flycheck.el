@@ -39,7 +39,7 @@
 (defun init-flycheck ()
   "Init."
 
-  (my-init--add-mode-to-hooks 'flycheck-mode my-init--programming-modes-hooks))
+  (myinit--add-mode-to-hooks 'flycheck-mode myinit--programming-modes-hooks))
 
 (with-eval-after-load 'flycheck
   ;; ;; Disable jshint since we prefer eslint checking.
