@@ -37,7 +37,7 @@
 
 (defcustom myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks
                                                  '(shell-mode-hook))
-  "Hooks called `highlight-symbol'."
+  "Hooks associated with `highlight-symbol'."
   :group 'myinit)
 
 (dolist (hook myinit-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
