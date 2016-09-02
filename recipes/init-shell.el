@@ -38,7 +38,7 @@
 
   (define-key myinit-exec-map (kbd "s") 'shell)
 
-  (myinit--after-load 'shell
+  (myinit-after-load 'shell
     (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear)))
 
 (defun my-shell-clear (&optional arg)

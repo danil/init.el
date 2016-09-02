@@ -38,7 +38,7 @@
 
   (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
 
-  (myinit--after-load 'sql
+  (myinit-after-load 'sql
     (define-key sql-interactive-mode-map (my-kbd "C-l") 'my-sql-shell-clear)))
 
 ;;; SQL inferior comint mode history

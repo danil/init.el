@@ -1,1 +1,1 @@
-(myinit--add-mode-to-patterns 'lisp-mode "/\\.stumpwmrc\\'" "/\\.sbclrc\\'")
+(myinit-add-mode-to-patterns 'lisp-mode "/\\.stumpwmrc\\'" "/\\.sbclrc\\'")

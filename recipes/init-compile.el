@@ -38,7 +38,7 @@
 (defun myinit-compile ()
   "My init."
 
-  ;; (myinit--after-load 'compile
+  ;; (myinit-after-load 'compile
   ;;   (define-key compilation-mode-map "\C-c\C-f" nil))
 
   (define-key myinit-map (kbd "! c") 'compile))

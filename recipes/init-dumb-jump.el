@@ -36,7 +36,7 @@
 (defun myinit-dumb-jump ()
   "My init."
 
-  (myinit--after-load 'dumb-jump
+  (myinit-after-load 'dumb-jump
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
     (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
 

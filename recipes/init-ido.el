@@ -63,7 +63,7 @@
 
   (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
 
-  (myinit--after-load 'ido
+  (myinit-after-load 'ido
     ;; When using ido, the confirmation is rather annoying.
     (custom-set-variables '(confirm-nonexistent-file-or-buffer nil))))
 

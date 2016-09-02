@@ -36,7 +36,7 @@
 (defun myinit-add-log ()
   "My init."
 
-;;   (myinit--after-load 'add-log
+;;   (myinit-after-load 'add-log
 ;;     (define-key change-log-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-add-log.el ends here

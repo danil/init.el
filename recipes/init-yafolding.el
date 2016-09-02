@@ -36,7 +36,7 @@
 (defun myinit-yafolding ()
   "My init."
 
-  (myinit--after-load 'yafolding
+  (myinit-after-load 'yafolding
     (define-key yafolding-mode-map (my-kbd "f") 'yafolding-toggle-element)
 
     (define-key yafolding-mode-map (my-kbd "F c") 'yafolding-hide-all)

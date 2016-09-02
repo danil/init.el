@@ -5,6 +5,6 @@
 (defun myinit-nginx-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'nginx-mode
+  (myinit-add-mode-to-patterns 'nginx-mode
                                 "/etc/nginx/.*\\.conf\\'"
                                 "/etc/nginx/sites-available/"))

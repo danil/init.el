@@ -44,7 +44,7 @@
 
   (yas-reload-all)
 
-  (myinit--after-load 'yasnippet
+  (myinit-after-load 'yasnippet
     ;; How to fix Yasnippet and Autocomplete tab key collision
     ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -52,6 +52,6 @@
     ;; Set Yasnippet's key binding to shift+tab
     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
-  (myinit--add-mode-to-hooks 'yas-minor-mode myinit--programming-modes-hooks))
+  (myinit-add-mode-to-hooks 'yas-minor-mode myinit-programming-modes-hooks))
 
 ;;; init-yasnippet.el ends here

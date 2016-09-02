@@ -36,7 +36,7 @@
 ;; (defun myinit-nxml-mode ()
 ;;   "My init."
 
-;;   (myinit--after-load 'nxml-mode
+;;   (myinit-after-load 'nxml-mode
 ;;     (define-key nxml-mode-map (kbd "\C-c\C-f") nil)))
 
 ;;; init-nxml-mode.el ends here

@@ -36,21 +36,21 @@
 (defun myinit-expand-region ()
   "My init."
 
- (myinit--autoload-file-on-functions "expand-region"
-                                      'er/expand-region
-                                      'er/mark-comment
-                                      'er/mark-defun
-                                      'er/mark-email
-                                      'er/mark-inside-pairs
-                                      'er/mark-inside-quotes
-                                      'er/mark-method-call
-                                      'er/mark-next-accessor
-                                      'er/mark-outside-pairs
-                                      'er/mark-outside-quotes
-                                      'er/mark-symbol
-                                      'er/mark-symbol-with-prefix
-                                      'er/mark-url
-                                      'er/mark-word)
+  (myinit-autoload-file-on-functions "expand-region"
+                                     'er/expand-region
+                                     'er/mark-comment
+                                     'er/mark-defun
+                                     'er/mark-email
+                                     'er/mark-inside-pairs
+                                     'er/mark-inside-quotes
+                                     'er/mark-method-call
+                                     'er/mark-next-accessor
+                                     'er/mark-outside-pairs
+                                     'er/mark-outside-quotes
+                                     'er/mark-symbol
+                                     'er/mark-symbol-with-prefix
+                                     'er/mark-url
+                                     'er/mark-word)
 
   (define-key myinit-map (kbd "e e") 'er/expand-region)
 

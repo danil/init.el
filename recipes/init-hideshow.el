@@ -38,9 +38,9 @@
 (defun myinit-hideshow ()
   "My init."
 
-  ;; (myinit--add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
+  ;; (myinit-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 
-  (myinit--after-load 'hs-minor-mode
+  (myinit-after-load 'hs-minor-mode
     ;; (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)
 
     ;; Folding Ruby code (hide show minor mode).

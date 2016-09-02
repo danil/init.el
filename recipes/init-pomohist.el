@@ -39,7 +39,7 @@
   (define-key myinit-map (kbd "p p") 'pomohist-go-to-prev-position-with-repeat)
   (define-key myinit-map (kbd "p n") 'pomohist-go-to-next-position-with-repeat)
 
-  (myinit--after-load 'pomohist
+  (myinit-after-load 'pomohist
     (add-hook 'pre-command-hook 'pomohist)
     ;; (setq pomohist-depth 32)
     ))

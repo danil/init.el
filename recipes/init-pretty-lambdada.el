@@ -38,7 +38,7 @@
 (defun myinit-pretty-lambdada ()
   "My init."
 
-  (myinit--add-mode-to-hooks 'turn-on-pretty-lambda-mode
+  (myinit-add-mode-to-hooks 'turn-on-pretty-lambda-mode
                               '(emacs-lisp-mode-hook lisp-mode-hook)))
 
 ;;; init-pretty-lambdada.el ends here

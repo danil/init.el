@@ -54,7 +54,7 @@
 (defun myinit-deft ()
   "My init."
 
-  ;; (myinit--after-load 'deft
+  ;; (myinit-after-load 'deft
   ;;   (define-key deft-mode-map (kbd "C-c C-f") nil))
 
   (define-key myinit-exec-map (kbd "d") 'my-deft))

@@ -36,7 +36,7 @@
 (defun myinit-yaml-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'yaml-mode
+  (myinit-add-mode-to-patterns 'yaml-mode
                                  "/\\(group\\|host\\)_vars/[^.]*\\'"
                                  "\\.ya?ml.example\\'"
                                  "\\.ya?ml\\'"))

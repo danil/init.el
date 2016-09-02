@@ -40,10 +40,10 @@
   (define-key myinit-map (kbd "V h n") 'my-git-gutter-next-diff)
   (define-key myinit-map (kbd "V h p") 'my-git-gutter-previous-diff)
 
-  ;; (myinit--after-load 'git-gutter
+  ;; (myinit-after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))
 
-  (myinit--add-mode-to-hooks 'git-gutter-mode myinit--programming-modes-hooks))
+  (myinit-add-mode-to-hooks 'git-gutter-mode myinit-programming-modes-hooks))
 
 (add-hook 'git-gutter-mode-on-hook
           (lambda ()

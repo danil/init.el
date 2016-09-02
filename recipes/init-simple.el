@@ -39,7 +39,7 @@
   (define-key myinit-map (kbd "l c") 'count-words-region)
   (define-key myinit-map (kbd "l t") 'toggle-truncate-lines)
 
-  ;; (myinit--after-load 'simple
+  ;; (myinit-after-load 'simple
   ;;   ;; (define-key visual-line-mode-map "C-SPC" nil)
   ;;   (define-key special-mode-map " " nil))
 

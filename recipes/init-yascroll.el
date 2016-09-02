@@ -38,8 +38,8 @@
 (defun myinit-yascroll ()
   "My init."
 
-  (myinit--add-mode-to-hooks 'yascroll-bar-mode
-                        (-difference myinit--read-only-modes-hooks
+  (myinit-add-mode-to-hooks 'yascroll-bar-mode
+                        (-difference myinit-read-only-modes-hooks
                                      '(magit-status-mode-hook
                                        org-mode-hook
                                        text-mode-hook

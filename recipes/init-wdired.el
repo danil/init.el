@@ -36,7 +36,7 @@
 (defun myinit-wdired ()
   "My init."
 
-  (myinit--after-load 'dired
+  (myinit-after-load 'dired
     (define-key dired-mode-map (kbd "C-v") nil)
     (define-key dired-mode-map (my-kbd "x w") 'wdired-change-to-wdired-mode)))
 

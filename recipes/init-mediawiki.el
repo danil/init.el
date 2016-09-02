@@ -54,7 +54,7 @@
 (defun myinit-mediawiki ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
+  (myinit-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 
   (add-hook 'mediawiki-mode-hook
             (lambda () (define-key mediawiki-mode-map "\C-x\C-s" 'save-buffer))))

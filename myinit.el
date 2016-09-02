@@ -129,7 +129,7 @@ configuration created previously with `myinit-define-key' and
                   myinit-cursor-type
                 (default-value 'cursor-type))))
 
-(defun myinit--maybe-activate ()
+(defun myinit-maybe-activate ()
   "Activate `myinit-mode' if current buffer is not blacklisted.
 
 This is used by `myinit-global-mode'."
@@ -138,88 +138,88 @@ This is used by `myinit-global-mode'."
 ;;;###autoload
 (define-globalized-minor-mode myinit-global-mode
   myinit-mode
-  myinit--maybe-activate)
+  myinit-maybe-activate)
 
-(defun myinit--input-function-advice (fnc key)
+(defun myinit-input-function-advice (fnc key)
   "Call FNC with KEY as argument only when `myinit-mode' is disabled.
 
 Otherwise use `list'."
   (funcall (if myinit-mode #'list fnc) key))
 
-(advice-add 'quail-input-method :around #'myinit--input-function-advice)
+(advice-add 'quail-input-method :around #'myinit-input-function-advice)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;###autoload
-(defcustom myinit--safe-modes '()
+(defcustom myinit-safe-modes '()
   "My modes with many minor modes enabled."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--programming-modes '()
+(defcustom myinit-programming-modes '()
   "My programming modes."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--auto-completion-modes '()
+(defcustom myinit-auto-completion-modes '()
   "My auto completion."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--read-only-modes '()
+(defcustom myinit-read-only-modes '()
   "My read only modes."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--toggle-quotes-modes '()
+(defcustom myinit-toggle-quotes-modes '()
   "My ruby tools modes."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--highlighted-digits-modes '()
+(defcustom myinit-highlighted-digits-modes '()
   "My modes with highlight digits."
   :group 'myinit)
 
-(defcustom myinit--modal-modes '()
+(defcustom myinit-modal-modes '()
   "My modal modes."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--safe-modes-hooks '()
+(defcustom myinit-safe-modes-hooks '()
   "My hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--programming-modes-hooks '()
+(defcustom myinit-programming-modes-hooks '()
   "My programming modes hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--auto-completion-modes-hooks '()
+(defcustom myinit-auto-completion-modes-hooks '()
   "My auto completion hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--read-only-modes-hooks '()
+(defcustom myinit-read-only-modes-hooks '()
   "My read only modes hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--toggle-quotes-modes-hooks '()
+(defcustom myinit-toggle-quotes-modes-hooks '()
   "My ruby tools modes hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defcustom myinit--highlighted-digits-modes-hooks '()
+(defcustom myinit-highlighted-digits-modes-hooks '()
   "My hooks with highlight digits."
   :group 'myinit)
 
-(defcustom myinit--modal-modes-hooks '()
+(defcustom myinit-modal-modes-hooks '()
   "My modal modes hooks."
   :group 'myinit)
 
 ;;;###autoload
-(defmacro myinit--after-load (feature &rest body)
+(defmacro myinit-after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
 
   (declare (indent defun))
@@ -237,26 +237,26 @@ Otherwise use `list'."
 ;; )
 
 ;;;###autoload
-(defun myinit--add-mode-to-patterns (mode &rest patterns)
+(defun myinit-add-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun myinit--add-pattern-to-modes (pattern &rest modes)
+(defun myinit-add-pattern-to-modes (pattern &rest modes)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun myinit--add-mode-to-hooks (mode hooks)
+(defun myinit-add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 
 ;;;###autoload
-(defun myinit--autoload-file-on-functions (file-name &rest functions)
+(defun myinit-autoload-file-on-functions (file-name &rest functions)
   "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))

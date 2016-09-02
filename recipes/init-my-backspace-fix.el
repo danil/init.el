@@ -41,7 +41,7 @@
 
   (my-backspace-fix)
 
-  (myinit--after-load 'term-mode (my-backspace-fix)))
+  (myinit-after-load 'term-mode (my-backspace-fix)))
 
 (defun my-backspace-fix ()
   (keyboard-translate ?\C-h ?\C-?)

@@ -38,9 +38,9 @@
 (defun myinit-dockerfile-mode ()
   "My init."
 
-  ;; (myinit--after-load 'dockerfile-mode
+  ;; (myinit-after-load 'dockerfile-mode
   ;;   (define-key myinit-mode-map (kbd "C-v m") dockerfile-mode-map))
 
-  (myinit--add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
+  (myinit-add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
 
 ;;; init-dockerfile-mode.el ends here

@@ -36,7 +36,7 @@
 (defun myinit-origami ()
   "My init."
 
-  (myinit--after-load 'origami
+  (myinit-after-load 'origami
     (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)
 
     (define-key origami-mode-map (my-kbd "F c") 'origami-close-all-nodes)

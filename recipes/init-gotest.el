@@ -36,7 +36,7 @@
 (defun myinit-gotest ()
   "My init."
 
-  (myinit--after-load 'go-mode
+  (myinit-after-load 'go-mode
     (define-key go-mode-map (kbd "C-c , v") 'go-test-current-file)
     (define-key go-mode-map (kbd "C-c , s") 'go-test-current-test)
     (define-key go-mode-map (kbd "C-c , a") 'go-test-current-project)

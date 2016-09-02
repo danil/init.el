@@ -40,7 +40,7 @@
 
   (define-key myinit-map (kbd "c S r") 'iedit-rectangle-mode)
 
-  (myinit--after-load 'iedit-lib
+  (myinit-after-load 'iedit-lib
     (set-face-attribute 'iedit-occurrence nil :inherit 'lazy-highlight)))
 
 ;;; init-iedit.el ends here

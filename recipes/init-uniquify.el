@@ -44,7 +44,7 @@
 
   (custom-set-variables '(uniquify-min-dir-content 20))
 
-  (myinit--after-load 'uniquify
+  (myinit-after-load 'uniquify
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq
      uniquify-buffer-name-style 'post-forward ;'forward

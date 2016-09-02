@@ -36,7 +36,7 @@
 ;; (defun myinit-php-mode ()
 ;;   "My init."
 
-;;   (myinit--after-load 'php-mode
+;;   (myinit-after-load 'php-mode
 ;;     (define-key php-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-php-mode.el ends here

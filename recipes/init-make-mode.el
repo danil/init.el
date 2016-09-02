@@ -36,12 +36,12 @@
 (defun myinit-make-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'makefile-gmake-mode
+  (myinit-add-mode-to-patterns 'makefile-gmake-mode
                                  "/Makefile.port\\'"
                                  "/Makefile.shlib\\'"
                                  "/etc/portage/savedconfig/x11-misc/slock")
 
-  ;; (myinit--after-load 'make-mode
+  ;; (myinit-after-load 'make-mode
   ;;   (define-key makefile-mode-map (kbd "C-c C-f") nil))
   )
 

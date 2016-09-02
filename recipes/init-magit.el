@@ -48,7 +48,7 @@
   (define-key myinit-map (kbd "V s") 'magit-show-commit)
   (define-key myinit-map (kbd "V S c") 'magit-show)
 
-  (myinit--after-load 'magit
+  (myinit-after-load 'magit
     (define-key magit-mode-map (my-kbd "V S 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (my-kbd "V S 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (my-kbd "V S 3") 'magit-show-level-3-all)

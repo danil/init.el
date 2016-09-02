@@ -59,7 +59,7 @@
 ;; (defun myinit-mmm-mode ()
 ;;   "My init."
 
-;;   (myinit--after-load 'mmm-mode
+;;   (myinit-after-load 'mmm-mode
 ;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
 ;;     (setq mmm-global-mode 'buffers-with-submode-classes)
 ;;     (setq mmm-submode-decoration-level 2)
@@ -69,7 +69,7 @@
 ;;     (defun sanityinc/ensure-mmm-erb-loaded ()
 ;;       (require 'mmm-erb))
 
-;;     (myinit--add-mode-to-hooks 'sanityinc/ensure-mmm-erb-loaded
+;;     (myinit-add-mode-to-hooks 'sanityinc/ensure-mmm-erb-loaded
 ;;                            '(html-mode-hook
 ;;                              nxml-mode-hook
 ;;                              yaml-mode-hook))
@@ -88,7 +88,7 @@
 ;;     (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
 ;;     (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
 
-;;     (myinit--add-mode-to-patterns 'html-erb-mode
+;;     (myinit-add-mode-to-patterns 'html-erb-mode
 ;;                                   "\\.jst\\.ejs\\'"
 ;;                                   "\\.r?html\\'"
 ;;                                   "\\.r?html\\.erb\\'")))

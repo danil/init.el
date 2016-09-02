@@ -36,7 +36,7 @@
 (defun myinit-ruby-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'ruby-mode
+  (myinit-add-mode-to-patterns 'ruby-mode
                                  "/Capfile\\'"
                                  "/Gemfile\\'"
                                  "/Guardfile.private.example\\'"
@@ -60,7 +60,7 @@
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
 
-  (myinit--after-load 'ruby-mode
+  (myinit-after-load 'ruby-mode
     (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
 
     ;; My keyboard macroses.

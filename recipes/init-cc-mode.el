@@ -36,7 +36,7 @@
 (defun myinit-cc-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'c-mode
+  (myinit-add-mode-to-patterns 'c-mode
                                  "/etc/portage/savedconfig/www-servers/quark"
                                  "/etc/portage/savedconfig/x11-misc/dmenu"
                                  "/etc/portage/savedconfig/x11-misc/tabbed"

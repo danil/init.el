@@ -5,7 +5,7 @@
 (defun myinit-projectile-rails ()
   "My init."
 
-  (myinit--after-load 'projectile-rails
+  (myinit-after-load 'projectile-rails
 
     ;; Override rails server arguments.
     (defun projectile-rails-server ()

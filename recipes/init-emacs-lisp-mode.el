@@ -36,14 +36,14 @@
 (defun myinit-emacs-lisp-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'emacs-lisp-mode
+  (myinit-add-mode-to-patterns 'emacs-lisp-mode
                                  "/Cask\\'"
                                  "/\\.?abbrev_defs\\'"
                                  "/\\.emacs\\.d/bookmarks\\'"
                                  "/ac-comphist\\.dat\\'"
                                  "\\.el\\.\\(tpl\\|template\\)\\'")
 
-  (myinit--after-load 'lisp-mode
+  (myinit-after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
     (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)))
 

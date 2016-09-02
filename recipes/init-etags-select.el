@@ -38,7 +38,7 @@
 (defun myinit-etags-select ()
   "My init."
 
-  (myinit--after-load 'etags-select
+  (myinit-after-load 'etags-select
     (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)
     (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
     (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)

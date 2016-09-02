@@ -36,7 +36,7 @@
 ;; (defun myinit-occur-edit-mode ()
 ;;   "My init."
 
-;;   (myinit--after-load "replace"
+;;   (myinit-after-load "replace"
 ;;     (define-key occur-edit-mode-map (kbd "\C-c\C-f") nil)))
 
 ;;; init-occur-edit-mode.el ends here

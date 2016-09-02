@@ -36,11 +36,11 @@
 (defun myinit-sgml-mode ()
   "My init."
 
-  (myinit--add-mode-to-patterns 'html-mode
+  (myinit-add-mode-to-patterns 'html-mode
                                  ;; "\\.html?\\'"
                                  "\\.lp\\'"
                                  "\\.op\\'")
-  (myinit--after-load 'sgml-mode
+  (myinit-after-load 'sgml-mode
     ;; (define-key sgml-mode-map "\C-c\C-f" nil)
     (define-key sgml-mode-map "\C-v" nil)))
 

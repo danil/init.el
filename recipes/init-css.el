@@ -5,5 +5,5 @@
 (defun myinit-css ()
   "My init."
 
-  (myinit--after-load 'css-mode
+  (myinit-after-load 'css-mode
     (setq css-indent-offset 2)))

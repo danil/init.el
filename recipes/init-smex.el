@@ -44,7 +44,7 @@
 (defun myinit-smex ()
   "My init."
 
-  (myinit--after-load 'smex
+  (myinit-after-load 'smex
     ;; <http://stackoverflow.com/questions/19781529/how-to-disable-emacs-messages-like-you-can-run-the-command-x-with-y#comment-29432155>
     (setq smex-key-advice-ignore-menu-bar t)))
 

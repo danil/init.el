@@ -36,7 +36,7 @@
 (defun myinit-replace ()
   "My init."
 
-  (myinit--after-load 'lisp-mode
+  (myinit-after-load 'lisp-mode
     (define-key myinit-map (kbd "l f") 'flush-lines)
     (define-key myinit-map (kbd "l k") 'keep-lines)))
 
