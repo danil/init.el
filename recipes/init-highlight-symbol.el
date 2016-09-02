@@ -31,8 +31,7 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks
-                                                 '(shell-mode-hook))
+(defcustom myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks '(shell-mode-hook))
   "Hooks associated with `highlight-symbol'."
   :group 'myinit)
 
