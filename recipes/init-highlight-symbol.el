@@ -31,21 +31,21 @@
 
 ;;; Code:
 
-(custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
-                      '(highlight-symbol-idle-delay 0.7)
-                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
-
 (defcustom myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks
                                                  '(shell-mode-hook))
   "Hooks associated with `highlight-symbol'."
   :group 'myinit)
 
-(dolist (hook myinit-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
+(custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
+                      '(highlight-symbol-idle-delay 0.7)
+                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
 
 (add-hook 'after-init-hook 'myinit-highlight-symbol)
 
 (defun myinit-highlight-symbol ()
   "My init."
+
+  (dolist (hook myinit-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
 
   (with-eval-after-load 'highlight-symbol
     (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))
