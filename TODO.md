@@ -1,5 +1,9 @@
 # TODO
 
+## Enable `copyright` mode
+
+Enable `copyright` mode in my emacs lisp recipes files
+
 ## Remove `point-stack`
 
 ## Align smart-mode-line percentage
