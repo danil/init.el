@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-undo-tree)
+(add-hook 'after-init-hook 'myinit-undo-tree)
 
-(defun init-undo-tree ()
-  "Init."
+(defun myinit-undo-tree ()
+  "My init."
 
  (global-undo-tree-mode))
 

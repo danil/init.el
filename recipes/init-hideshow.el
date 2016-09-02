@@ -33,10 +33,10 @@
 
 ;; Hide Show minor mode (a-la folding)
 ;; <http://www.emacswiki.org/emacs/HideShow>.
-(add-hook 'after-init-hook 'init-hideshow)
+(add-hook 'after-init-hook 'myinit-hideshow)
 
-(defun init-hideshow ()
-  "Init."
+(defun myinit-hideshow ()
+  "My init."
 
   ;; (myinit--add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 

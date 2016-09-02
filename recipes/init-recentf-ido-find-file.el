@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-recentf-ido-find-file)
+(add-hook 'after-init-hook 'myinit-recentf-ido-find-file)
 
-(defun init-recentf-ido-find-file ()
-  "Init."
+(defun myinit-recentf-ido-find-file ()
+  "My init."
 
   (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file))
 

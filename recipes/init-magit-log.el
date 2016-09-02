@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-magit-log)
+;; (add-hook 'after-init-hook 'myinit-magit-log)
 
-(defun init-magit-log ()
-  "Init."
+(defun myinit-magit-log ()
+  "My init."
 
 ;;   (myinit--after-load 'magit-log
 ;;     (define-key magit-log-mode-map (kbd "C-c C-f") nil)))

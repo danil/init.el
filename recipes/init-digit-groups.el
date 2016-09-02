@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-digit-groups)
+(add-hook 'after-init-hook 'myinit-digit-groups)
 
-(defun init-digit-groups ()
-  "Init."
+(defun myinit-digit-groups ()
+  "My init."
 
   (myinit--add-mode-to-hooks 'digit-groups-mode
                               myinit--highlighted-digits-modes-hooks))

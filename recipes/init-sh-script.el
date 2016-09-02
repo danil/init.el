@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-sh-script)
+(add-hook 'after-init-hook 'myinit-sh-script)
 
-(defun init-sh-script ()
-  "Init."
+(defun myinit-sh-script ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'shell-script-mode
                                 "/Procfile\\'"

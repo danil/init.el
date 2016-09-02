@@ -34,13 +34,13 @@
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(add-hook 'after-init-hook 'init-inf-ruby)
+(add-hook 'after-init-hook 'myinit-inf-ruby)
 
-(defun init-inf-ruby ()
-  "Init."
+(defun myinit-inf-ruby ()
+  "My init."
 
-  (init-comint--create-history-fn "init-inf-ruby--turn-on-history"
+  (myinit-comint--create-history-fn "init-inf-ruby--turn-on-history"
                                   "~/.irb-history")
-  (add-hook 'inf-ruby-mode-hook 'init-inf-ruby--turn-on-history))
+  (add-hook 'inf-ruby-mode-hook 'myinit-inf-ruby--turn-on-history))
 
 ;;; init-inf-ruby.el ends here

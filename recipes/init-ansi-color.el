@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ansi-color)
+(add-hook 'after-init-hook 'myinit-ansi-color)
 
-(defun init-ansi-color ()
-  "Init."
+(defun myinit-ansi-color ()
+  "My init."
 
   (require 'ansi-color)
 

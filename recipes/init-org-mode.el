@@ -2,10 +2,10 @@
 ;; (global-set-key "\C-cl" 'org-store-link)
 ;; (global-set-key "\C-ca" 'org-agenda)
 
-(add-hook 'after-init-hook 'init-org-mode)
+(add-hook 'after-init-hook 'myinit-org-mode)
 
-(defun init-org-mode ()
-  "Init."
+(defun myinit-org-mode ()
+  "My init."
 
   (myinit--after-load 'org
     ;; (define-key org-mode-map "\C-c\C-f" nil)

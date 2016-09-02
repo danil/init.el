@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-git-timemachine)
+(add-hook 'after-init-hook 'myinit-git-timemachine)
 
-(defun init-git-timemachine ()
-  "Init."
+(defun myinit-git-timemachine ()
+  "My init."
 
   (define-key myinit-map (kbd "V r") 'git-timemachine))
 

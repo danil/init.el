@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-fill)
+(add-hook 'after-init-hook 'myinit-fill)
 
-(defun init-fill ()
-  "Init."
+(defun myinit-fill ()
+  "My init."
 
   (global-set-key (my-kbd "r f") 'fill-region))
 

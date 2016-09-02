@@ -41,10 +41,10 @@
             ;; <http://lists.gnu.org/archive/html/emacs-devel/2005-07/msg00411.html>
             (occur-rename-buffer t)))
 
-(add-hook 'after-init-hook 'init-occur-mode)
+(add-hook 'after-init-hook 'myinit-occur-mode)
 
-(defun init-occur-mode ()
-  "Init."
+(defun myinit-occur-mode ()
+  "My init."
 
   ;; (myinit--after-load "replace"
   ;;   (define-key occur-mode-map (kbd "\C-c\C-f") nil))

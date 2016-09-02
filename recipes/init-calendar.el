@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-calendar)
+(add-hook 'after-init-hook 'myinit-calendar)
 
-(defun init-calendar ()
-  "Init."
+(defun myinit-calendar ()
+  "My init."
 
   (myinit--after-load 'calendar
     ;; Week numbers <http://www.emacswiki.org/emacs/CalendarWeekNumbers#toc1>.

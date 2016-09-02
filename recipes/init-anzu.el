@@ -34,10 +34,10 @@
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
-(add-hook 'after-init-hook 'init-anzu)
+(add-hook 'after-init-hook 'myinit-anzu)
 
-(defun init-anzu ()
-  "Init."
+(defun myinit-anzu ()
+  "My init."
 
  (global-anzu-mode t))
 

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-dim)
+(add-hook 'after-init-hook 'myinit-dim)
 
-(defun init-dim ()
-  "Init."
+(defun myinit-dim ()
+  "My init."
 
   (dim-major-names
    '(

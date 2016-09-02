@@ -35,10 +35,10 @@
  ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
  '(projectile-mode-line nil))
 
-(add-hook 'after-init-hook 'init-projectile)
+(add-hook 'after-init-hook 'myinit-projectile)
 
-(defun init-projectile ()
-  "Init."
+(defun myinit-projectile ()
+  "My init."
 
   ;; (myinit--after-load 'projectile
   ;;   (setq projectile-project-root-files-bottom-up

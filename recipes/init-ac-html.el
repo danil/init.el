@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ac-html)
+(add-hook 'after-init-hook 'myinit-ac-html)
 
-(defun init-ac-html ()
-  "Init."
+(defun myinit-ac-html ()
+  "My init."
 
   ;; (myinit--add-mode-to-hooks (lambda ()
   ;;                         (require 'ac-html)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-nxml-mode)
+;; (add-hook 'after-init-hook 'myinit-nxml-mode)
 
-;; (defun init-nxml-mode ()
-;;   "Init."
+;; (defun myinit-nxml-mode ()
+;;   "My init."
 
 ;;   (myinit--after-load 'nxml-mode
 ;;     (define-key nxml-mode-map (kbd "\C-c\C-f") nil)))

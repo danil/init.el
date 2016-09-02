@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-flycheck-rust)
+(add-hook 'after-init-hook 'myinit-flycheck-rust)
 
-(defun init-flycheck-rust ()
-  "Init."
+(defun myinit-flycheck-rust ()
+  "My init."
 
  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-rainbow-delimiters)
+(add-hook 'after-init-hook 'myinit-rainbow-delimiters)
 
-(defun init-rainbow-delimiters ()
-  "Init."
+(defun myinit-rainbow-delimiters ()
+  "My init."
 
   (myinit--add-mode-to-hooks 'rainbow-delimiters-mode
                               myinit--programming-modes-hooks)

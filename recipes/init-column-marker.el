@@ -33,10 +33,10 @@
 
 (autoload 'column-marker-1 "column-marker" nil t)
 
-(add-hook 'after-init-hook 'init-column-marker)
+(add-hook 'after-init-hook 'myinit-column-marker)
 
-(defun init-column-marker ()
-  "Init."
+(defun myinit-column-marker ()
+  "My init."
 
   (myinit--add-mode-to-hooks (lambda () (column-marker-1 79))
                               myinit--programming-modes-hooks)

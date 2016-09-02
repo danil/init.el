@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ruby-hash-syntax)
+(add-hook 'after-init-hook 'myinit-ruby-hash-syntax)
 
-(defun init-ruby-hash-syntax ()
-  "Init."
+(defun myinit-ruby-hash-syntax ()
+  "My init."
 
   (define-key myinit-map (kbd "m r h") 'ruby-toggle-hash-syntax))
 

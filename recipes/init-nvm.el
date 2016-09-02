@@ -36,10 +36,10 @@
 
 ;; (custom-set-variables '(nvm-dir (f-full "~/n/n")))
 
-(add-hook 'after-init-hook 'init-nvm)
+(add-hook 'after-init-hook 'myinit-nvm)
 
-(defun init-nvm ()
-  "Init."
+(defun myinit-nvm ()
+  "My init."
 
   ;; (nvm-use "0.11")
 

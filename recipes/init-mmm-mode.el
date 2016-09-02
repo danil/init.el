@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-mmm-mode)
+(add-hook 'after-init-hook 'myinit-mmm-mode)
 
-(defun init-mmm-mode ()
-  "Init."
+(defun myinit-mmm-mode ()
+  "My init."
 
   (require 'mmm-auto)
   (setq mmm-global-mode 'maybe)
@@ -54,10 +54,10 @@
 
 ;; (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t)
 
-;; (add-hook 'after-init-hook 'init-mmm-mode)
+;; (add-hook 'after-init-hook 'myinit-mmm-mode)
 
-;; (defun init-mmm-mode ()
-;;   "Init."
+;; (defun myinit-mmm-mode ()
+;;   "My init."
 
 ;;   (myinit--after-load 'mmm-mode
 ;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.

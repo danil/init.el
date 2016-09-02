@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-auto-complete-chunk)
+;; (add-hook 'after-init-hook 'myinit-auto-complete-chunk)
 
-;; (defun init-auto-complete-chunk ()
-;;   "Init."
+;; (defun myinit-auto-complete-chunk ()
+;;   "My init."
 
 ;;   (myinit--after-load 'auto-complete-config
 ;;     (myinit--add-mode-to-hooks (lambda ()

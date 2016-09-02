@@ -33,10 +33,10 @@
 
 (autoload 'kill-ring-ido "kill-ring-ido" nil t)
 
-(add-hook 'after-init-hook 'init-kill-ring-ido)
+(add-hook 'after-init-hook 'myinit-kill-ring-ido)
 
-(defun init-kill-ring-ido ()
-  "Init."
+(defun myinit-kill-ring-ido ()
+  "My init."
 
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)
 

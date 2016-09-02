@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-completion-ignored-extensions)
+(add-hook 'after-init-hook 'myinit-completion-ignored-extensions)
 
-(defun init-completion-ignored-extensions ()
-  "Init."
+(defun myinit-completion-ignored-extensions ()
+  "My init."
 
   ;; <http://endlessparentheses.com/improving-emacs-file-name-completion.html>.
   (mapc (lambda (ignored-str)

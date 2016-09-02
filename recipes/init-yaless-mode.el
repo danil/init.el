@@ -35,10 +35,10 @@
 
 ;;; TODO: Move to trash branch (not yaless-mode not used).
 
-(add-hook 'after-init-hook 'init-yaless-mode)
+(add-hook 'after-init-hook 'myinit-yaless-mode)
 
-(defun init-yaless-mode ()
-  "Init."
+(defun myinit-yaless-mode ()
+  "My init."
 
   (define-key myinit-map (kbd "C-f") 'yaless-mode-on))
 

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-gotest)
+(add-hook 'after-init-hook 'myinit-gotest)
 
-(defun init-gotest ()
-  "Init."
+(defun myinit-gotest ()
+  "My init."
 
   (myinit--after-load 'go-mode
     (define-key go-mode-map (kbd "C-c , v") 'go-test-current-file)

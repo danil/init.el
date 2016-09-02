@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-direx)
+(add-hook 'after-init-hook 'myinit-direx)
 
-(defun init-direx ()
-  "Init."
+(defun myinit-direx ()
+  "My init."
 
   (global-set-key (kbd "C-x d") 'my-dired))
 

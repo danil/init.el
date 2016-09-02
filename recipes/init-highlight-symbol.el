@@ -42,10 +42,10 @@
 
 (dolist (hook init-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
 
-(add-hook 'after-init-hook 'init-highlight-symbol)
+(add-hook 'after-init-hook 'myinit-highlight-symbol)
 
-(defun init-highlight-symbol ()
-  "Init."
+(defun myinit-highlight-symbol ()
+  "My init."
 
   (with-eval-after-load 'highlight-symbol
     (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-occur-edit-mode)
+;; (add-hook 'after-init-hook 'myinit-occur-edit-mode)
 
-;; (defun init-occur-edit-mode ()
-;;   "Init."
+;; (defun myinit-occur-edit-mode ()
+;;   "My init."
 
 ;;   (myinit--after-load "replace"
 ;;     (define-key occur-edit-mode-map (kbd "\C-c\C-f") nil)))

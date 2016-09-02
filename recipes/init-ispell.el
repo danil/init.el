@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ispell)
+(add-hook 'after-init-hook 'myinit-ispell)
 
-(defun init-ispell ()
-  "Init."
+(defun myinit-ispell ()
+  "My init."
 
   ;; (setq-default ispell-program-name "/usr/bin/aspell")
   ;; (setq-default ispell-program-name "/usr/bin/hunspell")

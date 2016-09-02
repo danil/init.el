@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-grep)
+;; (add-hook 'after-init-hook 'myinit-grep)
 
-;; (defun init-grep ()
-;;   "Init."
+;; (defun myinit-grep ()
+;;   "My init."
 
 ;;   (myinit--after-load 'grep
 ;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))

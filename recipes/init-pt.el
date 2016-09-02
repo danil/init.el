@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-pt)
+(add-hook 'after-init-hook 'myinit-pt)
 
-(defun init-pt ()
-  "Init."
+(defun myinit-pt ()
+  "My init."
 
   (define-key myinit-map (kbd "j p") 'pt-regexp)
 

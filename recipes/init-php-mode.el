@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-php-mode)
+;; (add-hook 'after-init-hook 'myinit-php-mode)
 
-;; (defun init-php-mode ()
-;;   "Init."
+;; (defun myinit-php-mode ()
+;;   "My init."
 
 ;;   (myinit--after-load 'php-mode
 ;;     (define-key php-mode-map (kbd "C-c C-f") nil)))

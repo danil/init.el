@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-vlf)
+(add-hook 'after-init-hook 'myinit-vlf)
 
-(defun init-vlf ()
-  "Init."
+(defun myinit-vlf ()
+  "My init."
 
  (require 'vlf-setup))
 

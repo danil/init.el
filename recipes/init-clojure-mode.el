@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-clojure-mode)
+(add-hook 'after-init-hook 'myinit-clojure-mode)
 
-(defun init-clojure-mode ()
-  "Init."
+(defun myinit-clojure-mode ()
+  "My init."
 
   ;; (myinit--after-load 'clojure-mode
   ;;   (define-key clojure-mode-map (my-kbd "C-v") 'clojure-yaless-mode-on))

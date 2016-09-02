@@ -37,10 +37,10 @@
  ;; '(rbenv-modeline-function 'my-rbenv--modeline-with-face)
  '(rbenv-show-active-ruby-in-modeline nil))
 
-(add-hook 'after-init-hook 'init-rbenv)
+(add-hook 'after-init-hook 'myinit-rbenv)
 
-(defun init-rbenv ()
-  "Init."
+(defun myinit-rbenv ()
+  "My init."
 
   (global-rbenv-mode)
   (rbenv-use-corresponding))

@@ -33,10 +33,10 @@
 
 ;;; Inferior Emacs Lisp Mode (REPL).
 
-(add-hook 'after-init-hook 'init-ielm)
+(add-hook 'after-init-hook 'myinit-ielm)
 
-(defun init-ielm ()
-  "Init."
+(defun myinit-ielm ()
+  "My init."
 
   (myinit--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)))

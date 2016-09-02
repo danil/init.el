@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-go-playground)
+(add-hook 'after-init-hook 'myinit-go-playground)
 
-(defun init-go-playground ()
-  "Init."
+(defun myinit-go-playground ()
+  "My init."
 
   (myinit--after-load 'go-playground
     (define-key go-playground-mode-map (kbd "C-c C-z")

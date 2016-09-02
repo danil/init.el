@@ -33,10 +33,10 @@
 
 (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
 
-(add-hook 'after-init-hook 'init-etags-select)
+(add-hook 'after-init-hook 'myinit-etags-select)
 
-(defun init-etags-select ()
-  "Init."
+(defun myinit-etags-select ()
+  "My init."
 
   (myinit--after-load 'etags-select
     (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)

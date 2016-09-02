@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ido-ubiquitous)
+(add-hook 'after-init-hook 'myinit-ido-ubiquitous)
 
-(defun init-ido-ubiquitous ()
-  "Init."
+(defun myinit-ido-ubiquitous ()
+  "My init."
 
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)

@@ -49,10 +49,10 @@
                                    shell-command-history))
  '(savehist-file "~/.emacs.var/history"))
 
-(add-hook 'after-init-hook 'init-savehist)
+(add-hook 'after-init-hook 'myinit-savehist)
 
-(defun init-savehist ()
-  "Init."
+(defun myinit-savehist ()
+  "My init."
 
   (savehist-mode t))
 

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-iedit)
+(add-hook 'after-init-hook 'myinit-iedit)
 
-(defun init-iedit ()
-  "Init."
+(defun myinit-iedit ()
+  "My init."
 
   (define-key myinit-map (kbd "c s") 'iedit-mode)
 

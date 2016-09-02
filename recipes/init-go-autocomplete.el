@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-go-autocomplete)
+(add-hook 'after-init-hook 'myinit-go-autocomplete)
 
-(defun init-go-autocomplete ()
-  "Init."
+(defun myinit-go-autocomplete ()
+  "My init."
 
  (require 'go-autocomplete))
 

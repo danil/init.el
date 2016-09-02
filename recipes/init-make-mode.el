@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-make-mode)
+(add-hook 'after-init-hook 'myinit-make-mode)
 
-(defun init-make-mode ()
-  "Init."
+(defun myinit-make-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'makefile-gmake-mode
                                  "/Makefile.port\\'"

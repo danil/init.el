@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-find-temp-file)
+(add-hook 'after-init-hook 'myinit-find-temp-file)
 
-(defun init-find-temp-file ()
-  "Init."
+(defun myinit-find-temp-file ()
+  "My init."
 
   (define-key myinit-exec-map (kbd "t") 'find-temp-file)
 

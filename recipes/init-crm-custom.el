@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-crm-custom)
+(add-hook 'after-init-hook 'myinit-crm-custom)
 
-(defun init-crm-custom ()
-  "Init."
+(defun myinit-crm-custom ()
+  "My init."
 
  (crm-custom-mode t)) ;ido with commands such as describe-face <https://github.com/DarwinAwardWinner/ido-ubiquitous#ido-for-describe-face-and-certain-other-commands>
 

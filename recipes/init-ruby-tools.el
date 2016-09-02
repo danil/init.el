@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ruby-tools)
+(add-hook 'after-init-hook 'myinit-ruby-tools)
 
-(defun init-ruby-tools ()
-  "Init."
+(defun myinit-ruby-tools ()
+  "My init."
 
   ;; (add-hook 'text-mode-hook 'auto-fill-mode)
 

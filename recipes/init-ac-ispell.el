@@ -33,10 +33,10 @@
 
 (custom-set-variables '(ac-ispell-requires 1)) ;minimum input for starting completion
 
-(add-hook 'after-init-hook 'init-ac-ispell)
+(add-hook 'after-init-hook 'myinit-ac-ispell)
 
-(defun init-ac-ispell ()
-  "Init."
+(defun myinit-ac-ispell ()
+  "My init."
 
   (myinit--add-mode-to-hooks 'my-ac-ispell-setup
                               myinit--auto-completion-modes-hooks))

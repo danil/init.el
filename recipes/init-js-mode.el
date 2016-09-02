@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-js-mode)
+(add-hook 'after-init-hook 'myinit-js-mode)
 
-(defun init-js-mode ()
-  "Init."
+(defun myinit-js-mode ()
+  "My init."
 
   ;; (myinit--add-mode-to-patterns 'js-mode
   ;;                               "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>

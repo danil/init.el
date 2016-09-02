@@ -7,10 +7,10 @@
                                                               scss-mode
                                                               xml-mode)))
 
-(add-hook 'after-init-hook 'init-rainbow-mode)
+(add-hook 'after-init-hook 'myinit-rainbow-mode)
 
-(defun init-rainbow-mode ()
-  "Init."
+(defun myinit-rainbow-mode ()
+  "My init."
 
   (myinit--add-mode-to-hooks (lambda () (rainbow-mode t)) '(css-mode-hook
                                                   less-css-mode-hook

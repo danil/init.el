@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-yaml-mode)
+(add-hook 'after-init-hook 'myinit-yaml-mode)
 
-(defun init-yaml-mode ()
-  "Init."
+(defun myinit-yaml-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'yaml-mode
                                  "/\\(group\\|host\\)_vars/[^.]*\\'"

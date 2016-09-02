@@ -33,10 +33,10 @@
 
 ;;; <https://www.emacswiki.org/emacs/SortWords>.
 
-(add-hook 'after-init-hook 'init-sqlup-mode)
+(add-hook 'after-init-hook 'myinit-sqlup-mode)
 
-(defun init-sqlup-mode ()
-  "Init."
+(defun myinit-sqlup-mode ()
+  "My init."
 
   (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
   (add-hook 'sql-interactive-mode-hook 'sqlup-mode) ;capitalize keywords in an interactive session (e.g. psql)

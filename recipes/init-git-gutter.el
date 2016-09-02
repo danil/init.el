@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-git-gutter)
+(add-hook 'after-init-hook 'myinit-git-gutter)
 
-(defun init-git-gutter ()
-  "Init."
+(defun myinit-git-gutter ()
+  "My init."
 
   (define-key myinit-map (kbd "V h k") 'git-gutter:revert-hunk)
   (define-key myinit-map (kbd "V h n") 'my-git-gutter-next-diff)

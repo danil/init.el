@@ -34,10 +34,10 @@
 (autoload 'window-numbering-mode "window-numbering"
   "Numbered window shortcuts" t)
 
-(add-hook 'after-init-hook 'init-window-numbering)
+(add-hook 'after-init-hook 'myinit-window-numbering)
 
-(defun init-window-numbering ()
-  "Init."
+(defun myinit-window-numbering ()
+  "My init."
 
   (window-numbering-mode)
 

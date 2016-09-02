@@ -1,6 +1,6 @@
-(add-hook 'after-init-hook 'init-info)
+(add-hook 'after-init-hook 'myinit-info)
 
-(defun init-info ()
-  "Init."
+(defun myinit-info ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'Info-mode "\\.info\\'"))

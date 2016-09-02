@@ -39,10 +39,10 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(add-hook 'after-init-hook 'init-ibuffer)
+(add-hook 'after-init-hook 'myinit-ibuffer)
 
-(defun init-ibuffer ()
-  "Init."
+(defun myinit-ibuffer ()
+  "My init."
 
   (myinit--after-load 'ibuffer
     ;; (setq ibuffer-use-other-window 1)

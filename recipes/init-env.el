@@ -1,9 +1,9 @@
 ;;; Environment variables.
 
-(add-hook 'after-init-hook 'init-env)
+(add-hook 'after-init-hook 'myinit-env)
 
-(defun init-env ()
-  "Init."
+(defun myinit-env ()
+  "My init."
 
   ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
   (setenv "DISABLE_PRY_RAILS" "1")

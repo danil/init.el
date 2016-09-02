@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-replace)
+(add-hook 'after-init-hook 'myinit-replace)
 
-(defun init-replace ()
-  "Init."
+(defun myinit-replace ()
+  "My init."
 
   (myinit--after-load 'lisp-mode
     (define-key myinit-map (kbd "l f") 'flush-lines)

@@ -33,10 +33,10 @@
 
 ;;; <https://www.emacswiki.org/emacs/SortWords>.
 
-(add-hook 'after-init-hook 'init-my-sort)
+(add-hook 'after-init-hook 'myinit-my-sort)
 
-(defun init-my-sort ()
-  "Init."
+(defun myinit-my-sort ()
+  "My init."
 
   (define-key myinit-map (kbd "S c") 'my-sort-chars)
   (define-key myinit-map (kbd "S s") 'my-sort-symbols)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-dumb-jump)
+(add-hook 'after-init-hook 'myinit-dumb-jump)
 
-(defun init-dumb-jump ()
-  "Init."
+(defun myinit-dumb-jump ()
+  "My init."
 
   (myinit--after-load 'dumb-jump
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)

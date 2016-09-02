@@ -39,10 +39,10 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;this is your old M-x
 
-(add-hook 'after-init-hook 'init-smex)
+(add-hook 'after-init-hook 'myinit-smex)
 
-(defun init-smex ()
-  "Init."
+(defun myinit-smex ()
+  "My init."
 
   (myinit--after-load 'smex
     ;; <http://stackoverflow.com/questions/19781529/how-to-disable-emacs-messages-like-you-can-run-the-command-x-with-y#comment-29432155>

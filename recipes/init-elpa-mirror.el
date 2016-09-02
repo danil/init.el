@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-elpa-mirror)
+(add-hook 'after-init-hook 'myinit-elpa-mirror)
 
-(defun init-elpa-mirror ()
-  "Init."
+(defun myinit-elpa-mirror ()
+  "My init."
 
   (myinit--after-load 'elpa-mirror
     (setq elpamr-default-output-directory "/var/elpa/mirror"

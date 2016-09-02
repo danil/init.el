@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ag)
+(add-hook 'after-init-hook 'myinit-ag)
 
-(defun init-ag ()
-  "Init."
+(defun myinit-ag ()
+  "My init."
 
   (define-key myinit-map (kbd "j a") 'ag)
 

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-my-uniquify)
+(add-hook 'after-init-hook 'myinit-my-uniquify)
 
-(defun init-my-uniquify ()
-  "Init."
+(defun myinit-my-uniquify ()
+  "My init."
 
   (define-key myinit-map (kbd "l U") 'my-uniquify-lines-buffer)
   (define-key myinit-map (kbd "l u") 'my-uniquify-lines-region))

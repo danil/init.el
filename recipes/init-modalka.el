@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-modalka)
+(add-hook 'after-init-hook 'myinit-modalka)
 
-(defun init-modalka ()
-  "Init."
+(defun myinit-modalka ()
+  "My init."
 
   (define-key myinit-map (kbd "C-v") 'my-modalka-enable)
 

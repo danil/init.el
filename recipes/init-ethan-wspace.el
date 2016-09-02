@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ethan-wspace)
+(add-hook 'after-init-hook 'myinit-ethan-wspace)
 
-(defun init-ethan-wspace ()
-  "Init."
+(defun myinit-ethan-wspace ()
+  "My init."
 
   (global-ethan-wspace-mode t)
 

@@ -49,10 +49,10 @@
                            ""
                            "Main Page"))))
 
-(add-hook 'after-init-hook 'init-mediawiki)
+(add-hook 'after-init-hook 'myinit-mediawiki)
 
-(defun init-mediawiki ()
-  "Init."
+(defun myinit-mediawiki ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 

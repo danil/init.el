@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-re-builder)
+(add-hook 'after-init-hook 'myinit-re-builder)
 
-(defun init-re-builder ()
-  "Init."
+(defun myinit-re-builder ()
+  "My init."
 
   (define-key myinit-map (kbd "B R") 're-builder))
 

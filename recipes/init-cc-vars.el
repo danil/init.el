@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-cc-vars)
+(add-hook 'after-init-hook 'myinit-cc-vars)
 
-(defun init-cc-vars ()
-  "Init."
+(defun myinit-cc-vars ()
+  "My init."
 
  (custom-set-variables '(c-basic-offset 2)))
 

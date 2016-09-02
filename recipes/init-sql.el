@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-sql)
+(add-hook 'after-init-hook 'myinit-sql)
 
-(defun init-sql ()
-  "Init."
+(defun myinit-sql ()
+  "My init."
 
-  (add-hook 'sql-login-hook 'init-sql--turn-on-history)
+  (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
 
   (myinit--after-load 'sql
     (define-key sql-interactive-mode-map (my-kbd "C-l") 'my-sql-shell-clear)))
@@ -44,7 +44,7 @@
 ;;; SQL inferior comint mode history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
 ;;; <http://www.emacswiki.org/emacs/SqlMode#toc3>.
-(defun init-sql--turn-on-history ()
+(defun myinit-sql--turn-on-history ()
   "Set SQL history file path and assign hook on sentinel event."
 
   (let* ((product (symbol-name (symbol-value 'sql-product)))
@@ -55,7 +55,7 @@
       (when process
         (setq comint-input-ring-file-name history-file)
         (comint-read-input-ring)
-        (set-process-sentinel process #'init-comint--write-history)))))
+        (set-process-sentinel process #'myinit-comint--write-history)))))
 
 (defun my-sql-shell-clear (&optional arg)
   "Delete output from `SQl' shell or kill output from `SQL' shell if `ARG'.

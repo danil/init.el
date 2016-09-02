@@ -53,10 +53,10 @@
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
  '(ido-work-directory-list '("~/" "~/src" "~/Dropbox/deft")))
 
-(add-hook 'after-init-hook 'init-ido)
+(add-hook 'after-init-hook 'myinit-ido)
 
-(defun init-ido ()
-  "Init."
+(defun myinit-ido ()
+  "My init."
 
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)

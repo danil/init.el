@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ac-html-bootstrap)
+(add-hook 'after-init-hook 'myinit-ac-html-bootstrap)
 
-(defun init-ac-html-bootstrap ()
-  "Init."
+(defun myinit-ac-html-bootstrap ()
+  "My init."
 
   (myinit--after-load 'ac-html (ac-html-bootstrap+)))
 

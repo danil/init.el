@@ -477,9 +477,9 @@
 
 (myinit-global-mode 1)
 
-(add-hook 'after-init-hook 'init-init)
+(add-hook 'after-init-hook 'myinit-init)
 
-(defun init-init ()
+(defun myinit-init ()
   "Init."
 
   (define-key myinit-map (kbd "x") myinit-exec-map)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-align)
+(add-hook 'after-init-hook 'myinit-align)
 
-(defun init-align ()
-  "Init."
+(defun myinit-align ()
+  "My init."
 
   (define-key myinit-map (kbd "r a c w") 'my-align-whitespace))
 

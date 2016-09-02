@@ -39,10 +39,10 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
-(add-hook 'after-init-hook 'init-web-mode)
+(add-hook 'after-init-hook 'myinit-web-mode)
 
-(defun init-web-mode ()
-  "Init."
+(defun myinit-web-mode ()
+  "My init."
 
  (myinit--add-mode-to-patterns 'web-mode
                                 "/src/vendor/narus/narus-web/.+\\.jsx?\\'"

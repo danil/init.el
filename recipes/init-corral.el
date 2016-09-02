@@ -34,10 +34,10 @@
 ;;; Corral is an Smartparens replacement
 ;;; (quotes/parentheses/delimiters manager).
 
-(add-hook 'after-init-hook 'init-corral)
+(add-hook 'after-init-hook 'myinit-corral)
 
-(defun init-corral ()
-  "Init."
+(defun myinit-corral ()
+  "My init."
 
   (define-key myinit-map (kbd "d (") 'corral-parentheses-backward)
   (define-key myinit-map (kbd "d )") 'corral-parentheses-forward)

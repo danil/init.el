@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-dired)
+(add-hook 'after-init-hook 'myinit-dired)
 
-(defun init-dired ()
-  "Init."
+(defun myinit-dired ()
+  "My init."
 
   (myinit--after-load 'dired
     (setq dired-listing-switches "-alh")))

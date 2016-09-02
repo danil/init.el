@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-lua-mode)
+(add-hook 'after-init-hook 'myinit-lua-mode)
 
-(defun init-lua-mode ()
-  "Init."
+(defun myinit-lua-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'lua-mode "\\.ws\\'")
 

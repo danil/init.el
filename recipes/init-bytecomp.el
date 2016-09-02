@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-bytecomp)
+(add-hook 'after-init-hook 'myinit-bytecomp)
 
-(defun init-bytecomp ()
-  "Init."
+(defun myinit-bytecomp ()
+  "My init."
 
   (myinit--after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (my-kbd "! f") 'byte-compile-file)))

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-cc-mode)
+(add-hook 'after-init-hook 'myinit-cc-mode)
 
-(defun init-cc-mode ()
-  "Init."
+(defun myinit-cc-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'c-mode
                                  "/etc/portage/savedconfig/www-servers/quark"

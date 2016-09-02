@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-simple)
+(add-hook 'after-init-hook 'myinit-simple)
 
-(defun init-simple ()
-  "Init."
+(defun myinit-simple ()
+  "My init."
 
   (define-key myinit-map (kbd "l c") 'count-words-region)
   (define-key myinit-map (kbd "l t") 'toggle-truncate-lines)

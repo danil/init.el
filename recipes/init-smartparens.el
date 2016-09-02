@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-smartparens)
+(add-hook 'after-init-hook 'myinit-smartparens)
 
-(defun init-smartparens ()
-  "Init."
+(defun myinit-smartparens ()
+  "My init."
 
   (myinit--add-mode-to-hooks (lambda ()
                           (turn-on-smartparens-mode)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-haml-mode)
+(add-hook 'after-init-hook 'myinit-haml-mode)
 
-(defun init-haml-mode ()
-  "Init."
+(defun myinit-haml-mode ()
+  "My init."
 
   (myinit--after-load 'haml-mode
     ;; (myinit--after-load 'ruby-mode

@@ -1,9 +1,9 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-(add-hook 'after-init-hook 'init-projectile-rails)
+(add-hook 'after-init-hook 'myinit-projectile-rails)
 
-(defun init-projectile-rails ()
-  "Init."
+(defun myinit-projectile-rails ()
+  "My init."
 
   (myinit--after-load 'projectile-rails
 

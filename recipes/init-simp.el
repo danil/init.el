@@ -42,10 +42,10 @@
 ;; (global-set-key (kbd "C-c f f") 'simp-project-find-file)
 ;; (global-set-key (kbd "C-c f g") 'simp-project-rgrep)
 
-(add-hook 'after-init-hook 'init-simp)
+(add-hook 'after-init-hook 'myinit-simp)
 
-(defun init-simp ()
-  "Init."
+(defun myinit-simp ()
+  "My init."
 
   (myinit--after-load 'simp
     (if (fboundp 'ido-mode)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ido-clever-match)
+(add-hook 'after-init-hook 'myinit-ido-clever-match)
 
-(defun init-ido-clever-match ()
-  "Init."
+(defun myinit-ido-clever-match ()
+  "My init."
 
  (ido-clever-match-enable))
 

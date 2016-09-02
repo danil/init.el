@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-sql-mode)
+(add-hook 'after-init-hook 'myinit-sql-mode)
 
-(defun init-sql-mode ()
-  "Init."
+(defun myinit-sql-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'sql-mode
                                 "/\.?psqlrc\\'"))

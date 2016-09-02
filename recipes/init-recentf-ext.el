@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-recentf-ext)
+(add-hook 'after-init-hook 'myinit-recentf-ext)
 
-(defun init-recentf-ext ()
-  "Init."
+(defun myinit-recentf-ext ()
+  "My init."
 
   (require 'recentf-ext))
 

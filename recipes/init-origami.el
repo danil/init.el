@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-origami)
+(add-hook 'after-init-hook 'myinit-origami)
 
-(defun init-origami ()
-  "Init."
+(defun myinit-origami ()
+  "My init."
 
   (myinit--after-load 'origami
     (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)

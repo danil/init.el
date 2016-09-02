@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-add-log)
+;; (add-hook 'after-init-hook 'myinit-add-log)
 
-(defun init-add-log ()
-  "Init."
+(defun myinit-add-log ()
+  "My init."
 
 ;;   (myinit--after-load 'add-log
 ;;     (define-key change-log-mode-map (kbd "C-c C-f") nil)))

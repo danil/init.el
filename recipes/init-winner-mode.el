@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-winner-mode)
+(add-hook 'after-init-hook 'myinit-winner-mode)
 
-(defun init-winner-mode ()
-  "Init."
+(defun myinit-winner-mode ()
+  "My init."
 
   (custom-set-variables '(winner-dont-bind-my-keys t))
 

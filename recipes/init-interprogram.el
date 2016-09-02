@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-interprogram)
+(add-hook 'after-init-hook 'myinit-interprogram)
 
-(defun init-interprogram ()
-  "Init."
+(defun myinit-interprogram ()
+  "My init."
 
   ;; If emacs is run in a terminal, the clipboard- functions have no
   ;; effect. Instead, we use of xsel, see

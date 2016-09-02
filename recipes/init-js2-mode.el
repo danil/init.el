@@ -37,10 +37,10 @@
  ;; '(js2-highlight-level 3)
  '(js2-mode-show-strict-warnings nil))
 
-(add-hook 'after-init-hook 'init-js2-mode)
+(add-hook 'after-init-hook 'myinit-js2-mode)
 
-(defun init-js2-mode ()
-  "Init."
+(defun myinit-js2-mode ()
+  "My init."
 
   ;; (myinit--after-load 'js2-mode
   ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))

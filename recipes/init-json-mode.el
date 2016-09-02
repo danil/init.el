@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-json-mode)
+(add-hook 'after-init-hook 'myinit-json-mode)
 
-(defun init-json-mode ()
-  "Init."
+(defun myinit-json-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'json-mode "\\.bowerrc\\'")
 

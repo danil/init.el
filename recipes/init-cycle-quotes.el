@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-cycle-quotes)
+(add-hook 'after-init-hook 'myinit-cycle-quotes)
 
-(defun init-cycle-quotes ()
-  "Init."
+(defun myinit-cycle-quotes ()
+  "My init."
 
   (define-key myinit-map (kbd "q") 'my-cycle-quotes-with-repeat))
 

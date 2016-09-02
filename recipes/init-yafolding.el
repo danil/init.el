@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-yafolding)
+(add-hook 'after-init-hook 'myinit-yafolding)
 
-(defun init-yafolding ()
-  "Init."
+(defun myinit-yafolding ()
+  "My init."
 
   (myinit--after-load 'yafolding
     (define-key yafolding-mode-map (my-kbd "f") 'yafolding-toggle-element)

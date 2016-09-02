@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-multiple-cursors)
+(add-hook 'after-init-hook 'myinit-multiple-cursors)
 
-(defun init-multiple-cursors ()
-  "Init."
+(defun myinit-multiple-cursors ()
+  "My init."
 
   (define-key myinit-map (kbd "B m c a") 'mc/mark-all-like-this)
   (define-key myinit-map (kbd "B m c n") 'my-mc/mark-next-like-this)

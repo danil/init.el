@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-shell)
+(add-hook 'after-init-hook 'myinit-shell)
 
-(defun init-shell ()
-  "Init."
+(defun myinit-shell ()
+  "My init."
 
   (define-key myinit-exec-map (kbd "s") 'shell)
 

@@ -45,10 +45,10 @@
  '(version-control t) ;use versioned backups
  )
 
-(add-hook 'after-init-hook 'init-files)
+(add-hook 'after-init-hook 'myinit-files)
 
-(defun init-files ()
-  "Init."
+(defun myinit-files ()
+  "My init."
 
   (define-key myinit-map (kbd "B r") 'revert-buffer))
 

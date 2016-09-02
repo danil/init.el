@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-google-translate)
+(add-hook 'after-init-hook 'myinit-google-translate)
 
-(defun init-google-translate ()
-  "Init."
+(defun myinit-google-translate ()
+  "My init."
 
   (define-key myinit-map (kbd "t") 'google-translate-at-point))
 

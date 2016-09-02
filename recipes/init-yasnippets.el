@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-yasnippets)
+(add-hook 'after-init-hook 'myinit-yasnippets)
 
-(defun init-yasnippets ()
-  "Init."
+(defun myinit-yasnippets ()
+  "My init."
 
   (myinit--after-load 'yasnippet
     (add-to-list 'yas-snippet-dirs

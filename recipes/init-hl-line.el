@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-hl-line)
+(add-hook 'after-init-hook 'myinit-hl-line)
 
-(defun init-hl-line ()
-  "Init."
+(defun myinit-hl-line ()
+  "My init."
 
   (myinit--after-load 'hl-line
     ;; (set-face-background 'highlight nil)

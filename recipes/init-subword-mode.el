@@ -1,7 +1,7 @@
-(add-hook 'after-init-hook 'init-subword-mode)
+(add-hook 'after-init-hook 'myinit-subword-mode)
 
-(defun init-subword-mode ()
-  "Init."
+(defun myinit-subword-mode ()
+  "My init."
 
   (myinit--add-mode-to-hooks 'subword-mode
                          (append myinit--programming-modes-hooks

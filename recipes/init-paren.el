@@ -1,10 +1,10 @@
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>.
 
-(add-hook 'after-init-hook 'init-paren)
+(add-hook 'after-init-hook 'myinit-paren)
 
-(defun init-paren ()
-  "Init."
+(defun myinit-paren ()
+  "My init."
 
   ;; (myinit--after-load 'show-paren
   ;;   (cond ((equal frame-background-mode 'dark)

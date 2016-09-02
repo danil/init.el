@@ -33,10 +33,10 @@
 
 (custom-set-variables '(gofmt-command "goimports")) ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
 
-(add-hook 'after-init-hook 'init-go-mode)
+(add-hook 'after-init-hook 'myinit-go-mode)
 
-(defun init-go-mode ()
-  "Init."
+(defun myinit-go-mode ()
+  "My init."
 
   (myinit--after-load 'go-mode
     (add-hook 'before-save-hook #'gofmt-before-save)

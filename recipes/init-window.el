@@ -35,10 +35,10 @@
 ;; <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>.
 (custom-set-variables '(split-height-threshold nil) '(split-width-threshold 64))
 
-(add-hook 'after-init-hook 'init-window)
+(add-hook 'after-init-hook 'myinit-window)
 
-(defun init-window ()
-  "Init."
+(defun myinit-window ()
+  "My init."
 
   (global-set-key (kbd "C-x 4 0") 'my-maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
 

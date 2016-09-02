@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-kill-emacs)
+(add-hook 'after-init-hook 'myinit-kill-emacs)
 
-(defun init-kill-emacs ()
-  "Init."
+(defun myinit-kill-emacs ()
+  "My init."
 
   (define-key myinit-exec-map (kbd "k") 'my-kill-emacs))
 

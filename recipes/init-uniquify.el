@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-uniquify)
+(add-hook 'after-init-hook 'myinit-uniquify)
 
-(defun init-uniquify ()
-  "Init."
+(defun myinit-uniquify ()
+  "My init."
 
   ;; Uniquify
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,

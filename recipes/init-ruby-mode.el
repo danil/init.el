@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ruby-mode)
+(add-hook 'after-init-hook 'myinit-ruby-mode)
 
-(defun init-ruby-mode ()
-  "Init."
+(defun myinit-ruby-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'ruby-mode
                                  "/Capfile\\'"

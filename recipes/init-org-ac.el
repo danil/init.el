@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-org-ac)
+(add-hook 'after-init-hook 'myinit-org-ac)
 
-(defun init-org-ac ()
-  "Init."
+(defun myinit-org-ac ()
+  "My init."
 
  (org-ac/config-default))
 

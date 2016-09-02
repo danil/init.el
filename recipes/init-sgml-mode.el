@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-sgml-mode)
+(add-hook 'after-init-hook 'myinit-sgml-mode)
 
-(defun init-sgml-mode ()
-  "Init."
+(defun myinit-sgml-mode ()
+  "My init."
 
   (myinit--add-mode-to-patterns 'html-mode
                                  ;; "\\.html?\\'"

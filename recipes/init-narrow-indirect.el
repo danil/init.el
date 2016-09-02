@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-narrow-indirect)
+(add-hook 'after-init-hook 'myinit-narrow-indirect)
 
-(defun init-narrow-indirect ()
-  "Init."
+(defun myinit-narrow-indirect ()
+  "My init."
 
   (define-key ctl-x-4-map "nd" 'ni-narrow-to-defun-indirect-other-window)
   (define-key ctl-x-4-map "nn" 'ni-narrow-to-region-indirect-other-window)

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-ido-describe-bindings)
+(add-hook 'after-init-hook 'myinit-ido-describe-bindings)
 
-(defun init-ido-describe-bindings ()
-  "Init."
+(defun myinit-ido-describe-bindings ()
+  "My init."
 
   (myinit--after-load 'help
     (define-key help-map (kbd "b") 'my-describe-bindings)))

@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-pomohist)
+(add-hook 'after-init-hook 'myinit-pomohist)
 
-(defun init-pomohist ()
-  "Init."
+(defun myinit-pomohist ()
+  "My init."
 
   (define-key myinit-map (kbd "p p") 'pomohist-go-to-prev-position-with-repeat)
   (define-key myinit-map (kbd "p n") 'pomohist-go-to-next-position-with-repeat)

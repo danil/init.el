@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-sort)
+(add-hook 'after-init-hook 'myinit-sort)
 
-(defun init-sort ()
-  "Init."
+(defun myinit-sort ()
+  "My init."
 
   (define-key myinit-map (kbd "s") 'sort-lines)
   (define-key myinit-map (kbd "S f") 'sort-fields))

@@ -34,14 +34,14 @@
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(add-hook 'after-init-hook 'init-telnet)
+(add-hook 'after-init-hook 'myinit-telnet)
 
-(defun init-telnet ()
-  "Init."
+(defun myinit-telnet ()
+  "My init."
 
-  (add-hook 'comint-mode-hook 'init-telnet--turn-on-history))
+  (add-hook 'comint-mode-hook 'myinit-telnet--turn-on-history))
 
-(defun init-telnet--turn-on-history ()
+(defun myinit-telnet--turn-on-history ()
   "Set Telnet history file path and assign hook on sentinel event."
 
   (when (string-match "^*telnet" (buffer-name))
@@ -49,6 +49,6 @@
       (when process
         (setq comint-input-ring-file-name "~/.emacs.var/inferior-telnet-history")
         (comint-read-input-ring)
-        (set-process-sentinel process #'init-comint--write-history)))))
+        (set-process-sentinel process #'myinit-comint--write-history)))))
 
 ;;; init-telnet.el ends here

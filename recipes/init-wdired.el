@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-wdired)
+(add-hook 'after-init-hook 'myinit-wdired)
 
-(defun init-wdired ()
-  "Init."
+(defun myinit-wdired ()
+  "My init."
 
   (myinit--after-load 'dired
     (define-key dired-mode-map (kbd "C-v") nil)

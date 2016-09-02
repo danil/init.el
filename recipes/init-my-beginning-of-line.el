@@ -51,10 +51,10 @@ the current line."
       (when (eq my-point (point))
         (beginning-of-line-text)))))
 
-;; (add-hook 'after-init-hook 'init-my-beginning-of-line)
+;; (add-hook 'after-init-hook 'myinit-my-beginning-of-line)
 
-;; (defun init-my-beginning-of-line ()
-;;   "Init."
+;; (defun myinit-my-beginning-of-line ()
+;;   "My init."
 
 ;;   (eval-after-load "cc-mode"
 ;;     '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line)))

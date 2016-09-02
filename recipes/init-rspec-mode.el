@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'init-rspec-mode)
+(add-hook 'after-init-hook 'myinit-rspec-mode)
 
-(defun init-rspec-mode ()
-  "Init."
+(defun myinit-rspec-mode ()
+  "My init."
 
   (add-hook 'dired-mode-hook 'rspec-dired-mode)
   (custom-set-variables '(rspec-use-spring-when-possible nil))

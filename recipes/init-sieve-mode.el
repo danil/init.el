@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-sieve-mode)
+;; (add-hook 'after-init-hook 'myinit-sieve-mode)
 
-;; (defun init-sieve-mode ()
-;;   "Init."
+;; (defun myinit-sieve-mode ()
+;;   "My init."
 ;;  )
 
 ;;; init-sieve-mode.el ends here

@@ -36,18 +36,18 @@
 
 (custom-set-variables '(comint-input-ring-size 10000))
 
-(add-hook 'after-init-hook 'init-comint)
+(add-hook 'after-init-hook 'myinit-comint)
 
-(defun init-comint ()
-  "Init."
+(defun myinit-comint ()
+  "My init."
 
   (add-hook 'kill-buffer-hook 'comint-write-input-ring)
-  (add-hook 'kill-emacs-hook 'init-comint--write-history-each-buffer))
+  (add-hook 'kill-emacs-hook 'myinit-comint--write-history-each-buffer))
 
 ;;; Persistent inferior comint command history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>
 
-(defun init-comint--fn-on-each-buffer (fn)
+(defun myinit-comint--fn-on-each-buffer (fn)
   "Run `FN' function on each buffer."
 
   (mapc (lambda (buffer)
@@ -55,12 +55,12 @@
             (funcall fn)))
         (buffer-list)))
 
-(defun init-comint--write-history-each-buffer ()
+(defun myinit-comint--write-history-each-buffer ()
   "Run `comint-write-input-ring' function on each buffer."
 
-  (init-comint--fn-on-each-buffer 'comint-write-input-ring))
+  (myinit-comint--fn-on-each-buffer 'comint-write-input-ring))
 
-(defun init-comint--write-history (process event)
+(defun myinit-comint--write-history (process event)
   "Write `PROCESS' history to the file on `EVENT'.
 Write comint `comint-input-ring' associated with `PROCESS'
 to the file on `EVENT'."
@@ -71,7 +71,7 @@ to the file on `EVENT'."
       (with-current-buffer buf
         (insert (format "\nProcess %s %s" process event))))))
 
-(defmacro init-comint--create-history-fn (defun-name history-file)
+(defmacro myinit-comint--create-history-fn (defun-name history-file)
   "Create `DEFUN-NAME' function which assign `HISTORY-FILE' and hook event.
 Create function named `DEFUN-NAME' which assign `HISTORY-FILE' to input ring
 and assign hook on sentinel event."
@@ -82,6 +82,6 @@ and assign hook on sentinel event."
          (when process
            (setq comint-input-ring-file-name ,history-file)
            (comint-read-input-ring)
-           (set-process-sentinel process #'init-comint--write-history))))))
+           (set-process-sentinel process #'myinit-comint--write-history))))))
 
 ;;; init-comint.el ends here

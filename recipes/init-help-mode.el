@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-help-mode)
+;; (add-hook 'after-init-hook 'myinit-help-mode)
 
-;; (defun init-help-mode ()
-;;   "Init."
+;; (defun myinit-help-mode ()
+;;   "My init."
 
 ;;   (myinit--after-load 'help-mode
 ;;     (define-key help-mode-map (kbd "C-c C-f") nil)))

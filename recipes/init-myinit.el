@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'init-myinit)
+;; (add-hook 'after-init-hook 'myinit-myinit)
 
-;; (defun init-myinit ()
-;;   "Init."
+;; (defun myinit-myinit ()
+;;   "My init."
 
 ;;   (myinit-global-mode 1)
 

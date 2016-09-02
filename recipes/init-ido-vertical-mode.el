@@ -34,10 +34,10 @@
 (custom-set-variables '(ido-vertical-define-keys 'C-n-and-C-p-only)
                       '(ido-vertical-show-count t))
 
-(add-hook 'after-init-hook 'init-ido-vertical-mode)
+(add-hook 'after-init-hook 'myinit-ido-vertical-mode)
 
-(defun init-ido-vertical-mode ()
-  "Init."
+(defun myinit-ido-vertical-mode ()
+  "My init."
 
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (myinit--after-load 'ido (ido-vertical-mode t))))
