@@ -35,12 +35,12 @@
                       '(highlight-symbol-idle-delay 0.7)
                       '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
 
-(defcustom init-highlight-symbol-hooks (-union myinit--programming-modes-hooks
+(defcustom myinit-highlight-symbol-hooks (-union myinit--programming-modes-hooks
                                                '(shell-mode-hook))
   "Hooks called `highlight-symbol'."
   :group 'myinit)
 
-(dolist (hook init-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
+(dolist (hook myinit-highlight-symbol-hooks) (add-hook hook 'highlight-symbol-mode))
 
 (add-hook 'after-init-hook 'myinit-highlight-symbol)
 
