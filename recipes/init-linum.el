@@ -35,21 +35,35 @@
 
 (autoload 'linum-mode "linum" nil t)
 
+(defcustom myinit-linum-max-lines 3000
+  "My `linume-mode' max number of lines."
+  :group 'myinit)
+
+(defcustom myinit-linum-hooks (-difference myinit-programming-modes-hooks
+                                           '(org-mode-hook text-mode-hook))
+  "Hooks associated with `linum-mode'."
+  :group 'myinit)
+
 (add-hook 'after-init-hook 'myinit-linum)
 
 (defun myinit-linum ()
   "My init."
 
-  (myinit-add-mode-to-hooks (lambda ()
-                          (let ((my-number-of-lines (count-lines (point-min)
-                                                                 (point-max))))
-                            (if (< my-number-of-lines 20000)
-                                (linum-mode t))))
-                        (-difference myinit-programming-modes-hooks
-                                     '(org-mode-hook text-mode-hook)))
+  (dolist (hook myinit-linum-hooks) (add-hook hook 'myinit-linum-switch))
+  (add-hook 'after-save-hook 'myinit-linum-switch)
 
   (myinit-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
+
+(defun myinit-linum-switch ()
+  "Decides to enable or not the `linume-mode' for the current buffer."
+  (interactive)
+
+  (let ((buffer-lines (count-lines (point-min) ;number of lines in current buffer
+                                   (point-max))))
+    (if (<= buffer-lines myinit-linum-max-lines)
+        (linum-mode t)
+      (linum-mode -1))))
 
 ;;; init-linum.el ends here
