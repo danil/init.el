@@ -38,7 +38,7 @@
 (defun myinit-sqlup-mode ()
   "My init."
 
-  (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
+  ;; (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
   (add-hook 'sql-interactive-mode-hook 'sqlup-mode) ;capitalize keywords in an interactive session (e.g. psql)
 
   (define-key myinit-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
