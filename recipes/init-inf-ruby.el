@@ -39,7 +39,7 @@
 (defun myinit-inf-ruby ()
   "My init."
 
-  (myinit-comint--create-history-fn "init-inf-ruby--turn-on-history"
+  (myinit-comint--create-history-fn "myinit-inf-ruby--turn-on-history"
                                     "~/.irb-history")
   (add-hook 'inf-ruby-mode-hook 'myinit-inf-ruby--turn-on-history))
 

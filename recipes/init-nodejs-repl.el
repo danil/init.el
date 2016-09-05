@@ -44,7 +44,7 @@
   (myinit-after-load 'js2-mode
     (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
-  (myinit-comint--create-history-fn "init-nodejs-repl--turn-on-history"
+  (myinit-comint--create-history-fn "myinit-nodejs-repl--turn-on-history"
                                     "~/.node_repl_history")
   (add-hook 'nodejs-repl-mode-hook 'myinit-nodejs-repl--turn-on-history))
 
