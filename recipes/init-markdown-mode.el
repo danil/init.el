@@ -31,6 +31,17 @@
 
 ;;; Code:
 
+(defcustom myinit-markdown-mode-patterns '(
+                                           "/Dropbox/deft/.*\\.txt\\'"
+                                           "/README\\'"
+                                           "/mutt[-a-zA-Z0-9]+\\'"
+                                           "\\.markdown\\'"
+                                           "\\.md\\'"
+                                           "\\.mdown\\'"
+                                           )
+  "Regexp patterns associated with `markdown-mode'."
+  :group 'myinit)
+
 (custom-set-variables '(markdown-command "blackfriday-tool"))
 
 (add-hook 'after-init-hook 'myinit-markdown-mode)
@@ -38,12 +49,8 @@
 (defun myinit-markdown-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'markdown-mode
-                                "/README\\'"
-                                "/mutt[-a-zA-Z0-9]+\\'"
-                                "\\.markdown\\'"
-                                "\\.md\\'"
-                                "\\.mdown\\'")
+  (dolist (pattern myinit-markdown-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'markdown-mode)))
 
  (myinit-after-load 'markdown-mode
    (require 'eww) ;used for eww-mode live preview
