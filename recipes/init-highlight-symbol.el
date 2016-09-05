@@ -31,14 +31,20 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-symbol-modes-hooks '()
-  "Hooks associated with `highlight-symbol'."
+(defcustom myinit-highlight-symbol-modes '()
+  "Major modes associated with `highlight-symbol'."
   :group 'myinit)
 
-(custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
-                      '(highlight-symbol-idle-delay 0.7)
-                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
-                      '(myinit-highlight-symbol-modes-hooks (-union myinit-programming-modes-hooks '(shell-mode-hook))))
+(defcustom myinit-highlight-symbol-modes-hooks '()
+  "Major modes Hook associated with `highlight-symbol'."
+  :group 'myinit)
+
+(custom-set-variables
+ '(highlight-symbol-highlight-single-occurrence nil)
+ '(highlight-symbol-idle-delay 0.7)
+ '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
+ '(myinit-highlight-symbol-modes (-union myinit-programming-modes '(shell-mode)))
+ '(myinit-highlight-symbol-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) myinit-highlight-symbol-modes)))
 
 (add-hook 'after-init-hook 'myinit-highlight-symbol)
 
