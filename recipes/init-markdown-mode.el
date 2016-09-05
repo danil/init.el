@@ -31,18 +31,19 @@
 
 ;;; Code:
 
-(defcustom myinit-markdown-mode-patterns '(
-                                           "/Dropbox/deft/.*\\.txt\\'"
-                                           "/README\\'"
-                                           "/mutt[-a-zA-Z0-9]+\\'"
-                                           "\\.markdown\\'"
-                                           "\\.md\\'"
-                                           "\\.mdown\\'"
-                                           )
+(defcustom myinit-markdown-mode-patterns '()
   "Regexp patterns associated with `markdown-mode'."
   :group 'myinit)
 
-(custom-set-variables '(markdown-command "blackfriday-tool"))
+(custom-set-variables '(markdown-command "blackfriday-tool")
+                      '(myinit-markdown-mode-patterns '(
+                                                        "/Dropbox/deft/.*\\.txt\\'"
+                                                        "/README\\'"
+                                                        "/mutt[-a-zA-Z0-9]+\\'"
+                                                        "\\.markdown\\'"
+                                                        "\\.md\\'"
+                                                        "\\.mdown\\'"
+                                                        )))
 
 (add-hook 'after-init-hook 'myinit-markdown-mode)
 

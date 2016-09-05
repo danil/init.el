@@ -31,13 +31,14 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks '(shell-mode-hook))
+(defcustom myinit-highlight-symbol-hooks '()
   "Hooks associated with `highlight-symbol'."
   :group 'myinit)
 
 (custom-set-variables '(highlight-symbol-highlight-single-occurrence nil)
                       '(highlight-symbol-idle-delay 0.7)
-                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
+                      '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
+                      '(myinit-highlight-symbol-hooks (-union myinit-programming-modes-hooks '(shell-mode-hook))))
 
 (add-hook 'after-init-hook 'myinit-highlight-symbol)
 
