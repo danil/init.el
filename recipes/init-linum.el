@@ -39,19 +39,25 @@
   "My `linume-mode' max number of lines."
   :group 'myinit)
 
-(defcustom myinit-linum-hooks '()
-  "Hooks associated with `linum-mode'."
+(defcustom myinit-linum-modes '()
+  "Major modes associated with `linum-mode'."
   :group 'myinit)
 
-(custom-set-variables '(myinit-linum-hooks (-difference myinit-programming-modes-hooks '(org-mode-hook)))
-                      '(myinit-linum-max-lines 9000))
+(defcustom myinit-linum-modes-hooks '()
+  "Major modes hooks associated with `linum-mode'."
+  :group 'myinit)
+
+(custom-set-variables
+ '(myinit-linum-max-lines 5000)
+ '(myinit-linum-modes (-difference myinit-programming-modes '(org-mode)))
+ '(myinit-linum-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) myinit-linum-modes)))
 
 (add-hook 'after-init-hook 'myinit-linum)
 
 (defun myinit-linum ()
   "My init."
 
-  (dolist (hook myinit-linum-hooks) (add-hook hook 'myinit-linum-switch))
+  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-switch))
   (add-hook 'after-save-hook 'myinit-linum-switch)
 
   (myinit-after-load 'linum
@@ -62,10 +68,11 @@
   "Decides to enable or not the `linume-mode' for the current buffer."
   (interactive)
 
-  (let ((buffer-lines (count-lines (point-min) ;number of lines in current buffer
-                                   (point-max))))
-    (if (<= buffer-lines myinit-linum-max-lines)
-        (linum-mode t)
-      (linum-mode -1))))
+  (if (and (member major-mode myinit-linum-modes)
+           (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
+             (<= buffer-lines myinit-linum-max-lines)))
+
+      (linum-mode t)
+    (linum-mode -1)))
 
 ;;; init-linum.el ends here
