@@ -40,7 +40,7 @@
   "My init."
 
   (myinit-comint--create-history-fn "init-inf-ruby--turn-on-history"
-                                  "~/.irb-history")
+                                    "~/.irb-history")
   (add-hook 'inf-ruby-mode-hook 'myinit-inf-ruby--turn-on-history))
 
 ;;; init-inf-ruby.el ends here
