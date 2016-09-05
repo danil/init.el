@@ -35,13 +35,16 @@
 
 (autoload 'linum-mode "linum" nil t)
 
-(defcustom myinit-linum-max-lines 3000
+(defcustom myinit-linum-max-lines 1000
   "My `linume-mode' max number of lines."
   :group 'myinit)
 
-(defcustom myinit-linum-hooks (-difference myinit-programming-modes-hooks '(org-mode-hook))
+(defcustom myinit-linum-hooks '()
   "Hooks associated with `linum-mode'."
   :group 'myinit)
+
+(custom-set-variables '(myinit-linum-hooks (-difference myinit-programming-modes-hooks '(org-mode-hook)))
+                      '(myinit-linum-max-lines 9000))
 
 (add-hook 'after-init-hook 'myinit-linum)
 
