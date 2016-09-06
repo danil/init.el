@@ -66,3 +66,11 @@ Org mode readme exporter to files headers
 <https://github.com/killdash9/better-shell>
 
 ## Remove `my-kbd` function
+
+## Try `dired-launch`
+
+<https://github.com/thomp/dired-launch>
+
+## Try `emacs-ereader`
+
+<https://github.com/bddean/emacs-ereader>
