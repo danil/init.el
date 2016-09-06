@@ -57,22 +57,31 @@
 (defun myinit-linum ()
   "My init."
 
-  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-switch))
-  (add-hook 'after-save-hook 'myinit-linum-switch)
+  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
+  (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
   (myinit-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
 
-(defun myinit-linum-switch ()
-  "Decides to enable or not the `linume-mode' for the current buffer."
+(defun myinit-linum-turn-on-or-off ()
+  "Enable or disable the `linume-mode' depending on current buffer lines number."
   (interactive)
 
-  (if (and (member major-mode myinit-linum-modes)
-           (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
-             (<= buffer-lines myinit-linum-max-lines)))
+  (if (myinit-linum--is-suitable) (linum-mode t) (linum-mode -1)))
 
-      (linum-mode t)
-    (linum-mode -1)))
+(defun myinit-linum-turn-off ()
+  "Disable the `linume-mode' if current buffer have to many lines."
+  (interactive)
+
+  (unless (myinit-linum--is-suitable) (linum-mode -1)))
+
+(defun myinit-linum--is-suitable ()
+  "Decides is suitably or not the `linume-mode' for the current buffer."
+
+  (when (and (member major-mode myinit-linum-modes)
+             (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
+               (<= buffer-lines myinit-linum-max-lines)))
+    t))
 
 ;;; init-linum.el ends here
