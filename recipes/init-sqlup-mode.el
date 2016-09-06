@@ -39,12 +39,12 @@
   "My init."
 
   ;; (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
-  (add-hook 'sql-interactive-mode-hook 'myinit-sqlup-mode-switch) ;capitalize keywords in an interactive session (e.g. psql)
+  (add-hook 'sql-interactive-mode-hook 'myinit-sqlup-mode-turn-on-or-off) ;capitalize keywords in an interactive session (e.g. psql)
 
   (define-key myinit-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
 
-(defun myinit-sqlup-mode-switch ()
-  "Decides to enable or not the `sqlup-mode' for the current buffer."
+(defun myinit-sqlup-mode-turn-on-or-off ()
+  "Enable or disable the `sqlup-mode' depending on current buffer `sql-product'."
   (interactive)
 
   (if (equal sql-product 'postgres)
