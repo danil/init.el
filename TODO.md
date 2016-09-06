@@ -1,5 +1,7 @@
 # TODO
 
+## Fix `savehist` for `kill-ring`
+
 ## Enable `copyright` mode
 
 Enable `copyright` mode in my emacs lisp recipes files
