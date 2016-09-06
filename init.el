@@ -88,6 +88,7 @@
      c-mode
      change-log-mode
      coffee-mode
+     conf-colon-mode
      conf-mode
      conf-space-mode
      css-mode
