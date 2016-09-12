@@ -69,6 +69,10 @@ Org mode readme exporter to files headers
 
 ## Remove `my-kbd` function
 
+## Try `emacs-go-impl`
+
+<https://github.com/syohex/emacs-go-impl>
+
 ## Try `dired-launch`
 
 <https://github.com/thomp/dired-launch>
