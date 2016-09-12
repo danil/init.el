@@ -34,6 +34,7 @@
 (depends-on "auto-complete-pcmp")
 
 (depends-on "ag")
+(depends-on "aggressive-indent") ;indent code automatically a-la electric-indent-mode
 (depends-on "anzu") ;isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")
