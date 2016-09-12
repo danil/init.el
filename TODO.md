@@ -73,6 +73,10 @@ Org mode readme exporter to files headers
 
 <https://github.com/syohex/emacs-go-impl>
 
+## Try `go-stacktracer`
+
+<https://github.com/samertm/go-stacktracer.el>
+
 ## Try `dired-launch`
 
 <https://github.com/thomp/dired-launch>
