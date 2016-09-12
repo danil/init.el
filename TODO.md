@@ -2,6 +2,8 @@
 
 ## Fix `savehist` for `kill-ring`
 
+## Fix golang struct fields name linting
+
 ## Enable `copyright` mode
 
 Enable `copyright` mode in my emacs lisp recipes files
