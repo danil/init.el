@@ -54,6 +54,8 @@
   (dolist (hook myinit-highlight-symbol-modes-hooks) (add-hook hook 'highlight-symbol-mode))
 
   (with-eval-after-load 'highlight-symbol
+    (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
+
     (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))
 
 ;;; init-highlight-symbol.el ends here
