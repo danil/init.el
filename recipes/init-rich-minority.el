@@ -32,10 +32,12 @@
 ;;; Code:
 
 (custom-set-variables
+ ;; Hide lighters for some minor modes.
  '(rm-blacklist '(
                   " hl-p"
 
                   " ," ;wtf!???
+                  " =>" ;aggressive-indent
                   " AC" ;auto-complete-mode
                   " ARev" ;auto-revert-mode
                   " Abbrev" ;abbrev-mode
