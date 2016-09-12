@@ -60,7 +60,9 @@
   (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
-  (myinit-after-load 'linum
+  (define-key myinit-map (kbd "x l") 'linum-mode)
+
+  (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
 
