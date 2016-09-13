@@ -37,7 +37,7 @@
    '(("/Cask\\'" . (("cask outdated" . "cd %dir && cask --verbose outdated")
                     ("cask install" . "cd %dir && cask --verbose install")
                     ("cask update" . "cd %dir && cask --verbose update")))
-     (go-mode . (("go build" . "go build -v -x ./...")
+     (go-mode . (("go build" . "go build -v -x ./")
                  ("go clean" . "go clean ./...")
                  ("go run" . "go run -v %file-name")
                  ("go test" . "go clean ./... && go vet ./... && errcheck -verbose -asserts ./... && unconvert -v . && golint -set_exit_status ./... && gocyclo -over 25 ./ && ineffassign ./ && misspell -error ./* ./*/* ./*/*/* ./*/*/*/* ./*/*/*/*/* ./*/*/*/*/*/* ./*/*/*/*/*/*/* && go test -v -bench=./... ./...")))
