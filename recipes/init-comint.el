@@ -41,24 +41,25 @@
 (defun myinit-comint ()
   "My init."
 
-  (add-hook 'kill-buffer-hook 'comint-write-input-ring)
   (add-hook 'kill-emacs-hook 'myinit-comint--write-history-each-buffer))
 
 ;;; Persistent inferior comint command history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>
 
-(defun myinit-comint--fn-on-each-buffer (fn)
-  "Run `FN' function on each buffer."
-
-  (mapc (lambda (buffer)
-          (with-current-buffer buffer
-            (funcall fn)))
-        (buffer-list)))
-
 (defun myinit-comint--write-history-each-buffer ()
   "Run `comint-write-input-ring' function on each buffer."
 
   (myinit-comint--fn-on-each-buffer 'comint-write-input-ring))
+
+(defun myinit-comint--fn-on-each-buffer (fn)
+  "Run `FN' function on each buffer."
+
+  (mapc (lambda (buffer)
+          (unless (equal major-mode 'shell-mode)
+            (with-current-buffer buffer
+              (funcall fn))))
+
+        (buffer-list)))
 
 (defun myinit-comint--write-history (process event)
   "Write `PROCESS' history to the file on `EVENT'.
@@ -78,6 +79,8 @@ and assign hook on sentinel event."
 
   (let ((funsymbol (intern defun-name)))
     `(defun ,funsymbol ()
+       (add-hook 'kill-buffer-hook 'comint-write-input-ring)
+
        (let ((process (get-buffer-process (current-buffer))))
          (when process
            (setq comint-input-ring-file-name ,history-file)
