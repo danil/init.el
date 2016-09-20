@@ -60,11 +60,20 @@
   (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
-  (define-key myinit-map (kbd "x l") 'linum-mode)
+  (define-key myinit-map (kbd "x l") 'myinit-linum-toggle)
 
   (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
+
+(defun myinit-linum-toggle ()
+  "Toggle the `linume-mode'."
+  (interactive)
+
+  (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
+
+    (cond ((equal linum-mode t) (funcall g -1) (linum-mode -1))
+          (t (linum-mode t) (funcall g t)))))
 
 (defun myinit-linum-turn-on-or-off ()
   "Enable or disable the `linume-mode' depending on current buffer lines number."
