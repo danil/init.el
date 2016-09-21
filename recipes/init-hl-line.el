@@ -36,6 +36,8 @@
 (defun myinit-hl-line ()
   "My init."
 
+  (define-key myinit-map (kbd "C-v") 'hl-line-mode)
+
   (myinit-after-load 'hl-line
     ;; (set-face-background 'highlight nil)
 
