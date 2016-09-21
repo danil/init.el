@@ -388,7 +388,6 @@
 (my-recipe '(make-mode))
 (my-recipe '(mediawiki))
 (my-recipe '(menu-bar))
-(my-recipe '(modalka))
 (my-recipe '(multi-compile))
 (my-recipe '(my-backspace-fix))
 (my-recipe '(my-beginning-of-line))
