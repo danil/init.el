@@ -91,6 +91,7 @@
      conf-colon-mode
      conf-mode
      conf-space-mode
+     conf-xdefaults-mode
      css-mode
      dockerfile-mode
      ebuild-mode
