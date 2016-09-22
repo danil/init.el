@@ -45,12 +45,15 @@
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'ethan-wspace-face "gray15")))
 
-    (myinit-add-mode-to-hooks (lambda () (setq ethan-wspace-errors
-                                            (remove 'tabs ethan-wspace-errors)))
-
-                                '(c-mode-hook
-                                  go-mode-hook
-                                  makefile-gmake-mode-hook
-                                  makefile-mode-hook))))
+    (dolist (hook '(
+                    c-mode-common-hook
+                    c-mode-hook
+                    diff-mode-hook
+                    go-mode-hook
+                    makefile-gmake-mode-hook
+                    makefile-mode-hook
+                    ))
+      (add-hook hook (lambda () (setq ethan-wspace-errors
+                                      (remove 'tabs ethan-wspace-errors)))))))
 
 ;;; init-ethan-wspace.el ends here
