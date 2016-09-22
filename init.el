@@ -94,6 +94,7 @@
      conf-unix-mode
      conf-xdefaults-mode
      css-mode
+     diff-mode
      dockerfile-mode
      ebuild-mode
      ferm-mode
