@@ -31,12 +31,31 @@
 
 ;;; Code:
 
+(defcustom myinit-ethan-wspace-modes-hooks '()
+  "Major modes hooks associated with `ethan-wspace-mode'."
+  :group 'myinit)
+
+(defcustom myinit-modes-hooks-allow-tabs '()
+  "Major modes allows tabs."
+  :group 'myinit)
+
+(custom-set-variables
+ '(myinit-ethan-wspace-modes-hooks myinit-programming-modes)
+ '(myinit-modes-hooks-allow-tabs '(
+                                   c-mode-common-hook
+                                   c-mode-hook
+                                   diff-mode-hook
+                                   go-mode-hook
+                                   makefile-gmake-mode-hook
+                                   makefile-mode-hook
+                                   )))
+
 (add-hook 'after-init-hook 'myinit-ethan-wspace)
 
 (defun myinit-ethan-wspace ()
   "My init."
 
-  (global-ethan-wspace-mode t)
+  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'ethan-wspace-mode))
 
   (myinit-after-load 'ethan-wspace
     (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
@@ -45,14 +64,7 @@
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'ethan-wspace-face "gray15")))
 
-    (dolist (hook '(
-                    c-mode-common-hook
-                    c-mode-hook
-                    diff-mode-hook
-                    go-mode-hook
-                    makefile-gmake-mode-hook
-                    makefile-mode-hook
-                    ))
+    (dolist (hook myinit-modes-hooks-allow-tabs)
       (add-hook hook (lambda () (setq ethan-wspace-errors
                                       (remove 'tabs ethan-wspace-errors)))))))
 
