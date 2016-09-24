@@ -45,6 +45,7 @@
                                    c-mode-common-hook
                                    c-mode-hook
                                    diff-mode-hook
+                                   ebuild-mode-hook
                                    go-mode-hook
                                    makefile-gmake-mode-hook
                                    makefile-mode-hook
