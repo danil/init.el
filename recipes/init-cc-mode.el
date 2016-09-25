@@ -37,10 +37,11 @@
   "My init."
 
   (myinit-add-mode-to-patterns 'c-mode
-                                 "/etc/portage/savedconfig/www-servers/quark"
-                                 "/etc/portage/savedconfig/x11-misc/dmenu"
-                                 "/etc/portage/savedconfig/x11-misc/tabbed"
-                                 "/etc/portage/savedconfig/x11-terms/st"
-                                 "/etc/portage/savedconfig/x11-wm/dwm"))
+                               "/etc/portage/savedconfig/www-servers/quark"
+                               "/etc/portage/savedconfig/x11-misc/dmenu"
+                               "/etc/portage/savedconfig/x11-misc/slstatus"
+                               "/etc/portage/savedconfig/x11-misc/tabbed"
+                               "/etc/portage/savedconfig/x11-terms/st"
+                               "/etc/portage/savedconfig/x11-wm/dwm"))
 
 ;;; init-cc-mode.el ends here
