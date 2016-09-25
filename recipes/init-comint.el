@@ -55,8 +55,9 @@
   "Run `FN' function on each buffer."
 
   (mapc (lambda (buffer)
-          (unless (equal major-mode 'shell-mode)
-            (with-current-buffer buffer
+          (with-current-buffer buffer
+            (when (and (boundp 'myinit-comint-with-history)
+                       (equal myinit-comint-with-history t))
               (funcall fn))))
 
         (buffer-list)))
@@ -79,6 +80,10 @@ and assign hook on sentinel event."
 
   (let ((funsymbol (intern defun-name)))
     `(defun ,funsymbol ()
+       (setq myinit-comint-with-history nil)
+       (make-local-variable 'myinit-comint-with-history)
+       (setq myinit-comint-with-history t)
+
        (add-hook 'kill-buffer-hook 'comint-write-input-ring)
 
        (let ((process (get-buffer-process (current-buffer))))
