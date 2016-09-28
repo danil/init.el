@@ -39,6 +39,10 @@
   "Major modes allows tabs."
   :group 'myinit)
 
+(defcustom myinit-modes-hooks-allow-eol '()
+  "Major modes allows trailing whitespace at end of line."
+  :group 'myinit)
+
 (custom-set-variables
  '(myinit-ethan-wspace-modes-hooks myinit-programming-modes)
  '(myinit-modes-hooks-allow-tabs '(
@@ -49,7 +53,8 @@
                                    go-mode-hook
                                    makefile-gmake-mode-hook
                                    makefile-mode-hook
-                                   )))
+                                   ))
+ '(myinit-modes-hooks-allow-eol '(diff-mode-hook markdown-mode-hook)))
 
 (add-hook 'after-init-hook 'myinit-ethan-wspace)
 
@@ -67,6 +72,10 @@
 
     (dolist (hook myinit-modes-hooks-allow-tabs)
       (add-hook hook (lambda () (setq ethan-wspace-errors
-                                      (remove 'tabs ethan-wspace-errors)))))))
+                                      (remove 'tabs ethan-wspace-errors)))))
+
+    (dolist (hook myinit-modes-hooks-allow-eol)
+      (add-hook hook (lambda () (setq ethan-wspace-errors
+                                      (remove 'eol ethan-wspace-errors)))))))
 
 ;;; init-ethan-wspace.el ends here
