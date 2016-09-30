@@ -1,4 +1,4 @@
-;;; init-sh-script.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-crontab-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,25 +31,23 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-sh-script)
+(defcustom myinit-crontab-mode-patterns '()
+  "Regexp patterns associated with `crontab-mod'."
+  :group 'myinit)
 
-(defun myinit-sh-script ()
+(custom-set-variables
+ '(myinit-crontab-mode-patterns '(
+                                  "/anacrontab\\'"
+                                  "/crontab\\'"
+                                  "/etc/cron.d/"
+                                  )))
+
+(add-hook 'after-init-hook 'myinit-crontab-mode)
+
+(defun myinit-crontab-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'shell-script-mode
-                               "/Procfile\\'"
-                               "/\\.ackrc\\'"
-                               "/\\.bash_aliases\\'"
-                               "/\\.bpkgrc\\'"
-                               "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
-                               "/\\.lessfilter\\'"
-                               "/\\.mkshrc\\'"
-                               "/\\.xprofile\\'"
-                               "/dwmrc\\'")
+  (dolist (pattern myinit-crontab-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'crontab-mode))))
 
-  ;; Gentoo.
-  (myinit-add-mode-to-patterns 'shell-script-mode
-                               "/etc/init.d/"
-                               "/etc/local.d/.+\\.\\(start\\|stop\\)"))
-
-;;; init-sh-script.el ends here
+;;; init-crontab-mode.el ends here

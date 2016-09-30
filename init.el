@@ -293,6 +293,7 @@
 (my-recipe '(completion-ignored-extensions))
 (my-recipe '(conf-mode))
 (my-recipe '(corral)) ;smartparens replacement (quotes/parentheses/delimiters manager)
+(my-recipe '(crontab-mode))
 (my-recipe '(css))
 (my-recipe '(cua))
 (my-recipe '(cycle-quotes))
