@@ -37,23 +37,24 @@
   "My init."
 
   (myinit-add-mode-to-patterns 'shell-script-mode
-                                "/Procfile\\'"
-                                "/\\.ackrc\\'"
-                                "/\\.bash_aliases\\'"
-                                "/\\.bpkgrc\\'"
-                                "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
-                                "/\\.lessfilter\\'"
-                                "/\\.mkshrc\\'"
-                                "/\\.xprofile\\'"
-                                "/dwmrc\\'")
+                               "/Procfile\\'"
+                               "/\\.ackrc\\'"
+                               "/\\.bash_aliases\\'"
+                               "/\\.bpkgrc\\'"
+                               "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
+                               "/\\.lessfilter\\'"
+                               "/\\.mkshrc\\'"
+                               "/\\.xprofile\\'"
+                               "/dwmrc\\'")
   ;; Cron.
   (myinit-add-mode-to-patterns 'shell-script-mode
-                                "/anacrontab\\'"
-                                "/crontab\\'")
+                               "/anacrontab\\'"
+                               "/crontab\\'"
+                               "/etc/cron.d/")
 
   ;; Gentoo.
   (myinit-add-mode-to-patterns 'shell-script-mode
-                                "/etc/init.d/"
-                                "/etc/local.d/.+\\.\\(start\\|stop\\)"))
+                               "/etc/init.d/"
+                               "/etc/local.d/.+\\.\\(start\\|stop\\)"))
 
 ;;; init-sh-script.el ends here
