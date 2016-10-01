@@ -48,6 +48,7 @@
  '(myinit-modes-hooks-allow-tabs '(
                                    c-mode-common-hook
                                    c-mode-hook
+                                   crontab-mode-hook
                                    diff-mode-hook
                                    ebuild-mode-hook
                                    go-mode-hook
