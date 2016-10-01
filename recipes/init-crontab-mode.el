@@ -37,9 +37,8 @@
 
 (custom-set-variables
  '(myinit-crontab-mode-patterns '(
-                                  "/anacrontab\\'"
-                                  "/crontab\\'"
                                   "/etc/cron.d/"
+                                  "crontab\\'"
                                   )))
 
 (add-hook 'after-init-hook 'myinit-crontab-mode)
