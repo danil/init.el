@@ -93,6 +93,7 @@
      conf-space-mode
      conf-unix-mode
      conf-xdefaults-mode
+     crontab-mode
      css-mode
      diff-mode
      dockerfile-mode
