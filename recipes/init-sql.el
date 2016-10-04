@@ -49,7 +49,8 @@
 
   (let* ((product (symbol-name (symbol-value 'sql-product)))
 
-         (history-file (cond ((equal product "postgres") "~/.psql_history"))))
+         (history-file (cond ((equal product "postgres") "~/.psql_history")
+                             ((equal product "sqlite") "~/.sqlite_history"))))
 
     (let ((process (get-buffer-process (current-buffer))))
       (when process
