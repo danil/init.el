@@ -37,6 +37,7 @@
   "My init."
 
   (myinit-add-mode-to-patterns 'conf-mode
+                               "/.config/sxhkd/"
                                "/Pipfile2\\'"
                                "/Pipfile3\\'"
                                "/Pipfile\\'"
@@ -57,9 +58,9 @@
                                "/etc/mail/aliases\\'"
                                "/etc/mailutils\\.d/"
                                "/fail2ban/.*\\.local\\'"
-                               "/inventor\\(y\\|ies\\)/[^.]*\\'"
                                "/hosts\\'"
                                "/htoprc\\'"
+                               "/inventor\\(y\\|ies\\)/[^.]*\\'"
                                "/locale.gen\\'"
                                "/mailutils\\.rc\\'"
                                "/mimeapps.list\\'"
