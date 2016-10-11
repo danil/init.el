@@ -37,17 +37,7 @@
   "My init."
 
   (define-key myinit-map (kbd "B m c a") 'mc/mark-all-like-this)
-  (define-key myinit-map (kbd "B m c n") 'my-mc/mark-next-like-this)
-  (define-key myinit-map (kbd "B m c p") 'my-mc/mark-previous-like-this))
-
-(defun my-mc/mark-next-like-this ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'mc/mark-next-like-this)))
-
-(defun my-mc/mark-previous-like-this ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'mc/mark-previous-like-this)))
+  (define-key myinit-map (kbd "B m c n") 'mc/mark-next-like-this)
+  (define-key myinit-map (kbd "B m c p") 'mc/mark-previous-like-this))
 
 ;;; init-multiple-cursors.el ends here

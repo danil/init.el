@@ -37,8 +37,8 @@
   "My init."
 
   (define-key myinit-map (kbd "V h k") 'git-gutter:revert-hunk)
-  (define-key myinit-map (kbd "V h n") 'my-git-gutter-next-diff)
-  (define-key myinit-map (kbd "V h p") 'my-git-gutter-previous-diff)
+  (define-key myinit-map (kbd "V h n") 'git-gutter:next-hunk)
+  (define-key myinit-map (kbd "V h p") 'git-gutter:previous-hunk)
 
   ;; (myinit-after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))
@@ -54,15 +54,5 @@
                             git-gutter:separator
                             git-gutter:unchanged))
               (set-face-background face my-line-numbers-background))))
-
-(defun my-git-gutter-next-diff ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'git-gutter:next-hunk)))
-
-(defun my-git-gutter-previous-diff ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'git-gutter:previous-hunk)))
 
 ;;; init-git-gutter.el ends here

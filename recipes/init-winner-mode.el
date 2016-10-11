@@ -41,17 +41,7 @@
   (when (fboundp 'winner-mode) (winner-mode t))
 
   (myinit-after-load 'winner
-    (define-key myinit-map (kbd "w u") 'my-winner-undo)
-    (define-key myinit-map (kbd "w r") 'my-winner-redo)))
-
-(defun my-winner-undo ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'winner-undo)))
-
-(defun my-winner-redo ()
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (call-interactively 'winner-redo)))
+    (define-key myinit-map (kbd "w u") 'winner-undo)
+    (define-key myinit-map (kbd "w r") 'winner-redo)))
 
 ;;; init-winner-mode.el ends here

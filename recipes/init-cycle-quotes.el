@@ -36,13 +36,6 @@
 (defun myinit-cycle-quotes ()
   "My init."
 
-  (define-key myinit-map (kbd "q") 'my-cycle-quotes-with-repeat))
-
-(defun my-cycle-quotes-with-repeat ()
-  "Cycle between string quote styles and repeat while presses the last key."
-
-  (interactive)
-  (my-with-repeat-while-press-last-key
-    (cycle-quotes)))
+  (define-key myinit-map (kbd "q") 'cycle-quotes))
 
 ;;; init-cycle-quotes.el ends here

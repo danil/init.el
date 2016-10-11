@@ -99,20 +99,20 @@
 The block must begin on the current line or above it and end after the point.
 If the result is do-end block, it will always be multiline."
   (interactive)
-  (my-with-repeat-while-press-last-key
-    (let ((start (point)) beg end)
-      (end-of-line)
-      (unless
-          (if (and (re-search-backward "\\({\\)\\|\\_<do\\(\\s \\|$\\||\\)")
-                   (progn
-                     (setq beg (point))
-                     (save-match-data (ruby-forward-sexp))
-                     (setq end (point))
-                     (> end start)))
-              (if (match-beginning 1)
-                  (my-ruby-brace-to-do-end beg end)
-                (my-ruby-do-end-to-brace beg end)))
-        (goto-char start)))))
+
+  (let ((start (point)) beg end)
+    (end-of-line)
+    (unless
+        (if (and (re-search-backward "\\({\\)\\|\\_<do\\(\\s \\|$\\||\\)")
+                 (progn
+                   (setq beg (point))
+                   (save-match-data (ruby-forward-sexp))
+                   (setq end (point))
+                   (> end start)))
+            (if (match-beginning 1)
+                (my-ruby-brace-to-do-end beg end)
+              (my-ruby-do-end-to-brace beg end)))
+      (goto-char start))))
 
 (defun my-ruby-brace-to-do-end (orig end)
   (let (beg-marker end-marker)

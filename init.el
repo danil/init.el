@@ -396,7 +396,6 @@
 (my-recipe '(my-beginning-of-line))
 (my-recipe '(my-color-theme))
 (my-recipe '(my-project))
-(my-recipe '(my-repeat-last-key-command))
 (my-recipe '(my-shell-command-on-current-file))
 (my-recipe '(my-sort))
 (my-recipe '(my-string-inflections))
@@ -413,7 +412,6 @@
 (my-recipe '(org-mode))
 (my-recipe '(origami))
 (my-recipe '(paren))
-(my-recipe '(point-stack))
 
 (my-recipe '(projectile))
 (my-recipe '(projectile-rails))
@@ -478,7 +476,10 @@
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)
 (dolist (recipe my-recipes)
-  (load-file (format "%s/recipes/init-%s.el" user-emacs-directory recipe)))
+  (let ((recipe-file (format "%srecipes/init-%s.el" user-emacs-directory recipe)))
+    (if (file-readable-p recipe-file)
+        (load-file recipe-file)
+      (message (format "Error: recipe file to not exists: %s" recipe-file)))))
 
 (myinit-global-mode 1)
 
