@@ -2,13 +2,15 @@
 
 ## Fix `savehist` for `kill-ring`
 
-## Fix golang struct fields name linting
+## Try `ripgrep` https://github.com/nlamirault/ripgrep.el
+
+a-la ag (silver searcher)
+
+## Try `bar-cursor` https://github.com/ajsquared/bar-cursor
 
 ## Enable `copyright` mode
 
 Enable `copyright` mode in my emacs lisp recipes files
-
-## Remove `point-stack`
 
 ## Align smart-mode-line percentage
 
@@ -27,6 +29,10 @@ Org mode readme exporter to files headers
 ## Try suggest.el
 
 <https://github.com/Wilfred/suggest.el>
+
+## Try `hydra`
+
+<https://github.com/abo-abo/hydra>
 
 ## Install python formater
 
@@ -86,3 +92,11 @@ Org mode readme exporter to files headers
 ## Try `emacs-ereader`
 
 <https://github.com/bddean/emacs-ereader>
+
+## Try `elisp-refs`
+
+<https://github.com/Wilfred/elisp-refs.el>
+
+## Try `mosey`
+
+<https://github.com/alphapapa/mosey.el>
