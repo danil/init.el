@@ -329,11 +329,14 @@
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-bashate))
+
+(my-recipe '(go-autocomplete))
+(my-recipe '(go-mode))
+(my-recipe '(godoctor))
+
 (my-recipe '(git-gutter))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
-(my-recipe '(go-autocomplete))
-(my-recipe '(go-mode))
 (my-recipe '(google-translate))
 (my-recipe '(gotest))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
