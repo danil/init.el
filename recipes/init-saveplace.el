@@ -42,9 +42,6 @@
 (defun myinit-saveplace ()
   "My init."
 
-  (require 'saveplace)
-
-  (myinit-after-load 'saveplace
-    (setq-default save-place t)))
+  (save-place-mode))
 
 ;;; init-saveplace.el ends here
