@@ -413,6 +413,7 @@
 (my-recipe '(my-uniquify-lines))
 (my-recipe '(myinit))
 (my-recipe '(narrow-indirect))
+(my-recipe '(newcomment))
 (my-recipe '(nginx-mode))
 (my-recipe '(nodejs))
 (my-recipe '(nodejs-repl))
