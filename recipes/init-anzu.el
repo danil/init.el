@@ -31,8 +31,9 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-%") 'anzu-query-replace)
-(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+;; anzu break query-replace history(
+;; (global-set-key (kbd "M-%") 'anzu-query-replace)
+;; (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
 (add-hook 'after-init-hook 'myinit-anzu)
 
