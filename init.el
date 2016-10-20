@@ -42,6 +42,12 @@
 ;; Danil <http://emacswiki.org/DotEmacsDotD>,
 ;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
 
+;; ;; Added by Package.el.  This must come before configurations of
+;; ;; installed packages.  Don't delete this line.  If you don't want it,
+;; ;; just comment it out by adding a semicolon to the start of the line.
+;; ;; You may delete these explanatory comments.
+;; (package-initialize)
+
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
