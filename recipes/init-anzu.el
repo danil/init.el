@@ -39,6 +39,6 @@
 (defun myinit-anzu ()
   "My init."
 
- (global-anzu-mode t))
+  (global-anzu-mode t))
 
 ;;; init-anzu.el ends here
