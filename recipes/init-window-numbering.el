@@ -42,10 +42,10 @@
   (window-numbering-mode)
 
   (myinit-after-load 'window-numbering
-    ;; ;; <http://blog.binchen.org/?p=512#sec-1>.
-    ;; (custom-set-faces
-    ;;  '(window-numbering-face
-    ;;    ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
+    ;; <http://blog.binchen.org/?p=512#sec-1>.
+    (custom-set-faces
+     '(window-numbering-face
+       ((t (:background "unspecified-bg" :inherit mode-line-inactive)))))
 
     (define-key window-numbering-keymap "\M-0" nil)
     (define-key window-numbering-keymap "\M-1" nil)
