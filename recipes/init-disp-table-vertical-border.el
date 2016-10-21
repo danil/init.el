@@ -38,6 +38,6 @@
   (setq standard-display-table (make-display-table)))
 
 (set-display-table-slot standard-display-table
-                        'vertical-border (make-glyph-code 8203)) ; ?\u200B is an zero width space ;(make-glyph-code 32) is an blank space ;?|))
+                        'vertical-border (make-glyph-code 32)) ;(make-glyph-code 8203) is an zero width space ; ?\u200B is an zero width space ;(make-glyph-code 32) is an blank space ;?|))
 
 ;;; init-disp-table-vertical-border.el ends here
