@@ -52,13 +52,10 @@
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
 
-(setq calendar-week-start-day t)
 (setq system-time-locale "C")
 
 ;; Number of bytes of consing between garbage collections.
 (setq gc-cons-threshold 4000000) ;4 megabyte
-
-(global-font-lock-mode t)
 
 ;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
 ;; Horizontal Scrolling
