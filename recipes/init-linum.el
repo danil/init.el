@@ -57,7 +57,7 @@
 (defun myinit-linum ()
   "My init."
 
-  ;; (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
+  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
   (define-key myinit-map (kbd "x l") 'myinit-linum-toggle)

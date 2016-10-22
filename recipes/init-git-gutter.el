@@ -43,7 +43,7 @@
   ;; (myinit-after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))
 
-  (myinit-add-mode-to-hooks 'git-gutter-mode myinit-programming-modes-hooks))
+  (dolist (hook myinit-programming-modes-hooks) (add-hook hook 'git-gutter-mode)))
 
 (add-hook 'git-gutter-mode-on-hook
           (lambda ()
