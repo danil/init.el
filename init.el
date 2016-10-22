@@ -332,6 +332,7 @@
 (my-recipe '(fish-mode))
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-bashate))
+(my-recipe '(font-core))
 
 (my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
