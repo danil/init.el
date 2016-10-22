@@ -38,8 +38,6 @@
 (custom-set-variables
  '(myinit-aggressive-indent-modes-hooks '(
                                           emacs-lisp-mode-hook
-                                          sh-mode-hook
-                                          sieve-mode-hook
                                           )))
 
 (add-hook 'after-init-hook 'myinit-aggressive-indent)
