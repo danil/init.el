@@ -57,7 +57,7 @@
 (defun myinit-linum ()
   "My init."
 
-  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
+  ;; (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
   (define-key myinit-map (kbd "x l") 'myinit-linum-toggle)
@@ -72,7 +72,7 @@
 
   (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
 
-    (cond ((equal linum-mode t)
+    (cond ((and (boundp 'linum-mode) (equal linum-mode t))
            (funcall g -1) (linum-mode -1))
           (t
            (linum-mode t) (funcall g t)))))
