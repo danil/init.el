@@ -42,6 +42,11 @@
 (defun myinit-saveplace ()
   "My init."
 
-  (save-place-mode))
+  (if (>= emacs-major-version 25)
+      (save-place-mode)
+
+    (require 'saveplace)
+    (myinit-after-load 'saveplace
+      (setq-default save-place t))))
 
 ;;; init-saveplace.el ends here
