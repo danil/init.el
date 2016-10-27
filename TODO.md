@@ -26,6 +26,11 @@
 
 * https://github.com/kwrooijen/cargo.el
 
+## Python
+
+* https://github.com/google/yapf (python formater)
+* https://github.com/paetzke/py-autopep8.el (python pep 8 formater)
+
 ## Other
 
 ### First
@@ -44,7 +49,6 @@
 * https://github.com/alphapapa/mosey.el
 * https://github.com/bddean/emacs-ereader
 * https://github.com/codesuki/eslint-fix
-* https://github.com/google/yapf (python formater)
 * https://github.com/jorgenschaefer/emacs-buttercup
 * https://github.com/killdash9/better-shell
 * https://github.com/nlamirault/ripgrep.el (a-la ag silver searcher)
