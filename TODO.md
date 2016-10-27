@@ -22,6 +22,10 @@
 * https://github.com/samertm/go-stacktracer.el
 * https://github.com/syohex/emacs-go-impl
 
+## Rust
+
+* https://github.com/kwrooijen/cargo.el
+
 ## Other
 
 ### First
