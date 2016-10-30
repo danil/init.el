@@ -51,6 +51,7 @@
 * https://github.com/codesuki/eslint-fix
 * https://github.com/jorgenschaefer/emacs-buttercup
 * https://github.com/killdash9/better-shell
+* https://github.com/michaeljb/bool-flip toggle boolean values true->false->true...
 * https://github.com/nlamirault/ripgrep.el (a-la ag silver searcher)
 * https://github.com/smaximov/org-commentary (org mode readme exporter to files headers)
 * https://github.com/technomancy/find-file-in-project (anprojectile replacement)
