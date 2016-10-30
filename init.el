@@ -271,7 +271,6 @@
 (my-recipe '(pt)) ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
 
 (my-recipe '(abbrev))
-(my-recipe '(aggressive-indent))
 (my-recipe '(align))
 (my-recipe '(ansi-color))
 (my-recipe '(anzu))
