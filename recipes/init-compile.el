@@ -41,6 +41,19 @@
   ;; (myinit-after-load 'compile
   ;;   (define-key compilation-mode-map "\C-c\C-f" nil))
 
-  (define-key myinit-map (kbd "! c") 'compile))
+  (define-key myinit-map (kbd "! c") 'compile)
+
+  (myinit-after-load 'compile
+    (require 'ansi-color)
+    (add-hook 'compilation-filter-hook
+              #'myinit-compile--colorize-compilation)))
+
+;; ANSI-colors
+;; <http://endlessparentheses.com/ansi-colors-in-the-compilation-buffer-output.html>.
+(defun myinit-compile--colorize-compilation ()
+  "Colorize from `compilation-filter-start' to `point'."
+  (let ((inhibit-read-only t))
+    (ansi-color-apply-on-region
+     compilation-filter-start (point))))
 
 ;;; init-compile.el ends here
