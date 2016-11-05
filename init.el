@@ -89,6 +89,7 @@
      autoconf-mode
      awk-mode
      c-mode
+     cask-mode
      change-log-mode
      coffee-mode
      conf-colon-mode
@@ -187,6 +188,7 @@
  '(myinit-toggle-quotes-modes
    '(
      awk-mode
+     cask-mode
      coffee-mode
      conf-mode
      conf-space-mode

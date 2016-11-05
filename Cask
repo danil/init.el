@@ -38,6 +38,7 @@
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
+(depends-on "cask-mode")
 (depends-on "column-marker")
 (depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
 (depends-on "crontab-mode")

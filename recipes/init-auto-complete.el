@@ -63,6 +63,7 @@
                     autoconf-mode
                     awk-mode
                     c-mode
+                    cask-mode
                     change-log-mode
                     cider-mode
                     cider-repl-mode
