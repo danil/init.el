@@ -64,6 +64,7 @@
                                "/locale.gen\\'"
                                "/mailutils\\.rc\\'"
                                "/mimeapps.list\\'"
+                               "/monitrc\\'"
                                "/robots.txt\\'"
                                "/securetty\\'"
                                "/share/applications/defaults\\.list\\'"
