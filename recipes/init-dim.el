@@ -38,14 +38,14 @@
 
   (dim-major-names
    '(
-     (clojure-mode ".clj")
-     (emacs-lisp-mode ".el")
-     (js-mode ".js")
-     (js2-mode ".js2")
-     (js2-mode ".js2")
-     (markdown-mode ".md")
-     (python-mode ".py")
-     (sh-mode ".sh")
+     (clojure-mode "clj")
+     (emacs-lisp-mode "el")
+     (js-mode "js")
+     (js2-mode "js2")
+     (js2-mode "js2")
+     (markdown-mode "md")
+     (python-mode "py")
+     (sh-mode "sh")
      )))
 
 ;;; init-dim.el ends here
