@@ -39,6 +39,8 @@
 
 ### Second
 
+* http://pragmaticemacs.com/emacs/insert-file-name (copy file name to kill-ring)
+* http://www.russet.org.uk/blog/3140 (testing with using keyboard macroses)
 * https://github.com/KeenS/stylefmt.el (cssfmt formater a-la gofmt)
 * https://github.com/Lindydancer/el2markdown (convert emacs lisp comments to markdown)
 * https://github.com/Wilfred/elisp-refs.el
@@ -49,10 +51,12 @@
 * https://github.com/alphapapa/mosey.el
 * https://github.com/bddean/emacs-ereader
 * https://github.com/codesuki/eslint-fix
-* https://github.com/jorgenschaefer/emacs-buttercup
+* https://github.com/jorgenschaefer/emacs-buttercup (bdd test framework)
 * https://github.com/killdash9/better-shell
 * https://github.com/michaeljb/bool-flip toggle boolean values true->false->true...
 * https://github.com/nlamirault/ripgrep.el (a-la ag silver searcher)
+* https://github.com/nma83/diff-actor (interactively generate diff/patch)
+* https://github.com/olymk2/emacs-drone (run tests localy with dron.io https://github.com/drone/drone)
 * https://github.com/smaximov/org-commentary (org mode readme exporter to files headers)
 * https://github.com/technomancy/find-file-in-project (anprojectile replacement)
 * https://github.com/thomp/dired-launch
