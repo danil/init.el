@@ -1,5 +1,3 @@
-(source "kutkevich" "http://elpa.kutkevich.org/mirror/")
-
 (source "ELPA" "http://tromey.com/elpa/")
 (source "melpa-stable" "http://stable.melpa.org/packages/")
 (source gnu)
