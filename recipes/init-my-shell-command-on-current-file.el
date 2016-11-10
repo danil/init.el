@@ -68,11 +68,16 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
   (shell-command command output-buffer error-buffer))
 
 (defun my-expand-command-by-string (command path-to-file)
-  "Replace `%` in COMMAND by PATH-TO-FILE."
+  "Replace % and %% in COMMAND by PATH-TO-FILE and directory."
 
-  (replace-regexp-in-string
-   "%%?"
-   (lambda (s) (if (string= s "%%") "%" path-to-file))
-   command nil t))
+  (let ((path-to-dir (file-name-directory path-to-file)))
+    (replace-regexp-in-string
+     "%%?%?"
+
+     (lambda (s) (cond ((string= s "%%%") "%")
+                       ((string= s "%%") path-to-dir)
+                       ((string= s "%") path-to-file)))
+
+     command nil t)))
 
 ;;; init-my-shell-command-on-current-file.el ends here
