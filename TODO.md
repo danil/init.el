@@ -4,7 +4,6 @@
 * Remove `my-kbd` function
 * Fix `savehist` for `kill-ring`
 * Enable `copyright` mode in my emacs lisp recipes files
-* Left align "file scroll" percentage (smart-mode-line)
 
 ## Create comint-mode wrapper for [genius][]
 
