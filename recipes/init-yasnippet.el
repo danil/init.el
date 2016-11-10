@@ -43,6 +43,7 @@
   "My init."
 
   (yas-reload-all)
+  (define-key myinit-map (kbd "y") 'yas/insert-snippet)
 
   (myinit-after-load 'yasnippet
     ;; How to fix Yasnippet and Autocomplete tab key collision
