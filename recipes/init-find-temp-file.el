@@ -49,6 +49,6 @@
     (setq find-temp-template-default "danil/%D-%N.%E")
 
     ;; Alist with file extensions and corresponding file name template.
-    (setq find-temp-template-alist '())))
+    (setq find-temp-template-alist '(("go" . "danil/%D-%N/main.%E")))))
 
 ;;; init-find-temp-file.el ends here
