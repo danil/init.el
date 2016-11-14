@@ -39,7 +39,8 @@
   (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
 
   (myinit-after-load 'sql
-    (define-key sql-interactive-mode-map (my-kbd "C-l") 'my-sql-shell-clear)))
+    (define-key sql-interactive-mode-map (my-kbd "C-l")
+      'myinit-sql--shell-clear)))
 
 ;;; SQL inferior comint mode history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
@@ -59,22 +60,28 @@
         (comint-read-input-ring)
         (set-process-sentinel process #'myinit-comint--write-history)))))
 
-(defun my-sql-shell-clear (&optional arg)
+(defun myinit-sql--shell-clear (&optional arg)
   "Delete output from `SQl' shell or kill output from `SQL' shell if `ARG'.
 Clear current `SQL' shell beginning with a-la prompt to `point-min'.
 Clearing by `delete-region' or by `kill-region' if `ARG'."
 
   (interactive "P")
-  (goto-char (point-max))
-  (search-backward "=#")
-  (beginning-of-line)
 
-  (if arg
-      (kill-region (point-min) (point))
-    (delete-region (point-min) (point)))
+  (let ((prompt-string (cond ((equal sql-product 'postgres) "=#")
+                             ((equal sql-product 'mysql) "mysql>")
+                             (t nil))))
 
-  (delete-region (point-min) (point))
+    (when prompt-string
+      (goto-char (point-max))
+      (search-backward prompt-string)
+      (beginning-of-line)
 
-  (goto-char (point-max)))
+      (if arg
+          (kill-region (point-min) (point))
+        (delete-region (point-min) (point)))
+
+      (delete-region (point-min) (point))
+
+      (goto-char (point-max)))))
 
 ;;; init-sql.el ends here
