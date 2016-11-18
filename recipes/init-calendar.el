@@ -41,7 +41,11 @@
   (myinit-after-load 'calendar
     ;; Week numbers <http://www.emacswiki.org/emacs/CalendarWeekNumbers#toc1>.
     (copy-face font-lock-constant-face 'calendar-iso-week-face)
-    (set-face-foreground 'calendar-iso-week-face "gray40")
+
+    (cond ((equal frame-background-mode 'dark)
+           ;; (set-face-background 'calendar-today "red")
+           (set-face-foreground 'calendar-iso-week-face "gray40")))
+
     (setq calendar-intermonth-text
           '(propertize
             (format "%2d"
