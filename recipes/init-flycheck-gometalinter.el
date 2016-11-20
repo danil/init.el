@@ -36,7 +36,6 @@
 
   ;; (setq flycheck-gometalinter-disable-all t) ;only enable selected linters
   ;; (setq flycheck-gometalinter-fast t) ;only run fast linters
-  ;; (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   ;; (setq flycheck-gometalinter-enable-linters '("aligncheck" "deadcode" "gas" "goconst" "gosimple" "gotype" "ineffassign" "interfacer" "staticcheck" "structcheck" "varcheck"))
 
   (setq flycheck-gometalinter-disable-linters '(
@@ -55,8 +54,9 @@
                                                 "vet"
                                                 "vetshadow"
                                                 ))
-  (setq flycheck-gometalinter-vendor t) ;skips 'vendor' directories and sets GO15VENDOREXPERIMENT=1
+  (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   (setq flycheck-gometalinter-test t) ;use in tests files
+  (setq flycheck-gometalinter-vendor t) ;skips 'vendor' directories and sets GO15VENDOREXPERIMENT=1
   )
 
 ;;; init-flycheck-gometalinter.el ends here
