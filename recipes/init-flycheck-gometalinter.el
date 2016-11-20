@@ -39,20 +39,21 @@
   ;; (setq flycheck-gometalinter-enable-linters '("aligncheck" "deadcode" "gas" "goconst" "gosimple" "gotype" "ineffassign" "interfacer" "staticcheck" "structcheck" "varcheck"))
 
   (setq flycheck-gometalinter-disable-linters '(
+                                                ;; "errcheck"
+                                                ;; "gofmt"
+                                                ;; "goimports"
+                                                ;; "golint"
+                                                ;; "lll"
+                                                ;; "misspell"
+                                                ;; "test"
+                                                ;; "testify"
+                                                ;; "unconvert"
+                                                ;; "unused"
+                                                ;; "vet"
+                                                ;; "vetshadow"
+
                                                 "dupl"
-                                                "errcheck"
                                                 "gocyclo"
-                                                "gofmt"
-                                                "goimports"
-                                                "golint"
-                                                "lll"
-                                                "misspell"
-                                                "test"
-                                                "testify"
-                                                "unconvert"
-                                                "unused"
-                                                "vet"
-                                                "vetshadow"
                                                 ))
   (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   (setq flycheck-gometalinter-test t) ;use in tests files
