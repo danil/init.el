@@ -40,10 +40,10 @@
 
   (setq flycheck-gometalinter-disable-all t) ;only enable selected linters
   (setq flycheck-gometalinter-enable-linters '(
+                                               ;; "dupl"
                                                ;; "gocyclo"
                                                "aligncheck"
                                                "deadcode"
-                                               "dupl"
                                                "goconst"
                                                "golint"
                                                "gosimple"
