@@ -62,6 +62,7 @@
 (depends-on "flycheck")
 (depends-on "flycheck-bashate")
 
+(depends-on "flycheck-gometalinter")
 (depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "go-projectile")
