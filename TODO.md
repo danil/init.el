@@ -60,3 +60,8 @@
 * https://github.com/technomancy/find-file-in-project (anprojectile replacement)
 * https://github.com/thomp/dired-launch
 * https://github.com/xcwen/ac-php (php auto complete)
+
+### Third
+
+* https://github.com/andreasjansson/language-detection.el
+* https://github.com/nlamirault/ripgrep.el
