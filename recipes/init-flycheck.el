@@ -31,7 +31,16 @@
 
 ;;; Code:
 
-(custom-set-variables '(flycheck-disabled-checkers '(ruby-rubylint))
+(custom-set-variables '(flycheck-disabled-checkers '(
+                                                     go-build
+                                                     go-errcheck
+                                                     go-gofmt
+                                                     go-golint
+                                                     go-test
+                                                     go-unconvert
+                                                     go-vet
+                                                     ruby-rubylint
+                                                     ))
                       '(flycheck-idle-change-delay 1.5))
 
 (add-hook 'after-init-hook 'myinit-flycheck)

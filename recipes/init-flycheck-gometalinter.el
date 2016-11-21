@@ -34,28 +34,45 @@
 (with-eval-after-load 'flycheck
   (flycheck-gometalinter-setup)
 
-  ;; (setq flycheck-gometalinter-disable-all t) ;only enable selected linters
+  ;; "deadcode"
+  ;; "dupl"
+  ;; "errcheck"
+  ;; "gas"
+  ;; "goconst"
+  ;; "gocyclo"
+  ;; "gofmt"
+  ;; "goimports"
+  ;; "golint"
+  ;; "gosimple"
+  ;; "gotype"
+  ;; "ineffassign"
+  ;; "interfacer"
+  ;; "lll"
+  ;; "misspell"
+  ;; "staticcheck"
+  ;; "structcheck"
+  ;; "test"
+  ;; "testify"
+  ;; "unconvert"
+  ;; "unused"
+  ;; "varcheck"
+  ;; "vet"
+  ;; "vetshadow"
+
+  (setq flycheck-gometalinter-disable-all t) ;only enable selected linters
+  ;; (setq flycheck-gometalinter-disable-linters '())
+  (setq flycheck-gometalinter-enable-linters '(
+                                               "errcheck"
+                                               "gofmt"
+                                               "golint"
+                                               "gotype"
+                                               "ineffassign"
+                                               "interfacer"
+                                               "unconvert"
+                                               "vetshadow"
+                                               ))
+  ;; (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   ;; (setq flycheck-gometalinter-fast t) ;only run fast linters
-  ;; (setq flycheck-gometalinter-enable-linters '("aligncheck" "deadcode" "gas" "goconst" "gosimple" "gotype" "ineffassign" "interfacer" "staticcheck" "structcheck" "varcheck"))
-
-  (setq flycheck-gometalinter-disable-linters '(
-                                                ;; "errcheck"
-                                                ;; "gofmt"
-                                                ;; "goimports"
-                                                ;; "golint"
-                                                ;; "lll"
-                                                ;; "misspell"
-                                                ;; "test"
-                                                ;; "testify"
-                                                ;; "unconvert"
-                                                ;; "unused"
-                                                ;; "vet"
-                                                ;; "vetshadow"
-
-                                                "dupl"
-                                                "gocyclo"
-                                                ))
-  (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   (setq flycheck-gometalinter-test t) ;use in tests files
   (setq flycheck-gometalinter-vendor t) ;skips 'vendor' directories and sets GO15VENDOREXPERIMENT=1
   )
