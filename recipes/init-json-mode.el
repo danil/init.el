@@ -31,12 +31,23 @@
 
 ;;; Code:
 
+(defcustom myinit-json-mode-patterns '()
+  "Regexp patterns associated with `json-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-json-mode-patterns
+                        '(
+                          "/composer\\.lock\\'"
+                          "\\.bowerrc\\'"
+                          )))
+
 (add-hook 'after-init-hook 'myinit-json-mode)
 
 (defun myinit-json-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'json-mode "\\.bowerrc\\'")
+  (dolist (pattern myinit-json-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'json-mode)))
 
   ;; (myinit-after-load 'json-mode
   ;;   (define-key json-mode-map (kbd "C-c C-f") nil)
