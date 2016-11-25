@@ -69,7 +69,7 @@
                                                "ineffassign"
                                                "interfacer"
                                                "unconvert"
-                                               "vetshadow"
+                                               "vet"
                                                ))
   ;; (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   ;; (setq flycheck-gometalinter-fast t) ;only run fast linters
