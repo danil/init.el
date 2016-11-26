@@ -67,12 +67,25 @@
 
 (defun myinit-web-mode ()
   "My init."
-  ;; (myinit-after-load 'web-mode
-  ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
 
   (dolist (pattern myinit-web-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'web-mode)))
 
-  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+  (add-hook 'web-mode-hook 'myinit-web-mode--armor5games-settings)
+
+  (myinit-after-load 'web-mode
+    ;; (define-key web-mode-map (kbd "C-c C-f") nil)
+    (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))))
+
+
+(defun myinit-web-mode--armor5games-settings ()
+  "Custom Armor5games settings."
+
+  (when (and (buffer-file-name)
+             (string-match "/armor5games/" (buffer-file-name)))
+    (setq standard-indent 4)
+    (setq web-mode-code-indent-offset 4)
+    (setq web-mode-indent-style 4)
+    (setq web-mode-markup-indent-offset 4)))
 
 ;;; init-web-mode.el ends here
