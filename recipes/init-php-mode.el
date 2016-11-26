@@ -31,6 +31,16 @@
 
 ;;; Code:
 
+;; (defcustom myinit-not-php-mode-patterns '()
+;;   "Regexp patterns NOT associated with `php-mode'."
+;;   :group 'myinit)
+
+;; (custom-set-variables '(myinit-not-php-mode-patterns
+;;                         '('("\\.php[s345t]?\\'" . php-mode)
+;;                           '("\\.phtml\\'" . php-mode)
+;;                           '( "/Amkfile\\'" . php-mode)
+;;                           '( "\\.amk\\'" . php-mode))))
+
 ;; (add-hook 'after-init-hook 'myinit-php-mode)
 
 ;; (defun myinit-php-mode ()

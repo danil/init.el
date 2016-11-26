@@ -39,29 +39,40 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
+(defcustom myinit-web-mode-patterns '()
+  "Regexp patterns associated with `web-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-web-mode-patterns
+                        '(
+                          "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
+                          "\\.\\(html\\|text\\)\\.erb\\'"
+                          "\\.as[cp]x\\'"
+                          "\\.djhtml\\'"
+                          "\\.ejs\\'"
+                          "\\.html\\'"
+                          "\\.js.erb\\'"
+                          "\\.jsp\\'"
+                          "\\.jst\\.ejs\\'"
+                          "\\.jsx\\'"
+                          "\\.phtml\\'"
+                          "\\.rhtml\\'"
+
+                          "\\.php[s345t]?\\'"
+                          "\\.phtml\\'"
+                          "\\.tpl\\.php\\'"
+                          )))
+
 (add-hook 'after-init-hook 'myinit-web-mode)
 
 (defun myinit-web-mode ()
   "My init."
+  ;; (myinit-after-load 'web-mode
+  ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
 
- (myinit-add-mode-to-patterns 'web-mode
-                                "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
-                                "\\.\\(html\\|text\\)\\.erb\\'"
-                                "\\.as[cp]x\\'"
-                                "\\.djhtml\\'"
-                                "\\.ejs\\'"
-                                "\\.html\\'"
-                                "\\.js.erb\\'"
-                                "\\.jsp\\'"
-                                "\\.jst\\.ejs\\'"
-                                "\\.jsx\\'"
-                                "\\.phtml\\'"
-                                "\\.rhtml\\'"
-                                "\\.tpl\\.php\\'")
+  (dolist (pattern myinit-web-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'web-mode)))
 
- ;; (myinit-after-load 'web-mode
- ;;                      (define-key web-mode-map (kbd "C-c C-f") nil))
-
- (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
 
 ;;; init-web-mode.el ends here
