@@ -331,9 +331,10 @@
 (my-recipe '(fill))
 (my-recipe '(find-temp-file))
 (my-recipe '(fish-mode))
+(my-recipe '(font-core))
+
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-bashate))
-(my-recipe '(font-core))
 
 (my-recipe '(flycheck-gometalinter))
 (my-recipe '(go-autocomplete))

@@ -59,6 +59,7 @@
 (depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
+
 (depends-on "flycheck")
 (depends-on "flycheck-bashate")
 
