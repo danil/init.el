@@ -63,8 +63,8 @@
 
   ;; (set-face-attribute 'flycheck-warning nil :underline nil)
 
+  ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
 
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
   (setq flycheck-go-vet-shadow t))
 
 ;;; init-flycheck.el ends here
