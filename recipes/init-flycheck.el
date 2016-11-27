@@ -39,7 +39,11 @@
                                                      go-test
                                                      go-unconvert
                                                      go-vet
+
                                                      ruby-rubylint
+
+                                                     sh-bash
+                                                     sh-posix-bash
                                                      ))
                       '(flycheck-idle-change-delay 1.5))
 

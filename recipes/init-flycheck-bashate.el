@@ -31,8 +31,38 @@
 
 ;;; Code:
 
+;; (with-eval-after-load 'flycheck
+;;   (require 'flycheck-bashate)
+;;   (flycheck-bashate-setup))
+
+;; (add-hook 'after-init-hook 'myinit-flycheck-bashate)
+;; (defun myinit-flycheck-bashate ()
+;;   "My init."
+;;   )
+
 (with-eval-after-load 'flycheck
-  (require 'flycheck-bashate)
-  (flycheck-bashate-setup))
+  (flycheck-def-option-var flycheck-bashate-ignored-tests
+      '("E006") bashate
+    "A list of tests to ignore by bashate."
+    :type '(repeat :tag "Warnings" (string :tag "Test name"))
+    :safe #'flycheck-string-list-p
+    :package-version '(flycheck . "0.20"))
+
+  (flycheck-define-checker bashate
+    "A checker using bashate.
+
+See `https://github.com/alexmurray/bashate/'."
+    :command ("bashate"
+              (option "--ignore=" flycheck-bashate-ignored-tests concat
+                           flycheck-option-comma-separated-list)
+              source)
+    :error-patterns ((error line-start "[E] "(message (minimal-match (one-or-more not-newline))) ": '" (one-or-more not-newline) "'\n"
+                            " - " (file-name) " : L" line line-end)
+                     (warning line-start "[W] "(message (minimal-match (one-or-more not-newline))) ": '" (one-or-more not-newline) "'\n"
+                              " - " (file-name) " : L" line line-end))
+    :modes sh-mode
+    :next-checkers ((warning . sh-shellcheck)))
+
+  (add-to-list 'flycheck-checkers 'bashate))
 
 ;;; init-flycheck-bashate.el ends here
