@@ -43,7 +43,8 @@
 (with-eval-after-load 'flycheck
   (flycheck-def-option-var flycheck-bashate-ignored-tests
       '("E006") bashate
-    "A list of tests to ignore by bashate."
+    "A list of tests to ignore by bashate.
+<http://docs.openstack.org/developer/bashate/man/bashate.html#options>"
     :type '(repeat :tag "Warnings" (string :tag "Test name"))
     :safe #'flycheck-string-list-p
     :package-version '(flycheck . "0.20"))
