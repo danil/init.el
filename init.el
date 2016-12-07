@@ -98,6 +98,7 @@
      conf-unix-mode
      conf-xdefaults-mode
      crontab-mode
+     csharp-mode
      css-mode
      diff-mode
      dockerfile-mode
@@ -193,6 +194,7 @@
      conf-mode
      conf-space-mode
      conf-xdefaults-mode
+     csharp-mode
      css-mode
      emacs-lisp-mode
      haml-mode

@@ -40,6 +40,7 @@
 (depends-on "column-marker")
 (depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
 (depends-on "crontab-mode")
+(depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
 (depends-on "dash")

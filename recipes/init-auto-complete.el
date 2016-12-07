@@ -37,7 +37,7 @@
  '(ac-auto-show-menu nil)
  '(ac-comphist-file (expand-file-name (concat "~/.emacs.var"
                                               "/ac-comphist.dat")))
- '(ac-delay 0.9)
+ '(ac-delay 0.5) ;tradeoff between typing speed and performance
  ;; '(ac-flycheck-poll-completion-end-interval 1.1)
  '(ac-sources
    '(ac-source-abbrev
@@ -78,6 +78,7 @@
                     conf-windows-mode
                     conf-xdefaults-mode
                     crontab-mode
+                    csharp-mode
                     css-mode
                     diff-mode
                     dired-mode
