@@ -88,6 +88,7 @@
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
 (depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
+(depends-on "inf-mongo")
 (depends-on "smex")
 
 ;;; JavaScript.

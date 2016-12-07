@@ -94,6 +94,7 @@
                     haml-mode
                     haskell-mode
                     html-mode
+                    inf-mongo-mode
                     inf-ruby-mode
                     jade-mode
                     java-mode

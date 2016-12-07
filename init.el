@@ -112,6 +112,7 @@
      haml-mode
      haskell-mode
      html-mode
+     inf-mongo-mode
      jade-mode
      java-mode
      js-mode
@@ -373,6 +374,7 @@
 (my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (my-recipe '(ielm))
 (my-recipe '(indent))
+(my-recipe '(inf-mongo))
 (my-recipe '(info))
 (my-recipe '(interprogram))
 (my-recipe '(isearch))
