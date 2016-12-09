@@ -46,9 +46,12 @@
     ;; %E: extension
     ;; %M: replace by mode name associated with the extension
     ;; %D: date with format %Y-%m-%d
-    (setq find-temp-template-default "danil/%D-%N.%E")
+    (setq find-temp-template-default "danil/%D%N.%E")
+
+    (setq find-temp-custom-spec
+          '((?D . (lambda () (format-time-string "%Y%m%d")))))
 
     ;; Alist with file extensions and corresponding file name template.
-    (setq find-temp-template-alist '(("go" . "danil/%D-%N/main.%E")))))
+    (setq find-temp-template-alist '(("go" . "danil/%D%N/main.%E")))))
 
 ;;; init-find-temp-file.el ends here
