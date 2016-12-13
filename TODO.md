@@ -1,9 +1,12 @@
 # TODO
 
-* Place `window-numbering` in mode-line near scroll position percentage
-* Remove `my-kbd` function
-* Fix `savehist` for `kill-ring`
-* Enable `copyright` mode in my emacs lisp recipes files
+* ido-list-unicode-display.el
+* place `window-numbering` in mode-line near scroll position percentage
+* remove `my-kbd` function
+* fix `savehist` for `kill-ring`
+* enable `copyright` mode in my emacs lisp recipes files
+* implements `find-temp-file` templating
+* implements `ido` for `flycheck-list-errors`
 
 ## Create comint-mode wrapper for [genius][]
 
@@ -34,6 +37,7 @@
 
 ### First
 
+* https://github.com/benma/visual-regexp.el (visual regexp/replace only for emacs 25)
 * https://github.com/purcell/package-lint
 
 ### Second
@@ -50,6 +54,7 @@
 * https://github.com/alphapapa/mosey.el
 * https://github.com/bddean/emacs-ereader
 * https://github.com/codesuki/eslint-fix
+* https://github.com/greenrd/taskwarrior-mode (org-mode replacement)
 * https://github.com/jorgenschaefer/emacs-buttercup (bdd test framework)
 * https://github.com/killdash9/better-shell
 * https://github.com/michaeljb/bool-flip toggle boolean values true->false->true...
@@ -58,10 +63,12 @@
 * https://github.com/olymk2/emacs-drone (run tests localy with dron.io https://github.com/drone/drone)
 * https://github.com/smaximov/org-commentary (org mode readme exporter to files headers)
 * https://github.com/technomancy/find-file-in-project (anprojectile replacement)
+* https://github.com/thisirs/auto-insert-multiple maybe automatically insert "golang main package" yasnippet into `find-temp-file` buffers
+* https://github.com/thisirs/org-password-manager
 * https://github.com/thomp/dired-launch
-* https://github.com/xcwen/ac-php (php auto complete)
 
 ### Third
 
 * https://github.com/andreasjansson/language-detection.el
 * https://github.com/nlamirault/ripgrep.el
+* https://github.com/xcwen/ac-php (php auto complete)
