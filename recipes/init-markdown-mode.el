@@ -56,6 +56,8 @@
  (myinit-after-load 'markdown-mode
    (require 'eww) ;used for eww-mode live preview
 
+   (set-face-attribute 'markdown-italic-face nil :slant 'normal) ;some terminals have difficulties with italic/bold
+
    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
    (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
    (define-key markdown-mode-map (kbd "TAB") nil)))
