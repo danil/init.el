@@ -53,6 +53,7 @@
                                "/\\.tigrc\\'"
                                "/conkyrc_calendar\\'"
                                "/conkyrc_top\\'"
+                               "/csf.allow\\'"
                                "/dunstrc\\'"
                                "/etc/fstab\\'"
                                "/etc/mail/aliases\\'"
