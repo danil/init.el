@@ -291,7 +291,6 @@
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
 (my-recipe '(cc-vars))
-(my-recipe '(color-identifiers-mode)) ;highlight each variable uniquely based on its name
 
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))

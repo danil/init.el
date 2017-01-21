@@ -77,7 +77,6 @@
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 
-(depends-on "color-identifiers-mode") ;highlight each variable uniquely based on its name
 (depends-on "crm-custom")
 (depends-on "css-comb") ;css formater
 (depends-on "haml-mode")
