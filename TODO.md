@@ -37,7 +37,6 @@
 
 ### First
 
-* find alternative to color-identifiers-mode (highlight each variable uniquely based on its name)
 * https://github.com/benma/visual-regexp.el (visual regexp/replace only for emacs 25)
 * https://github.com/emacs-berlin/syntactic-close insert closing delimiter ")]}" and so on
 * https://github.com/purcell/package-lint
