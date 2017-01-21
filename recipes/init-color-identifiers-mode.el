@@ -57,9 +57,11 @@
   (dolist (hook myinit-color-identifiers-mode-hooks) (add-hook hook #'color-identifiers-mode))
 
   (myinit-after-load 'color-identifiers-mode
+    (setq color-identifiers:num-colors 50)
+
     ;; Golang.
     (add-to-list
      'color-identifiers:modes-alist
-     `(go-mode . ("[^.][[:space:]]*" "\\_<\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)" (nil))))))
+     `(go-mode . ("[[:space:]]*" "\\_<\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)" (nil))))))
 
 ;;; init-color-identifiers-mode.el ends here
