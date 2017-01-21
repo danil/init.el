@@ -57,11 +57,6 @@
   (dolist (hook myinit-color-identifiers-mode-hooks) (add-hook hook #'color-identifiers-mode))
 
   (myinit-after-load 'color-identifiers-mode
-    ;; Sell script.
-    (add-to-list
-     'color-identifiers:modes-alist
-     `(sh-mode . ("[^.][[:space:]]*" "\\_<\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)" (nil))))
-
     ;; Golang.
     (add-to-list
      'color-identifiers:modes-alist
