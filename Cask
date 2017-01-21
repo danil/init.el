@@ -150,6 +150,7 @@
 (depends-on "rich-minority")
 
 (depends-on "rainbow-delimiters")
+(depends-on "rainbow-identifiers") ;highlight each variable uniquely based on its name
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
 (depends-on "redis")
