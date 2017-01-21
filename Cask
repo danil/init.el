@@ -68,27 +68,31 @@
 (depends-on "go-projectile")
 (depends-on "go-snippets")
 (depends-on "godoctor")
+(depends-on "google-translate")
 (depends-on "gotest")
 
+;; Git.
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
-(depends-on "google-translate")
-(depends-on "haml-mode")
-(depends-on "highlight-symbol")
 
+(depends-on "color-identifiers-mode") ;highlight each variable uniquely based on its name
 (depends-on "crm-custom")
 (depends-on "css-comb") ;css formater
+(depends-on "haml-mode")
+(depends-on "highlight-symbol")
 (depends-on "ibuffer-vc")
+(depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
+(depends-on "inf-mongo")
+
+;; Ido.
 (depends-on "ido-clever-match")
 (depends-on "ido-describe-bindings")
 (depends-on "ido-occur")
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
-(depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
-(depends-on "inf-mongo")
 (depends-on "smex")
 
 ;;; JavaScript.

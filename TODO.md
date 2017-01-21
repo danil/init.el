@@ -38,6 +38,7 @@
 ### First
 
 * https://github.com/benma/visual-regexp.el (visual regexp/replace only for emacs 25)
+* https://github.com/emacs-berlin/syntactic-close insert closing delimiter ")]}" and so on
 * https://github.com/purcell/package-lint
 
 ### Second
@@ -51,17 +52,20 @@
 * https://github.com/abo-abo/hydra
 * https://github.com/ajsquared/bar-cursor
 * https://github.com/akicho8/string-inflection or https://github.com/mrkkrp/fix-word
+* https://github.com/alexmurray/flycheck-flawfinder c/c++ checker
 * https://github.com/alphapapa/mosey.el
 * https://github.com/bddean/emacs-ereader
 * https://github.com/codesuki/eslint-fix
 * https://github.com/greenrd/taskwarrior-mode (org-mode replacement)
 * https://github.com/jorgenschaefer/emacs-buttercup (bdd test framework)
 * https://github.com/killdash9/better-shell
+* https://github.com/mallt/eshell-fixed-prompt-mode maybe use eshell for something?
 * https://github.com/michaeljb/bool-flip toggle boolean values true->false->true...
-* https://github.com/nlamirault/ripgrep.el (a-la ag silver searcher)
+* https://github.com/nlamirault/ripgrep.el or https://github.com/davja/rg.el (a-la ag silver searcher)
 * https://github.com/nma83/diff-actor (interactively generate diff/patch)
 * https://github.com/olymk2/emacs-drone (run tests localy with dron.io https://github.com/drone/drone)
 * https://github.com/smaximov/org-commentary (org mode readme exporter to files headers)
+* https://github.com/stardiviner/org-seek.el
 * https://github.com/technomancy/find-file-in-project (anprojectile replacement)
 * https://github.com/thisirs/auto-insert-multiple maybe automatically insert "golang main package" yasnippet into `find-temp-file` buffers
 * https://github.com/thisirs/org-password-manager
@@ -71,4 +75,5 @@
 
 * https://github.com/andreasjansson/language-detection.el
 * https://github.com/nlamirault/ripgrep.el
+* https://github.com/pjones/passmm
 * https://github.com/xcwen/ac-php (php auto complete)
