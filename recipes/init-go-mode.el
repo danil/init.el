@@ -60,6 +60,13 @@
             (str-after (buffer-substring-no-properties end (point-max))))
        (and (not (member ch-current
                          '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+
+            (or (not (equal ch-before ?\s))
+                (not (equal (substring str-before -8 nil) "package ")))
+            (not (equal ch-after ?\:))
+            (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+                (string-match-p "^\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\)[^a-zA-Z0-1]"
+                                str-after))
             (not (member current-identifier '(
                                               "adler32"
                                               "aes"
@@ -241,11 +248,6 @@
                                               "Tx"
 
                                               "Valid"
-                                              )))
-            (or (not (equal ch-before ?\s))
-                (not (equal (substring str-before -8 nil) "package ")))
-            (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-                (string-match-p "^\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\)[^a-zA-Z0-1]"
-                                str-after)))))))
+                                              ))))))))
 
 ;;; init-go-mode.el ends here
