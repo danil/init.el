@@ -49,7 +49,7 @@
   (myinit-after-load 'rainbow-identifiers
     ;; Use a wider set of colors.
     (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-cie-l*a*b*-choose-face)
-    (setq rainbow-identifiers-cie-l*a*b*-lightness 45)
-    (setq rainbow-identifiers-cie-l*a*b*-saturation 45)))
+    (setq rainbow-identifiers-cie-l*a*b*-lightness 70)
+    (setq rainbow-identifiers-cie-l*a*b*-saturation 70)))
 
 ;;; init-rainbow-identifiers.el ends here
