@@ -47,56 +47,9 @@
   (dolist (hook myinit-rainbow-identifiers-hooks) (add-hook hook 'rainbow-identifiers-mode))
 
   (myinit-after-load 'rainbow-identifiers
-    ;; Filter don't mark all identifiers.
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--filter)
-
     ;; Use a wider set of colors.
     (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-cie-l*a*b*-choose-face)
     (setq rainbow-identifiers-cie-l*a*b*-lightness 45)
     (setq rainbow-identifiers-cie-l*a*b*-saturation 45)))
-
-;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-rainbow-identifiers--filter (beg end)
-  (and
-   (rainbow-identifiers-face-overridable beg end)
-   (let* ((ch-current (char-after beg))
-          (ch-after (char-after end))
-          (current-identifier (buffer-substring-no-properties beg end))
-          (x 8)
-          (y (if (> (+ end x) (point-max)) (point-max) (+ end x)))
-          (str-after (buffer-substring-no-properties end y)))
-     (and (not (member ch-current
-                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-          (not (member current-identifier '(
-                                            "bool" "Bool"
-                                            "byte" "Byte"
-                                            "chan"
-                                            "complex128" "Complex128"
-                                            "complex64" "Complex64"
-                                            "error"
-                                            "float32" "Float32"
-                                            "float64" "Float64"
-                                            "int" "Int"
-                                            "int16" "Int16"
-                                            "int32" "Int32"
-                                            "int64" "Int64"
-                                            "int8" "Int8"
-                                            "rune" "Rune"
-                                            "string" "String"
-                                            "struct" "Struct"
-                                            "uint" "Uint"
-                                            "uint16" "Uint16"
-                                            "uint32" "Uint32"
-                                            "uint64" "Uint64"
-                                            "uint8" "Uint8"
-                                            "uintptr" "Uintptr"
-                                            )))
-          (or (not (equal ch-after ?\.))
-              (or (string-prefix-p ".Bool" str-after)
-                  (string-prefix-p ".Float64" str-after)
-                  (string-prefix-p ".Int64" str-after)
-                  (string-prefix-p ".String" str-after)
-                  (string-prefix-p ".Time" str-after)))))))
 
 ;;; init-rainbow-identifiers.el ends here

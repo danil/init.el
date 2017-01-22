@@ -38,9 +38,58 @@
 (defun myinit-go-mode ()
   "My init."
 
+  (add-hook 'rainbow-identifiers-filter-functions
+            'myinit-go-mode--rainbow-identifiers-filter)
+
   (myinit-after-load 'go-mode
     (add-hook 'before-save-hook #'gofmt-before-save)
 
     (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point)))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-go-mode--rainbow-identifiers-filter (beg end)
+  (if (not (equal major-mode 'go-mode))
+      (rainbow-identifiers-face-overridable beg end)
+    (and
+     (rainbow-identifiers-face-overridable beg end)
+     (let* ((ch-current (char-after beg))
+            ;; (ch-before (char-before beg))
+            (ch-after (char-after end))
+            (current-identifier (buffer-substring-no-properties beg end))
+            (x 8)
+            (y (if (> (+ end x) (point-max)) (point-max) (+ end x)))
+            (str-after (buffer-substring-no-properties end y)))
+       (and (not (member ch-current
+                         '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+            (not (member current-identifier '(
+                                              "bool" "Bool"
+                                              "byte" "Byte"
+                                              "chan"
+                                              "complex128" "Complex128"
+                                              "complex64" "Complex64"
+                                              "error"
+                                              "float32" "Float32"
+                                              "float64" "Float64"
+                                              "int" "Int"
+                                              "int16" "Int16"
+                                              "int32" "Int32"
+                                              "int64" "Int64"
+                                              "int8" "Int8"
+                                              "rune" "Rune"
+                                              "string" "String"
+                                              "struct" "Struct"
+                                              "uint" "Uint"
+                                              "uint16" "Uint16"
+                                              "uint32" "Uint32"
+                                              "uint64" "Uint64"
+                                              "uint8" "Uint8"
+                                              "uintptr" "Uintptr"
+                                              )))
+            (or (not (equal ch-after ?\.))
+                (or (string-prefix-p ".Bool" str-after)
+                    (string-prefix-p ".Float64" str-after)
+                    (string-prefix-p ".Int64" str-after)
+                    (string-prefix-p ".String" str-after)
+                    (string-prefix-p ".Time" str-after))))))))
 
 ;;; init-go-mode.el ends here
