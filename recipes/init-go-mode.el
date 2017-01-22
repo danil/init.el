@@ -56,9 +56,7 @@
             ;; (ch-before (char-before beg))
             (ch-after (char-after end))
             (current-identifier (buffer-substring-no-properties beg end))
-            (x 8)
-            (y (if (> (+ end x) (point-max)) (point-max) (+ end x)))
-            (str-after (buffer-substring-no-properties end y)))
+            (str-after (buffer-substring-no-properties end (point-max))))
        (and (not (member ch-current
                          '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
             (not (member current-identifier '(
@@ -86,10 +84,7 @@
                                               "uintptr" "Uintptr"
                                               )))
             (or (not (equal ch-after ?\.))
-                (or (string-prefix-p ".Bool" str-after)
-                    (string-prefix-p ".Float64" str-after)
-                    (string-prefix-p ".Int64" str-after)
-                    (string-prefix-p ".String" str-after)
-                    (string-prefix-p ".Time" str-after))))))))
+                (string-match-p "^\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\)"
+                                str-after)))))))
 
 ;;; init-go-mode.el ends here
