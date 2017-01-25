@@ -39,6 +39,7 @@
 
 (custom-set-variables '(myinit-rainbow-identifiers-hooks '(
                                                            go-mode-hook
+                                                           python-mode-hook
                                                            ruby-mode-hook
                                                            )))
 
