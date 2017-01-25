@@ -38,6 +38,7 @@
   :group 'myinit)
 
 (custom-set-variables '(myinit-rainbow-identifiers-hooks '(
+                                                           c-mode-hook
                                                            go-mode-hook
                                                            python-mode-hook
                                                            ruby-mode-hook

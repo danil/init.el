@@ -36,6 +36,9 @@
 (defun myinit-cc-mode ()
   "My init."
 
+  (add-hook 'rainbow-identifiers-filter-functions
+            'myinit-c-mode--rainbow-identifiers-filter)
+
   (myinit-add-mode-to-patterns 'c-mode
                                "/etc/portage/savedconfig/www-servers/quark"
                                "/etc/portage/savedconfig/x11-misc/dmenu"
@@ -43,5 +46,27 @@
                                "/etc/portage/savedconfig/x11-misc/tabbed"
                                "/etc/portage/savedconfig/x11-terms/st"
                                "/etc/portage/savedconfig/x11-wm/dwm"))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-c-mode--rainbow-identifiers-filter (beg end)
+  (if (not (equal major-mode 'c-mode))
+      (rainbow-identifiers-face-overridable beg end)
+    (and
+     (rainbow-identifiers-face-overridable beg end)
+     (let* ((ch-current (char-after beg))
+            (ch-before (char-before beg))
+            (ch-after (char-after end))
+            (current-identifier (buffer-substring-no-properties beg end))
+            (str-before (buffer-substring-no-properties (point-min) beg))
+            (str-after (buffer-substring-no-properties end (point-max))))
+       (and (not (member ch-current
+                         '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+            (not (string-match-p "[?!]\\'" current-identifier))
+            (not (and (string-match-p "^[[:space:]]*\\'" str-before)
+                      (string-match-p "\\`[[:space:]]*$" str-after)))
+            (not (equal ch-after ?\())
+            (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+            (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
+                     (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after)))))))))
 
 ;;; init-cc-mode.el ends here
