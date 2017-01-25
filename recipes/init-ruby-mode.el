@@ -112,17 +112,39 @@
             (str-after (buffer-substring-no-properties end (point-max))))
        (and (not (member ch-current
                          '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-            (not (equal ch-after ?\())
-            (not (string-match-p "self[[:space:]\n]*\\.[[:space:]\n]*$"
+            (not (string-match-p "[?!]\\'" current-identifier))
+            (not (and (string-match-p "^[[:space:]]*\\'" str-before)
+                      (string-match-p "\\`[[:space:]]*$" str-after)))
+            (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
                                  str-before))
-            (not (string-match-p "^[[:space:]\n]+\\(:\\|{\\|do\\)" str-after))
-            ;; (not (string-match-p "^[[:space:]]+[a-zA-Z!?_]+:" str-after))
+            (not (equal ch-after ?\())
+            (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+            (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
+                     (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
+            (not (string-match-p "\\`[[:space:]\n]+\\({\\|do\\)[^a-zA-Z]" str-after))
             (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-                (string-match-p "^\\.[[:space:]\n]*\\(present\\?\\|blank\\?\\)[^a-zA-Z0-1]"
+                (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
                                 str-after))
             (not (member current-identifier '(
-                                              "blank?"
-                                              "present?"
+                                              "count"
+                                              "first"
+                                              "join"
+                                              "last"
+                                              "length"
+                                              "new"
+                                              "params"
+                                              "pop"
+                                              "save"
+                                              "scoped"
+                                              "second"
+                                              "size"
+                                              "split"
+                                              "to_a"
+                                              "to_h"
+                                              "to_i"
+                                              "to_s"
+                                              "upcase"
+                                              "update_all"
                                               ))))))))
 
 (defun my-ruby-toggle-block ()
