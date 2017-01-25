@@ -65,7 +65,7 @@
                 (not (equal (substring str-before -8 nil) "package ")))
             (not (equal ch-after ?\:))
             (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-                (string-match-p "^\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
+                (string-match-p "\\`\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
                                 str-after))
             (not (member current-identifier '(
                                               "adler32"
