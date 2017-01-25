@@ -37,7 +37,10 @@
   "Hooks associated with `rainbow-identifiers'."
   :group 'myinit)
 
-(custom-set-variables '(myinit-rainbow-identifiers-hooks '(go-mode-hook)))
+(custom-set-variables '(myinit-rainbow-identifiers-hooks '(
+                                                           go-mode-hook
+                                                           ruby-mode-hook
+                                                           )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)
 
