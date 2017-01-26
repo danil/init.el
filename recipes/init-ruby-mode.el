@@ -101,9 +101,9 @@
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-ruby-mode--rainbow-identifiers-filter (beg end)
   (if (not (equal major-mode 'ruby-mode))
-      (rainbow-identifiers-face-overridable beg end)
+      t
     (and
-     (rainbow-identifiers-face-overridable beg end)
+     (myinit-rainbow-identifiers--face-overridable beg '(font-lock-variable-name-face))
      (let* ((ch-current (char-after beg))
             (ch-before (char-before beg))
             (ch-after (char-after end))

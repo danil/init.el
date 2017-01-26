@@ -34,19 +34,31 @@
 ;; (defcustom myinit-not-php-mode-patterns '()
 ;;   "Regexp patterns NOT associated with `php-mode'."
 ;;   :group 'myinit)
-
 ;; (custom-set-variables '(myinit-not-php-mode-patterns
 ;;                         '('("\\.php[s345t]?\\'" . php-mode)
 ;;                           '("\\.phtml\\'" . php-mode)
 ;;                           '( "/Amkfile\\'" . php-mode)
 ;;                           '( "\\.amk\\'" . php-mode))))
 
-;; (add-hook 'after-init-hook 'myinit-php-mode)
+(add-hook 'after-init-hook 'myinit-php-mode)
 
-;; (defun myinit-php-mode ()
-;;   "My init."
+(defun myinit-php-mode ()
+  "My init."
 
-;;   (myinit-after-load 'php-mode
-;;     (define-key php-mode-map (kbd "C-c C-f") nil)))
+  ;; (myinit-after-load 'php-mode
+  ;;   (define-key php-mode-map (kbd "C-c C-f") nil))
+
+  (add-hook 'rainbow-identifiers-filter-functions
+            'myinit-php-mode--rainbow-identifiers-filter))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-php-mode--rainbow-identifiers-filter (beg end)
+  (if (not (equal major-mode 'php-mode))
+      t
+    (and
+     (myinit-rainbow-identifiers--face-overridable beg '(default font-lock-variable-name-face))
+     (let* ((current-identifier (buffer-substring-no-properties beg end)))
+       (string-match-p "\\`\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+\\'"
+                       current-identifier)))))
 
 ;;; init-php-mode.el ends here

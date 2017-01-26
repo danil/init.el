@@ -37,12 +37,22 @@
   "Hooks associated with `rainbow-identifiers'."
   :group 'myinit)
 
-(custom-set-variables '(myinit-rainbow-identifiers-hooks '(
-                                                           c-mode-hook
-                                                           go-mode-hook
-                                                           python-mode-hook
-                                                           ruby-mode-hook
-                                                           )))
+(custom-set-variables
+ '(rainbow-identifiers-faces-to-override '(
+                                           default
+                                           font-lock-variable-name-face
+
+                                           js2-object-property
+                                           js2-function-param
+                                           ))
+ '(myinit-rainbow-identifiers-hooks '(
+                                      c-mode-hook
+                                      go-mode-hook
+                                      js2-parse-finished-hook
+                                      php-mode-hook
+                                      python-mode-hook
+                                      ruby-mode-hook
+                                      )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)
 
@@ -56,5 +66,20 @@
     (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-cie-l*a*b*-choose-face)
     (setq rainbow-identifiers-cie-l*a*b*-lightness 70)
     (setq rainbow-identifiers-cie-l*a*b*-saturation 70)))
+
+(defun myinit-rainbow-identifiers--face-overridable (begin faces-to-override)
+  "Identifier under BEGIN is overridable if member of FACES-TO-OVERRIDE."
+  (let ((face (get-text-property begin 'face)))
+    (cond
+     ((null face)
+      t)
+     ((listp face)
+      (catch 'rainbow-identifiers--face-overridable
+        (dolist (face* face)
+          (unless (memq face* faces-to-override)
+            (throw 'rainbow-identifiers--face-overridable nil)))
+        t))
+     (t
+      (memq face faces-to-override)))))
 
 ;;; init-rainbow-identifiers.el ends here

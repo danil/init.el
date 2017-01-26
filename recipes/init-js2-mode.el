@@ -45,9 +45,33 @@
   ;; (myinit-after-load 'js2-mode
   ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))
 
+  (add-hook 'rainbow-identifiers-filter-functions
+            'myinit-js2-mode--rainbow-identifiers-filter)
+
   (myinit-add-mode-to-patterns 'js2-mode
                                 "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
                                 ;; "\\.js.erb\\'"
                                 "\\.js\\'"))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-js2-mode--rainbow-identifiers-filter (beg end)
+  (if (not (equal major-mode 'js2-mode))
+      t
+    (and
+     (myinit-rainbow-identifiers--face-overridable beg '(
+                                                         font-lock-variable-name-face
+                                                         js2-function-param
+                                                         js2-object-property
+                                                         ))
+     (let* ((current-identifier (buffer-substring-no-properties beg end))
+            (str-after (buffer-substring-no-properties end (point-max)))
+            (ch-before (char-before beg))
+           (ch-after (char-after end)))
+       (and
+        (not (string-match-p "\\`[A-Z]" current-identifier))
+        (not (string-match-p "\\`[[:space:]]*:" str-after))
+        (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+            (string-match-p "\\`\\.[[:space:]\n]*\\(length\\)[^a-zA-Z0-1]"
+                            str-after)))))))
 
 ;;; init-js-mode.el ends here

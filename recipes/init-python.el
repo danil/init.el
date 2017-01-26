@@ -47,31 +47,31 @@
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-python--rainbow-identifiers-filter (beg end)
   (if (not (equal major-mode 'python-mode))
-      (rainbow-identifiers-face-overridable beg end)
+      t
     (and
-     (rainbow-identifiers-face-overridable beg end)
+     (myinit-rainbow-identifiers--face-overridable beg '())
      (let* ((ch-current (char-after beg))
-            (ch-before (char-before beg))
-            (ch-after (char-after end))
-            (current-identifier (buffer-substring-no-properties beg end))
-            (str-before (buffer-substring-no-properties (point-min) beg))
-            (str-after (buffer-substring-no-properties end (point-max))))
-       (and (not (member ch-current
-                         '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-            (not (string-match-p "[?!]\\'" current-identifier))
-            (not (and (string-match-p "^[[:space:]]*\\'" str-before)
-                      (string-match-p "\\`[[:space:]]*$" str-after)))
-            (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
-                                 str-before))
-            (not (equal ch-after ?\())
-            (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
-            (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
+           (ch-before (char-before beg))
+           (ch-after (char-after end))
+           (current-identifier (buffer-substring-no-properties beg end))
+           (str-before (buffer-substring-no-properties (point-min) beg))
+           (str-after (buffer-substring-no-properties end (point-max))))
+      (and (not (member ch-current
+                        '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+           (not (string-match-p "[?!]\\'" current-identifier))
+           (not (and (string-match-p "^[[:space:]]*\\'" str-before)
+                     (string-match-p "\\`[[:space:]]*$" str-after)))
+           (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
+                                str-before))
+           (not (equal ch-after ?\())
+           (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+           (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
                      (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
-            (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-                (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
-                                str-after))
-            (not (member current-identifier '(
-                                              "new"
-                                              ))))))))
+           (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+               (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
+                               str-after))
+           (not (member current-identifier '(
+                                             "new"
+                                             ))))))))
 
 ;;; init-python.el ends here

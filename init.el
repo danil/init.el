@@ -426,11 +426,12 @@
 (my-recipe '(org-mode org-ac))
 (my-recipe '(org-mode))
 (my-recipe '(origami))
-(my-recipe '(paren))
 
 (my-recipe '(projectile))
 (my-recipe '(projectile-rails))
 
+(my-recipe '(paren))
+(my-recipe '(php-mode))
 (my-recipe '(python))
 (my-recipe '(quickrun))
 (my-recipe '(rainbow-identifiers))
