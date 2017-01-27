@@ -266,6 +266,23 @@ Otherwise use `list'."
   "My key bindings start with \\<<C-v>> follow by `KEY'."
   (kbd (concat "C-v " key)))
 
+;;;###autoload
+;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
+(defun myinit-run-with-idle-timer-in-current-buffer (secs repeat function &rest args)
+  "After `SECS' with `REPEAT' run some `FUNCTION' with `ARGS'.
+Like `run-with-idle-timer' but always in the `current-buffer'.
+Cancels itself, if this buffer was killed."
+
+  (let* (;; Chicken and egg problem.
+         (fns (make-symbol "local-idle-timer"))
+         (timer (apply 'run-with-idle-timer secs repeat fns args))
+         (fn `(lambda (&rest args)
+                (if (not (buffer-live-p ,(current-buffer)))
+                    (cancel-timer ,timer)
+                  (with-current-buffer ,(current-buffer)
+                    (apply (function ,function) args))))))
+    (fset fns fn) fn))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'myinit)

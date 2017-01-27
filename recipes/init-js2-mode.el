@@ -67,7 +67,7 @@
             js2-object-property
             ))
 
-    (rainbow-identifiers-mode)))
+    (myinit-rainbow-identifiers--init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-js2-mode--rainbow-identifiers-filter (beg end)
@@ -79,7 +79,8 @@
     (and
      (not (member ch-current
                   '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
-     (not (string-match-p "\\`[A-Z]" current-identifier))
+     (not (or (string-match-p "\\`[A-Z]" current-identifier)
+              (string-match-p "[=/*+-]" current-identifier)))
      ;; (not (string-match-p "\\`[[:space:]]*:" str-after))
      (not (and (equal ch-after ?\()
                (string-match-p "\\`[[:space:]\n]*(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+([^)]*)\\))\\))\\))\\))[[:space:]\n]*\\."

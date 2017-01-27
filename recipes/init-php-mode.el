@@ -61,7 +61,7 @@
     (setq rainbow-identifiers-faces-to-override
           '(default font-lock-variable-name-face))
 
-    (rainbow-identifiers-mode)))
+    (myinit-rainbow-identifiers--init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-php-mode--rainbow-identifiers-filter (beg end)
