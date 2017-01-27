@@ -66,7 +66,6 @@
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-current
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-
          (or (not (equal ch-before ?\s))
              (not (string-match-p "package \\'" str-before)))
          (not (equal ch-after ?\:))
