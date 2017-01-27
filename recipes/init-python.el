@@ -39,39 +39,45 @@
   ;; (myinit-after-load 'python
   ;;   (define-key python-mode-map (kbd "C-c C-f") nil))
 
-  (add-hook 'rainbow-identifiers-filter-functions
-            'myinit-python--rainbow-identifiers-filter)
-
   (myinit-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
+
+(defun myinit-python-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'python-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-python-mode--rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '())
+
+    (rainbow-identifiers-mode)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-python--rainbow-identifiers-filter (beg end)
-  (if (not (equal major-mode 'python-mode))
-      t
-    (and
-     (myinit-rainbow-identifiers--face-overridable beg '())
-     (let* ((ch-current (char-after beg))
-           (ch-before (char-before beg))
-           (ch-after (char-after end))
-           (current-identifier (buffer-substring-no-properties beg end))
-           (str-before (buffer-substring-no-properties (point-min) beg))
-           (str-after (buffer-substring-no-properties end (point-max))))
-      (and (not (member ch-current
-                        '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-           (not (string-match-p "[?!]\\'" current-identifier))
-           (not (and (string-match-p "^[[:space:]]*\\'" str-before)
-                     (string-match-p "\\`[[:space:]]*$" str-after)))
-           (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
-                                str-before))
-           (not (equal ch-after ?\())
-           (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
-           (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
-                     (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
-           (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-               (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
-                               str-after))
-           (not (member current-identifier '(
-                                             "new"
-                                             ))))))))
+  (let* ((ch-current (char-after beg))
+         (ch-before (char-before beg))
+         (ch-after (char-after end))
+         (current-identifier (buffer-substring-no-properties beg end))
+         (str-before (buffer-substring-no-properties (point-min) beg))
+         (str-after (buffer-substring-no-properties end (point-max))))
+    (and (not (member ch-current
+                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+         (not (string-match-p "[?!]\\'" current-identifier))
+         (not (and (string-match-p "^[[:space:]]*\\'" str-before)
+                   (string-match-p "\\`[[:space:]]*$" str-after)))
+         (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
+                              str-before))
+         (not (equal ch-after ?\())
+         (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+         (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
+                   (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
+         (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+             (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
+                             str-after))
+         (not (member current-identifier '(
+                                           "new"
+                                           ))))))
 
 ;;; init-python.el ends here

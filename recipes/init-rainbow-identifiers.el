@@ -38,48 +38,30 @@
   :group 'myinit)
 
 (custom-set-variables
- '(rainbow-identifiers-faces-to-override '(
-                                           default
-                                           font-lock-variable-name-face
-
-                                           js2-object-property
-                                           js2-function-param
-                                           ))
- '(myinit-rainbow-identifiers-hooks '(
-                                      c-mode-hook
-                                      go-mode-hook
-                                      js2-parse-finished-hook
-                                      php-mode-hook
-                                      python-mode-hook
-                                      ruby-mode-hook
-                                      )))
+ '(myinit-rainbow-identifiers-hooks
+   '(
+     (c-mode-common-hook myinit-c-mode--rainbow-identifiers-init)
+     (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
+     (js2-parse-finished-hook myinit-js2-mode--rainbow-identifiers-init)
+     (php-mode-hook myinit-php-mode--rainbow-identifiers-init)
+     (python-mode-hook myinit-python--rainbow-identifiers-init)
+     (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
+     )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)
 
 (defun myinit-rainbow-identifiers ()
   "My init."
 
-  (dolist (hook myinit-rainbow-identifiers-hooks) (add-hook hook 'rainbow-identifiers-mode))
+  (dolist (hook myinit-rainbow-identifiers-hooks)
+    (let ((h (car hook))
+          (init-fn (nth 1 hook)))
+      (when (fboundp init-fn) (add-hook h init-fn))))
 
   (myinit-after-load 'rainbow-identifiers
     ;; Use a wider set of colors.
     (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-cie-l*a*b*-choose-face)
     (setq rainbow-identifiers-cie-l*a*b*-lightness 70)
     (setq rainbow-identifiers-cie-l*a*b*-saturation 70)))
-
-(defun myinit-rainbow-identifiers--face-overridable (begin faces-to-override)
-  "Identifier under BEGIN is overridable if member of FACES-TO-OVERRIDE."
-  (let ((face (get-text-property begin 'face)))
-    (cond
-     ((null face)
-      t)
-     ((listp face)
-      (catch 'rainbow-identifiers--face-overridable
-        (dolist (face* face)
-          (unless (memq face* faces-to-override)
-            (throw 'rainbow-identifiers--face-overridable nil)))
-        t))
-     (t
-      (memq face faces-to-override)))))
 
 ;;; init-rainbow-identifiers.el ends here

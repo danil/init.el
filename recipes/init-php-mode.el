@@ -47,18 +47,26 @@
 
   ;; (myinit-after-load 'php-mode
   ;;   (define-key php-mode-map (kbd "C-c C-f") nil))
+  )
 
-  (add-hook 'rainbow-identifiers-filter-functions
-            'myinit-php-mode--rainbow-identifiers-filter))
+(defun myinit-php-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'php-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-php-mode--rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override
+          '(default font-lock-variable-name-face))
+
+    (rainbow-identifiers-mode)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-php-mode--rainbow-identifiers-filter (beg end)
-  (if (not (equal major-mode 'php-mode))
-      t
-    (and
-     (myinit-rainbow-identifiers--face-overridable beg '(default font-lock-variable-name-face))
-     (let* ((current-identifier (buffer-substring-no-properties beg end)))
-       (string-match-p "\\`\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+\\'"
-                       current-identifier)))))
+  (let* ((current-identifier (buffer-substring-no-properties beg end)))
+    (string-match-p "\\`\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+\\'"
+                    current-identifier)))
 
 ;;; init-php-mode.el ends here
