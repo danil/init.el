@@ -50,7 +50,7 @@
               'myinit-python-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '())
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
     (rainbow-identifiers-mode)))
 
@@ -63,16 +63,15 @@
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-current
-                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ??)))
          (not (string-match-p "[?!]\\'" current-identifier))
+         (not (string-match-p "__" current-identifier))
+         (not (equal ch-after ?\())
+         (or (not (equal ch-before ?\s))
+             (not (string-match-p "import \\'" str-before)))
          (not (and (string-match-p "^[[:space:]]*\\'" str-before)
                    (string-match-p "\\`[[:space:]]*$" str-after)))
-         (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
-                              str-before))
-         (not (equal ch-after ?\())
          (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
-         (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
-                   (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
          (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
              (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
                              str-after))
