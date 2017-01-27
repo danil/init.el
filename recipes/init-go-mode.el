@@ -58,12 +58,12 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-go-mode--rainbow-identifiers-filter (beg end)
-  (let* ((ch-current (char-after beg))
-         (ch-before (char-before beg))
-         (ch-after (char-after end))
-         (current-identifier (buffer-substring-no-properties beg end))
-         (str-before (buffer-substring-no-properties (point-min) beg))
-         (str-after (buffer-substring-no-properties end (point-max))))
+  (let ((ch-current (char-after beg))
+        (ch-before (char-before beg))
+        (ch-after (char-after end))
+        (current-identifier (buffer-substring-no-properties beg end))
+        (str-before (buffer-substring-no-properties (point-min) beg))
+        (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-current
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
 

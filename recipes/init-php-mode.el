@@ -65,7 +65,7 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-php-mode--rainbow-identifiers-filter (beg end)
-  (let* ((current-identifier (buffer-substring-no-properties beg end)))
+  (let ((current-identifier (buffer-substring-no-properties beg end)))
     (string-match-p "\\`\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+\\'"
                     current-identifier)))
 
