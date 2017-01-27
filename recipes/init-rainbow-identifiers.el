@@ -44,7 +44,7 @@
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
      (js2-parse-finished-hook myinit-js2-mode--rainbow-identifiers-init)
      (php-mode-hook myinit-php-mode--rainbow-identifiers-init)
-     (python-mode-hook myinit-python--rainbow-identifiers-init)
+     (python-mode-hook myinit-python-mode--rainbow-identifiers-init)
      (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
      )))
 

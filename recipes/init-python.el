@@ -55,7 +55,7 @@
     (rainbow-identifiers-mode)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-python--rainbow-identifiers-filter (beg end)
+(defun myinit-python-mode--rainbow-identifiers-filter (beg end)
   (let* ((ch-current (char-after beg))
          (ch-before (char-before beg))
          (ch-after (char-after end))
