@@ -52,4 +52,40 @@
                                "/etc/init.d/"
                                "/etc/local.d/.+\\.\\(start\\|stop\\)"))
 
+(defun myinit-sh-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'sh-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-sh-mode--rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(
+                                                  font-lock-string-face
+                                                  font-lock-variable-name-face
+                                                  sh-heredoc
+                                                  sh-quoted-exec
+                                                  ))
+
+    (rainbow-identifiers-mode)))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-sh-mode--rainbow-identifiers-filter (beg end)
+  (let ((current-identifier (buffer-substring-no-properties beg end))
+        (ch-after (char-after end))
+        (ch-before (char-before beg))
+        (ch2-before (buffer-substring-no-properties
+                     (max (point-min) (- beg 2)) beg))
+        (str-after (buffer-substring-no-properties end (point-max))))
+    (and
+     (string-match-p "\\`[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*\\'"
+                     current-identifier)
+     (or (and
+          (member ch2-before '(?$ "${"))
+          ;; (string-match-p "\\`[^}]*}" str-after)
+          (equal ch-after ?}))
+         (equal ch-before ?$)
+         (string-match-p "\\`[[:space:]]*[/*+-]?=" str-after)))))
+
 ;;; init-sh-script.el ends here

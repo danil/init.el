@@ -47,6 +47,7 @@
      (php-mode-hook myinit-php-mode--rainbow-identifiers-init)
      (python-mode-hook myinit-python-mode--rainbow-identifiers-init)
      (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
+     (sh-mode-hook myinit-sh-mode--rainbow-identifiers-init)
      )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)
