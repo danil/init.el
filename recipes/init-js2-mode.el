@@ -60,7 +60,12 @@
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
-          '(font-lock-variable-name-face js2-function-param js2-object-property))
+          '(
+            font-lock-variable-name-face
+            js2-function-call
+            js2-function-param
+            js2-object-property
+            ))
 
     (rainbow-identifiers-mode)))
 
@@ -71,10 +76,27 @@
          (ch-before (char-before beg))
          (ch-after (char-after end)))
     (and
-     (not (string-match-p "\\`[A-Z]" current-identifier))
-     (not (string-match-p "\\`[[:space:]]*:" str-after))
+     (not (string-match-p "\\`\\(__\\|[A-Z]\\)" current-identifier))
+     ;; (not (string-match-p "\\`[[:space:]]*:" str-after))
+     (not (and (equal ch-after ?\()
+               (string-match-p "\\`[[:space:]\n]*(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+([^)]*)\\))\\))\\))\\))[[:space:]\n]*\\."
+                               str-after)))
      (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-         (string-match-p "\\`\\.[[:space:]\n]*\\(length\\)[^a-zA-Z0-1]"
-                         str-after)))))
+         (string-match-p "\\`\\.[[:space:]\n]*\\(forEach\\|join\\|length\\|map\\|parse\\|pipe\\|split\\|watch\\|write\\)[^a-zA-Z0-1]"
+                         str-after))
+     (not (member current-identifier '(
+                                       "console"
+                                       "forEach"
+                                       "gulp"
+                                       "join"
+                                       "length"
+                                       "log"
+                                       "map"
+                                       "parse"
+                                       "pipe"
+                                       "split"
+                                       "watch"
+                                       "write"
+                                       ))))))
 
-;;; init-js-mode.el ends here
+;;; init-js2-mode.el ends here
