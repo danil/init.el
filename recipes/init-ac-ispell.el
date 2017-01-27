@@ -39,7 +39,7 @@
   "My init."
 
   (myinit-add-mode-to-hooks 'my-ac-ispell-setup
-                              myinit-auto-completion-modes-hooks))
+                            myinit-auto-completion-modes-hooks))
 
 (defun my-ac-ispell-setup ()
   (ac-ispell-setup)
