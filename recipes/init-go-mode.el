@@ -58,10 +58,10 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-go-mode--rainbow-identifiers-filter (beg end)
-  (let ((ch-current (char-after beg))
+  (let ((current-identifier (buffer-substring-no-properties beg end))
+        (ch-current (char-after beg))
         (ch-before (char-before beg))
         (ch-after (char-after end))
-        (current-identifier (buffer-substring-no-properties beg end))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-current
@@ -216,44 +216,44 @@
                                            "zip"
                                            "zlib"
 
-                                           "bool" "Bool"
-                                           "byte" "Byte"
-                                           "chan" "Chan"
-                                           "complex128" "Complex128"
-                                           "complex64" "Complex64"
+                                           "bool"
+                                           "byte"
+                                           "chan"
+                                           "complex128"
+                                           "complex64"
                                            "error"
-                                           "float32" "Float32"
-                                           "float64" "Float64"
-                                           "int" "Int"
-                                           "int16" "Int16"
-                                           "int32" "Int32"
-                                           "int64" "Int64"
-                                           "int8" "Int8"
-                                           "rune" "Rune"
-                                           "string" "String"
-                                           "struct" "Struct"
-                                           "uint" "Uint"
-                                           "uint16" "Uint16"
-                                           "uint32" "Uint32"
-                                           "uint64" "Uint64"
-                                           "uint8" "Uint8"
-                                           "uintptr" "Uintptr"
+                                           "float32"
+                                           "float64"
+                                           "int"
+                                           "int16"
+                                           "int32"
+                                           "int64"
+                                           "int8"
+                                           "rune"
+                                           "string"
+                                           "struct"
+                                           "uint"
+                                           "uint16"
+                                           "uint32"
+                                           "uint64"
+                                           "uint8"
+                                           "uintptr"
 
-                                           "DB"
-                                           "DBStats"
-                                           "NullBool"
-                                           "NullFloat64"
-                                           "NullInt64"
-                                           "NullString"
-                                           "RawBytes"
-                                           "Result"
-                                           "Row"
-                                           "Rows"
-                                           "Scanner"
-                                           "Stmt"
-                                           "Tx"
+                                           "db"
+                                           "dbstats"
+                                           "nullbool"
+                                           "nullfloat64"
+                                           "nullint64"
+                                           "nullstring"
+                                           "rawbytes"
+                                           "result"
+                                           "row"
+                                           "rows"
+                                           "scanner"
+                                           "stmt"
+                                           "tx"
 
-                                           "Valid"
+                                           "valid"
                                            ))))))
 
 ;;; init-go-mode.el ends here
