@@ -45,4 +45,18 @@
     (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
           (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode))))
 
+(defun myinit-coffee-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'coffee-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-js2-mode--rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override
+          '(font-lock-variable-name-face))
+
+    (rainbow-identifiers-mode)))
+
 ;;; init-coffee-mode.el ends here

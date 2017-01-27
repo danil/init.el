@@ -71,21 +71,28 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-js2-mode--rainbow-identifiers-filter (beg end)
-  (let* ((current-identifier (buffer-substring-no-properties beg end))
+  (let* ((ch-current (char-after beg))
+         (current-identifier (buffer-substring-no-properties beg end))
          (str-after (buffer-substring-no-properties end (point-max)))
          (ch-before (char-before beg))
          (ch-after (char-after end)))
     (and
-     (not (string-match-p "\\`\\(__\\|[A-Z]\\)" current-identifier))
+     (not (member ch-current
+                  '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
+     (not (string-match-p "\\`[A-Z]" current-identifier))
      ;; (not (string-match-p "\\`[[:space:]]*:" str-after))
      (not (and (equal ch-after ?\()
                (string-match-p "\\`[[:space:]\n]*(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+([^)]*)\\))\\))\\))\\))[[:space:]\n]*\\."
                                str-after)))
      (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-         (string-match-p "\\`\\.[[:space:]\n]*\\(forEach\\|join\\|length\\|map\\|parse\\|pipe\\|split\\|watch\\|write\\)[^a-zA-Z0-1]"
+        (string-match-p "\\`\\.[[:space:]\n]*\\(apply\\|call\\|debug\\|forEach\\|join\\|length\\|map\\|parse\\|pipe\\|pop\\|push\\|reverse\\|split\\|stringify\\|watch\\|write\\)[^a-zA-Z0-1]"
                          str-after))
      (not (member current-identifier '(
+                                       "apply"
+                                       "call"
                                        "console"
+                                       "debug"
+                                       "execute"
                                        "forEach"
                                        "gulp"
                                        "join"
@@ -94,7 +101,13 @@
                                        "map"
                                        "parse"
                                        "pipe"
+                                       "pop"
+                                       "push"
+                                       "require"
+                                       "reverse"
                                        "split"
+                                       "stringify"
+                                       "this"
                                        "watch"
                                        "write"
                                        ))))))
