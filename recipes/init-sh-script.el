@@ -68,7 +68,7 @@
                                                   sh-quoted-exec
                                                   ))
 
-    (myinit-rainbow-identifiers--init)))
+    (myinit-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-sh-mode--rainbow-identifiers-filter (beg end)

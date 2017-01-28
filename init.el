@@ -233,7 +233,9 @@
                               '(
                                 ;; shell-mode
                                 ;; sql-interactive-mode
-                                ))))
+                                )))
+
+ '(myinit-default-idle-timer-seconds 1))
 
 (dolist (mode myinit-safe-modes)
   (add-to-list 'myinit-safe-modes-hooks

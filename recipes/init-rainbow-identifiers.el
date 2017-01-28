@@ -67,9 +67,10 @@
     (setq rainbow-identifiers-cie-l*a*b*-lightness 70)
     (setq rainbow-identifiers-cie-l*a*b*-saturation 70)))
 
-(defun myinit-rainbow-identifiers--init ()
+(defun myinit-rainbow-identifiers--lazyinit ()
   "Run `rainbow-identifiers'."
 
-  (myinit-run-with-idle-timer-in-current-buffer 1 nil 'rainbow-identifiers-mode))
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'rainbow-identifiers-mode))
 
 ;;; init-rainbow-identifiers.el ends here

@@ -55,7 +55,7 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '())
 
-    (myinit-rainbow-identifiers--init)))
+    (myinit-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-c-mode--rainbow-identifiers-filter (beg end)

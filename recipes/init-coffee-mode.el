@@ -57,6 +57,6 @@
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face))
 
-    (myinit-rainbow-identifiers--init)))
+    (myinit-rainbow-identifiers--lazyinit)))
 
 ;;; init-coffee-mode.el ends here

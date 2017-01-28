@@ -52,7 +52,8 @@
 (defun myinit-flycheck ()
   "My init."
 
-  (myinit-add-mode-to-hooks 'flycheck-mode myinit-programming-modes-hooks))
+  (dolist (hook myinit-programming-modes-hooks)
+    (add-hook hook 'myinit-flycheck--lazyinit)))
 
 (with-eval-after-load 'flycheck
   ;; ;; Disable jshint since we prefer eslint checking.
@@ -70,5 +71,11 @@
   ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
 
   (setq flycheck-go-vet-shadow t))
+
+(defun myinit-flycheck--lazyinit ()
+  "Run `flycheck'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'flycheck-mode))
 
 ;;; init-flycheck.el ends here

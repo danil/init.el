@@ -52,6 +52,14 @@
     ;; Set Yasnippet's key binding to shift+tab
     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
-  (myinit-add-mode-to-hooks 'yas-minor-mode myinit-programming-modes-hooks))
+
+  (dolist (hook myinit-programming-modes-hooks)
+    (add-hook hook 'myinit-yasnippet--lazyinit)))
+
+(defun myinit-yasnippet--lazyinit ()
+  "Run `yasnippet'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'yas-minor-mode))
 
 ;;; init-yasnippet.el ends here

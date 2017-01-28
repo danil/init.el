@@ -57,7 +57,9 @@
 (defun myinit-linum ()
   "My init."
 
-  (dolist (hook myinit-linum-modes-hooks) (add-hook hook 'myinit-linum-turn-on-or-off))
+  (dolist (hook myinit-linum-modes-hooks)
+    (add-hook hook 'myinit-linum--lazyinit))
+
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
   (define-key myinit-map (kbd "x l") 'myinit-linum-toggle)
@@ -65,6 +67,12 @@
   (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
+
+(defun myinit-linum--lazyinit ()
+  "Run `linum'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'myinit-linum-turn-on-or-off))
 
 (defun myinit-linum-toggle ()
   "Toggle the `linume-mode'."

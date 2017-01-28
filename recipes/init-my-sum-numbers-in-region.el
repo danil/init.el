@@ -30,6 +30,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
 (require 'cl-lib)
 ;; <http://emacs.stackexchange.com/questions/10939/sum-numbers-in-region#10942>.
 (defun my-sum-numbers-in-region (start end)
@@ -39,4 +40,5 @@
                       (split-string (buffer-substring start
                                                       end))
                       :key #'string-to-number)))
+
 ;;; init-my-sum-numbers-in-region.el ends here

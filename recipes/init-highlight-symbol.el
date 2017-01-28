@@ -51,12 +51,19 @@
 (defun myinit-highlight-symbol ()
   "My init."
 
-  (dolist (hook myinit-highlight-symbol-modes-hooks) (add-hook hook 'highlight-symbol-mode))
+  (dolist (hook myinit-highlight-symbol-modes-hooks)
+    (add-hook hook 'myinit-highlight-symbol--lazyinit))
 
   (with-eval-after-load 'highlight-symbol
     (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
     (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
 
     (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))
+
+(defun myinit-highlight-symbol--lazyinit ()
+  "Run `highlight-symbol'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'highlight-symbol-mode))
 
 ;;; init-highlight-symbol.el ends here

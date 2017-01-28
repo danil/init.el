@@ -40,6 +40,6 @@
 (defun myinit-anzu ()
   "My init."
 
-  (global-anzu-mode t))
+  (run-with-idle-timer 1 nil 'global-anzu-mode t))
 
 ;;; init-anzu.el ends here

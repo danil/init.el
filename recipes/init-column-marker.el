@@ -38,8 +38,8 @@
 (defun myinit-column-marker ()
   "My init."
 
-  (myinit-add-mode-to-hooks (lambda () (column-marker-1 79))
-                              myinit-programming-modes-hooks)
+  (dolist (hook myinit-programming-modes-hooks)
+    (add-hook hook 'myinit-column-marker--lazyinit))
 
   (myinit-after-load 'column-marker
     (cond ((equal frame-background-mode 'light)
@@ -47,5 +47,13 @@
 
           ((equal frame-background-mode 'dark)
            (set-face-background 'column-marker-1 "gray35")))))
+
+(defun myinit-column-marker--lazyinit ()
+  "Run `rainbow-column-marker'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds
+   nil
+   (lambda () (column-marker-1 79))))
 
 ;;; init-column-marker.el ends here

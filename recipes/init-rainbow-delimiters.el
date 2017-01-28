@@ -36,8 +36,8 @@
 (defun myinit-rainbow-delimiters ()
   "My init."
 
-  (myinit-add-mode-to-hooks 'rainbow-delimiters-mode
-                              myinit-programming-modes-hooks)
+  (dolist (hook myinit-programming-modes-hooks)
+    (add-hook hook 'myinit-rainbow-delimiters--lazyinit))
 
   ;; (myinit-add-mode-to-hooks (lambda ()
   ;;                               (when (or (not (boundp 'rainbow-delimiters-mode))
@@ -60,5 +60,11 @@
      '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
      '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
      '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1")))))))
+
+(defun myinit-rainbow-delimiters--lazyinit ()
+  "Run `rainbow-delimiters'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'rainbow-delimiters-mode))
 
 ;;; init-rainbow-delimiters.el ends here

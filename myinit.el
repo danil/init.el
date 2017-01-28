@@ -219,6 +219,11 @@ Otherwise use `list'."
   :group 'myinit)
 
 ;;;###autoload
+(defcustom myinit-default-idle-timer-seconds '()
+  "My default idle timer wait timeout."
+  :group 'myinit)
+
+;;;###autoload
 (defmacro myinit-after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
 

@@ -36,7 +36,13 @@
 (defun myinit-digit-groups ()
   "My init."
 
-  (myinit-add-mode-to-hooks 'digit-groups-mode
-                              myinit-highlighted-digits-modes-hooks))
+  (dolist (hook myinit-highlighted-digits-modes-hooks)
+    (add-hook hook 'myinit-digit-groups--lazyinit)))
+
+(defun myinit-digit-groups--lazyinit ()
+  "Run `digit-groups'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'digit-groups-mode))
 
 ;;; init-digit-groups.el ends here
