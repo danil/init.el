@@ -43,4 +43,11 @@
          (set-face-background 'scroll-bar "white")
          (set-face-foreground 'scroll-bar "gray"))))
 
+;; <http://stackoverflow.com/questions/1242352/get-font-face-under-cursor-in-emacs#1242366>.
+(defun my-face-at-point (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
 ;;; init-faces.el ends here
