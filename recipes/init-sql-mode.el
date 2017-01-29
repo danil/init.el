@@ -40,17 +40,31 @@
 
 (defun myinit-sql-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'sql-mode)
-    (make-local-variable 'rainbow-identifiers-filter-functions)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
+    (myinit-sql--rainbow-identifiers-init)
+
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-sql-mode--rainbow-identifiers-filter)
 
-    (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '())
+    (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
+      (myinit-rainbow-identifiers--lazyinit))))
+
+(defun myinit-sql-interactive-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'sql-interactive-mode)
+    (myinit-sql--rainbow-identifiers-init)
+
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-sql-mode--rainbow-identifiers-filter)
 
     (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
+
+(defun myinit-sql--rainbow-identifiers-init ()
+  (make-local-variable 'rainbow-identifiers-filter-functions)
+  (add-hook 'rainbow-identifiers-filter-functions
+            'rainbow-identifiers-face-overridable)
+
+  (make-local-variable 'rainbow-identifiers-faces-to-override)
+  (setq rainbow-identifiers-faces-to-override '()))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-sql-mode--rainbow-identifiers-filter (beg end)
@@ -63,14 +77,22 @@
                                        "autocommit"
                                        "charset"
                                        "comment"
+                                       "databases"
                                        "engine"
                                        "enum"
+                                       "extra"
                                        "innodb"
                                        "lock"
+                                       "mul"
+                                       "mysql"
+                                       "oracle"
+                                       "pri"
+                                       "sec"
                                        "tables"
                                        "unlock"
                                        "unsigned"
                                        "utf8"
+                                       "yes"
                                        ))))))
 
 ;;; init-sql-mode.el ends here
