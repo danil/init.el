@@ -71,6 +71,8 @@
                                  "fastcgi_index"
                                  "fastcgi_param"
                                  "fastcgi_pass"
+                                 "gzip_min_length"
+                                 "gzip_vary"
                                  "if"
                                  "keepalive_timeout"
                                  "listen"
