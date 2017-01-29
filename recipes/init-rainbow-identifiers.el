@@ -42,6 +42,7 @@
    '(
      (c-mode-common-hook myinit-c-mode--rainbow-identifiers-init)
      (coffee-mode-hook myinit-coffee-mode--rainbow-identifiers-init)
+     (conf-mode-hook myinit-conf-mode--rainbow-identifiers-init)
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
      (js2-parse-finished-hook myinit-js2-mode--rainbow-identifiers-init)
      (php-mode-hook myinit-php-mode--rainbow-identifiers-init)

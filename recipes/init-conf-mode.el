@@ -113,4 +113,23 @@
                                "/rsyncd.secrets\\'"
                                "\\.pgpass\\'"))
 
+(defun myinit-conf-mode--rainbow-identifiers-init ()
+  (when (string-match-p "\\`conf[a-z-]*-mode\\'" (symbol-name major-mode))
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-conf-mode--rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+
+    (myinit-rainbow-identifiers--lazyinit)))
+
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun myinit-conf-mode--rainbow-identifiers-filter (beg end)
+  (let ((str-after (buffer-substring-no-properties end (point-max))))
+    (string-match-p "\\`[[:space:]]*\\(=\\|:[[:space:]]*[^[:space:]]+$\\)" str-after)))
+
 ;;; init-conf-mode.el ends here
