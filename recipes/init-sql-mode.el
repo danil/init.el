@@ -73,11 +73,14 @@
     (and
      (not (member ch-current '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9)))
      (not (member current-identifier '(
+                                       "affected"
                                        "auto_increment"
                                        "autocommit"
+                                       "change"
                                        "charset"
                                        "comment"
                                        "databases"
+                                       "duplicates"
                                        "engine"
                                        "enum"
                                        "extra"
@@ -85,13 +88,17 @@
                                        "lock"
                                        "mul"
                                        "mysql"
+                                       "ok"
                                        "oracle"
                                        "pri"
+                                       "query"
+                                       "records"
                                        "sec"
                                        "tables"
                                        "unlock"
                                        "unsigned"
                                        "utf8"
+                                       "warnings"
                                        "yes"
                                        ))))))
 
