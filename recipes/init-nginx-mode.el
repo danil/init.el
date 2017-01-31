@@ -46,48 +46,11 @@
   (when (equal major-mode 'nginx-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-nginx-mode--rainbow-identifiers-filter)
+              'myinit-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
     (myinit-rainbow-identifiers--lazyinit)))
-
-;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-nginx-mode--rainbow-identifiers-filter (beg end)
-  (let ((current-identifier (buffer-substring-no-properties beg end)))
-    (member current-identifier '(
-                                 "access_log"
-                                 "autoindex"
-                                 "break"
-                                 "client_max_body_size"
-                                 "default_type"
-                                 "deny"
-                                 "error_log"
-                                 "error_page"
-                                 "expires"
-                                 "fastcgi_index"
-                                 "fastcgi_param"
-                                 "fastcgi_pass"
-                                 "gzip_min_length"
-                                 "gzip_vary"
-                                 "if"
-                                 "keepalive_timeout"
-                                 "listen"
-                                 "location"
-                                 "proxy_pass"
-                                 "proxy_redirect"
-                                 "proxy_set_header"
-                                 "return"
-                                 "rewrite"
-                                 "root"
-                                 "server"
-                                 "server_name"
-                                 "set"
-                                 "try_files"
-                                 "upstream"
-                                 ))))
 
 ;;; init-nginx-mode.el ends here

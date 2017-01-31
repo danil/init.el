@@ -53,20 +53,12 @@
   (when (equal major-mode 'php-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-php-mode--rainbow-identifiers-filter)
+              'myinit-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
           '(default font-lock-variable-name-face))
 
     (myinit-rainbow-identifiers--lazyinit)))
-
-;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-php-mode--rainbow-identifiers-filter (beg end)
-  (let ((current-identifier (buffer-substring-no-properties beg end)))
-    (string-match-p "\\`\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+\\'"
-                    current-identifier)))
 
 ;;; init-php-mode.el ends here
