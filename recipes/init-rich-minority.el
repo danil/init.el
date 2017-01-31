@@ -42,7 +42,6 @@
                   " ARev" ;auto-revert-mode
                   " Abbrev" ;abbrev-mode
                   " Anzu" ;anzu-mode
-                  " ColorIds" ;color-identifiers-mode
                   " Helm" ;helm-mode
                   " MRev" ;magit-auto-revert-mode
                   " Myinit" ;myinit-mode
