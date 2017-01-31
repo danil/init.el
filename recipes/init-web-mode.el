@@ -79,31 +79,17 @@
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-rainbow-identifiers--face-overridable)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-web-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
                                                   web-mode-css-property-name-face
                                                   web-mode-css-selector-face
+                                                  web-mode-doctype-face
                                                   web-mode-html-attr-name-face
                                                   web-mode-html-tag-face
                                                   ))
 
     (myinit-rainbow-identifiers--lazyinit)))
-
-;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-web-mode--rainbow-identifiers-filter (beg end)
-  (let ((current-identifier (downcase (buffer-substring-no-properties beg end))))
-    (not (member current-identifier '(
-                                      "charset"
-                                      "doctype"
-                                      "head"
-                                      "html"
-                                      "http-equiv"
-                                      "style"
-                                      "title"
-                                      )))))
 
 (defun myinit-web-mode--armor5games-settings ()
   "Custom Armor5games settings."
