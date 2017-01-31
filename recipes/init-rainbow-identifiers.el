@@ -56,6 +56,7 @@
      (sql-interactive-mode-hook myinit-sql-interactive-mode--rainbow-identifiers-init)
      (sql-mode-hook myinit-sql-mode--rainbow-identifiers-init)
      (web-mode-hook myinit-web-mode--rainbow-identifiers-init)
+     (yaml-mode-hook myinit-yaml-mode--rainbow-identifiers-init)
      )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)

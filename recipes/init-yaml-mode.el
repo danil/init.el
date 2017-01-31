@@ -38,7 +38,17 @@
 
   (myinit-add-mode-to-patterns 'yaml-mode
                                  "/\\(group\\|host\\)_vars/[^.]*\\'"
-                                 "\\.ya?ml.example\\'"
-                                 "\\.ya?ml\\'"))
+                                 "\\.ya?ml\\(\\.example\\)?\\'"))
+
+(defun myinit-yaml-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'yaml-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-rainbow-identifiers--face-overridable)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+
+    (myinit-rainbow-identifiers--lazyinit)))
 
 ;;; init-yaml-mode.el ends here
