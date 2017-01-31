@@ -55,6 +55,7 @@
      (sh-mode-hook myinit-sh-mode--rainbow-identifiers-init)
      (sql-interactive-mode-hook myinit-sql-interactive-mode--rainbow-identifiers-init)
      (sql-mode-hook myinit-sql-mode--rainbow-identifiers-init)
+     (web-mode-hook myinit-web-mode--rainbow-identifiers-init)
      )))
 
 (add-hook 'after-init-hook 'myinit-rainbow-identifiers)
@@ -78,5 +79,20 @@
 
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil 'rainbow-identifiers-mode))
+
+(defun myinit-rainbow-identifiers--face-overridable (begin end)
+  "My test if the face of the identifier under BEGIN is overridable."
+  (let ((face (get-text-property begin 'face)))
+    (cond
+     ((null face)
+      nil)
+     ((listp face)
+      (catch 'rainbow-identifiers--face-overridable
+        (dolist (face* face)
+          (unless (memq face* rainbow-identifiers-faces-to-override)
+            (throw 'rainbow-identifiers--face-overridable nil)))
+        t))
+     (t
+      (memq face rainbow-identifiers-faces-to-override)))))
 
 ;;; init-rainbow-identifiers.el ends here
