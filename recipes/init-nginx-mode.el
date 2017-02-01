@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(custom-set-variables '(nginx-indent-level 2))
+;; (custom-set-variables '(nginx-indent-level 2))
 
 (add-hook 'after-init-hook 'myinit-nginx-mode)
 
