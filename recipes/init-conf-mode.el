@@ -36,82 +36,84 @@
 (defun myinit-conf-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'conf-mode
-                               "/.config/sxhkd/"
-                               "/Pipfile2\\'"
-                               "/Pipfile3\\'"
-                               "/Pipfile\\'"
-                               "/\\.config/skippy-xd/skippy-xd\\.rc\\'"
-                               "/\\.curlrc\\'"
-                               "/\\.gtkrc-2.0\\'"
-                               "/\\.inputrc\\'"
-                               "/\\.moc/keymap\\'"
-                               "/\\.npmrc\\'"
-                               "/\\.offlineimaprc\\'"
-                               "/\\.rvmrc\\'"
-                               "/\\.screenrc\\'"
-                               "/\\.tigrc\\'"
-                               "/conkyrc_calendar\\'"
-                               "/conkyrc_top\\'"
-                               "/csf.allow\\'"
-                               "/dunstrc\\'"
-                               "/etc/fstab\\'"
-                               "/etc/mail/aliases\\'"
-                               "/etc/mailutils\\.d/"
-                               "/fail2ban/.*\\.local\\'"
-                               "/hosts\\'"
-                               "/htoprc\\'"
-                               "/inventor\\(y\\|ies\\)/[^.]*\\'"
-                               "/locale.gen\\'"
-                               "/mailutils\\.rc\\'"
-                               "/mimeapps.list\\'"
-                               "/monitrc\\'"
-                               "/robots.txt\\'"
-                               "/securetty\\'"
-                               "/share/applications/defaults\\.list\\'"
-                               "/sshd_config\\'"
-                               "/sudoers\\'"
-                               "/tint2rc\\'"
-                               "\\.cnf\\'"
-                               "\\.eixrc\\'"
-                               "\\.features\\'" ;cucumber features
-                               "\\.feed2imaprc\\'"
-                               "\\.gtkrc.mine\\'"
-                               "\\.pkla\\'"
-                               "\\.skippyrc\\'"
-                               "\\.stalonetrayrc\\'"
-                               "\\.theme\\'"
-                               "\\.xxkbrc\\'"
-                               "\\parcelliterc\\'"
-                               "\\torrc\\'")
+  (dolist (pattern '("/.config/sxhkd/"
+                     "/Pipfile2\\'"
+                     "/Pipfile3\\'"
+                     "/Pipfile\\'"
+                     "/\\.config/skippy-xd/skippy-xd\\.rc\\'"
+                     "/\\.curlrc\\'"
+                     "/\\.gtkrc-2.0\\'"
+                     "/\\.inputrc\\'"
+                     "/\\.moc/keymap\\'"
+                     "/\\.npmrc\\'"
+                     "/\\.offlineimaprc\\'"
+                     "/\\.rvmrc\\'"
+                     "/\\.screenrc\\'"
+                     "/\\.tigrc\\'"
+                     "/conkyrc_calendar\\'"
+                     "/conkyrc_top\\'"
+                     "/csf.allow\\'"
+                     "/dunstrc\\'"
+                     "/etc/fstab\\'"
+                     "/etc/mail/aliases\\'"
+                     "/etc/mailutils\\.d/"
+                     "/fail2ban/.*\\.local\\'"
+                     "/hosts\\'"
+                     "/htoprc\\'"
+                     "/inventor\\(y\\|ies\\)/[^.]*\\'"
+                     "/locale.gen\\'"
+                     "/mailutils\\.rc\\'"
+                     "/mimeapps.list\\'"
+                     "/monitrc\\'"
+                     "/robots.txt\\'"
+                     "/securetty\\'"
+                     "/share/applications/defaults\\.list\\'"
+                     "/sshd_config\\'"
+                     "/sudoers\\'"
+                     "/tint2rc\\'"
+                     "\\.cnf\\'"
+                     "\\.eixrc\\'"
+                     "\\.features\\'" ;cucumber features
+                     "\\.feed2imaprc\\'"
+                     "\\.gtkrc.mine\\'"
+                     "\\.pkla\\'"
+                     "\\.skippyrc\\'"
+                     "\\.stalonetrayrc\\'"
+                     "\\.theme\\'"
+                     "\\.xxkbrc\\'"
+                     "\\parcelliterc\\'"
+                     "\\torrc\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-mode)))
 
   ;; Logrotate scripts.
-  (myinit-add-mode-to-patterns 'conf-mode
-                               "/etc/logrotate\\.d/"
-                               "\\.logrotate\\'")
+  (dolist (pattern '("/etc/logrotate\\.d/" "\\.logrotate\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-mode)))
 
   ;; Gentoo configs.
-  (myinit-add-mode-to-patterns 'conf-mode
-                               "/etc/conf\\.d/"
-                               "/etc/eixrc/"
-                               "/etc/env\\.d/"
-                               "/etc/fcron/"
-                               "/etc/portage/env/"
-                               "/etc/portage/package\\..*\\'"
-                               "/etc/portage/profile/use\\.mask\\'"
-                               "/etc/portage/sets/"
-                               "/portage/package\\.license\\'"
-                               "/profiles/categories\\'"
-                               "/profiles/package.mask\\'"
-                               "/profiles/repo_name\\'"
-                               "/var/lib/portage/world_sets\\'"
-                               "\\world\\'")
+  (dolist (pattern '("/etc/conf\\.d/"
+                     "/etc/eixrc/"
+                     "/etc/env\\.d/"
+                     "/etc/fcron/"
+                     "/etc/portage/env/"
+                     "/etc/portage/package\\..*\\'"
+                     "/etc/portage/profile/use\\.mask\\'"
+                     "/etc/portage/sets/"
+                     "/portage/package\\.license\\'"
+                     "/profiles/categories\\'"
+                     "/profiles/package.mask\\'"
+                     "/profiles/repo_name\\'"
+                     "/var/lib/portage/world_sets\\'"
+                     "\\world\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-mode)))
 
-  (myinit-add-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
+  (dolist (pattern '("\\.ini\\.template\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-unix-mode)))
 
-  (myinit-add-mode-to-patterns 'conf-colon-mode
-                               "/rsyncd.secrets\\'"
-                               "\\.pgpass\\'"))
+  (dolist (pattern '("/\\.Xmodmap\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-xdefaults-mode)))
+
+  (dolist (pattern '("/rsyncd.secrets\\'" "\\.pgpass\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'conf-colon-mode))))
 
 (defun myinit-conf-colon-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'conf-colon-mode)
