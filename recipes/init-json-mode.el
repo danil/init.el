@@ -54,4 +54,16 @@
   ;;   (define-key json-mode-map (kbd "C-c C-p") nil))
   )
 
+(defun myinit-json-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'json-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-rainbow-identifiers--face-overridable)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
+
+    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
+      (myinit-rainbow-identifiers--lazyinit))))
+
 ;;; init-json-mode.el ends here
