@@ -46,6 +46,7 @@
      (conf-space-mode-hook myinit-conf-space-mode--rainbow-identifiers-init)
      (conf-unix-mode-hook myinit-conf-unix-mode--rainbow-identifiers-init)
      (conf-xdefaults-mode-hook myinit-conf-xdefaults-mode--rainbow-identifiers-init)
+     (css-mode-hook myinit-css-mode--rainbow-identifiers-init)
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
      (js2-parse-finished-hook myinit-js2-mode--rainbow-identifiers-init)
      (nginx-mode-hook myinit-nginx-mode--rainbow-identifiers-init)
