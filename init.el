@@ -499,7 +499,8 @@
   (let ((recipe-file (format "%srecipes/init-%s.el" user-emacs-directory recipe)))
     (if (file-readable-p recipe-file)
         (load-file recipe-file)
-      (message (format "Error: recipe file to not exists: %s" recipe-file)))))
+      (display-warning :warning
+                       (format "Recipe file not found: %s" recipe-file)))))
 
 (myinit-global-mode 1)
 
