@@ -68,7 +68,7 @@
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
          (or (not (equal ch-before ?\s))
              (not (string-match-p "package \\'" str-before)))
-         (not (equal ch-after ?\:))
+         (not (string-match-p "\\`:\\'" str-after)) ;(equal ch-after ?\:)
          (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
              (string-match-p "\\`\\.[[:space:]\n]*\\(Bool\\|Float64\\|Int64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
                              str-after))
