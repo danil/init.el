@@ -37,6 +37,12 @@
 
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
+(custom-set-variables
+ '(ibuffer-formats '((mark modified read-only " " (name 64 64 :left :elide)
+                           " " (size 9 -1 :right)
+                           " " (mode 16 16 :left :elide) " " filename-and-process)
+                     (mark " " (name 16 -1) " " filename))))
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (add-hook 'after-init-hook 'myinit-ibuffer)
