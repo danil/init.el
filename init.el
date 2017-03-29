@@ -289,6 +289,7 @@
 (my-recipe '(ac-ispell))
 
 (my-recipe '(bash-completion))
+(my-recipe '(bookmark))
 (my-recipe '(bytecomp))
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
