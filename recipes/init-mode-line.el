@@ -42,6 +42,7 @@
                       mode-line-modified
                       mode-line-remote
                       mode-line-frame-identification
+                      " "
                       mode-line-buffer-identification
                       (vc-mode vc-mode)
                       " "
