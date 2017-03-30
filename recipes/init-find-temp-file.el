@@ -52,6 +52,6 @@
           '((?D . (lambda () (format-time-string "%Y%m%d")))))
 
     ;; Alist with file extensions and corresponding file name template.
-    (setq find-temp-template-alist '(("go" . "danil/%D%N/main.%E")))))
+    (setq find-temp-template-alist '(("go" . "danil/%D%N/%N.%E")))))
 
 ;;; init-find-temp-file.el ends here
