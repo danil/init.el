@@ -41,7 +41,7 @@
 
 (custom-set-variables
  '(highlight-symbol-highlight-single-occurrence nil)
- '(highlight-symbol-idle-delay 0.7)
+ '(highlight-symbol-idle-delay 0.5)
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
  '(myinit-highlight-symbol-modes (-union myinit-programming-modes '(shell-mode)))
  '(myinit-highlight-symbol-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) myinit-highlight-symbol-modes)))
