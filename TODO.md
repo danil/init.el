@@ -7,6 +7,9 @@
 * enable `copyright` mode in my emacs lisp recipes files
 * implements `find-temp-file` templating
 * implements `ido` for `flycheck-list-errors`
+* customize and try `highlight-changes-mode`/`hilit-chg`
+* replace `ethan-wspace` by `leerzeichen.el` and `ws-butler`
+* replace `highlight-symbol` by `highlight-thing.el`
 
 ## Create comint-mode wrapper for [genius][]
 
@@ -40,9 +43,11 @@
 * https://github.com/benma/visual-regexp.el (visual regexp/replace only for emacs 25)
 * https://github.com/emacs-berlin/syntactic-close insert closing delimiter ")]}" and so on
 * https://github.com/purcell/package-lint
+* https://github.com/hying-caritas/project-shells shell per projectile with projectile
 
 ### Second
 
+* https://github.com/alezost/point-pos.el a-la `C-u C-SPC`
 * http://pragmaticemacs.com/emacs/insert-file-name (copy file name to kill-ring)
 * http://www.russet.org.uk/blog/3140 (testing with using keyboard macroses)
 * https://github.com/KeenS/stylefmt.el (cssfmt formater a-la gofmt)
@@ -70,10 +75,16 @@
 * https://github.com/thisirs/auto-insert-multiple maybe automatically insert "golang main package" yasnippet into `find-temp-file` buffers
 * https://github.com/thisirs/org-password-manager
 * https://github.com/thomp/dired-launch
+* https://github.com/krzysztof-magosa/flycheck-yamllint
 
 ### Third
 
+* https://github.com/djcb/mu yet another email client
+* https://github.com/yasuyk/web-beautify format html, css and javascript/json by js-beautify
+* https://github.com/aaptel/test-c c programming language testing
 * https://github.com/andreasjansson/language-detection.el
+* https://github.com/nikclayton/ob-sql-mode
 * https://github.com/nlamirault/ripgrep.el
+* https://github.com/nlamirault/socyl ag, pt, sift and ripgrep frontend
 * https://github.com/pjones/passmm
 * https://github.com/xcwen/ac-php (php auto complete)
