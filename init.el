@@ -408,6 +408,7 @@
 (my-recipe '(make-mode))
 (my-recipe '(mediawiki))
 (my-recipe '(menu-bar))
+(my-recipe '(mouse))
 (my-recipe '(multi-compile))
 (my-recipe '(my-backspace-fix))
 (my-recipe '(my-beginning-of-line))
@@ -476,7 +477,6 @@
 (my-recipe '(sql-mode))
 (my-recipe '(sql-mysql))
 (my-recipe '(sql-postgres))
-(my-recipe '(sqlup-mode))
 
 (my-recipe '(telnet))
 (my-recipe '(toml-mode))

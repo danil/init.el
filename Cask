@@ -10,7 +10,7 @@
 ;; (depends-on "org-readme")
 ;; (depends-on "yafolding")
 
-(depends-on "ac-html" "0.31") ;i can not setup new version
+(depends-on "ac-html" :git "https://github.com/zhangkaiyulw/ac-html.git" :ref "v0.31") ;i can not setup new version
 (depends-on "web-completion-data") ;used by ad-html
 
 ;; (depends-on "cider") ;i do not want upgrade "cider-nrepl plugin"
@@ -104,7 +104,7 @@
 (depends-on "literate-coffee-mode")
 
 (depends-on "browse-kill-ring")
-(depends-on "kill-ring-ido")
+(depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")
 (depends-on "noflet")
 
 (depends-on "less-css-mode")
@@ -144,7 +144,6 @@
 (depends-on "scss-mode")
 (depends-on "simp")
 (depends-on "slim-mode")
-(depends-on "sqlup-mode")
 
 (depends-on "smart-mode-line")
 (depends-on "rich-minority")
