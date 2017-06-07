@@ -10,3 +10,4 @@
 * customize and try `highlight-changes-mode`/`hilit-chg`
 * replace `ethan-wspace` by `leerzeichen.el` and `ws-butler`
 * replace `highlight-symbol` by `highlight-thing.el`
+* move sqlup recipe to "not supported" branch
