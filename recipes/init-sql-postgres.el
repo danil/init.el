@@ -42,6 +42,11 @@
 (add-hook 'after-init-hook 'myinit-sql-postgres)
 
 (defun myinit-sql-postgres ()
+  (if (fboundp 'sql-set-product-feature)
+      (myinit-sql-postgres--prompt)
+    (add-hook 'sql-interactive-mode-hook 'myinit-sql-postgres--prompt)))
+
+(defun myinit-sql-postgres--prompt ()
   ;; <https://unix.stackexchange.com/questions/233518/mariadb-client-has-no-prompt-in-emacs-sql-mode>.
   (sql-set-product-feature 'postgres :prompt-regexp "^[(_a-zA-Z)]*=# "))
 
