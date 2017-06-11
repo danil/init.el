@@ -48,6 +48,14 @@
 ;; ;; You may delete these explanatory comments.
 ;; (package-initialize)
 
+;;; <https://emacs.stackexchange.com/questions/3447/cannot-set-terminal-process-group-error-when-running-bash-script>,
+;;; <https://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions>.
+(setq shell-file-name "bash")
+
+;;; Move deletd files into "trash"
+;;; <http://emacs-fu.blogspot.ru/2009/05/using-systems-trash-when-deleting-files.html>.
+;; (setq delete-by-moving-to-trash t)
+
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
