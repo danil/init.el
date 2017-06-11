@@ -57,8 +57,8 @@
 (defun myinit-linum ()
   "My init."
 
-  (dolist (hook myinit-linum-modes-hooks)
-    (add-hook hook 'myinit-linum--lazyinit))
+  ;; (dolist (hook myinit-linum-modes-hooks)
+  ;;   (add-hook hook 'myinit-linum--lazyinit))
 
   (add-hook 'after-save-hook 'myinit-linum-turn-off)
 
@@ -78,12 +78,10 @@
   "Toggle the `linume-mode'."
   (interactive)
 
-  (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
-
-    (cond ((and (boundp 'linum-mode) (equal linum-mode t))
-           (funcall g -1) (linum-mode -1))
-          (t
-           (linum-mode t) (funcall g t)))))
+  (cond ((and (boundp 'linum-mode) (equal linum-mode t))
+         (linum-mode -1))
+        (t
+         (linum-mode t))))
 
 (defun myinit-linum-turn-on-or-off ()
   "Enable or disable the `linume-mode' depending on current buffer lines number."

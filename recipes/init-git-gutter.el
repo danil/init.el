@@ -44,13 +44,26 @@
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))
 
   (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-git-gutter--lazyinit)))
+    (add-hook hook 'myinit-git-gutter--lazyinit))
+
+  (define-key myinit-map (kbd "x g") 'myinit-git-gutter-toggle))
 
 (defun myinit-git-gutter--lazyinit ()
   "Run `git-gutter'."
 
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil 'git-gutter-mode))
+
+(defun myinit-git-gutter-toggle ()
+  "Toggle the `git-gutter-mode'."
+  (interactive)
+
+  (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
+
+    (cond ((and (boundp 'git-gutter-mode) (equal git-gutter-mode t))
+           (funcall g -1))
+          (t
+           (funcall g t)))))
 
 (add-hook 'git-gutter-mode-on-hook
           (lambda ()

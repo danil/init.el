@@ -356,7 +356,12 @@
 (my-recipe '(godoctor))
 (my-recipe '(gotest))
 
+;;; Fringe <https://www.emacswiki.org/emacs/TheFringe>.
+(my-recipe '(fringe))
 (my-recipe '(git-gutter))
+(my-recipe '(linum))
+(my-recipe '(linum-format))
+
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
 (my-recipe '(google-translate))
@@ -400,9 +405,6 @@
 
 (my-recipe '(kill-emacs))
 (my-recipe '(kill-ring))
-
-(my-recipe '(linum))
-(my-recipe '(linum-format))
 
 (my-recipe '(lisp-mode))
 (my-recipe '(lua-mode))
