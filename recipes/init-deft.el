@@ -34,7 +34,7 @@
 (custom-set-variables
  '(deft-auto-save-interval 30.0) ; Idle time in seconds before automatically saving buffers opened by Deft. Set to zero to disable.
  '(deft-directory "~/Dropbox/deft") ; <http://jblevins.org/projects/deft>
- '(deft-extensions '("md" "markdown" "org" "mw" "txt" "restclient" "rb" "sh")) ; Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
+ '(deft-extensions '("md" "markdown" "org" "mw" "txt" "restclient")) ; Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
  '(deft-recursive t) ; Recursively search for files in subdirectories when non-nil.
  '(deft-recursive-ignore-dir-regexp "\\(?:\\.\\|\\.\\.\\|.*-src\\)$")
  '(deft-strip-title-regexp
