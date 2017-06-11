@@ -44,6 +44,7 @@
             "\\|^#\\+TITLE: *" ; org-mode title
             "\\|^[#* ]+" ; line beg with #, * and/or space
             "\\|-\\*-[[:alpha:]]+-\\*-" ; -*- .. -*- lines
+            "\\|^-- " ; sql-mode title
             "\\|[={']+" ; MediaWiki markup == Header == or {{Infobox or '''Bold'''
             "\\|#+" ; line with just # chars
             "\\|#!/bin/.*" ; shebang

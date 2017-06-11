@@ -31,10 +31,19 @@
 
 ;;; Code:
 
+(defcustom myinit-sql-mode-patterns '()
+  "Regexp patterns associated with `sql-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
+
 (add-hook 'after-init-hook 'myinit-sql)
 
 (defun myinit-sql ()
   "My init."
+
+  (dolist (pattern myinit-sql-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
 
   (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
 
