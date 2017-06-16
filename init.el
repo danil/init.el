@@ -357,8 +357,9 @@
 (my-recipe '(gotest))
 
 ;;; Fringe <https://www.emacswiki.org/emacs/TheFringe>.
+;; (my-recipe '(git-gutter))
+(my-recipe '(diff-hl))
 (my-recipe '(fringe))
-(my-recipe '(git-gutter))
 (my-recipe '(linum))
 (my-recipe '(linum-format))
 

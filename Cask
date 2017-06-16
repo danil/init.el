@@ -72,7 +72,8 @@
 (depends-on "gotest")
 
 ;; Git.
-(depends-on "git-gutter")
+;; (depends-on "git-gutter")
+(depends-on "diff-hl")
 (depends-on "git-timemachine")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
