@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-;; anzu break query-replace history(
-;; (global-set-key (kbd "M-%") 'anzu-query-replace)
-;; (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
 (add-hook 'after-init-hook 'myinit-anzu)
 
 (defun myinit-anzu ()
   "My init."
+
+  (global-set-key (kbd "M-%") 'anzu-query-replace)
+  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
   (run-with-idle-timer 1 nil 'global-anzu-mode t))
 
