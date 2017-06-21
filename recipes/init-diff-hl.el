@@ -31,6 +31,13 @@
 
 ;;; Code:
 
+(custom-set-variables
+ '(diff-hl-margin-symbols-alist '((change . "=")
+                                  (delete . "-")
+                                  (ignored . "!")
+                                  (insert . "+")
+                                  (unknown . "?"))))
+
 (add-hook 'after-init-hook 'myinit-diff-hl)
 
 (defun myinit-diff-hl ()
@@ -50,10 +57,16 @@
      (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
      (diff-hl-margin-mode)
      (diff-hl-mode)
+
      (when (equal frame-background-mode 'dark)
-       (set-face-background 'diff-hl-change "black")
-       (set-face-background 'diff-hl-delete "black")
-       (set-face-background 'diff-hl-insert "black")))))
+       (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed
+                           :foreground "brightblue" :background "black")
+
+       (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed
+                           :foreground "brightred" :background "black")
+
+       (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
+                           :foreground "green" :background "black")))))
 
 (defun myinit-diff-hl-toggle ()
   "Toggle the `diff-hl-mode'."
