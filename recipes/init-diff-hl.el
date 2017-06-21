@@ -49,7 +49,11 @@
    (lambda ()
      (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
      (diff-hl-margin-mode)
-     (diff-hl-mode))))
+     (diff-hl-mode)
+     (when (equal frame-background-mode 'dark)
+       (set-face-background 'diff-hl-change "black")
+       (set-face-background 'diff-hl-delete "black")
+       (set-face-background 'diff-hl-insert "black")))))
 
 (defun myinit-diff-hl-toggle ()
   "Toggle the `diff-hl-mode'."
