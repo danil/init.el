@@ -41,7 +41,7 @@
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)
 
   (myinit-after-load 'kill-ring-ido
-    (setq kill-ring-ido-shortage-length 1000)))
+    (setq kill-ring-ido-shortage-length 500)))
 
 (defun my-yank-pop-with-ido (&optional arg)
   (interactive "P")
