@@ -37,7 +37,7 @@
  '(ac-auto-show-menu nil)
  '(ac-comphist-file (expand-file-name (concat "~/.emacs.var"
                                               "/ac-comphist.dat")))
- '(ac-delay 0.5) ;tradeoff between typing speed and performance
+ '(ac-delay 0.7) ;tradeoff between typing speed and performance
  ;; '(ac-flycheck-poll-completion-end-interval 1.1)
  '(ac-sources
    '(ac-source-abbrev
