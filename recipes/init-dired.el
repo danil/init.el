@@ -41,6 +41,17 @@
   (myinit-after-load 'dired
     ;; (setq dired-listing-switches "-alh")
 
-    (add-hook 'dired-mode-hook 'dired-hide-details-mode)))
+    (add-hook 'dired-mode-hook 'myinit-dired-hide-details-mode--lazyinit)))
+
+(defun myinit-dired-hide-details-mode--lazyinit ()
+  "Run `dired-hide-details-mode'."
+
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil
+   (lambda ()
+     (when (or (not (boundp 'dired-hide-details-mode))
+               (not (equal dired-hide-details-mode t)))
+
+       (dired-hide-details-mode)))))
 
 ;;; init-dired.el ends here
