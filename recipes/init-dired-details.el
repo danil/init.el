@@ -42,9 +42,9 @@
   "My init."
 
   (with-eval-after-load 'dired-details
-    (define-key dired-mode-map "(" 'dired-details-toggle)
-    ;; (define-key dired-mode-map "(" 'dired-details-hide)
-    ;; (define-key dired-mode-map ")" 'dired-details-show)
+    (define-key dired-mode-map (kbd "b") 'dired-details-toggle)
+    (define-key dired-mode-map "(" 'dired-details-hide)
+    (define-key dired-mode-map ")" 'dired-details-show)
 
     (defadvice dired-revert (before remember-the-details activate)
       (dired-details-delete-overlays)))
