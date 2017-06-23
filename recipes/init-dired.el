@@ -33,12 +33,14 @@
 
 (custom-set-variables '(dired-listing-switches "-alh"))
 
-;; (add-hook 'after-init-hook 'myinit-dired)
+(add-hook 'after-init-hook 'myinit-dired)
 
-;; (defun myinit-dired ()
-;;   "My init."
+(defun myinit-dired ()
+  "My init."
 
-;;   (myinit-after-load 'dired
-;;     (setq dired-listing-switches "-alh")))
+  (myinit-after-load 'dired
+    ;; (setq dired-listing-switches "-alh")
+
+    (add-hook 'dired-mode-hook 'dired-hide-details-mode)))
 
 ;;; init-dired.el ends here
