@@ -1,6 +1,6 @@
 ;;; init-dired.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -33,25 +33,26 @@
 
 (custom-set-variables '(dired-listing-switches "-alh"))
 
-(add-hook 'after-init-hook 'myinit-dired)
+;; (add-hook 'after-init-hook 'myinit-dired)
 
-(defun myinit-dired ()
-  "My init."
+;; (defun myinit-dired ()
+;;   "My init."
 
-  (myinit-after-load 'dired
-    ;; (setq dired-listing-switches "-alh")
+;;   (with-eval-after-load 'dired
+;;     (define-key dired-mode-map "(" 'myinit-dired--actual-switches-toggle)))
 
-    (add-hook 'dired-mode-hook 'myinit-dired-hide-details-mode--lazyinit)))
+;; (defun myinit-dired--actual-switches-toggle ()
+;;   "Toggle `dired-listing-switches', and refresh the Dired buffer."
+;;   (interactive)
 
-(defun myinit-dired-hide-details-mode--lazyinit ()
-  "Run `dired-hide-details-mode'."
+;;   (when dired-sort-inhibit
+;;     (error "Cannot sort this Dired buffer"))
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
-   (lambda ()
-     (when (or (not (boundp 'dired-hide-details-mode))
-               (not (equal dired-hide-details-mode t)))
+;;   (setq dired-actual-switches
+;;         (let (case-fold-search)
+;;           (if (equal dired-actual-switches "-a1") "-alh" "-a1")))
 
-       (dired-hide-details-mode)))))
+;;   (dired-sort-set-modeline)
+;;   (revert-buffer))
 
 ;;; init-dired.el ends here
