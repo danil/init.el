@@ -41,6 +41,7 @@
   "My init."
 
   (global-set-key (kbd "C-x 4 0") 'my-maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
+  (global-set-key (kbd "C-x k") 'my-maybe-delete-window-maybe-kill-buffer-open-dired)
 
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
@@ -61,6 +62,20 @@ Delete selected window if `ARG' and other windows present."
   (when (and arg
              (> (length (window-list)) 1))
     (delete-window (selected-window))))
+
+(defun my-maybe-delete-window-maybe-kill-buffer-open-dired (&optional arg)
+  "If `ARG' then `kill-buffer' or maybe kill buffer and open `dired'."
+  (interactive "P")
+
+  (if (not arg)
+      (call-interactively 'kill-buffer)
+
+    (let ((p (if buffer-file-name
+                 (file-name-directory buffer-file-name)
+               default-directory)))
+
+      (my-maybe-delete-window-maybe-kill-buffer t)
+      (dired p))))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
 (defun my-maybe-delete-window-maybe-kill-buffer (&optional arg)
