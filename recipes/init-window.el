@@ -70,12 +70,12 @@ Delete selected window if `ARG' and other windows present."
   (if (not arg)
       (call-interactively 'kill-buffer)
 
-    (let ((p (if buffer-file-name
-                 (file-name-directory buffer-file-name)
-               default-directory)))
+    (let* ((f buffer-file-name)
+           (d (if f (file-name-directory f) default-directory)))
 
       (my-maybe-delete-window-maybe-kill-buffer t)
-      (dired p))))
+      (dired d)
+      (when f (dired-goto-file f)))))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
 (defun my-maybe-delete-window-maybe-kill-buffer (&optional arg)
