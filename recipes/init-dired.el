@@ -39,7 +39,8 @@
 ;;   "My init."
 
 ;;   (with-eval-after-load 'dired
-;;     (define-key dired-mode-map "(" 'myinit-dired--actual-switches-toggle)))
+;;     ;; (define-key dired-mode-map "(" 'myinit-dired--actual-switches-toggle)
+;;     ))
 
 ;; (defun myinit-dired--actual-switches-toggle ()
 ;;   "Toggle `dired-listing-switches', and refresh the Dired buffer."
