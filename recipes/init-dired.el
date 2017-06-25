@@ -31,29 +31,27 @@
 
 ;;; Code:
 
+;;; Reuse directory buffer
+;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
+(put 'dired-find-alternate-file 'disabled nil)
+
 (custom-set-variables '(dired-listing-switches "-alh"))
 
-;; (add-hook 'after-init-hook 'myinit-dired)
+(add-hook 'after-init-hook 'myinit-dired)
 
-;; (defun myinit-dired ()
-;;   "My init."
+(defun myinit-dired ()
+  "My init."
 
-;;   (with-eval-after-load 'dired
-;;     ;; (define-key dired-mode-map "(" 'myinit-dired--actual-switches-toggle)
-;;     ))
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer)))
 
-;; (defun myinit-dired--actual-switches-toggle ()
-;;   "Toggle `dired-listing-switches', and refresh the Dired buffer."
-;;   (interactive)
+(defun myinit-dired--reuse-directory-buffer ()
+  "Reuse `dired' buffer."
+  (interactive)
 
-;;   (when dired-sort-inhibit
-;;     (error "Cannot sort this Dired buffer"))
+  (let ((d (expand-file-name default-directory)))
 
-;;   (setq dired-actual-switches
-;;         (let (case-fold-search)
-;;           (if (equal dired-actual-switches "-a1") "-alh" "-a1")))
-
-;;   (dired-sort-set-modeline)
-;;   (revert-buffer))
+    (find-alternate-file "..")
+    (when d (dired-goto-file d))))
 
 ;;; init-dired.el ends here

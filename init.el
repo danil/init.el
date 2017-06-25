@@ -325,7 +325,6 @@
 
 (my-recipe '(dired))
 (my-recipe '(dired-details))
-(my-recipe '(dired-reuse-directory-buffer))
 (my-recipe '(direx))
 (my-recipe '(wdired))
 
