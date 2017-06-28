@@ -40,6 +40,7 @@
  '(backup-by-copying t) ;don't clobber symlinks
  '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;don't litter my fs tree
  '(delete-old-versions t)
+ '(directory-free-space-args "--human-readable")
  '(kept-new-versions 6)
  '(kept-old-versions 2)
  '(version-control t) ;use versioned backups
