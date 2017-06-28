@@ -31,16 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-direx)
+;; (add-hook 'after-init-hook 'myinit-direx)
 
-(defun myinit-direx ()
-  "My init."
+;; (defun myinit-direx ()
+;;   "My init."
 
-  (global-set-key (kbd "C-x d") 'my-dired))
-
-(defun my-dired (&optional arg)
-  (interactive "P")
-  (if arg (call-interactively 'direx:jump-to-directory)
-    (call-interactively 'dired)))
+;;   ;; (global-set-key (kbd "C-x d") 'my-dired)
+;;   )
 
 ;;; init-direx.el ends here

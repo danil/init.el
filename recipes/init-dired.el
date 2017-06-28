@@ -42,8 +42,20 @@
 (defun myinit-dired ()
   "My init."
 
+  (global-set-key (kbd "C-x C-d") 'myinit-dired--open)
+
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer)))
+
+(defun myinit-dired--open(&optional arg)
+  "Open `dired'."
+  (interactive "P")
+
+  (let* ((f (if buffer-file-name buffer-file-name default-directory))
+         (d (if f (file-name-directory f) default-directory)))
+
+    (dired d)
+    (when (and (not arg) f) (dired-goto-file f))))
 
 (defun myinit-dired--reuse-directory-buffer ()
   "Reuse `dired' buffer."
