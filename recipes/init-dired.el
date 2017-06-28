@@ -51,11 +51,14 @@
   "Open `dired'."
   (interactive "P")
 
-  (let* ((f (if buffer-file-name buffer-file-name default-directory))
-         (d (if f (file-name-directory f) default-directory)))
+  (if arg
+      (call-interactively 'ido-dired)
 
-    (dired d)
-    (when (and (not arg) f) (dired-goto-file f))))
+    (let* ((f (if buffer-file-name buffer-file-name default-directory))
+           (d (if f (file-name-directory f) default-directory)))
+
+      (dired d)
+      (when f (dired-goto-file f)))))
 
 (defun myinit-dired--reuse-directory-buffer ()
   "Reuse `dired' buffer."
