@@ -71,7 +71,7 @@
                                                "unconvert"
                                                "vet"
                                                ))
-  ;; (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
+  (setq flycheck-gometalinter-deadline "10s") ;set different deadline (default: 5s)
   ;; (setq flycheck-gometalinter-fast t) ;only run fast linters
   (setq flycheck-gometalinter-test t) ;use in tests files
   (setq flycheck-gometalinter-vendor t) ;skips 'vendor' directories and sets GO15VENDOREXPERIMENT=1
