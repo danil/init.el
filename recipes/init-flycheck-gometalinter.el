@@ -68,6 +68,7 @@
                                                "gotype"
                                                "ineffassign"
                                                "interfacer"
+                                               "megacheck"
                                                "unconvert"
                                                "vet"
                                                ))
