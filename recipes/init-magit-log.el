@@ -32,10 +32,8 @@
 ;;; Code:
 
 ;; (add-hook 'after-init-hook 'myinit-magit-log)
-
-(defun myinit-magit-log ()
-  "My init."
-
+;; (defun myinit-magit-log ()
+;;   "My init."
 ;;   (myinit-after-load 'magit-log
 ;;     (define-key magit-log-mode-map (kbd "C-c C-f") nil)))
 
