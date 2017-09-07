@@ -32,5 +32,6 @@
 ;;; Code:
 
 (add-to-list 'auto-mode-alist '("\\.toml.example\\'" . toml-mode))
+(add-to-list 'auto-mode-alist '("\\.toml.template\\'" . toml-mode))
 
 ;;; init-toml-mode.el ends here
