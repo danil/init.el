@@ -37,18 +37,15 @@
   "My init."
 
   (if (boundp 'dired-mode-map)
-      (myinit-dired-aux-lazy)
+      (myinit-lazy-dired-aux)
 
     (with-eval-after-load 'dired
-      (myinit-dired-aux-lazy))))
+      (myinit-lazy-dired-aux))))
 
-(defun myinit-dired-aux-lazy ()
+(defun myinit-lazy-dired-aux ()
   "My init lazy."
 
   (define-key dired-mode-map (kbd "C-c Q") 'myinit-dired-aux--dired-do-query-replace))
-
-;; (eval-after-load 'dired
-;;   '(define-key dired-mode-map (kbd "C-c Q") 'myinit-dired-aux--dired-do-query-replace))
 
 (defun myinit-dired-aux--dired-do-query-replace (from to &optional delimited)
   "Do `query-replace' of FROM with TO, on all marked files.
