@@ -324,6 +324,7 @@
 (my-recipe '(dim))
 
 (my-recipe '(dired))
+(my-recipe '(dired-aux))
 (my-recipe '(dired-details))
 (my-recipe '(direx))
 (my-recipe '(wdired))
