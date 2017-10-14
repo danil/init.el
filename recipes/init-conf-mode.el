@@ -54,6 +54,7 @@
                      "/conkyrc_top\\'"
                      "/csf.allow\\'"
                      "/dunstrc\\'"
+                     "/etc/aliases\\'"
                      "/etc/fstab\\'"
                      "/etc/mail/aliases\\'"
                      "/etc/mailutils\\.d/"
