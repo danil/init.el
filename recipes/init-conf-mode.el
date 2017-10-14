@@ -56,7 +56,6 @@
                      "/dunstrc\\'"
                      "/etc/fstab\\'"
                      "/etc/mail/aliases\\'"
-                     "/etc/mailutils\\'"
                      "/etc/mailutils\\.d/"
                      "/fail2ban/.*\\.local\\'"
                      "/hosts\\'"
