@@ -34,6 +34,7 @@
 (add-to-list 'auto-mode-alist '("\\.toml.example\\'" . toml-mode))
 (add-to-list 'auto-mode-alist '("\\.toml.template\\'" . toml-mode))
 
+;; (add-hook 'after-init-hook 'myinit-toml-mode)
 ;; (defun myinit-toml-mode ()
 ;;   "My init."
 ;;   )
