@@ -34,4 +34,19 @@
 (add-to-list 'auto-mode-alist '("\\.toml.example\\'" . toml-mode))
 (add-to-list 'auto-mode-alist '("\\.toml.template\\'" . toml-mode))
 
+;; (defun myinit-toml-mode ()
+;;   "My init."
+;;   )
+
+(defun myinit-toml-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'toml-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-rainbow-identifiers--face-overridable)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+
+    (myinit-rainbow-identifiers--lazyinit)))
+
 ;;; init-toml-mode.el ends here
