@@ -31,8 +31,6 @@
 
 ;;; Code:
 
-;; Golang.
-
 (defcustom myinit-rainbow-identifiers-hooks '()
   "Hooks associated with `rainbow-identifiers'."
   :group 'myinit)
