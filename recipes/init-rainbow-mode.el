@@ -32,11 +32,11 @@
 ;;; Code:
 
 (defcustom myinit-rainbow-modes '()
-  "Major modes associated with `highlight-symbol'."
+  "Major modes associated with `rainbow-modes'."
   :group 'myinit)
 
 (defcustom myinit-rainbow-modes-hooks '()
-  "Major modes Hook associated with `highlight-symbol'."
+  "Major modes Hook associated with `rainbow-modes'."
   :group 'myinit)
 
 (custom-set-variables
