@@ -31,6 +31,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(magit-log-section-commit-count 3))
+
 ;; (add-hook 'after-init-hook 'myinit-magit-log)
 ;; (defun myinit-magit-log ()
 ;;   "My init."
