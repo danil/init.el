@@ -65,17 +65,17 @@
      (diff-hl-mode)
 
      (when (equal frame-background-mode 'dark)
+       ;; (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
+       ;;                     :foreground "green" :background "black")
+       (set-face-attribute 'diff-hl-insert nil :inherit 'diff-header) ;diff-added
+
        ;; (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed
        ;;                     :foreground "brightblue" :background "black")
-       (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed)
+       (set-face-attribute 'diff-hl-change nil :inherit 'diff-header) ;diff-changed
 
        ;; (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed
        ;;                     :foreground "brightred" :background "black")
-       (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed)
-
-       ;; (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
-       ;;                     :foreground "green" :background "black")
-       (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added)))))
+       (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed)))))
 
 (defun myinit-diff-hl-toggle ()
   "Toggle the `diff-hl-mode'."
