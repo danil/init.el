@@ -47,12 +47,12 @@
 (defun myinit-diff-hl ()
   "My init."
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-diff-hl--lazyinit))
-
   ;; (with-eval-after-load 'diff-hl)
 
-  (define-key myinit-map (kbd "x v") 'myinit-diff-hl-toggle))
+  ;; (define-key myinit-map (kbd "x v") 'myinit-diff-hl-toggle)
+
+  (dolist (hook myinit-programming-modes-hooks)
+    (add-hook hook 'myinit-diff-hl--lazyinit)))
 
 (defun myinit-diff-hl--lazyinit ()
   "Run `diff-hl'."
@@ -77,15 +77,15 @@
        ;;                     :foreground "brightred" :background "black")
        (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed)))))
 
-(defun myinit-diff-hl-toggle ()
-  "Toggle the `diff-hl-mode'."
-  (interactive)
+;; (defun myinit-diff-hl-toggle ()
+;;   "Toggle the `diff-hl-mode'."
+;;   (interactive)
 
-  (let ((g (lambda (x) (when (fboundp 'diff-hl-mode) (diff-hl-mode x)))))
+;;   (let ((g (lambda (x) (when (fboundp 'diff-hl-mode) (diff-hl-mode x)))))
 
-    (cond ((and (boundp 'diff-hl-mode) (equal diff-hl-mode t))
-           (funcall g -1))
-          (t
-           (funcall g t)))))
+;;     (cond ((and (boundp 'diff-hl-mode) (equal diff-hl-mode t))
+;;            (funcall g -1))
+;;           (t
+;;            (funcall g t)))))
 
 ;;; init-diff-hl.el ends here

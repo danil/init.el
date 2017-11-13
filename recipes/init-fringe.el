@@ -31,22 +31,23 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-fringe)
+;; (add-hook 'after-init-hook 'myinit-fringe)
 
-(defun myinit-fringe ()
-  "My init."
+;; (defun myinit-fringe ()
+;;   "My init."
 
-  (define-key myinit-map (kbd "x f") 'myinit-fringe-toggle))
+;;   ;; (define-key myinit-map (kbd "x f") 'myinit-fringe-toggle)
+;;   )
 
-(defun myinit-fringe-toggle ()
-  "Toggle modes in the fringe."
-  (interactive)
+;; (defun myinit-fringe-toggle ()
+;;   "Toggle modes in the fringe."
+;;   (interactive)
 
-  (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
+;;   (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
 
-    (cond ((and (boundp 'linum-mode) (equal linum-mode t))
-           (funcall g -1) (linum-mode -1))
-          (t
-           (linum-mode t) (funcall g t)))))
+;;     (cond ((and (boundp 'linum-mode) (equal linum-mode t))
+;;            (funcall g -1) (linum-mode -1))
+;;           (t
+;;            (linum-mode t) (funcall g t)))))
 
 ;;; init-fringe.el ends here
