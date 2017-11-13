@@ -32,11 +32,15 @@
 ;;; Code:
 
 (custom-set-variables
- '(diff-hl-margin-symbols-alist '((change . "=")
-                                  (delete . "-")
-                                  (ignored . "!")
-                                  (insert . "+")
-                                  (unknown . "?"))))
+ '(diff-hl-margin-symbols-alist '(
+                                  (change . " ") ;"="
+                                  (delete . " ") ;"-"
+                                  (ignored . " ") ;"!"
+                                  (insert . " ") ;"+"
+                                  (unknown . " ") ;"?"
+                                  ))
+ '(diff-hl-draw-borders nil)
+ '(diff-hl-side 'right))
 
 (add-hook 'after-init-hook 'myinit-diff-hl)
 
@@ -45,6 +49,8 @@
 
   (dolist (hook myinit-programming-modes-hooks)
     (add-hook hook 'myinit-diff-hl--lazyinit))
+
+  ;; (with-eval-after-load 'diff-hl)
 
   (define-key myinit-map (kbd "x v") 'myinit-diff-hl-toggle))
 
@@ -59,14 +65,17 @@
      (diff-hl-mode)
 
      (when (equal frame-background-mode 'dark)
-       (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed
-                           :foreground "brightblue" :background "black")
+       ;; (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed
+       ;;                     :foreground "brightblue" :background "black")
+       (set-face-attribute 'diff-hl-change nil :inherit 'diff-changed)
 
-       (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed
-                           :foreground "brightred" :background "black")
+       ;; (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed
+       ;;                     :foreground "brightred" :background "black")
+       (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed)
 
-       (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
-                           :foreground "green" :background "black")))))
+       ;; (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
+       ;;                     :foreground "green" :background "black")
+       (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added)))))
 
 (defun myinit-diff-hl-toggle ()
   "Toggle the `diff-hl-mode'."
