@@ -369,6 +369,7 @@
 (my-recipe '(google-translate))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(haproxy-mode))
+(my-recipe '(hcl-mode))
 (my-recipe '(help))
 (my-recipe '(hi-lock))
 (my-recipe '(hideshow))
