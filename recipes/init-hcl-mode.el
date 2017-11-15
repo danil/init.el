@@ -43,11 +43,19 @@
   (when (equal major-mode 'hcl-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
-
-    (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+              'myinit-hcl-mode--rainbow-identifiers-filter)
 
     (myinit-rainbow-identifiers--lazyinit)))
+
+(defun myinit-hcl-mode--rainbow-identifiers-filter (beg end)
+  (let ((ch-current (char-after beg))
+        (face (or (get-char-property beg 'read-face-name)
+                  (get-char-property beg 'face))))
+    (and (not (member ch-current
+                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?= ?<)))
+         (or
+          (eq face 'font-lock-variable-name-face)
+          (eq face nil)))))
+
 
 ;;; init-hcl-mode.el ends here
