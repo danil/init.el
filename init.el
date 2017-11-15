@@ -119,6 +119,7 @@
      go-mode
      haml-mode
      haskell-mode
+     hcl-mode
      html-mode
      inf-mongo-mode
      jade-mode
