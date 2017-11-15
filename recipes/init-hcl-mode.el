@@ -39,4 +39,15 @@
 ;;   ;; (with-eval-after-load 'hcl-mode)
 ;;   )
 
+(defun myinit-hcl-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'hcl-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-rainbow-identifiers--face-overridable)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+
+    (myinit-rainbow-identifiers--lazyinit)))
+
 ;;; init-hcl-mode.el ends here
