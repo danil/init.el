@@ -51,6 +51,7 @@
 
 ;; Dired.
 (depends-on "dired-details")
+(depends-on "diredfl")
 (depends-on "direx")
 
 (depends-on "dockerfile-mode")
