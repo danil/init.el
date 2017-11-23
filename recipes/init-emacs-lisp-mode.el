@@ -73,7 +73,7 @@
      (eq face nil)
      (not (member ch-current
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?`)))
-     (not (member current-identifier '(
+     (not (member current-identifier '( ;this is emacs standard functions
                                        "1value"
                                        "2C-associate-buffer"
                                        "2C-command"
@@ -6900,7 +6900,7 @@
                                        "zrgrep"
                                        )))
 
-     (not (member current-identifier '(
+     (not (member current-identifier '( ;this is emacs standard variables
                                        "Buffer-menu-buffer+size-width"
                                        "Buffer-menu-files-only"
                                        "Buffer-menu-mode-abbrev-table"
