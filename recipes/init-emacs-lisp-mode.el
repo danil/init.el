@@ -6899,7 +6899,6 @@
                                        "zone-mode"
                                        "zrgrep"
                                        )))
-
      (not (member current-identifier '( ;this is emacs standard variables
                                        "Buffer-menu-buffer+size-width"
                                        "Buffer-menu-files-only"
