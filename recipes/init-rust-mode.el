@@ -1,4 +1,4 @@
-;;; init-clojure-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-rust-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,25 +31,22 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-clojure-mode)
+;; (add-hook 'after-init-hook 'myinit-rust-mode)
+;; (defun myinit-rust-mode ()
+;;   "My init."
+;;   ;; (myinit-after-load 'rust-mode
+;;   ;;   )
+;;   )
 
-(defun myinit-clojure-mode ()
-  "My init."
-
-  ;; (myinit-after-load 'clojure-mode
-  ;;   (define-key clojure-mode-map (my-kbd "C-v") 'clojure-yaless-mode-on))
-
-  (myinit-add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
-
-(defun myinit-clojure-mode--rainbow-identifiers-init ()
-  (when (equal major-mode 'clojure-mode)
+(defun myinit-rust-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'rust-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-clojure-mode--rainbow-identifiers-filter)
+              'myinit-rust-mode--rainbow-identifiers-filter)
 
     (myinit-rainbow-identifiers--lazyinit)))
 
-(defun myinit-clojure-mode--rainbow-identifiers-filter (beg end)
+(defun myinit-rust-mode--rainbow-identifiers-filter (beg end)
   (let ((current-identifier (buffer-substring-no-properties beg end))
         (ch-current (char-after beg))
         (face (or (get-char-property beg 'read-face-name)
@@ -57,6 +54,7 @@
     (and
      (or
       (eq face 'default)
+      (eq face 'font-lock-variable-name-face)
       (eq face nil))
      (not (member ch-current
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?`)))
@@ -64,23 +62,4 @@
      ;;                                   )))
      )))
 
-;; (defun clojure-yaless-mode-on (&optional arg)
-;;   (interactive "P")
-
-;;   (when (and (not arg) (buffer-file-name))
-;;     (call-interactively 'save-buffer)
-;;     ;; (when (fboundp 'cider-load-buffer) (cider-load-buffer))
-;;     )
-
-;;   (call-interactively 'yaless-mode))
-
-;; (defun my-clojure-less-minor-mode ()
-;;   (interactive)
-;;   (when (and (or (not (boundp 'less-minor-mode))
-;;                  (not less-minor-mode))
-;;              (buffer-file-name))
-;;     (call-interactively 'save-buffer)
-;;     (cider-load-buffer))
-;;   (call-interactively 'less-minor-mode))
-
-;;; init-clojure-mode.el ends here
+;;; init-rust-mode.el ends here

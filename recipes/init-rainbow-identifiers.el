@@ -39,6 +39,7 @@
  '(myinit-rainbow-identifiers-hooks
    '(
      (c-mode-common-hook myinit-c-mode--rainbow-identifiers-init)
+     ;; (clojure-mode-hook myinit-clojure-mode--rainbow-identifiers-init)
      (coffee-mode-hook myinit-coffee-mode--rainbow-identifiers-init)
      (conf-colon-mode-hook myinit-conf-colon-mode--rainbow-identifiers-init)
      (conf-space-mode-hook myinit-conf-space-mode--rainbow-identifiers-init)
@@ -55,6 +56,7 @@
      (php-mode-hook myinit-php-mode--rainbow-identifiers-init)
      (python-mode-hook myinit-python-mode--rainbow-identifiers-init)
      (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
+     ;; (rust-mode-hook myinit-rust-mode--rainbow-identifiers-init)
      (sh-mode-hook myinit-sh-mode--rainbow-identifiers-init)
      (sql-interactive-mode-hook myinit-sql-interactive-mode--rainbow-identifiers-init)
      (sql-mode-hook myinit-sql-mode--rainbow-identifiers-init)

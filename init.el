@@ -455,6 +455,7 @@
 (my-recipe '(python))
 (my-recipe '(quickrun))
 (my-recipe '(rainbow-identifiers))
+(my-recipe '(rust-mode))
 (my-recipe '(rainbow-delimiters))
 (my-recipe '(rainbow-mode))
 (my-recipe '(re-builder))
