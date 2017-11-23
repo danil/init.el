@@ -57,5 +57,4 @@
           (eq face 'font-lock-variable-name-face)
           (eq face nil)))))
 
-
 ;;; init-hcl-mode.el ends here
