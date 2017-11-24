@@ -1,6 +1,6 @@
 ;;; init-rich-minority.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -55,6 +55,7 @@
                   " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
                   " gg" ;git-gutter-mode
                   " hl-s" ;highlight-symbol-mode
+                  " hlt" ;highlight-thing
                   " hs" ;hideshow
                   " ing" ;indent-guide-mode
                   " pair" ;autopair
@@ -63,17 +64,23 @@
                   ))
 
  '(rm-text-properties '(
-                        ("\\` Ovwrt\\'" 'face 'font-lock-warning-face)
+                        ;; ;; Emacs segfault (under certain circumstances)
+                        ;; ;; if touching flycheck-mode's lighters!
+                        ;; ;; Instead customize `flycheck-mode-line`
+                        ;; ;; variable (and
+                        ;; ;; `flycheck-mode-line-status-text` fn) and
+                        ;; ;; `flycheck-mode-line-prefix` variable!
+                        ;; ("\\` FlyC!\\'" 'display " F!") ;flycheck-mode: The syntax check failed. Inspect the ‘*Messages*’ buffer for more information about the failure.
+                        ;; ("\\` FlyC*\\'" 'display " F*") ;flycheck-mode: flycheck currently checks the current buffer
+                        ;; ("\\` FlyC-\\'" 'display " F-") ;flycheck-mode: Flycheck did not find any syntax checker for the current buffer. Try C-c ! v (flycheck-verify-setup) to find out why.
+                        ;; ("\\` FlyC\?\\'" 'display " F?") ;flycheck-mode: The syntax check had a dubious result. The definition of the syntax checker may be flawed. Inspect the ‘*Messages*’ buffer for details.
+                        ;; ("\\` FlyC\\'" 'display " F") ;flycheck-mode: there are no errors in the current buffer
+                        ;; ;; ("\\` FlyC:3/5\\'" 'display " ") ;flycheck-mode: there are three errors and five warnings in the current buffer
+
+                        ;; ("\\` M\\'" 'face 'font-lock-warning-face) ;modalka-mode
+                        ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
 
                         ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
-                        ("\\` FlyC!\\'" 'display " F!") ;flycheck-mode: The syntax check failed. Inspect the ‘*Messages*’ buffer for more information about the failure.
-                        ("\\` FlyC*\\'" 'display " F*") ;flycheck-mode: flycheck currently checks the current buffer
-                        ("\\` FlyC-\\'" 'display " F-") ;flycheck-mode: Flycheck did not find any syntax checker for the current buffer. Try C-c ! v (flycheck-verify-setup) to find out why.
-                        ("\\` FlyC\?\\'" 'display " F?") ;flycheck-mode: The syntax check had a dubious result. The definition of the syntax checker may be flawed. Inspect the ‘*Messages*’ buffer for details.
-                        ("\\` FlyC\\'" 'display " F") ;flycheck-mode: there are no errors in the current buffer
-                        ("\\` M\\'" 'face 'font-lock-warning-face) ;modalka-mode
-                        ;; ("\\` FlyC:3/5\\'" 'display " ") ;flycheck-mode: there are three errors and five warnings in the current buffer
-                        ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
-                        )))
+                        ("\\` Ovwrt\\'" 'face 'font-lock-warning-face))))
 
 ;;; init-rich-minority.el ends here

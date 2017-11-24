@@ -1,6 +1,6 @@
 ;;; init-flycheck.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,21 +31,25 @@
 
 ;;; Code:
 
-(custom-set-variables '(flycheck-disabled-checkers '(
-                                                     go-build
-                                                     go-errcheck
-                                                     go-gofmt
-                                                     go-golint
-                                                     go-test
-                                                     go-unconvert
-                                                     go-vet
+(custom-set-variables
+ '(flycheck-disabled-checkers '(
+                                go-build
+                                go-errcheck
+                                go-gofmt
+                                go-golint
+                                go-test
+                                go-unconvert
+                                go-vet
 
-                                                     ruby-rubylint
+                                ruby-rubylint
 
-                                                     sh-bash
-                                                     sh-posix-bash
-                                                     ))
-                      '(flycheck-idle-change-delay 1.5))
+                                sh-bash
+                                sh-posix-bash
+                                ))
+ ;; '(flycheck-check-syntax-automatically '(idle-change))
+ '(flycheck-indication-mode nil)
+ '(flycheck-mode-line-prefix "F")
+ '(flycheck-idle-change-delay 1.5))
 
 (add-hook 'after-init-hook 'myinit-flycheck)
 
