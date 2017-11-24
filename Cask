@@ -100,6 +100,11 @@
 (depends-on "ido-yes-or-no")
 (depends-on "smex")
 
+;; ;; Ivy (is an ido replacement).
+;; (depends-on "counsel")
+;; (depends-on "ivy")
+;; (depends-on "swiper")
+
 ;;; JavaScript.
 (depends-on "coffee-mode")
 (depends-on "jade-mode")

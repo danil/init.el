@@ -378,6 +378,7 @@
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
 (my-recipe '(hl-line))
 
+;; Ido.
 (my-recipe '(crm-custom))
 (my-recipe '(ido))
 (my-recipe '(ido-clever-match))
@@ -387,6 +388,9 @@
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
 (my-recipe '(smex))
+
+;; ;; Ivy (is an ido replacement).
+;; (my-recipe '(ivy))
 
 (my-recipe '(kill-ring-ido))
 (my-recipe '(recentf))
