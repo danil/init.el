@@ -58,6 +58,7 @@
                   " hlt" ;highlight-thing
                   " hs" ;hideshow
                   " ing" ;indent-guide-mode
+                  " ivy" ;ivy-mode (swiper, counsel and friends)
                   " pair" ;autopair
                   " rt" ;ruby-tools-mode
                   " yas";yas-minor-mode aka yasnippet
