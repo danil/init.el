@@ -52,10 +52,7 @@
 (defun myinit-customize-ivy ()
   "My init customize."
 
-  (myinit-customize-ivy-key)
-
-  (if (boundp 'help-map) (myinit-customize-ivy-help)
-    (with-eval-after-load 'help (myinit-customize-ivy-help)))
+  (global-set-key (kbd "C-c C-R") 'ivy-resume)
 
   (myinit-customize-ivy-face))
 
@@ -74,29 +71,5 @@
      ((t :background "blue")))
    '(ivy-minibuffer-match-face-4
      ((t :background "green4")))))
-
-(defun myinit-customize-ivy-key ()
-  "My init customize keys."
-  (global-set-key (kbd "C-c C-R") 'ivy-resume)
-  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  (global-set-key (kbd "C-x C-r") 'counsel-recentf)
-
-  ;; (global-set-key (kbd "C-c g") 'counsel-git)
-  ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
-  ;; (global-set-key (kbd "C-x l") 'counsel-locate)
-
-  (define-key myinit-map (kbd "j a") 'counsel-ag))
-
-(defun myinit-customize-ivy-help()
-  "My init customize help."
-  (define-key help-map (kbd "F") 'counsel-describe-face)
-  (define-key help-map (kbd "f") 'counsel-describe-function)
-  (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
-  (define-key help-map (kbd "l") 'counsel-find-library)
-  (define-key help-map (kbd "u") 'counsel-unicode-char)
-  (define-key help-map (kbd "v") 'counsel-describe-variable))
 
 ;;; init-ivy.el ends here

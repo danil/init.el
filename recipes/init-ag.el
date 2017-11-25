@@ -36,13 +36,14 @@
 (defun myinit-ag ()
   "My init."
 
-  (define-key myinit-map (kbd "j A A") 'ag)
+  (when (boundp 'myinit-map)
+    (define-key myinit-map (kbd "j A a") 'ag)
 
-  (define-key myinit-map (kbd "j A D") 'ag-dired-regexp)
-  (define-key myinit-map (kbd "j A d") 'ag-dired)
-  (define-key myinit-map (kbd "j A f") 'ag-files)
-  (define-key myinit-map (kbd "j A k") 'my-ag-kill-buffers)
-  (define-key myinit-map (kbd "j A r") 'ag-regexp)
+    (define-key myinit-map (kbd "j A D") 'ag-dired-regexp)
+    (define-key myinit-map (kbd "j A d") 'ag-dired)
+    (define-key myinit-map (kbd "j A f") 'ag-files)
+    (define-key myinit-map (kbd "j A k") 'my-ag-kill-buffers)
+    (define-key myinit-map (kbd "j A r") 'ag-regexp))
 
   (myinit-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)

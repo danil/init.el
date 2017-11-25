@@ -169,6 +169,7 @@
 (depends-on "recentf-ext")
 (depends-on "redis")
 (depends-on "restclient")
+(depends-on "rg") ;ripgrep is an a-la ag platinum searcher written in rust
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")

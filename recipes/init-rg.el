@@ -1,6 +1,6 @@
-;;; init-pt.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-rg.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,15 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-pt)
+(add-hook 'after-init-hook 'myinit-rg)
 
-(defun myinit-pt ()
+(defun myinit-rg ()
   "My init."
 
   (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j P p") 'pt-regexp)
+    (define-key myinit-map (kbd "j R r") 'rg)
+    (define-key myinit-map (kbd "j R p") 'rg)))
 
-    (define-key myinit-map (kbd "j P f") 'pt-regexp-file-pattern)
-    (define-key myinit-map (kbd "j P p") 'projectile-pt)))
-
-;;; init-pt.el ends here
+;;; init-rg.el ends here

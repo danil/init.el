@@ -31,16 +31,48 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-counsel)
+(add-hook 'after-init-hook 'myinit-counsel)
 
-;; (defun myinit-counsel ()
-;;   "My init."
+(defun myinit-counsel ()
+  "My init."
 
-;;   (if (boundp 'counsel-mode) (myinit-lazy-counsel)
-;;     (with-eval-after-load 'counsel (myinit-lazy-counsel))))
+  (if (boundp 'help-map) (myinit-customize-counsel-help)
+    (with-eval-after-load 'help (myinit-customize-counsel-help)))
 
-;; (defun myinit-lazy-counsel ()
-;;   "My init lazy."
-;;   (counsel-mode t))
+  (myinit-customize-ivy-key))
+
+(defun myinit-customize-ivy-key ()
+  "My init customize keys."
+
+  (when (boundp 'minibuffer-local-map)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
+  (when (boundp 'myinit-map)
+    (define-key myinit-map (kbd "j a") 'counsel-ag)
+    (define-key myinit-map (kbd "j p") 'counsel-pt)
+    (define-key myinit-map (kbd "j r") 'counsel-rg))
+
+  ;; (global-set-key (kbd "C-c g") 'counsel-git)
+  ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  ;; (global-set-key (kbd "C-x l") 'counsel-locate)
+
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'my-counsel-find-file)
+  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
+
+(defun myinit-customize-counsel-help()
+  "My init customize help."
+  (define-key help-map (kbd "F") 'counsel-describe-face)
+  (define-key help-map (kbd "f") 'counsel-describe-function)
+  (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
+  (define-key help-map (kbd "l") 'counsel-find-library)
+  (define-key help-map (kbd "u") 'counsel-unicode-char)
+  (define-key help-map (kbd "v") 'counsel-describe-variable))
+
+(defun my-counsel-find-file (&optional arg)
+  "Run `find-file' of `counsel-find-file' regards to `ARG'."
+  (interactive "P")
+
+  (if arg (call-interactively 'find-file) (counsel-find-file)))
 
 ;;; init-counsel.el ends here

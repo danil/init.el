@@ -1,6 +1,6 @@
-;;; init-pt.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-historian.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,15 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-pt)
+(custom-set-variables
+ '(historian-save-file "~/.emacs.var/.historian"))
 
-(defun myinit-pt ()
-  "My init."
+;; (add-hook 'after-init-hook 'myinit-historian)
+;; (defun myinit-historian ()
+;;   "My init."
+;;   )
 
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j P p") 'pt-regexp)
-
-    (define-key myinit-map (kbd "j P f") 'pt-regexp-file-pattern)
-    (define-key myinit-map (kbd "j P p") 'projectile-pt)))
-
-;;; init-pt.el ends here
+;;; init-historian.el ends here
