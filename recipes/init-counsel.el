@@ -57,7 +57,7 @@
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
 
   (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'my-counsel-find-file)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf))
 
 (defun myinit-customize-counsel-help()
@@ -68,11 +68,5 @@
   (define-key help-map (kbd "l") 'counsel-find-library)
   (define-key help-map (kbd "u") 'counsel-unicode-char)
   (define-key help-map (kbd "v") 'counsel-describe-variable))
-
-(defun my-counsel-find-file (&optional arg)
-  "Run `find-file' of `counsel-find-file' regards to `ARG'."
-  (interactive "P")
-
-  (if arg (call-interactively 'find-file) (counsel-find-file)))
 
 ;;; init-counsel.el ends here
