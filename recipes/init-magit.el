@@ -30,6 +30,10 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
+(custom-set-variables
+ '(magit-completing-read-function 'ivy-completing-read)) ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
+
 (add-hook 'after-init-hook 'myinit-magit)
 
 (defun myinit-magit ()
@@ -53,10 +57,6 @@
     (define-key magit-mode-map (my-kbd "V S 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (my-kbd "V S 3") 'magit-show-level-3-all)
     (define-key magit-mode-map (my-kbd "V S 4") 'magit-show-level-4-all)
-
-    ;; Use ido to look for branches
-    ;; <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>.
-    (setq magit-completing-read-function 'magit-ido-completing-read)
 
     ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
 

@@ -1,6 +1,6 @@
-;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-colir.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,25 +31,16 @@
 
 ;;; Code:
 
-(custom-set-variables
- ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-completion-system 'ivy)
- '(projectile-mode-line nil))
+;; (custom-set-variables
+;;  '(colir-compose-method 'colir-compose-soft-light))
 
-(add-hook 'after-init-hook 'myinit-projectile)
+;; (add-hook 'after-init-hook 'myinit-colir)
+;; (defun myinit-colir ()
+;;   "My init."
+;;   (if (boundp 'colir-compose-alpha) (myinit-lazy-colir)
+;;     (with-eval-after-load 'colir (myinit-lazy-colir))))
+;; (defun myinit-lazy-colir ()
+;;   "My init lazy."
+;;   )
 
-(defun myinit-projectile ()
-  "My init."
-
-  ;; (myinit-after-load 'projectile
-  ;;   (setq projectile-project-root-files-bottom-up
-  ;;         (append projectile-project-root-files-bottom-up
-  ;;                 '("profiles" ; Gentoo portage overlay
-  ;;                   ))))
-
-  ;; (myinit-after-load 'projectile
-  ;;   (define-key myinit-mode-map (kbd "C-v c p") projectile-command-map))
-
-  (projectile-global-mode))
-
-;;; init-projectile.el ends here
+;;; init-colir.el ends here

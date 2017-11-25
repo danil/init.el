@@ -1,6 +1,6 @@
-;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-ivy-historian.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,25 +31,16 @@
 
 ;;; Code:
 
-(custom-set-variables
- ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-completion-system 'ivy)
- '(projectile-mode-line nil))
+(add-hook 'after-init-hook 'myinit-ivy-historian)
 
-(add-hook 'after-init-hook 'myinit-projectile)
-
-(defun myinit-projectile ()
+(defun myinit-ivy-historian ()
   "My init."
 
-  ;; (myinit-after-load 'projectile
-  ;;   (setq projectile-project-root-files-bottom-up
-  ;;         (append projectile-project-root-files-bottom-up
-  ;;                 '("profiles" ; Gentoo portage overlay
-  ;;                   ))))
+  (if (boundp 'ivy-historian-mode) (myinit-lazy-ivy-historian)
+    (with-eval-after-load 'ivy-historian (myinit-lazy-ivy-historian))))
 
-  ;; (myinit-after-load 'projectile
-  ;;   (define-key myinit-mode-map (kbd "C-v c p") projectile-command-map))
+(defun myinit-lazy-ivy-historian ()
+  "My init lazy."
+  (ivy-historian-mode t))
 
-  (projectile-global-mode))
-
-;;; init-projectile.el ends here
+;;; init-ivy-historian.el ends here

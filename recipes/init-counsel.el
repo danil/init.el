@@ -1,6 +1,6 @@
-;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-counsel.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,25 +31,16 @@
 
 ;;; Code:
 
-(custom-set-variables
- ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-completion-system 'ivy)
- '(projectile-mode-line nil))
+;; (add-hook 'after-init-hook 'myinit-counsel)
 
-(add-hook 'after-init-hook 'myinit-projectile)
+;; (defun myinit-counsel ()
+;;   "My init."
 
-(defun myinit-projectile ()
-  "My init."
+;;   (if (boundp 'counsel-mode) (myinit-lazy-counsel)
+;;     (with-eval-after-load 'counsel (myinit-lazy-counsel))))
 
-  ;; (myinit-after-load 'projectile
-  ;;   (setq projectile-project-root-files-bottom-up
-  ;;         (append projectile-project-root-files-bottom-up
-  ;;                 '("profiles" ; Gentoo portage overlay
-  ;;                   ))))
+;; (defun myinit-lazy-counsel ()
+;;   "My init lazy."
+;;   (counsel-mode t))
 
-  ;; (myinit-after-load 'projectile
-  ;;   (define-key myinit-mode-map (kbd "C-v c p") projectile-command-map))
-
-  (projectile-global-mode))
-
-;;; init-projectile.el ends here
+;;; init-counsel.el ends here

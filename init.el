@@ -379,23 +379,27 @@
 (my-recipe '(hl-line))
 
 ;; Ido.
+;; (my-recipe '(crm-custom))
 ;; (my-recipe '(flx-ido)) ;ido fuzzy matching
-(my-recipe '(crm-custom))
+;; (my-recipe '(ido-occur))
+;; (my-recipe '(ido-ubiquitous))
+;; (my-recipe '(recentf-ido-find-file))
+;; (my-recipe '(smex))
 (my-recipe '(ido))
 (my-recipe '(ido-clever-match)) ;ido fuzzy matching
 (my-recipe '(ido-describe-bindings))
-(my-recipe '(ido-occur))
-(my-recipe '(ido-ubiquitous))
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
-(my-recipe '(smex))
 
-;; ;; Ivy (is an ido replacement).
-;; (my-recipe '(ivy))
+;; Ivy (is an ido replacement).
+(my-recipe '(colir))
+(my-recipe '(counsel))
+(my-recipe '(historian))
+(my-recipe '(ivy))
+(my-recipe '(ivy-historian))
 
 (my-recipe '(kill-ring-ido))
 (my-recipe '(recentf))
-(my-recipe '(recentf-ido-find-file))
 
 (my-recipe '(ibuffer))
 (my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode

@@ -36,7 +36,7 @@
 (defun myinit-ag ()
   "My init."
 
-  (define-key myinit-map (kbd "j a") 'ag)
+  (define-key myinit-map (kbd "j A A") 'ag)
 
   (define-key myinit-map (kbd "j A D") 'ag-dired-regexp)
   (define-key myinit-map (kbd "j A d") 'ag-dired)

@@ -93,18 +93,21 @@
 
 ;; Ido.
 ;; (depends-on "flx-ido") ;ido fuzzy matching
+;; (depends-on "ido-occur")
+;; (depends-on "ido-ubiquitous")
+;; (depends-on "smex")
 (depends-on "ido-clever-match") ;ido fuzzy matching
 (depends-on "ido-describe-bindings")
-(depends-on "ido-occur")
-(depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
-(depends-on "smex")
 
-;; ;; Ivy (is an ido replacement).
-;; (depends-on "counsel")
-;; (depends-on "ivy")
-;; (depends-on "swiper")
+;; Ivy (is an ido replacement).
+(depends-on "counsel")
+(depends-on "counsel-projectile")
+(depends-on "ivy")
+(depends-on "ivy-dired-history")
+(depends-on "ivy-historian")
+(depends-on "swiper")
 
 ;;; JavaScript.
 (depends-on "coffee-mode")

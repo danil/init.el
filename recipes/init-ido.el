@@ -58,10 +58,10 @@
 (defun myinit-ido ()
   "My init."
 
-  (ido-mode 'both) ;for buffers and files
-  (ido-everywhere t)
+  ;; (ido-mode 'both) ;for buffers and files
+  ;; (ido-everywhere t)
 
-  (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
+  ;; (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
 
   (myinit-after-load 'ido
     ;; When using ido, the confirmation is rather annoying.
