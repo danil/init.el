@@ -32,8 +32,8 @@
 ;;; Code:
 
 (custom-set-variables
- ;; '(ivy-height 10)
  ;; '(ivy-use-virtual-buffers t)
+ '(ivy-height 15)
  '(ivy-count-format "(%d/%d) "))
 
 (add-hook 'after-init-hook 'myinit-ivy)
