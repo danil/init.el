@@ -92,8 +92,8 @@
 (depends-on "inf-mongo")
 
 ;; Ido.
-;; (depends-on "ido-clever-match") ;ido fuzzy matching
-(depends-on "flx-ido") ;ido fuzzy matching
+;; (depends-on "flx-ido") ;ido fuzzy matching
+(depends-on "ido-clever-match") ;ido fuzzy matching
 (depends-on "ido-describe-bindings")
 (depends-on "ido-occur")
 (depends-on "ido-ubiquitous")
