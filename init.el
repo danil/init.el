@@ -380,8 +380,9 @@
 
 ;; Ido.
 (my-recipe '(crm-custom))
+;; (my-recipe '(ido-clever-match)) ;ido fuzzy matching
+(my-recipe '(flx-ido)) ;ido fuzzy matching
 (my-recipe '(ido))
-(my-recipe '(ido-clever-match))
 (my-recipe '(ido-describe-bindings))
 (my-recipe '(ido-occur))
 (my-recipe '(ido-ubiquitous))
