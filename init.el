@@ -397,6 +397,7 @@
 (my-recipe '(historian))
 (my-recipe '(ivy))
 (my-recipe '(ivy-historian))
+(my-recipe '(swiper))
 
 (my-recipe '(kill-ring-ido))
 (my-recipe '(recentf))

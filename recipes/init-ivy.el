@@ -41,8 +41,8 @@
 (defun myinit-ivy ()
   "My init."
 
-  (if (boundp 'ido-mode) (myinit-lazy-ivy)
-    (with-eval-after-load 'ido (myinit-lazy-ivy))))
+  (if (boundp 'ivy-mode) (myinit-lazy-ivy)
+    (with-eval-after-load 'ivy (myinit-lazy-ivy))))
 
 (defun myinit-lazy-ivy ()
   "My init lazy."
@@ -79,9 +79,6 @@
   "My init customize keys."
   (global-set-key (kbd "C-c C-R") 'ivy-resume)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-
-  ;; (global-set-key "\C-r" 'swiper)
-  (define-key myinit-map (kbd "j o") 'swiper)
 
   (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
