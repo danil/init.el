@@ -31,7 +31,12 @@
 (depends-on "auto-complete-nxml")
 (depends-on "auto-complete-pcmp")
 
+;; Fuzzy searching in multiple files (projectile and friends).
 (depends-on "ag")
+(depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
+(depends-on "wgrep-ag")
+(depends-on "wgrep-pt")
+
 (depends-on "anzu") ;isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")
@@ -139,7 +144,6 @@
 (depends-on "php-mode")
 (depends-on "projectile")
 (depends-on "projectile-rails")
-(depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
 (depends-on "quelpa")
 (depends-on "quickrun")
 

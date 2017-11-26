@@ -37,7 +37,7 @@
   "My init."
 
   (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j A a") 'ag)
+    (define-key myinit-map (kbd "j A A") 'ag)
 
     (define-key myinit-map (kbd "j A D") 'ag-dired-regexp)
     (define-key myinit-map (kbd "j A d") 'ag-dired)
