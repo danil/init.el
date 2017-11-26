@@ -52,7 +52,7 @@
 (defun myinit-customize-ivy ()
   "My init customize."
 
-  (global-set-key (kbd "C-c C-R") 'ivy-resume)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
   (myinit-customize-ivy-face))
 

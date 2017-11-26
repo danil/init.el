@@ -48,7 +48,9 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
   (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j a") 'counsel-ag)
+    (unless (fboundp 'ag/read-from-minibuffer) (require 'ag))
+    (define-key myinit-map (kbd "j a") 'my-counsel-ag)
+
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg))
 
@@ -68,5 +70,14 @@
   (define-key help-map (kbd "l") 'counsel-find-library)
   (define-key help-map (kbd "u") 'counsel-unicode-char)
   (define-key help-map (kbd "v") 'counsel-describe-variable))
+
+(defun my-counsel-ag (string directory)
+  "Search using ag in a given `DIRECTORY` for a given literal search STRING,
+with STRING defaulting to the symbol under point.
+
+If called with a prefix, prompts for flags to pass to ag."
+  (interactive (list (ag/read-from-minibuffer "Search string")
+                     (read-directory-name "Directory: ")))
+  (counsel-ag string directory))
 
 ;;; init-counsel.el ends here

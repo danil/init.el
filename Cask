@@ -107,6 +107,7 @@
 (depends-on "ivy")
 (depends-on "ivy-dired-history")
 (depends-on "ivy-historian")
+(depends-on "ivy-hydra")
 (depends-on "swiper")
 
 ;;; JavaScript.

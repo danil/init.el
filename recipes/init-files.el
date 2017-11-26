@@ -51,7 +51,8 @@
 (defun myinit-files ()
   "My init."
 
-  (define-key myinit-map (kbd "B r") 'revert-buffer))
+  (when (boundp 'myinit-map)
+    (define-key myinit-map (kbd "B r") 'revert-buffer)))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
