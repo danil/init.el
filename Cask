@@ -109,6 +109,7 @@
 (depends-on "ivy-historian")
 (depends-on "ivy-hydra")
 (depends-on "swiper")
+(depends-on "wgrep") ;editable `ivy-occur` buffer (grep-mode)
 
 ;;; JavaScript.
 (depends-on "coffee-mode")
