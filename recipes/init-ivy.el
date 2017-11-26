@@ -33,8 +33,9 @@
 
 (custom-set-variables
  ;; '(ivy-use-virtual-buffers t)
- '(ivy-height 15)
- '(ivy-count-format "(%d/%d) "))
+ '(ivy-count-format "(%d/%d) ")
+ '(ivy-fixed-height-minibuffer t)
+ '(ivy-height 15))
 
 (add-hook 'after-init-hook 'myinit-ivy)
 
