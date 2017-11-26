@@ -37,7 +37,9 @@
   "My init."
 
   ;; (global-set-key "\C-r" 'swiper)
-  (when (boundp 'myinit-map) (define-key myinit-map (kbd "j o") 'my-swiper)))
+  (when (boundp 'myinit-map)
+    (define-key myinit-map (kbd "j O") 'swiper-multi)
+    (define-key myinit-map (kbd "j o") 'my-swiper)))
 
 (defun my-swiper (&optional arg)
   "Run `swiper' with optional argument `ARG' from `symbol-at-point'."
