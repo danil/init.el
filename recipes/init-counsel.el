@@ -104,6 +104,11 @@ If called with a prefix, prompts for flags to pass to ag."
                      (read-string "Arguments: ")))
   (counsel-ag initial-input initial-directory extra-ag-args))
 
+;; <https://stackoverflow.com/questions/757564/in-emacs-lisp-how-do-i-check-if-a-variable-is-defined>
+;; <https://emacs.stackexchange.com/questions/28365/how-do-you-correctly-escape-characters-in-string-for-example>
+;; <https://stackoverflow.com/questions/6156286/emacs-lisp-call-function-with-prefix-argument-programmatically>
+;; <https://emacs.stackexchange.com/questions/13886/what-is-a-raw-prefix-argument-capital-p-in-interactive>
+
 ;; (defun my-counsel-ag (initial-directory &optional arg)
 ;;   "Search using ag in a given `INITIAL-DIRECTORY` with optional `ARG'.
 
