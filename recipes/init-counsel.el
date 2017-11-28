@@ -31,18 +31,18 @@
 
 ;;; Code:
 
-;; (defvar myinit-counsel-ag-base-command-name "ag")
+(defconst myinit-counsel-ag-base-command-name "ag")
 
-;; (defvar myinit-counsel-ag-base-command-args
-;;   (if (memq system-type '(ms-dos windows-nt))
-;;       "--vimgrep"
-;;     "--nocolor --nogroup"))
+(defconst myinit-counsel-ag-base-command-args
+  (if (memq system-type '(ms-dos windows-nt))
+      "--vimgrep"
+    "--nocolor --nogroup"))
 
-;; (custom-set-variables
-;;  '(counsel-ag-base-command (format "%s %s %s"
-;;                                    myinit-counsel-ag-base-command-name
-;;                                    myinit-counsel-ag-base-command-args
-;;                                    "%s")))
+(custom-set-variables
+ '(counsel-ag-base-command (format "%s %s %s"
+                                   myinit-counsel-ag-base-command-name
+                                   myinit-counsel-ag-base-command-args
+                                   "%s")))
 
 (add-hook 'after-init-hook 'myinit-counsel)
 
@@ -61,10 +61,7 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
   (when (boundp 'myinit-map)
-    (unless (fboundp 'ag/read-from-minibuffer) (require 'ag))
     (define-key myinit-map (kbd "j a") 'my-counsel-ag)
-    (define-key myinit-map (kbd "j A a") 'my-counsel-ag-with-args)
-
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg))
 
@@ -85,57 +82,23 @@
   (define-key help-map (kbd "u") 'counsel-unicode-char)
   (define-key help-map (kbd "v") 'counsel-describe-variable))
 
-(defun my-counsel-ag (initial-input initial-directory)
-  "Search using ag in a given `INITIAL-DIRECTORY` for a given literal search `INITIAL-INPUT`,
-with `INITIAL-INPUT` defaulting to the symbol under point.
+(defun my-counsel-ag (initial-directory)
+  "Search using ag in a given `INITIAL-DIRECTORY`.
 
-If called with a prefix, prompts for flags to pass to ag."
-  (interactive (list (ag/read-from-minibuffer "Search string")
-                     (read-directory-name "Directory: ")))
-  (counsel-ag initial-input initial-directory))
+If `current-prefix-arg' is a integer then
+pass context to ag like that: ag --context=`current-prefix-arg'.
+If there is a symbol under cursor, then pass it as initial ag imput."
+  (interactive (list (read-directory-name "Directory: ")))
 
-(defun my-counsel-ag-with-args (initial-input initial-directory extra-ag-args)
-  "Search using ag in a given `INITIAL-DIRECTORY` for a given literal search `INITIAL-INPUT`,
-with `INITIAL-INPUT` defaulting to the symbol under point.
+  (let ((initial-input (if (symbol-at-point) (symbol-name (symbol-at-point)) "")))
+    (if (integerp current-prefix-arg)
+        (let ((n current-prefix-arg))
+          (setq current-prefix-arg nil)
+          (counsel-ag initial-input initial-directory
+                      (format "%s %s"
+                              myinit-counsel-ag-base-command-args
+                              (format "--context=%s" n))))
 
-If called with a prefix, prompts for flags to pass to ag."
-  (interactive (list (ag/read-from-minibuffer "Search string")
-                     (read-directory-name "Directory: ")
-                     (read-string "Arguments: ")))
-  (counsel-ag initial-input initial-directory extra-ag-args))
-
-;; <https://stackoverflow.com/questions/757564/in-emacs-lisp-how-do-i-check-if-a-variable-is-defined>
-;; <https://emacs.stackexchange.com/questions/28365/how-do-you-correctly-escape-characters-in-string-for-example>
-;; <https://stackoverflow.com/questions/6156286/emacs-lisp-call-function-with-prefix-argument-programmatically>
-;; <https://emacs.stackexchange.com/questions/13886/what-is-a-raw-prefix-argument-capital-p-in-interactive>
-
-;; (defun my-counsel-ag (initial-directory &optional arg)
-;;   "Search using ag in a given `INITIAL-DIRECTORY` with optional `ARG'.
-
-;; If called with `ARG', prompts for flags to pass to ag.
-;; If `ARG' is a number pass to ag --context=`ARG'.
-;; If there is a symbol under cursor, then pass it as initial ag imput."
-;;   (interactive (list (ag/read-from-minibuffer "Search string")
-;;                      (read-directory-name "Directory: ")))
-
-;;   (let ((extra-ag-args) (when arg
-;;                           (if (integerp arg)
-;;                               extra-ag-args
-;;                             (read-string "Arguments: "
-;;                                          (replace-regexp-in-string "%s" ""
-;;                                                                    (substring-no-properties counsel-ag-base-command
-;;                                                                                             (cl-position ?  counsel-ag-base-command)))))))
-
-;;     (counsel-ag initial-input initial-directory)))
-
-;; (defun my-counsel-ag-with-args (initial-input initial-directory extra-ag-args)
-;;   "Search using ag in a given `INITIAL-DIRECTORY` for a given literal search `INITIAL-INPUT`,
-;; with `INITIAL-INPUT` defaulting to the symbol under point.
-
-;; If called with a prefix, prompts for flags to pass to ag."
-;;   (interactive (list (ag/read-from-minibuffer "Search string")
-;;                      (read-directory-name "Directory: ")
-;;                      (read-string "Arguments: ")))
-;;   (counsel-ag initial-input initial-directory extra-ag-args))
+      (counsel-ag initial-input initial-directory))))
 
 ;;; init-counsel.el ends here
