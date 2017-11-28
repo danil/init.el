@@ -41,13 +41,24 @@
 
   (define-key myinit-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
 
-  (myinit-after-load 'help
-    (define-key help-map "f" 'my-describe-function)
+  (if (boundp 'help-map) (myinit-help-customize-keys)
+    (with-eval-after-load 'help (myinit-help-customize-keys))))
 
-    (define-key help-map "?" nil)
-    (define-key help-map (kbd "? ?") 'help-for-help)
-    (define-key help-map (kbd "? m") 'man)
-    (define-key help-map (kbd "? w") 'woman)))
+(defun myinit-help-customize-keys()
+  "My init customize."
+
+  (define-key help-map "f" 'my-describe-function)
+
+  (define-key help-map "?" nil)
+  (define-key help-map (kbd "? ?") 'help-for-help)
+  (define-key help-map (kbd "? m") 'my-man-function))
+
+(defun my-man-function ()
+  (interactive)
+  (cond ((equal current-prefix-arg 1) (call-interactively 'tldr))
+        ((equal current-prefix-arg 2) (call-interactively 'woman))
+        (current-prefix-arg (call-interactively 'tldr))
+        (t (call-interactively 'man))))
 
 (defun my-describe-function (&optional arg)
   (interactive "P")

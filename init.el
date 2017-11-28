@@ -507,6 +507,7 @@
 (my-recipe '(sql-postgres))
 
 (my-recipe '(telnet))
+(my-recipe '(tldr))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
 (my-recipe '(undo-tree))

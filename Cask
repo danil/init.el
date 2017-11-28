@@ -179,6 +179,7 @@
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")
+(depends-on "tldr")
 (depends-on "toml-mode")
 (depends-on "transpose-frame")
 (depends-on "twittering-mode")
