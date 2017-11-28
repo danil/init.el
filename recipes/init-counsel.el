@@ -31,6 +31,19 @@
 
 ;;; Code:
 
+;; (defvar myinit-counsel-ag-base-command-name "ag")
+
+;; (defvar myinit-counsel-ag-base-command-args
+;;   (if (memq system-type '(ms-dos windows-nt))
+;;       "--vimgrep"
+;;     "--nocolor --nogroup"))
+
+;; (custom-set-variables
+;;  '(counsel-ag-base-command (format "%s %s %s"
+;;                                    myinit-counsel-ag-base-command-name
+;;                                    myinit-counsel-ag-base-command-args
+;;                                    "%s")))
+
 (add-hook 'after-init-hook 'myinit-counsel)
 
 (defun myinit-counsel ()
@@ -90,5 +103,34 @@ If called with a prefix, prompts for flags to pass to ag."
                      (read-directory-name "Directory: ")
                      (read-string "Arguments: ")))
   (counsel-ag initial-input initial-directory extra-ag-args))
+
+;; (defun my-counsel-ag (initial-directory &optional arg)
+;;   "Search using ag in a given `INITIAL-DIRECTORY` with optional `ARG'.
+
+;; If called with `ARG', prompts for flags to pass to ag.
+;; If `ARG' is a number pass to ag --context=`ARG'.
+;; If there is a symbol under cursor, then pass it as initial ag imput."
+;;   (interactive (list (ag/read-from-minibuffer "Search string")
+;;                      (read-directory-name "Directory: ")))
+
+;;   (let ((extra-ag-args) (when arg
+;;                           (if (integerp arg)
+;;                               extra-ag-args
+;;                             (read-string "Arguments: "
+;;                                          (replace-regexp-in-string "%s" ""
+;;                                                                    (substring-no-properties counsel-ag-base-command
+;;                                                                                             (cl-position ?  counsel-ag-base-command)))))))
+
+;;     (counsel-ag initial-input initial-directory)))
+
+;; (defun my-counsel-ag-with-args (initial-input initial-directory extra-ag-args)
+;;   "Search using ag in a given `INITIAL-DIRECTORY` for a given literal search `INITIAL-INPUT`,
+;; with `INITIAL-INPUT` defaulting to the symbol under point.
+
+;; If called with a prefix, prompts for flags to pass to ag."
+;;   (interactive (list (ag/read-from-minibuffer "Search string")
+;;                      (read-directory-name "Directory: ")
+;;                      (read-string "Arguments: ")))
+;;   (counsel-ag initial-input initial-directory extra-ag-args))
 
 ;;; init-counsel.el ends here
