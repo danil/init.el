@@ -35,11 +35,28 @@
  '(tldr-directory-path (expand-file-name "tldr/" "~/.emacs.var"))
  '(tldr-use-word-at-point t))
 
-;; (add-hook 'after-init-hook 'myinit-tldr)
-;; (defun myinit-tldr ()
-;;   "My init."
-;;   ;; (if (fboundp 'tldr) ????????????
-;;   ;;   (with-eval-after-load 'tldr ??????????????))
-;;   )
+(defconst myinit-tldr-face-code-background "gray10")
+
+(add-hook 'after-init-hook 'myinit-tldr)
+
+(defun myinit-tldr ()
+  "My init."
+
+  (if (boundp 'tldr-directory-path) (myinit-tldr-customize)
+    (with-eval-after-load 'tldr (myinit-tldr-customize))))
+
+(defun myinit-tldr-customize()
+  "My init customize."
+
+  ;; (when (equal frame-background-mode 'dark)
+  ;;   (set-face-attribute 'tldr-introduction nil :background "gray10"))
+
+  (when (equal frame-background-mode 'dark)
+    (set-face-attribute 'tldr-code-block nil
+                        :background myinit-tldr-face-code-background))
+
+  (when (equal frame-background-mode 'dark)
+    (set-face-attribute 'tldr-command-argument nil
+                        :background myinit-tldr-face-code-background)))
 
 ;;; init-tldr.el ends here
