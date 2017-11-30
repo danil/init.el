@@ -69,10 +69,11 @@
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
 
+  (global-set-key (kbd "M-y") 'my-counsel-yank-pop)
+
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "M-y") 'counsel-yank-pop))
+  (global-set-key (kbd "M-x") 'counsel-M-x))
 
 (defun myinit-counsel-customize-help()
   "My init customize."
@@ -101,5 +102,32 @@ If there is a symbol under cursor, then pass it as initial ag imput."
                               (format "--context=%s" n))))
 
       (counsel-ag initial-input initial-directory))))
+
+(defun my-counsel-yank-pop ()
+  "Ivy replacement for `yank-pop'."
+  (interactive)
+
+  (require 'counsel)
+
+  (if (eq last-command 'yank)
+      (progn
+        (setq ivy-completion-end (point))
+        (setq ivy-completion-beg
+              (save-excursion
+                (search-backward (car kill-ring))
+                (point))))
+    (setq ivy-completion-beg (point))
+    (setq ivy-completion-end (point)))
+  (let ((candidates
+         (mapcar #'ivy-cleanup-string
+                 (cl-remove-if
+                  (lambda (s)
+                    (string-match "\\`[\n[:blank:]]*\\'" s))
+                  (delete-dups kill-ring)))))
+    (let ((ivy-format-function #'counsel--yank-pop-format-function)
+          (ivy-height myinit-ivy-ivy-height))
+      (ivy-read "kill-ring: " candidates
+                :action 'counsel-yank-pop-action
+                :caller 'counsel-yank-pop))))
 
 ;;; init-counsel.el ends here

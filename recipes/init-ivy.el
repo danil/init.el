@@ -31,11 +31,13 @@
 
 ;;; Code:
 
+(defconst myinit-ivy-ivy-height 15)
+
 (custom-set-variables
  ;; '(ivy-use-virtual-buffers t)
  '(ivy-count-format "(%d/%d) ")
  '(ivy-fixed-height-minibuffer t)
- '(ivy-height 15))
+ '(ivy-height myinit-ivy-ivy-height))
 
 (add-hook 'after-init-hook 'myinit-ivy)
 
