@@ -49,12 +49,12 @@
 (defun myinit-counsel ()
   "My init."
 
-  (if (boundp 'help-map) (myinit-customize-counsel-help)
-    (with-eval-after-load 'help (myinit-customize-counsel-help)))
+  (if (boundp 'help-map) (myinit-counsel-customize-help)
+    (with-eval-after-load 'help (myinit-counsel-customize-help)))
 
-  (myinit-customize-ivy-key))
+  (myinit-counsel-customize-keys))
 
-(defun myinit-customize-ivy-key ()
+(defun myinit-counsel-customize-keys ()
   "My init customize keys."
 
   (when (boundp 'minibuffer-local-map)
@@ -69,12 +69,13 @@
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
 
-  (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
+  (global-set-key (kbd "C-x C-r") 'counsel-recentf)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "M-y") 'counsel-yank-pop))
 
-(defun myinit-customize-counsel-help()
-  "My init customize help."
+(defun myinit-counsel-customize-help()
+  "My init customize."
   (define-key help-map (kbd "F") 'counsel-describe-face)
   (define-key help-map (kbd "f") 'counsel-describe-function)
   (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
