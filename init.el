@@ -383,6 +383,7 @@
 ;; (my-recipe '(flx-ido)) ;ido fuzzy matching
 ;; (my-recipe '(ido-occur))
 ;; (my-recipe '(ido-ubiquitous))
+;; (my-recipe '(kill-ring-ido))
 ;; (my-recipe '(recentf-ido-find-file))
 ;; (my-recipe '(smex))
 (my-recipe '(ido))
@@ -398,9 +399,6 @@
 (my-recipe '(ivy))
 (my-recipe '(ivy-historian))
 (my-recipe '(swiper))
-
-(my-recipe '(kill-ring-ido))
-(my-recipe '(recentf))
 
 (my-recipe '(ibuffer))
 (my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
@@ -469,12 +467,13 @@
 (my-recipe '(rainbow-mode))
 (my-recipe '(re-builder))
 (my-recipe '(recentf))
+(my-recipe '(recentf))
 (my-recipe '(recentf-ext))
 (my-recipe '(redis))
 (my-recipe '(replace))
+(my-recipe '(restclient))
 (my-recipe '(rg))
 (my-recipe '(rust-mode))
-(my-recipe '(restclient))
 
 (my-recipe '(inf-ruby))
 (my-recipe '(rbenv))
