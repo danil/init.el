@@ -31,6 +31,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(kill-ring-max 1000))
+
 ;; (add-hook 'after-init-hook 'myinit-kill-ring)
 ;; (defun myinit-kill-ring ()
 ;;   "My init."
