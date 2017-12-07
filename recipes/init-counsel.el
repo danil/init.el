@@ -108,27 +108,32 @@ If there is a symbol under cursor, then pass it as initial ag imput."
   "Ivy replacement for `yank-pop'."
   (interactive)
 
-  (require 'counsel)
+  (if (member last-command '(yank yank-secondary yank-pop yank-pop-commands))
+      (if (fboundp 'yank-pop-commands)
+          (yank-pop-commands) ; second-sel.el
+        (yank-pop))
 
-  (if (eq last-command 'yank)
-      (progn
-        (setq ivy-completion-end (point))
-        (setq ivy-completion-beg
-              (save-excursion
-                (search-backward (car kill-ring))
-                (point))))
-    (setq ivy-completion-beg (point))
-    (setq ivy-completion-end (point)))
-  (let ((candidates
-         (mapcar #'ivy-cleanup-string
-                 (cl-remove-if
-                  (lambda (s)
-                    (string-match "\\`[\n[:blank:]]*\\'" s))
-                  (delete-dups kill-ring)))))
-    (let ((ivy-format-function #'counsel--yank-pop-format-function)
-          (ivy-height myinit-ivy-ivy-height))
-      (ivy-read "kill-ring: " candidates
-                :action 'counsel-yank-pop-action
-                :caller 'counsel-yank-pop))))
+    (require 'counsel)
+
+    (if (eq last-command 'yank)
+        (progn
+          (setq ivy-completion-end (point))
+          (setq ivy-completion-beg
+                (save-excursion
+                  (search-backward (car kill-ring))
+                  (point))))
+      (setq ivy-completion-beg (point))
+      (setq ivy-completion-end (point)))
+    (let ((candidates
+           (mapcar #'ivy-cleanup-string
+                   (cl-remove-if
+                    (lambda (s)
+                      (string-match "\\`[\n[:blank:]]*\\'" s))
+                    (delete-dups kill-ring)))))
+      (let ((ivy-format-function #'counsel--yank-pop-format-function)
+            (ivy-height myinit-ivy-ivy-height))
+        (ivy-read "kill-ring: " candidates
+                  :action 'counsel-yank-pop-action
+                  :caller 'counsel-yank-pop)))))
 
 ;;; init-counsel.el ends here
