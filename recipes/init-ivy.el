@@ -34,9 +34,10 @@
 (defconst myinit-ivy-ivy-height 15)
 
 (custom-set-variables
- ;; '(ivy-use-virtual-buffers t)
+ ;; '(ivy-truncate-lines t)
  '(ivy-count-format "(%d/%d) ")
  '(ivy-fixed-height-minibuffer t)
+ '(ivy-use-virtual-buffers nil) ;;virtual buffers slow down switching between buffers
  '(ivy-height myinit-ivy-ivy-height))
 
 (add-hook 'after-init-hook 'myinit-ivy)

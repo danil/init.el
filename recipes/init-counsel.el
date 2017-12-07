@@ -39,6 +39,7 @@
     "--nocolor --nogroup"))
 
 (custom-set-variables
+ '(counsel-yank-pop-truncate-radius 4)
  '(counsel-ag-base-command (format "%s %s %s"
                                    myinit-counsel-ag-base-command-name
                                    myinit-counsel-ag-base-command-args
