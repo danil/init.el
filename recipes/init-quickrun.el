@@ -39,9 +39,16 @@
 (defun myinit-quickrun ()
   "My init."
 
+  ;; (if (boundp 'quickrun--mode-map) (myinit-quickrun--customize)
+  ;;   (with-eval-after-load 'quickrun (myinit-quickrun--customize)))
+
+  ;; (define-key myinit-map (kbd "! s") 'quickrun-shell)
   (define-key myinit-map (kbd "! b") 'my-quickrun)
-  (define-key myinit-map (kbd "! r") 'my-quickrun-region)
-  (define-key myinit-map (kbd "! s") 'quickrun-shell))
+  (define-key myinit-map (kbd "! r") 'my-quickrun-region))
+
+;; (defun myinit-quickrun--customize()
+;;   "My init customize."
+;;   (define-key quickrun--mode-map (kbd "g") 'recompile))
 
 (defun my-quickrun (&optional arg)
   (interactive "P")
