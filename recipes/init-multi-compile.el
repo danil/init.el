@@ -33,6 +33,8 @@
 
 ;;; <https://github.com/ReanGD/emacs-multi-compile#sample-configuration>.
 (custom-set-variables
+ ;; '(multi-compile-history-length 50)
+ '(multi-compile-history-file (expand-file-name "multi-compile.cache" "~/.emacs.var"))
  '(multi-compile-alist
    '(("/Cask\\'" . (("cask outdated" . "cd %dir && cask --verbose outdated")
                     ("cask install" . "cd %dir && cask --verbose install")
