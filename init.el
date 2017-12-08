@@ -376,6 +376,7 @@
 (my-recipe '(hi-lock))
 (my-recipe '(hideshow))
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
+(my-recipe '(hydra))
 (my-recipe '(hl-line))
 
 ;; Ido.

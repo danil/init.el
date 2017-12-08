@@ -52,6 +52,8 @@
     ;; Set Yasnippet's key binding to shift+tab
     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
+  ;; (if (fboundp 'hydra-repeat) (myinit-yasnippet--hydra)
+  ;;   (with-eval-after-load 'hydra (myinit-yasnippet--hydra)))
 
   (dolist (hook myinit-programming-modes-hooks)
     (add-hook hook 'myinit-yasnippet--lazyinit)))
@@ -61,5 +63,28 @@
 
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil 'yas-minor-mode))
+
+;; (defun myinit-yasnippet--hydra ()
+;;   (defhydra hydra-yasnippet (:color blue :hint nil)
+;;     "
+;;               ^YASnippets^
+;; --------------------------------------------
+;;   Modes:    Load/Visit:    Actions:
+
+;;  _g_lobal  _d_irectory    _i_nsert
+;;  _m_inor   _f_ile         _t_ryout
+;;  _e_xtra   _l_ist         _n_ew
+;;          _a_ll
+;; "
+;;     ("d" yas-load-directory)
+;;     ("e" yas-activate-extra-mode)
+;;     ("i" yas-insert-snippet)
+;;     ("f" yas-visit-snippet-file :color blue)
+;;     ("n" yas-new-snippet)
+;;     ("t" yas-tryout-snippet)
+;;     ("l" yas-describe-tables)
+;;     ("g" yas/global-mode)
+;;     ("m" yas/minor-mode)
+;;     ("a" yas-reload-all)))
 
 ;;; init-yasnippet.el ends here
