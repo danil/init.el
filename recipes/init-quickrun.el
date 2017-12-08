@@ -31,6 +31,9 @@
 
 ;;; Code:
 
+;; (custom-set-variables
+;;  '(quickrun-timeout-seconds 10))
+
 (add-hook 'after-init-hook 'myinit-quickrun)
 
 (defun myinit-quickrun ()
