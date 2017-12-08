@@ -42,10 +42,10 @@
 (defun myinit-tldr ()
   "My init."
 
-  (if (boundp 'tldr-directory-path) (myinit-tldr-customize)
-    (with-eval-after-load 'tldr (myinit-tldr-customize))))
+  (if (boundp 'tldr-directory-path) (myinit-tldr--customize)
+    (with-eval-after-load 'tldr (myinit-tldr--customize))))
 
-(defun myinit-tldr-customize()
+(defun myinit-tldr--customize()
   "My init customize."
 
   ;; (when (equal frame-background-mode 'dark)
