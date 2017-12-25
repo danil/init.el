@@ -71,16 +71,18 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-js2-mode--rainbow-identifiers-filter (beg end)
-  (let ((ch-current (char-after beg))
-        (current-identifier (buffer-substring-no-properties beg end))
-        (str-after (buffer-substring-no-properties end (point-max)))
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((ch-cur (char-after beg))
         (ch-before (char-before beg))
-        (ch-after (char-after end)))
+        (ch-after (char-after end))
+        (str-cur (buffer-substring-no-properties beg end))
+        (str-after (buffer-substring-no-properties end (point-max))))
     (and
-     (not (member ch-current
+     (not (member ch-cur
                   '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
-     (not (or (string-match-p "\\`[A-Z]" current-identifier)
-              (string-match-p "[=/*+-]" current-identifier)))
+     (not (or (string-match-p "\\`[A-Z]" str-cur)
+              (string-match-p "[=/*+-]" str-cur)))
      ;; (not (string-match-p "\\`[[:space:]]*:" str-after))
      (not (and (equal ch-after ?\()
                (string-match-p "\\`[[:space:]\n]*(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+(\\([^)]*\\|[^)]+([^)]*)\\))\\))\\))\\))[[:space:]\n]*\\."
@@ -88,7 +90,7 @@
      (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
          (string-match-p "\\`\\.[[:space:]\n]*\\(apply\\|call\\|debug\\|forEach\\|join\\|length\\|map\\|parse\\|pipe\\|pop\\|push\\|reverse\\|split\\|stringify\\|watch\\|write\\)[^a-zA-Z0-1]"
                          str-after))
-     (not (member current-identifier '(
+     (not (member str-cur '(
                                        "apply"
                                        "call"
                                        "console"

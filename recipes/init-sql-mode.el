@@ -68,11 +68,13 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-sql-mode--rainbow-identifiers-filter (beg end)
-  (let ((current-identifier (downcase (buffer-substring-no-properties beg end)))
-        (ch-current (char-after beg)))
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((ch-cur (char-after beg))
+        (str-cur (downcase (buffer-substring-no-properties beg end))))
     (and
-     (not (member ch-current '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9)))
-     (not (member current-identifier '(
+     (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9)))
+     (not (member str-cur '(
                                        "affected"
                                        "auto_increment"
                                        "autocommit"

@@ -59,15 +59,17 @@
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-c-mode--rainbow-identifiers-filter (beg end)
-  (let ((ch-current (char-after beg))
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((ch-cur (char-after beg))
         (ch-before (char-before beg))
         (ch-after (char-after end))
-        (current-identifier (buffer-substring-no-properties beg end))
+        (str-cur (buffer-substring-no-properties beg end))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
-    (and (not (member ch-current
+    (and (not (member ch-cur
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-         (not (string-match-p "[?!]\\'" current-identifier))
+         (not (string-match-p "[?!]\\'" str-cur))
          (not (and (string-match-p "^[[:space:]]*\\'" str-before)
                    (string-match-p "\\`[[:space:]]*$" str-after)))
          (not (equal ch-after ?\())

@@ -50,17 +50,19 @@
     (myinit-rainbow-identifiers--lazyinit)))
 
 (defun myinit-clojure-mode--rainbow-identifiers-filter (beg end)
-  (let ((current-identifier (buffer-substring-no-properties beg end))
-        (ch-current (char-after beg))
-        (face (or (get-char-property beg 'read-face-name)
-                  (get-char-property beg 'face))))
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((face-cur (or (get-char-property beg 'read-face-name)
+                      (get-char-property beg 'face)))
+        (ch-cur (char-after beg))
+        (str-cur (buffer-substring-no-properties beg end)))
     (and
      (or
-      (eq face 'default)
-      (eq face nil))
-     (not (member ch-current
+      (eq face-cur 'default)
+      (eq face-cur nil))
+     (not (member ch-cur
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?`)))
-     ;; (not (member current-identifier '(
+     ;; (not (member str-cur '(
      ;;                                   )))
      )))
 
