@@ -68,7 +68,7 @@
       (or
        (eq face-cur nil)
        (eq face-cur 'font-lock-constant-face))
-      (eq ch-after ?:))
+      (equal (substring str-after 0 2) ": "))
      (and
       (or
        ;; (eq face-cur 'default)
