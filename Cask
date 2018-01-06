@@ -182,6 +182,7 @@
 (depends-on "systemd")
 (depends-on "tldr")
 (depends-on "toml-mode")
+(depends-on "top-mode")
 (depends-on "transpose-frame")
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
