@@ -80,7 +80,8 @@
           (not (string-match-p "package \\'" str-before)))
       (not (string-match-p "\\`:\\'" str-after)) ;(equal ch-after ?\:)
       (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-          (string-match-p "\\`\\.[[:space:]\n]*\\(Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
+          (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" str-after)
+          (string-match-p "\\`\\.[[:space:]\n]*\\(Bytes\\|Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
                           str-after))
       (not (member str-cur '(
                              "adler32"
