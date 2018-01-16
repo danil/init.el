@@ -31,17 +31,19 @@
 
 ;;; Code:
 
+;; ;;; <http://emacswiki.org/ScrollBar>.
+;; (scroll-bar-mode -1)
+;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
+(custom-set-faces
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "gray10")))) ; :background gray10 purple4 MidnightBlue
+ '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
+ '(scroll-bar ((((class color) (min-colors 88) (background dark)) (:background  "white" :foreground "gray" )))))
+
 (add-hook 'after-init-hook 'myinit-faces)
 
 (defun myinit-faces ()
   "My init."
-
-  ;; ;;; <http://emacswiki.org/ScrollBar>.
-  ;; (scroll-bar-mode -1)
-  ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-  (cond ((equal frame-background-mode 'dark)
-         (set-face-background 'scroll-bar "white")
-         (set-face-foreground 'scroll-bar "gray"))))
+  )
 
 ;; <http://stackoverflow.com/questions/1242352/get-font-face-under-cursor-in-emacs#1242366>.
 (defun my-face-at-point (pos)
