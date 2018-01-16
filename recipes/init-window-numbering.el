@@ -45,7 +45,7 @@
     ;; <http://blog.binchen.org/?p=512#sec-1>.
     (custom-set-faces
      '(window-numbering-face
-       ((t (:foreground "PaleGreen" :background "unspecified-bg" :inherit mode-line-inactive)))))
+       ((((class color) (min-colors 88) (background dark)) (:foreground "PaleGreen" :background "unspecified-bg" :inherit mode-line-inactive)))))
 
     (define-key window-numbering-keymap "\M-0" nil)
     (define-key window-numbering-keymap "\M-1" nil)
