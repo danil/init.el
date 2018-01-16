@@ -62,7 +62,7 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
   (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j a") 'my-counsel-ag)
+    (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg))
 
@@ -70,7 +70,7 @@
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
 
-  (global-set-key (kbd "M-y") 'my-counsel-yank-pop)
+  (global-set-key (kbd "M-y") 'myinit-counsel--counsel-yank-pop)
 
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
@@ -85,7 +85,7 @@
   (define-key help-map (kbd "u") 'counsel-unicode-char)
   (define-key help-map (kbd "v") 'counsel-describe-variable))
 
-(defun my-counsel-ag (initial-directory)
+(defun myinit-counsel--counsel-ag (initial-directory)
   "Search using ag in a given `INITIAL-DIRECTORY`.
 
 If `current-prefix-arg' is a integer then
@@ -104,7 +104,7 @@ If there is a symbol under cursor, then pass it as initial ag imput."
 
       (counsel-ag initial-input initial-directory))))
 
-(defun my-counsel-yank-pop ()
+(defun myinit-counsel--counsel-yank-pop ()
   "Ivy replacement for `yank-pop'."
   (interactive)
 
