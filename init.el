@@ -59,6 +59,7 @@
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t) ;wrap long lines
+(setq truncate-partial-width-windows nil) ;wrap long lines in buffers of any width
 
 (setq system-time-locale "C")
 
@@ -282,6 +283,9 @@
 ;; (my-recipe '(erise))
 ;; (my-recipe '(mmm-mode))
 ;; (my-recipe '(flycheck-rust)) ;buggy(
+
+;; (require 'non-ascii-identifiers "~/.emacs.d/recipes/non-ascii-identifiers.el")
+;; (my-recipe '(non-ascii-identifiers))
 
 (my-recipe '(ag)) ;the silver searcher (ack replacement) <https://github.com/ggreer/the_silver_searcher>
 (my-recipe '(pt)) ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
