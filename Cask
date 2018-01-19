@@ -92,6 +92,7 @@
 (depends-on "css-comb") ;css formater
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
+(depends-on "hl-todo")
 (depends-on "hydra") ;key bindings
 (depends-on "ibuffer-vc")
 (depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
