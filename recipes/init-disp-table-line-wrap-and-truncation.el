@@ -41,7 +41,6 @@
   '((t (:background "orchid3"))) ;orchid3 coral3 red
   "My custom face for the wrap glyphs.")
 
-
 (defface my-wrap-glyph-face
   '((t (:background "limegreen"))) ;green4 ;green3 ;light green
   "My custom face for the wrap glyphs.")
