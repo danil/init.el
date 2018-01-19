@@ -31,10 +31,6 @@
 
 ;;; Code:
 
-(defface my-mode-line-ovwrt-face
-  '((((class color) (min-colors 88) (background dark)) (:foreground "cyan" :background "red" :weight bold)))
-  "My custom face for the ovwrt mode-line's indicator.")
-
 (custom-set-variables
  ;; Hide lighters for some minor modes.
  '(rm-blacklist '(
@@ -68,24 +64,17 @@
                   " yas";yas-minor-mode aka yasnippet
                   ))
 
- '(rm-text-properties '(
-                        ;; ;; Emacs segfault (under certain circumstances)
-                        ;; ;; if touching flycheck-mode's lighters!
-                        ;; ;; Instead customize `flycheck-mode-line`
-                        ;; ;; variable (and
-                        ;; ;; `flycheck-mode-line-status-text` fn) and
-                        ;; ;; `flycheck-mode-line-prefix` variable!
-                        ;; ("\\` FlyC!\\'" 'display " F!") ;flycheck-mode: The syntax check failed. Inspect the ‘*Messages*’ buffer for more information about the failure.
-                        ;; ("\\` FlyC*\\'" 'display " F*") ;flycheck-mode: flycheck currently checks the current buffer
-                        ;; ("\\` FlyC-\\'" 'display " F-") ;flycheck-mode: Flycheck did not find any syntax checker for the current buffer. Try C-c ! v (flycheck-verify-setup) to find out why.
-                        ;; ("\\` FlyC\?\\'" 'display " F?") ;flycheck-mode: The syntax check had a dubious result. The definition of the syntax checker may be flawed. Inspect the ‘*Messages*’ buffer for details.
-                        ;; ("\\` FlyC\\'" 'display " F") ;flycheck-mode: there are no errors in the current buffer
-                        ;; ;; ("\\` FlyC:3/5\\'" 'display " ") ;flycheck-mode: there are three errors and five warnings in the current buffer
-
-                        ;; ("\\` M\\'" 'face 'font-lock-warning-face) ;modalka-mode
-                        ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
-
-                        ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
-                        ("\\` Ovwrt\\'"  'face 'my-mode-line-ovwrt-face))))
+ '(rm-text-properties
+   '(
+     ;; Emacs SEGFAULT!!! (under certain circumstances)
+     ;; if touching flycheck-mode's lighters!
+     ;; Instead customize `flycheck-mode-line`
+     ;; variable (and
+     ;; `flycheck-mode-line-status-text` fn) and
+     ;; `flycheck-mode-line-prefix` variable!
+     ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
+     ("\\` Ovwrt\\'" 'display (concat " "
+                               (propertize "OVERWRITING" 'font-lock-face
+                                           '(:foreground "green" :background "red" :weight bold)))))))
 
 ;;; init-rich-minority.el ends here
