@@ -64,6 +64,9 @@
      (diff-hl-margin-mode)
      (diff-hl-mode)
 
+     ;; (custom-set-faces
+     ;;  '(diff-hl-insert ((((class color) (min-colors 88) (background dark)) (:background "magenta" :foreground "magenta")))))
+
      (when (equal frame-background-mode 'dark)
        ;; (set-face-attribute 'diff-hl-insert nil :inherit 'diff-added
        ;;                     :foreground "green" :background "black")
