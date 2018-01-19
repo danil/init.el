@@ -31,6 +31,10 @@
 
 ;;; Code:
 
+(defface my-mode-line-ovwrt-face
+  '((((class color) (min-colors 88) (background dark)) (:foreground "cyan" :background "red" :weight bold)))
+  "My custom face for the ovwrt mode-line's indicator.")
+
 (custom-set-variables
  ;; Hide lighters for some minor modes.
  '(rm-blacklist '(
@@ -82,6 +86,6 @@
                         ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
 
                         ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
-                        ("\\` Ovwrt\\'" 'face 'font-lock-warning-face))))
+                        ("\\` Ovwrt\\'"  'face 'my-mode-line-ovwrt-face))))
 
 ;;; init-rich-minority.el ends here
