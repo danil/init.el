@@ -517,6 +517,7 @@
 (my-recipe '(transpose-frame))
 (my-recipe '(undo-tree))
 (my-recipe '(uniquify))
+(my-recipe '(vc-hooks))
 (my-recipe '(vlf))
 (my-recipe '(web-mode))
 (my-recipe '(window))
