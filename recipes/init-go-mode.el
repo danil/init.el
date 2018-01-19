@@ -158,6 +158,7 @@
                              "lzw"
                              "macho"
                              "mail"
+                             "main"
                              "math"
                              "md5"
                              "mime"
@@ -265,5 +266,56 @@
 
                              "Valid"
                              )))))))
+
+;; (defun myinit-go-mode--non-ascii-identifiers-init ()
+;;   (when (equal major-mode 'go-mode)
+;;     (make-local-variable 'non-ascii-identifiers-filter-functions)
+;;     (add-hook 'non-ascii-identifiers-filter-functions
+;;               'myinit-go-mode--non-ascii-identifiers-filter)
+
+;;     (myinit-non-ascii-identifiers--lazyinit)))
+
+;; (defun myinit-go-mode--non-ascii-identifiers-filter (beg end)
+;;   "My non-ascii-identifiers custom init for symbol between `BEG' and `END'."
+
+;;   (let ((face-cur (or (get-char-property beg 'read-face-name)
+;;                       (get-char-property beg 'face)))
+;;         (ch-cur (char-after beg))
+;;         (ch-before (char-before beg))
+;;         (ch-after (char-after end))
+;;         (str-cur (buffer-substring-no-properties beg end))
+;;         (str-before (buffer-substring-no-properties (point-min) beg))
+;;         (str-after (buffer-substring-no-properties end (point-max))))
+;;     (or
+;;      (and
+;;       (or
+;;        (eq face-cur nil)
+;;        (eq face-cur 'font-lock-constant-face))
+;;       (equal (substring str-after 0 2) ": "))
+;;      (and
+;;       (or
+;;        ;; (eq face-cur 'default)
+;;        (eq face-cur nil))
+;;       (not (member ch-cur
+;;                    '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+;;       (or (not (equal ch-before ?\s))
+;;           (not (string-match-p "package \\'" str-before)))
+;;       (not (string-match-p "\\`:\\'" str-after)) ;(equal ch-after ?\:)
+;;       (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+;;           (string-match-p "\\`\\.[[:space:]\n]*\\(Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
+;;                           str-after))
+;;       (not (member str-cur '(
+;;                              "adler32"
+;;                              "aes"
+;;                              "ascii85"
+;;                              "asn1"
+;;                              "ast"
+;;                              "atomic"
+;;                              "base32"
+;;                              "base64"
+;;                              "big"
+
+;;                              "Valid"
+;;                              )))))))
 
 ;;; init-go-mode.el ends here
