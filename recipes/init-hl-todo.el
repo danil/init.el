@@ -31,6 +31,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(hl-todo-activate-in-modes '()))
+
 (add-hook 'after-init-hook 'myinit-hl-todo)
 
 (defun myinit-hl-todo ()
