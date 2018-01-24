@@ -74,7 +74,10 @@
      ;; `flycheck-mode-line-prefix` variable!
      ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
      ("\\` Ovwrt\\'" 'display (concat " "
-                               (propertize "OVERWRITING" 'font-lock-face
-                                           '(:foreground "green" :background "red" :weight bold)))))))
+                                      (propertize "OVERWRITING" 'font-lock-face
+                                                  '(:inherit myinit-faces--alert-fixme)))))))
+
+;; (add-hook 'after-init-hook 'myinit-rich-minority)
+;; (defun myinit-rich-minority () "My init.")
 
 ;;; init-rich-minority.el ends here
