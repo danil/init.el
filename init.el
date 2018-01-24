@@ -320,6 +320,8 @@
 (my-recipe '(crontab-mode))
 (my-recipe '(css))
 (my-recipe '(cua))
+(my-recipe '(cus-face))
+(my-recipe '(custom))
 (my-recipe '(cycle-quotes))
 (my-recipe '(deft))
 (my-recipe '(desktop))
