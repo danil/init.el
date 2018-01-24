@@ -42,7 +42,9 @@
                   " ARev" ;auto-revert-mode
                   " Abbrev" ;abbrev-mode
                   " Anzu" ;anzu-mode
+                  " Anzu" ;anzu-mode
                   " Helm" ;helm-mode
+                  " Isearch" ;isearch-mode
                   " MRev" ;magit-auto-revert-mode
                   " Myinit" ;myinit-mode
                   " Rails" ;projectile-rails
