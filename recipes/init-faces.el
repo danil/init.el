@@ -37,16 +37,6 @@
   "Face for currently selected item in the helm buffer."
   :group 'myinit-faces)
 
-;; ;;; <http://emacswiki.org/ScrollBar>.
-;; (scroll-bar-mode -1)
-;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(custom-set-faces
- '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "back" :foreground "magenta" :weight bold))))
- '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit myinit-faces--alert-fixme))))
- '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "back")))) ; :background gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
- '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
- '(scroll-bar ((((class color) (min-colors 88) (background dark)) (:background  "white" :foreground "gray" )))))
-
 (add-hook 'after-init-hook 'myinit-faces)
 
 (defun myinit-faces ()
