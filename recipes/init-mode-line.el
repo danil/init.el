@@ -50,4 +50,23 @@
                       mode-line-misc-info
                       mode-line-end-spaces)))
 
+(custom-set-faces
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "back")))) ; :background gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
+ '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
+ )
+
+(add-hook 'after-init-hook 'myinit-mode-line)
+
+(defun myinit-mode-line ()
+  "My init."
+
+  (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update))
+
+(defun myinit-mode-line--face-mode-line-update ()
+  (if (equal (count-windows) 1)
+      (custom-set-faces
+       '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "back")))))
+    (custom-set-faces
+     '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
+
 ;;; init-mode-line.el ends here

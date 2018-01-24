@@ -31,6 +31,9 @@
 
 ;;; Code:
 
+(custom-set-faces
+ '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "back" :foreground "magenta" :weight bold))))
+ '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit myinit-faces--alert-fixme)))))
 
 (add-hook 'after-init-hook 'myinit-anzu)
 
