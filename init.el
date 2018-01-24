@@ -495,6 +495,7 @@
 
 (my-recipe '(savehist))
 (my-recipe '(saveplace))
+(my-recipe '(scroll-bar))
 (my-recipe '(scss-mode))
 (my-recipe '(sgml-mode))
 (my-recipe '(sh-script))
