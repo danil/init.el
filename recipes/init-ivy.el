@@ -34,7 +34,7 @@
 (defconst myinit-ivy-ivy-height 15)
 
 (custom-set-variables
- ;; '(ivy-truncate-lines t)
+ '(ivy-truncate-lines nil) ;because truncation not working
  '(ivy-count-format "(%d/%d) ")
  '(ivy-fixed-height-minibuffer t)
  '(ivy-use-virtual-buffers nil) ;;virtual buffers slow down switching between buffers
