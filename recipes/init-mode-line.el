@@ -33,7 +33,6 @@
 
 (custom-set-variables
  '(mode-line-format '("%e"
-                      " "
                       mode-line-position
                       ":"
                       mode-line-front-space
@@ -42,7 +41,6 @@
                       mode-line-modified
                       mode-line-remote
                       mode-line-frame-identification
-                      " "
                       mode-line-buffer-identification
                       " "
                       mode-line-modes
