@@ -32,8 +32,10 @@
 ;;; Code:
 
 (custom-set-faces
- '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "back" :foreground "magenta" :weight bold))))
- '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit myinit-faces--alert-fixme)))))
+ '(anzu-mode-line ((((class color) (min-colors 88) (background dark))
+                    (:background "back" :foreground "magenta" :weight bold))))
+ '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark))
+                             (:inherit myinit-faces--alert-fixme)))))
 
 (add-hook 'after-init-hook 'myinit-anzu)
 
@@ -43,6 +45,15 @@
   (global-set-key (kbd "M-%") 'anzu-query-replace)
   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
-  (run-with-idle-timer 1 nil 'global-anzu-mode t))
+  (if (boundp 'global-anzu-mode) (myinit-lazy-anzu)
+    (with-eval-after-load 'anzu (myinit-lazy-anzu))))
+
+(defun myinit-lazy-anzu ()
+  "My init lazy."
+  (global-anzu-mode t)
+  ;; (myinit-customize-anzu)
+  )
+
+;; (defun myinit-customize-anzu () "My init customize.")
 
 ;;; init-anzu.el ends here
