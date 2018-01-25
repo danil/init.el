@@ -35,6 +35,7 @@
  '(sml/col-number-format "%c")
  '(sml/line-number-format "%l")
  '(sml/name-width '(0 . 44))
+ '(sml/projectile-replacement-format "%s>")
  '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
 
 (autoload 'sml/setup "smart-mode-line" nil t)
