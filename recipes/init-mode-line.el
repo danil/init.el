@@ -36,7 +36,6 @@
                       mode-line-position
                       ":"
                       mode-line-front-space
-                      mode-line-mule-info
                       mode-line-client
                       mode-line-modified
                       mode-line-remote
@@ -44,6 +43,7 @@
                       mode-line-buffer-identification
                       " "
                       mode-line-modes
+                      mode-line-mule-info
                       (vc-mode vc-mode)
                       mode-line-misc-info
                       mode-line-end-spaces)))
