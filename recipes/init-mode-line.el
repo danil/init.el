@@ -49,7 +49,7 @@
                       mode-line-end-spaces)))
 
 (custom-set-faces
- '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "back")))) ; :background gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ; :background gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
  )
 
@@ -63,7 +63,7 @@
 (defun myinit-mode-line--face-mode-line-update ()
   (if (equal (count-windows) 1)
       (custom-set-faces
-       '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "back")))))
+       '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
     (custom-set-faces
      '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
 
