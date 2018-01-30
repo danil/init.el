@@ -372,8 +372,6 @@
 (my-recipe '(linum))
 (my-recipe '(linum-format))
 
-;; (my-recipe '(highlight-static-strings))
-;; (my-recipe '(highlight-static-strings-tmp))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
 (my-recipe '(google-translate))
@@ -383,6 +381,8 @@
 (my-recipe '(help))
 (my-recipe '(hi-lock))
 (my-recipe '(hideshow))
+(my-recipe '(highlight-static-strings))
+(my-recipe '(highlight-static-strings-tmp))
 (my-recipe '(highlight-symbol)) ;(my-recipe '(idle-highlight-global-mode highlight-global))
 (my-recipe '(hl-line))
 (my-recipe '(hl-todo))
