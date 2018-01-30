@@ -372,6 +372,8 @@
 (my-recipe '(linum))
 (my-recipe '(linum-format))
 
+;; (my-recipe '(highlight-static-strings))
+;; (my-recipe '(highlight-static-strings-tmp))
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
 (my-recipe '(google-translate))
