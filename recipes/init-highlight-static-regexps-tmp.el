@@ -92,7 +92,7 @@ This is used by `global-highlight-static-regexps-mode'."
   `(((lambda (limit)
        (let (case-fold-search)
          (and (re-search-forward highlight-static-regexps-regexp limit t)
-              ;; (not (nth 8 (syntax-ppss))) ; not inside comment or string
+              (nth 2 (syntax-ppss)) ; not inside comment or string
               )))
      (1 (highlight-static-regexps-get-face) t t))))
 
