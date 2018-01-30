@@ -1,4 +1,4 @@
-;;; init-highlight-static-strings.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-highlight-static-regexps.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,29 +31,35 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-static-strings-hooks '()
-  "Hooks associated with `highlight-static-strings-mode'."
+(defcustom myinit-highlight-static-regexps-hooks '()
+  "Hooks associated with `highlight-static-regexps-mode'."
   :group 'myinit)
 
 (custom-set-variables
- ;; '(highlight-static-strings-activate-in-modes '())
- '(myinit-highlight-static-strings-hooks '(go-mode-hook)))
+ ;; '(highlight-static-regexps-activate-in-modes '())
+ '(highlight-static-regexps-keyword-faces
+   '((" := " . (:inherit default :weight bold))
+     ("break" . (:inherit font-lock-keyword-face :weight bold))
+     ("continue" . (:inherit font-lock-keyword-face :weight bold))
+     ("goto" . (:inherit font-lock-keyword-face :weight bold))
+     ("return" . (:inherit font-lock-keyword-face :weight bold))))
+ '(myinit-highlight-static-regexps-hooks '(go-mode-hook)))
 
-(add-hook 'after-init-hook 'myinit-highlight-static-strings)
+(add-hook 'after-init-hook 'myinit-highlight-static-regexps)
 
-(defun myinit-highlight-static-strings ()
+(defun myinit-highlight-static-regexps ()
   "My init."
 
-  (dolist (hook myinit-highlight-static-strings-hooks)
-    (add-hook hook 'myinit-highlight-static-strings--lazyinit)))
+  (dolist (hook myinit-highlight-static-regexps-hooks)
+    (add-hook hook 'myinit-highlight-static-regexps--lazyinit)))
 
-(defun myinit-highlight-static-strings--lazyinit ()
+(defun myinit-highlight-static-regexps--lazyinit ()
   "My init lazy."
 
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil
    (lambda ()
-     (if (boundp 'highlight-static-strings-mode) (highlight-static-strings-mode)
-       (with-eval-after-load 'highlight-static-strings (highlight-static-strings-mode))))))
+     (if (boundp 'highlight-static-regexps-mode) (highlight-static-regexps-mode)
+       (with-eval-after-load 'highlight-static-regexps (highlight-static-regexps-mode))))))
 
-;;; init-highlight-static-strings.el ends here
+;;; init-highlight-static-regexps.el ends here
