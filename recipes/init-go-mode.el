@@ -69,8 +69,8 @@
      (and
       (equal str-cur ":=")
       (eq face-cur nil)
-      (string-match-p ", .* \\'" str-before)
-      (not (string-match-p "\\(if\\|for\\) .* \\'" str-before)))
+      ;; (string-match-p ", .* \\'" str-before)
+      (not (string-match-p "for .* \\'" str-before)))
      (and
       (member str-cur '("break" "continue" "goto" "return"))
       (eq face-cur 'font-lock-keyword-face)
