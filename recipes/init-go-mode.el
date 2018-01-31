@@ -68,12 +68,10 @@
     (or
      (and
       (equal str-cur ":=")
-      (eq face-cur nil)
-      ;; (string-match-p ", .* \\'" str-before)
-      (not (string-match-p "for .* \\'" str-before)))
+      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
      (and
       (member str-cur '("break" "continue" "goto" "return"))
-      (eq face-cur 'font-lock-keyword-face)
+      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
       (or
        (string-match-p "^\\'" str-before)
        (string-match-p "[ \t]+\\'" str-before))
