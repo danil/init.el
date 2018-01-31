@@ -43,6 +43,44 @@
 
     (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point)))
 
+(defun myinit-go-mode--highlight-static-regexps-init ()
+  (when (equal major-mode 'go-mode)
+    (make-local-variable 'highlight-static-regexps-filter-functions)
+    (add-hook 'highlight-static-regexps-filter-functions
+              'myinit-go-mode--highlight-static-regexps-filter)
+
+    (make-local-variable 'highlight-static-regexps-faces-to-override)
+    (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
+
+    (myinit-highlight-static-regexps--lazyinit)))
+
+(defun myinit-go-mode--highlight-static-regexps-filter (beg end)
+  "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
+
+  (let ((face-cur (or (get-char-property beg 'read-face-name)
+                      (get-char-property beg 'face)))
+        (ch-cur (char-after beg))
+        (ch-before (char-before beg))
+        (ch-after (char-after end))
+        (str-cur (buffer-substring-no-properties beg end))
+        (str-before (buffer-substring-no-properties (point-min) beg))
+        (str-after (buffer-substring-no-properties end (point-max))))
+    (or
+     (and
+      (equal str-cur ":=")
+      (eq face-cur nil)
+      (string-match-p ", .* \\'" str-before)
+      (not (string-match-p "\\(if\\|for\\) .* \\'" str-before)))
+     (and
+      (member str-cur '("break" "continue" "goto" "return"))
+      (eq face-cur 'font-lock-keyword-face)
+      (or
+       (string-match-p "^\\'" str-before)
+       (string-match-p "[ \t]+\\'" str-before))
+      (or
+       (string-match-p "\\`$" str-after)
+       (string-match-p "\\`[ \t]+" str-after))))))
+
 (defun myinit-go-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'go-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)

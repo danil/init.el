@@ -32,18 +32,14 @@
 ;;; Code:
 
 (defcustom myinit-highlight-static-regexps-hooks '()
-  "Hooks associated with `highlight-static-regexps-mode'."
+  "Hooks associated with `highlight-static-regexps'."
   :group 'myinit)
 
 (custom-set-variables
- ;; '(highlight-static-regexps-activate-in-modes '())
- '(highlight-static-regexps-keyword-faces
-   '((" := " . (:inherit default :weight bold))
-     ("break" . (:inherit font-lock-keyword-face :weight bold))
-     ("continue" . (:inherit font-lock-keyword-face :weight bold))
-     ("goto" . (:inherit font-lock-keyword-face :weight bold))
-     ("return" . (:inherit font-lock-keyword-face :weight bold))))
- '(myinit-highlight-static-regexps-hooks '(go-mode-hook)))
+ '(myinit-highlight-static-regexps-hooks
+   '(
+     (go-mode-hook myinit-go-mode--highlight-static-regexps-init)
+     )))
 
 (add-hook 'after-init-hook 'myinit-highlight-static-regexps)
 
@@ -51,15 +47,54 @@
   "My init."
 
   (dolist (hook myinit-highlight-static-regexps-hooks)
-    (add-hook hook 'myinit-highlight-static-regexps--lazyinit)))
+    (let ((h (car hook))
+          (init-fn (nth 1 hook)))
+      (when (fboundp init-fn) (add-hook h init-fn))))
+
+  (myinit-after-load 'highlight-static-regexps
+    (setq highlight-static-regexps-choose-face-function 'myinit-go-mode--highlight-static-regexps-choose-face)))
+
+;; (defcustom highlight-static-regexps-keyword-faces
+;;   '(("foo" . "#red")
+;;     ("bar" . "#green"))
+;;   "Faces used to highlight specific keywords."
+;;   :group 'myinit
+;;   :type '(repeat (cons (string :tag "Keyword")
+;;                        (choice :tag "Face   "
+;;                                (string :tag "Color")
+;;                                (sexp :tag "Face"))))
+;;   ;; :set (lambda (symbol value)
+;;   ;;        (set-default symbol value)
+;;   ;;        (hl-todo-set-regexp))
+;;   )
+
+(defun myinit-go-mode--highlight-static-regexps-choose-face (s)
+  (cond ((equal s ":=") '(:weight bold))
+        ((equal s "break") '(:inherit font-lock-keyword-face :weight bold))
+        ((equal s "continue") '(:inherit font-lock-keyword-face :weight bold))
+        ((equal s "goto") '(:inherit font-lock-keyword-face :weight bold))
+        ((equal s "return") '(:inherit font-lock-keyword-face :weight bold))
+        (t '(:inherit myinit-faces--alert-fixme))))
 
 (defun myinit-highlight-static-regexps--lazyinit ()
-  "My init lazy."
+  "Run `highlight-static-regexps'."
 
   (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
-   (lambda ()
-     (if (boundp 'highlight-static-regexps-mode) (highlight-static-regexps-mode)
-       (with-eval-after-load 'highlight-static-regexps (highlight-static-regexps-mode))))))
+   myinit-default-idle-timer-seconds nil 'highlight-static-regexps-mode))
+
+(defun myinit-highlight-static-regexps--face-overridable (begin end)
+  "My test if the face of the identifier under BEGIN is overridable."
+  (let ((face (get-text-property begin 'face)))
+    (cond
+     ((null face)
+      nil)
+     ((listp face)
+      (catch 'highlight-static-regexps--face-overridable
+        (dolist (face* face)
+          (unless (memq face* highlight-static-regexps-faces-to-override)
+            (throw 'highlight-static-regexps--face-overridable nil)))
+        t))
+     (t
+      (memq face highlight-static-regexps-faces-to-override)))))
 
 ;;; init-highlight-static-regexps.el ends here
