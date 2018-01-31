@@ -70,7 +70,7 @@
       (equal str-cur ":=")
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
      (and
-      (member str-cur '("break" "continue" "goto" "return"))
+      (member str-cur '("break" "continue" "go" "goto" "return"))
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
       (or
        (string-match-p "^\\'" str-before)
