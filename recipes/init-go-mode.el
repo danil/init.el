@@ -69,8 +69,20 @@
      (and
       (equal str-cur ":=")
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
+
      (and
-      (member str-cur '("break" "continue" "go" "goto" "return"))
+      (member str-cur '("return"))
+      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
+      (not (string-match-p "func\\( ([^)]+)\\)? [^()]+([^)]*) [^{]*{[^{]*\\'" str-before))
+      (or
+       (string-match-p "^\\'" str-before)
+       (string-match-p "[ \t]+\\'" str-before))
+      (or
+       (string-match-p "\\`$" str-after)
+       (string-match-p "\\`[ \t]+" str-after)))
+
+     (and
+      (member str-cur '("break" "continue" "go" "goto"))
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
       (or
        (string-match-p "^\\'" str-before)
