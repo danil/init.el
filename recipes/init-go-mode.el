@@ -66,30 +66,23 @@
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
     (or
-     (and
-      (equal str-cur ":=")
-      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
+     (and (equal str-cur ":=")
+          (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
 
-     (and
-      (member str-cur '("return"))
-      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-      (not (string-match-p "func\\(?: ([^)]+)\\)? [^()]+([^)]*) [^{]*{[^{]*\\'" str-before))
-      (or
-       (string-match-p "^\\'" str-before)
-       (string-match-p "[ \t]+\\'" str-before))
-      (or
-       (string-match-p "\\`$" str-after)
-       (string-match-p "\\`[ \t]+" str-after)))
-
-     (and
-      (member str-cur '("break" "continue" "defer" "go" "goto"))
-      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-      (or
-       (string-match-p "^\\'" str-before)
-       (string-match-p "[ \t]+\\'" str-before))
-      (or
-       (string-match-p "\\`$" str-after)
-       (string-match-p "\\`[ \t]+" str-after))))))
+     (and (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
+          (or (string-match-p "^\\'" str-before)
+              (string-match-p "[ \t]+\\'" str-before))
+          (or (string-match-p "\\`$" str-after)
+              (string-match-p "\\`[ \t]+" str-after))
+          (or
+           (and (member str-cur '("return"))
+                (not (string-match-p "func\\(?: ([^)]+)\\)? [^(]+([^)]*) [^{]*{[^{]*\\'" str-before)))
+           (and (member str-cur '("defer"))
+                (not
+                 (and
+                  (string-match-p "func\\(?: ([^)]+)\\)? [^)]+([^)]*) [^{]*{[^{]*\\'" str-before)
+                  (string-match-p "\\`[^{]*}[^{]*func\\(?: ([^)]+)\\)? [^)]+([^)]*) [^{]*{" str-after))))
+           (and (member str-cur '("break" "continue" "go" "goto"))))))))
 
 (defun myinit-go-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'go-mode)
