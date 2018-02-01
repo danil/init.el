@@ -73,7 +73,11 @@
      (and
       (member str-cur '("return"))
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-      (not (string-match-p "func\\( ([^)]+)\\)? [^()]+([^)]*) [^{]*{[^{]*\\'" str-before))
+      ;; (not (string-match-p "func\\( ([^)]+)\\)? [^()]+([^)]*) [^{]*{[^{]*\\([^{]*[0-9a-zA-Z]+{[^{]*\\)*\\'" str-before)) ;if control flow statement present
+      ;; (string-match-p "func [^()]+([^)]*) [^{]*{.*[ \t]{.*\\'" str-before) ;if control flow statement present
+      ;; (string-match-p "func\\( ([^)]+)\\)? [^()]+([^)]*) [^{]*{.*[[:space:]]{.*\\'" str-before) ;if control flow statement present
+      ;; (string-match-p "func \\(?:\n.*\\)*\\'" str-before) ;if control flow statement present
+      (not (string-match-p "func\\(?: ([^)]+)\\)? [^()]+([^)]*) [^{]*{[^{]*\\'" str-before))
       (or
        (string-match-p "^\\'" str-before)
        (string-match-p "[ \t]+\\'" str-before))
@@ -82,7 +86,7 @@
        (string-match-p "\\`[ \t]+" str-after)))
 
      (and
-      (member str-cur '("break" "continue" "go" "goto"))
+      (member str-cur '("break" "continue" "defer" "go" "goto"))
       (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
       (or
        (string-match-p "^\\'" str-before)
