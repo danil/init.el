@@ -72,6 +72,7 @@
   (cond ((equal s ":=") '(:weight bold))
         ((equal s "break") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "continue") '(:inherit font-lock-keyword-face :weight bold))
+        ((equal s "defer") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "go") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "goto") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "return") '(:inherit font-lock-keyword-face :weight bold))
