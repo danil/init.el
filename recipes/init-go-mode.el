@@ -52,7 +52,8 @@
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
 
-    (myinit-highlight-static-regexps--lazyinit)))
+    (when (<= (count-lines (point-min) (point-max)) 2000) ;number of lines in current buffer
+      (myinit-highlight-static-regexps--lazyinit))))
 
 (defun myinit-go-mode--highlight-static-regexps-filter (beg end)
   "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
@@ -90,7 +91,8 @@
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-go-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (when (<= (count-lines (point-min) (point-max)) 2000) ;number of lines in current buffer
+      (myinit-rainbow-identifiers--lazyinit))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-go-mode--rainbow-identifiers-filter (beg end)
