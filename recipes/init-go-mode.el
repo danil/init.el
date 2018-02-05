@@ -89,17 +89,20 @@
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)
                       (get-char-property beg 'face)))
+        (str-cur (buffer-substring-no-properties beg end))
         (ch-cur (char-after beg))
         (ch-before (char-before beg))
         (ch-after (char-after end))
-        (str-cur (buffer-substring-no-properties beg end))
-        (str-after (buffer-substring-no-properties end (point-max))))
+        (ch80-after (let ((i 80))
+                     (if (> (point-max) (+ end i))
+                         (buffer-substring-no-properties end (+ end i))
+                       (buffer-substring-no-properties end (point-max))))))
     (or
      (and
       (or
        (eq face-cur nil)
        (eq face-cur 'font-lock-constant-face))
-      (equal (substring str-after 0 2) ": "))
+      (string-match-p "\\`: " ch80-after))
      (and
       (or
        ;; (eq face-cur 'default)
@@ -107,13 +110,11 @@
        (eq face-cur nil))
       (not (member ch-cur
                    '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-      ;; (or (not (equal ch-before ?\s))
-      ;;     (not (string-match-p "package \\'" str-before)))
-      (not (string-match-p "\\`:\\'" str-after)) ;(equal ch-after ?\:)
+      (not (string-match-p "\\`:\\'" ch80-after)) ;(equal ch-after ?\:)
       (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-          (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" str-after)
+          (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" ch80-after)
           (string-match-p "\\`\\.[[:space:]\n]*\\(Bytes\\|Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
-                          str-after))
+                          ch80-after))
       (not (member str-cur '(
                              "adler32"
                              "aes"
