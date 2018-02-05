@@ -52,7 +52,7 @@
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
 
-    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
+    (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
       (myinit-highlight-static-regexps--lazyinit))))
 
 (defun myinit-go-mode--highlight-static-regexps-filter (beg end)
@@ -60,35 +60,19 @@
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)
                       (get-char-property beg 'face)))
-        (ch-cur (char-after beg))
-        (ch-before (char-before beg))
-        (ch-after (char-after end))
-        (str-cur (buffer-substring-no-properties beg end))
-        (str-before (buffer-substring-no-properties (point-min) beg))
-        (str-after (buffer-substring-no-properties end (point-max))))
-    (or
-     (and (equal str-cur ":=")
-          (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
-
-     (and (equal str-cur ") (")
-          ;; (member str-cur '(") (" ") {"))
-          (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-          (string-match-p "[0-9a-zA-Z}]\\'" str-before))
-
-     (and (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-          (or (string-match-p "^\\'" str-before)
-              (string-match-p "[ \t]+\\'" str-before))
-          (or (string-match-p "\\`$" str-after)
-              (string-match-p "\\`[ \t]+" str-after))
-          (or
-           (and (equal str-cur "return")
-                (not (string-match-p "func\\(?: ([^)]+)\\)? [^(]+([^)]*) [^{]*{[^{]*\\'" str-before)))
-           (and (equal str-cur "defer")
-                (not
-                 (and
-                  (string-match-p "func\\(?: ([^)]+)\\)? [^)]+([^)]*) [^{]*{[^{]*\\'" str-before)
-                  (string-match-p "\\`[^{]*}[^{]*func\\(?: ([^)]+)\\)? [^)]+([^)]*) [^{]*{" str-after))))
-           (and (member str-cur '("break" "continue" "go" "goto"))))))))
+        (str-cur (buffer-substring-no-properties beg end)))
+    (and
+     (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
+     (and (member str-cur '(
+                            " := "
+                            ") ("
+                            "\tbreak"
+                            "\tcontinue"
+                            "\tdefer"
+                            "\tgo"
+                            "\tgoto"
+                            "\treturn"
+                            ))))))
 
 (defun myinit-go-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'go-mode)
@@ -96,7 +80,7 @@
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-go-mode--rainbow-identifiers-filter)
 
-    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
+    (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
@@ -109,7 +93,6 @@
         (ch-before (char-before beg))
         (ch-after (char-after end))
         (str-cur (buffer-substring-no-properties beg end))
-        (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
     (or
      (and
