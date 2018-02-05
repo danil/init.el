@@ -70,6 +70,8 @@
 
 (defun myinit-go-mode--highlight-static-regexps-choose-face (s)
   (cond ((equal s ":=") '(:weight bold))
+        ((equal s ") (") '(:inherit default :weight bold))
+        ((equal s ") {") '(:inherit default :weight bold))
         ((equal s "break") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "continue") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "defer") '(:inherit font-lock-keyword-face :weight bold))

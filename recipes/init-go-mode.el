@@ -52,7 +52,7 @@
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
 
-    (when (<= (count-lines (point-min) (point-max)) 2000) ;number of lines in current buffer
+    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
       (myinit-highlight-static-regexps--lazyinit))))
 
 (defun myinit-go-mode--highlight-static-regexps-filter (beg end)
@@ -70,15 +70,20 @@
      (and (equal str-cur ":=")
           (not (member face-cur '('font-lock-string-face 'font-lock-comment-face))))
 
+     (and (equal str-cur ") (")
+          ;; (member str-cur '(") (" ") {"))
+          (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
+          (string-match-p "[0-9a-zA-Z}]\\'" str-before))
+
      (and (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
           (or (string-match-p "^\\'" str-before)
               (string-match-p "[ \t]+\\'" str-before))
           (or (string-match-p "\\`$" str-after)
               (string-match-p "\\`[ \t]+" str-after))
           (or
-           (and (member str-cur '("return"))
+           (and (equal str-cur "return")
                 (not (string-match-p "func\\(?: ([^)]+)\\)? [^(]+([^)]*) [^{]*{[^{]*\\'" str-before)))
-           (and (member str-cur '("defer"))
+           (and (equal str-cur "defer")
                 (not
                  (and
                   (string-match-p "func\\(?: ([^)]+)\\)? [^)]+([^)]*) [^{]*{[^{]*\\'" str-before)
@@ -91,7 +96,7 @@
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-go-mode--rainbow-identifiers-filter)
 
-    (when (<= (count-lines (point-min) (point-max)) 2000) ;number of lines in current buffer
+    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.

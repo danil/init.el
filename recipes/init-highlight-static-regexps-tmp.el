@@ -203,7 +203,8 @@ The color generation can be influenced by changing
 (defun highlight-static-regexps--matcher (end)
   "The matcher function to be used by font lock mode."
   (catch 'highlight-static-regexps--matcher
-    (while (re-search-forward "\\(\\_<.*?\\_>\\|:=\\)"
+    (while (re-search-forward "\\(\\_<.*?\\_>\\|:=\\|) ($\\|\\)"
+                              ;; "\\(\\_<.*?\\_>\\|:=\\|) ($\\|) {$\\)"
                              ;; "\\_<.*?\\_>"
                               end t)
       (let ((beginning (match-beginning 0))
