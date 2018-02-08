@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(sql-postgres-program "psql95")
+ ;; '(sql-postgres-program "psql95")
  '(sql-postgres-login-params (quote ((user :default "danil")
                                      (database :default "danil")
                                      (port :default 5432)
