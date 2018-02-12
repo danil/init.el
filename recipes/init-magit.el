@@ -1,6 +1,6 @@
 ;;; init-magit-blame.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(magit-completing-read-function 'ivy-completing-read)) ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
+ '(magit-completing-read-function 'magit-ido-completing-read)) ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
 
 (add-hook 'after-init-hook 'myinit-magit)
 

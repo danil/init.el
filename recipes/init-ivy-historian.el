@@ -1,6 +1,6 @@
 ;;; init-ivy-historian.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,7 +35,6 @@
 
 (defun myinit-ivy-historian ()
   "My init."
-
   (if (boundp 'ivy-historian-mode) (myinit-lazy-ivy-historian)
     (with-eval-after-load 'ivy-historian (myinit-lazy-ivy-historian))))
 

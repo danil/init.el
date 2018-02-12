@@ -1,6 +1,6 @@
 ;;; init-ido-occur.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,16 +35,13 @@
 
 (defun myinit-ido-occur ()
   "My init."
-
   (define-key myinit-map (kbd "j o") 'my-ido-occur)
-
   (myinit-after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
 
 (defun my-ido-occur (&optional arg)
   "Run `ido-occur-at-point' or `ido-occur' if `ARG'."
   (interactive "P")
-
   (if arg (ido-occur) (ido-occur-at-point)))
 
 ;;; init-ido-occur.el ends here

@@ -1,6 +1,6 @@
 ;;; init-ido-vertical-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -40,6 +40,6 @@
   "My init."
 
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
-    (myinit-after-load 'ido (ido-vertical-mode t))))
+    (with-eval-after-load 'ido (ido-vertical-mode t))))
 
 ;;; init-ido-vertical-mode.el ends here

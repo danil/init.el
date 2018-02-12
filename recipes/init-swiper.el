@@ -1,6 +1,6 @@
 ;;; init-swiper.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,7 +35,6 @@
 
 (defun myinit-swiper ()
   "My init."
-
   ;; (global-set-key "\C-r" 'swiper)
   (when (boundp 'myinit-map)
     (define-key myinit-map (kbd "j O") 'swiper-multi)
@@ -44,7 +43,6 @@
 (defun my-swiper (&optional arg)
   "Run `swiper' with optional argument `ARG' from `symbol-at-point'."
   (interactive "P")
-
   (if arg
       (swiper)
     (swiper (if (symbol-at-point) (symbol-name (symbol-at-point)) ""))))

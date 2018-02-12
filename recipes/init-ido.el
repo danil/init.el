@@ -1,6 +1,6 @@
 ;;; init-ido.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -38,6 +38,7 @@
  ;; '(ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*")) ;ignore these guys
  ;; '(ido-save-directory-list-file "~/.emacs.d/cache/ido.last")
  ;; '(ido-use-virtual-buffers t) ;if Recentf is enabled
+ ;; '(ido-enable-regexp t) ; ???
  '(ido-case-fold t) ;be case-insensitive
  '(ido-confirm-unique-completion t) ;wait for RET, even with unique completion
  '(ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
@@ -63,15 +64,18 @@
 
   ;; (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
 
-  (myinit-after-load 'ido
-    ;; When using ido, the confirmation is rather annoying.
-    (custom-set-variables '(confirm-nonexistent-file-or-buffer nil))))
+  (if (boundp 'ido-mode) (myinit-lazy-ido)
+    (with-eval-after-load 'ido (myinit-lazy-ido))))
+
+(defun myinit-lazy-ido ()
+  "My init lazy."
+  ;; (define-key ido-common-completion-map "\C-p" 'ido-toggle-regexp)
+  ;; When using ido, the confirmation is rather annoying.
+  (custom-set-variables '(confirm-nonexistent-file-or-buffer nil)))
 
 (defun my-switch-to-buffer (&optional arg)
   "Use `switch-to-buffer' or `my-switch-to-buffer-for-current-mode' if `ARG'."
-
   (interactive "P")
-
   (if arg
       (my-switch-to-buffer-for-current-mode)
     (ido-switch-buffer)))

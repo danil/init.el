@@ -99,14 +99,14 @@
 (depends-on "inf-mongo")
 
 ;; Ido.
-;; (depends-on "flx-ido") ;ido fuzzy matching
+;; (depends-on "flx-ido") ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
 ;; (depends-on "ido-occur")
-;; (depends-on "ido-ubiquitous")
-;; (depends-on "smex")
 (depends-on "ido-clever-match") ;ido fuzzy matching
 (depends-on "ido-describe-bindings")
+(depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
+(depends-on "smex")
 
 ;; Ivy (is an ido replacement).
 (depends-on "counsel")

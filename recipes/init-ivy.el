@@ -1,6 +1,6 @@
 ;;; init-ivy.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -44,7 +44,6 @@
 
 (defun myinit-ivy ()
   "My init."
-
   (if (boundp 'ivy-mode) (myinit-lazy-ivy)
     (with-eval-after-load 'ivy (myinit-lazy-ivy))))
 
@@ -56,9 +55,7 @@
 
 (defun myinit-customize-ivy ()
   "My init customize."
-
   (global-set-key (kbd "C-c C-r") 'ivy-resume)
-
   (myinit-customize-ivy-face))
 
 (defun myinit-customize-ivy-face ()

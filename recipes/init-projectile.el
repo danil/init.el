@@ -1,6 +1,6 @@
 ;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -33,7 +33,7 @@
 
 (custom-set-variables
  ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-completion-system 'ivy)
+ '(projectile-completion-system 'ido)
  '(projectile-mode-line nil))
 
 (add-hook 'after-init-hook 'myinit-projectile)

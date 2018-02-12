@@ -1,6 +1,6 @@
 ;;; init-kill-ring-ido.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -37,15 +37,12 @@
 
 (defun myinit-kill-ring-ido ()
   "My init."
-
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)
-
   (myinit-after-load 'kill-ring-ido
     (setq kill-ring-ido-shortage-length 500)))
 
 (defun my-yank-pop-with-ido (&optional arg)
   (interactive "P")
-
   (if arg
       (call-interactively 'yank-pop)
     (call-interactively 'kill-ring-ido)))
