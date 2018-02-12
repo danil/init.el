@@ -49,7 +49,7 @@
 
 (defun myinit-lazy-ivy ()
   "My init lazy."
-  (ivy-mode 1)
+  ;; (ivy-mode 1)
   ;; (add-hook 'minibuffer-setup-hook (setq-local truncate-lines t)) ;<https://github.com/abo-abo/swiper/issues/1307#issuecomment-351911535>
   (myinit-customize-ivy))
 
