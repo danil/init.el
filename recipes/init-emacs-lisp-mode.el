@@ -72,7 +72,7 @@
         (ch-cur (char-after beg))
         (str-cur (buffer-substring-no-properties beg end)))
     (and
-     (eq face-cur nil)
+     (member face-cur '(nil font-lock-function-name-face))
      (not (member ch-cur
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?` ?.)))
      (not (member str-cur '( ;this is emacs standard functions
