@@ -31,14 +31,15 @@
 
 ;;; Code:
 
-(custom-set-variables '(ido-vertical-define-keys 'C-n-and-C-p-only)
-                      '(ido-vertical-show-count t))
+(custom-set-variables
+ '(ido-vertical-define-keys 'C-n-and-C-p-only)
+ '(ido-vertical-disable-if-short t)
+ '(ido-vertical-show-count t))
 
 (add-hook 'after-init-hook 'myinit-ido-vertical-mode)
 
 (defun myinit-ido-vertical-mode ()
   "My init."
-
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (with-eval-after-load 'ido (ido-vertical-mode t))))
 
