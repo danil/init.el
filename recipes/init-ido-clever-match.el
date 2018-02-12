@@ -35,7 +35,6 @@
 
 (defun myinit-ido-clever-match ()
   "My init."
-
   (if (boundp 'ido-mode) (myinit-lazy-ido-clever-match)
     (with-eval-after-load 'ido (myinit-lazy-ido-clever-match))))
 
