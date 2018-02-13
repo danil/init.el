@@ -34,17 +34,23 @@
 (autoload 'kill-ring-ido "kill-ring-ido" nil t)
 
 (add-hook 'after-init-hook 'myinit-kill-ring-ido)
-
 (defun myinit-kill-ring-ido ()
   "My init."
-  ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)
+  ;; (global-set-key (kbd "M-y") 'myinit-kill-ring-ido--yank-pop-depricatied)
+  (global-set-key (kbd "M-y") 'myinit-kill-ring-ido--yank-pop)
   (myinit-after-load 'kill-ring-ido
     (setq kill-ring-ido-shortage-length 500)))
 
-(defun my-yank-pop-with-ido (&optional arg)
+(defun myinit-kill-ring-ido--yank-pop (&optional arg)
   (interactive "P")
   (if arg
-      (call-interactively 'yank-pop)
+      (call-interactively 'browse-kill-ring)
     (call-interactively 'kill-ring-ido)))
+
+;; (defun myinit-kill-ring-ido--yank-pop-depricatied (&optional arg)
+;;   (interactive "P")
+;;   (if arg
+;;       (call-interactively 'yank-pop)
+;;     (call-interactively 'kill-ring-ido)))
 
 ;;; init-kill-ring-ido.el ends here

@@ -390,20 +390,21 @@
 
 ;; Ido.
 ;; (my-recipe '(flx-ido)) ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
+;; (my-recipe '(ido-occur)) ; use swiper instead
+;; (my-recipe '(ido-ubiquitous))
+;; (my-recipe '(recentf-ido-find-file))
+;; (my-recipe '(smex))
 (my-recipe '(crm-custom))
 (my-recipe '(ido))
 (my-recipe '(ido-clever-match)) ; ido fuzzy matching
 (my-recipe '(ido-describe-bindings))
-(my-recipe '(ido-occur)) ; use swiper instead
-(my-recipe '(ido-ubiquitous))
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
 (my-recipe '(kill-ring-ido))
-(my-recipe '(recentf-ido-find-file))
-(my-recipe '(smex))
 
 ;; Ivy (is an ido replacement).
 ;; (my-recipe '(colir))
+(require 'core-lib "~/.emacs.d/doom-emacs-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
 (my-recipe '(counsel))
 (my-recipe '(historian))
 (my-recipe '(ivy))

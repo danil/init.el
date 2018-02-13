@@ -62,8 +62,8 @@
   ;; (global-set-key (kbd "M-y") 'myinit-counsel--counsel-yank-pop)
 
   ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  ;; (global-set-key (kbd "C-x C-r") 'counsel-recentf)
-  ;; (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-r") 'counsel-recentf)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
 
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
