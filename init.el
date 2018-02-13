@@ -391,13 +391,13 @@
 ;; Ido.
 ;; (my-recipe '(flx-ido)) ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
 ;; (my-recipe '(ido-occur)) ; use swiper instead
-;; (my-recipe '(ido-ubiquitous))
 ;; (my-recipe '(recentf-ido-find-file))
 ;; (my-recipe '(smex))
 (my-recipe '(crm-custom))
 (my-recipe '(ido))
 (my-recipe '(ido-clever-match)) ; ido fuzzy matching
 (my-recipe '(ido-describe-bindings))
+(my-recipe '(ido-ubiquitous))
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
 (my-recipe '(kill-ring-ido))
