@@ -52,7 +52,7 @@
 
 (defun myinit-lazy-ivy ()
   "My init lazy."
-  ;; (ivy-mode 1) ; breaks `find-file'
+  ;; (ivy-mode 1) ; it breaks `find-file'
   ;; (add-hook 'minibuffer-setup-hook (setq-local truncate-lines t)) ;<https://github.com/abo-abo/swiper/issues/1307#issuecomment-351911535>
   (myinit-customize-ivy))
 
