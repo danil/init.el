@@ -1,6 +1,6 @@
 ;;; init-uniquify.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,7 +35,6 @@
 
 (defun myinit-uniquify ()
   "My init."
-
   ;; Uniquify
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
@@ -43,14 +42,13 @@
   (require 'uniquify)
 
   (custom-set-variables '(uniquify-min-dir-content 20))
-
   (myinit-after-load 'uniquify
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq
-     uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator "  " ;":"
-     ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
+     uniquify-buffer-name-style 'post-forward ; 'forward
+     uniquify-separator " " ; ":"
+     ;; uniquify-after-kill-buffer-p t ; rename after killing uniquified
+     ;; uniquify-ignore-buffers-re "^\\*" ; don't muck with special buffers
      )))
 
 ;;; init-uniquify.el ends here

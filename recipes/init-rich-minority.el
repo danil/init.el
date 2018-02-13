@@ -32,6 +32,18 @@
 ;;; Code:
 
 (custom-set-variables
+ ;; '(rm-text-properties
+ ;;   '(
+ ;;     ;; Emacs SEGFAULT!!! (under certain circumstances)
+ ;;     ;; if touching flycheck-mode's lighters!
+ ;;     ;; Instead customize `flycheck-mode-line`
+ ;;     ;; variable (and
+ ;;     ;; `flycheck-mode-line-status-text` fn) and
+ ;;     ;; `flycheck-mode-line-prefix` variable!
+ ;;     ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
+ ;;     ("\\` Ovwrt\\'" 'display (concat " "
+ ;;                                      (propertize "OVERWRITING" 'font-lock-face
+ ;;                                                  '(:inherit myinit-faces--alert-fixme))))))
  ;; Hide lighters for some minor modes.
  '(rm-blacklist '(
                   " hl-p"
@@ -63,20 +75,7 @@
                   " pair" ;autopair
                   " rt" ;ruby-tools-mode
                   " yas";yas-minor-mode aka yasnippet
-                  ))
-
- '(rm-text-properties
-   '(
-     ;; Emacs SEGFAULT!!! (under certain circumstances)
-     ;; if touching flycheck-mode's lighters!
-     ;; Instead customize `flycheck-mode-line`
-     ;; variable (and
-     ;; `flycheck-mode-line-status-text` fn) and
-     ;; `flycheck-mode-line-prefix` variable!
-     ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
-     ("\\` Ovwrt\\'" 'display (concat " "
-                                      (propertize "OVERWRITING" 'font-lock-face
-                                                  '(:inherit myinit-faces--alert-fixme)))))))
+                  )))
 
 ;; (add-hook 'after-init-hook 'myinit-rich-minority)
 ;; (defun myinit-rich-minority () "My init.")

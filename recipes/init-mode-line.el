@@ -1,6 +1,6 @@
 ;;; init-mode-line.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,10 +32,10 @@
 ;;; Code:
 
 (custom-set-variables
- '(mode-line-format '("%e"
+ '(mode-line-format '(
+                      ;; mode-line-front-space
+                      "%e"
                       mode-line-position
-                      ":"
-                      mode-line-front-space
                       mode-line-client
                       mode-line-modified
                       mode-line-remote
@@ -54,7 +54,6 @@
  )
 
 (add-hook 'after-init-hook 'myinit-mode-line)
-
 (defun myinit-mode-line ()
   "My init."
 

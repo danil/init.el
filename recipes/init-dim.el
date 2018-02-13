@@ -32,20 +32,53 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-dim)
-
 (defun myinit-dim ()
   "My init."
-
   (dim-major-names
    '(
      (clojure-mode "clj")
+     (go-mode "go")
      (emacs-lisp-mode "el")
      (js-mode "js")
-     (js2-mode "js2")
      (js2-mode "js2")
      (markdown-mode "md")
      (python-mode "py")
      (sh-mode "sh")
-     )))
+     ))
+  ;; (myinit-run-with-idle-timer-in-current-buffer
+  ;;  myinit-default-idle-timer-seconds nil 'myinit-dim--lazy)
+  )
+
+;; (defun myinit-dim--lazy ()
+;;   (dim-minor-names
+;;    '(
+;;      ;; (???   "") ; " hl-p"
+;;      ;; (???   "") ; " ," ; wtf!???
+;;      (aggressive-indent "") ; " =>" ; aggressive-indent
+;;      (auto-complete-mode "") ; " AC" ; auto-complete-mode
+;;      (auto-revert-mode "") ; " ARev" ;
+;;      (abbrev-mode "") ; " Abbrev" ; abbrev-mode
+;;      (anzu-mode "") ; " Anzu" ; anzu-mode
+;;      (helm-mode "") ; " Helm" ; helm-mode
+;;      (isearch-mode "") ; " Isearch" ; isearch-mode
+;;      (magit-auto-revert-mode "") ; " MRev" ; magit-auto-revert-mode
+;;      (myinit-mode "") ; " Myinit" ; myinit-mode
+;;      (projectile-rails "") ; " Rails" ; projectile-rails
+;;      (rainbow-mode "") ; " Rbow" ; rainbow-mode
+;;      (ruby-refactor-mode "") ; " RubyRef" ; ruby-refactor-mode
+;;      (smartparens-mode "") ; " SP" ; smartparens-mode
+;;      (undo-tree-mode "") ; " Undo-Tree" ; undo-tree-mode
+;;      (ruby-end-mode "") ; " end" ; ruby-end-mode
+;;      (ethan-wspace "") ; " ew:mnl" ; ethan-wspace find NO errors in Makefile, C or Go sources ; " ew:mnlt" ; ethan-wspace find NO errors (highlight trailing whitespace)
+;;      (git-gutter-mode "") ; " gg" ; git-gutter-mode
+;;      (highlight-symbol-mode "") ; " hl-s" ; highlight-symbol-mode
+;;      (highlight-thing "") ; " hlt" ; highlight-thing
+;;      (hideshow "") ; " hs" ; hideshow
+;;      (indent-guide-mode "") ; " ing" ; indent-guide-mode
+;;      (ivy-mode "") ; " ivy" ; ivy-mode (swiper, counsel and friends)
+;;      (autopair "") ; " pair" ; autopair
+;;      (ruby-tools-mode "") ; " rt" ; ruby-tools-mode
+;;      (yas-minor-mode "") ; " yas" ; yas-minor-mode aka yasnippet
+;;      )))
 
 ;;; init-dim.el ends here
