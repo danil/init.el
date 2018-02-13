@@ -33,7 +33,7 @@
 
 (custom-set-variables
  ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
- '(projectile-completion-system 'ido)
+ '(projectile-completion-system 'ido) ;ivy
  '(projectile-mode-line nil))
 
 (add-hook 'after-init-hook 'myinit-projectile)

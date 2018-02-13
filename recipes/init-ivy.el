@@ -40,6 +40,8 @@
  '(ivy-use-virtual-buffers nil) ;;virtual buffers slow down switching between buffers
  '(ivy-height myinit-ivy-ivy-height))
 
+;; (add-hook 'minibuffer-setup-hook (setq-local truncate-lines t))
+
 (add-hook 'after-init-hook 'myinit-ivy)
 
 (defun myinit-ivy ()

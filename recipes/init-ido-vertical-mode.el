@@ -33,7 +33,7 @@
 
 (custom-set-variables
  '(ido-vertical-define-keys 'C-n-and-C-p-only)
- '(ido-vertical-disable-if-short t)
+ '(ido-vertical-disable-if-short nil)
  '(ido-vertical-show-count t))
 
 (add-hook 'after-init-hook 'myinit-ido-vertical-mode)

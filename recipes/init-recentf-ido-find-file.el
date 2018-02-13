@@ -35,11 +35,10 @@
 
 (defun myinit-recentf-ido-find-file ()
   "My init."
-
-  (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file))
+  (global-set-key (kbd "C-x C-r") 'myinit-recentf-ido-find-file--my))
 
 ;; <http://www.emacswiki.org/emacs/RecentFiles#toc5>.
-(defun recentf-ido-find-file ()
+(defun myinit-recentf-ido-find-file--my ()
   "Find a recent file using Ido. A-la recentf-open-files"
   (interactive)
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
