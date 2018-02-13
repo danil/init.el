@@ -35,7 +35,7 @@
  '(mode-line-format '("%e"
                       mode-line-position
                       ":"
-                      mode-line-front-space
+                      mode-line-front-space ; line number and column number
                       mode-line-client
                       mode-line-modified
                       mode-line-remote
