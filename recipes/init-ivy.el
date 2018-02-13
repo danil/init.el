@@ -49,8 +49,6 @@
 (defun myinit-lazy-ivy ()
   "My init lazy."
   ;; (ivy-mode 1) ; it breaks `find-file'
-  ;; (add-hook 'minibuffer-setup-hook (setq-local truncate-lines t)) ;<https://github.com/abo-abo/swiper/issues/1307#issuecomment-351911535>
-  (myinit-customize-ivy)
 
   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
   (add-hook! 'minibuffer-setup-hook
@@ -77,7 +75,9 @@
                                  myinit-counsel--counsel-ag
                                  myinit-counsel--counsel-yank-pop
                                  ))
-      (setq-local truncate-lines t))))
+      (setq-local truncate-lines t)))
+
+  (myinit-customize-ivy))
 
 (defun myinit-customize-ivy ()
   "My init customize."
