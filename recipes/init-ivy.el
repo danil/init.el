@@ -31,20 +31,16 @@
 
 ;;; Code:
 
-(defconst myinit-ivy-ivy-height 15)
+(defconst myinit-ivy--max-window-height 15)
 
 (custom-set-variables
  '(ivy-truncate-lines t) ; it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
  '(ivy-count-format "(%d/%d) ")
  '(ivy-fixed-height-minibuffer t)
  '(ivy-use-virtual-buffers nil) ; virtual buffers slow down switching between buffers
- '(ivy-height myinit-ivy-ivy-height))
-
-;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
-(add-hook! 'minibuffer-setup-hook (setq-local truncate-lines t))
+ '(ivy-height myinit-ivy--max-window-height))
 
 (add-hook 'after-init-hook 'myinit-ivy)
-
 (defun myinit-ivy ()
   "My init."
   (if (boundp 'ivy-mode) (myinit-lazy-ivy)
@@ -54,7 +50,34 @@
   "My init lazy."
   ;; (ivy-mode 1) ; it breaks `find-file'
   ;; (add-hook 'minibuffer-setup-hook (setq-local truncate-lines t)) ;<https://github.com/abo-abo/swiper/issues/1307#issuecomment-351911535>
-  (myinit-customize-ivy))
+  (myinit-customize-ivy)
+
+  ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
+  (add-hook! 'minibuffer-setup-hook
+    (when (member this-command '(
+                                 ivy-resume
+                                 swiper my-swiper
+                                 counsel-M-x
+                                 counsel-describe-face
+                                 counsel-describe-function
+                                 counsel-describe-variable
+                                 counsel-find-file
+                                 counsel-find-library
+                                 counsel-git
+                                 counsel-git-grep
+                                 counsel-info-lookup-symbol
+                                 counsel-locate
+                                 counsel-minibuffer-history
+                                 counsel-pt
+                                 counsel-recentf
+                                 counsel-recentf
+                                 counsel-rg
+                                 counsel-unicode-char
+                                 counsel-yank-pop
+                                 myinit-counsel--counsel-ag
+                                 myinit-counsel--counsel-yank-pop
+                                 ))
+      (setq-local truncate-lines t))))
 
 (defun myinit-customize-ivy ()
   "My init customize."
