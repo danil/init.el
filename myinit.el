@@ -273,19 +273,18 @@ Otherwise use `list'."
 
 ;;;###autoload
 ;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
-(defun myinit-run-with-idle-timer-in-current-buffer (secs repeat function &rest args)
-  "After `SECS' with `REPEAT' run some `FUNCTION' with `ARGS'.
+(defun myinit-run-with-idle-timer-in-current-buffer (delay-secs with-repeat fn &rest args)
+  "After `DELAY-SECS' with `WITH-REPEAT' run some `FN' with `ARGS'.
 Like `run-with-idle-timer' but always in the `current-buffer'.
 Cancels itself, if this buffer was killed."
-
   (let* (;; Chicken and egg problem.
          (fns (make-symbol "local-idle-timer"))
-         (timer (apply 'run-with-idle-timer secs repeat fns args))
+         (timer (apply 'run-with-idle-timer delay-secs with-repeat fns args))
          (fn `(lambda (&rest args)
                 (if (not (buffer-live-p ,(current-buffer)))
                     (cancel-timer ,timer)
                   (with-current-buffer ,(current-buffer)
-                    (apply (function ,function) args))))))
+                    (apply (function ,fn) args))))))
     (fset fns fn) fn))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
