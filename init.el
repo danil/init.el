@@ -311,6 +311,7 @@
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))
 
+;; (my-recipe '(dim))
 (my-recipe '(column-marker))
 (my-recipe '(comint))
 (my-recipe '(compile))
@@ -323,12 +324,12 @@
 (my-recipe '(cus-face))
 (my-recipe '(custom))
 (my-recipe '(cycle-quotes))
+(my-recipe '(cyphejor))
 (my-recipe '(deft))
 (my-recipe '(desktop))
 (my-recipe '(diff-mode))
 (my-recipe '(diffview))
 (my-recipe '(digit-groups))
-(my-recipe '(dim))
 
 (my-recipe '(dired))
 (my-recipe '(dired-aux))

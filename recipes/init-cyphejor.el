@@ -31,16 +31,21 @@
 
 ;;; Code:
 
-(custom-set-variables '(cyphejor-rules '(:upcase
+(custom-set-variables '(cyphejor-rules '(
+                                         ("Go"         "go")
+                                         ("JSX"        "jsx")
+                                         ("JavaScript" "js")
                                          ("bookmark"    "→")
                                          ("buffer"      "β")
                                          ("diff"        "Δ")
                                          ("dired"       "δ")
                                          ("emacs"       "ε")
+                                         ("go"          "go")
                                          ("inferior"    "i" :prefix)
                                          ("interaction" "i" :prefix)
                                          ("interactive" "i" :prefix)
                                          ("lisp"        "λ" :postfix)
+                                         ("markdown"    "md")
                                          ("menu"        "▤" :postfix)
                                          ("mode"        "")
                                          ("package"     "↓")

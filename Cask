@@ -37,6 +37,7 @@
 (depends-on "wgrep-ag")
 (depends-on "wgrep-pt")
 
+;; (depends-on "dim")
 (depends-on "anzu") ;isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")
@@ -48,11 +49,11 @@
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
+(depends-on "cyphejor")
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
 (depends-on "digit-groups")
-(depends-on "dim")
 
 ;; Dired.
 (depends-on "dired-details")
