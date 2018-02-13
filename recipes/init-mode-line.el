@@ -32,10 +32,10 @@
 ;;; Code:
 
 (custom-set-variables
- '(mode-line-format '(
-                      ;; mode-line-front-space
-                      "%e"
+ '(mode-line-format '("%e"
                       mode-line-position
+                      ":"
+                      mode-line-front-space
                       mode-line-client
                       mode-line-modified
                       mode-line-remote
