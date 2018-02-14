@@ -1,6 +1,6 @@
 ;;; init-ido-ubiquitous.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,10 +32,8 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-ido-ubiquitous)
-
 (defun myinit-ido-ubiquitous ()
   "My init."
-
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)
   (ido-ubiquitous-mode t))
