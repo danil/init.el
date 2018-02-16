@@ -32,6 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
+ '(ido-vertical-indicator "->")
  '(ido-vertical-define-keys 'C-n-and-C-p-only)
  '(ido-vertical-disable-if-short nil)
  '(ido-vertical-show-count t))
