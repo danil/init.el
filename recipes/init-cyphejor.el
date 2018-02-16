@@ -32,13 +32,13 @@
 ;;; Code:
 
 (custom-set-variables '(cyphejor-rules '(
+                                         ;; ("compilation" "cpl")
                                          ("Go" "go")
                                          ("JSX" "jsx")
                                          ("JavaScript" "js")
                                          ("bookmark" "boo")
                                          ("buffer" "buf")
                                          ("clojure" "clj")
-                                         ("compilation" "cpl")
                                          ("diff" "dif")
                                          ("dired" "dir")
                                          ("emacs" "e")
