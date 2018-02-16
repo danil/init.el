@@ -32,19 +32,15 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-ido-describe-bindings)
-
 (defun myinit-ido-describe-bindings ()
   "My init."
-
   (myinit-after-load 'help
     (define-key help-map (kbd "b") 'my-describe-bindings)))
 
 (defun my-describe-bindings (&optional arg)
   "My `describe-bindings' wrapper.
 If ARG provided then original `describe-bindings'."
-
   (interactive "P")
-
   (if arg (call-interactively 'describe-bindings)
     (call-interactively 'ido-describe-bindings)))
 

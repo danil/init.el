@@ -48,32 +48,52 @@
 (add-hook 'after-init-hook 'myinit-counsel)
 (defun myinit-counsel ()
   "My init."
-  (if (boundp 'help-map) (myinit-counsel--customize-help)
-    (with-eval-after-load 'help (myinit-counsel--customize-help)))
-  (myinit-counsel--customize-keys))
-
-(defun myinit-counsel--customize-keys ()
-  "My init customize keys."
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
-
   ;; (global-set-key (kbd "M-y") 'myinit-counsel--counsel-yank-pop)
 
-  ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
 
+  (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
+    (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
+
+  (if (boundp 'help-map) (myinit-counsel--customize-help)
+    (with-eval-after-load 'help (myinit-counsel--customize-help)))
+
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
   (when (boundp 'myinit-map)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg)))
 
+(defun myinit-counsel--customize-keys ()
+  "My init customize keys."
+  (define-key counsel-find-file-map (kbd "C-f") 'myinit-counsel--counsel-find-file-fallback-command)
+  (define-key counsel-find-file-map (kbd "C-x C-f") 'myinit-counsel--counsel-find-file-fallback-command))
+
+;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>.
+(defun myinit-counsel--counsel-find-file-fallback-command ()
+  "Fallback to non-counsel version of current command."
+  (interactive)
+  (ivy-set-action
+   (lambda (current-path)
+     (let (; (completing-read-function 'completing-read-default)
+           (y default-directory))
+       (let ((i (length current-path)))
+         (while (> i 0)
+           (push (aref current-path (setq i (1- i))) unread-command-events)))
+       (let ((default-directory "")) (call-interactively 'find-file)))))
+  (ivy-done))
+
 (defun myinit-counsel--customize-help()
   "My init customize."
+  ;; (define-key help-map (kbd "F") 'counsel-faces)
   (define-key help-map (kbd "F") 'counsel-describe-face)
   (define-key help-map (kbd "b") 'counsel-descbinds)
   (define-key help-map (kbd "f") 'counsel-describe-function)

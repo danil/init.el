@@ -59,6 +59,7 @@
                                  counsel-describe-face
                                  counsel-describe-function
                                  counsel-describe-variable
+                                 counsel-faces
                                  counsel-find-file
                                  counsel-find-library
                                  counsel-git
