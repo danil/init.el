@@ -124,7 +124,7 @@ If there is a symbol under cursor, then pass it as initial ag imput."
 ;;                       (string-match "\\`[\n[:blank:]]*\\'" s))
 ;;                     (delete-dups kill-ring)))))
 ;;       (let ((ivy-format-function #'counsel--yank-pop-format-function)
-;;             (ivy-height myinit-ivy--max-window-height))
+;;             (ivy-height 15))
 ;;         (ivy-read "kill-ring: " candidates
 ;;                   :action 'counsel-yank-pop-action
 ;;                   :caller 'counsel-yank-pop)))))

@@ -33,8 +33,6 @@
 
 ;; Interactively do things.
 
-(defconst myinit-ido--max-window-height 15)
-
 (custom-set-variables
  ;; '(ido-decorations '( "{ " " }" " | " " | ..." "[ " " ]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
  ;; '(ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*")) ;ignore these guys
@@ -47,7 +45,7 @@
  '(ido-enable-last-directory-history t) ;remember last used dirs
  '(ido-max-directory-size 100000)
  '(ido-max-prospects 500) ;don't spam my minibuffer
- '(ido-max-window-height myinit-ido--max-window-height)
+ '(ido-max-window-height 15)
  '(ido-max-work-directory-list 300) ;should be enough
  '(ido-max-work-file-list 200) ;remember many
  '(ido-mode 'both)
