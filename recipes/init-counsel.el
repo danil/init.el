@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(defconst myinit-counsel-ag-base-command-name "ag")
+(defconst myinit-counsel--ag-base-command-name "ag")
 
-(defconst myinit-counsel-ag-base-command-args
+(defconst myinit-counsel--ag-base-command-args
   (if (memq system-type '(ms-dos windows-nt))
       "--vimgrep"
     "--nocolor --nogroup"))
@@ -41,19 +41,18 @@
 (custom-set-variables
  '(counsel-yank-pop-truncate-radius 4)
  '(counsel-ag-base-command (format "%s %s %s"
-                                   myinit-counsel-ag-base-command-name
-                                   myinit-counsel-ag-base-command-args
+                                   myinit-counsel--ag-base-command-name
+                                   myinit-counsel--ag-base-command-args
                                    "%s")))
 
 (add-hook 'after-init-hook 'myinit-counsel)
-
 (defun myinit-counsel ()
   "My init."
-  ;; (if (boundp 'help-map) (myinit-counsel-customize-help)
-  ;;   (with-eval-after-load 'help (myinit-counsel-customize-help)))
-  (myinit-counsel-customize-keys))
+  (if (boundp 'help-map) (myinit-counsel--customize-help)
+    (with-eval-after-load 'help (myinit-counsel--customize-help)))
+  (myinit-counsel--customize-keys))
 
-(defun myinit-counsel-customize-keys ()
+(defun myinit-counsel--customize-keys ()
   "My init customize keys."
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
@@ -73,14 +72,15 @@
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg)))
 
-;; (defun myinit-counsel-customize-help()
-;;   "My init customize."
-;;   (define-key help-map (kbd "F") 'counsel-describe-face)
-;;   (define-key help-map (kbd "f") 'counsel-describe-function)
-;;   (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
-;;   (define-key help-map (kbd "l") 'counsel-find-library)
-;;   (define-key help-map (kbd "u") 'counsel-unicode-char)
-;;   (define-key help-map (kbd "v") 'counsel-describe-variable))
+(defun myinit-counsel--customize-help()
+  "My init customize."
+  (define-key help-map (kbd "F") 'counsel-describe-face)
+  (define-key help-map (kbd "b") 'counsel-descbinds)
+  (define-key help-map (kbd "f") 'counsel-describe-function)
+  (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
+  (define-key help-map (kbd "l") 'counsel-find-library)
+  (define-key help-map (kbd "u") 'counsel-unicode-char)
+  (define-key help-map (kbd "v") 'counsel-describe-variable))
 
 (defun myinit-counsel--counsel-ag (initial-directory)
   "Search using ag in a given `INITIAL-DIRECTORY`.
@@ -95,7 +95,7 @@ If there is a symbol under cursor, then pass it as initial ag imput."
           (setq current-prefix-arg nil)
           (counsel-ag initial-input initial-directory
                       (format "%s %s"
-                              myinit-counsel-ag-base-command-args
+                              myinit-counsel--ag-base-command-args
                               (format "--context=%s" n))))
 
       (counsel-ag initial-input initial-directory))))

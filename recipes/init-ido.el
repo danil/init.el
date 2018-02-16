@@ -82,11 +82,8 @@
 ;; <http://www.emacswiki.org/emacs/InteractivelyDoThings#toc6>.
 (defun my-switch-to-buffer-for-current-mode ()
   "Limit ido to the current major mode."
-
   (interactive)
-
   (let ((current-mode major-mode))
-
     (switch-to-buffer
      (ido-completing-read (format "%s buffer: " current-mode)
                           (save-excursion

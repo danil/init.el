@@ -52,8 +52,10 @@
   (add-hook! 'minibuffer-setup-hook
     (when (member this-command '(
                                  ivy-resume
-                                 swiper my-swiper
+                                 swiper
+                                 my-swiper
                                  counsel-M-x
+                                 counsel-descbinds
                                  counsel-describe-face
                                  counsel-describe-function
                                  counsel-describe-variable
