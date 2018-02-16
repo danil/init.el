@@ -45,8 +45,9 @@
 
   ;; (setq line-number-mode t)
 
-  (setq column-number-mode t) ;column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
-  (transient-mark-mode t) ;transient mark mode <http://emacswiki.org/TransientMarkMode>
-  )
+  (setq column-number-mode t ; column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
+        overwrite-mode-textual " OVERWRITING")
+  ;; Transient mark mode <http://emacswiki.org/TransientMarkMode>.
+  (transient-mark-mode t))
 
 ;;; init-simple.el ends here
