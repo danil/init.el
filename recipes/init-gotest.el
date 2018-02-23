@@ -32,15 +32,18 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-gotest)
-
 (defun myinit-gotest ()
   "My init."
+  (if (boundp 'dired-mode-map) (myinit-gotest--customize-keys dired-mode-map)
+    (with-eval-after-load 'dired (myinit-gotest--customize-keys dired-mode-map)))
+  (if (boundp 'go-mode-map) (myinit-gotest--customize-keys go-mode-map)
+    (with-eval-after-load 'go-mode (myinit-gotest--customize-keys go-mode-map))))
 
-  (myinit-after-load 'go-mode
-    (define-key go-mode-map (kbd "C-c , v") 'go-test-current-file)
-    (define-key go-mode-map (kbd "C-c , s") 'go-test-current-test)
-    (define-key go-mode-map (kbd "C-c , a") 'go-test-current-project)
-    (define-key go-mode-map (kbd "C-c , b") 'go-test-current-benchmark)
-    (define-key go-mode-map (kbd "C-c , x") 'go-run)))
+(defun myinit-gotest--customize-keys (key-map)
+  (define-key key-map (kbd "C-c , v") 'go-test-current-file)
+  (define-key key-map (kbd "C-c , s") 'go-test-current-test)
+  (define-key key-map (kbd "C-c , a") 'go-test-current-project)
+  (define-key key-map (kbd "C-c , b") 'go-test-current-benchmark)
+  (define-key key-map (kbd "C-c , x") 'go-run))
 
 ;;; init-gotest.el ends here

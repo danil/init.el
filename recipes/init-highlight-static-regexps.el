@@ -45,14 +45,15 @@
 
 (defun myinit-highlight-static-regexps ()
   "My init."
-
   (dolist (hook myinit-highlight-static-regexps-hooks)
     (let ((h (car hook))
           (init-fn (nth 1 hook)))
       (when (fboundp init-fn) (add-hook h init-fn))))
-
-  (myinit-after-load 'highlight-static-regexps
-    (setq highlight-static-regexps-choose-face-function 'myinit-go-mode--highlight-static-regexps-choose-face)))
+  (let ((f (lambda ()
+             (setq highlight-static-regexps-choose-face-function
+                   'myinit-go-mode--highlight-static-regexps-choose-face))))
+    (if (boundp 'highlight-static-regexps-choose-face-function) (funcall f)
+      (with-eval-after-load 'highlight-static-regexps (funcall f)))))
 
 ;; (defcustom highlight-static-regexps-keyword-faces
 ;;   '(("foo" . "#red")
@@ -69,7 +70,7 @@
 ;;   )
 
 (defun myinit-go-mode--highlight-static-regexps-choose-face (s)
-  (cond ((equal s " := ") '(:weight bold))
+  (cond ((equal s " :=") '(:weight bold))
         ((equal s ") (") '(:weight bold))
         ((equal s "\tbreak") '(:inherit font-lock-keyword-face :weight bold))
         ((equal s "\tcontinue") '(:inherit font-lock-keyword-face :weight bold))

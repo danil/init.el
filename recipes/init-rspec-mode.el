@@ -35,10 +35,8 @@
 
 (defun myinit-rspec-mode ()
   "My init."
-
-  (add-hook 'dired-mode-hook 'rspec-dired-mode)
+  ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
   (custom-set-variables '(rspec-use-spring-when-possible nil))
-
   (myinit-after-load 'rspec-mode
     ;; (setq rspec-use-rvm t)
     (setq rspec-use-rake-when-possible nil)))

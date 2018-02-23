@@ -34,14 +34,14 @@
 (custom-set-variables '(gofmt-command "goimports")) ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
 
 (add-hook 'after-init-hook 'myinit-go-mode)
-
 (defun myinit-go-mode ()
   "My init."
+    (if (boundp 'go-mode-map) (myinit-go-mode--customize)
+      (with-eval-after-load 'go-mode (myinit-go-mode--customize))))
 
-  (myinit-after-load 'go-mode
-    (add-hook 'before-save-hook #'gofmt-before-save)
-
-    (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point)))
+(defun myinit-go-mode--customize ()
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
 
 (defun myinit-go-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'go-mode)
@@ -64,7 +64,7 @@
     (and
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
      (and (member str-cur '(
-                            " := "
+                            " :="
                             ") ("
                             "\tbreak"
                             "\tcontinue"
