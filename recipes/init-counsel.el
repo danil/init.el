@@ -93,8 +93,8 @@
 
 (defun myinit-counsel--customize-help()
   "My init customize."
-  ;; (define-key help-map (kbd "F") 'counsel-faces)
-  (define-key help-map (kbd "F") 'counsel-describe-face)
+  ;; (define-key help-map (kbd "F") 'counsel-describe-face)
+  (define-key help-map (kbd "F") 'counsel-faces)
   (define-key help-map (kbd "b") 'counsel-descbinds)
   (define-key help-map (kbd "f") 'counsel-describe-function)
   (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
