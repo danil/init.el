@@ -34,6 +34,7 @@
 ;;; <https://github.com/ReanGD/emacs-multi-compile#sample-configuration>.
 (custom-set-variables
  ;; '(multi-compile-history-length 50)
+ '(multi-compile-completion-system 'default)
  '(multi-compile-history-file (expand-file-name "multi-compile.cache" "~/.emacs.var"))
  '(multi-compile-alist
    '(("/Cask\\'" . (("cask outdated" . "cd %dir && cask --verbose outdated")
@@ -67,10 +68,8 @@
                    )))))
 
 (add-hook 'after-init-hook 'myinit-multi-compile)
-
 (defun myinit-multi-compile ()
   "My init."
-
   (define-key myinit-map (kbd "! m") 'multi-compile-run))
 
 ;;; init-multi-compile.el ends here
