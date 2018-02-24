@@ -52,6 +52,7 @@
   (add-hook! 'minibuffer-setup-hook
     (when (member this-command '(
                                  ivy-resume
+                                 ivy-switch-buffer
                                  swiper
                                  my-swiper
                                  counsel-M-x
