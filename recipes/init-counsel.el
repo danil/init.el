@@ -53,7 +53,7 @@
   ;; (global-set-key (kbd "C-x l") 'counsel-locate)
   ;; (global-set-key (kbd "M-y") 'myinit-counsel--counsel-yank-pop)
 
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file) ; please see `init-files.el'
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
