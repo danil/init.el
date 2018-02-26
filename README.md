@@ -6,7 +6,7 @@ My emacs configuration.
 Features
 --------
 
-* [KISS][]
+* KISS [1][KISS]
 * 100% usable in terminal
 
 [KISS]: http://en.wikipedia.org/wiki/KISS_principle
@@ -14,7 +14,7 @@ Features
 Copying
 -------
 
-Copyright (C) 2014, 2015 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2014, 2015, 2016, 2017, 2018 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
