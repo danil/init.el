@@ -76,6 +76,7 @@
                                  counsel-yank-pop
                                  myinit-counsel--counsel-ag
                                  myinit-counsel--counsel-yank-pop
+                                 projectile-switch-to-buffer
                                  ))
       (setq-local truncate-lines t)))
 
