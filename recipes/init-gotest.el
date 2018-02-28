@@ -36,6 +36,8 @@
   "My init."
   (if (boundp 'dired-mode-map) (myinit-gotest--customize-keys dired-mode-map)
     (with-eval-after-load 'dired (myinit-gotest--customize-keys dired-mode-map)))
+  (if (boundp 'shell-mode-map) (myinit-gotest--customize-keys shell-mode-map)
+    (with-eval-after-load 'shell (myinit-gotest--customize-keys shell-mode-map)))
   (if (boundp 'go-mode-map) (myinit-gotest--customize-keys go-mode-map)
     (with-eval-after-load 'go-mode (myinit-gotest--customize-keys go-mode-map))))
 
