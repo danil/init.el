@@ -62,6 +62,11 @@
   (setq flycheck-gometalinter-disable-all t) ;only enable selected linters
   ;; (setq flycheck-gometalinter-disable-linters '())
   (setq flycheck-gometalinter-enable-linters '(
+                                               ;; "goconst"
+                                               ;; "structcheck"
+                                               ;; "unparam"
+                                               ;; "unused"
+                                               ;; "varcheck"
                                                "errcheck"
                                                "gofmt"
                                                "golint"
