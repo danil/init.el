@@ -63,7 +63,7 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
-    (when (<= (count-lines (point-min) (point-max)) 500) ;number of lines in current buffer
+    (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
 
 ;;; init-json-mode.el ends here
