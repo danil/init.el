@@ -60,6 +60,7 @@
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-cur
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ??)))
+         (not (or (equal ch-before ?\<) (equal ch-after ?\<)))
          (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
              (string-match-p "\\`\\.[[:space:]\n]*\\(new\\)[^a-zA-Z0-1]"
                              str-after)))))
