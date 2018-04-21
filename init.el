@@ -307,6 +307,7 @@
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
 (my-recipe '(cc-vars))
+(my-recipe '(csharp-mode))
 
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))
@@ -331,6 +332,7 @@
 (my-recipe '(diffview))
 (my-recipe '(digit-groups))
 
+;; (my-recipe '(dired-dups))
 (my-recipe '(dired))
 (my-recipe '(dired-aux))
 (my-recipe '(dired-details))

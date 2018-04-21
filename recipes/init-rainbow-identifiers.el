@@ -45,6 +45,7 @@
      (conf-space-mode-hook myinit-conf-space-mode--rainbow-identifiers-init)
      (conf-unix-mode-hook myinit-conf-unix-mode--rainbow-identifiers-init)
      (conf-xdefaults-mode-hook myinit-conf-xdefaults-mode--rainbow-identifiers-init)
+     (csharp-mode-hook myinit-csharp-mode--rainbow-identifiers-init)
      (css-mode-hook myinit-css-mode--rainbow-identifiers-init)
      (emacs-lisp-mode-hook myinit-emacs-lisp-mode--rainbow-identifiers-init)
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
