@@ -31,6 +31,17 @@
 
 ;;; Code:
 
+(defcustom myinit-js2-mode-patterns '()
+  "Regexp patterns associated with `js2-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-js2-mode-patterns
+                        '(
+                          "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
+                          ;; "\\.js.erb\\'"
+                          "\\.js\\'"
+                          )))
+
 (autoload 'js2-mode "js2-mode" nil t)
 
 (custom-set-variables
@@ -45,10 +56,8 @@
   ;; (myinit-after-load 'js2-mode
   ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))
 
-  (myinit-add-mode-to-patterns 'js2-mode
-                                "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
-                                ;; "\\.js.erb\\'"
-                                "\\.js\\'"))
+  (dolist (pattern myinit-js2-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'js2-mode))))
 
 (defun myinit-js2-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'js2-mode)
