@@ -31,29 +31,38 @@
 
 ;;; Code:
 
+(defcustom myinit-ruby-mode-patterns '()
+  "Regexp patterns associated with `ruby-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-ruby-mode-patterns
+                        '(
+                          "/Capfile\\'"
+                          "/Gemfile\\'"
+                          "/Guardfile.private.example\\'"
+                          "/Guardfile.private\\'"
+                          "/Guardfile\\'"
+                          "/[rR]akefile\\'"
+                          "/[vV]agrantfile.proxy\\'"
+                          "/[vV]agrantfile\\'"
+                          "\\.atex\\'"
+                          "\\.gemspec\\'"
+                          "\\.irbrc\\'"
+                          "\\.mdlrc\\'"
+                          "\\.prawn\\'"
+                          "\\.rake\\'"
+                          "\\.rb\\.erb\\'"
+                          "\\.thor\\'"
+                          "\\.yml\\.erb\\'"
+                          )))
+
 (add-hook 'after-init-hook 'myinit-ruby-mode)
 
 (defun myinit-ruby-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'ruby-mode
-                                 "/Capfile\\'"
-                                 "/Gemfile\\'"
-                                 "/Guardfile.private.example\\'"
-                                 "/Guardfile.private\\'"
-                                 "/Guardfile\\'"
-                                 "/[rR]akefile\\'"
-                                 "/[vV]agrantfile.proxy\\'"
-                                 "/[vV]agrantfile\\'"
-                                 "\\.atex\\'"
-                                 "\\.gemspec\\'"
-                                 "\\.irbrc\\'"
-                                 "\\.mdlrc\\'"
-                                 "\\.prawn\\'"
-                                 "\\.rake\\'"
-                                 "\\.rb\\.erb\\'"
-                                 "\\.thor\\'"
-                                 "\\.yml\\.erb\\'")
+  (dolist (pattern myinit-ruby-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
 
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
