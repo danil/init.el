@@ -31,10 +31,21 @@
 
 ;;; Code:
 
+(defcustom myinit-lua-mode-patterns '()
+  "Regexp patterns associated with `lua-mode'."
+  :group 'myinit)
+
+(custom-set-variables '(myinit-lua-mode-patterns
+                        '(
+                          "\\.lua\\.example\\'"
+                          "\\.ws\\'"
+                          )))
+
 (add-hook 'after-init-hook 'myinit-lua-mode)
 (defun myinit-lua-mode ()
   "My init."
-  (myinit-add-mode-to-patterns 'lua-mode "\\.ws\\'")
+  (dolist (pattern myinit-lua-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'lua-mode)))
   (myinit-after-load 'lua-mode
     ;; <http://lua-users.org/wiki/LuaStyleGuide>,
     ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>.
