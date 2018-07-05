@@ -490,7 +490,7 @@
 (my-recipe '(rust-mode))
 
 (my-recipe '(inf-ruby))
-(my-recipe '(rbenv))
+;; (my-recipe '(rbenv))
 (my-recipe '(rspec-compilation-mode))
 (my-recipe '(rspec-mode))
 (my-recipe '(ruby-hash-syntax))
