@@ -147,6 +147,7 @@
 (depends-on "php-mode")
 (depends-on "projectile")
 (depends-on "projectile-rails")
+(depends-on "protobuf-mode")
 (depends-on "quelpa")
 (depends-on "quickrun")
 
