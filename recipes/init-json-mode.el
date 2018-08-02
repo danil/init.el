@@ -49,10 +49,15 @@
   (dolist (pattern myinit-json-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'json-mode)))
 
+  (add-hook 'json-mode-hook 'myinit-json-mode--customize)
   ;; (myinit-after-load 'json-mode
   ;;   (define-key json-mode-map (kbd "C-c C-f") nil)
   ;;   (define-key json-mode-map (kbd "C-c C-p") nil))
   )
+
+(defun myinit-json-mode--customize ()
+  (make-local-variable 'js-indent-level)
+  (setq js-indent-level 4))
 
 (defun myinit-json-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'json-mode)
