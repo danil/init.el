@@ -113,7 +113,10 @@
               'myinit-ruby-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
+                                                  font-lock-constant-face
+                                                  font-lock-type-face
+                                                  font-lock-function-name-face))
 
     (myinit-rainbow-identifiers--lazyinit)))
 
