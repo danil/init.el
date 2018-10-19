@@ -41,6 +41,7 @@
                                 go-unconvert
                                 go-vet
 
+                                ruby-reek ; annoying errors and undocumented config
                                 ruby-rubylint
 
                                 sh-bash
