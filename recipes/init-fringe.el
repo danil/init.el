@@ -31,23 +31,25 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-fringe)
+(add-hook 'after-init-hook 'myinit-fringe)
 
-;; (defun myinit-fringe ()
-;;   "My init."
+(defun myinit-fringe ()
+  "My init."
+  (define-key myinit-map (kbd "x l") 'myinit-fringe--toggle))
 
-;;   ;; (define-key myinit-map (kbd "x f") 'myinit-fringe-toggle)
-;;   )
-
-;; (defun myinit-fringe-toggle ()
-;;   "Toggle modes in the fringe."
-;;   (interactive)
-
-;;   (let ((g (lambda (x) (when (fboundp 'git-gutter-mode) (git-gutter-mode x)))))
-
-;;     (cond ((and (boundp 'linum-mode) (equal linum-mode t))
-;;            (funcall g -1) (linum-mode -1))
-;;           (t
-;;            (linum-mode t) (funcall g t)))))
+(defun myinit-fringe--toggle ()
+  "Toggle modes in the fringe (left margin of the window).
+Toggle the `linume-mode', `diff-hl-mode' and so on."
+  (interactive)
+  (cond ((or
+          (and (boundp 'linum-mode) (equal linum-mode t))
+          (and (boundp 'diff-hl-mode) (equal diff-hl-mode t)))
+         (when (fboundp 'linum-mode) (linum-mode -1))
+         (when (fboundp 'myinit-diff-hl--init) (myinit-diff-hl--init -1)))
+        (t
+         (when (fboundp 'linum-mode) (linum-mode t))
+         (myinit-run-with-idle-timer-in-current-buffer
+          myinit-default-idle-timer-seconds nil
+          (lambda () (myinit-diff-hl--init t))))))
 
 ;;; init-fringe.el ends here

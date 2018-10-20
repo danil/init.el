@@ -60,47 +60,42 @@
   ;; (dolist (hook myinit-linum-modes-hooks)
   ;;   (add-hook hook 'myinit-linum--lazyinit))
 
-  (add-hook 'after-save-hook 'myinit-linum-turn-off)
+  ;; (add-hook 'after-save-hook 'myinit-linum--turn-off)
 
-  (define-key myinit-map (kbd "x l") 'myinit-linum-toggle)
+  ;; (define-key myinit-map (kbd "x l") 'myinit-linum--toggle)
 
   (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
 
-(defun myinit-linum--lazyinit ()
-  "Run `linum'."
+;; (defun myinit-linum--lazyinit ()
+;;   "Run `linum'."
+;;   (myinit-run-with-idle-timer-in-current-buffer
+;;    myinit-default-idle-timer-seconds nil 'myinit-linum--turn-on-or-off))
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'myinit-linum-turn-on-or-off))
+;; (defun myinit-linum--toggle ()
+;;   "Toggle the `linume-mode'."
+;;   (interactive)
+;;   (cond ((and (boundp 'linum-mode) (equal linum-mode t))
+;;          (linum-mode -1))
+;;         (t
+;;          (linum-mode t))))
 
-(defun myinit-linum-toggle ()
-  "Toggle the `linume-mode'."
-  (interactive)
+;; (defun myinit-linum--turn-on-or-off ()
+;;   "Enable or disable the `linume-mode' depending on current buffer lines number."
+;;   (interactive)
+;;   (if (myinit-linum--is-suitable) (linum-mode t) (linum-mode -1)))
 
-  (cond ((and (boundp 'linum-mode) (equal linum-mode t))
-         (linum-mode -1))
-        (t
-         (linum-mode t))))
+;; (defun myinit-linum--turn-off ()
+;;   "Disable the `linume-mode' if current buffer have to many lines."
+;;   (interactive)
+;;   (unless (myinit-linum--is-suitable) (linum-mode -1)))
 
-(defun myinit-linum-turn-on-or-off ()
-  "Enable or disable the `linume-mode' depending on current buffer lines number."
-  (interactive)
-
-  (if (myinit-linum--is-suitable) (linum-mode t) (linum-mode -1)))
-
-(defun myinit-linum-turn-off ()
-  "Disable the `linume-mode' if current buffer have to many lines."
-  (interactive)
-
-  (unless (myinit-linum--is-suitable) (linum-mode -1)))
-
-(defun myinit-linum--is-suitable ()
-  "Decides is suitably or not the `linume-mode' for the current buffer."
-
-  (when (and (member major-mode myinit-linum-modes)
-             (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
-               (<= buffer-lines myinit-linum-max-lines)))
-    t))
+;; (defun myinit-linum--is-suitable ()
+;;   "Decides is suitably or not the `linume-mode' for the current buffer."
+;;   (when (and (member major-mode myinit-linum-modes)
+;;              (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
+;;                (<= buffer-lines myinit-linum-max-lines)))
+;;     t))
 
 ;;; init-linum.el ends here
