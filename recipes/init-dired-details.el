@@ -57,9 +57,7 @@
 
 (defun myinit-dired-details--lazyinit ()
   "Run `dired-details'."
-
   (remove-hook 'dired-after-readin-hook 'myinit-dired-details--lazyinit)
-
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil
    (lambda ()
