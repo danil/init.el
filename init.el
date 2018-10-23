@@ -489,6 +489,7 @@
 (my-recipe '(rg))
 (my-recipe '(rust-mode))
 
+;; (my-recipe '(rbenv))
 (my-recipe '(inf-ruby))
 (my-recipe '(robe))
 (my-recipe '(rspec-compilation-mode))
@@ -498,7 +499,6 @@
 (my-recipe '(ruby-pry))
 (my-recipe '(ruby-refactor))
 (my-recipe '(ruby-tools))
-;; (my-recipe '(rbenv))
 
 (my-recipe '(savehist))
 (my-recipe '(saveplace))

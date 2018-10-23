@@ -41,7 +41,6 @@
 
 (defun myinit-rbenv ()
   "My init."
-
   (global-rbenv-mode)
   (rbenv-use-corresponding))
 

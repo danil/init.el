@@ -152,9 +152,9 @@
 (depends-on "quelpa")
 (depends-on "quickrun")
 
+;; (depends-on "rbenv")
 (depends-on "minitest")
 (depends-on "multi-compile")
-(depends-on "rbenv")
 (depends-on "robe")
 (depends-on "rspec-mode")
 (depends-on "ruby-guard")
