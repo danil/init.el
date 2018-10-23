@@ -1,6 +1,6 @@
 ;;; init-ac-ispell.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -34,18 +34,14 @@
 (custom-set-variables '(ac-ispell-requires 1)) ;minimum input for starting completion
 
 (add-hook 'after-init-hook 'myinit-ac-ispell)
-
 (defun myinit-ac-ispell ()
   "My init."
-
   (myinit-add-mode-to-hooks 'my-ac-ispell-setup
                             myinit-auto-completion-modes-hooks))
 
 (defun my-ac-ispell-setup ()
   (ac-ispell-setup)
-
   (add-to-list 'ac-sources 'ac-source-ispell t)
-
   (when (> ac-ispell-fuzzy-limit 0)
     (add-to-list 'ac-sources 'ac-source-ispell-fuzzy t)))
 

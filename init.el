@@ -1,6 +1,6 @@
 ;;; init.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((cask) (myinit))
@@ -296,10 +296,10 @@
 (my-recipe '(anzu))
 
 ;; (my-recipe '(ac-html-bootstrap))
-;; (my-recipe '(ac-ispell))
+(my-recipe '(ac-html))
+(my-recipe '(ac-ispell))
 (my-recipe '(auto-complete))
 (my-recipe '(auto-complete-chunk))
-(my-recipe '(ac-html))
 
 (my-recipe '(bash-completion))
 (my-recipe '(bookmark))
