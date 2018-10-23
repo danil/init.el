@@ -62,6 +62,7 @@
                   " Rails" ;projectile-rails
                   " Rbow" ;rainbow-mode
                   " RubyRef" ;ruby-refactor-mode
+                  " robe" ;robe-mode
                   " SP" ;smartparens-mode
                   " Undo-Tree" ;undo-tree-mode
                   " end" ;ruby-end-mode
