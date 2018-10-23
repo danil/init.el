@@ -40,16 +40,16 @@
 
 (defun myinit-projectile ()
   "My init."
-
   ;; (myinit-after-load 'projectile
   ;;   (setq projectile-project-root-files-bottom-up
   ;;         (append projectile-project-root-files-bottom-up
   ;;                 '("profiles" ; Gentoo portage overlay
   ;;                   ))))
+  (projectile-global-mode)
+  (if (boundp 'projectile) (myinit-projectile--init)
+    (with-eval-after-load 'projectile (myinit-projectile--init))))
 
-  ;; (myinit-after-load 'projectile
-  ;;   (define-key myinit-mode-map (kbd "C-v c p") projectile-command-map))
-
-  (projectile-global-mode))
+(defun myinit-projectile--init ()
+  (define-key myinit-mode-map (kbd "C-c p") projectile-command-map))
 
 ;;; init-projectile.el ends here
