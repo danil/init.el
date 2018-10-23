@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- ;; '(projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
+ '(projectile-dynamic-mode-line nil)
  '(projectile-completion-system 'ivy) ;ido
  '(projectile-mode-line nil))
 

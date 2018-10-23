@@ -15,7 +15,6 @@
       (defalias 'if-let* #'if-let)
       (defalias 'when-let* #'when-let))))
 
-
 ;;
 ;; Helpers
 ;;
@@ -313,4 +312,5 @@ Do not use this for configuring Doom core."
         nil))))
 
 (provide 'core-lib)
+
 ;;; core-lib.el ends here

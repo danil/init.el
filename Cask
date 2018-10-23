@@ -43,9 +43,9 @@
 (depends-on "bash-completion")
 (depends-on "cask")
 (depends-on "cask-mode")
-(depends-on "column-marker")
+(depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
 (depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
-(depends-on "crontab-mode")
+(depends-on "crontab-mode" :git "https://github.com/emacsattic/crontab-mode.git")
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
@@ -57,18 +57,18 @@
 
 ;; Dired.
 ;; (depends-on "dired-dups")
-(depends-on "dired-details")
+(depends-on "dired-details" :git "https://github.com/emacsmirror/dired-details.git")
 (depends-on "diredfl")
 (depends-on "direx")
 
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
-(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git" "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>") ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
+(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git") ;"Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>" ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
 (depends-on "expand-region")
-(depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el") "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>")
+(depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ;"Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
 (depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
@@ -105,7 +105,7 @@
 ;; (depends-on "ido-occur")
 (depends-on "ido-clever-match") ;ido fuzzy matching
 (depends-on "ido-describe-bindings")
-(depends-on "ido-ubiquitous")
+(depends-on "ido-ubiquitous" :git "https://github.com/technomancy/ido-ubiquitous.git")
 (depends-on "ido-vertical-mode")
 (depends-on "ido-yes-or-no")
 (depends-on "smex")
@@ -140,7 +140,7 @@
 (depends-on "markdownfmt")
 (depends-on "mediawiki")
 (depends-on "mustache-mode")
-(depends-on "narrow-indirect")
+(depends-on "narrow-indirect" :git "https://github.com/emacsmirror/narrow-indirect.git")
 (depends-on "nginx-mode")
 (depends-on "nodejs-repl")
 (depends-on "origami")
@@ -157,9 +157,9 @@
 (depends-on "multi-compile")
 (depends-on "robe")
 (depends-on "rspec-mode")
-(depends-on "ruby-guard")
+(depends-on "ruby-guard" :git "https://github.com/zhangkaiyulw/ruby-guard.git")
 (depends-on "ruby-hash-syntax")
-(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO")) "Pry support within Emacs")
+(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO"))) ;"Pry support within Emacs"
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 
@@ -187,7 +187,7 @@
 (depends-on "systemd")
 (depends-on "tldr")
 (depends-on "toml-mode")
-(depends-on "top-mode")
+(depends-on "top-mode" :git "https://github.com/emacsmirror/top-mode.git")
 (depends-on "transpose-frame")
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
@@ -199,7 +199,6 @@
 (depends-on "yaml-mode")
 ;; (depends-on "yascroll")
 (depends-on "yasnippet")
-(depends-on "yasnippet")
 (depends-on "yasnippet-snippets" :git "https://github.com/AndreaCrotti/yasnippet-snippets.git" :files ("*" (:exclude ".git" ".gitignore" ".nosearch" "CONTRIBUTORS.txt" "LICENSE" "README.md" "rename_add_contr.py")))
-(depends-on "yasnippets" :git "https://github.com/rejeep/yasnippets.git" :files ("*" (:exclude ".git" ".gitignore" "README.markdown")) "Comprehensive collection of yasnippets")
+(depends-on "yasnippets" :git "https://github.com/rejeep/yasnippets.git" :files ("*" (:exclude ".git" ".gitignore" "README.markdown"))) ;"Comprehensive collection of yasnippets"
 (depends-on "ztree")

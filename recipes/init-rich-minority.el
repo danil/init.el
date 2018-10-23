@@ -59,10 +59,10 @@
                   " Isearch" ;isearch-mode
                   " MRev" ;magit-auto-revert-mode
                   " Myinit" ;myinit-mode
+                  " Projectile" ;projectile-mode
                   " Rails" ;projectile-rails
                   " Rbow" ;rainbow-mode
                   " RubyRef" ;ruby-refactor-mode
-                  " robe" ;robe-mode
                   " SP" ;smartparens-mode
                   " Undo-Tree" ;undo-tree-mode
                   " end" ;ruby-end-mode
@@ -75,6 +75,7 @@
                   " ing" ;indent-guide-mode
                   " ivy" ;ivy-mode (swiper, counsel and friends)
                   " pair" ;autopair
+                  " robe" ;robe-mode
                   " rt" ;ruby-tools-mode
                   " yas";yas-minor-mode aka yasnippet
                   )))

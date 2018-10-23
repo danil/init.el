@@ -76,6 +76,9 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
+;;; ElDoc annoying in all buffers/modes.
+(global-eldoc-mode -1)
+
 ;;; Cask.
 ;;; Initialize Elpa packages via Cask
 ;;; <http://cask.readthedocs.org/en/latest/guide/usage.html#usage>.
