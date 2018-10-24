@@ -152,8 +152,8 @@
 (depends-on "quelpa")
 (depends-on "quickrun")
 
+;; (depends-on "enh-ruby-mode")
 ;; (depends-on "rbenv")
-(depends-on "enh-ruby-mode")
 (depends-on "minitest")
 (depends-on "multi-compile")
 (depends-on "robe")
