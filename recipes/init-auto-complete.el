@@ -85,6 +85,7 @@
                     dockerfile-mode
                     ebuild-mode
                     emacs-lisp-mode
+                    enh-ruby-mode
                     ferm-mode
                     fish-mode
                     git-commit-mode

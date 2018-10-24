@@ -330,7 +330,6 @@
 (my-recipe '(cus-face))
 (my-recipe '(custom))
 (my-recipe '(cycle-quotes))
-(my-recipe '(cyphejor))
 (my-recipe '(deft))
 (my-recipe '(desktop))
 (my-recipe '(diff-mode))
@@ -366,8 +365,8 @@
 
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-bashate))
-
 (my-recipe '(flycheck-gometalinter))
+
 (my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
 (my-recipe '(godoctor))
@@ -493,8 +492,8 @@
 (my-recipe '(rg))
 (my-recipe '(rust-mode))
 
+;; (my-recipe '(enh-ruby-mode))
 ;; (my-recipe '(rbenv))
-(my-recipe '(enh-ruby-mode))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(inf-ruby))
 (my-recipe '(robe))
@@ -521,6 +520,7 @@
 (my-recipe '(mode-line))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
+(my-recipe '(cyphejor))
 
 (my-recipe '(sql))
 (my-recipe '(sql-mode))
@@ -532,7 +532,7 @@
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
 (my-recipe '(undo-tree))
-(my-recipe '(uniquify))
+(my-recipe '(uniquify)) ; uniquify buffer name
 (my-recipe '(vc-hooks))
 (my-recipe '(vlf))
 (my-recipe '(web-mode))

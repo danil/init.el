@@ -59,8 +59,8 @@
 (add-hook 'after-init-hook 'myinit-ruby-mode)
 (defun myinit-ruby-mode ()
   "My init."
-  ;; (dolist (pattern myinit-ruby-mode-patterns)
-  ;;   (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
+  (dolist (pattern myinit-ruby-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
@@ -102,30 +102,65 @@
         (ch-before (char-before beg))
         (ch-after (char-after end))
         (str-cur (buffer-substring-no-properties beg end))
+        (ch80-before (let ((i 80))
+                       (if (< (point-min) (- beg i))
+                           (buffer-substring-no-properties (- beg i) beg)
+                         (buffer-substring-no-properties (point-min) beg))))
+        (ch80-after (let ((i 80))
+                      (if (> (point-max) (+ end i))
+                          (buffer-substring-no-properties end (+ end i))
+                        (buffer-substring-no-properties end (point-max)))))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
-    (and (not (member ch-cur
-                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
-         (not (string-match-p "[?!]\\'" str-cur))
+    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+         ;; (not (string-match-p "[?!]\\'" str-cur))
          (not (and (string-match-p "^[[:space:]]*\\'" str-before)
                    (string-match-p "\\`[[:space:]]*$" str-after)))
          (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
                               str-before))
-         (not (equal ch-after ?\())
+         ;; (not (equal ch-after ?\())
          (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
          (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
                    (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
          (not (string-match-p "\\`[[:space:]\n]+\\({\\|do\\)[^a-zA-Z]" str-after))
-         (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-             (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
-                             str-after))
+         ;; (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+         ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
+         ;;                     str-after))
          (not (member str-cur '(
+                                "blank?"
+                                "blank?"
                                 "count"
+                                "extract_options!"
                                 "first"
                                 "join"
                                 "last"
                                 "length"
                                 "new"
+                                "nil?"
+                                "pop"
+                                "present?"
+                                "present?"
+                                "save!"
+                                "scoped"
+                                "second"
+                                "size"
+                                "split"
+                                "to_a"
+                                "to_h"
+                                "to_i"
+                                "to_s"
+                                "try"
+                                "upcase"
+                                "update_all"
+
+                                "count"
+                                "false"
+                                "first"
+                                "join"
+                                "last"
+                                "length"
+                                "new"
+                                "nil"
                                 "params"
                                 "pop"
                                 "save"
@@ -137,6 +172,7 @@
                                 "to_h"
                                 "to_i"
                                 "to_s"
+                                "true"
                                 "upcase"
                                 "update_all"
                                 ))))))
