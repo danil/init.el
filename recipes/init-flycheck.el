@@ -53,10 +53,8 @@
  '(flycheck-idle-change-delay 1.5))
 
 (add-hook 'after-init-hook 'myinit-flycheck)
-
 (defun myinit-flycheck ()
   "My init."
-
   (dolist (hook myinit-programming-modes-hooks)
     (add-hook hook 'myinit-flycheck--lazyinit)))
 
@@ -65,21 +63,16 @@
   ;; (setq-default flycheck-disabled-checkers
   ;;               (append flycheck-disabled-checkers
   ;;                       '(javascript-jshint)))
-
   ;; ;; Disable json-jsonlist checking for json files.
   ;; (setq-default flycheck-disabled-checkers
   ;;               (append flycheck-disabled-checkers
   ;;                       '(json-jsonlist)))
-
   ;; (set-face-attribute 'flycheck-warning nil :underline nil)
-
   ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
-
   (setq flycheck-go-vet-shadow t))
 
 (defun myinit-flycheck--lazyinit ()
   "Run `flycheck'."
-
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil 'flycheck-mode))
 
