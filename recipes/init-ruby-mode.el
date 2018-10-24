@@ -1,6 +1,6 @@
 ;;; init-ruby-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -57,68 +57,42 @@
                           )))
 
 (add-hook 'after-init-hook 'myinit-ruby-mode)
-
 (defun myinit-ruby-mode ()
   "My init."
-
   (dolist (pattern myinit-ruby-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
-
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
+  (if (boundp 'ruby-mode) (myinit-ruby-mode--init)
+    (with-eval-after-load 'ruby-mode (myinit-ruby-mode--init))))
 
-  (myinit-after-load 'ruby-mode
-    (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
-
-    ;; My keyboard macroses.
-    ;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
-    ;; (fset 'my-kbd-macro-ruby-new-hash-syntax
-    ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
-    (fset 'my-kbd-macro-ruby-string-to-symbol
-          "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
-
-    ;; Ruby indentation fix
-    ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
-    (defadvice ruby-indent-line (after line-up-args activate)
-      (let (indent prev-indent arg-indent)
-        (save-excursion
-          (back-to-indentation)
-          (when (zerop (car (syntax-ppss)))
-            (setq indent (current-column))
-            (skip-chars-backward " \t\n")
-            (when (eq ?, (char-before))
-              (ruby-backward-sexp)
-              (back-to-indentation)
-              (setq prev-indent (current-column))
-              (skip-syntax-forward "w_.")
-              (skip-chars-forward " ")
-              (setq arg-indent (current-column)))))
-        (when prev-indent
-          (let ((offset (- (current-column) indent)))
-            (cond ((< indent prev-indent)
-                   (indent-line-to prev-indent))
-                  ((= indent prev-indent)
-                   (indent-line-to arg-indent)))
-            (when (> offset 0) (forward-char offset))))))))
-
-
-(defun myinit-ruby-mode--rainbow-identifiers-init ()
-  (when (equal major-mode 'ruby-mode)
-    (make-local-variable 'rainbow-identifiers-filter-functions)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-ruby-mode--rainbow-identifiers-filter)
-
-    (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
-                                                  font-lock-constant-face
-                                                  font-lock-type-face
-                                                  font-lock-function-name-face))
-
-    (myinit-rainbow-identifiers--lazyinit)))
+(defun myinit-ruby-mode--init ()
+  (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
+  ;; Ruby indentation fix
+  ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
+  (defadvice ruby-indent-line (after line-up-args activate)
+    (let (indent prev-indent arg-indent)
+      (save-excursion
+        (back-to-indentation)
+        (when (zerop (car (syntax-ppss)))
+          (setq indent (current-column))
+          (skip-chars-backward " \t\n")
+          (when (eq ?, (char-before))
+            (ruby-backward-sexp)
+            (back-to-indentation)
+            (setq prev-indent (current-column))
+            (skip-syntax-forward "w_.")
+            (skip-chars-forward " ")
+            (setq arg-indent (current-column)))))
+      (when prev-indent
+        (let ((offset (- (current-column) indent)))
+          (cond ((< indent prev-indent)
+                 (indent-line-to prev-indent))
+                ((= indent prev-indent)
+                 (indent-line-to arg-indent)))
+          (when (> offset 0) (forward-char offset)))))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-ruby-mode--rainbow-identifiers-filter (beg end)
@@ -166,6 +140,27 @@
                                 "upcase"
                                 "update_all"
                                 ))))))
+
+;; My keyboard macroses.
+;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
+;; (fset 'my-kbd-macro-ruby-new-hash-syntax
+;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+(fset 'my-kbd-macro-ruby-string-to-symbol
+      "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
+
+(defun myinit-ruby-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'ruby-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-ruby-mode--rainbow-identifiers-filter)
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
+                                                  font-lock-constant-face
+                                                  font-lock-type-face
+                                                  font-lock-function-name-face))
+    (myinit-rainbow-identifiers--lazyinit)))
 
 (defun my-ruby-toggle-block ()
   "Toggle block type from do-end to braces or back.

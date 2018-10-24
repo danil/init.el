@@ -60,6 +60,7 @@
                   " MRev" ;magit-auto-revert-mode
                   " Myinit" ;myinit-mode
                   " Projectile" ;projectile-mode
+                  " RSpec" ;rspec-mode
                   " Rails" ;projectile-rails
                   " Rbow" ;rainbow-mode
                   " RubyRef" ;ruby-refactor-mode
@@ -77,6 +78,7 @@
                   " pair" ;autopair
                   " robe" ;robe-mode
                   " rt" ;ruby-tools-mode
+                  " ruby" ;enh-ruby-mode
                   " yas";yas-minor-mode aka yasnippet
                   )))
 

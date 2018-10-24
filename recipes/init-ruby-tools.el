@@ -32,17 +32,13 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-ruby-tools)
-
 (defun myinit-ruby-tools ()
   "My init."
-
   ;; (add-hook 'text-mode-hook 'auto-fill-mode)
-
   ;;    haml-mode
   ;;    rhtml-mode
   ;;    ruby-mode
   ;;    slim-mode
-
   ;; (myinit-add-mode-to-hooks 'ruby-tools-mode myinit-ruby-tools-modes-hooks)
 
   (myinit-after-load 'ruby-tools

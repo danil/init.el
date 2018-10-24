@@ -48,6 +48,7 @@
      (csharp-mode-hook myinit-csharp-mode--rainbow-identifiers-init)
      (css-mode-hook myinit-css-mode--rainbow-identifiers-init)
      (emacs-lisp-mode-hook myinit-emacs-lisp-mode--rainbow-identifiers-init)
+     (enh-ruby-mode-hook myinit-enh-ruby-mode--rainbow-identifiers-init)
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
      (haproxy-mode-hook myinit-haproxy-mode--rainbow-identifiers-init)
      (hcl-mode-hook myinit-hcl-mode--rainbow-identifiers-init)

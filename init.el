@@ -115,6 +115,7 @@
      diff-mode
      dockerfile-mode
      ebuild-mode
+     enh-ruby-mode
      ferm-mode
      fish-mode
      git-commit-mode
@@ -211,6 +212,7 @@
      csharp-mode
      css-mode
      emacs-lisp-mode
+     enh-ruby-mode
      haml-mode
      haskell-mode
      html-mode
@@ -381,7 +383,6 @@
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
 (my-recipe '(google-translate))
-(my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(haproxy-mode))
 (my-recipe '(hcl-mode))
 (my-recipe '(help))
@@ -493,6 +494,8 @@
 (my-recipe '(rust-mode))
 
 ;; (my-recipe '(rbenv))
+(my-recipe '(enh-ruby-mode))
+(my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(inf-ruby))
 (my-recipe '(robe))
 (my-recipe '(rspec-compilation-mode))

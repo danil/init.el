@@ -34,7 +34,8 @@
 (add-hook 'after-init-hook 'myinit-robe)
 (defun myinit-robe ()
   "My init."
+  (add-hook 'robe-mode-hook 'ac-robe-setup)
   (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'robe-mode-hook 'ac-robe-setup))
+  (add-hook 'enh-ruby-mode-hook 'robe-mode))
 
 ;;; init-robe.el ends here
