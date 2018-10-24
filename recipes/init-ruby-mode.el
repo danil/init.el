@@ -59,8 +59,8 @@
 (add-hook 'after-init-hook 'myinit-ruby-mode)
 (defun myinit-ruby-mode ()
   "My init."
-  (dolist (pattern myinit-ruby-mode-patterns)
-    (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
+  ;; (dolist (pattern myinit-ruby-mode-patterns)
+  ;;   (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
@@ -105,7 +105,7 @@
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-cur
-                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
          (not (string-match-p "[?!]\\'" str-cur))
          (not (and (string-match-p "^[[:space:]]*\\'" str-before)
                    (string-match-p "\\`[[:space:]]*$" str-after)))
