@@ -53,17 +53,26 @@
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
  )
 
-(add-hook 'after-init-hook 'myinit-mode-line)
-(defun myinit-mode-line ()
-  "My init."
+;; (add-hook 'after-init-hook 'myinit-mode-line)
+;; (defun myinit-mode-line ()
+;;   "My init."
+;;   (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update))
 
-  (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update))
+;; (defun myinit-mode-line--face-mode-line-update ()
+;;   (if (equal (count-windows) 1)
+;;       (custom-set-faces
+;;        '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
+;;     (custom-set-faces
+;;      '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
 
-(defun myinit-mode-line--face-mode-line-update ()
-  (if (equal (count-windows) 1)
-      (custom-set-faces
-       '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
-    (custom-set-faces
-     '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
+;; ;; (defun myinit-mode-line--count-windows (&optional minibuf)
+;; ;;   "Return the number of visible windows.
+;; ;; The optional argument MINIBUF specifies whether the minibuffer
+;; ;; window shall be counted.  See `walk-windows' for the precise
+;; ;; meaning of this argument."
+;; ;;   (let ((count 0))
+;; ;;     (walk-windows (lambda (w) (setq count (+ count 1)))
+;; ;;                   minibuf)
+;; ;;     count))
 
 ;;; init-mode-line.el ends here
