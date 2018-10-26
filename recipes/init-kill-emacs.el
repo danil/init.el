@@ -32,23 +32,18 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-kill-emacs)
-
 (defun myinit-kill-emacs ()
   "My init."
+  (define-key myinit-exec-map (kbd "k") 'myinit-kill-emacs--kill))
 
-  (define-key myinit-exec-map (kbd "k") 'my-kill-emacs))
-
-(defun my-kill-emacs ()
+(defun myinit-kill-emacs--kill ()
   (interactive)
-
   ;; First update the alist.
   ;; This loads the old save-place-file if nec.
   (save-places-to-alist)
-
   ;; Now save the alist in the file,
   ;; if we have ever loaded the file (including just now).
   (when save-place-loaded (save-place-alist-to-file))
-
   (kill-emacs))
 
 ;;; init-kill-emacs.el ends here
