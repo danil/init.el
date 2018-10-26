@@ -50,28 +50,36 @@
   "My init."
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
-  ;; (global-set-key (kbd "C-x l") 'counsel-locate)
-  ;; (global-set-key (kbd "M-y") 'myinit-counsel--counsel-yank-pop)
-
-  ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file) ; please see `init-files.el'
+  (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
+  (global-set-key (kbd "C-v j l") 'counsel-locate)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "M-y") 'counsel-yank-pop)
-
+  (global-set-key (kbd "M-y") 'myinit-counsel--yank-pop)
   (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
     (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
-
   (if (boundp 'help-map) (myinit-counsel--customize-help)
     (with-eval-after-load 'help (myinit-counsel--customize-help)))
-
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
-
   (when (boundp 'myinit-map)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'counsel-rg)))
+
+(defun myinit-counsel--yank-pop ()
+  (interactive)
+  (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
+        (current-prefix-arg (call-interactively 'yank-pop))
+        (t (if (equal 'yank last-command)
+               (call-interactively 'yank-pop)
+               (call-interactively 'counsel-yank-pop)))))
+
+(defun myinit-counsel--find-file ()
+  (interactive)
+  (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
+        (current-prefix-arg (call-interactively 'find-file-literally))
+        (t (call-interactively 'counsel-find-file))))
 
 (defun myinit-counsel--customize-keys ()
   "My init customize keys."

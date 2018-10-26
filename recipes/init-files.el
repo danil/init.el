@@ -1,6 +1,6 @@
 ;;; init-files.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -49,15 +49,15 @@
 (add-hook 'after-init-hook 'myinit-files)
 (defun myinit-files ()
   "My init."
-  (global-set-key (kbd "C-x C-f") 'myinit-files--find-file)
+  ;; (global-set-key (kbd "C-x C-f") 'myinit-files--find-file)
   (when (boundp 'myinit-map)
     (define-key myinit-map (kbd "B r") 'revert-buffer)))
 
-(defun myinit-files--find-file ()
-  (interactive)
-  (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
-        (current-prefix-arg (call-interactively 'find-file-literally))
-        (t (call-interactively 'counsel-find-file))))
+;; (defun myinit-files--find-file ()
+;;   (interactive)
+;;   (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
+;;         (current-prefix-arg (call-interactively 'find-file-literally))
+;;         (t (call-interactively 'counsel-find-file))))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
