@@ -57,6 +57,7 @@
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
   (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
     (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))

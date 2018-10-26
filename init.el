@@ -398,6 +398,7 @@
 ;; (my-recipe '(flx-ido)) ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
 ;; (my-recipe '(ido-describe-bindings))
 ;; (my-recipe '(ido-occur)) ; use swiper instead
+;; (my-recipe '(kill-ring-ido))
 ;; (my-recipe '(recentf-ido-find-file))
 ;; (my-recipe '(smex))
 (my-recipe '(ido-ubiquitous))
@@ -406,7 +407,6 @@
 (my-recipe '(ido-clever-match)) ; ido fuzzy matching
 (my-recipe '(ido-vertical-mode))
 (my-recipe '(ido-yes-or-no))
-(my-recipe '(kill-ring-ido))
 
 ;; Ivy (is an ido replacement).
 ;; (my-recipe '(colir))
