@@ -150,6 +150,7 @@
      pascal-mode
      perl-mode
      php-mode
+     protobuf-mode
      python-mode
      restclient-mode
      rhtml-mode
@@ -481,6 +482,7 @@
 
 (my-recipe '(paren))
 (my-recipe '(php-mode))
+(my-recipe '(protobuf-mode))
 (my-recipe '(python))
 (my-recipe '(quickrun))
 (my-recipe '(rainbow-delimiters))

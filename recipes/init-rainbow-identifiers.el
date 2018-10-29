@@ -57,6 +57,7 @@
      (lua-mode-hook myinit-lua-mode--rainbow-identifiers-init)
      (nginx-mode-hook myinit-nginx-mode--rainbow-identifiers-init)
      (php-mode-hook myinit-php-mode--rainbow-identifiers-init)
+     (protobuf-mode-hook myinit-protobuf-mode--rainbow-identifiers-init)
      (python-mode-hook myinit-python-mode--rainbow-identifiers-init)
      (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
      ;; (rust-mode-hook myinit-rust-mode--rainbow-identifiers-init)
