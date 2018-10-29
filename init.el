@@ -76,7 +76,7 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
-;;; counsel-yank-pop in minibuffer.
+;;; counsel-yank-pop (swiper/ivy) in minibuffer.
 (setq enable-recursive-minibuffers t)
 
 ;;; ElDoc annoying in all buffers/modes.
