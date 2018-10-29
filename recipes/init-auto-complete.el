@@ -118,6 +118,7 @@
                     org-mode
                     perl-mode
                     php-mode
+                    protobuf-mode
                     python-mode
                     redis-cli-mode
                     restclient-mode
