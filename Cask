@@ -74,7 +74,8 @@
 (depends-on "fish-mode")
 (depends-on "flycheck")
 
-(depends-on "flycheck-gometalinter")
+;; (depends-on "flycheck-gometalinter")
+(depends-on "flycheck-golangci-lint")
 (depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "go-projectile")

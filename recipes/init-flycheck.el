@@ -33,13 +33,14 @@
 
 (custom-set-variables
  '(flycheck-disabled-checkers '(
-                                go-build
-                                go-errcheck
                                 go-gofmt
                                 go-golint
-                                go-test
-                                go-unconvert
                                 go-vet
+                                go-build
+                                go-test
+                                go-errcheck
+                                go-unconvert
+                                go-megacheck
 
                                 ruby-reek ; annoying errors and undocumented config
                                 ruby-rubylint

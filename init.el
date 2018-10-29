@@ -366,9 +366,10 @@
 (my-recipe '(fish-mode))
 (my-recipe '(font-core))
 
+;; (my-recipe '(flycheck-gometalinter))
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-bashate))
-(my-recipe '(flycheck-gometalinter))
+(my-recipe '(flycheck-golangci-lint))
 
 (my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
