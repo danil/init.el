@@ -84,6 +84,7 @@
                     dired-mode
                     dockerfile-mode
                     ebuild-mode
+                    elixir-mode
                     emacs-lisp-mode
                     enh-ruby-mode
                     ferm-mode

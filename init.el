@@ -118,6 +118,7 @@
      diff-mode
      dockerfile-mode
      ebuild-mode
+     elixir-mode
      enh-ruby-mode
      ferm-mode
      fish-mode
@@ -353,6 +354,7 @@
 (my-recipe '(dockerfile-mode))
 (my-recipe '(dumb-jump))
 (my-recipe '(ediff))
+(my-recipe '(elixir-mode))
 (my-recipe '(elpa-mirror))
 (my-recipe '(emacs-lisp-mode))
 (my-recipe '(env))
