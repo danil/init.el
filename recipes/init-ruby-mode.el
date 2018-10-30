@@ -39,8 +39,8 @@
                         '(
                           "/Capfile\\'"
                           "/Gemfile\\'"
-                          "/Guardfile.private.example\\'"
-                          "/Guardfile.private\\'"
+                          "/Guardfile\\.private.example\\'"
+                          "/Guardfile\\.private\\'"
                           "/Guardfile\\'"
                           "/[rR]akefile\\'"
                           "/[vV]agrantfile.proxy\\'"
@@ -94,6 +94,20 @@
                  (indent-line-to arg-indent)))
           (when (> offset 0) (forward-char offset)))))))
 
+(defun myinit-ruby-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'ruby-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'myinit-ruby-mode--rainbow-identifiers-filter)
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
+                                                  font-lock-constant-face
+                                                  font-lock-type-face
+                                                  font-lock-function-name-face))
+    (myinit-rainbow-identifiers--lazyinit)))
+
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-ruby-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
@@ -128,6 +142,7 @@
          ;;                     str-after))
          (not (member str-cur '(
                                 "blank?"
+                                "is_a?"
                                 "blank?"
                                 "count"
                                 "extract_options!"
@@ -135,6 +150,7 @@
                                 "join"
                                 "last"
                                 "length"
+                                "all"
                                 "new"
                                 "nil?"
                                 "pop"
@@ -183,20 +199,6 @@
 ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
 (fset 'my-kbd-macro-ruby-string-to-symbol
       "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
-
-(defun myinit-ruby-mode--rainbow-identifiers-init ()
-  (when (equal major-mode 'ruby-mode)
-    (make-local-variable 'rainbow-identifiers-filter-functions)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
-    (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-ruby-mode--rainbow-identifiers-filter)
-    (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
-                                                  font-lock-constant-face
-                                                  font-lock-type-face
-                                                  font-lock-function-name-face))
-    (myinit-rainbow-identifiers--lazyinit)))
 
 (defun my-ruby-toggle-block ()
   "Toggle block type from do-end to braces or back.
