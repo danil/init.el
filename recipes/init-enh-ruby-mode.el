@@ -50,6 +50,7 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
                                                   font-lock-constant-face
+                                                  enh-ruby-op-face
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
 

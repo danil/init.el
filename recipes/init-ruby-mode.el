@@ -59,8 +59,8 @@
 (add-hook 'after-init-hook 'myinit-ruby-mode)
 (defun myinit-ruby-mode ()
   "My init."
-  (dolist (pattern myinit-ruby-mode-patterns)
-    (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
+  ;; (dolist (pattern myinit-ruby-mode-patterns)
+  ;;   (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
@@ -120,29 +120,30 @@
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
          ;; (not (string-match-p "[?!]\\'" str-cur))
-         (not (and (string-match-p "^[[:space:]]*\\'" str-before)
-                   (string-match-p "\\`[[:space:]]*$" str-after)))
-         (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
-                              str-before))
+         ;; (not (and (string-match-p "^[[:space:]]*\\'" str-before)
+         ;;           (string-match-p "\\`[[:space:]]*$" str-after)))
+         ;; (not (string-match-p "\\(self\\|super\\)[[:space:]\n]*\\.[[:space:]\n]*\\'"
+         ;;                      str-before))
          ;; (not (equal ch-after ?\())
-         (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
-         (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
-                   (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
-         (not (string-match-p "\\`[[:space:]\n]+\\({\\|do\\)[^a-zA-Z]" str-after))
+         ;; (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+         ;; (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
+         ;;           (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
+         ;; (not (string-match-p "\\`[[:space:]\n]+\\({\\|do\\)[^a-zA-Z]" str-after))
          ;; (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
          (not (member str-cur '(
+                                "all"
+                                "render"
                                 "blank?"
-                                "is_a?"
                                 "blank?"
                                 "count"
                                 "extract_options!"
                                 "first"
+                                "is_a?"
                                 "join"
                                 "last"
                                 "length"
-                                "all"
                                 "new"
                                 "nil?"
                                 "pop"
@@ -153,6 +154,7 @@
                                 "second"
                                 "size"
                                 "split"
+                                "timestamps"
                                 "to_a"
                                 "to_h"
                                 "to_i"

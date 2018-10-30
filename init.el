@@ -500,8 +500,8 @@
 (my-recipe '(rg))
 (my-recipe '(rust-mode))
 
-;; (my-recipe '(enh-ruby-mode))
 ;; (my-recipe '(rbenv))
+(my-recipe '(enh-ruby-mode))
 (my-recipe '(haml-mode)) ;depends from ruby-mode due to ruby-toggle-hash-syntax
 (my-recipe '(inf-ruby))
 (my-recipe '(robe))
