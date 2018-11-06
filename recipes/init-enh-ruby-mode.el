@@ -58,4 +58,4 @@
 
     (myinit-rainbow-identifiers--lazyinit)))
 
-;;; init-ruby-mode.el ends here
+;;; init-enh-ruby-mode.el ends here
