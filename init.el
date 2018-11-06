@@ -523,6 +523,7 @@
 (my-recipe '(shell))
 (my-recipe '(simp))
 (my-recipe '(simple))
+(my-recipe '(slim-mode))
 (my-recipe '(sort))
 (my-recipe '(subword-mode))
 

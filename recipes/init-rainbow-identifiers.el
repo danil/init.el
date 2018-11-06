@@ -61,6 +61,7 @@
      (protobuf-mode-hook myinit-protobuf-mode--rainbow-identifiers-init)
      (python-mode-hook myinit-python-mode--rainbow-identifiers-init)
      (ruby-mode-hook myinit-ruby-mode--rainbow-identifiers-init)
+     (slim-mode-hook myinit-slim-mode--rainbow-identifiers-init)
      ;; (rust-mode-hook myinit-rust-mode--rainbow-identifiers-init)
      (sh-mode-hook myinit-sh-mode--rainbow-identifiers-init)
      (sql-interactive-mode-hook myinit-sql-interactive-mode--rainbow-identifiers-init)
