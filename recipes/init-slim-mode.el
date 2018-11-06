@@ -63,7 +63,7 @@
         (str-cur (buffer-substring-no-properties beg end))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
-    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?- ?| ?=)))
          ;; (not (string-match-p "[?!]\\'" str-cur))
          ;; (not (and (string-match-p "^[[:space:]]*\\'" str-before)
          ;;           (string-match-p "\\`[[:space:]]*$" str-after)))
@@ -78,11 +78,12 @@
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
          (not (member str-cur '(
-                                "ruby"
-                                "if"
                                 "else"
                                 "elsif"
                                 "end"
+                                "if"
+                                "render"
+                                "ruby"
                                 ))))))
 
 ;;; init-slim-mode.el ends here
