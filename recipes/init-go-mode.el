@@ -39,6 +39,8 @@
  '(gofmt-command "goimports") ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
  '(myinit-go-mode--rainbow-identifiers-stop-words
    '(
+     "err"
+
      "adler32"
      "aes"
      "ascii85"
@@ -183,7 +185,7 @@
      "zlib"
 
      "bool" "Bool"
-     "byte" "Byte"
+     "byte" "Byte" "Bytes"
      "chan" "Chan"
      "complex128" "Complex128"
      "complex64" "Complex64"
@@ -204,6 +206,7 @@
      "uint64" "Uint64"
      "uint8" "Uint8"
      "uintptr" "Uintptr"
+     "Time"
 
      "DB"
      "DBStats"
@@ -287,14 +290,15 @@
                           (buffer-substring-no-properties end (+ end i))
                         (buffer-substring-no-properties end (point-max))))))
     (or
-     (eq face-cur 'font-lock-function-name-face)
      (and
       (or
        (eq face-cur 'font-lock-constant-face)
        (eq face-cur nil))
       (string-match-p "\\`: " ch80-after))
      (and
-      (eq face-cur 'font-lock-type-face)
+      (or
+       (eq face-cur 'font-lock-type-face)
+       (eq face-cur 'font-lock-function-name-face))
       (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))
      (and
       (or
@@ -304,10 +308,10 @@
       (not (member ch-cur
                    '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
       (not (string-match-p "\\`:\\'" ch80-after)) ;(equal ch-after ?\:)
-      (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
-          (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" ch80-after)
-          (string-match-p "\\`\\.[[:space:]\n]*\\(Bytes\\|Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
-                          ch80-after))
+      ;; (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
+      ;;     (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" ch80-after)
+      ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(Bytes\\|Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
+      ;;                     ch80-after))
       (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words))))))
 
 ;; (defun myinit-go-mode--non-ascii-identifiers-init ()
