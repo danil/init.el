@@ -70,6 +70,7 @@
                   " ew:mnl" ;ethan-wspace find NO errors in Makefile, C or Go sources
                   " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
                   " gg" ;git-gutter-mode
+                  " counsel" ;counsel-mode
                   " hl-s" ;highlight-symbol-mode
                   " hlt" ;highlight-thing
                   " hs" ;hideshow
