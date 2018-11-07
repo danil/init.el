@@ -40,7 +40,8 @@
     (with-eval-after-load 'shell (myinit-gotest--customize-keys shell-mode-map)))
   (if (boundp 'go-mode-map) (myinit-gotest--customize-keys go-mode-map)
     (with-eval-after-load 'go-mode (myinit-gotest--customize-keys go-mode-map)))
-  (add-hook 'go-test-mode-hook 'myinit-gotest--set-environment-variables))
+  (add-hook 'go-test-mode-hook 'myinit-gotest--setup)
+  (add-hook 'compilation-finish-functions 'myinit-gotest--teardown))
 
 (defun myinit-gotest--customize-keys (key-map)
   (define-key key-map (kbd "C-c , v") 'go-test-current-file)
@@ -49,12 +50,18 @@
   (define-key key-map (kbd "C-c , b") 'go-test-current-benchmark)
   (define-key key-map (kbd "C-c , x") 'go-run))
 
-(defun myinit-gotest--set-environment-variables ()
+(defun myinit-gotest--setup ()
+  ;; Set environment variables
   ;; Go runtime database driver (for example
   ;; PostgreSQL db driver: `TZ=UTC go test -run='TestYourFunction' .`)
   ;; should be in same timezone with database (for example
   ;; PostgreSQL: `SHOW timezone; SET TIME ZONE 'UTC';`)
   ;; <https://groups.google.com/forum/#!topic/Golang-nuts/4xSYtsLN39g>
   (setenv "TZ" "UTC"))
+
+(defun myinit-gotest--teardown (buffer desc)
+  ;; Unset environment variables
+  (when (equal major-mode 'go-test-mode)
+    (setenv "TZ" nil)))
 
 ;;; init-gotest.el ends here
