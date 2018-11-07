@@ -91,7 +91,8 @@
   (define-key counsel-find-file-map (kbd "C-f") 'myinit-counsel--counsel-find-file-fallback-command)
   (define-key counsel-find-file-map (kbd "C-x C-f") 'myinit-counsel--counsel-find-file-fallback-command))
 
-;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>.
+;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
+;; <https://github.com/abo-abo/swiper/issues/1333>.
 (defun myinit-counsel--counsel-find-file-fallback-command ()
   "Fallback to non-counsel version of current command."
   (interactive)
