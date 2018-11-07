@@ -39,8 +39,6 @@
  '(gofmt-command "goimports") ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
  '(myinit-go-mode--rainbow-identifiers-stop-words
    '(
-     "err"
-
      "adler32"
      "aes"
      "ascii85"
