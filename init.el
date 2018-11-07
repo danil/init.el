@@ -527,6 +527,7 @@
 (my-recipe '(sort))
 (my-recipe '(subword-mode))
 
+;; (my-recipe '(doom-modeline))
 (my-recipe '(mode-line))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))

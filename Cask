@@ -175,8 +175,9 @@
 (depends-on "simp")
 (depends-on "slim-mode")
 
-(depends-on "smart-mode-line")
+(depends-on "doom-modeline")
 (depends-on "rich-minority")
+(depends-on "smart-mode-line")
 
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers") ;highlight each variable uniquely based on its name
