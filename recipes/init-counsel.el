@@ -95,6 +95,7 @@
 (defun myinit-counsel--counsel-find-file-fallback-command ()
   "Fallback to non-counsel version of current command."
   (interactive)
+  (when (bound-and-true-p ivy-mode) (ivy-mode -1))
   (ivy-set-action
    (lambda (current-path)
      (let (; (completing-read-function 'completing-read-default)
@@ -102,8 +103,18 @@
        (let ((i (length current-path)))
          (while (> i 0)
            (push (aref current-path (setq i (1- i))) unread-command-events)))
-       (let ((default-directory "")) (call-interactively 'find-file)))))
+       ;; (add-hook 'find-file-hook
+       ;;           'myinit-counsel--counsel-find-file-fallback-command--enable-ivy)
+       (let ((default-directory "")) (call-interactively 'find-file)))
+     ;; (when (bound-and-true-p ivy-mode) (ivy-mode t))
+     ;; (ivy-mode t)
+     ))
   (ivy-done))
+
+;; (defun myinit-counsel--counsel-find-file-fallback-command--enable-ivy ()
+;;   (ivy-mode t)
+;;   (remove-hook 'find-file-hook
+;;                'myinit-counsel--counsel-find-file-fallback-command--setup-ivy))
 
 (defun myinit-counsel--customize-help()
   "My init customize."
