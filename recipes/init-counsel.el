@@ -48,6 +48,11 @@
 (add-hook 'after-init-hook 'myinit-counsel)
 (defun myinit-counsel ()
   "My init."
+  (if (boundp 'counsel-mode) (myinit-counsel--setup)
+    (with-eval-after-load 'counsel (myinit-counsel--setup)))
+  (counsel-mode t))
+
+(defun myinit-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'

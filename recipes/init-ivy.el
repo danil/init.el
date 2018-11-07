@@ -41,11 +41,11 @@
 (add-hook 'after-init-hook 'myinit-ivy)
 (defun myinit-ivy ()
   "My init."
-  (if (boundp 'ivy-mode) (myinit-lazy-ivy)
-    (with-eval-after-load 'ivy (myinit-lazy-ivy))))
+  (if (boundp 'ivy-mode) (myinit-ivy--setup)
+    (with-eval-after-load 'ivy (myinit-ivy--setup)))
+  (ivy-mode t))
 
-(defun myinit-lazy-ivy ()
-  "My init lazy."
+(defun myinit-ivy--setup ()
   ;; (ivy-mode 1) ; it breaks `find-file'
 
   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
