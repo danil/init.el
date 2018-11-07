@@ -37,7 +37,8 @@
  '(sml/mode-width 'full)
  '(sml/name-width '(0 . 44))
  '(sml/projectile-replacement-format "%s>")
- '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))))
+ '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:")))
+ '(sml/shorten-directory t))
 
 (autoload 'sml/setup "smart-mode-line" nil t)
 
