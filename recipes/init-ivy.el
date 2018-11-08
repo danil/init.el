@@ -43,11 +43,12 @@
   "My init."
   (if (boundp 'ivy-mode) (myinit-ivy--setup)
     (with-eval-after-load 'ivy (myinit-ivy--setup)))
+  ;; Be aware it breaks `find-file'!
   (ivy-mode t))
 
 (defun myinit-ivy--setup ()
-  ;; (ivy-mode 1) ; it breaks `find-file'
-
+  (define-key ivy-minibuffer-map (kbd "C-f") 'myinit-ivy--minibuffer-ivy-fallback)
+  (define-key ivy-minibuffer-map (kbd "C-x C-f") 'myinit-ivy--minibuffer-ivy-fallback)
   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
   (add-hook! 'minibuffer-setup-hook
     (when (member this-command '(
@@ -79,8 +80,31 @@
                                  projectile-switch-to-buffer
                                  ))
       (setq-local truncate-lines t)))
-
   (myinit-customize-ivy))
+
+;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
+;; <https://github.com/abo-abo/swiper/issues/1333>.
+(defun myinit-ivy--minibuffer-ivy-fallback ()
+  "Fallback to non ivy/counsel version of current command."
+  (interactive)
+  (when (bound-and-true-p ivy-mode)
+    (ivy-mode -1)
+    (add-hook 'minibuffer-setup-hook
+              'myinit-ivy--minibuffer-ivy-fallback--enable-ivy ))
+  (ivy-set-action
+   (lambda (current-path)
+     (let (; (completing-read-function 'completing-read-default)
+           (y default-directory))
+       (let ((i (length current-path)))
+         (while (> i 0)
+           (push (aref current-path (setq i (1- i))) unread-command-events)))
+       (let ((default-directory "")) (call-interactively last-command)))))
+  (ivy-done))
+
+(defun myinit-ivy--minibuffer-ivy-fallback--enable-ivy  ()
+  (remove-hook 'minibuffer-setup-hook
+               'myinit-ivy--minibuffer-ivy-fallback--enable-ivy )
+  (ivy-mode t))
 
 (defun myinit-customize-ivy ()
   "My init customize."
