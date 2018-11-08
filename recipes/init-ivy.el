@@ -85,7 +85,7 @@
 ;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
 ;; <https://github.com/abo-abo/swiper/issues/1333>.
 (defun myinit-ivy--minibuffer-ivy-fallback ()
-  "Fallback to non ivy/counsel version of current command."
+  "Fallback to non ivy version of current command."
   (interactive)
   (when (bound-and-true-p ivy-mode)
     (ivy-mode -1)
@@ -93,12 +93,12 @@
               'myinit-ivy--minibuffer-ivy-fallback--enable-ivy ))
   (ivy-set-action
    (lambda (current-path)
-     (let (; (completing-read-function 'completing-read-default)
-           (y default-directory))
+     (let ((old-default-directory default-directory))
        (let ((i (length current-path)))
          (while (> i 0)
            (push (aref current-path (setq i (1- i))) unread-command-events)))
-       (let ((default-directory "")) (call-interactively last-command)))))
+       (let ((default-directory "")) (call-interactively last-command))
+       (setq default-directory old-default-directory))))
   (ivy-done))
 
 (defun myinit-ivy--minibuffer-ivy-fallback--enable-ivy  ()

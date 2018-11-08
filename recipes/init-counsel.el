@@ -102,12 +102,12 @@
               'myinit-counsel--counsel-find-file-fallback-command--enable-ivy))
   (ivy-set-action
    (lambda (current-path)
-     (let (; (completing-read-function 'completing-read-default)
-           (y default-directory))
+     (let ((old-default-directory default-directory))
        (let ((i (length current-path)))
          (while (> i 0)
            (push (aref current-path (setq i (1- i))) unread-command-events)))
-       (let ((default-directory "")) (call-interactively 'find-file)))))
+       (let ((default-directory "")) (call-interactively 'find-file))
+       (setq default-directory old-default-directory))))
   (ivy-done))
 
 (defun myinit-counsel--counsel-find-file-fallback-command--enable-ivy ()
