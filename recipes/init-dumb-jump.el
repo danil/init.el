@@ -39,11 +39,12 @@
   (myinit-after-load 'dumb-jump
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
     (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
-    (define-key dumb-jump-mode-map (my-kbd "j d") 'my-dumb-jump))
+    (define-key dumb-jump-mode-map (my-kbd "j d") 'myinit-dumb-jump--go))
   (dumb-jump-mode))
 
-(defun my-dumb-jump ()
+(defun myinit-dumb-jump--go ()
   (interactive)
+  (dumb-jump-go)
   (let* ((one-more-repeat t)
          (keynames '("j" "k")))
     (while one-more-repeat
