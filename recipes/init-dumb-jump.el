@@ -1,6 +1,6 @@
 ;;; init-dumb-jump.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,35 +35,26 @@
 
 (defun myinit-dumb-jump ()
   "My init."
-
   (myinit-after-load 'dumb-jump
     (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
     (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
-
     (define-key dumb-jump-mode-map (my-kbd "j d") 'my-dumb-jump))
-
   (dumb-jump-mode))
 
 (defun my-dumb-jump ()
   (interactive)
-
   (let* ((one-more-repeat t)
          (keynames '("j" "k")))
-
     (while one-more-repeat
       (message "Dumb jump: `j' jump to the definition; `k' jumps back")
-
       (let* ((event (read-event))
              (keyname (format-kbd-macro (vector event) nil)))
         (clear-this-command-keys t)
-
         (if (member keyname keynames)
             (progn
               (cond ((equal keyname "j") (dumb-jump-go))
                     ((equal keyname "k") (dumb-jump-back)))
-
               (setq last-input-event nil))
-
           (setq one-more-repeat nil)
           (push last-input-event unread-command-events))))))
 
