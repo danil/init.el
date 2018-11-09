@@ -404,7 +404,6 @@
 ;; Ivy (is an ido replacement).
 ;; (my-recipe '(colir))
 ;; (my-recipe '(counsel-auto-complete))
-;; (my-recipe '(counsel-dumb-jump))
 (require 'core-lib "~/.emacs.d/doom-emacs-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
 (my-recipe '(counsel))
 (my-recipe '(historian))
