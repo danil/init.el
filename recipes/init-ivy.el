@@ -94,9 +94,10 @@
   (ivy-set-action
    (lambda (current-path)
      (let ((old-default-directory default-directory))
-       (let ((i (length current-path)))
-         (while (> i 0)
-           (push (aref current-path (setq i (1- i))) unread-command-events)))
+       (when (not (member last-command '(dired-do-copy dired-do-rename)))
+         (let ((i (length current-path)))
+           (while (> i 0)
+             (push (aref current-path (setq i (1- i))) unread-command-events))))
        (let ((default-directory "")) (call-interactively last-command))
        (setq default-directory old-default-directory))))
   (ivy-done))
