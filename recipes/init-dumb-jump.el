@@ -31,8 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-dumb-jump)
+(custom-set-variables '(dumb-jump-selector 'ivy))
 
+(add-hook 'after-init-hook 'myinit-dumb-jump)
 (defun myinit-dumb-jump ()
   "My init."
   (myinit-after-load 'dumb-jump
