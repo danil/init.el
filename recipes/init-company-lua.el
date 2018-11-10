@@ -1,4 +1,4 @@
-;;; init-text-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-company-lua.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,15 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-text-mode)
-(defun myinit-company-text-mode ()
+(add-hook 'after-init-hook 'myinit-company-lua)
+(defun myinit-company-lua ()
   "My init."
-  ;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
-  (if (boundp 'text-mode) (myinit-company-text-mode--setup)
-    (with-eval-after-load 'text-mode (myinit-company-text-mode--setup))))
+  (if (boundp 'company-mode) (myinit-company-lua--setup)
+    (with-eval-after-load 'company (myinit-company-lua--setup))))
 
-(defun myinit-company-text-mode--setup ()
-  ;; (setq text-mode-map (make-sparse-keymap))
-  (define-key text-mode-map [?\C-\M-i] nil))
+(defun myinit-company-lua--setup ()
+  (add-hook 'lua-mode-hook 'myinit-company-lua--setup-lua-mode))
 
-;;; init-text-mode.el ends here
+(defun myinit-company-lua--setup-lua-mode ()
+  (set (make-local-variable 'company-backends)
+       (append company-backends '(company-lua))))
+
+;;; init-company-lua.el ends here

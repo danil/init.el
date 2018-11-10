@@ -70,7 +70,56 @@
   (when (boundp 'myinit-map)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
-    (define-key myinit-map (kbd "j r") 'counsel-rg)))
+    (define-key myinit-map (kbd "j r") 'counsel-rg))
+  (if (boundp 'company-mode) (myinit-counsel--company-setup)
+    (with-eval-after-load 'company (myinit-counsel--company-setup))))
+
+(defun myinit-counsel--company-setup ()
+  (global-set-key [?\C-\M-i] 'myinit-counsel--company) ;; counsel-company completion-at-point
+  )
+
+(defun myinit-counsel--company ()
+  "Complete using `company-candidates'."
+  (interactive)
+  (company-mode t)
+  (let ((initial-input (myinit-counsel--company-grab-symbol)))
+    (unless company-candidates
+      (company-complete)
+      (unless company-candidates
+        (myinit-counsel--company-try-backend 'company-dabbrev)
+        (unless company-candidates
+          (myinit-counsel--company-try-backend 'company-yasnippet)
+          (unless company-candidates
+            (myinit-counsel--company-try-backend 'company-ispell)))))
+    (when company-point
+      (when (looking-back company-common (line-beginning-position))
+        (setq ivy-completion-beg (match-beginning 0))
+        (setq ivy-completion-end (match-end 0)))
+      (ivy-read "Candidates: " company-candidates
+                :action #'ivy-completion-in-region-action
+                :initial-input initial-input ;(when initial-input (format "%s" initial-input))
+                :unwind #'company-abort))))
+
+(defun myinit-counsel--company-try-backend (new-backend)
+  (let ((old-company-backends company-backends))
+    (set (make-local-variable 'company-backends) (cons new-backend '()))
+    (company-complete)
+    (set 'company-backends old-company-backends)))
+
+(defun myinit-counsel--company-grab-symbol ()
+  "If point is at the end of a symbol, return it.
+Otherwise, if point is not inside a symbol, return an empty string."
+  (buffer-substring (point) (save-excursion (skip-syntax-backward "w_")
+                                            (point))))
+
+;; ;; <https://stackoverflow.com/questions/3815467/stripping-duplicate-elements-in-a-list-of-strings-in-elisp#3815828>.
+;; (defun myinit-counsel--strip-duplicates (list)
+;;   (let ((new-list nil))
+;;     (while list
+;;       (when (and (car list) (not (member (car list) new-list)))
+;;         (setq new-list (cons (car list) new-list)))
+;;       (setq list (cdr list)))
+;;     (nreverse new-list)))
 
 (defun myinit-counsel--yank-pop ()
   (interactive)

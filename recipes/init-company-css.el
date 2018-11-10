@@ -1,4 +1,4 @@
-;;; init-text-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-company-css.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,15 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-text-mode)
-(defun myinit-company-text-mode ()
+(add-hook 'after-init-hook 'myinit-company-css)
+(defun myinit-company-css ()
   "My init."
-  ;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
-  (if (boundp 'text-mode) (myinit-company-text-mode--setup)
-    (with-eval-after-load 'text-mode (myinit-company-text-mode--setup))))
+  (if (boundp 'company-mode) (myinit-company-css--setup)
+    (with-eval-after-load 'company (myinit-company-css--setup))))
 
-(defun myinit-company-text-mode--setup ()
-  ;; (setq text-mode-map (make-sparse-keymap))
-  (define-key text-mode-map [?\C-\M-i] nil))
+(defun myinit-company-css--setup ()
+  (add-hook 'css-mode-hook 'myinit-company-css--setup-css-mode))
 
-;;; init-text-mode.el ends here
+(defun myinit-company-css--setup-css-mode ()
+  (set (make-local-variable 'company-backends)
+       (append company-backends '(company-css))))
+
+;;; init-company-css.el ends here

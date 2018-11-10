@@ -90,7 +90,7 @@
   (when (bound-and-true-p ivy-mode)
     (ivy-mode -1)
     (add-hook 'minibuffer-setup-hook
-              'myinit-ivy--minibuffer-ivy-fallback--enable-ivy ))
+              'myinit-ivy--minibuffer-ivy-fallback--enable-ivy))
   (ivy-set-action
    (lambda (current-path)
      (let ((old-default-directory default-directory))

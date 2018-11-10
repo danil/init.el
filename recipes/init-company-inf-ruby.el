@@ -1,4 +1,4 @@
-;;; init-text-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-company-inf-ruby.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,15 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-text-mode)
-(defun myinit-company-text-mode ()
+(add-hook 'after-init-hook 'myinit-company-inf-ruby)
+(defun myinit-company-inf-ruby ()
   "My init."
-  ;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
-  (if (boundp 'text-mode) (myinit-company-text-mode--setup)
-    (with-eval-after-load 'text-mode (myinit-company-text-mode--setup))))
+  (if (boundp 'company-mode) (myinit-company-inf-ruby--setup)
+    (with-eval-after-load 'company (myinit-company-inf-ruby--setup))))
 
-(defun myinit-company-text-mode--setup ()
-  ;; (setq text-mode-map (make-sparse-keymap))
-  (define-key text-mode-map [?\C-\M-i] nil))
+(defun myinit-company-inf-ruby--setup ()
+  (add-hook 'inf-ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode))
 
-;;; init-text-mode.el ends here
+(defun myinit-company-inf-ruby--setup-inf-ruby-mode ()
+  (set (make-local-variable 'company-backends)
+       (append company-backends '(company-inf-ruby))))
+
+;;; init-company-inf-ruby.el ends here

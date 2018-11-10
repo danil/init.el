@@ -32,19 +32,22 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-emacs-lisp-mode)
-
 (defun myinit-emacs-lisp-mode ()
   "My init."
-
   (myinit-add-mode-to-patterns 'emacs-lisp-mode
                                  "/\\.?abbrev_defs\\'"
                                  "/\\.emacs\\.d/bookmarks\\'"
                                  "/ac-comphist\\.dat\\'"
                                  "\\.el\\.\\(tpl\\|template\\)\\'")
+  (if (boundp 'emacs-lisp-mode) (myinit-emacs-lisp-mode--setup)
+    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup)))
+  )
 
-  (myinit-after-load 'lisp-mode
-    (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
-    (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)))
+(defun myinit-emacs-lisp-mode--setup ()
+  (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
+  (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map [?\C-\M-i] nil))
 
 (defun my-eval-buffer ()
   (interactive)

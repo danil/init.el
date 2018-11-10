@@ -305,11 +305,27 @@
 (my-recipe '(ansi-color))
 (my-recipe '(anzu))
 
-;; (my-recipe '(ac-html-bootstrap))
-(my-recipe '(ac-html))
-(my-recipe '(ac-ispell))
-(my-recipe '(auto-complete))
-(my-recipe '(auto-complete-chunk))
+;; ;; AC mode auto complete.
+;; ;; (my-recipe '(ac-html-bootstrap))
+;; (my-recipe '(ac-html))
+;; (my-recipe '(ac-ispell))
+;; (my-recipe '(auto-complete))
+;; (my-recipe '(auto-complete-chunk))
+;; (my-recipe '(go-autocomplete))
+
+;; Company mode auto complete.
+;; (my-recipe '(company-ansible))
+;; (my-recipe '(company-statistics))
+(my-recipe '(company))
+(my-recipe '(company-erlang))
+(my-recipe '(company-go))
+(my-recipe '(company-inf-ruby))
+(my-recipe '(company-lua))
+(my-recipe '(company-nginx))
+(my-recipe '(company-shell))
+(my-recipe '(company-web))
+(my-recipe '(company-css))
+(my-recipe '(company-elisp))
 
 (my-recipe '(bash-completion))
 (my-recipe '(bookmark))
@@ -374,7 +390,6 @@
 (my-recipe '(flycheck-bashate))
 (my-recipe '(flycheck-golangci-lint))
 
-(my-recipe '(go-autocomplete))
 (my-recipe '(go-mode))
 (my-recipe '(godoctor))
 (my-recipe '(gotest))
@@ -462,6 +477,7 @@
 (my-recipe '(my-backspace-fix))
 (my-recipe '(my-beginning-of-line))
 (my-recipe '(my-color-theme))
+(my-recipe '(my-current-local-map))
 (my-recipe '(my-project))
 (my-recipe '(my-shell-command-on-current-file))
 (my-recipe '(my-sort))
@@ -539,6 +555,7 @@
 (my-recipe '(sql-postgres))
 
 (my-recipe '(telnet))
+(my-recipe '(text-mode))
 (my-recipe '(tldr))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))

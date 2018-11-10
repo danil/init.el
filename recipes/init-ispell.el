@@ -1,6 +1,6 @@
 ;;; init-ispell.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,15 +32,18 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-ispell)
-
 (defun myinit-ispell ()
   "My init."
+  (if (boundp 'ispell-minor-mode) (myinit-ispell--setup)
+    (with-eval-after-load 'ispell (myinit-ispell--setup))))
 
+(defun myinit-ispell--setup ()
+  "My init."
+  ;; (define-key ispell-menu-map [?\C-\M-i] nil)
+  ;; (define-key ispell-menu-map-needed [?\C-\M-i] nil)
   ;; (setq-default ispell-program-name "/usr/bin/aspell")
   ;; (setq-default ispell-program-name "/usr/bin/hunspell")
-  (setq ispell-dictionary "ru")
-
   ;; (setq ispell-dictionary "german")
-  )
+  (setq ispell-dictionary "ru"))
 
 ;;; init-ispell.el ends here
