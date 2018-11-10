@@ -49,7 +49,7 @@
                       mode-line-end-spaces)))
 
 (custom-set-faces
- '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ; :background gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))) ; :background black gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
  )
 
@@ -59,11 +59,12 @@
 ;;   (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update))
 
 ;; (defun myinit-mode-line--face-mode-line-update ()
-;;   (if (equal (count-windows) 1)
+;;   (unless (active-minibuffer-window)
+;;     (if (equal (count-windows) 1)
+;;         (custom-set-faces
+;;          '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
 ;;       (custom-set-faces
-;;        '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
-;;     (custom-set-faces
-;;      '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
+;;        '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue"))))))))
 
 ;; ;; (defun myinit-mode-line--count-windows (&optional minibuf)
 ;; ;;   "Return the number of visible windows.
