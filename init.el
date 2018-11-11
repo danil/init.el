@@ -1,6 +1,6 @@
 ;;; init.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((cask) (myinit))
@@ -315,8 +315,13 @@
 
 ;; Company mode auto complete.
 ;; (my-recipe '(company-ansible))
+;; (my-recipe '(company-ispell)) ;; very slow, see `myinit-counsel--company' function
 ;; (my-recipe '(company-statistics))
 (my-recipe '(company))
+(my-recipe '(company-css))
+(my-recipe '(company-dabbrev))
+(my-recipe '(company-dabbrev-code))
+(my-recipe '(company-elisp))
 (my-recipe '(company-erlang))
 (my-recipe '(company-go))
 (my-recipe '(company-inf-ruby))
@@ -324,8 +329,6 @@
 (my-recipe '(company-nginx))
 (my-recipe '(company-shell))
 (my-recipe '(company-web))
-(my-recipe '(company-css))
-(my-recipe '(company-elisp))
 
 (my-recipe '(bash-completion))
 (my-recipe '(bookmark))
@@ -416,10 +419,22 @@
 (my-recipe '(hl-todo))
 (my-recipe '(hydra))
 
+;; doom emacs.
+(require 'core-lib "~/.emacs.d/doom-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
+;; (load "~/.emacs.d/doom-modeline.el")
+;; (autoload 'doom-modeline "~/.emacs.d/doom-modeline.el" nil t)
+(autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
+
+;; mode-line
+(my-recipe '(rich-minority))
+(my-recipe '(smart-mode-line))
+(my-recipe '(cyphejor))
+(my-recipe '(mode-line))
+;; (my-recipe '(doom-modeline))
+
 ;; Ivy (is an ido replacement).
 ;; (my-recipe '(colir))
 ;; (my-recipe '(counsel-auto-complete))
-(require 'core-lib "~/.emacs.d/doom-emacs-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
 (my-recipe '(counsel))
 (my-recipe '(historian))
 (my-recipe '(ivy))
@@ -440,8 +455,8 @@
 ;; (my-recipe '(ido-vertical-mode))
 ;; (my-recipe '(ido-yes-or-no))
 
+;; (my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (my-recipe '(ibuffer))
-(my-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (my-recipe '(ielm))
 (my-recipe '(indent))
 (my-recipe '(inf-mongo))
@@ -542,12 +557,6 @@
 (my-recipe '(slim-mode))
 (my-recipe '(sort))
 (my-recipe '(subword-mode))
-
-;; (my-recipe '(doom-modeline))
-(my-recipe '(mode-line))
-(my-recipe '(rich-minority))
-(my-recipe '(smart-mode-line))
-(my-recipe '(cyphejor))
 
 (my-recipe '(sql))
 (my-recipe '(sql-mode))

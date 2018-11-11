@@ -1,6 +1,6 @@
 ;;; init-auto-complete.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,14 +31,126 @@
 
 ;;; Code:
 
+(defcustom myinit-auto-complete--modes '()
+  "Modes associated with `auto-complete-mode'."
+  :group 'myinit)
+
 ;; The common sources for all modes
 ;; <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>.
 (custom-set-variables
- '(ac-auto-show-menu nil)
- '(ac-comphist-file (expand-file-name (concat "~/.emacs.var"
-                                              "/ac-comphist.dat")))
- '(ac-delay 0.7) ;tradeoff between typing speed and performance
- ;; '(ac-flycheck-poll-completion-end-interval 1.1)
+ '(myinit-auto-complete--modes '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+                                 autoconf-mode
+                                 awk-mode
+                                 c-mode
+                                 cask-mode
+                                 change-log-mode
+                                 cider-mode
+                                 cider-repl-mode
+                                 clojure-mode
+                                 coffee-mode
+                                 conf-colon-mode
+                                 conf-mode
+                                 conf-space-mode
+                                 conf-unix-mode
+                                 conf-windows-mode
+                                 conf-xdefaults-mode
+                                 crontab-mode
+                                 csharp-mode
+                                 css-mode
+                                 diff-mode
+                                 dired-mode
+                                 dockerfile-mode
+                                 ebuild-mode
+                                 elixir-mode
+                                 emacs-lisp-mode
+                                 enh-ruby-mode
+                                 ferm-mode
+                                 fish-mode
+                                 git-commit-mode
+                                 gitconfig-mode
+                                 gitignore-mode
+                                 go-mode
+                                 haml-mode
+                                 haskell-mode
+                                 html-mode
+                                 inf-mongo-mode
+                                 inf-ruby-mode
+                                 jade-mode
+                                 java-mode
+                                 js-mode
+                                 js2-mode
+                                 json-mode
+                                 less-css-mode
+                                 lisp-mode
+                                 litcoffee-mode
+                                 lua-mode
+                                 magit-log-edit-mode
+                                 makefile-gmake-mode
+                                 markdown-mode
+                                 mediawiki-mode
+                                 mustache-mode
+                                 nginx-mode
+                                 nodejs-repl-mode
+                                 nroff-mode
+                                 nxml-mode
+                                 org-mode
+                                 perl-mode
+                                 php-mode
+                                 protobuf-mode
+                                 python-mode
+                                 redis-cli-mode
+                                 restclient-mode
+                                 rhtml-mode
+                                 ruby-mode
+                                 rust-mode
+                                 sass-mode
+                                 scss-mode
+                                 sgml-mode
+                                 sh-mode
+                                 shell-mode
+                                 sieve-mode
+                                 slim-mode
+                                 snippet-mode
+                                 sql-interactive-mode
+                                 sql-mode
+                                 telnet-mode
+                                 text-mode
+                                 toml-mode
+                                 wdired-mode
+                                 web-mode
+                                 xml-mode
+                                 yaml-mode
+                                 ))
+ ;; '(ac-candidate-limit nil)
+ ;; '(ac-candidate-menu-min 1)
+ ;; '(ac-compatible-packages-regexp)
+ ;; '(ac-comphist-threshold 0.7)
+ ;; '(ac-dictionary-files '("~/.dict"))
+ ;; '(ac-disable-inline nil)
+ ;; '(ac-dwim t)
+ ;; '(ac-expand-on-auto-complete t)
+ ;; '(ac-flycheck-poll-completion-end-interval 1.1) ;; 0.5
+ ;; '(ac-fuzzy-cursor-color "red")
+ ;; '(ac-non-trigger-commands)
+ ;; '(ac-quick-help-delay 1.5)
+ ;; '(ac-show-menu-immediately-on-auto-complete t)
+ ;; '(ac-stop-words nil)
+ ;; '(ac-trigger-commands)
+ ;; '(ac-trigger-commands-on-completing)
+ ;; '(ac-trigger-key nil)
+ ;; '(ac-use-comphist t)
+ ;; '(ac-use-dictionary-as-stop-words t)
+ ;; '(ac-use-fuzzy (and (locate-library "fuzzy") t))
+ ;; '(ac-use-menu-map nil)
+ ;; '(ac-use-overriding-local-map nil)
+ ;; '(ac-use-quick-help t)
+ ;; '(ac-user-dictionary nil)
+ '(ac-auto-show-menu nil) ;; 0.8
+ '(ac-auto-start nil)
+ '(ac-comphist-file (expand-file-name (concat "~/.emacs.var" "/ac-comphist.dat"))) ;; (expand-file-name (concat (if (boundp 'user-emacs-directory) user-emacs-directory "~/.emacs.d/") "/ac-comphist.dat"))
+ '(ac-delay 0) ;; 0.7 0.1 tradeoff between typing speed and performance
+ '(ac-disable-faces '(font-lock-doc-face)) ;; font-lock-comment-face font-lock-string-face font-lock-doc-face
+ '(ac-ignore-case nil) ;; 'smart preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
  '(ac-sources
    '(ac-source-abbrev
      ac-source-words-in-buffer
@@ -46,123 +158,45 @@
      ac-source-files-in-current-dir
      ac-source-filename
      ac-source-dictionary
-     ac-source-yasnippet)))
+     ac-source-yasnippet))
+ )
 
 (add-hook 'after-init-hook 'myinit-auto-complete)
-
 (defun myinit-auto-complete ()
   "My init."
-
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
-  (ac-config-default)
+  (if (boundp 'auto-complete-mode) (myinit-auto-complete--setup)
+    (with-eval-after-load 'auto-complete (myinit-auto-complete--setup)))
+  (dolist (hook '(
+                  less-css-mode-hook
+                  sass-mode-hook
+                  scss-mode-hook
+                  ))
+    (add-hook hook 'myinit-auto-complete--setup-css))
+  (ac-config-default))
 
-  (myinit-after-load 'auto-complete-config
-    (add-to-list 'ac-dictionary-directories
-                 (expand-file-name (concat user-emacs-directory
-                                           "my-auto-complete/dict")
-                                   default-directory))
-    (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
-                    autoconf-mode
-                    awk-mode
-                    c-mode
-                    cask-mode
-                    change-log-mode
-                    cider-mode
-                    cider-repl-mode
-                    clojure-mode
-                    coffee-mode
-                    conf-colon-mode
-                    conf-mode
-                    conf-space-mode
-                    conf-unix-mode
-                    conf-windows-mode
-                    conf-xdefaults-mode
-                    crontab-mode
-                    csharp-mode
-                    css-mode
-                    diff-mode
-                    dired-mode
-                    dockerfile-mode
-                    ebuild-mode
-                    elixir-mode
-                    emacs-lisp-mode
-                    enh-ruby-mode
-                    ferm-mode
-                    fish-mode
-                    git-commit-mode
-                    gitconfig-mode
-                    gitignore-mode
-                    go-mode
-                    haml-mode
-                    haskell-mode
-                    html-mode
-                    inf-mongo-mode
-                    inf-ruby-mode
-                    jade-mode
-                    java-mode
-                    js-mode
-                    js2-mode
-                    json-mode
-                    less-css-mode
-                    lisp-mode
-                    litcoffee-mode
-                    lua-mode
-                    magit-log-edit-mode
-                    makefile-gmake-mode
-                    markdown-mode
-                    mediawiki-mode
-                    mustache-mode
-                    nginx-mode
-                    nodejs-repl-mode
-                    nroff-mode
-                    nxml-mode
-                    org-mode
-                    perl-mode
-                    php-mode
-                    protobuf-mode
-                    python-mode
-                    redis-cli-mode
-                    restclient-mode
-                    rhtml-mode
-                    ruby-mode
-                    rust-mode
-                    sass-mode
-                    scss-mode
-                    sgml-mode
-                    sh-mode
-                    shell-mode
-                    sieve-mode
-                    slim-mode
-                    snippet-mode
-                    sql-interactive-mode
-                    sql-mode
-                    telnet-mode
-                    text-mode
-                    toml-mode
-                    wdired-mode
-                    web-mode
-                    xml-mode
-                    yaml-mode
-                    ))
-      (add-to-list 'ac-modes mode))
-    (ac-linum-workaround) ;<https://github.com/auto-complete/auto-complete/blob/da864398a96805a2c79ac61fadeebd420ccb3cdc/doc/manual.md#linum-mode-tries-to-display-the-line-numbers-even-for-the-comletion-menu--linum-mode-bug>
-    (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
-    (setq ac-disable-faces (quote (font-lock-doc-face))))
+(defun myinit-auto-complete--setup ()
+  (add-to-list 'ac-dictionary-directories
+               (expand-file-name (concat user-emacs-directory
+                                         "my-auto-complete/dict")
+                                 default-directory))
+  (dolist (mode myinit-auto-complete--modes)
+    (add-to-list 'ac-modes mode))
+  (ac-linum-workaround) ;<https://github.com/auto-complete/auto-complete/blob/da864398a96805a2c79ac61fadeebd420ccb3cdc/doc/manual.md#linum-mode-tries-to-display-the-line-numbers-even-for-the-comletion-menu--linum-mode-bug>
 
-  (myinit-after-load 'auto-complete
-    ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
-    ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+  ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
+  ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+  (define-key ac-completing-map "\r" nil) ;; Remove auto-complet from enter/return keys <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
+  (define-key ac-completing-map [return] nil) ;; Remove auto-complet from enter/return keys <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
+  )
 
-    ;; Remove auto-complet from enter/return keys
-    ;; <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
-    (define-key ac-completing-map "\r" nil)
-    (define-key ac-completing-map [return] nil))
+(defun myinit-auto-complete--setup-css ()
+  (add-to-list 'ac-sources 'ac-source-css-property))
 
-  (myinit-add-mode-to-hooks (lambda ()
-                              (add-to-list 'ac-sources
-                                           'ac-source-css-property))
-                            '(less-css-mode-hook
-                              sass-mode-hook
-                              scss-mode-hook)))
+;; (defun myinit-auto-complete--grab-symbol ()
+;;   "If point is at the end of a symbol, return it.
+;; Otherwise, if point is not inside a symbol, return an empty string."
+;;   (buffer-substring (point)
+;;                     (save-excursion (skip-syntax-backward "w_") (point))))
 
 ;;; init-auto-complete.el ends here

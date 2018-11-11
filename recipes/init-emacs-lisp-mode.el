@@ -39,9 +39,8 @@
                                  "/\\.emacs\\.d/bookmarks\\'"
                                  "/ac-comphist\\.dat\\'"
                                  "\\.el\\.\\(tpl\\|template\\)\\'")
-  (if (boundp 'emacs-lisp-mode) (myinit-emacs-lisp-mode--setup)
-    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup)))
-  )
+  (if (boundp 'emacs-lisp-mode-map) (myinit-emacs-lisp-mode--setup)
+    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup))))
 
 (defun myinit-emacs-lisp-mode--setup ()
   (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)

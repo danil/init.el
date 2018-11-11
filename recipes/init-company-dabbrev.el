@@ -1,4 +1,4 @@
-;;; init-iedit.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-company-dabbrev.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,16 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-iedit)
-(defun myinit-iedit ()
-  "My init."
-  (define-key myinit-map (kbd "c s") 'iedit-mode)
-  (define-key myinit-map (kbd "c S r") 'iedit-rectangle-mode)
-  (if (boundp 'iedit-mode) (myinit-iedit--setup)
-    (with-eval-after-load 'iedit (myinit-iedit--setup))
-    (with-eval-after-load 'iedit-lib (myinit-iedit--setup))))
+(custom-set-variables '(company-dabbrev-minimum-length 3))
 
-(defun myinit-iedit--setup ()
-  (set-face-attribute 'iedit-occurrence nil :inherit 'lazy-highlight))
+;; (add-hook 'after-init-hook 'myinit-company-dabbrev)
+;; (defun myinit-company-dabbrev () "My init.")
 
-;;; init-iedit.el ends here
+;;; init-company-dabbrev.el ends here

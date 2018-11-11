@@ -1,6 +1,6 @@
 ;;; init-highlight-symbol.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -41,29 +41,38 @@
 
 (custom-set-variables
  '(highlight-symbol-highlight-single-occurrence nil)
- '(highlight-symbol-idle-delay 0.5)
+ '(highlight-symbol-idle-delay 0.2) ;; 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
  '(myinit-highlight-symbol-modes (-union myinit-programming-modes '(shell-mode)))
- '(myinit-highlight-symbol-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) myinit-highlight-symbol-modes)))
+ '(myinit-highlight-symbol-modes-hooks
+   (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
+           myinit-highlight-symbol-modes)))
 
 (add-hook 'after-init-hook 'myinit-highlight-symbol)
-
 (defun myinit-highlight-symbol ()
   "My init."
-
   (dolist (hook myinit-highlight-symbol-modes-hooks)
-    (add-hook hook 'myinit-highlight-symbol--lazyinit))
+    (add-hook hook 'myinit-highlight-symbol--setup-hook))
+  (if (boundp 'highlight-symbol-mode) (myinit-highlight-symbol--setup)
+    (with-eval-after-load 'highlight-symbol (myinit-highlight-symbol--setup))))
 
-  (with-eval-after-load 'highlight-symbol
-    (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
-    (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
+(defun myinit-highlight-symbol--setup-hook ()
+  "Setup hook `highlight-symbol'."
+  (if (fboundp 'highlight-symbol-mode) (myinit-highlight-symbol--setup-lazy)
+    (with-eval-after-load 'highlight-symbol (myinit-highlight-symbol--setup-lazy))))
 
-    (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight)))))))
+(defun myinit-highlight-symbol--setup-lazy ()
+  "Lazy setup `highlight-symbol'."
+  (cond ((equal major-mode 'ruby-mode) (> (buffer-size) 100000))
+        (t (myinit-run-with-idle-timer-in-current-buffer
+            myinit-default-idle-timer-seconds nil 'highlight-symbol-mode))))
 
-(defun myinit-highlight-symbol--lazyinit ()
-  "Run `highlight-symbol'."
-
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'highlight-symbol-mode))
+(defun myinit-highlight-symbol--setup ()
+  "Setup `highlight-symbol'."
+  ;; (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
+  ;; (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
+  (define-key myinit-map (kbd "c s c") 'highlight-symbol-count)
+  (define-key myinit-map (kbd "c s q") 'highlight-symbol-query-replace)
+  (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight))))))
 
 ;;; init-highlight-symbol.el ends here

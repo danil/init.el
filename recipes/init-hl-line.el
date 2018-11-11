@@ -1,6 +1,6 @@
 ;;; init-hl-line.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,15 +32,27 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-hl-line)
-
 (defun myinit-hl-line ()
   "My init."
-
   (define-key myinit-map (kbd "C-v") 'hl-line-mode)
+  (if (boundp 'hl-line-mode) (myinit-hl-line--setup)
+    (with-eval-after-load 'hl-line (myinit-hl-line--setup))))
 
-  (myinit-after-load 'hl-line
-    ;; (set-face-background 'highlight nil)
+(defun myinit-hl-line--setup ()
+  ;; (defface hl-line-inactive
+  ;;   '((t nil))
+  ;;   "Inactive variant of `hl-line'."
+  ;;   :group 'hl-line)
+  ;; (add-hook 'buffer-list-update-hook
+  ;;           (lambda () (walk-windows #'myinit-hl-line--update-face nil t)))
+  (set-face-attribute hl-line-face nil :inherit nil :underline t))
 
-    (set-face-attribute hl-line-face nil :inherit nil :underline t)))
+;; (defun myinit-hl-line--update-face (window)
+;;   "Update the `hl-line' face in WINDOW to indicate whether the window is selected."
+;;   (with-current-buffer (window-buffer window)
+;;     (when hl-line-mode
+;;       (if (eq (current-buffer) (window-buffer (selected-window)))
+;;           (face-remap-reset-base 'hl-line)
+;;         (face-remap-set-base 'hl-line (face-all-attributes 'hl-line-inactive))))))
 
 ;;; init-hl-line.el ends here

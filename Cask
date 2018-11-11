@@ -24,13 +24,14 @@
 
 ;; ;; AC auto complete.
 ;; ;; (depends-on "ac-html-bootstrap")
+;; ;; (depends-on "auto-complete-chunk")
 ;; ;; (depends-on "auto-complete-emacs-lisp" :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" "Auto-complete sources for emacs lisp")
 ;; (depends-on "ac-etags")
 ;; (depends-on "ac-ispell")
 ;; (depends-on "auto-complete")
-;; (depends-on "auto-complete-chunk")
 ;; (depends-on "auto-complete-nxml")
 ;; (depends-on "auto-complete-pcmp")
+;; (depends-on "go-autocomplete")
 
 ;; Company auto complete.
 ;; (depends-on "company-ansible")
@@ -91,7 +92,6 @@
 
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
-(depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "go-projectile")
 (depends-on "go-snippets")
@@ -106,6 +106,7 @@
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 
+;; (depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
 (depends-on "crm-custom")
 (depends-on "css-comb") ;css formater
 (depends-on "haml-mode")
@@ -113,7 +114,6 @@
 (depends-on "hl-todo")
 (depends-on "hydra") ;key bindings
 (depends-on "ibuffer-vc")
-(depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
 (depends-on "inf-mongo")
 
 ;; Ido.
@@ -189,7 +189,8 @@
 (depends-on "simp")
 (depends-on "slim-mode")
 
-(depends-on "doom-modeline")
+;; mode-line
+;; (depends-on "doom-modeline")
 (depends-on "rich-minority")
 (depends-on "smart-mode-line")
 
