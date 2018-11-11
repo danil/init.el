@@ -40,8 +40,7 @@
 
 (defun myinit-shell--setup ()
   "My init."
-  ;; (define-key shell-mode-map [tab] nil)
-  ;; (define-key shell-mode-map (kbd "TAB") nil)
+  (define-key shell-mode-map (kbd "TAB") nil)
   (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear))
 
 (defun my-shell-clear (&optional arg)
