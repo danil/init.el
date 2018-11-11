@@ -42,6 +42,12 @@
 
 (defun myinit-company-ansible--setup-ansible ()
   (set (make-local-variable 'company-backends)
-       (append '(company-ansible) company-backends)))
+       (append '((
+                  company-ansible
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-ansible.el ends here

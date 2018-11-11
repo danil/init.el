@@ -38,10 +38,17 @@
     (with-eval-after-load 'company (myinit-company-inf-ruby--setup))))
 
 (defun myinit-company-inf-ruby--setup ()
-  (add-hook 'inf-ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode))
+  (add-hook 'inf-ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode)
+  (add-hook 'ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode))
 
 (defun myinit-company-inf-ruby--setup-inf-ruby-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-inf-ruby) company-backends)))
+       (append '((
+                  company-inf-ruby
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-inf-ruby.el ends here

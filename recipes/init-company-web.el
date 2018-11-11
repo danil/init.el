@@ -45,14 +45,32 @@
 
 (defun myinit-company-web--setup-web-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-web-html) company-backends)))
+       (append '((
+                  company-web-html
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 (defun myinit-company-web--setup-jade-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-web-jade) company-backends)))
+       (append '((
+                  company-web-jade
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 (defun myinit-company-web--setup-slim-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-web-slim) company-backends)))
+       (append '((
+                  company-web-slim
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-web.el ends here

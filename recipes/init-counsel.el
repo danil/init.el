@@ -87,7 +87,7 @@
         ((equal current-prefix-arg 4)
          (myinit-company--complete-with-backend 'company-abbrev))
         ((equal current-prefix-arg 7)
-         (myinit-company--complete-with-backend '(company-dabbrev-code company-dabbrev)))
+         (myinit-company--complete-with-backend 'company-dabbrev-code))
         ((equal current-prefix-arg 8)
          (myinit-company--complete-with-backend 'company-dabbrev))
         (current-prefix-arg

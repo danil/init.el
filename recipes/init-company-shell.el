@@ -43,8 +43,13 @@
 
 (defun myinit-company-shell--setup-sh-mode ()
   ;; (add-to-list 'company-backends '(company-shell company-shell-env company-fish-shell))
-  (message "aaaaaaaaaaaaaaaaaaaaaaaaa")
   (set (make-local-variable 'company-backends)
-       (append '(company-shell) company-backends)))
+       (append '((
+                  company-shell
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-shell.el ends here

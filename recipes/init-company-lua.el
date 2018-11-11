@@ -42,6 +42,12 @@
 
 (defun myinit-company-lua--setup-lua-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-lua) company-backends)))
+       (append '((
+                  company-lua
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-lua.el ends here

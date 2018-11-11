@@ -42,6 +42,12 @@
 
 (defun myinit-company-go--setup-go-mode ()
   (set (make-local-variable 'company-backends)
-       (append '(company-go) company-backends)))
+       (append '((
+                  company-go
+                  company-dabbrev-code
+                  company-gtags
+                  company-etags
+                  company-keywords
+                  )) company-backends)))
 
 ;;; init-company-go.el ends here
