@@ -42,6 +42,6 @@
 
 (defun myinit-company-elisp--setup-emacs-lisp-mode ()
   (set (make-local-variable 'company-backends)
-       (append company-backends '(company-elisp))))
+       (append '(company-elisp) company-backends)))
 
 ;;; init-company-elisp.el ends here

@@ -42,6 +42,6 @@
 
 (defun myinit-company-css--setup-css-mode ()
   (set (make-local-variable 'company-backends)
-       (append company-backends '(company-css))))
+       (append '(company-css) company-backends)))
 
 ;;; init-company-css.el ends here

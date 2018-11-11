@@ -42,6 +42,6 @@
 
 (defun myinit-company-inf-ruby--setup-inf-ruby-mode ()
   (set (make-local-variable 'company-backends)
-       (append company-backends '(company-inf-ruby))))
+       (append '(company-inf-ruby) company-backends)))
 
 ;;; init-company-inf-ruby.el ends here

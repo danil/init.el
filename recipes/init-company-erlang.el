@@ -42,6 +42,6 @@
 
 (defun myinit-company-erlang--setup-erlang-mode ()
   (set (make-local-variable 'company-backends)
-       (append company-backends '(company-erlang))))
+       (append '(company-erlang) company-backends)))
 
 ;;; init-company-erlang.el ends here

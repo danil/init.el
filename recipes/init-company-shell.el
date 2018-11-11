@@ -38,11 +38,13 @@
     (with-eval-after-load 'company (myinit-company-shell--setup))))
 
 (defun myinit-company-shell--setup ()
-  (add-hook 'sh-mode-hook 'myinit-company-shell--setup-sh-mode))
+  (add-hook 'sh-mode-hook 'myinit-company-shell--setup-sh-mode)
+  (add-hook 'shell-mode-hook 'myinit-company-shell--setup-sh-mode))
 
 (defun myinit-company-shell--setup-sh-mode ()
   ;; (add-to-list 'company-backends '(company-shell company-shell-env company-fish-shell))
+  (message "aaaaaaaaaaaaaaaaaaaaaaaaa")
   (set (make-local-variable 'company-backends)
-       (append company-backends '(company-shell))))
+       (append '(company-shell) company-backends)))
 
 ;;; init-company-shell.el ends here
