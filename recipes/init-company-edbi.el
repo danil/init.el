@@ -1,4 +1,4 @@
-;;; init-inf-ruby.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-company-edbi.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,19 +31,21 @@
 
 ;;; Code:
 
-;;; Comint mode (which shell mode and sql mode based on)
-;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
-
-(add-hook 'after-init-hook 'myinit-inf-ruby)
-(defun myinit-inf-ruby ()
+(add-hook 'after-init-hook 'myinit-company-edbi)
+(defun myinit-company-edbi ()
   "My init."
-  (if (boundp 'inf-ruby-mode-map) (myinit-inf-ruby--setup)
-    (with-eval-after-load 'inf-ruby (myinit-inf-ruby--setup))))
+  (if (boundp 'company-mode) (myinit-company-edbi--setup)
+    (with-eval-after-load 'company (myinit-company-edbi--setup))))
 
-(defun myinit-inf-ruby--setup ()
-  (define-key inf-ruby-mode-map (kbd "TAB") nil)
-  (myinit-comint--create-history-fn "myinit-inf-ruby--turn-on-history"
-                                    "~/.irb-history")
-  (add-hook 'inf-ruby-mode-hook 'myinit-inf-ruby--turn-on-history))
+(defun myinit-company-edbi--setup ()
+  (add-hook 'sql-interactive-mode-hook 'myinit-company-edbi--setup-sql-mode)
+  (add-hook 'shell-mode-hook 'myinit-company-edbi--setup-sql-mode))
 
-;;; init-inf-ruby.el ends here
+(defun myinit-company-edbi--setup-sql-mode ()
+  (set (make-local-variable 'company-backends)
+       (append '((
+                  company-edbi
+                  company-dabbrev
+                  )) company-backends)))
+
+;;; init-company-edbi.el ends here

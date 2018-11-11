@@ -35,6 +35,7 @@
 
 ;; Company auto complete.
 ;; (depends-on "company-ansible")
+;; (depends-on "company-edbi")
 ;; (depends-on "company-statistics")
 (depends-on "company")
 (depends-on "company-erlang")

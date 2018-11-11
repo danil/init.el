@@ -315,6 +315,7 @@
 
 ;; Company mode auto complete.
 ;; (my-recipe '(company-ansible))
+;; (my-recipe '(company-edbi))
 ;; (my-recipe '(company-ispell)) ;; very slow, see `myinit-counsel--company' function
 ;; (my-recipe '(company-statistics))
 (my-recipe '(company))
