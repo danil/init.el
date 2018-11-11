@@ -421,16 +421,14 @@
 
 ;; doom emacs.
 (require 'core-lib "~/.emacs.d/doom-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
-;; (load "~/.emacs.d/doom-modeline.el")
-;; (autoload 'doom-modeline "~/.emacs.d/doom-modeline.el" nil t)
-(autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
+;; (autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
 
 ;; mode-line
+;; (my-recipe '(doom-modeline))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
 (my-recipe '(cyphejor))
 (my-recipe '(mode-line))
-;; (my-recipe '(doom-modeline))
 
 ;; Ivy (is an ido replacement).
 ;; (my-recipe '(colir))

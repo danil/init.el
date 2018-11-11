@@ -485,6 +485,13 @@ active.")
                                  (if (eq idx len) "\"};" "\",\n")))))
         'xpm t :ascent 'center)))))
 
+;; Given ~/Projects/FOSS/emacs/lisp/comint.el
+;;   truncate-upto-project => ~/P/F/emacs/lisp/comint.el
+;;   truncate-upto-root    => ~/P/F/e/lisp/comint.el
+;;   truncate-all          => ~/P/F/e/l/comint.el
+;;   relative-from-project => emacs/lisp/comint.el
+;;   relative-to-project   => lisp/comint.el
+;;   file-name             => comint.el
 (defun doom-modeline-buffer-file-name ()
   "Propertized variable `buffer-file-name' based on `doom-modeline-buffer-file-name-style'."
   (let ((buffer-file-name (or (buffer-file-name (buffer-base-buffer)) "")))

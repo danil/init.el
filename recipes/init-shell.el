@@ -1,6 +1,6 @@
 ;;; init-shell.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,31 +32,30 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'myinit-shell)
-
 (defun myinit-shell ()
   "My init."
-
   (define-key myinit-exec-map (kbd "s") 'shell)
+  (if (boundp 'shell-mode-map) (myinit-shell--setup)
+    (with-eval-after-load 'shell (myinit-shell--setup))))
 
-  (myinit-after-load 'shell
-    (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear)))
+(defun myinit-shell--setup ()
+  "My init."
+  ;; (define-key shell-mode-map [tab] nil)
+  ;; (define-key shell-mode-map (kbd "TAB") nil)
+  (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear))
 
 (defun my-shell-clear (&optional arg)
   "Delete output from shell or kill output from shell if `ARG'.
 Clear current shell beginning with a-la prompt to `point-min'.
 Clearing by `delete-region' or by `kill-region' if `ARG'."
-
   (interactive "P")
   (goto-char (point-max))
   (search-backward "@")
   (beginning-of-line)
-
   (if arg
       (kill-region (point-min) (point))
     (delete-region (point-min) (point)))
-
   (delete-region (point-min) (point))
-
   (goto-char (point-max)))
 
 ;;; init-shell.el ends here

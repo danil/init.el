@@ -31,7 +31,50 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-doom-modeline)
-;; (defun myinit-doom-modeline () "My init.")
+(add-hook 'after-init-hook 'myinit-doom-modeline)
+(defun myinit-doom-modeline ()
+  "My init."
+  (if (fboundp 'doom-modeline-def-segment) (myinit-doom-modeline--setup)
+    (with-eval-after-load 'doom-modeline (myinit-doom-modeline--setup)))
+  (doom-modeline-set-modeline 'noxinit t))
+
+(defun myinit-doom-modeline--setup ()
+  "My init."
+  (myinit-doom-modeline---setup)
+  (doom-modeline-def-modeline
+   'noxinit
+   '(workspace-number noxinit-window-number noxinit-buffer-position "X" buffer-info "X")
+   '(noxinit-window-number))
+  (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
+  (setq doom-modeline-icon nil))
+
+(defun myinit-doom-modeline---setup ()
+  "My init."
+  (doom-modeline-def-segment
+   noxinit-buffer-position
+   "The buffer position information."
+   mode-line-position
+   ;; '(" " mode-line-position)
+   )
+  (doom-modeline-def-segment
+   noxinit-window-number
+   (let ((num (cond
+               ((bound-and-true-p ace-window-display-mode)
+                (setq mode-line-format
+                      (assq-delete-all 'ace-window-display-mode
+                                       (default-value 'mode-line-format)))
+                (aw-update)
+                (window-parameter (selected-window) 'ace-window-path))
+               ((bound-and-true-p winum-mode)
+                (setq winum-auto-setup-mode-line nil)
+                (winum-get-number-string))
+               ((bound-and-true-p window-numbering-mode)
+                (window-numbering-get-number-string))
+               (t ""))))
+     (if (< 0 (length num))
+         (propertize (format "%s" num)
+                     'face (if (doom-modeline--active)
+                               'doom-modeline-buffer-major-mode))
+       ""))))
 
 ;;; init-doom-modeline.el ends here
