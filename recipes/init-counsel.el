@@ -79,19 +79,21 @@
   )
 
 (defun myinit-counsel--company ()
-  "Complete using `company-candidates'."
   (interactive)
   (company-mode t)
-  (let ((initial-input (myinit-counsel--company-grab-symbol)))
-    (unless company-candidates
-      (company-complete)
-      (unless company-candidates
-        (myinit-counsel--company-try-backend 'company-dabbrev)
-        (unless company-candidates
-          (myinit-counsel--company-try-backend 'company-yasnippet)
-          (unless company-candidates
-            (myinit-counsel--company-try-backend 'company-ispell)))))
-    (when company-point
+  (when current-prefix-arg (make-local-variable 'company-backends))
+  (cond ((equal current-prefix-arg 7)
+         (myinit-company--complete-with-backend 'company-ispell))
+        (current-prefix-arg
+         (myinit-company--complete-with-backend 'company-dabbrev)))
+  (call-interactively 'myinit-counsel---company))
+
+(defun myinit-counsel---company ()
+  "Complete using `company-candidates'."
+  (interactive)
+  (let ((initial-input (myinit-company--grab-symbol)))
+    (unless company-candidates (company-complete))
+    (when (and company-candidates company-point)
       (when (looking-back company-common (line-beginning-position))
         (setq ivy-completion-beg (match-beginning 0))
         (setq ivy-completion-end (match-end 0)))
@@ -99,27 +101,6 @@
                 :action #'ivy-completion-in-region-action
                 :initial-input initial-input ;(when initial-input (format "%s" initial-input))
                 :unwind #'company-abort))))
-
-(defun myinit-counsel--company-try-backend (new-backend)
-  (let ((old-company-backends company-backends))
-    (set (make-local-variable 'company-backends) (cons new-backend '()))
-    (company-complete)
-    (set 'company-backends old-company-backends)))
-
-(defun myinit-counsel--company-grab-symbol ()
-  "If point is at the end of a symbol, return it.
-Otherwise, if point is not inside a symbol, return an empty string."
-  (buffer-substring (point) (save-excursion (skip-syntax-backward "w_")
-                                            (point))))
-
-;; ;; <https://stackoverflow.com/questions/3815467/stripping-duplicate-elements-in-a-list-of-strings-in-elisp#3815828>.
-;; (defun myinit-counsel--strip-duplicates (list)
-;;   (let ((new-list nil))
-;;     (while list
-;;       (when (and (car list) (not (member (car list) new-list)))
-;;         (setq new-list (cons (car list) new-list)))
-;;       (setq list (cdr list)))
-;;     (nreverse new-list)))
 
 (defun myinit-counsel--yank-pop ()
   (interactive)

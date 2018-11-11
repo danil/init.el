@@ -35,7 +35,6 @@
 ;; <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>.
 (custom-set-variables
  ;; '(company-abort-manual-when-too-short nil)
- ;; '(company-backends `(,@(unless (version< "24.3.51" emacs-version))
  ;; '(company-global-modes t)
  ;; '(company-show-numbers nil)
  ;; '(company-tooltip-limit 10)
@@ -46,11 +45,59 @@
  ;; '(company-tooltip-offset-display 'scrollbar)
  ;; '(company-lighter-base "company")
  ;; '(company-tooltip-idle-delay nil) ;; .5
+ '(company-backends `(,@(unless (version< "24.3.51" emacs-version)
+                          (list 'company-elisp))
+                      company-bbdb
+                      ,@(unless (version<= "26" emacs-version)
+                          (list 'company-nxml))
+                      ,@(unless (version<= "26" emacs-version)
+                          (list 'company-css))
+                      company-eclim
+                      company-semantic
+                      company-clang
+                      company-xcode
+                      company-cmake
+                      company-files
+                      (company-dabbrev-code
+                       company-gtags
+                       company-etags
+                       company-keywords)
+                      company-dabbrev
+                      company-abbrev
+                      company-oddmuse
+                      company-capf))
  '(company-frontends nil) ;; nil '()
  '(company-idle-delay nil) ;; 0.7 tradeoff between typing speed and performance <https://emacs.stackexchange.com/questions/32467/how-can-i-configure-company-mode-to-only-display-candidates-after-an-explicit-ke#32523>
  '(company-minimum-prefix-length 0))
 
 (add-hook 'after-init-hook 'myinit-company)
-(defun myinit-company () "My init." (global-company-mode t))
+(defun myinit-company ()
+  "My init."
+  ;; (if (boundp 'company-mode) (myinit-company--setup)
+  ;;   (with-eval-after-load 'company (myinit-company--setup)))
+  (global-company-mode t))
+
+;; (defun myinit-company--setup ())
+
+(defun myinit-company--complete-with-backend (new-backend)
+  (let ((old-company-backends company-backends))
+    (set 'company-backends (cons new-backend '()))
+    (company-complete)
+    (set 'company-backends old-company-backends)))
+
+(defun myinit-company--grab-symbol ()
+  "If point is at the end of a symbol, return it.
+Otherwise, if point is not inside a symbol, return an empty string."
+  (buffer-substring (point)
+                    (save-excursion (skip-syntax-backward "w_") (point))))
+
+;; ;; <https://stackoverflow.com/questions/3815467/stripping-duplicate-elements-in-a-list-of-strings-in-elisp#3815828>.
+;; (defun myinit-company--strip-duplicates (list)
+;;   (let ((new-list nil))
+;;     (while list
+;;       (when (and (car list) (not (member (car list) new-list)))
+;;         (setq new-list (cons (car list) new-list)))
+;;       (setq list (cdr list)))
+;;     (nreverse new-list)))
 
 ;;; init-company.el ends here
