@@ -91,6 +91,21 @@ Otherwise, if point is not inside a symbol, return an empty string."
   (buffer-substring (point)
                     (save-excursion (skip-syntax-backward "w_") (point))))
 
+(defun myinit-company--message-used-backend ()
+  (interactive)
+  (message "Company backend: %s"
+           (pp-to-string (myinit-company--used-backend))))
+
+(defun myinit-company--used-backend ()
+  (interactive)
+  (let* ((bb company-backends)
+         backend
+         (prefix (cl-loop for b in bb
+                          thereis (let ((company-backend b))
+                                    (setq backend b)
+                                    (company-call-backend 'prefix)))))
+    backend))
+
 ;; ;; <https://stackoverflow.com/questions/3815467/stripping-duplicate-elements-in-a-list-of-strings-in-elisp#3815828>.
 ;; (defun myinit-company--strip-duplicates (list)
 ;;   (let ((new-list nil))
