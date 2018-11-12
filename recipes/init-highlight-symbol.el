@@ -64,6 +64,7 @@
 (defun myinit-highlight-symbol--setup-lazy ()
   "Lazy setup `highlight-symbol'."
   (cond ((equal major-mode 'ruby-mode) (> (buffer-size) 100000))
+        ((member major-mode '(js-mode js2-mode)) (> (buffer-size) 100000))
         (t (myinit-run-with-idle-timer-in-current-buffer
             myinit-default-idle-timer-seconds nil 'highlight-symbol-mode))))
 
