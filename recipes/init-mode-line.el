@@ -49,8 +49,9 @@
                       mode-line-end-spaces)))
 
 (custom-set-faces
- '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))) ; :background black gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
- '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) (:inherit shadow))))  ; :background gray30
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))) ;; :background color-52 OrangeRed4 MidnightBlue black gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
+ '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow;; (:background "MidnightBlue")
+                        )))  ;; :inherit shadow :background gray30
  )
 
 ;; (add-hook 'after-init-hook 'myinit-mode-line)
