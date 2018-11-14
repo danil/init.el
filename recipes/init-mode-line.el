@@ -57,6 +57,7 @@
 ;; (add-hook 'after-init-hook 'myinit-mode-line)
 ;; (defun myinit-mode-line ()
 ;;   "My init."
+;;   ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update)
 ;;   (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update))
 
 ;; (defun myinit-mode-line--face-mode-line-update ()
