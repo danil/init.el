@@ -1,4 +1,4 @@
-;;; init-etags-select.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-elisp-slime-nav.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,25 +31,14 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-etags-select)
-(defun myinit-etags-select ()
+(add-hook 'after-init-hook 'myinit-elisp-slime-nav)
+(defun myinit-elisp-slime-nav ()
   "My init."
-  ;; (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
-  (myinit-after-load 'etags-select
-    (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)
-    (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
-    (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)
-    (define-key etags-select-mode-map (kbd "M-RET")
-      'etags-select-goto-tag-other-window)
-    (define-key etags-select-mode-map (kbd "RET") 'etags-select-goto-tag)))
+  ;; (if (boundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)
+  ;;   (with-eval-after-load 'elisp-slime-nav (myinit-elisp-slime-nav--setup)))
+  (when (fboundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)))
 
-(defun etags-select-find-tag-at-point-or-region ()
-  "Finds tag at point or selected region using etags-select."
-  (interactive)
-  (require 'etags-select)
-  (if (region-active-p)
-      (etags-select-find
-       (buffer-substring (region-beginning) (region-end)))
-    (etags-select-find-tag-at-point)))
+(defun myinit-elisp-slime-nav--setup ()
+  (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode))
 
-;;; init-etags-select.el ends here
+;;; init-elisp-slime-nav.el ends here

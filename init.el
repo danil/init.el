@@ -374,6 +374,7 @@
 (my-recipe '(dockerfile-mode))
 (my-recipe '(dumb-jump))
 (my-recipe '(ediff))
+(my-recipe '(elisp-slime-nav))
 (my-recipe '(elixir-mode))
 (my-recipe '(elpa-mirror))
 (my-recipe '(emacs-lisp-mode))
@@ -555,6 +556,7 @@
 (my-recipe '(simple))
 (my-recipe '(slim-mode))
 (my-recipe '(sort))
+(my-recipe '(subr))
 (my-recipe '(subword-mode))
 
 (my-recipe '(sql))

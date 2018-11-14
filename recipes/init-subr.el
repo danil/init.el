@@ -1,4 +1,4 @@
-;;; init-etags-select.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-subr.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,25 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-etags-select)
-(defun myinit-etags-select ()
+(add-hook 'after-init-hook 'myinit-subr)
+(defun myinit-subr ()
   "My init."
-  ;; (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
-  (myinit-after-load 'etags-select
-    (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)
-    (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
-    (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)
-    (define-key etags-select-mode-map (kbd "M-RET")
-      'etags-select-goto-tag-other-window)
-    (define-key etags-select-mode-map (kbd "RET") 'etags-select-goto-tag)))
+    (if (boundp 'esc-map) (myinit-subr--setup-esc-map)
+      (with-eval-after-load 'subr (myinit-subr--setup-esc-map))))
 
-(defun etags-select-find-tag-at-point-or-region ()
-  "Finds tag at point or selected region using etags-select."
-  (interactive)
-  (require 'etags-select)
-  (if (region-active-p)
-      (etags-select-find
-       (buffer-substring (region-beginning) (region-end)))
-    (etags-select-find-tag-at-point)))
+(defun myinit-subr--setup-esc-map () (define-key esc-map "." nil))
 
-;;; init-etags-select.el ends here
+;;; init-subr.el ends here

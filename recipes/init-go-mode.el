@@ -1,6 +1,6 @@
 ;;; init-go-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -231,6 +231,7 @@
 
 (defun myinit-go-mode--customize ()
   (add-hook 'before-save-hook #'gofmt-before-save)
+  (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
 
 (defun myinit-go-mode--highlight-static-regexps-init ()
