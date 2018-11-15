@@ -53,15 +53,15 @@
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30";; (:background "MidnightBlue")
                         ))))
 
-;; (add-hook 'after-init-hook 'myinit-mode-line)
-;; (defun myinit-mode-line ()
-;;   "My init."
-;;   ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
-;;   (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy))
+(add-hook 'after-init-hook 'myinit-mode-line)
+(defun myinit-mode-line ()
+  "My init."
+  ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
+  (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy))
 
-;; (defun myinit-mode-line--face-mode-line-update-lazy ()
-;;   (run-with-idle-timer 0.1 nil (lambda ()
-;;                                  (myinit-mode-line--face-mode-line-update))))
+(defun myinit-mode-line--face-mode-line-update-lazy ()
+  (run-with-idle-timer 0.1 nil (lambda ()
+                                 (myinit-mode-line--face-mode-line-update))))
 
 (defun myinit-mode-line--face-mode-line-update ()
   ;; (unless (active-minibuffer-window))
