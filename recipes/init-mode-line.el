@@ -38,11 +38,11 @@
                       mode-line-front-space ; line number and column number
                       mode-line-client
                       mode-line-modified
-                      mode-line-remote
                       mode-line-frame-identification
                       mode-line-buffer-identification
                       " "
                       mode-line-modes
+                      mode-line-remote
                       mode-line-mule-info
                       (vc-mode vc-mode)
                       mode-line-misc-info
