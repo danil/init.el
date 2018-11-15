@@ -36,6 +36,7 @@
   "My init."
   (if (fboundp 'doom-modeline-def-segment) (myinit-doom-modeline--setup)
     (with-eval-after-load 'doom-modeline (myinit-doom-modeline--setup)))
+  ;; (doom-modeline-set-modeline 'main t)
   (doom-modeline-set-modeline 'noxinit t))
 
 (defun myinit-doom-modeline--setup ()
