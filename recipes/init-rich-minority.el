@@ -65,7 +65,9 @@
                   " Rbow" ;rainbow-mode
                   " RubyRef" ;ruby-refactor-mode
                   " SP" ;smartparens-mode
+                  " SliNav" ;; elisp-slime-nav
                   " Undo-Tree" ;undo-tree-mode
+                  " company" ;ruby-end-mode
                   " end" ;ruby-end-mode
                   " ew:mnl" ;ethan-wspace find NO errors in Makefile, C or Go sources
                   " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
