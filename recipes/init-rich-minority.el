@@ -1,6 +1,6 @@
 ;;; init-rich-minority.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,58 +32,58 @@
 ;;; Code:
 
 (custom-set-variables
- '(rm-text-properties
-   '(
-     ;; Emacs SEGFAULT!!! (under certain circumstances)
-     ;; if touching flycheck-mode's lighters!
-     ;; Instead customize `flycheck-mode-line`
-     ;; variable (and
-     ;; `flycheck-mode-line-status-text` fn) and
-     ;; `flycheck-mode-line-prefix` variable!
-     ;; ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
-     ;; ("\\` Ovwrt\\'" 'display (concat " "
-     ;;                                  (propertize "OVERWRITING" 'font-lock-face
-     ;;                                              '(:inherit myinit-faces--alert-fixme))))
-     ))
- ;; Hide lighters for some minor modes.
- '(rm-blacklist '(
-                  " hl-p"
-
-                  " ," ;wtf!???
-                  " =>" ;aggressive-indent
-                  " AC" ;auto-complete-mode
-                  " ARev" ;auto-revert-mode
-                  " Abbrev" ;abbrev-mode
-                  " Anzu" ;anzu-mode
-                  " Helm" ;helm-mode
-                  " Isearch" ;isearch-mode
-                  " MRev" ;magit-auto-revert-mode
-                  " Myinit" ;myinit-mode
-                  " Projectile" ;projectile-mode
-                  " RSpec" ;rspec-mode
-                  " Rails" ;projectile-rails
-                  " Rbow" ;rainbow-mode
-                  " RubyRef" ;ruby-refactor-mode
-                  " SP" ;smartparens-mode
-                  " SliNav" ;; elisp-slime-nav
-                  " Undo-Tree" ;undo-tree-mode
-                  " company" ;ruby-end-mode
-                  " end" ;ruby-end-mode
-                  " ew:mnl" ;ethan-wspace find NO errors in Makefile, C or Go sources
-                  " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
-                  " gg" ;git-gutter-mode
-                  " counsel" ;counsel-mode
-                  " hl-s" ;highlight-symbol-mode
-                  " hlt" ;highlight-thing
-                  " hs" ;hideshow
-                  " ing" ;indent-guide-mode
-                  " ivy" ;ivy-mode (swiper, counsel and friends)
-                  " pair" ;autopair
-                  " robe" ;robe-mode
-                  " rt" ;ruby-tools-mode
-                  " ruby" ;enh-ruby-mode
-                  " yas";yas-minor-mode aka yasnippet
-                  )))
+ ;; '(rm-text-properties
+ ;;   '(
+ ;;     ;; Emacs SEGFAULT!!! (under certain circumstances)
+ ;;     ;; if touching flycheck-mode's lighters!
+ ;;     ;; Instead customize `flycheck-mode-line`
+ ;;     ;; variable (and
+ ;;     ;; `flycheck-mode-line-status-text` fn) and
+ ;;     ;; `flycheck-mode-line-prefix` variable!
+ ;;     ;; ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
+ ;;     ;; ("\\` Ovwrt\\'" 'display (concat " "
+ ;;     ;;                                  (propertize "OVERWRITING" 'font-lock-face
+ ;;     ;;                                              '(:inherit myinit-faces--alert-fixme))))
+ ;;     ))
+ ;; ;; Hide lighters for some minor modes.
+ ;; '(rm-blacklist '(
+ ;;                  " hl-p"
+ ;;                  " ," ;wtf!???
+ ;;                  " =>" ;aggressive-indent
+ ;;                  " AC" ;auto-complete-mode
+ ;;                  " ARev" ;auto-revert-mode
+ ;;                  " Abbrev" ;abbrev-mode
+ ;;                  " Anzu" ;anzu-mode
+ ;;                  " Helm" ;helm-mode
+ ;;                  " Isearch" ;isearch-mode
+ ;;                  " MRev" ;magit-auto-revert-mode
+ ;;                  " Myinit" ;myinit-mode
+ ;;                  " Projectile" ;projectile-mode
+ ;;                  " RSpec" ;rspec-mode
+ ;;                  " Rails" ;projectile-rails
+ ;;                  " Rbow" ;rainbow-mode
+ ;;                  " RubyRef" ;ruby-refactor-mode
+ ;;                  " SP" ;smartparens-mode
+ ;;                  " SliNav" ;; elisp-slime-nav
+ ;;                  " Undo-Tree" ;undo-tree-mode
+ ;;                  " company" ;ruby-end-mode
+ ;;                  " end" ;ruby-end-mode
+ ;;                  " ew:mnl" ;ethan-wspace find NO errors in Makefile, C or Go sources
+ ;;                  " ew:mnlt" ;ethan-wspace find NO errors (highlight trailing whitespace)
+ ;;                  " gg" ;git-gutter-mode
+ ;;                  " counsel" ;counsel-mode
+ ;;                  " hl-s" ;highlight-symbol-mode
+ ;;                  " hlt" ;highlight-thing
+ ;;                  " hs" ;hideshow
+ ;;                  " ing" ;indent-guide-mode
+ ;;                  " ivy" ;ivy-mode (swiper, counsel and friends)
+ ;;                  " pair" ;autopair
+ ;;                  " robe" ;robe-mode
+ ;;                  " rt" ;ruby-tools-mode
+ ;;                  " ruby" ;enh-ruby-mode
+ ;;                  " yas";yas-minor-mode aka yasnippet
+ ;;                  ))
+ '(rm-whitelist '(" F")))
 
 ;; (add-hook 'after-init-hook 'myinit-rich-minority)
 ;; (defun myinit-rich-minority () "My init.")
