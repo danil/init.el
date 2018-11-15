@@ -65,7 +65,6 @@
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
-(depends-on "cyphejor")
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
@@ -192,6 +191,7 @@
 (depends-on "slim-mode")
 
 ;; mode-line
+;; (depends-on "cyphejor")
 ;; (depends-on "doom-modeline")
 (depends-on "rich-minority")
 (depends-on "smart-mode-line")

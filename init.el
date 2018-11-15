@@ -426,10 +426,10 @@
 ;; (autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
 
 ;; mode-line
+;; (my-recipe '(cyphejor))
 ;; (my-recipe '(doom-modeline))
 (my-recipe '(rich-minority))
 (my-recipe '(smart-mode-line))
-(my-recipe '(cyphejor))
 (my-recipe '(mode-line))
 
 ;; Ivy (is an ido replacement).
