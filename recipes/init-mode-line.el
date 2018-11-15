@@ -50,19 +50,18 @@
 
 (custom-set-faces
  '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))) ;; :background color-52 OrangeRed4 MidnightBlue black gray10 purple4 MidnightBlue NavyBlue firebrick4 brown4 red4
- '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow;; (:background "MidnightBlue")
-                        )))  ;; :inherit shadow :background gray30
- )
+ '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30";; (:background "MidnightBlue")
+                        ))))
 
-(add-hook 'after-init-hook 'myinit-mode-line)
-(defun myinit-mode-line ()
-  "My init."
-  ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
-  (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy))
+;; (add-hook 'after-init-hook 'myinit-mode-line)
+;; (defun myinit-mode-line ()
+;;   "My init."
+;;   ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
+;;   (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy))
 
-(defun myinit-mode-line--face-mode-line-update-lazy ()
-  (run-with-idle-timer 0.1 nil (lambda ()
-                                 (myinit-mode-line--face-mode-line-update))))
+;; (defun myinit-mode-line--face-mode-line-update-lazy ()
+;;   (run-with-idle-timer 0.1 nil (lambda ()
+;;                                  (myinit-mode-line--face-mode-line-update))))
 
 (defun myinit-mode-line--face-mode-line-update ()
   ;; (unless (active-minibuffer-window))

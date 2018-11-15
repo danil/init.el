@@ -55,7 +55,7 @@
                                  ivy-resume
                                  ivy-switch-buffer
                                  swiper
-                                 my-swiper
+                                 myinit-swiper--swiper
                                  counsel-M-x
                                  counsel-descbinds
                                  counsel-describe-face

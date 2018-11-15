@@ -45,7 +45,7 @@
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq
      uniquify-buffer-name-style 'post-forward ; 'forward
-     uniquify-separator " " ; ":"
+     uniquify-separator "<" ; ":"
      ;; uniquify-after-kill-buffer-p t ; rename after killing uniquified
      ;; uniquify-ignore-buffers-re "^\\*" ; don't muck with special buffers
      )))
