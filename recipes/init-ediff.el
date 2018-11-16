@@ -53,8 +53,8 @@
          (set-face-foreground 'ediff-current-diff-A nil)
          (set-face-foreground 'ediff-current-diff-B nil)
          (set-face-foreground 'ediff-current-diff-C nil)
-         (set-face-background 'ediff-current-diff-A "DarkRed")
-         (set-face-background 'ediff-current-diff-B "DarkGreen")
+         (set-face-background 'ediff-current-diff-A "color-52") ;; DarkRed
+         (set-face-background 'ediff-current-diff-B "color-22") ;; DarkGreen
          (set-face-background 'ediff-current-diff-C "DarkOrange4")))
   )
 
