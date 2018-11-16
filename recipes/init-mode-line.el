@@ -57,19 +57,20 @@
 (defun myinit-mode-line ()
   "My init."
   ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
-  (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy))
+  ;; (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
+  )
 
-(defun myinit-mode-line--face-mode-line-update-lazy ()
-  (run-with-idle-timer 0.1 nil (lambda ()
-                                 (myinit-mode-line--face-mode-line-update))))
+;; (defun myinit-mode-line--face-mode-line-update-lazy ()
+;;   (run-with-idle-timer 0.1 nil (lambda ()
+;;                                  (myinit-mode-line--face-mode-line-update))))
 
-(defun myinit-mode-line--face-mode-line-update ()
-  ;; (unless (active-minibuffer-window))
-  (if (equal (count-windows) 1)
-      (custom-set-faces
-       '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
-    (custom-set-faces
-     '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
+;; (defun myinit-mode-line--face-mode-line-update ()
+;;   ;; (unless (active-minibuffer-window))
+;;   (if (equal (count-windows) 1)
+;;       (custom-set-faces
+;;        '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))))
+;;     (custom-set-faces
+;;      '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
 
 ;; ;; (defun myinit-mode-line--count-windows (&optional minibuf)
 ;; ;;   "Return the number of visible windows.
