@@ -32,15 +32,27 @@
 ;;; Code:
 
 (custom-set-variables '(dumb-jump-selector 'ivy))
-
 (add-hook 'after-init-hook 'myinit-dumb-jump)
 (defun myinit-dumb-jump ()
   "My init."
-  (myinit-after-load 'dumb-jump
-    (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
-    (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
-    (define-key dumb-jump-mode-map (my-kbd "j d") 'myinit-dumb-jump--go))
+  (if (boundp 'dumb-jump-mode-map) (myinit-dumb-jump--setup)
+    (with-eval-after-load 'dumb-jump (myinit-dumb-jump--setup)))
   (dumb-jump-mode))
+
+(defun myinit-dumb-jump--setup ()
+  (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
+  (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
+  (define-key dumb-jump-mode-map (my-kbd "j d") 'myinit-dumb-jump--go)
+  (if (boundp 'enh-ruby-mode-map) (myinit-dumb-jump--setup-enh-ruby-mode)
+    (with-eval-after-load 'enh-ruby-mode (myinit-dumb-jump--setup-enh-ruby-mode)))
+  (if (boundp 'ruby-mode-map) (myinit-dumb-jump--setup-ruby-mode)
+    (with-eval-after-load 'ruby-mode (myinit-dumb-jump--setup-ruby-mode))))
+
+(defun myinit-dumb-jump--setup-enh-ruby-mode ()
+  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'myinit-dumb-jump--go))
+
+(defun myinit-dumb-jump--setup-ruby-mode ()
+  (define-key ruby-mode-map (kbd "C-c C-j") 'myinit-dumb-jump--go))
 
 (defun myinit-dumb-jump--go ()
   (interactive)

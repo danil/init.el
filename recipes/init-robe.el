@@ -49,10 +49,9 @@
     (with-eval-after-load 'ruby-mode (myinit-robe--setup-ruby-mode))))
 
 (defun myinit-robe--setup-enh-ruby-mode ()
-  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'robe-jump))
+  (define-key enh-ruby-mode-map (my-kbd "j r") 'robe-jump))
 
 (defun myinit-robe--setup-ruby-mode ()
-  (define-key ruby-mode-map (kbd "C-c C-j") 'robe-jump)
-  (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
+  (define-key ruby-mode-map (my-kbd "j r") 'robe-jump))
 
 ;;; init-robe.el ends here
