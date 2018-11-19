@@ -89,7 +89,6 @@
 
 (defun myinit-rainbow-identifiers--lazyinit ()
   "Run `rainbow-identifiers'."
-
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil 'rainbow-identifiers-mode))
 
