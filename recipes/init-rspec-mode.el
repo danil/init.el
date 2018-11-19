@@ -1,6 +1,6 @@
 ;;; init-rspec-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,14 +31,30 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-rspec-mode)
+(defcustom myinit-rspec-mode-patterns '()
+  "Regexp patterns associated with `rspec-mode'."
+  :group 'myinit)
 
+(custom-set-variables '(myinit-rspec-mode-patterns
+                        '(
+                          "_spec\\.rb\\'"
+                          "/spec[0-9]*\\.rb\\'"
+                          )))
+
+(add-hook 'after-init-hook 'myinit-rspec-mode)
 (defun myinit-rspec-mode ()
   "My init."
   ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
+  ;; (dolist (hook myinit-rspec-mode-patterns)
+  ;;   (add-hook hook 'myinit-rspec-mode--lazyinit))
   (custom-set-variables '(rspec-use-spring-when-possible nil))
   (myinit-after-load 'rspec-mode
     ;; (setq rspec-use-rvm t)
     (setq rspec-use-rake-when-possible nil)))
+
+(defun myinit-rspec-mode--lazyinit ()
+  "Run `highlight-symbol'."
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil (lambda () (rspec-mode t))))
 
 ;;; init-rspec-mode.el ends here
