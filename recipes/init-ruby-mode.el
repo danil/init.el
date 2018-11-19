@@ -186,7 +186,6 @@
                                 "and"
                                 "and_return"
                                 "as:"
-                                "before"
                                 "belongs_to"
                                 "bigint"
                                 "blank?"
