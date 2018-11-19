@@ -50,8 +50,8 @@
 ;; Fuzzy searching in multiple files (projectile and friends).
 (depends-on "ag")
 (depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
-(depends-on "wgrep-ag")
-(depends-on "wgrep-pt")
+(depends-on "wgrep-ag") ;editable grep
+(depends-on "wgrep-pt") ;editable grep
 
 ;; (depends-on "dim")
 (depends-on "anzu") ;isearch and query-replace extension
