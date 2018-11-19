@@ -72,6 +72,7 @@
                                 "int32"
                                 "int64"
                                 "string"
+                                "syntax"
                                 ))))))
 
 ;;; init-protobuf-mode.el ends here
