@@ -68,10 +68,11 @@
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
-  (if (boundp 'ruby-mode) (myinit-ruby-mode--init)
-    (with-eval-after-load 'ruby-mode (myinit-ruby-mode--init))))
+  (if (boundp 'ruby-mode) (myinit-ruby-mode--setup)
+    (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
 
-(defun myinit-ruby-mode--init ()
+(defun myinit-ruby-mode--setup ()
+  (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -97,6 +98,27 @@
                  (indent-line-to arg-indent)))
           (when (> offset 0) (forward-char offset)))))))
 
+(defun myinit-ruby-mode--highlight-static-regexps-init ()
+  (when (equal major-mode 'ruby-mode)
+    (make-local-variable 'highlight-static-regexps-filter-functions)
+    (add-hook 'highlight-static-regexps-filter-functions
+              'myinit-ruby-mode--highlight-static-regexps-filter)
+    (make-local-variable 'highlight-static-regexps-faces-to-override)
+    (setq highlight-static-regexps-faces-to-override '( font-lock-keyword-face default))
+    (when (<= (buffer-size) 100000)
+      (myinit-highlight-static-regexps--lazyinit))))
+
+(defun myinit-ruby-mode--highlight-static-regexps-filter (beg end)
+  "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
+  (let ((face-cur (or (get-char-property beg 'read-face-name)
+                      (get-char-property beg 'face)))
+        (str-cur (buffer-substring-no-properties beg end)))
+    (and
+     (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
+     (and (member str-cur '(
+                            " return"
+                            ))))))
+
 (defun myinit-ruby-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
@@ -114,7 +136,6 @@
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-ruby-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
-
   (let ((ch-cur (char-after beg))
         (ch-before (char-before beg))
         (ch-after (char-after end))
@@ -178,8 +199,6 @@
                                 "column:"
                                 "compact"
                                 "concat"
-                                "context"
-                                "context:"
                                 "count"
                                 "create"
                                 "create_table"
@@ -190,7 +209,6 @@
                                 "default"
                                 "default:"
                                 "delegate"
-                                "describe"
                                 "disable_extension"
                                 "drop_table"
                                 "enable_extension"
@@ -203,7 +221,6 @@
                                 "event"
                                 "example"
                                 "execute"
-                                "expect"
                                 "extension_enabled?"
                                 "extract_options!"
                                 "false"
@@ -226,7 +243,6 @@
                                 "initial"
                                 "integer"
                                 "is_a?"
-                                "it"
                                 "join"
                                 "joins"
                                 "json"
@@ -243,8 +259,6 @@
                                 "match"
                                 "mock_model"
                                 "module_function"
-                                "name"
-                                "name:"
                                 "new"
                                 "nil"
                                 "nil?"
@@ -284,8 +298,6 @@
                                 "table_name"
                                 "text"
                                 "timestamps"
-                                "to"
-                                "to:"
                                 "to_a"
                                 "to_h"
                                 "to_hash"

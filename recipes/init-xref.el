@@ -1,4 +1,4 @@
-;;; init-elisp-slime-nav.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-xref.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,20 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-elisp-slime-nav)
-(defun myinit-elisp-slime-nav ()
-  "My init."
-  ;; (if (boundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)
-  ;;   (with-eval-after-load 'elisp-slime-nav (myinit-elisp-slime-nav--setup)))
-  (when (fboundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)))
+;; (add-hook 'after-init-hook 'myinit-xref)
+;; (defun myinit-xref ()
+;;   "My init."
+;;     (if (fboundp 'xref-pop-marker-stack) (myinit-xref--setup)
+;;       (with-eval-after-load 'xref (myinit-xref--setup))))
 
-(defun myinit-elisp-slime-nav--setup ()
-  (if (boundp 'emacs-lisp-mode-map) (myinit-emacs-lisp-mode--setup-emacs-lisp-mode)
-    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup-emacs-lisp-mode))))
+;; ;; (defun myinit-xref--setup ()
+;; ;;   (define-key esc-map (kbd "C-c C-k") #'xref-pop-marker-stack))
 
-(defun myinit-emacs-lisp-mode--setup-emacs-lisp-mode ()
-  (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
-  (define-key emacs-lisp-mode-map (kbd "C-c C-j") 'elisp-slime-nav-find-elisp-thing-at-point)
-  (define-key emacs-lisp-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
-
-;;; init-elisp-slime-nav.el ends here
+;;; init-xref.el ends here

@@ -577,6 +577,7 @@
 (my-recipe '(window))
 (my-recipe '(window-numbering))
 (my-recipe '(winner-mode))
+(my-recipe '(xref))
 (my-recipe '(yaml-mode))
 (my-recipe '(yasnippet))
 ;; (my-recipe '(yafolding))

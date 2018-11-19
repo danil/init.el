@@ -36,6 +36,23 @@
   "My init."
   (add-hook 'robe-mode-hook 'ac-robe-setup)
   (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'robe-mode))
+  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  (if (boundp 'robe-mode-map) (myinit-robe--setup)
+    (with-eval-after-load 'robe (myinit-robe--setup))))
+
+(defun myinit-robe--setup ()
+  (define-key robe-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
+  ;; (define-key robe-mode-map (kbd "C-c C-S-k") 'robe-rails-refresh)
+  (if (boundp 'enh-ruby-mode-map) (myinit-robe--setup-enh-ruby-mode)
+    (with-eval-after-load 'enh-ruby-mode (myinit-robe--setup-enh-ruby-mode)))
+  (if (boundp 'ruby-mode-map) (myinit-robe--setup-ruby-mode)
+    (with-eval-after-load 'ruby-mode (myinit-robe--setup-ruby-mode))))
+
+(defun myinit-robe--setup-enh-ruby-mode ()
+  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'robe-jump))
+
+(defun myinit-robe--setup-ruby-mode ()
+  (define-key ruby-mode-map (kbd "C-c C-j") 'robe-jump)
+  (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
 ;;; init-robe.el ends here

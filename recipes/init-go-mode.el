@@ -231,6 +231,7 @@
 
 (defun myinit-go-mode--customize ()
   (add-hook 'before-save-hook #'gofmt-before-save)
+  (define-key go-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
 

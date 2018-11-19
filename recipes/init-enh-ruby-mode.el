@@ -31,15 +31,20 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-enh-ruby-mode)
-;; (defun myinit-enh-ruby-mode ()
-;;   "My init."
-;;   ;; (setq enh-ruby-deep-indent-paren nil)
-;;   ;; (setq enh-ruby-bounce-deep-indent t)
-;;   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
-;;   (add-to-list 'interpreter-mode-alist '("\\.ruby\\'" . enh-ruby-mode))
-;;   (dolist (pattern myinit-ruby-mode-patterns)
-;;     (add-to-list 'auto-mode-alist (cons pattern 'enh-ruby-mode))))
+(add-hook 'after-init-hook 'myinit-enh-ruby-mode)
+(defun myinit-enh-ruby-mode ()
+  "My init."
+  ;; (setq enh-ruby-deep-indent-paren nil)
+  ;; (setq enh-ruby-bounce-deep-indent t)
+  ;; (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
+  ;; (add-to-list 'interpreter-mode-alist '("\\.ruby\\'" . enh-ruby-mode))
+  ;; (dolist (pattern myinit-ruby-mode-patterns)
+  ;;   (add-to-list 'auto-mode-alist (cons pattern 'enh-ruby-mode)))
+  (if (boundp 'enh-ruby-mode-map) (myinit-enh-ruby-mode--setup)
+    (with-eval-after-load 'enh-ruby-mode (myinit-enh-ruby-mode--setup))))
+
+(defun myinit-enh-ruby-mode--setup ()
+  (define-key enh-ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
 (defun myinit-enh-ruby-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'enh-ruby-mode)
