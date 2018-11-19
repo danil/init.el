@@ -46,6 +46,7 @@
   (set (make-local-variable 'company-backends)
        (append '((
                   company-shell
+                  company-files
                   company-dabbrev-code
                   company-gtags
                   company-etags
