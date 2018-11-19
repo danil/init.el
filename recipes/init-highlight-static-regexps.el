@@ -39,6 +39,7 @@
  '(myinit-highlight-static-regexps-hooks
    '(
      (go-mode-hook myinit-go-mode--highlight-static-regexps-init)
+     ;; (ruby-mode-hook myinit-ruby-mode--highlight-static-regexps-init)
      )))
 
 (add-hook 'after-init-hook 'myinit-highlight-static-regexps)
