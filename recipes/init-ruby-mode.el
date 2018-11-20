@@ -208,7 +208,6 @@
                                 "drop_table"
                                 "enable_extension"
                                 "enum"
-                                "eq"
                                 "equal_to"
                                 "errors"
                                 "errors:"
