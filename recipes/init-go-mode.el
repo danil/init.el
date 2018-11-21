@@ -298,8 +298,7 @@
      (and
       (or
        (eq face-cur 'font-lock-type-face)
-       (eq face-cur 'font-lock-function-name-face))
-      (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))
+       (eq face-cur 'font-lock-function-name-face)))
      (and
       (or
        ;; (eq face-cur 'default)
@@ -312,7 +311,9 @@
       ;;     (string-match-p "\\`\\.[[:space:]\n]*[a-zA-Z0-1]*([^)]*)" ch80-after)
       ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(Bytes\\|Bool\\|Float32\\|Float64\\|Int8\\|Int16\\|Int32\\|Int64\\|Uint8\\|Uint16\\|Uint32\\|Uint64\\|String\\|Time\\|Valid\\)[^a-zA-Z0-1]"
       ;;                     ch80-after))
-      (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words))))))
+      (or
+       (equal ch-before ?.)
+       (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))))))
 
 ;; (defun myinit-go-mode--non-ascii-identifiers-init ()
 ;;   (when (equal major-mode 'go-mode)
