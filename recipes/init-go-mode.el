@@ -298,7 +298,8 @@
      (and
       (or
        (eq face-cur 'font-lock-type-face)
-       (eq face-cur 'font-lock-function-name-face)))
+       (eq face-cur 'font-lock-function-name-face))
+      (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))
      (and
       (or
        ;; (eq face-cur 'default)
