@@ -83,7 +83,7 @@
  ;;                  " ruby" ;enh-ruby-mode
  ;;                  " yas";yas-minor-mode aka yasnippet
  ;;                  ))
- '(rm-whitelist '(" F")))
+ '(rm-whitelist " F"))
 
 ;; (add-hook 'after-init-hook 'myinit-rich-minority)
 ;; (defun myinit-rich-minority () "My init.")
