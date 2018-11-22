@@ -43,6 +43,7 @@
     (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup))))
 
 (defun myinit-emacs-lisp-mode--setup ()
+  (define-key emacs-lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
   (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
   (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
   (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)

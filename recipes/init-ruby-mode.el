@@ -72,6 +72,7 @@
     (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
 
 (defun myinit-ruby-mode--setup ()
+  (define-key ruby-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
   ;; Ruby indentation fix

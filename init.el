@@ -332,6 +332,7 @@
 (my-recipe '(company-web))
 
 (my-recipe '(bash-completion))
+(my-recipe '(bindings))
 (my-recipe '(bookmark))
 (my-recipe '(bytecomp))
 (my-recipe '(calendar))
