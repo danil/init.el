@@ -47,7 +47,6 @@
   (ivy-mode t))
 
 (defun myinit-ivy--setup ()
-  (define-key ivy-minibuffer-map (kbd "C-f") 'myinit-ivy--minibuffer-ivy-fallback)
   (define-key ivy-minibuffer-map (kbd "C-x C-f") 'myinit-ivy--minibuffer-ivy-fallback)
   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
   (add-hook! 'minibuffer-setup-hook
