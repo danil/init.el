@@ -32,11 +32,12 @@
 ;;; Code:
 
 (custom-set-variables
- '(ivy-truncate-lines t) ; it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
+ ;; '(ivy-fixed-height-minibuffer nil)
  '(ivy-count-format "(%d/%d) ")
  '(ivy-fixed-height-minibuffer t)
+ '(ivy-truncate-lines t) ; it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
  '(ivy-use-virtual-buffers nil) ; virtual buffers slow down switching between buffers
- '(ivy-height 15))
+ '(ivy-height 12))
 
 (add-hook 'after-init-hook 'myinit-ivy)
 (defun myinit-ivy ()
@@ -49,36 +50,36 @@
 (defun myinit-ivy--setup ()
   (define-key ivy-minibuffer-map (kbd "C-x C-f") 'myinit-ivy--minibuffer-ivy-fallback)
   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
-  (add-hook! 'minibuffer-setup-hook
-    (when (member this-command '(
-                                 ivy-resume
-                                 ivy-switch-buffer
-                                 swiper
-                                 myinit-swiper--swiper
-                                 counsel-M-x
-                                 counsel-descbinds
-                                 counsel-describe-face
-                                 counsel-describe-function
-                                 counsel-describe-variable
-                                 counsel-faces
-                                 counsel-find-file
-                                 counsel-find-library
-                                 counsel-git
-                                 counsel-git-grep
-                                 counsel-info-lookup-symbol
-                                 counsel-locate
-                                 counsel-minibuffer-history
-                                 counsel-pt
-                                 counsel-recentf
-                                 counsel-recentf
-                                 counsel-rg
-                                 counsel-unicode-char
-                                 counsel-yank-pop
-                                 myinit-counsel--counsel-ag
-                                 myinit-counsel--counsel-yank-pop
-                                 projectile-switch-to-buffer
-                                 ))
-      (setq-local truncate-lines t)))
+  ;; (add-hook! 'minibuffer-setup-hook
+  ;;   (when (member this-command '(
+  ;;                                ivy-resume
+  ;;                                ivy-switch-buffer
+  ;;                                swiper
+  ;;                                myinit-swiper--swiper
+  ;;                                counsel-M-x
+  ;;                                counsel-descbinds
+  ;;                                counsel-describe-face
+  ;;                                counsel-describe-function
+  ;;                                counsel-describe-variable
+  ;;                                counsel-faces
+  ;;                                counsel-find-file
+  ;;                                counsel-find-library
+  ;;                                counsel-git
+  ;;                                counsel-git-grep
+  ;;                                counsel-info-lookup-symbol
+  ;;                                counsel-locate
+  ;;                                counsel-minibuffer-history
+  ;;                                counsel-pt
+  ;;                                counsel-recentf
+  ;;                                counsel-recentf
+  ;;                                counsel-rg
+  ;;                                counsel-unicode-char
+  ;;                                counsel-yank-pop
+  ;;                                myinit-counsel--counsel-ag
+  ;;                                myinit-counsel--counsel-yank-pop
+  ;;                                projectile-switch-to-buffer
+  ;;                                ))
+  ;;     (setq-local truncate-lines t)))
   (myinit-customize-ivy))
 
 ;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
