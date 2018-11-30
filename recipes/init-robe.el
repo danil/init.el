@@ -49,9 +49,20 @@
     (with-eval-after-load 'ruby-mode (myinit-robe--setup-ruby-mode))))
 
 (defun myinit-robe--setup-enh-ruby-mode ()
-  (define-key enh-ruby-mode-map (my-kbd "j r") 'robe-jump))
+  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'myinit-robe--jump))
 
 (defun myinit-robe--setup-ruby-mode ()
-  (define-key ruby-mode-map (my-kbd "j r") 'robe-jump))
+  (define-key ruby-mode-map (kbd "C-c C-j") 'myinit-robe--jump))
+
+(defun myinit-robe--jump ()
+  (interactive)
+  (if (not current-prefix-arg)
+      (call-interactively 'myinit-dumb-jump---go)
+    (let ((current-prefix-arg 'nil))
+      (cond
+       ((equal current-prefix-arg 4)
+        (call-interactively 'robe-jump))
+       (t
+        (call-interactively 'robe-jump))))))
 
 ;;; init-robe.el ends here

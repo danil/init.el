@@ -56,6 +56,17 @@
 
 (defun myinit-dumb-jump--go ()
   (interactive)
+  (if (not current-prefix-arg)
+      (call-interactively 'myinit-dumb-jump---go)
+    (let ((current-prefix-arg 'nil))
+      (cond
+       ((equal current-prefix-arg 4)
+        (call-interactively 'xref-find-apropos))
+       (t
+        (call-interactively 'xref-find-apropos))))))
+
+(defun myinit-dumb-jump---go ()
+  (interactive)
   (dumb-jump-go)
   (let* ((one-more-repeat t)
          (keynames '("j" "k")))
