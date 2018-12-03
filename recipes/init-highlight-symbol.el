@@ -43,7 +43,11 @@
  '(highlight-symbol-highlight-single-occurrence nil)
  '(highlight-symbol-idle-delay 0.2) ;; 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
- '(myinit-highlight-symbol-modes (-union myinit-programming-modes '(shell-mode)))
+ '(myinit-highlight-symbol-modes (-union myinit-programming-modes
+                                         '(
+                                           shell-mode
+                                           sql-interactive-mode
+                                           )))
  '(myinit-highlight-symbol-modes-hooks
    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
            myinit-highlight-symbol-modes)))

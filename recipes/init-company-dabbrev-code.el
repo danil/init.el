@@ -34,6 +34,11 @@
 (custom-set-variables '(company-dabbrev-code-everywhere t))
 
 ;; (add-hook 'after-init-hook 'myinit-company-dabbrev-code)
-;; (defun myinit-company-dabbrev-code () "My init.")
+;; (defun myinit-company-dabbrev-code ()
+;;   "My init."
+;;   (if (boundp 'company-dabbrev-code-modes) (myinit-company-dabbrev-code--setup)
+;;     (with-eval-after-load 'company-dabbrev-code (myinit-company-dabbrev-code--setup))))
+
+;; (defun myinit-company-dabbrev-code--setup ())
 
 ;;; init-company-dabbrev-code.el ends here

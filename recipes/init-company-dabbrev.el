@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(custom-set-variables '(company-dabbrev-minimum-length 3))
+(custom-set-variables '(company-dabbrev-minimum-length 1))
 
 ;; (add-hook 'after-init-hook 'myinit-company-dabbrev)
 ;; (defun myinit-company-dabbrev () "My init.")

@@ -38,18 +38,35 @@
 (custom-set-variables '(myinit-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
 
 (add-hook 'after-init-hook 'myinit-sql)
-
 (defun myinit-sql ()
   "My init."
-
   (dolist (pattern myinit-sql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
-
   (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
+  (if (boundp 'sql-interactive-mode-map) (myinit-sql--setup)
+    (with-eval-after-load 'sql (myinit-sql--setup))))
 
-  (myinit-after-load 'sql
-    (define-key sql-interactive-mode-map (my-kbd "C-l")
-      'myinit-sql--shell-clear)))
+(defun myinit-sql--setup ()
+  (add-hook 'sql-interactive-mode-hook 'myinit-sql--setup-keys)
+  (add-hook 'sql-interactive-mode-hook
+            'myinit-sql--sql-interactive-mode-setup-company-mode))
+
+(defun myinit-sql--setup-keys ()
+  (define-key sql-interactive-mode-map (my-kbd "C-l") 'myinit-sql--shell-clear))
+
+(defun myinit-sql--sql-interactive-mode-setup-company-mode ()
+  (if (boundp 'company-dabbrev-code-modes)
+      (myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup)
+    (with-eval-after-load 'company-dabbrev
+      (myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup))))
+
+(defun myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup ()
+  (set (make-local-variable 'company-backends)
+       (append '(company-dabbrev-code) company-backends))
+  (setq company-dabbrev-code-modes
+        (append '(sql-interactive-mode)
+                (append company-dabbrev-code-modes
+                        myinit-programming-modes))))
 
 ;;; SQL inferior comint mode history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
