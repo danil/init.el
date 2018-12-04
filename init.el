@@ -174,8 +174,10 @@
 
  '(myinit-programming-modes
    (append myinit-safe-modes
-           '(clojure-mode
-             emacs-lisp-mode)))
+           '(
+             clojure-mode
+             emacs-lisp-mode
+             )))
 
  '(myinit-auto-completion-modes
    (append myinit-programming-modes
@@ -570,6 +572,7 @@
 (my-recipe '(tldr))
 (my-recipe '(toml-mode))
 (my-recipe '(transpose-frame))
+(my-recipe '(two-column)) ;disable fucking two-column mode
 (my-recipe '(undo-tree))
 (my-recipe '(uniquify)) ; uniquify buffer name
 (my-recipe '(vc-hooks))
