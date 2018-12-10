@@ -72,9 +72,10 @@
     (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
 
 (defun myinit-ruby-mode--setup ()
-  (define-key ruby-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
+  (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
+  ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
   (defadvice ruby-indent-line (after line-up-args activate)
@@ -98,6 +99,11 @@
                 ((= indent prev-indent)
                  (indent-line-to arg-indent)))
           (when (> offset 0) (forward-char offset)))))))
+
+(defun myinit-ruby-mode--beginning-of-defun ()
+  (interactive)
+  (call-interactively 'beginning-of-defun "def ")
+  (search-forward "def "))
 
 (defun myinit-ruby-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'ruby-mode)
@@ -158,14 +164,6 @@
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
          (not (member str-cur '(
-                                "each"
-                                "class"
-                                "each_with_object"
-                                "after_save"
-                                "before_save"
-                                "merge"
-                                "slice"
-                                "freeze"
                                 ":count"
                                 ":date"
                                 ":errors"
@@ -177,30 +175,31 @@
                                 "after"
                                 "after_create"
                                 "after_create_commit"
+                                "after_save"
                                 "after_update"
                                 "alias_attribute"
                                 "all"
                                 "and"
                                 "and_return"
                                 "as:"
+                                "before_save"
                                 "belongs_to"
                                 "blank?"
                                 "build"
                                 "by"
                                 "call"
+                                "class"
                                 "compact"
                                 "concat"
                                 "count"
                                 "create"
-                                "create_table"
                                 "created_at"
-                                "decimal"
                                 "default"
                                 "default:"
                                 "delegate"
-                                "disable_extension"
-                                "drop_table"
-                                "enable_extension"
+                                "downcase"
+                                "each"
+                                "each_with_object"
                                 "enum"
                                 "equal_to"
                                 "errors"
@@ -215,6 +214,7 @@
                                 "float"
                                 "force"
                                 "force:"
+                                "freeze"
                                 "full_messages"
                                 "greater_than"
                                 "greater_than_or_equal_to"
@@ -235,6 +235,7 @@
                                 "limit"
                                 "limit:"
                                 "match"
+                                "merge"
                                 "mock_model"
                                 "module_function"
                                 "new"
@@ -256,7 +257,6 @@
                                 "present?"
                                 "push"
                                 "push:"
-                                "remove_index"
                                 "render"
                                 "respond_to?"
                                 "save!"
@@ -266,6 +266,7 @@
                                 "second"
                                 "self"
                                 "size"
+                                "slice"
                                 "split"
                                 "status"
                                 "status:"
