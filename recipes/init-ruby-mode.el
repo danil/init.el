@@ -103,7 +103,7 @@
 (defun myinit-ruby-mode--beginning-of-defun ()
   (interactive)
   (call-interactively 'beginning-of-defun)
-  (search-forward "def "))
+  (search-forward "def " nil t))
 
 (defun myinit-ruby-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'ruby-mode)
