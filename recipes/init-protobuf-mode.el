@@ -38,13 +38,18 @@
     (with-eval-after-load 'protobuf-mode (myinit-protobuf-mode--setup))))
 
 (defun myinit-protobuf-mode--setup ()
-  (define-key protobuf-mode-map (kbd "C-c C-f n")
-    'myinit-protobuf-mode--beginning-of-defun))
+  (define-key protobuf-mode-map (kbd "C-c C-f e") 'myinit-protobuf-mode--end-of-defun)
+  (define-key protobuf-mode-map (kbd "C-c C-f n") 'myinit-protobuf-mode--beginning-of-defun))
 
 (defun myinit-protobuf-mode--beginning-of-defun ()
   (interactive)
   (call-interactively 'beginning-of-defun)
   (search-forward "message "))
+
+(defun myinit-protobuf-mode--end-of-defun ()
+  (interactive)
+  (call-interactively 'end-of-defun)
+  (when (search-backward "}" nil t) (forward-char)))
 
 (defun myinit-protobuf-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'protobuf-mode)
