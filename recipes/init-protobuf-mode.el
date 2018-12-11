@@ -31,8 +31,20 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-protobuf-mode)
-;; (defun myinit-protobuf-mode () "My init.")
+(add-hook 'after-init-hook 'myinit-protobuf-mode)
+(defun myinit-protobuf-mode ()
+  "My init."
+  (if (boundp 'protobuf-mode-map) (myinit-protobuf-mode--setup)
+    (with-eval-after-load 'protobuf-mode (myinit-protobuf-mode--setup))))
+
+(defun myinit-protobuf-mode--setup ()
+  (define-key protobuf-mode-map (kbd "C-c C-f n")
+    'myinit-protobuf-mode--beginning-of-defun))
+
+(defun myinit-protobuf-mode--beginning-of-defun ()
+  (interactive)
+  (call-interactively 'beginning-of-defun)
+  (search-forward "message "))
 
 (defun myinit-protobuf-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'protobuf-mode)
