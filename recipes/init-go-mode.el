@@ -231,9 +231,15 @@
 
 (defun myinit-go-mode--customize ()
   (add-hook 'before-save-hook #'gofmt-before-save)
+  (define-key go-mode-map (kbd "C-c C-f e") 'myinit-go-mode--end-of-defun)
   (define-key go-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
+
+(defun myinit-go-mode--end-of-defun ()
+  (interactive)
+  (call-interactively 'end-of-defun)
+  (when (search-backward "}" nil t) (forward-char)))
 
 (defun myinit-go-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'go-mode)

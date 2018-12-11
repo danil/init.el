@@ -72,6 +72,7 @@
     (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
 
 (defun myinit-ruby-mode--setup ()
+  (define-key ruby-mode-map (kbd "C-c C-f e") 'myinit-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
@@ -104,6 +105,11 @@
   (interactive)
   (call-interactively 'beginning-of-defun)
   (search-forward "def " nil t))
+
+(defun myinit-ruby-mode--end-of-defun ()
+  (interactive)
+  (call-interactively 'end-of-defun)
+  (when (search-backward "end" nil t) (forward-char 3)))
 
 (defun myinit-ruby-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'ruby-mode)
