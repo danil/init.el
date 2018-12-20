@@ -39,7 +39,9 @@
  '(myinit-yaml-mode-patterns
    '(
      "/\\(group\\|host\\)_vars/[^.]*\\'"
+     "/\\.kube/[^/.]*\\'"
      "\\.ya?ml\\(\\.example\\|\\.sample\\)?\\'"
+     "\\.yml\\.j2\\'"
      )))
 
 (add-hook 'after-init-hook 'myinit-yaml-mode)
