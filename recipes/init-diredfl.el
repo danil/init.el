@@ -37,7 +37,6 @@
   "My init."
   ;; (with-eval-after-load 'diredfl
   ;;   )
-
   (with-eval-after-load 'dired
     (myinit-run-with-idle-timer-in-current-buffer
      0.5 nil 'require 'diredfl)
