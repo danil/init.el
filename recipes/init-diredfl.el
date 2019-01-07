@@ -35,21 +35,17 @@
 
 (defun myinit-diredfl ()
   "My init."
-
   ;; (with-eval-after-load 'diredfl
   ;;   )
 
   (with-eval-after-load 'dired
     (myinit-run-with-idle-timer-in-current-buffer
      0.5 nil 'require 'diredfl)
-
     (add-hook 'dired-after-readin-hook 'myinit-diredfl--lazyinit)))
 
 (defun myinit-diredfl--lazyinit ()
   "Run `diredfl'."
-
   (remove-hook 'dired-after-readin-hook 'myinit-diredfl--lazyinit)
-
   (myinit-run-with-idle-timer-in-current-buffer
    myinit-default-idle-timer-seconds nil
    (lambda ()
