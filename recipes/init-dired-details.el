@@ -40,19 +40,15 @@
 
 (defun myinit-dired-details ()
   "My init."
-
   (with-eval-after-load 'dired-details
     (define-key dired-mode-map (kbd "b") 'dired-details-toggle)
     (define-key dired-mode-map "(" 'dired-details-hide)
     (define-key dired-mode-map ")" 'dired-details-show)
-
     (defadvice dired-revert (before remember-the-details activate)
       (dired-details-delete-overlays)))
-
   (with-eval-after-load 'dired
     (myinit-run-with-idle-timer-in-current-buffer
      0.5 nil 'require 'dired-details)
-
     (add-hook 'dired-after-readin-hook 'myinit-dired-details--lazyinit)))
 
 (defun myinit-dired-details--lazyinit ()
