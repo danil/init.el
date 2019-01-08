@@ -45,7 +45,7 @@
   ;;   :group 'hl-line)
   ;; (add-hook 'buffer-list-update-hook
   ;;           (lambda () (walk-windows #'myinit-hl-line--update-face nil t)))
-  (set-face-attribute hl-line-face nil :inherit nil :underline t))
+  (set-face-attribute hl-line-face nil :inherit nil :inverse-video t)) ;; :underline t
 
 ;; (defun myinit-hl-line--update-face (window)
 ;;   "Update the `hl-line' face in WINDOW to indicate whether the window is selected."
