@@ -35,11 +35,13 @@
   "Regexp patterns associated with `json-mode'."
   :group 'myinit)
 
-(custom-set-variables '(myinit-json-mode-patterns
-                        '(
-                          "/composer\\.lock\\'"
-                          "\\.bowerrc\\'"
-                          )))
+(custom-set-variables
+ '(json-encoding-default-indentation "    ")
+ '(myinit-json-mode-patterns
+   '(
+     "/composer\\.lock\\'"
+     "\\.bowerrc\\'"
+     )))
 
 (add-hook 'after-init-hook 'myinit-json-mode)
 
