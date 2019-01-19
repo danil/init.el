@@ -33,11 +33,11 @@
 
 (custom-set-variables
  ;; '(ivy-fixed-height-minibuffer nil)
- '(ivy-count-format "(%d/%d) ")
- '(ivy-fixed-height-minibuffer t)
- '(ivy-truncate-lines t) ; it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
+ ;; '(ivy-fixed-height-minibuffer t)
+ ;; '(ivy-height 11)
+ '(ivy-truncate-lines nil) ; it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
  '(ivy-use-virtual-buffers nil) ; virtual buffers slow down switching between buffers
- '(ivy-height 12))
+ '(ivy-count-format "(%d/%d) "))
 
 (add-hook 'after-init-hook 'myinit-ivy)
 (defun myinit-ivy ()
