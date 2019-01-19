@@ -370,6 +370,7 @@
 (my-recipe '(dired-details))
 (my-recipe '(diredfl))
 (my-recipe '(direx))
+(my-recipe '(pack))
 (my-recipe '(wdired))
 
 (my-recipe '(disp-table-line-wrap-and-truncation))
@@ -587,6 +588,14 @@
 ;; (my-recipe '(yafolding))
 ;; (my-recipe '(yascroll))
 ;; (my-recipe '(yasnippets))
+
+;; <https://stackoverflow.com/questions/10639429/emacs-linux-and-international-keyboard-layouts>
+;; (define-key function-key-map [?\M-ф] [?\M-a])
+;; (global-set-key [?\M-а] [?\M-f])
+;; (define-key function-key-map [?\C-ь] [?\C-x])
+;; (global-set-key (kbd "M-а") forward-word)
+;; (define-key function-key-map [?\C-ь] [?\C-x])
+;; backward-word
 
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)

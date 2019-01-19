@@ -75,6 +75,7 @@
 (depends-on "dired-details" :git "https://github.com/emacsmirror/dired-details.git")
 (depends-on "diredfl")
 (depends-on "direx")
+(depends-on "pack") ;; archive/tar/gzip/xz
 
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
