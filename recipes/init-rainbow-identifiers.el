@@ -46,6 +46,7 @@
      (conf-xdefaults-mode-hook myinit-conf-xdefaults-mode--rainbow-identifiers-init)
      (csharp-mode-hook myinit-csharp-mode--rainbow-identifiers-init)
      (css-mode-hook myinit-css-mode--rainbow-identifiers-init)
+     (dockerfile-mode-hook myinit-dockerfile-mode--rainbow-identifiers-init)
      (elixir-mode-hook myinit-elixir-mode--rainbow-identifiers-init)
      (emacs-lisp-mode-hook myinit-emacs-lisp-mode--rainbow-identifiers-init)
      (enh-ruby-mode-hook myinit-enh-ruby-mode--rainbow-identifiers-init)
