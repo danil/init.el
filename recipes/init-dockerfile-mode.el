@@ -50,10 +50,10 @@
               'myinit-dockerfile-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
-                                                  dockerfile-image-alias
-                                                  dockerfile-image-name
-                                                  font-lock-keyword-face
-                                                  font-lock-variable-name-face
+                                                  ;; dockerfile-image-alias
+                                                  ;; dockerfile-image-name
+                                                  ;; font-lock-keyword-face
+                                                  ;; font-lock-variable-name-face
                                                   ))
     (myinit-rainbow-identifiers--lazyinit)))
 
@@ -74,13 +74,6 @@
                         (buffer-substring-no-properties end (point-max)))))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
-    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
-         (not (member str-cur '(
-                                "bool"
-                                "int32"
-                                "int64"
-                                "string"
-                                "syntax"
-                                ))))))
+    (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))))
 
 ;;; init-dockerfile-mode.el ends here
