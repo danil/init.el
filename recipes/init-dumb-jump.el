@@ -31,7 +31,10 @@
 
 ;;; Code:
 
-(custom-set-variables '(dumb-jump-selector 'ivy))
+(custom-set-variables
+ '(dumb-jump-max-find-time 10)
+ '(dumb-jump-selector 'ivy))
+
 (add-hook 'after-init-hook 'myinit-dumb-jump)
 (defun myinit-dumb-jump ()
   "My init."
