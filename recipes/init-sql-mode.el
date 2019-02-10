@@ -31,30 +31,36 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-sql-mode)
+(defcustom myinit-sql-mode-patterns '()
+  "Regexp patterns associated with `sql-mode'."
+  :group 'myinit)
 
+(custom-set-variables '(myinit-sql-mode-patterns '("/\\.?psqlrc\\'")))
+
+(add-hook 'after-init-hook 'myinit-sql-mode)
 (defun myinit-sql-mode ()
   "My init."
+  (dolist (pattern myinit-sql-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
+  (if (boundp 'sql-mode-map) (myinit-sql-mode--setup)
+    (with-eval-after-load 'sql (myinit-sql-mode--setup))))
 
-  (myinit-add-mode-to-patterns 'sql-mode "/\.?psqlrc\\'"))
+(defun myinit-sql-mode--setup ()
+  (define-key sql-mode-map (kbd "C-c C-p") 'sql-set-product))
 
 (defun myinit-sql-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'sql-mode)
     (myinit-sql--rainbow-identifiers-init)
-
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-sql-mode--rainbow-identifiers-filter)
-
     (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
 
 (defun myinit-sql-interactive-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'sql-interactive-mode)
     (myinit-sql--rainbow-identifiers-init)
-
     (add-hook 'rainbow-identifiers-filter-functions
               'myinit-sql-mode--rainbow-identifiers-filter)
-
     (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
       (myinit-rainbow-identifiers--lazyinit))))
 
@@ -62,14 +68,12 @@
   (make-local-variable 'rainbow-identifiers-filter-functions)
   (add-hook 'rainbow-identifiers-filter-functions
             'rainbow-identifiers-face-overridable)
-
   (make-local-variable 'rainbow-identifiers-faces-to-override)
   (setq rainbow-identifiers-faces-to-override '()))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun myinit-sql-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
-
   (let ((ch-cur (char-after beg))
         (str-cur (downcase (buffer-substring-no-properties beg end))))
     (and
