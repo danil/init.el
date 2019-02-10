@@ -88,6 +88,7 @@
                                 "bool"
                                 "int32"
                                 "int64"
+                                "oneof"
                                 "string"
                                 "syntax"
                                 ))))))
