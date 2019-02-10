@@ -170,6 +170,7 @@
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
          (not (member str-cur '(
+                                "inspect"
                                 ":count"
                                 ":date"
                                 ":errors"
@@ -195,6 +196,7 @@
                                 "by"
                                 "call"
                                 "class"
+                                "compact!"
                                 "compact"
                                 "concat"
                                 "count"
@@ -226,7 +228,6 @@
                                 "greater_than_or_equal_to"
                                 "has_many"
                                 "has_one"
-                                "id"
                                 "if:"
                                 "included"
                                 "initial"
