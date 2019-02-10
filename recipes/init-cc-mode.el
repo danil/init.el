@@ -53,7 +53,7 @@
               'myinit-c-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '())
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
     (myinit-rainbow-identifiers--lazyinit)))
 
