@@ -33,6 +33,7 @@
 
 (custom-set-variables
  '(sml/col-number-format "%c")
+ '(sml/directory-truncation-string "<")
  '(sml/line-number-format "%l")
  '(sml/mode-width 'full)
  '(sml/name-width '(0 . 44))
