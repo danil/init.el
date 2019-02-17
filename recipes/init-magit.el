@@ -44,6 +44,8 @@
   (define-key myinit-map (kbd "V d") 'magit-diff-buffer-file)
   (define-key myinit-map (kbd "V D") 'magit-diff)
 
+  (define-key myinit-map (kbd "V f") 'magit-find-file)
+
   (define-key myinit-map (kbd "V l") 'magit-log)
 
   (define-key myinit-map (kbd "V L l") 'magit-log-long)
