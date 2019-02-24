@@ -34,19 +34,15 @@
 (custom-set-variables '(magit-blame-heading-format "%-20a %C %s %H"))
 
 (add-hook 'after-init-hook 'myinit-magit-blame)
-
 (defun myinit-magit-blame ()
   "My init."
-
   (define-key myinit-map (kbd "V b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.
 If ARG provided then blame with popup menu."
-
   (interactive "P")
-
-  (if arg (call-interactively 'magit-blame-popup)
-    (call-interactively 'magit-blame)))
+  (if arg (call-interactively 'magit-blame)
+    (call-interactively 'magit-blame-addition)))
 
 ;;; init-magit-blame.el ends here
