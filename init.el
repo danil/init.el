@@ -400,6 +400,7 @@
 (my-recipe '(flycheck-golangci-lint))
 
 (my-recipe '(go-mode))
+(my-recipe '(go-stacktracer))
 (my-recipe '(godoctor))
 (my-recipe '(gotest))
 

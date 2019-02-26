@@ -97,6 +97,7 @@
 (depends-on "go-mode")
 (depends-on "go-projectile")
 (depends-on "go-snippets")
+(depends-on "go-stacktracer")
 (depends-on "godoctor")
 (depends-on "google-translate")
 (depends-on "gotest")
