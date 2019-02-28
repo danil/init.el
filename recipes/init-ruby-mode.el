@@ -35,6 +35,10 @@
   "Regexp patterns associated with `ruby-mode'."
   :group 'myinit)
 
+(defcustom myinit-ruby-mode--rainbow-identifiers-stop-words '()
+  "Do not highlight in `ruby-mode'."
+  :group 'myinit)
+
 (custom-set-variables
  '(myinit-ruby-mode-patterns
    '(
@@ -56,6 +60,141 @@
      "\\.thor\\'"
      "\\.yml\\.erb\\'"
      ))
+ '(myinit-ruby-mode--rainbow-identifiers-stop-words
+   '(
+     "inspect"
+     ":count"
+     ":date"
+     ":errors"
+     ":float"
+     ":json"
+     ":jsonb"
+     ":push"
+     ":uuid"
+     "after"
+     "after_create"
+     "after_create_commit"
+     "after_save"
+     "after_update"
+     "alias_attribute"
+     "all"
+     "and"
+     "and_return"
+     "as:"
+     "before_save"
+     "belongs_to"
+     "blank?"
+     "build"
+     "by"
+     "call"
+     "class"
+     "compact!"
+     "compact"
+     "concat"
+     "count"
+     "create"
+     "created_at"
+     "default"
+     "default:"
+     "delegate"
+     "downcase"
+     "each"
+     "each_with_object"
+     "enum"
+     "equal_to"
+     "errors"
+     "errors:"
+     "even"
+     "extract_options!"
+     "false"
+     "find_by"
+     "find_or_create_by!"
+     "find_or_create_by"
+     "first"
+     "float"
+     "force"
+     "force:"
+     "freeze"
+     "full_messages"
+     "greater_than"
+     "greater_than_or_equal_to"
+     "has_many"
+     "has_one"
+     "if:"
+     "included"
+     "initial"
+     "initialize"
+     "is_a?"
+     "join"
+     "joins"
+     "last"
+     "length"
+     "less_than"
+     "less_than_or_equal_to"
+     "limit"
+     "limit:"
+     "match"
+     "merge"
+     "mock_model"
+     "module_function"
+     "new"
+     "nil"
+     "nil?"
+     "not"
+     "null"
+     "null:"
+     "numericality"
+     "odd"
+     "other_than"
+     "params:"
+     "performed?"
+     "polymorphic"
+     "polymorphic:"
+     "pop"
+     "presence"
+     "presence:"
+     "present?"
+     "push"
+     "push:"
+     "render"
+     "respond_to?"
+     "save!"
+     "save"
+     "scope"
+     "scoped"
+     "second"
+     "self"
+     "size"
+     "slice"
+     "split"
+     "status"
+     "status:"
+     "stub"
+     "table_name"
+     "to_a"
+     "to_h"
+     "to_hash"
+     "to_i"
+     "to_json"
+     "to_s"
+     "true"
+     "try"
+     "uniq"
+     "unique"
+     "unique:"
+     "uniqueness"
+     "upcase"
+     "update!"
+     "update"
+     "update_all"
+     "updated_at"
+     "valid"
+     "valid?"
+     "validate"
+     "validates"
+     "where"
+     "with_options"
+     ))
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil))
 
@@ -75,7 +214,8 @@
   (define-key ruby-mode-map (kbd "C-c C-f e") 'myinit-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
-  (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
+  (define-key ruby-mode-map (my-kbd "m r b") 'myinit-ruby-mode--toggle-block)
+  (define-key ruby-mode-map (my-kbd "m r h") 'myinit-ruby-mode--align-hash)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -128,9 +268,7 @@
         (str-cur (buffer-substring-no-properties beg end)))
     (and
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
-     (and (member str-cur '(
-                            " return"
-                            ))))))
+     (and (member str-cur '(" return"))))))
 
 (defun myinit-ruby-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'ruby-mode)
@@ -169,140 +307,7 @@
          ;; (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
-         (not (member str-cur '(
-                                "inspect"
-                                ":count"
-                                ":date"
-                                ":errors"
-                                ":float"
-                                ":json"
-                                ":jsonb"
-                                ":push"
-                                ":uuid"
-                                "after"
-                                "after_create"
-                                "after_create_commit"
-                                "after_save"
-                                "after_update"
-                                "alias_attribute"
-                                "all"
-                                "and"
-                                "and_return"
-                                "as:"
-                                "before_save"
-                                "belongs_to"
-                                "blank?"
-                                "build"
-                                "by"
-                                "call"
-                                "class"
-                                "compact!"
-                                "compact"
-                                "concat"
-                                "count"
-                                "create"
-                                "created_at"
-                                "default"
-                                "default:"
-                                "delegate"
-                                "downcase"
-                                "each"
-                                "each_with_object"
-                                "enum"
-                                "equal_to"
-                                "errors"
-                                "errors:"
-                                "even"
-                                "extract_options!"
-                                "false"
-                                "find_by"
-                                "find_or_create_by!"
-                                "find_or_create_by"
-                                "first"
-                                "float"
-                                "force"
-                                "force:"
-                                "freeze"
-                                "full_messages"
-                                "greater_than"
-                                "greater_than_or_equal_to"
-                                "has_many"
-                                "has_one"
-                                "if:"
-                                "included"
-                                "initial"
-                                "initialize"
-                                "is_a?"
-                                "join"
-                                "joins"
-                                "last"
-                                "length"
-                                "less_than"
-                                "less_than_or_equal_to"
-                                "limit"
-                                "limit:"
-                                "match"
-                                "merge"
-                                "mock_model"
-                                "module_function"
-                                "new"
-                                "nil"
-                                "nil?"
-                                "not"
-                                "null"
-                                "null:"
-                                "numericality"
-                                "odd"
-                                "other_than"
-                                "params:"
-                                "performed?"
-                                "polymorphic"
-                                "polymorphic:"
-                                "pop"
-                                "presence"
-                                "presence:"
-                                "present?"
-                                "push"
-                                "push:"
-                                "render"
-                                "respond_to?"
-                                "save!"
-                                "save"
-                                "scope"
-                                "scoped"
-                                "second"
-                                "self"
-                                "size"
-                                "slice"
-                                "split"
-                                "status"
-                                "status:"
-                                "stub"
-                                "table_name"
-                                "to_a"
-                                "to_h"
-                                "to_hash"
-                                "to_i"
-                                "to_json"
-                                "to_s"
-                                "true"
-                                "try"
-                                "uniq"
-                                "unique"
-                                "unique:"
-                                "uniqueness"
-                                "upcase"
-                                "update!"
-                                "update"
-                                "update_all"
-                                "updated_at"
-                                "valid"
-                                "valid?"
-                                "validate"
-                                "validates"
-                                "where"
-                                "with_options"
-                                ))))))
+         (not (member str-cur myinit-ruby-mode--rainbow-identifiers-stop-words)))))
 
 ;; My keyboard macroses.
 ;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
@@ -311,7 +316,7 @@
 (fset 'my-kbd-macro-ruby-string-to-symbol
       "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 
-(defun my-ruby-toggle-block ()
+(defun myinit-ruby-mode--toggle-block ()
   "Toggle block type from do-end to braces or back.
 The block must begin on the current line or above it and end after the point.
 If the result is do-end block, it will always be multiline."
@@ -327,11 +332,11 @@ If the result is do-end block, it will always be multiline."
                    (setq end (point))
                    (> end start)))
             (if (match-beginning 1)
-                (my-ruby-brace-to-do-end beg end)
-              (my-ruby-do-end-to-brace beg end)))
+                (myinit-ruby-mode--brace-to-do-end beg end)
+              (myinit-ruby-mode--do-end-to-brace beg end)))
       (goto-char start))))
 
-(defun my-ruby-brace-to-do-end (orig end)
+(defun myinit-ruby-mode--brace-to-do-end (orig end)
   (let (beg-marker end-marker)
     (goto-char end)
     (when (eq (char-before) ?\})
@@ -361,7 +366,7 @@ If the result is do-end block, it will always be multiline."
       (goto-char beg-marker)
       t)))
 
-(defun my-ruby-do-end-to-brace (orig end)
+(defun myinit-ruby-mode--do-end-to-brace (orig end)
   (let (beg-marker end-marker beg-pos end-pos)
     (goto-char (- end 3))
     (when (looking-at ruby-block-end-re)
@@ -393,6 +398,26 @@ If the result is do-end block, it will always be multiline."
         (just-one-space -1))
       (goto-char beg-marker)
       t)))
+
+;; Copyright 2016 John Cinnamond <https://raw.githubusercontent.com/jcinnamond/jc-ruby-extra/master/jc-ruby-extra.el>
+(defun myinit-ruby-mode--align-hash ()
+  (interactive)
+  (if (region-active-p)
+      (let ((selection (buffer-substring-no-properties (region-beginning) (region-end))))
+  (if (myinit-ruby-mode--align-hash-old-style-p selection)
+      (myinit-ruby-mode--align-hash-old-style)
+    (myinit-ruby-mode--align-hash-new-style)))
+    (message "myinit-ruby-mode--align-hash requires an active mark")))
+
+(defun myinit-ruby-mode--align-hash-old-style-p (string)
+  (if (string-match "=>" string) 't nil))
+
+(defun myinit-ruby-mode--align-hash-old-style ()
+  (message "aligning old")
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=>"))
+
+(defun myinit-ruby-mode--align-hash-new-style ()
+  (align-regexp (region-beginning) (region-end) ":\\(\\s-*\\)" 1 1 nil))
 
 ;;TODO: To refactor below.
 
