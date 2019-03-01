@@ -214,8 +214,8 @@
   (define-key ruby-mode-map (kbd "C-c C-f e") 'myinit-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
-  (define-key ruby-mode-map (my-kbd "m a h") 'myinit-ruby-mode--align-hash)
-  (define-key ruby-mode-map (my-kbd "m r b") 'myinit-ruby-mode--toggle-block)
+  (define-key ruby-mode-map (my-kbd "m f h") 'myinit-ruby-mode--align-hash)
+  (define-key ruby-mode-map (my-kbd "m f b") 'myinit-ruby-mode--toggle-block)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
