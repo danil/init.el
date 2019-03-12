@@ -244,7 +244,7 @@
 (defun myinit-ruby-mode--beginning-of-defun ()
   (interactive)
   (call-interactively 'beginning-of-defun)
-  (search-forward "def " nil t))
+  (search-forward-regexp "def \\(self\\.\\)?" nil t))
 
 (defun myinit-ruby-mode--end-of-defun ()
   (interactive)
