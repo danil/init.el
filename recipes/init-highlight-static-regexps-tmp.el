@@ -204,6 +204,8 @@ The color generation can be influenced by changing
   "The matcher function to be used by font lock mode."
   (catch 'highlight-static-regexps--matcher
     (while (re-search-forward (concat "\\("
+                                      "\\<unsafe\\_>"
+                                      "\\|"
                                       " :="
                                       "\\|"
                                       ") ($"

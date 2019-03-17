@@ -71,15 +71,17 @@
 ;;   )
 
 (defun myinit-go-mode--highlight-static-regexps-choose-face (s)
-  (cond ((equal s " :=") '(:weight bold))
-        ((equal s ") (") '(:weight bold))
-        ((equal s "\tbreak") '(:inherit font-lock-keyword-face :weight bold))
-        ((equal s "\tcontinue") '(:inherit font-lock-keyword-face :weight bold))
-        ((equal s "\tdefer") '(:inherit font-lock-keyword-face :weight bold))
-        ((equal s "\tgo") '(:inherit font-lock-keyword-face :weight bold))
-        ((equal s "\tgoto") '(:inherit font-lock-keyword-face :weight bold))
-        ((equal s "\treturn") '(:inherit font-lock-keyword-face :weight bold))
-        (t '(:inherit myinit-faces--alert-fixme))))
+  (cond
+   ((equal s "unsafe") '(:weight bold))
+   ((equal s " :=") '(:weight bold))
+   ((equal s ") (") '(:weight bold))
+   ((equal s "\tbreak") '(:inherit font-lock-keyword-face :weight bold))
+   ((equal s "\tcontinue") '(:inherit font-lock-keyword-face :weight bold))
+   ((equal s "\tdefer") '(:inherit font-lock-keyword-face :weight bold))
+   ((equal s "\tgo") '(:inherit font-lock-keyword-face :weight bold))
+   ((equal s "\tgoto") '(:inherit font-lock-keyword-face :weight bold))
+   ((equal s "\treturn") '(:inherit font-lock-keyword-face :weight bold))
+   (t '(:inherit myinit-faces--alert-fixme))))
 
 (defun myinit-highlight-static-regexps--lazyinit ()
   "Run `highlight-static-regexps'."

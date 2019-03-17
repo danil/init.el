@@ -262,6 +262,7 @@
     (and
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
      (and (member str-cur '(
+                            "unsafe"
                             " :="
                             ") ("
                             "\tbreak"
