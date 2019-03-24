@@ -1,6 +1,6 @@
 ;;; init-sh-script.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2019 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,26 +31,37 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-sh-script)
+(defcustom myinit-sh-mode-patterns '()
+  "Regexp patterns associated with `sh-mode'."
+  :group 'myinit)
 
+(custom-set-variables
+ '(myinit-sh-mode-patterns
+   '(
+     "/Procfile\\'"
+     "/\\.ackrc\\'"
+     "/\\.bash_aliases\\'"
+     "/\\.bpkgrc\\'"
+     "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
+     "/\\.lessfilter\\'"
+     "/\\.mkshrc\\'"
+     "/\\.xprofile\\'"
+     "/dwmrc\\'"
+
+     ;; Ubuntu.
+     "/apt/.+\\.list\\(\\.save\\)?\\'"
+
+     ;; Gentoo.
+     "/etc/init.d/"
+     "/etc/local.d/.+\\.\\(start\\|stop\\)"
+     )))
+
+
+(add-hook 'after-init-hook 'myinit-sh-script)
 (defun myinit-sh-script ()
   "My init."
-
-  (myinit-add-mode-to-patterns 'shell-script-mode
-                               "/Procfile\\'"
-                               "/\\.ackrc\\'"
-                               "/\\.bash_aliases\\'"
-                               "/\\.bpkgrc\\'"
-                               "/\\.env\\(\\.development\\|\.production\\)?\\(\\.example\\)?\\'"
-                               "/\\.lessfilter\\'"
-                               "/\\.mkshrc\\'"
-                               "/\\.xprofile\\'"
-                               "/dwmrc\\'")
-
-  ;; Gentoo.
-  (myinit-add-mode-to-patterns 'shell-script-mode
-                               "/etc/init.d/"
-                               "/etc/local.d/.+\\.\\(start\\|stop\\)"))
+  (dolist (pattern myinit-sh-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
 
 (defun myinit-sh-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'sh-mode)
