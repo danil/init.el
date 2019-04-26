@@ -62,6 +62,7 @@
      ))
  '(myinit-ruby-mode--rainbow-identifiers-stop-words
    '(
+     "_"
      "inspect"
      ":count"
      ":date"
@@ -72,6 +73,7 @@
      ":push"
      ":uuid"
      "after"
+     "any?"
      "after_create"
      "after_create_commit"
      "after_save"
@@ -79,8 +81,8 @@
      "alias_attribute"
      "all"
      "and"
-     "and_return"
      "as:"
+     "between?"
      "before_save"
      "belongs_to"
      "blank?"
@@ -88,24 +90,29 @@
      "by"
      "call"
      "class"
+     "clone"
      "compact!"
      "compact"
      "concat"
      "count"
+     "create!"
      "create"
      "created_at"
+     "delete_at"
      "default"
      "default:"
      "delegate"
      "downcase"
      "each"
      "each_with_object"
+     "empty?"
      "enum"
      "equal_to"
      "errors"
      "errors:"
      "even"
      "extract_options!"
+     "flatten"
      "false"
      "find_by"
      "find_or_create_by!"
@@ -125,6 +132,7 @@
      "initial"
      "initialize"
      "is_a?"
+     "include?"
      "join"
      "joins"
      "last"
@@ -135,6 +143,7 @@
      "limit:"
      "match"
      "merge"
+     "merge!"
      "mock_model"
      "module_function"
      "new"
@@ -151,6 +160,7 @@
      "polymorphic"
      "polymorphic:"
      "pop"
+     "pluck"
      "presence"
      "presence:"
      "present?"
@@ -158,6 +168,7 @@
      "push:"
      "render"
      "respond_to?"
+     "select"
      "save!"
      "save"
      "scope"
@@ -168,10 +179,15 @@
      "slice"
      "split"
      "status"
+     "shift"
      "status:"
      "stub"
+     "sum"
+     "tap"
      "table_name"
+     "third"
      "to_a"
+     "to_proc"
      "to_h"
      "to_hash"
      "to_i"
@@ -215,6 +231,7 @@
   (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key ruby-mode-map (my-kbd "m f h") 'myinit-ruby-mode--align-hash)
+  (define-key ruby-mode-map (my-kbd "m f v") 'myinit-ruby-mode--align-variable-defenition)
   (define-key ruby-mode-map (my-kbd "m t b") 'myinit-ruby-mode--toggle-block)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
@@ -293,7 +310,7 @@
         (str-cur (buffer-substring-no-properties beg end))
         (str-before (buffer-substring-no-properties (point-min) beg))
         (str-after (buffer-substring-no-properties end (point-max))))
-    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
+    (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ??)))
          ;; (not (string-match-p "[?!]\\'" str-cur))
          ;; (not (and (string-match-p "^[[:space:]]*\\'" str-before)
          ;;           (string-match-p "\\`[[:space:]]*$" str-after)))
@@ -408,16 +425,22 @@ If the result is do-end block, it will always be multiline."
       (myinit-ruby-mode--align-hash-old-style)
     (myinit-ruby-mode--align-hash-new-style)))
     (message "myinit-ruby-mode--align-hash requires an active mark")))
-
 (defun myinit-ruby-mode--align-hash-old-style-p (string)
   (if (string-match "=>" string) 't nil))
-
 (defun myinit-ruby-mode--align-hash-old-style ()
   (message "aligning old")
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=>"))
-
 (defun myinit-ruby-mode--align-hash-new-style ()
   (align-regexp (region-beginning) (region-end) ":\\(\\s-*\\)" 1 1 nil))
+
+(defun myinit-ruby-mode--align-variable-defenition ()
+  (interactive)
+  (if (region-active-p)
+      (let ((selection (buffer-substring-no-properties (region-beginning) (region-end))))
+        (myinit-ruby-mode--align-variable-defenition-new-style))
+    (message "myinit-ruby-mode--align-variable-defenition requires an active mark")))
+(defun myinit-ruby-mode--align-variable-defenition-new-style ()
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil))
 
 ;;TODO: To refactor below.
 
