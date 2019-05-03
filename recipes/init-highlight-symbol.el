@@ -45,6 +45,7 @@
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
  '(myinit-highlight-symbol-modes (-union myinit-programming-modes
                                          '(
+                                           dired-mode
                                            shell-mode
                                            sql-interactive-mode
                                            )))
