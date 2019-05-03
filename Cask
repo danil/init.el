@@ -61,7 +61,7 @@
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
 (depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
-(depends-on "crontab-mode" :git "https://github.com/emacsattic/crontab-mode.git")
+(depends-on "crontab-mode" :git "https://github.com/emacsmirror/crontab-mode.git")
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
