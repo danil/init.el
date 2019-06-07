@@ -49,6 +49,7 @@
      (dockerfile-mode-hook myinit-dockerfile-mode--rainbow-identifiers-init)
      (elixir-mode-hook myinit-elixir-mode--rainbow-identifiers-init)
      (emacs-lisp-mode-hook myinit-emacs-lisp-mode--rainbow-identifiers-init)
+     (lisp-mode-hook myinit-lisp-mode--rainbow-identifiers-init)
      (enh-ruby-mode-hook myinit-enh-ruby-mode--rainbow-identifiers-init)
      (go-mode-hook myinit-go-mode--rainbow-identifiers-init)
      (haproxy-mode-hook myinit-haproxy-mode--rainbow-identifiers-init)
