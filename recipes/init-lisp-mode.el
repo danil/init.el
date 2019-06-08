@@ -41,7 +41,15 @@
 
 (defun myinit-lisp-mode--setup ()
   (define-key lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
-  (define-key lisp-mode-map [?\C-\M-i] nil))
+  (define-key lisp-mode-map [?\C-\M-i] nil)
+  (myinit-run-with-idle-timer-in-current-buffer
+   myinit-default-idle-timer-seconds nil 'myinit-lisp-mode--lazy-setup))
+
+(defun myinit-lisp-mode--lazy-setup ()
+  (let ((f "~/.roswell/helper.el"))
+    (when (file-exists-p f)
+      (load (expand-file-name f))
+      (setq inferior-lisp-program "ros -Q run"))))
 
 (defun myinit-lisp-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'lisp-mode)
