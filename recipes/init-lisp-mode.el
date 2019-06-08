@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'myinit-lisp-mode)
 (defun myinit-lisp-mode ()
   "My init."
-  (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "/\\.ros\\'"))
+  (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'"))
     (add-to-list 'auto-mode-alist (cons pattern 'lisp-mode)))
   (if (boundp 'lisp-mode-map) (myinit-lisp-mode--setup)
     (with-eval-after-load 'lisp-mode (myinit-lisp-mode--setup))))
@@ -59,11 +59,13 @@
         (ch-cur (char-after beg))
         (str-cur (buffer-substring-no-properties beg end)))
     (and
-     (member face-cur '(nil font-lock-function-name-face font-lock-variable-name-face))
+     (member face-cur '(nil font-lock-function-name-face
+                            font-lock-builtin-face
+                            font-lock-variable-name-face))
      (not (member ch-cur
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?` ?.)))
      (not (member str-cur '( ;this is standard functions
-                            "foobar!!!!!!!!!!!!!!!!"
+                            "nil"
                             ))))))
 
 ;;; init-lisp-mode.el ends here
