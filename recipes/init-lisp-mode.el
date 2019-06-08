@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'myinit-lisp-mode)
 (defun myinit-lisp-mode ()
   "My init."
-  (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'"))
+  (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "/\\.ros\\'"))
     (add-to-list 'auto-mode-alist (cons pattern 'lisp-mode)))
   (if (boundp 'lisp-mode-map) (myinit-lisp-mode--setup)
     (with-eval-after-load 'lisp-mode (myinit-lisp-mode--setup))))
