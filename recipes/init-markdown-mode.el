@@ -60,6 +60,6 @@
 
    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
    (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
-   (define-key markdown-mode-map (kbd "TAB") nil)))
+   (define-key markdown-mode-map (kbd "TAB") 'markdown-cycle)))
 
 ;;; init-markdown-mode.el ends here

@@ -31,11 +31,15 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-slim-mode)
-;; (defun myinit-slim-mode ()
-;;   "My init."
-;;   (myinit-after-load 'slim-mode
-;;     (define-key slim-mode-map (kbd "\C-c\C-f") nil)))
+(add-hook 'after-init-hook 'myinit-slim-mode)
+(defun myinit-slim-mode ()
+  "My init."
+  (myinit-after-load 'slim-mode
+    (define-key slim-mode-map (kbd "\C-c\C-f") nil)
+    (define-key slim-mode-map (kbd "M-_") nil)
+    (define-key slim-mode-map (kbd "M-?") nil)
+    (define-key slime-parent-map (kbd "M-_") nil)
+    (define-key slime-parent-map (kbd "M-?") nil)))
 
 (defun myinit-slim-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'slim-mode)

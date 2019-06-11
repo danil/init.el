@@ -1,6 +1,6 @@
 ;;; init-projectile.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2019 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -32,12 +32,12 @@
 ;;; Code:
 
 (custom-set-variables
- '(projectile-dynamic-mode-line nil)
  '(projectile-completion-system 'ivy) ;ido
+ '(projectile-dynamic-mode-line nil)
+ '(projectile-indexing-method 'alien) ; 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil))
 
 (add-hook 'after-init-hook 'myinit-projectile)
-
 (defun myinit-projectile ()
   "My init."
   ;; (myinit-after-load 'projectile
