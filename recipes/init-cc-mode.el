@@ -31,18 +31,31 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-cc-mode)
+(defcustom myinit-c-mode-patterns '()
+  "Regexp patterns associated with `c-mode'."
+  :group 'myinit)
 
+(custom-set-variables
+ '(myinit-c-mode-patterns
+   '(
+     "/etc/portage/savedconfig/www-servers/quark"
+     "/etc/portage/savedconfig/x11-misc/dmenu"
+     "/etc/portage/savedconfig/x11-misc/slstatus"
+     "/etc/portage/savedconfig/x11-misc/tabbed"
+     "/etc/portage/savedconfig/x11-terms/st"
+     "/etc/portage/savedconfig/x11-wm/dwm"
+     )))
+
+(add-hook 'after-init-hook 'myinit-cc-mode)
 (defun myinit-cc-mode ()
   "My init."
+  (dolist (pattern myinit-c-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'c-mode)))
+  (if (boundp 'c-mode) (myinit-c-mode--setup)
+    (with-eval-after-load 'cc-mode (myinit-c-mode--setup))))
 
-  (myinit-add-mode-to-patterns 'c-mode
-                               "/etc/portage/savedconfig/www-servers/quark"
-                               "/etc/portage/savedconfig/x11-misc/dmenu"
-                               "/etc/portage/savedconfig/x11-misc/slstatus"
-                               "/etc/portage/savedconfig/x11-misc/tabbed"
-                               "/etc/portage/savedconfig/x11-terms/st"
-                               "/etc/portage/savedconfig/x11-wm/dwm"))
+(defun myinit-c-mode--setup ()
+  (define-key c-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
 (defun myinit-c-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'c-mode)

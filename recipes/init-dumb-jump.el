@@ -46,10 +46,15 @@
   (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
   (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
   (define-key dumb-jump-mode-map (my-kbd "j d") 'myinit-dumb-jump--go)
+  (if (boundp 'c-mode-map) (myinit-dumb-jump--setup-c-mode)
+    (with-eval-after-load 'cc-mode (myinit-dumb-jump--setup-c-mode)))
   (if (boundp 'enh-ruby-mode-map) (myinit-dumb-jump--setup-enh-ruby-mode)
     (with-eval-after-load 'enh-ruby-mode (myinit-dumb-jump--setup-enh-ruby-mode)))
   (if (boundp 'ruby-mode-map) (myinit-dumb-jump--setup-ruby-mode)
     (with-eval-after-load 'ruby-mode (myinit-dumb-jump--setup-ruby-mode))))
+
+(defun myinit-dumb-jump--setup-c-mode ()
+  (define-key c-mode-map (kbd "C-c C-j") 'myinit-dumb-jump--go))
 
 (defun myinit-dumb-jump--setup-enh-ruby-mode ()
   (define-key enh-ruby-mode-map (kbd "C-c C-j") 'myinit-dumb-jump--go))
