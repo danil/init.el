@@ -10,16 +10,16 @@
 ;; (depends-on "org-readme")
 ;; (depends-on "yafolding")
 
-(depends-on "ac-html" :git "https://github.com/zhangkaiyulw/ac-html.git" :ref "v0.31") ;i can not setup new version
-(depends-on "web-completion-data") ;used by ad-html
+(depends-on "ac-html" :git "https://github.com/zhangkaiyulw/ac-html.git" :ref "v0.31") ; i can not setup new version
+(depends-on "web-completion-data") ; used by ad-html
 
-;; (depends-on "cider") ;i do not want upgrade "cider-nrepl plugin"
+;; (depends-on "cider") ; i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 
 (depends-on "magit")
 (depends-on "magit-popup")
 
-(depends-on "org" "20150929") ;fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
+(depends-on "org" "20150929") ; fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
 (depends-on "org-ac")
 
 ;; ;; AC auto complete.
@@ -49,18 +49,18 @@
 
 ;; Fuzzy searching in multiple files (projectile and friends).
 (depends-on "ag")
-(depends-on "pt") ;the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
-(depends-on "wgrep-ag") ;editable grep
-(depends-on "wgrep-pt") ;editable grep
+(depends-on "pt") ; the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
+(depends-on "wgrep-ag") ; editable grep
+(depends-on "wgrep-pt") ; editable grep
 
 ;; (depends-on "dim")
-(depends-on "anzu") ;isearch and query-replace extension
+(depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")
 (depends-on "cask")
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
-(depends-on "corral") ;smartparens replacement (quotes/parentheses/delimiters manager)
+(depends-on "corral") ; smartparens replacement (quotes/parentheses/delimiters manager)
 (depends-on "crontab-mode" :git "https://github.com/emacsmirror/crontab-mode.git")
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
@@ -79,14 +79,14 @@
 
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
-(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git") ;"Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>" ;http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
+(depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git") ; "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>" ; http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elisp-slime-nav")
 (depends-on "elixir-mode")
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
 (depends-on "expand-region")
-(depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ;"Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
+(depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ; "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
 (depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
@@ -109,20 +109,20 @@
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 
-;; (depends-on "iedit") ;isearch + edit is an a-la multiple-cursors-mode
+;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
 (depends-on "crm-custom")
-(depends-on "css-comb") ;css formater
+(depends-on "css-comb") ; css formater
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
 (depends-on "hl-todo")
-(depends-on "hydra") ;key bindings
+(depends-on "hydra") ; key bindings
 (depends-on "ibuffer-vc")
 (depends-on "inf-mongo")
 
 ;; Ido.
-;; (depends-on "flx-ido") ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
+;; (depends-on "flx-ido") ;  incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
 ;; (depends-on "ido-occur")
-(depends-on "ido-clever-match") ;ido fuzzy matching
+(depends-on "ido-clever-match") ; ido fuzzy matching
 (depends-on "ido-describe-bindings")
 (depends-on "ido-ubiquitous" :git "https://github.com/technomancy/ido-ubiquitous.git")
 (depends-on "ido-vertical-mode")
@@ -137,7 +137,7 @@
 (depends-on "ivy-historian")
 (depends-on "ivy-hydra")
 (depends-on "swiper")
-(depends-on "wgrep") ;editable `ivy-occur` buffer (grep-mode)
+(depends-on "wgrep") ; editable `ivy-occur` buffer (grep-mode)
 
 ;;; JavaScript.
 (depends-on "coffee-mode")
@@ -179,12 +179,12 @@
 (depends-on "rspec-mode")
 (depends-on "ruby-guard" :git "https://github.com/zhangkaiyulw/ruby-guard.git")
 (depends-on "ruby-hash-syntax")
-(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO"))) ;"Pry support within Emacs"
+(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO"))) ; "Pry support within Emacs"
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 
 ;; (depends-on "racer")
-;; (depends-on "flycheck-rust") ;buggy(
+;; (depends-on "flycheck-rust") ; buggy(
 (depends-on "rust-mode")
 
 (depends-on "sass-mode")
@@ -199,12 +199,12 @@
 (depends-on "smart-mode-line")
 
 (depends-on "rainbow-delimiters")
-(depends-on "rainbow-identifiers") ;highlight each variable uniquely based on its name
+(depends-on "rainbow-identifiers") ; highlight each variable uniquely based on its name
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
 (depends-on "redis")
 (depends-on "restclient")
-(depends-on "rg") ;ripgrep is an a-la ag platinum searcher written in rust
+(depends-on "rg") ; ripgrep is an a-la ag platinum searcher written in rust
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")
@@ -223,5 +223,5 @@
 ;; (depends-on "yascroll")
 (depends-on "yasnippet")
 (depends-on "yasnippet-snippets" :git "https://github.com/AndreaCrotti/yasnippet-snippets.git" :files ("*" (:exclude ".git" ".gitignore" ".nosearch" "CONTRIBUTORS.txt" "LICENSE" "README.md" "rename_add_contr.py")))
-(depends-on "yasnippets" :git "https://github.com/rejeep/yasnippets.git" :files ("*" (:exclude ".git" ".gitignore" "README.markdown"))) ;"Comprehensive collection of yasnippets"
+(depends-on "yasnippets" :git "https://github.com/rejeep/yasnippets.git" :files ("*" (:exclude ".git" ".gitignore" "README.markdown"))) ; "Comprehensive collection of yasnippets"
 (depends-on "ztree")

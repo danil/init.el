@@ -395,8 +395,8 @@
 (my-recipe '(font-core))
 
 ;; (my-recipe '(flycheck-gometalinter))
+;; (my-recipe '(flycheck-bashate))
 (my-recipe '(flycheck))
-(my-recipe '(flycheck-bashate))
 (my-recipe '(flycheck-golangci-lint))
 
 (my-recipe '(go-mode))
@@ -563,6 +563,7 @@
 (my-recipe '(sort))
 (my-recipe '(subr))
 (my-recipe '(subword-mode))
+(my-recipe '(systemd))
 
 (my-recipe '(sql))
 (my-recipe '(sql-mode))

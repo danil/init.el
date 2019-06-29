@@ -66,6 +66,7 @@
      (slim-mode-hook myinit-slim-mode--rainbow-identifiers-init)
      (sql-interactive-mode-hook myinit-sql-interactive-mode--rainbow-identifiers-init)
      (sql-mode-hook myinit-sql-mode--rainbow-identifiers-init)
+     (systemd-hook myinit-systemd--rainbow-identifiers-init)
      (toml-mode-hook myinit-toml-mode--rainbow-identifiers-init)
      (web-mode-hook myinit-web-mode--rainbow-identifiers-init)
      (yaml-mode-hook myinit-yaml-mode--rainbow-identifiers-init)
