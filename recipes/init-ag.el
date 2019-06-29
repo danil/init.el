@@ -1,6 +1,6 @@
 ;;; init-ag.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2019 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -30,6 +30,8 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
+;; (custom-set-variables '(ag-context-lines 5))
 
 (add-hook 'after-init-hook 'myinit-ag)
 

@@ -48,8 +48,9 @@
 (depends-on "company-web")
 
 ;; Fuzzy searching in multiple files (projectile and friends).
-(depends-on "ag")
-(depends-on "pt") ; the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
+;; (depends-on "ag") ; using `counsel-ag` instead
+;; (depends-on "pt") ; using `counsel-pt` instead ; the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
+;; (depends-on "rg") ; using `counsel-rg` instead ; ripgrep is an a-la ag platinum searcher written in rust
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
@@ -204,7 +205,6 @@
 (depends-on "recentf-ext")
 (depends-on "redis")
 (depends-on "restclient")
-(depends-on "rg") ; ripgrep is an a-la ag platinum searcher written in rust
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")

@@ -299,8 +299,9 @@
 ;; (require 'non-ascii-identifiers "~/.emacs.d/recipes/non-ascii-identifiers.el")
 ;; (my-recipe '(non-ascii-identifiers))
 
-(my-recipe '(ag)) ;the silver searcher (ack replacement) <https://github.com/ggreer/the_silver_searcher>
-(my-recipe '(pt)) ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
+;; (my-recipe '(rg)) ;using `counsel-rg` instead
+;; (my-recipe '(ag)) ;using `counsel-ag` instead ;the silver searcher (ack replacement) <https://github.com/ggreer/the_silver_searcher>
+;; (my-recipe '(pt)) ;using `counsel-pt` instead ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
 
 (my-recipe '(abbrev))
 (my-recipe '(align))
@@ -534,7 +535,6 @@
 (my-recipe '(redis))
 (my-recipe '(replace))
 (my-recipe '(restclient))
-(my-recipe '(rg))
 (my-recipe '(rust-mode))
 
 ;; (my-recipe '(rbenv))

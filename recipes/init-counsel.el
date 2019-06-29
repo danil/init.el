@@ -54,7 +54,6 @@
 
 (defun myinit-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
-  ;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
   (global-set-key (kbd "C-v j l") 'counsel-locate)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
@@ -68,9 +67,13 @@
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
   (when (boundp 'myinit-map)
+    ;; (define-key myinit-map (kbd "j g") 'counsel-git-grep)
+    ;; (define-key myinit-map (kbd "j x") 'counsel-colors-web)
+    ;; (define-key myinit-map (kbd "j x") 'counsel-git-log)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
-    (define-key myinit-map (kbd "j r") 'counsel-rg))
+    (define-key myinit-map (kbd "j r") 'myinit-counsel--counsel-rg) ; counsel-projectile-rg
+    )
   (if (boundp 'company-mode) (myinit-counsel--company-setup)
     (with-eval-after-load 'company (myinit-counsel--company-setup))))
 
@@ -171,6 +174,7 @@ pass context to ag like that: ag --context=`current-prefix-arg'.
 If there is a symbol under cursor, then pass it as initial ag imput."
   (interactive (list (read-directory-name "Directory: ")))
   (let ((initial-input (if (symbol-at-point) (symbol-name (symbol-at-point)) "")))
+    ;; counsel-projectile-ag
     (if (integerp current-prefix-arg)
         (let ((n current-prefix-arg))
           (setq current-prefix-arg nil)
@@ -180,6 +184,22 @@ If there is a symbol under cursor, then pass it as initial ag imput."
                               (format "--context=%s" n))))
 
       (counsel-ag initial-input initial-directory))))
+
+(defun myinit-counsel--counsel-rg (initial-directory)
+  "Search using rg in a given `INITIAL-DIRECTORY`.
+
+If `current-prefix-arg' is a integer then
+pass context to rg like that: rg --context=`current-prefix-arg'.
+If there is a symbol under cursor, then pass it as initial rg imput."
+  (interactive (list (read-directory-name "Directory: ")))
+  (let ((initial-input (if (symbol-at-point) (symbol-name (symbol-at-point)) "")))
+    ;; counsel-projectile-rg
+    (if (integerp current-prefix-arg)
+        (let ((n current-prefix-arg))
+          (setq current-prefix-arg nil)
+          (counsel-rg initial-input initial-directory))
+
+      (counsel-rg initial-input initial-directory))))
 
 ;; (defun myinit-counsel--counsel-yank-pop ()
 ;;   "Ivy replacement for `yank-pop'."
