@@ -55,7 +55,6 @@
 (defun myinit-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
-  (global-set-key (kbd "C-v j l") 'counsel-locate)
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -71,6 +70,7 @@
     ;; (define-key myinit-map (kbd "j x") 'counsel-colors-web)
     ;; (define-key myinit-map (kbd "j x") 'counsel-git-log)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
+    (define-key myinit-map (kbd "j l") 'counsel-locate)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'myinit-counsel--counsel-rg) ; counsel-projectile-rg
     )
