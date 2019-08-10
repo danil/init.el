@@ -72,6 +72,12 @@
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; Narrowing <https://www.emacswiki.org/emacs/BasicNarrowing>,
+;; <https://stackoverflow.com/questions/1893795/emacs-newbie-question-how-to-search-within-a-region#1893817>.
+;; (put 'narrow-to-defun 'disabled nil)
+;; (put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+
 ;;; My custom variables.
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
@@ -430,6 +436,11 @@
 ;; doom emacs.
 (require 'core-lib "~/.emacs.d/doom-core-lib.el") ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
 ;; (autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
+
+;; doom todo ivy.a
+(require 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el")
+;; (autoload 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el" nil t)
+(my-recipe '(doom-todo-ivy))
 
 ;; mode-line
 ;; (my-recipe '(cyphejor))
