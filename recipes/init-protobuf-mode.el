@@ -86,11 +86,22 @@
     (and (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_)))
          (not (member str-cur '(
                                 "bool"
+                                "bytes"
+                                "double"
+                                "fixed32"
+                                "fixed64"
+                                "float"
                                 "int32"
                                 "int64"
                                 "oneof"
+                                "sfixed32"
+                                "sfixed64"
+                                "sint32"
+                                "sint64"
                                 "string"
                                 "syntax"
+                                "uint32"
+                                "uint64"
                                 ))))))
 
 ;;; init-protobuf-mode.el ends here
