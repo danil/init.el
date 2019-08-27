@@ -66,10 +66,10 @@
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
   (when (boundp 'myinit-map)
-    ;; (define-key myinit-map (kbd "j g") 'counsel-git-grep)
     ;; (define-key myinit-map (kbd "j x") 'counsel-colors-web)
     ;; (define-key myinit-map (kbd "j x") 'counsel-git-log)
     (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
+    (define-key myinit-map (kbd "j g") 'counsel-git-grep)
     (define-key myinit-map (kbd "j l") 'counsel-locate)
     (define-key myinit-map (kbd "j p") 'counsel-pt)
     (define-key myinit-map (kbd "j r") 'myinit-counsel--counsel-rg) ; counsel-projectile-rg
