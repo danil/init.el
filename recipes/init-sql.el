@@ -93,13 +93,13 @@ Clearing by `delete-region' or by `kill-region' if `ARG'."
 
   (interactive "P")
 
-  (let ((prompt-string (cond ((equal sql-product 'postgres) "=#")
-                             ((equal sql-product 'mysql) "mysql>")
-                             (t nil))))
+  (let ((prompt-regex (cond ((equal sql-product 'postgres) "=[#>]")
+                            ((equal sql-product 'mysql) "mysql>")
+                            (t nil))))
 
-    (when prompt-string
+    (when prompt-regex
       (goto-char (point-max))
-      (search-backward prompt-string)
+      (search-backward-regexp prompt-regex nil 'noerror)
       (beginning-of-line)
 
       (if arg
