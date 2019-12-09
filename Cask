@@ -66,6 +66,7 @@
 (depends-on "csharp-mode")
 (depends-on "csv-mode")
 (depends-on "cycle-quotes")
+(depends-on "dart-mode")
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
@@ -132,7 +133,9 @@
 
 ;; Ivy (is an ido replacement).
 (depends-on "counsel")
+(depends-on "counsel-jq") ; queries against json
 (depends-on "counsel-projectile")
+(depends-on "counsel-world-clock") ; <https://github.com/kchenphy/counsel-world-clock>
 (depends-on "ivy")
 (depends-on "ivy-dired-history")
 (depends-on "ivy-historian")
@@ -176,6 +179,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "minitest")
 (depends-on "multi-compile")
+(depends-on "rbtagger") ;; ctags via gem-ripper-tags
 (depends-on "robe")
 (depends-on "rspec-mode")
 (depends-on "ruby-guard" :git "https://github.com/zhangkaiyulw/ruby-guard.git")
