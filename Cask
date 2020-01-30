@@ -97,7 +97,6 @@
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
 (depends-on "go-mode")
-(depends-on "go-projectile")
 (depends-on "go-snippets")
 (depends-on "go-stacktracer")
 (depends-on "godoctor")
