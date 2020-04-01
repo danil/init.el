@@ -139,6 +139,7 @@
 (depends-on "ivy-dired-history")
 (depends-on "ivy-historian")
 (depends-on "ivy-hydra")
+(depends-on "lsp-ivy") ; ivy respects lsp (language server protocol) <https://github.com/emacs-lsp/lsp-mode#configure-lsp-mode>, <https://github.com/emacs-lsp/lsp-ivy>
 (depends-on "swiper")
 (depends-on "wgrep") ; editable `ivy-occur` buffer (grep-mode)
 
@@ -157,6 +158,7 @@
 
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
+(depends-on "lsp-mode")
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
 (depends-on "markdownfmt")

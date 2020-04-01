@@ -263,6 +263,10 @@
                                 ;; sql-interactive-mode
                                 )))
 
+ '(myinit-highlighted-digits-modes
+   (append myinit-programming-modes
+           '(shell-mode)))
+
  '(myinit-default-idle-timer-seconds 1))
 
 (dolist (mode myinit-safe-modes)
@@ -493,6 +497,7 @@
 (my-recipe '(kill-ring))
 
 (my-recipe '(lisp-mode))
+;; (my-recipe '(lsp-mode))
 (my-recipe '(lua-mode))
 
 (my-recipe '(magit))
@@ -631,3 +636,4 @@
   (global-set-key (kbd "C-v") myinit-map))
 
 ;;; init.el ends here
+(put 'magit-diff-edit-hunk-commit 'disabled nil)
