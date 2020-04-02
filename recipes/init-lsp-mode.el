@@ -31,29 +31,30 @@
 
 ;;; Code:
 
-(defcustom myinit-lsp-mode--mode '()
-  "Modes associated with `lsp-mode'."
-  :group 'myinit)
+;; (defcustom myinit-lsp-mode--mode '()
+;;   "Modes associated with `lsp-mode'."
+;;   :group 'myinit)
 
-(defcustom myinit-lsp-mode--mode-hooks '()
-  "Mode hooks associated with `lsp-mode'."
-  :group 'myinit)
+;; (defcustom myinit-lsp-mode--mode-hooks '()
+;;   "Mode hooks associated with `lsp-mode'."
+;;   :group 'myinit)
 
-(custom-set-variables
- '(myinit-lsp-mode--mode '(go-mode))
- '(myinit-lsp-mode--mode-hooks
-   (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           myinit-lsp-mode--mode)))
+;; (custom-set-variables
+;;  '(myinit-lsp-mode--mode '(go-mode))
+;;  '(myinit-lsp-mode--mode-hooks
+;;    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
+;;            myinit-lsp-mode--mode)))
 
 (add-hook 'after-init-hook 'myinit-lsp-mode)
 (defun myinit-lsp-mode ()
   "My init."
   (require 'lsp-mode)
-  (if (boundp 'lsp-mode-map) (myinit-lsp-mode--customize)
-    (with-eval-after-load 'lsp-mode (myinit-lsp-mode--customize))))
+  ;; (if (boundp 'lsp-mode-map) (myinit-lsp-mode--customize)
+  ;;   (with-eval-after-load 'lsp-mode (myinit-lsp-mode--customize)))
+  )
 
-(defun myinit-lsp-mode--customize ()
-  ;; (setq lsp-keymap-prefix "s-l")
-  (dolist (hook myinit-lsp-mode--mode-hooks) (add-hook hook #'lsp)))
+;; (defun myinit-lsp-mode--customize ()
+;;   ;; (setq lsp-keymap-prefix "s-l")
+;;   (dolist (hook myinit-lsp-mode--mode-hooks) (add-hook hook #'lsp)))
 
 ;;; init-lsp-mode.el ends here
