@@ -1,6 +1,6 @@
 ;;; init-gitignore-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -37,8 +37,8 @@
   "My init."
 
   ;; Git modes <https://github.com/magit/git-modes>.
-  (myinit-add-mode-to-patterns 'gitignore-mode
-                                "/.agignore\\'"
-                                "/.gitignore_global\\'"))
+  (dolist (pattern
+           '("/.agignore\\'" "/.dockerignore\\'" "/.gitignore_global\\'"))
+    (add-to-list 'auto-mode-alist (cons pattern 'gitignore-mode))))
 
 ;;; init-gitignore-mode.el ends here
