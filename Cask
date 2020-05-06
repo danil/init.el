@@ -54,6 +54,7 @@
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
+;; (depends-on "ctrlf") ; a-la isearch replacement?
 ;; (depends-on "dim")
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")

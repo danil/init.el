@@ -356,6 +356,7 @@
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))
 
+;; (my-recipe '(ctrlf))
 ;; (my-recipe '(dim))
 (my-recipe '(column-marker))
 (my-recipe '(comint))
