@@ -42,14 +42,21 @@
                                 go-unconvert
                                 go-megacheck
 
+                                json-python-json ; ruby slower than javascript
+                                markdown-mdl ; ruby slower than javascript
+                                proselint ; slow python/javascript
+
                                 ruby-reek ; annoying errors and undocumented config
                                 ruby-rubylint
 
                                 sh-bash
                                 sh-posix-bash
+
+                                yaml-jsyaml ; annoying errors
                                 ))
  ;; '(flycheck-check-syntax-automatically '(idle-change))
  '(flycheck-indication-mode nil)
+ '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json")
  '(flycheck-mode-line-prefix "F")
  '(flycheck-idle-change-delay 1.5))
 
