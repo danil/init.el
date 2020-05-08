@@ -53,6 +53,7 @@
                                 sh-posix-bash
 
                                 yaml-jsyaml ; annoying errors
+                                yaml-ruby ; i use a python linter so as not to set a ruby linter for each ruby version
                                 ))
  ;; '(flycheck-check-syntax-automatically '(idle-change))
  '(flycheck-indication-mode nil)
