@@ -99,9 +99,10 @@
      "httptest"
      "httptrace"
      "httputil"
-     "init"
      "image"
      "importer"
+     "init"
+     "internal"
      "io"
      "iotest"
      "ioutil"
@@ -304,8 +305,9 @@
       (string-match-p "\\`: " ch80-after))
      (and
       (or
+       (eq face-cur 'font-lock-function-name-face)
        (eq face-cur 'font-lock-type-face)
-       (eq face-cur 'font-lock-function-name-face))
+       (eq face-cur 'font-lock-variable-name-face))
       (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))
      (and
       (or

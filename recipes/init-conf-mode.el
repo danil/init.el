@@ -59,6 +59,7 @@
                           "/etc/fstab\\'"
                           "/etc/mail/aliases\\'"
                           "/etc/mailutils\\.d/"
+                          "/etc/sudoers\\.tmp\\'"
                           "/fail2ban/.*\\.local\\'"
                           "/hosts\\'"
                           "/htoprc\\'"

@@ -58,8 +58,11 @@
         (str-cur (buffer-substring-no-properties beg end)))
     (and
      (or
+      (eq face-cur nil)
+      (eq face-cur 'clojure-keyword-face)
       (eq face-cur 'default)
-      (eq face-cur nil))
+      (eq face-cur 'font-lock-function-name-face)
+      (eq face-cur 'font-lock-type-face))
      (not (member ch-cur
                   '(?% ?* ?+ ?- ?/ ?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?< ?< ?= ?> ?? ?_ ?`)))
      ;; (not (member str-cur '(

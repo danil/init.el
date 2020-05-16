@@ -20,36 +20,36 @@
 (defvar doom/ivy-buffer-icons nil
   "If non-nil, show buffer mode icons in `ivy-switch-buffer' and the like.")
 
-(defvar doom/ivy-task-tags
+(defvar doom/ivy-todo-tags
   '(("TODO"  . warning)
     ("FIXME" . error))
-  "An list of tags for `doom/ivy-tasks' to search for.")
+  "An list of tags for `doom/ivy-todos' to search for.")
 
 
-(defun doom/ivy--tasks-candidates (tasks)
-  "Generate a list of task candidates from TASKS."
+(defun doom/ivy--todos-candidates (todos)
+  "Generate a list of todo candidates from TODOS."
   (let* ((max-type-width
-          (cl-loop for task in doom/ivy-task-tags maximize (length (car task))))
+          (cl-loop for todo in doom/ivy-todo-tags maximize (length (car todo))))
          (max-desc-width
-          (cl-loop for task in tasks maximize (length (cl-cdadr task))))
+          (cl-loop for todo in todos maximize (length (cl-cdadr todo))))
          (max-width (max (- (frame-width) (1+ max-type-width) max-desc-width)
                          25)))
     (cl-loop
      with fmt = (format "%%-%ds %%-%ds%%s%%s:%%s" max-type-width max-width)
-     for alist in tasks
+     for alist in todos
      collect
      (let-alist alist
        (format fmt
-               (propertize .type 'face (cdr (assoc .type doom/ivy-task-tags)))
+               (propertize .type 'face (cdr (assoc .type doom/ivy-todo-tags)))
                (substring .desc 0 (min max-desc-width (length .desc)))
                (propertize " | " 'face 'font-lock-comment-face)
                (propertize (abbreviate-file-name .file) 'face 'font-lock-keyword-face)
                (propertize .line 'face 'font-lock-constant-face))))))
 
-(defun doom/ivy--tasks (target)
-  "Search TARGET for a list of tasks."
+(defun doom/ivy--todos (target)
+  "Search TARGET for a list of todos."
   (let* (case-fold-search
-         (task-tags (mapcar #'car doom/ivy-task-tags))
+         (todo-tags (mapcar #'car doom/ivy-todo-tags))
          (cmd
           (format "%s -H -S --no-heading -- %s %s"
                   (or (when-let* ((bin (executable-find "rg")))
@@ -59,7 +59,7 @@
                       (error "Cannot find executables: ripgrep or the_silver_searcher"))
                   (shell-quote-argument
                    (concat "\\s("
-                           (string-join task-tags "|")
+                           (string-join todo-tags "|")
                            ")([\\s:]|\\([^)]+\\):?)"))
                   target)))
     (save-match-data
@@ -68,11 +68,11 @@
                when (condition-case-unless-debug ex
                         (string-match
                          (concat "^\\([^:]+\\):\\([0-9]+\\):.+\\("
-                                 (string-join task-tags "\\|")
+                                 (string-join todo-tags "\\|")
                                  "\\):?\\s-*\\(.+\\)")
                          x)
                       (error
-                       (message "Error matching task in file: (%s) %s"
+                       (message "Error matching todo in file: (%s) %s"
                                 (error-message-string ex)
                                 (car (split-string x ":")))
                        nil))
@@ -82,8 +82,8 @@
                          (line . ,(match-string 2 x)))))))
 
 
-(defun doom/ivy--tasks-open-action (x)
-  "Jump to the file X and line of the current task."
+(defun doom/ivy--todos-open-action (x)
+  "Jump to the file X and line of the current todo."
   (let ((location (cadr (split-string x " | ")))
         (type (car (split-string x " "))))
     (cl-destructuring-bind (file line) (split-string location ":")
@@ -96,17 +96,17 @@
         (recenter)))))
 
 ;;;###autoload
-(defun doom/ivy-tasks (&optional arg)
+(defun doom/ivy-todos (&optional arg)
   "Search through all TODO/FIXME tags in the current project. Optional ARG will search only that file."
   (interactive "P")
-  (ivy-read (format "Tasks (%s): "
+  (ivy-read (format "Todos (%s): "
                     (if arg
                         (concat "in: " (file-relative-name buffer-file-name))
                       "project"))
-            (doom/ivy--tasks-candidates
-             (doom/ivy--tasks (if arg buffer-file-name (projectile-project-root))))
-            :action #'doom/ivy--tasks-open-action
-            :caller 'doom/ivy-tasks))
+            (doom/ivy--todos-candidates
+             (doom/ivy--todos (if arg buffer-file-name (projectile-project-root))))
+            :action #'doom/ivy--todos-open-action
+            :caller 'doom/ivy-todos))
 
 (provide 'doom-todo-ivy)
 

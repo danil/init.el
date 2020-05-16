@@ -77,8 +77,8 @@
   "Setup `highlight-symbol'."
   ;; (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
   ;; (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
-  (define-key myinit-map (kbd "c s c") 'highlight-symbol-count)
-  (define-key myinit-map (kbd "c s q") 'highlight-symbol-query-replace)
+  (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
+  (define-key myinit-map (kbd "c s") 'highlight-symbol-query-replace)
   (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight))))))
 
 ;;; init-highlight-symbol.el ends here
