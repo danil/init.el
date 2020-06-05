@@ -31,8 +31,11 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-diredfl)
+(custom-set-variables
+ '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma"
+                                   ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst")))
 
+(add-hook 'after-init-hook 'myinit-diredfl)
 (defun myinit-diredfl ()
   "My init."
   ;; (with-eval-after-load 'diredfl
