@@ -169,6 +169,7 @@
 (depends-on "nginx-mode")
 (depends-on "nodejs-repl")
 (depends-on "origami")
+(depends-on "pacfiles-mode") ; diff/update arch linux pacnew and pacsave files
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "projectile")
