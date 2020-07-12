@@ -50,8 +50,7 @@
   (with-eval-after-load 'dired (myinit-dired--customize)))
 
 (defun myinit-dired--customize ()
-  (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer)
-  (define-key dired-mode-map (kbd "z") 'myinit-dired--cycle-switches))
+  (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer))
 
 (defun myinit-dired--open(&optional arg)
   "Open `dired'."
@@ -74,17 +73,5 @@
 
     (find-alternate-file "..")
     (when d (dired-goto-file d))))
-
-(defun myinit-dired--cycle-switches ()
-  "Cycle/toggle through the list `myinit-dired--list-of-switches' of switches for ls"
-  (interactive)
-  (setq myinit-dired--list-of-switches
-        (append (cdr myinit-dired--list-of-switches)
-                (list (car myinit-dired--list-of-switches))))
-  (let ((switches (car myinit-dired--list-of-switches)))
-    (dired-sort-other switches)
-    (if (string-match-p (regexp-quote "human-readable") switches)
-        (digit-groups-mode -1)
-      (digit-groups-mode 1))))
 
 ;;; init-dired.el ends here
