@@ -71,7 +71,7 @@
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
-(depends-on "digit-groups")
+(depends-on "digit-groups") ;; highlighting digit groups in numbers
 
 ;; Dired.
 ;; (depends-on "dired-dups")

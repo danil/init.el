@@ -35,17 +35,23 @@
 ;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
 (put 'dired-find-alternate-file 'disabled nil)
 
-(custom-set-variables '(dired-listing-switches "-alh"))
+(custom-set-variables '(dired-listing-switches "-l --all --human-readable"))
+
+(defcustom myinit-dired--list-of-switches
+  '("-l --all --human-readable" "-l --all")
+  "List of ls switches for dired to cycle among.")
 
 (add-hook 'after-init-hook 'myinit-dired)
-
 (defun myinit-dired ()
   "My init."
 
   (global-set-key (kbd "C-x C-d") 'myinit-dired--open)
 
-  (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer)))
+  (with-eval-after-load 'dired (myinit-dired--customize)))
+
+(defun myinit-dired--customize ()
+  (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer)
+  (define-key dired-mode-map (kbd "z") 'myinit-dired--cycle-switches))
 
 (defun myinit-dired--open(&optional arg)
   "Open `dired'."
@@ -68,5 +74,17 @@
 
     (find-alternate-file "..")
     (when d (dired-goto-file d))))
+
+(defun myinit-dired--cycle-switches ()
+  "Cycle/toggle through the list `myinit-dired--list-of-switches' of switches for ls"
+  (interactive)
+  (setq myinit-dired--list-of-switches
+        (append (cdr myinit-dired--list-of-switches)
+                (list (car myinit-dired--list-of-switches))))
+  (let ((switches (car myinit-dired--list-of-switches)))
+    (dired-sort-other switches)
+    (if (string-match-p (regexp-quote "human-readable") switches)
+        (digit-groups-mode -1)
+      (digit-groups-mode 1))))
 
 ;;; init-dired.el ends here
