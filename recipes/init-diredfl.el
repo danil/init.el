@@ -32,7 +32,8 @@
 ;;; Code:
 
 (custom-set-variables
- '(diredfl-compressed-extensions '())) ; (".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst")
+ ;; '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst"))
+ '(diredfl-ignore-compressed-flag nil))
 
 (add-hook 'after-init-hook 'myinit-diredfl)
 (defun myinit-diredfl ()
