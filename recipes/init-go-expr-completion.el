@@ -1,6 +1,6 @@
 ;;; init-go-expr-completion.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2019 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
