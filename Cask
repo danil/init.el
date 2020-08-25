@@ -100,6 +100,7 @@
 (depends-on "go-mode")
 (depends-on "go-snippets")
 (depends-on "go-stacktracer")
+(depends-on "go-expr-completion") ; complete a left-hand side from given expression
 (depends-on "godoctor")
 (depends-on "google-translate")
 (depends-on "gotest")

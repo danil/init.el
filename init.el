@@ -411,6 +411,7 @@
 (my-recipe '(flycheck))
 (my-recipe '(flycheck-golangci-lint))
 
+(my-recipe '(go-expr-completion))
 (my-recipe '(go-mode))
 (my-recipe '(go-stacktracer))
 (my-recipe '(godoctor))
