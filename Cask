@@ -93,8 +93,8 @@
 (depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
+(depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
-
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
 (depends-on "go-mode")
