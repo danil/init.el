@@ -579,6 +579,7 @@
 (my-recipe '(simple))
 (my-recipe '(slim-mode))
 (my-recipe '(sort))
+(my-recipe '(su))
 (my-recipe '(subr))
 (my-recipe '(subword-mode))
 (my-recipe '(systemd))

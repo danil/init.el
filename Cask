@@ -200,6 +200,7 @@
 (depends-on "scss-mode")
 (depends-on "simp")
 (depends-on "slim-mode")
+(depends-on "su") ; automatically read/write files as other users
 
 ;; mode-line
 ;; (depends-on "cyphejor")
