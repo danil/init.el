@@ -52,10 +52,8 @@
                           (list 'company-nxml))
                       ,@(unless (version<= "26" emacs-version)
                           (list 'company-css))
-                      company-eclim
                       company-semantic
                       company-clang
-                      company-xcode
                       company-cmake
                       company-files
                       (company-dabbrev-code
