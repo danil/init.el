@@ -38,8 +38,8 @@
 (defun myinit-hl-todo ()
   "My init."
 
-  ;; (if (boundp 'hl-todo-mode-map) (myinit-hl-todo--init)
-  ;;   (with-eval-after-load 'hl-todo (myinit-hl-todo--init)))
+  (if (boundp 'hl-todo-mode-map) (myinit-hl-todo--init)
+    (with-eval-after-load 'hl-todo (myinit-hl-todo--init)))
 
   (dolist (hook myinit-programming-modes-hooks)
     (add-hook hook 'myinit-hl-todo--lazyinit)))
@@ -51,8 +51,8 @@
    myinit-default-idle-timer-seconds nil
    (lambda () (hl-todo-mode))))
 
-;; (defun myinit-hl-todo--init ()
-;;   (setq hl-todo-keyword-faces
-;;         (append hl-todo-keyword-faces '(("FOO" . "#cc9393")))))
+(defun myinit-hl-todo--init ()
+  (setq hl-todo-keyword-faces
+        (append hl-todo-keyword-faces '(("CHORE" . "#d0bf8f")))))
 
 ;;; init-hl-todo.el ends here
