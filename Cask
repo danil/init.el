@@ -97,12 +97,12 @@
 (depends-on "flycheck")
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
+(depends-on "go-expr-completion") ; complete a left-hand side from given expression
 (depends-on "go-mode")
 (depends-on "go-snippets")
 (depends-on "go-stacktracer")
-(depends-on "go-expr-completion") ; complete a left-hand side from given expression
+(depends-on "go-translate") ;; google translate https://github.com/lorniu/go-translate
 (depends-on "godoctor")
-(depends-on "google-translate")
 (depends-on "gotest")
 
 ;; Git.

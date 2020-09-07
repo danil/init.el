@@ -1,6 +1,6 @@
-;;; init-google-translate.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-go-translate.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,11 +31,28 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-google-translate)
+;; * g refresh
+;; * q exit
+;; * x exchanges source language and target language and refresh the translation
+;; * M-n and M-p, switch to the next/prev available translation direction, and refresh
+;; * y to speak the current selection or word. You should have mplayer
+;;   installed, or on Windows it will fallback to use powershell to do
+;;   the tts job.
 
-(defun myinit-google-translate ()
+(add-hook 'after-init-hook 'myinit-go-translate)
+
+(defun myinit-go-translate ()
   "My init."
 
-  (define-key myinit-map (kbd "t") 'google-translate-at-point))
+  (if (boundp 'go-translate-base-url) (myinit-go-translate--init)
+    (with-eval-after-load 'go-translate (myinit-go-translate--init)))
 
-;;; init-google-translate.el ends here
+  (define-key myinit-map (kbd "t") 'go-translate))
+
+(defun myinit-go-translate--init ()
+  (setq go-translate-local-language "ru")
+  (setq go-translate-target-language "en")
+
+  (setq go-translate-extra-directions '(("en" . "ru"))))
+
+;;; init-go-translate.el ends here

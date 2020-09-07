@@ -426,7 +426,7 @@
 
 (my-recipe '(git-timemachine))
 (my-recipe '(gitignore-mode))
-(my-recipe '(google-translate))
+(my-recipe '(go-translate)) ; google translate
 (my-recipe '(haproxy-mode))
 (my-recipe '(hcl-mode))
 (my-recipe '(help))
