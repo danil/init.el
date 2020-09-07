@@ -347,6 +347,7 @@
 (my-recipe '(bash-completion))
 (my-recipe '(bindings))
 (my-recipe '(bookmark))
+(my-recipe '(browse-url))
 (my-recipe '(bytecomp))
 (my-recipe '(calendar))
 (my-recipe '(cc-mode))
