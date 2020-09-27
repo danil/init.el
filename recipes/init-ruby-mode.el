@@ -110,6 +110,7 @@
      "belongs_to"
      "blank?"
      "build"
+     "changed?"
      "Class"
      "crated_at"
      "clear_active_connections!"
@@ -358,6 +359,7 @@
     (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
 
 (defun myinit-ruby-mode--setup ()
+  (define-key ruby-mode-map (kbd "C-c C-f") nil)
   (define-key ruby-mode-map (kbd "C-c C-f e") 'myinit-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
