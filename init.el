@@ -573,6 +573,7 @@
 (my-recipe '(saveplace))
 (my-recipe '(scroll-bar))
 (my-recipe '(scss-mode))
+(my-recipe '(selectrum))
 (my-recipe '(sgml-mode))
 (my-recipe '(sh-script))
 (my-recipe '(shell))

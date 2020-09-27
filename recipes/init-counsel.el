@@ -1,6 +1,6 @@
 ;;; init-counsel.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -50,17 +50,18 @@
   "My init."
   (if (boundp 'counsel-mode) (myinit-counsel--setup)
     (with-eval-after-load 'counsel (myinit-counsel--setup)))
-  (counsel-mode t))
+  ;; (counsel-mode t)
+  )
 
 (defun myinit-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
-  (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
+  ;; (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
   (global-set-key (kbd "C-x C-r") 'counsel-recentf)
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "M-y") 'myinit-counsel--yank-pop)
-  (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
-    (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
+  ;; (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
+  ;;   (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
   (if (boundp 'help-map) (myinit-counsel--customize-help)
     (with-eval-after-load 'help (myinit-counsel--customize-help)))
   (when (boundp 'minibuffer-local-map)
@@ -121,34 +122,34 @@
                (call-interactively 'yank-pop)
                (call-interactively 'counsel-yank-pop)))))
 
-(defun myinit-counsel--find-file ()
-  (interactive)
-  (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
-        (current-prefix-arg (call-interactively 'find-file-literally))
-        (t (call-interactively 'counsel-find-file))))
+;; (defun myinit-counsel--find-file ()
+;;   (interactive)
+;;   (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
+;;         (current-prefix-arg (call-interactively 'find-file-literally))
+;;         (t (call-interactively 'counsel-find-file))))
 
-(defun myinit-counsel--customize-keys ()
-  "My init customize keys."
-  (define-key counsel-find-file-map (kbd "C-x C-f") 'myinit-counsel--counsel-find-file-fallback-command))
+;; (defun myinit-counsel--customize-keys ()
+;;   "My init customize keys."
+;;   (define-key counsel-find-file-map (kbd "C-x C-f") 'myinit-counsel--counsel-find-file-fallback-command))
 
-;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
-;; <https://github.com/abo-abo/swiper/issues/1333#issuecomment-436960474>.
-(defun myinit-counsel--counsel-find-file-fallback-command ()
-  "Fallback to non-counsel version of current command."
-  (interactive)
-  (when (bound-and-true-p ivy-mode)
-    (ivy-mode -1)
-    (add-hook 'minibuffer-setup-hook
-              'myinit-counsel--counsel-find-file-fallback-command--enable-ivy))
-  (ivy-set-action
-   (lambda (current-path)
-     (let ((old-default-directory default-directory))
-       (let ((i (length current-path)))
-         (while (> i 0)
-           (push (aref current-path (setq i (1- i))) unread-command-events)))
-       (let ((default-directory "")) (call-interactively 'find-file))
-       (setq default-directory old-default-directory))))
-  (ivy-done))
+;; ;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
+;; ;; <https://github.com/abo-abo/swiper/issues/1333#issuecomment-436960474>.
+;; (defun myinit-counsel--counsel-find-file-fallback-command ()
+;;   "Fallback to non-counsel version of current command."
+;;   (interactive)
+;;   (when (bound-and-true-p ivy-mode)
+;;     (ivy-mode -1)
+;;     (add-hook 'minibuffer-setup-hook
+;;               'myinit-counsel--counsel-find-file-fallback-command--enable-ivy))
+;;   (ivy-set-action
+;;    (lambda (current-path)
+;;      (let ((old-default-directory default-directory))
+;;        (let ((i (length current-path)))
+;;          (while (> i 0)
+;;            (push (aref current-path (setq i (1- i))) unread-command-events)))
+;;        (let ((default-directory "")) (call-interactively 'find-file))
+;;        (setq default-directory old-default-directory))))
+;;   (ivy-done))
 
 (defun myinit-counsel--counsel-find-file-fallback-command--enable-ivy ()
   (remove-hook 'minibuffer-setup-hook

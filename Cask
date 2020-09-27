@@ -215,6 +215,7 @@
 (depends-on "redis")
 (depends-on "restclient")
 (depends-on "sed-mode")
+(depends-on "selectrum") ; a-la ido/ivy/counsel
 (depends-on "speed-type")
 (depends-on "systemd")
 (depends-on "tldr")
