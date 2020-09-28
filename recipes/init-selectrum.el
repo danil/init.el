@@ -31,6 +31,8 @@
 
 ;;; Code:
 
+(custom-set-variables '(selectrum-count-style 'current/matches))
+
 (add-hook 'after-init-hook 'myinit-selectrum)
 (defun myinit-selectrum ()
   "My init."
