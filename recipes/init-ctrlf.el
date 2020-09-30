@@ -31,6 +31,10 @@
 
 ;;; Code:
 
+(custom-set-faces
+ '(ctrlf-highlight-active
+   ((t :background "brightwhite" :foreground "brightred"))))
+
 (add-hook 'after-init-hook 'myinit-ctrlf)
 (defun myinit-ctrlf ()
   "My init."
