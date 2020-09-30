@@ -1,4 +1,4 @@
-;;; init-ctrlf.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-selectrum-prescient.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,9 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ctrlf)
-(defun myinit-ctrlf ()
-  "My init."
-  (ctrlf-mode +1))
+(add-hook 'after-init-hook 'myinit-selectrum-prescient)
 
-;;; init-ctrlf.el ends here
+(defun myinit-selectrum-prescient ()
+  "My init."
+
+  (if (boundp 'selectrum-mode) (myinit-selectrum-prescient--setup)
+    (with-eval-after-load 'selectrum (myinit-selectrum-prescient--setup))))
+
+(defun myinit-selectrum-prescient--setup ()
+  ;; to make sorting and filtering more intelligent
+  (selectrum-prescient-mode +1))
+
+;;; init-selectrum-prescient.el ends here

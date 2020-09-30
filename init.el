@@ -357,7 +357,6 @@
 (my-recipe '(cider))
 (my-recipe '(clojure-mode))
 
-;; (my-recipe '(ctrlf))
 ;; (my-recipe '(dim))
 (my-recipe '(column-marker))
 (my-recipe '(comint))
@@ -569,11 +568,17 @@
 (my-recipe '(ruby-refactor))
 (my-recipe '(ruby-tools))
 
+;; Selectrum <https://github.com/raxod502/selectrum>.
+(my-recipe '(selectrum)) ; a-la ido/ivy/counsel
+(my-recipe '(selectrum-prescient)) ; selectrum sorting/filtering
+(my-recipe '(prescient))
+(my-recipe '(ctrlf)) ;a-la isearch replacement?
+(my-recipe '(amx)) ;a-la smex is a m-x enhancement
+
 (my-recipe '(savehist))
 (my-recipe '(saveplace))
 (my-recipe '(scroll-bar))
 (my-recipe '(scss-mode))
-(my-recipe '(selectrum))
 (my-recipe '(sgml-mode))
 (my-recipe '(sh-script))
 (my-recipe '(shell))

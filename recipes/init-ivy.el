@@ -39,49 +39,63 @@
  '(ivy-use-virtual-buffers nil) ; virtual buffers slow down switching between buffers
  '(ivy-count-format "(%d/%d) "))
 
+(custom-set-faces
+ '(ivy-current-match
+   ((t :inverse-video t)))
+ ;; '(ivy-current-match
+ ;;   ((t :inherit highlight)))
+ '(ivy-minibuffer-match-face-1
+   ((t :background "gray10")))
+ '(ivy-minibuffer-match-face-2
+   ((t :background "red")))
+ '(ivy-minibuffer-match-face-3
+   ((t :background "blue")))
+ '(ivy-minibuffer-match-face-4
+   ((t :background "green4"))))
+
 (add-hook 'after-init-hook 'myinit-ivy)
 (defun myinit-ivy ()
   "My init."
-  (if (boundp 'ivy-mode) (myinit-ivy--setup)
-    (with-eval-after-load 'ivy (myinit-ivy--setup)))
+  ;; (if (boundp 'ivy-mode) (myinit-ivy--setup)
+  ;;   (with-eval-after-load 'ivy (myinit-ivy--setup)))
   ;; Be aware it breaks `find-file'!
   ;; (ivy-mode t)
   )
 
-(defun myinit-ivy--setup ()
-  ;; (define-key ivy-minibuffer-map (kbd "C-x C-f") 'myinit-ivy--minibuffer-ivy-fallback)
-  ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
-  ;; (add-hook! 'minibuffer-setup-hook
-  ;;   (when (member this-command '(
-  ;;                                ivy-resume
-  ;;                                ivy-switch-buffer
-  ;;                                swiper
-  ;;                                myinit-swiper--swiper
-  ;;                                counsel-M-x
-  ;;                                counsel-descbinds
-  ;;                                counsel-describe-face
-  ;;                                counsel-describe-function
-  ;;                                counsel-describe-variable
-  ;;                                counsel-faces
-  ;;                                counsel-find-file
-  ;;                                counsel-find-library
-  ;;                                counsel-git
-  ;;                                counsel-git-grep
-  ;;                                counsel-info-lookup-symbol
-  ;;                                counsel-locate
-  ;;                                counsel-minibuffer-history
-  ;;                                counsel-pt
-  ;;                                counsel-recentf
-  ;;                                counsel-recentf
-  ;;                                counsel-rg
-  ;;                                counsel-unicode-char
-  ;;                                counsel-yank-pop
-  ;;                                myinit-counsel--counsel-ag
-  ;;                                myinit-counsel--counsel-yank-pop
-  ;;                                projectile-switch-to-buffer
-  ;;                                ))
-  ;;     (setq-local truncate-lines t)))
-  (myinit-customize-ivy))
+;; (defun myinit-ivy--setup ()
+;;   ;; (define-key ivy-minibuffer-map (kbd "C-x C-f") 'myinit-ivy--minibuffer-ivy-fallback)
+;;   ;; <https://github.com/abo-abo/swiper/issues/1307#issuecomment-365224375>.
+;;   ;; (add-hook! 'minibuffer-setup-hook
+;;   ;;   (when (member this-command '(
+;;   ;;                                ivy-resume
+;;   ;;                                ivy-switch-buffer
+;;   ;;                                swiper
+;;   ;;                                myinit-swiper--swiper
+;;   ;;                                counsel-M-x
+;;   ;;                                counsel-descbinds
+;;   ;;                                counsel-describe-face
+;;   ;;                                counsel-describe-function
+;;   ;;                                counsel-describe-variable
+;;   ;;                                counsel-faces
+;;   ;;                                counsel-find-file
+;;   ;;                                counsel-find-library
+;;   ;;                                counsel-git
+;;   ;;                                counsel-git-grep
+;;   ;;                                counsel-info-lookup-symbol
+;;   ;;                                counsel-locate
+;;   ;;                                counsel-minibuffer-history
+;;   ;;                                counsel-pt
+;;   ;;                                counsel-recentf
+;;   ;;                                counsel-recentf
+;;   ;;                                counsel-rg
+;;   ;;                                counsel-unicode-char
+;;   ;;                                counsel-yank-pop
+;;   ;;                                myinit-counsel--counsel-ag
+;;   ;;                                myinit-counsel--counsel-yank-pop
+;;   ;;                                projectile-switch-to-buffer
+;;   ;;                                ))
+;;   ;;     (setq-local truncate-lines t)))
+;;   (myinit-ivy--customize))
 
 ;; ;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
 ;; ;; <https://github.com/abo-abo/swiper/issues/1333>.
@@ -112,25 +126,8 @@
 ;;                'myinit-ivy--minibuffer-ivy-fallback--enable-ivy )
 ;;   (ivy-mode t))
 
-(defun myinit-customize-ivy ()
-  "My init customize."
-  (global-set-key (kbd "C-c C-r") 'ivy-resume)
-  (myinit-customize-ivy-face))
-
-(defun myinit-customize-ivy-face ()
-  "My init customize face."
-  (custom-set-faces
-   '(ivy-current-match
-     ((t :inverse-video t)))
-   ;; '(ivy-current-match
-   ;;   ((t :inherit highlight)))
-   '(ivy-minibuffer-match-face-1
-     ((t :background "gray10")))
-   '(ivy-minibuffer-match-face-2
-     ((t :background "red")))
-   '(ivy-minibuffer-match-face-3
-     ((t :background "blue")))
-   '(ivy-minibuffer-match-face-4
-     ((t :background "green4")))))
+;; (defun myinit-ivy--customize ()
+;;   "My init customize."
+;;   (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
 ;;; init-ivy.el ends here

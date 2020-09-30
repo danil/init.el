@@ -46,7 +46,10 @@
   ;; (define-key help-map "f" 'myinit-map--describe-function)
   (define-key help-map "?" nil)
   (define-key help-map (kbd "? ?") 'help-for-help)
-  (define-key help-map (kbd "? m") 'myinit-help--man-function))
+  (define-key help-map (kbd "? m") 'myinit-help--man-function)
+  (define-key help-map (kbd "i") 'describe-symbol)
+  (define-key help-map (kbd "l") 'find-library)
+  (define-key help-map (kbd "v") 'describe-variable))
 
 (defun myinit-help--man-function ()
   (interactive)

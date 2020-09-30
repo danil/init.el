@@ -1,4 +1,4 @@
-;;; init-ctrlf.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-amx.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,9 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ctrlf)
-(defun myinit-ctrlf ()
-  "My init."
-  (ctrlf-mode +1))
+(custom-set-variables
+ '(amx-history-length 1000)
+ '(amx-save-file "~/.emacs.var/amx-items"))
 
-;;; init-ctrlf.el ends here
+(add-hook 'after-init-hook 'myinit-amx)
+(defun myinit-amx ()
+  "My init."
+  (amx-mode +1))
+
+;;; init-amx.el ends here

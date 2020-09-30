@@ -56,16 +56,20 @@
 (defun myinit-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
-  (global-set-key (kbd "C-x C-r") 'counsel-recentf)
-  (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "M-y") 'myinit-counsel--yank-pop)
+  (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
+  ;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+  ;; (global-set-key (kbd "M-x") 'counsel-M-x)
+  ;; (global-set-key (kbd "M-y") 'myinit-counsel--yank-pop)
+
   ;; (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
   ;;   (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
+
   (if (boundp 'help-map) (myinit-counsel--customize-help)
     (with-eval-after-load 'help (myinit-counsel--customize-help)))
+
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
   (when (boundp 'myinit-map)
     ;; (define-key myinit-map (kbd "j x") 'counsel-colors-web)
     ;; (define-key myinit-map (kbd "j x") 'counsel-git-log)
@@ -77,6 +81,17 @@
     )
   (if (boundp 'company-mode) (myinit-counsel--company-setup)
     (with-eval-after-load 'company (myinit-counsel--company-setup))))
+
+(defun myinit-counsel--customize-help()
+  "My init customize."
+  ;; (define-key help-map (kbd "F") 'counsel-describe-face)
+  (define-key help-map (kbd "F") 'counsel-faces)
+  (define-key help-map (kbd "b") 'counsel-descbinds)
+  ;; (define-key help-map (kbd "f") 'counsel-describe-function)
+  ;; (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
+  (define-key help-map (kbd "l") 'counsel-find-library)
+  ;; (define-key help-map (kbd "v") 'counsel-describe-variable)
+  (define-key help-map (kbd "u") 'counsel-unicode-char))
 
 (defun myinit-counsel--company-setup ()
   (global-set-key [?\C-\M-i] 'myinit-counsel--company) ;; counsel-company completion-at-point
@@ -114,13 +129,13 @@
                 :initial-input initial-input ;(when initial-input (format "%s" initial-input))
                 :unwind #'company-abort))))
 
-(defun myinit-counsel--yank-pop ()
-  (interactive)
-  (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
-        (current-prefix-arg (call-interactively 'yank-pop))
-        (t (if (equal 'yank last-command)
-               (call-interactively 'yank-pop)
-               (call-interactively 'counsel-yank-pop)))))
+;; (defun myinit-counsel--yank-pop ()
+;;   (interactive)
+;;   (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
+;;         (current-prefix-arg (call-interactively 'yank-pop))
+;;         (t (if (equal 'yank last-command)
+;;                (call-interactively 'yank-pop)
+;;                (call-interactively 'counsel-yank-pop)))))
 
 ;; (defun myinit-counsel--find-file ()
 ;;   (interactive)
@@ -155,17 +170,6 @@
   (remove-hook 'minibuffer-setup-hook
                'myinit-counsel--counsel-find-file-fallback-command--enable-ivy)
   (ivy-mode t))
-
-(defun myinit-counsel--customize-help()
-  "My init customize."
-  ;; (define-key help-map (kbd "F") 'counsel-describe-face)
-  (define-key help-map (kbd "F") 'counsel-faces)
-  (define-key help-map (kbd "b") 'counsel-descbinds)
-  (define-key help-map (kbd "f") 'counsel-describe-function)
-  (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
-  (define-key help-map (kbd "l") 'counsel-find-library)
-  (define-key help-map (kbd "u") 'counsel-unicode-char)
-  (define-key help-map (kbd "v") 'counsel-describe-variable))
 
 (defun myinit-counsel--counsel-ag (initial-directory)
   "Search using ag in a given `INITIAL-DIRECTORY`.

@@ -1,4 +1,4 @@
-;;; init-ctrlf.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-prescient.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,9 +31,20 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ctrlf)
-(defun myinit-ctrlf ()
-  "My init."
-  (ctrlf-mode +1))
+(autoload 'prescient-persist-mode "prescient" nil t)
 
-;;; init-ctrlf.el ends here
+(custom-set-variables '(prescient-save-file "~/.emacs.var/prescient-save.el"))
+
+(add-hook 'after-init-hook 'myinit-prescient)
+(defun myinit-prescient ()
+  "My init."
+
+  (if (boundp 'selectrum-prescient-mode) (myinit-prescient--setup)
+    (with-eval-after-load 'selectrum-prescient (myinit-prescient--setup))))
+
+(defun myinit-prescient--setup ()
+  ;; to save your command history on disk, so the sorting gets more
+  ;; intelligent over time
+  (prescient-persist-mode +1))
+
+;;; init-prescient.el ends here

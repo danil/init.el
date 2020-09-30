@@ -40,7 +40,7 @@
   :group 'myinit)
 
 (custom-set-variables
- '(projectile-completion-system 'ivy) ;ido
+ '(projectile-completion-system 'default) ;default=selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
  '(projectile-dynamic-mode-line nil)
  '(projectile-indexing-method 'alien) ; 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil)

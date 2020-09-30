@@ -54,7 +54,6 @@
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
-;; (depends-on "ctrlf") ; a-la isearch replacement?
 ;; (depends-on "dim")
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
@@ -122,15 +121,15 @@
 (depends-on "ibuffer-vc")
 (depends-on "inf-mongo")
 
-;; Ido.
-;; (depends-on "flx-ido") ;  incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
-;; (depends-on "ido-occur")
-(depends-on "ido-clever-match") ; ido fuzzy matching
-(depends-on "ido-describe-bindings")
-(depends-on "ido-ubiquitous" :git "https://github.com/technomancy/ido-ubiquitous.git")
-(depends-on "ido-vertical-mode")
-(depends-on "ido-yes-or-no")
-(depends-on "smex")
+;; ;; Ido.
+;; ;; (depends-on "flx-ido") ;  incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
+;; ;; (depends-on "ido-occur")
+;; (depends-on "ido-clever-match") ; ido fuzzy matching
+;; (depends-on "ido-describe-bindings")
+;; (depends-on "ido-ubiquitous" :git "https://github.com/technomancy/ido-ubiquitous.git")
+;; (depends-on "ido-vertical-mode")
+;; (depends-on "ido-yes-or-no")
+;; (depends-on "smex") ; is a m-x enhancement
 
 ;; Ivy (is an ido replacement).
 (depends-on "counsel")
@@ -214,8 +213,13 @@
 (depends-on "recentf-ext")
 (depends-on "redis")
 (depends-on "restclient")
-(depends-on "sed-mode")
+
 (depends-on "selectrum") ; a-la ido/ivy/counsel
+(depends-on "selectrum-prescient") ; selectrum sorting/filtering
+(depends-on "ctrlf") ; a-la isearch replacement?
+(depends-on "amx") ; a-la smex is a m-x enhancement
+
+(depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")
 (depends-on "tldr")

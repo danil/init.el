@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(magit-completing-read-function 'ivy-completing-read)) ;magit-ido-completing-read ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
+ '(magit-completing-read-function 'selectrum-completing-read)) ;'ivy-completing-read ;'magit-ido-completing-read
 
 (add-hook 'after-init-hook 'myinit-magit)
 
