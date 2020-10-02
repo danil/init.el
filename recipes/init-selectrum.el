@@ -157,6 +157,10 @@ The previous string is between `completion-beg' and `completion-end'."
         (goto-char (prog1 (mark t)
                      (set-marker (mark-marker) (point) (current-buffer)))))))
 
+(defun noxrcp-selectrum--projectile-completing-read (prompt choices)
+  (let ((selectrum-should-sort-p nil))
+    (completing-read prompt choices)))
+
 ;; Handle completion order for refs in magit with prescient
 ;; https://github.com/raxod502/selectrum/wiki/Additional-Configuration#handle-completion-order-for-refs-in-magit-with-prescient
 (define-advice magit-list-refs (:around (orig &optional namespaces format sortby)

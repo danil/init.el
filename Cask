@@ -132,9 +132,9 @@
 ;; (depends-on "smex") ; is a m-x enhancement
 
 ;; Ivy (is an ido replacement).
+;; (depends-on "counsel-projectile") ; projectile respect selectrum instead of counsel
 (depends-on "counsel")
 (depends-on "counsel-jq") ; queries against json
-(depends-on "counsel-projectile")
 (depends-on "counsel-world-clock") ; <https://github.com/kchenphy/counsel-world-clock>
 (depends-on "ivy")
 (depends-on "ivy-dired-history")
