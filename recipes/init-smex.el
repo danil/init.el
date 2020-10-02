@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-smex)
 (defun noxrcp-smex ()
-  "My init."
+  "No X recipe init."
   (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;this is your old M-x

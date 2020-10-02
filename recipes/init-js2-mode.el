@@ -51,7 +51,7 @@
 (add-hook 'after-init-hook 'noxrcp-js2-mode)
 
 (defun noxrcp-js2-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'js2-mode
   ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))

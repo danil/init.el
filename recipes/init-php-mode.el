@@ -43,7 +43,7 @@
 (add-hook 'after-init-hook 'noxrcp-php-mode)
 
 (defun noxrcp-php-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'php-mode
   ;;   (define-key php-mode-map (kbd "C-c C-f") nil))

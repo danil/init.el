@@ -42,7 +42,7 @@
 (add-hook 'after-init-hook 'noxrcp-window)
 
 (defun noxrcp-window ()
-  "My init."
+  "No X recipe init."
 
   (global-set-key (kbd "C-x 1") 'noxrcp-window--delete-other-windows)
   (global-set-key (kbd "C-x 4 0") 'noxrcp-window--maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window

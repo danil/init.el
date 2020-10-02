@@ -43,7 +43,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-lua-mode)
 (defun noxrcp-lua-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-lua-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'lua-mode)))
   (noxrcp-after-load 'lua-mode

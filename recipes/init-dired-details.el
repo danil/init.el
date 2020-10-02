@@ -39,7 +39,7 @@
 (add-hook 'after-init-hook 'noxrcp-dired-details)
 
 (defun noxrcp-dired-details ()
-  "My init."
+  "No X recipe init."
 
   (with-eval-after-load 'dired-details
     (define-key dired-mode-map (kbd "b") 'noxrcp-dired--toggle-view)

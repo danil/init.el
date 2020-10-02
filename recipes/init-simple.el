@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-simple)
 
 (defun noxrcp-simple ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "l c") 'count-words-region)
   (define-key noxrcp-map (kbd "l t") 'toggle-truncate-lines)

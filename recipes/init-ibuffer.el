@@ -48,7 +48,7 @@
 (add-hook 'after-init-hook 'noxrcp-ibuffer)
 
 (defun noxrcp-ibuffer ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'ibuffer
     ;; (setq ibuffer-use-other-window 1)

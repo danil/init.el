@@ -32,7 +32,7 @@
 ;;; Code:
 
 ;; (add-hook 'after-init-hook 'noxrcp-elixir-mode)
-;; (defun noxrcp-elixir-mode () "My init.")
+;; (defun noxrcp-elixir-mode () "No X recipe init.")
 
 (defun noxrcp-elixir-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'elixir-mode)

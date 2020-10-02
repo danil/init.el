@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-telnet)
 
 (defun noxrcp-telnet ()
-  "My init."
+  "No X recipe init."
 
   (add-hook 'comint-mode-hook 'noxrcp-telnet--turn-on-history))
 

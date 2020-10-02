@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-anzu)
 
 (defun noxrcp-anzu ()
-  "My init."
+  "No X recipe init."
 
   (global-set-key (kbd "M-%") 'anzu-query-replace)
   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)

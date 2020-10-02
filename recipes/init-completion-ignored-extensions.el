@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-completion-ignored-extensions)
 
 (defun noxrcp-completion-ignored-extensions ()
-  "My init."
+  "No X recipe init."
 
   ;; <http://endlessparentheses.com/improving-emacs-file-name-completion.html>.
   (mapc (lambda (ignored-str)

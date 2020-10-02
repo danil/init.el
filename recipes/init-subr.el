@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-subr)
 (defun noxrcp-subr ()
-  "My init."
+  "No X recipe init."
     (if (boundp 'esc-map) (noxrcp-subr--setup-esc-map)
       (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map))))
 

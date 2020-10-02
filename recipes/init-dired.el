@@ -43,7 +43,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-dired)
 (defun noxrcp-dired ()
-  "My init."
+  "No X recipe init."
 
   (global-set-key (kbd "C-x C-d") 'noxrcp-dired--open)
 

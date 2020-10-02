@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-mmm-mode)
 
 (defun noxrcp-mmm-mode ()
-  "My init."
+  "No X recipe init."
 
   (require 'mmm-auto)
   (setq mmm-global-mode 'maybe)
@@ -57,7 +57,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-mmm-mode)
 
 ;; (defun noxrcp-mmm-mode ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'mmm-mode
 ;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.

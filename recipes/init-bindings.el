@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-bindings)
 (defun noxrcp-bindings ()
-  "My init."
+  "No X recipe init."
   (global-set-key (kbd "C-c C-f e") 'end-of-defun))
 
 ;;; init-bindings.el ends here

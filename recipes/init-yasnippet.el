@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-yasnippet)
 
 (defun noxrcp-yasnippet ()
-  "My init."
+  "No X recipe init."
 
   (yas-reload-all)
 

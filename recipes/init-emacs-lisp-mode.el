@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-emacs-lisp-mode)
 (defun noxrcp-emacs-lisp-mode ()
-  "My init."
+  "No X recipe init."
   (noxrcp-add-mode-to-patterns 'emacs-lisp-mode
                                  "/\\.?abbrev_defs\\'"
                                  "/\\.emacs\\.d/bookmarks\\'"
@@ -44,9 +44,9 @@
 
 (defun noxrcp-emacs-lisp-mode--setup ()
   (define-key emacs-lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
-  (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
-  (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
-  (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map (nox-kbd "! b") 'my-eval-buffer)
+  (define-key emacs-lisp-mode-map (nox-kbd "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map (nox-kbd "! r") 'my-eval-region)
   (define-key emacs-lisp-mode-map [?\C-\M-i] nil))
 
 (defun my-eval-buffer ()

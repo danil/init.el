@@ -39,7 +39,7 @@
 (add-hook 'after-init-hook 'noxrcp-nvm)
 
 (defun noxrcp-nvm ()
-  "My init."
+  "No X recipe init."
 
   ;; (nvm-use "0.11")
 

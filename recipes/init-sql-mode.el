@@ -39,7 +39,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-sql-mode)
 (defun noxrcp-sql-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-sql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
   (if (boundp 'sql-mode-map) (noxrcp-sql-mode--setup)

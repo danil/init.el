@@ -44,7 +44,7 @@
 (add-hook 'after-init-hook 'noxrcp-recentf)
 
 (defun noxrcp-recentf ()
-  "My init."
+  "No X recipe init."
 
   (recentf-mode t))
 

@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-transpose-frame)
 
 (defun noxrcp-transpose-frame ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "T") 'my-transpose-frame))
 

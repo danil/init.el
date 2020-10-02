@@ -40,7 +40,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-go-expr-completion)
 (defun noxrcp-go-expr-completion ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-go-expr-completion-modes-hooks)
     (add-hook hook 'noxrcp-go-expr-completion--setup)))

@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-rainbow-delimiters)
 
 (defun noxrcp-rainbow-delimiters ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-programming-modes-hooks)
     (add-hook hook 'noxrcp-rainbow-delimiters--lazyinit))

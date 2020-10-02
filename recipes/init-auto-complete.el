@@ -163,7 +163,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-auto-complete)
 (defun noxrcp-auto-complete ()
-  "My init."
+  "No X recipe init."
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (if (boundp 'auto-complete-mode) (noxrcp-auto-complete--setup)
     (with-eval-after-load 'auto-complete (noxrcp-auto-complete--setup)))

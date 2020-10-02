@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-window-numbering)
 
 (defun noxrcp-window-numbering ()
-  "My init."
+  "No X recipe init."
 
   (window-numbering-mode)
 
@@ -58,15 +58,15 @@
     (define-key window-numbering-keymap "\M-8" nil)
     (define-key window-numbering-keymap "\M-9" nil)
 
-    (define-key window-numbering-keymap (my-kbd "0") 'select-window-0)
-    (define-key window-numbering-keymap (my-kbd "1") 'select-window-1)
-    (define-key window-numbering-keymap (my-kbd "2") 'select-window-2)
-    (define-key window-numbering-keymap (my-kbd "3") 'select-window-3)
-    (define-key window-numbering-keymap (my-kbd "4") 'select-window-4)
-    (define-key window-numbering-keymap (my-kbd "5") 'select-window-5)
-    (define-key window-numbering-keymap (my-kbd "6") 'select-window-6)
-    (define-key window-numbering-keymap (my-kbd "7") 'select-window-7)
-    (define-key window-numbering-keymap (my-kbd "8") 'select-window-8)
-    (define-key window-numbering-keymap (my-kbd "9") 'select-window-9)))
+    (define-key window-numbering-keymap (nox-kbd "0") 'select-window-0)
+    (define-key window-numbering-keymap (nox-kbd "1") 'select-window-1)
+    (define-key window-numbering-keymap (nox-kbd "2") 'select-window-2)
+    (define-key window-numbering-keymap (nox-kbd "3") 'select-window-3)
+    (define-key window-numbering-keymap (nox-kbd "4") 'select-window-4)
+    (define-key window-numbering-keymap (nox-kbd "5") 'select-window-5)
+    (define-key window-numbering-keymap (nox-kbd "6") 'select-window-6)
+    (define-key window-numbering-keymap (nox-kbd "7") 'select-window-7)
+    (define-key window-numbering-keymap (nox-kbd "8") 'select-window-8)
+    (define-key window-numbering-keymap (nox-kbd "9") 'select-window-9)))
 
 ;;; init-window-numbering.el ends here

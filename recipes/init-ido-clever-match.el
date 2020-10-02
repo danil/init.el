@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-ido-clever-match)
 
 (defun noxrcp-ido-clever-match ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'ido-mode) (noxrcp-lazy-ido-clever-match)
     (with-eval-after-load 'ido (noxrcp-lazy-ido-clever-match))))
 

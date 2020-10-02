@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-python)
 
 (defun noxrcp-python ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'python
   ;;   (define-key python-mode-map (kbd "C-c C-f") nil))

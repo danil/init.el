@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-winner-mode)
 
 (defun noxrcp-winner-mode ()
-  "My init."
+  "No X recipe init."
 
   (custom-set-variables '(winner-dont-bind-my-keys t))
 

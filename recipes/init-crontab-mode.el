@@ -44,7 +44,7 @@
 (add-hook 'after-init-hook 'noxrcp-crontab-mode)
 
 (defun noxrcp-crontab-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (pattern noxrcp-crontab-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'crontab-mode))))

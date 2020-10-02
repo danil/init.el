@@ -39,7 +39,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-sql)
 (defun noxrcp-sql ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-sql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
   (add-hook 'sql-login-hook 'noxrcp-sql--turn-on-history)
@@ -52,7 +52,7 @@
             'noxrcp-sql--sql-interactive-mode-setup-company-mode))
 
 (defun noxrcp-sql--setup-keys ()
-  (define-key sql-interactive-mode-map (my-kbd "C-l") 'noxrcp-sql--shell-clear))
+  (define-key sql-interactive-mode-map (nox-kbd "C-l") 'noxrcp-sql--shell-clear))
 
 (defun noxrcp-sql--sql-interactive-mode-setup-company-mode ()
   (if (boundp 'company-dabbrev-code-modes)

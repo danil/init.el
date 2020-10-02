@@ -33,7 +33,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-rust-mode)
 ;; (defun noxrcp-rust-mode ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   ;; (noxrcp-after-load 'rust-mode
 ;;   ;;   )
 ;;   )

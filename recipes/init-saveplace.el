@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-saveplace)
 
 (defun noxrcp-saveplace ()
-  "My init."
+  "No X recipe init."
 
   (if (>= emacs-major-version 25)
       (save-place-mode)

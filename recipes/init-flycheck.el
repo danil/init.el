@@ -63,7 +63,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-flycheck)
 (defun noxrcp-flycheck ()
-  "My init."
+  "No X recipe init."
   (dolist (hook noxrcp-programming-modes-hooks)
     (add-hook hook 'noxrcp-flycheck--lazyinit)))
 

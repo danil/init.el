@@ -32,6 +32,6 @@
 ;;; Code:
 
 ;; (add-hook 'after-init-hook 'noxrcp-custom)
-;; (defun noxrcp-custom () "My init.")
+;; (defun noxrcp-custom () "No X recipe init.")
 
 ;;; init-custom.el ends here

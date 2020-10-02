@@ -189,7 +189,7 @@
 (add-hook 'after-init-hook 'noxrcp-ethan-wspace)
 
 (defun noxrcp-ethan-wspace ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-ethan-wspace-modes-hooks)
     (add-hook hook 'noxrcp-ethan-wspace--lazyinit))

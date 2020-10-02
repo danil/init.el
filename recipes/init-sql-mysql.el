@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-sql-mysql)
 
 (defun noxrcp-sql-mysql ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'sql
     (setq sql-mysql-login-params (append sql-mysql-login-params '(port)))))

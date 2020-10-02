@@ -3,6 +3,6 @@
 (add-hook 'after-init-hook 'noxrcp-ido-yes-or-no)
 
 (defun noxrcp-ido-yes-or-no ()
-  "My init."
+  "No X recipe init."
 
   (ido-yes-or-no-mode t))

@@ -33,7 +33,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-xref)
 ;; (defun noxrcp-xref ()
-;;   "My init."
+;;   "No X recipe init."
 ;;     (if (fboundp 'xref-pop-marker-stack) (noxrcp-xref--setup)
 ;;       (with-eval-after-load 'xref (noxrcp-xref--setup))))
 

@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-ansible)
 (defun noxrcp-company-ansible ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-ansible--setup)
     (with-eval-after-load 'company (noxrcp-company-ansible--setup))))
 

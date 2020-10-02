@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-dockerfile-mode)
 
 (defun noxrcp-dockerfile-mode ()
-  "My init."
+  "No X recipe init."
   ;; (noxrcp-after-load 'dockerfile-mode
   ;;   (define-key noxrcp-mode-map (kbd "C-v m") dockerfile-mode-map))
   (noxrcp-add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))

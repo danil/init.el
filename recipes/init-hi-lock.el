@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-hi-lock)
 
 (defun noxrcp-hi-lock ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "B h") 'my-highlight-regexp))
 

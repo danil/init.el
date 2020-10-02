@@ -36,7 +36,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-twittering-mode)
 
 ;; (defun noxrcp-twittering-mode ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   (noxrcp-after-load 'twittering-mode
 ;;     (define-key twittering-mode-map (kbd "C-c C-f") nil)))
 

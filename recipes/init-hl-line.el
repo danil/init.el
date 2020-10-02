@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-hl-line)
 (defun noxrcp-hl-line ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "C-v") 'hl-line-mode)
   (if (boundp 'hl-line-mode) (noxrcp-hl-line--setup)
     (with-eval-after-load 'hl-line (noxrcp-hl-line--setup))))

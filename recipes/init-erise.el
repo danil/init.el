@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-erise)
 
 (defun noxrcp-erise ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'erise
   ;;   (setq erise-key-length-limit 30)

@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-compile)
 
 (defun noxrcp-compile ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'compile
   ;;   (define-key compilation-mode-map "\C-c\C-f" nil))

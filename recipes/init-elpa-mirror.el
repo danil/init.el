@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-elpa-mirror)
 
 (defun noxrcp-elpa-mirror ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'elpa-mirror
     (setq elpamr-default-output-directory "/var/elpa/mirror"

@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-quickrun)
 
 (defun noxrcp-quickrun ()
-  "My init."
+  "No X recipe init."
 
   ;; (if (boundp 'quickrun--mode-map) (noxrcp-quickrun--customize)
   ;;   (with-eval-after-load 'quickrun (noxrcp-quickrun--customize)))

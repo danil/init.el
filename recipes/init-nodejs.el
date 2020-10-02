@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-nodejs)
 
 (defun noxrcp-nodejs ()
-  "My init."
+  "No X recipe init."
 
   ;; <http://stackoverflow.com/questions/18392303/adding-binary-path-to-emacs-path#18393068>.
   (setenv "PATH" (concat (getenv "PATH")

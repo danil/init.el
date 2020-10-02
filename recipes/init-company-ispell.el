@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-ispall)
 (defun noxrcp-company-ispall ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-ispall--setup)
     (with-eval-after-load 'company (noxrcp-company-ispall--setup))))
 

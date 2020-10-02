@@ -34,8 +34,8 @@
 (add-hook 'after-init-hook 'noxrcp-fill)
 
 (defun noxrcp-fill ()
-  "My init."
+  "No X recipe init."
 
-  (global-set-key (my-kbd "r f") 'fill-region))
+  (global-set-key (nox-kbd "r f") 'fill-region))
 
 ;;; init-fill.el ends here

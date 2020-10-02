@@ -38,7 +38,7 @@
 (add-hook 'after-init-hook 'noxrcp-yaless-mode)
 
 (defun noxrcp-yaless-mode ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "C-f") 'yaless-mode-on))
 

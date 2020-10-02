@@ -32,6 +32,6 @@
 ;;; Code:
 
 ;; (add-hook 'after-init-hook 'noxrcp-go-stacktracer)
-;; (defun noxrcp-go-stacktracer () "My init.")
+;; (defun noxrcp-go-stacktracer () "No X recipe init.")
 
 ;;; init-go-stacktracer.el ends here

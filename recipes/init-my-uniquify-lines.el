@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-my-uniquify)
 
 (defun noxrcp-my-uniquify ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "l U") 'my-uniquify-lines-buffer)
   (define-key noxrcp-map (kbd "l u") 'my-uniquify-lines-region))

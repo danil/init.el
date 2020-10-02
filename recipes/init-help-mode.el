@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-help-mode)
 
 ;; (defun noxrcp-help-mode ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'help-mode
 ;;     (define-key help-mode-map (kbd "C-c C-f") nil)))

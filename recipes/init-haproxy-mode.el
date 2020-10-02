@@ -44,7 +44,7 @@
 (add-hook 'after-init-hook 'noxrcp-haproxy-mode)
 
 (defun noxrcp-haproxy-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (pattern noxrcp-haproxy-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'haproxy-mode))))

@@ -34,6 +34,6 @@
 (custom-set-variables '(company-dabbrev-minimum-length 1))
 
 ;; (add-hook 'after-init-hook 'noxrcp-company-dabbrev)
-;; (defun noxrcp-company-dabbrev () "My init.")
+;; (defun noxrcp-company-dabbrev () "No X recipe init.")
 
 ;;; init-company-dabbrev.el ends here

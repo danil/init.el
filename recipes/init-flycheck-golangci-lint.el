@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-flycheck-golangci-lint)
 (defun noxrcp-flycheck-golangci-lint ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'flycheck-mode) (noxrcp-flycheck-golangci-lint--init)
     (with-eval-after-load 'flycheck (noxrcp-flycheck-golangci-lint--init))))
 

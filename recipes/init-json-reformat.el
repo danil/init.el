@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-json-reformat)
 
 (defun noxrcp-json-reformat ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "m j j r") 'json-reformat-region))
 

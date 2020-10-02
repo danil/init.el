@@ -43,7 +43,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-selectrum)
 (defun noxrcp-selectrum ()
-  "My init."
+  "No X recipe init."
   (selectrum-mode +1)
   (global-set-key (kbd "C-c C-r") #'selectrum-repeat)
   ;; (global-set-key (kbd "C-x C-r") 'noxrcp-selectrum--recentf)

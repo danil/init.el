@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-narrow-indirect)
 
 (defun noxrcp-narrow-indirect ()
-  "My init."
+  "No X recipe init."
 
   (define-key ctl-x-4-map "nd" 'ni-narrow-to-defun-indirect-other-window)
   (define-key ctl-x-4-map "nn" 'ni-narrow-to-region-indirect-other-window)

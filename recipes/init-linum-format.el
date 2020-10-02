@@ -38,7 +38,7 @@
 (add-hook 'after-init-hook 'noxrcp-linum-format)
 
 (defun noxrcp-linum-format ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'linum
     (unless window-system

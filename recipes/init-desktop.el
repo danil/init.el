@@ -47,7 +47,7 @@
 (add-hook 'after-init-hook 'noxrcp-desktop)
 
 (defun noxrcp-desktop ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "D s") 'save-my-desktop)
   (define-key noxrcp-map (kbd "D l") 'load-my-desktop))
 

@@ -42,7 +42,7 @@
 (add-hook 'after-init-hook 'noxrcp-bash-completion)
 
 (defun noxrcp-bash-completion ()
-  "My init."
+  "No X recipe init."
 
   (autoload 'bash-completion-dynamic-complete "bash-completion"
     "BASH completion hook")

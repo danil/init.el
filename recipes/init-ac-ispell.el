@@ -35,7 +35,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ac-ispell)
 (defun noxrcp-ac-ispell ()
-  "My init."
+  "No X recipe init."
   (noxrcp-add-mode-to-hooks 'my-ac-ispell-setup
                             noxrcp-auto-completion-modes-hooks))
 

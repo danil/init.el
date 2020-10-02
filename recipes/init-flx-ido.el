@@ -38,7 +38,7 @@
 (add-hook 'after-init-hook 'noxrcp-flx-ido)
 
 (defun noxrcp-flx-ido ()
-  "My init."
+  "No X recipe init."
 
   ;; (with-eval-after-load 'flx-ido)
 

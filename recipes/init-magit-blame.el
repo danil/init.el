@@ -35,7 +35,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-magit-blame)
 (defun noxrcp-magit-blame ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "V b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)

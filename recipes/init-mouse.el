@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-mouse)
 
 ;; (defun noxrcp-mouse ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (global-unset-key [C-down-mouse-1])
 ;;   (global-unset-key [C-down-mouse-3])

@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-cycle-quotes)
 
 (defun noxrcp-cycle-quotes ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "q") 'cycle-quotes))
 

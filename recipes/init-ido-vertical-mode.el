@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-ido-vertical-mode)
 
 (defun noxrcp-ido-vertical-mode ()
-  "My init."
+  "No X recipe init."
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (with-eval-after-load 'ido (ido-vertical-mode t))))
 

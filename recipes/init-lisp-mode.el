@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-lisp-mode)
 (defun noxrcp-lisp-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'"))
     (add-to-list 'auto-mode-alist (cons pattern 'lisp-mode)))
   (if (boundp 'lisp-mode-map) (noxrcp-lisp-mode--setup)

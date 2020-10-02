@@ -35,7 +35,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-bookmark)
 ;; (defun noxrcp-bookmark ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   )
 
 ;;; init-bookmark.el ends here

@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-protobuf-mode)
 (defun noxrcp-protobuf-mode ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'protobuf-mode-map) (noxrcp-protobuf-mode--setup)
     (with-eval-after-load 'protobuf-mode (noxrcp-protobuf-mode--setup))))
 

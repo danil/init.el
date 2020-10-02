@@ -36,7 +36,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-vc-hooks)
 
 ;; (defun noxrcp-vc-hooks ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (dolist (hook noxrcp-programming-modes-hooks)
 ;;     (add-hook hook 'noxrcp-vc-hooks--lazyinit)))

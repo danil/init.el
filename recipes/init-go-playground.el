@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-go-playground)
 
 (defun noxrcp-go-playground ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'go-playground
     (define-key go-playground-mode-map (kbd "C-c C-z")

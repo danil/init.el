@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-tldr)
 
 (defun noxrcp-tldr ()
-  "My init."
+  "No X recipe init."
 
   (if (boundp 'tldr-directory-path) (noxrcp-tldr--customize)
     (with-eval-after-load 'tldr (noxrcp-tldr--customize))))

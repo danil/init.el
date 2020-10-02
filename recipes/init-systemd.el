@@ -45,7 +45,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-systemd)
 ;; (defun noxrcp-systemd ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   (dolist (pattern noxrcp-systemd-patterns)
 ;;     (add-to-list 'auto-mode-alist (cons pattern 'systemd-mode)))
 ;;   (if (boundp 'systemd) (noxrcp-systemd--setup)

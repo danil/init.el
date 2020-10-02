@@ -69,7 +69,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-multi-compile)
 (defun noxrcp-multi-compile ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "! m") 'multi-compile-run))
 
 ;;; init-multi-compile.el ends here

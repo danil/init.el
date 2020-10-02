@@ -33,7 +33,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-doom-todo-ivy)
 ;; (defun noxrcp-doom-todo-ivy ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   (if (boundp 'doom-todo-ivy) (noxrcp-doom-todo-ivy--setup)
 ;;     (with-eval-after-load 'doom-todo-ivy (noxrcp-doom-todo-ivy--setup))))
 

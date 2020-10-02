@@ -45,7 +45,7 @@
 (add-hook 'after-init-hook 'noxrcp-highlight-static-regexps)
 
 (defun noxrcp-highlight-static-regexps ()
-  "My init."
+  "No X recipe init."
   (dolist (hook noxrcp-highlight-static-regexps-hooks)
     (let ((h (car hook))
           (init-fn (nth 1 hook)))

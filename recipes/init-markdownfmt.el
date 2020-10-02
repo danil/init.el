@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-markdownfmt)
 
 (defun noxrcp-markdownfmt ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'markdown-mode
     (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))

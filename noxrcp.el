@@ -152,75 +152,75 @@ Otherwise use `list'."
 
 ;;;###autoload
 (defcustom noxrcp-safe-modes '()
-  "My modes with many minor modes enabled."
+  "No X recipe modes with many minor modes enabled."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-programming-modes '()
-  "My programming modes."
+  "No X recipe programming modes."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-auto-completion-modes '()
-  "My auto completion."
+  "No X recipe auto completion."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-read-only-modes '()
-  "My read only modes."
+  "No X recipe read only modes."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-toggle-quotes-modes '()
-  "My ruby tools modes."
+  "No X recipe ruby tools modes."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-highlighted-digits-modes '()
-  "My modes with highlight digits."
+  "No X recipe modes with highlight digits."
   :group 'noxrcp)
 
 (defcustom noxrcp-modal-modes '()
-  "My modal modes."
+  "No X recipe modal modes."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-safe-modes-hooks '()
-  "My hooks."
+  "No X recipe hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-programming-modes-hooks '()
-  "My programming modes hooks."
+  "No X recipe programming modes hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-auto-completion-modes-hooks '()
-  "My auto completion hooks."
+  "No X recipe auto completion hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-read-only-modes-hooks '()
-  "My read only modes hooks."
+  "No X recipe read only modes hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-toggle-quotes-modes-hooks '()
-  "My ruby tools modes hooks."
+  "No X recipe ruby tools modes hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-highlighted-digits-modes-hooks '()
-  "My hooks with highlight digits."
+  "No X recipe hooks with highlight digits."
   :group 'noxrcp)
 
 (defcustom noxrcp-modal-modes-hooks '()
-  "My modal modes hooks."
+  "No X recipe modal modes hooks."
   :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-default-idle-timer-seconds '()
-  "My default idle timer wait timeout."
+  "No X recipe default idle timer wait timeout."
   :group 'noxrcp)
 
 ;;;###autoload
@@ -267,8 +267,8 @@ Otherwise use `list'."
     (autoload function-name file-name nil t)))
 
 ;;;###autoload
-(defun my-kbd (key)
-  "My key bindings start with \\<<C-v>> follow by `KEY'."
+(defun nox-kbd (key)
+  "No X recipe key bindings start with \\<<C-v>> follow by `KEY'."
   (kbd (concat "C-v " key)))
 
 ;;;###autoload

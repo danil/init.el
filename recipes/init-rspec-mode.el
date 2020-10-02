@@ -43,7 +43,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-rspec-mode)
 (defun noxrcp-rspec-mode ()
-  "My init."
+  "No X recipe init."
   ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
   ;; (dolist (hook noxrcp-rspec-mode-patterns)
   ;;   (add-hook hook 'noxrcp-rspec-mode--lazyinit))

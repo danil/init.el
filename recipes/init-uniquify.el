@@ -35,7 +35,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-uniquify)
 (defun noxrcp-uniquify ()
-  "My init."
+  "No X recipe init."
   ;; Uniquify
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.

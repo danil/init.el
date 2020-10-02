@@ -55,7 +55,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-highlight-symbol)
 (defun noxrcp-highlight-symbol ()
-  "My init."
+  "No X recipe init."
   (dolist (hook noxrcp-highlight-symbol-modes-hooks)
     (add-hook hook 'noxrcp-highlight-symbol--setup-hook))
   (if (boundp 'highlight-symbol-mode) (noxrcp-highlight-symbol--setup)

@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-ac-html-bootstrap)
 
 (defun noxrcp-ac-html-bootstrap ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'ac-html (ac-html-bootstrap+)))
 

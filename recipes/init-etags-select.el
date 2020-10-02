@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-etags-select)
 (defun noxrcp-etags-select ()
-  "My init."
+  "No X recipe init."
   ;; (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
   (noxrcp-after-load 'etags-select
     (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)

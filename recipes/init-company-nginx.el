@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-nginx)
 (defun noxrcp-company-nginx ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-nginx--setup)
     (with-eval-after-load 'company (noxrcp-company-nginx--setup))))
 

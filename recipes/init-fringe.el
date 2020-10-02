@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-fringe)
 
 (defun noxrcp-fringe ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "x l") 'noxrcp-fringe--toggle))
 
 (defun noxrcp-fringe--toggle ()

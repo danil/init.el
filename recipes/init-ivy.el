@@ -55,7 +55,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ivy)
 (defun noxrcp-ivy ()
-  "My init."
+  "No X recipe init."
   ;; (if (boundp 'ivy-mode) (noxrcp-ivy--setup)
   ;;   (with-eval-after-load 'ivy (noxrcp-ivy--setup)))
   ;; Be aware it breaks `find-file'!

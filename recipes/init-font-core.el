@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-font-core)
 
 (defun noxrcp-font-core ()
-  "My init."
+  "No X recipe init."
 
   (global-font-lock-mode t))
 

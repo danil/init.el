@@ -32,6 +32,6 @@
 ;;; Code:
 
 ;; (add-hook 'after-init-hook 'noxrcp-cus-face)
-;; (defun noxrcp-cus-face () "My init.")
+;; (defun noxrcp-cus-face () "No X recipe init.")
 
 ;;; init-cus-face.el ends here

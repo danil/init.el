@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-direx)
 
 ;; (defun noxrcp-direx ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   ;; (global-set-key (kbd "C-x d") 'my-dired)
 ;;   )

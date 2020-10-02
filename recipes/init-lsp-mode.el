@@ -47,7 +47,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-lsp-mode)
 (defun noxrcp-lsp-mode ()
-  "My init."
+  "No X recipe init."
   (require 'lsp-mode)
   ;; (if (boundp 'lsp-mode-map) (noxrcp-lsp-mode--customize)
   ;;   (with-eval-after-load 'lsp-mode (noxrcp-lsp-mode--customize)))

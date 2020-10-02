@@ -36,7 +36,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-colir)
 ;; (defun noxrcp-colir ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   (if (boundp 'colir-compose-alpha) (noxrcp-lazy-colir)
 ;;     (with-eval-after-load 'colir (noxrcp-lazy-colir))))
 ;; (defun noxrcp-lazy-colir ()

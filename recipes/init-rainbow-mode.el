@@ -67,7 +67,7 @@
 (add-hook 'after-init-hook 'noxrcp-rainbow-mode)
 
 (defun noxrcp-rainbow-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-rainbow-modes-hooks)
     (add-hook hook 'noxrcp-rainbow-mode--lazyinit)))

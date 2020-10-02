@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-recentf-ido-find-file)
 
 (defun noxrcp-recentf-ido-find-file ()
-  "My init."
+  "No X recipe init."
   (global-set-key (kbd "C-x C-r") 'noxrcp-recentf-ido-find-file--my))
 
 ;; <http://www.emacswiki.org/emacs/RecentFiles#toc5>.

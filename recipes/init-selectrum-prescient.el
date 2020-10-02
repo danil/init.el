@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-selectrum-prescient)
 
 (defun noxrcp-selectrum-prescient ()
-  "My init."
+  "No X recipe init."
 
   (if (boundp 'selectrum-mode) (noxrcp-selectrum-prescient--setup)
     (with-eval-after-load 'selectrum (noxrcp-selectrum-prescient--setup))))

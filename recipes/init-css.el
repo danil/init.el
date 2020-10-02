@@ -38,7 +38,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-css)
 
 ;; (defun noxrcp-css ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'css-mode
 ;;     (setq css-indent-offset 2)))

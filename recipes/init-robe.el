@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-robe)
 (defun noxrcp-robe ()
-  "My init."
+  "No X recipe init."
   (add-hook 'robe-mode-hook 'ac-robe-setup)
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)

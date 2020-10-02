@@ -34,9 +34,9 @@
 (add-hook 'after-init-hook 'noxrcp-bytecomp)
 
 (defun noxrcp-bytecomp ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'lisp-mode
-    (define-key emacs-lisp-mode-map (my-kbd "! f") 'byte-compile-file)))
+    (define-key emacs-lisp-mode-map (nox-kbd "! f") 'byte-compile-file)))
 
 ;;; init-bytecomp.el ends here

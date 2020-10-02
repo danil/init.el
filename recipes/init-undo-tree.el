@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-undo-tree)
 
 (defun noxrcp-undo-tree ()
-  "My init."
+  "No X recipe init."
 
  (global-undo-tree-mode))
 

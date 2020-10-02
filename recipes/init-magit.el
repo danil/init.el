@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-magit)
 
 (defun noxrcp-magit ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "v") 'magit-status)
 
@@ -55,10 +55,10 @@
   (define-key noxrcp-map (kbd "V S c") 'magit-show)
 
   (noxrcp-after-load 'magit
-    (define-key magit-mode-map (my-kbd "V S 1") 'magit-show-level-1-all)
-    (define-key magit-mode-map (my-kbd "V S 2") 'magit-show-level-2-all)
-    (define-key magit-mode-map (my-kbd "V S 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (my-kbd "V S 4") 'magit-show-level-4-all)
+    (define-key magit-mode-map (nox-kbd "V S 1") 'magit-show-level-1-all)
+    (define-key magit-mode-map (nox-kbd "V S 2") 'magit-show-level-2-all)
+    (define-key magit-mode-map (nox-kbd "V S 3") 'magit-show-level-3-all)
+    (define-key magit-mode-map (nox-kbd "V S 4") 'magit-show-level-4-all)
 
     ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
 

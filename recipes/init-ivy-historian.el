@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-ivy-historian)
 
 (defun noxrcp-ivy-historian ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'ivy-historian-mode) (noxrcp-lazy-ivy-historian)
     (with-eval-after-load 'ivy-historian (noxrcp-lazy-ivy-historian))))
 

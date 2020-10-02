@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ruby-hash-syntax)
 (defun noxrcp-ruby-hash-syntax ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "m t h") 'ruby-toggle-hash-syntax))
 
 ;;; init-ruby-hash-syntax.el ends here

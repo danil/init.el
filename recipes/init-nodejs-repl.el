@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-nodejs-repl)
 
 (defun noxrcp-nodejs-repl ()
-  "My init."
+  "No X recipe init."
 
   ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
 

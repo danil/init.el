@@ -39,7 +39,7 @@
 (add-hook 'after-init-hook 'noxrcp-comint)
 
 (defun noxrcp-comint ()
-  "My init."
+  "No X recipe init."
 
   (add-hook 'kill-emacs-hook 'noxrcp-comint--write-history-each-buffer))
 

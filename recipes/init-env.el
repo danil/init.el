@@ -3,7 +3,7 @@
 (add-hook 'after-init-hook 'noxrcp-env)
 
 (defun noxrcp-env ()
-  "My init."
+  "No X recipe init."
 
   ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
   (setenv "DISABLE_PRY_RAILS" "1")

@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-json-mode)
 
 (defun noxrcp-json-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (pattern noxrcp-json-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'json-mode)))

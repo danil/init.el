@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-my-sort)
 
 (defun noxrcp-my-sort ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "S c") 'my-sort-chars)
   (define-key noxrcp-map (kbd "S s") 'my-sort-symbols)

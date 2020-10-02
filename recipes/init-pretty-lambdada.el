@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-pretty-lambdada)
 
 (defun noxrcp-pretty-lambdada ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-hooks 'turn-on-pretty-lambda-mode
                               '(emacs-lisp-mode-hook lisp-mode-hook)))

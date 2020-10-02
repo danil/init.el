@@ -33,12 +33,12 @@
 
 (add-hook 'after-init-hook 'noxrcp-ispell)
 (defun noxrcp-ispell ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'ispell-minor-mode) (noxrcp-ispell--setup)
     (with-eval-after-load 'ispell (noxrcp-ispell--setup))))
 
 (defun noxrcp-ispell--setup ()
-  "My init."
+  "No X recipe init."
   ;; (define-key ispell-menu-map [?\C-\M-i] nil)
   ;; (define-key ispell-menu-map-needed [?\C-\M-i] nil)
   ;; (setq-default ispell-program-name "/usr/bin/aspell")

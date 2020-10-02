@@ -36,7 +36,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-cider)
 
 ;; (defun noxrcp-cider ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'cider-mode
 ;;     (define-key cider-mode-map (kbd "C-c C-f") nil)))

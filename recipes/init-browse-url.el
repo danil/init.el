@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-browse-url)
 
 (defun noxrcp-browse-url ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "x u") 'browse-url-at-point))
 

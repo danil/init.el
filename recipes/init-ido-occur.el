@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-ido-occur)
 
 (defun noxrcp-ido-occur ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "j o") 'my-ido-occur)
   (noxrcp-after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))

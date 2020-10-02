@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-nginx-mode)
 
 (defun noxrcp-nginx-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-patterns 'nginx-mode
                                 "/etc/nginx/.*\\.conf\\'"

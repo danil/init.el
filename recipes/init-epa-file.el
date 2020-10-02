@@ -39,7 +39,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-epa-file)
 (defun noxrcp-epa-file ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'epa-file) (noxrcp-epa-file--init)
     (with-eval-after-load 'epa-file (noxrcp-epa-file--init))))
 

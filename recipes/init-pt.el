@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-pt)
 
 (defun noxrcp-pt ()
-  "My init."
+  "No X recipe init."
 
   (when (boundp 'noxrcp-map)
     (define-key noxrcp-map (kbd "j P p") 'pt-regexp)

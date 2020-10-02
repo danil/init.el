@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-auto-complete-chunk)
 
 ;; (defun noxrcp-auto-complete-chunk ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'auto-complete-config
 ;;     (noxrcp-add-mode-to-hooks (lambda ()

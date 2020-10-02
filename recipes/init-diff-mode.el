@@ -38,7 +38,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-diff-mode)
 
 ;; (defun noxrcp-diff-mode ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'diff-mode
 ;;     (define-key diff-mode-map "\C-c\C-f" nil)))

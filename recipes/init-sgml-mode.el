@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-sgml-mode)
 
 (defun noxrcp-sgml-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-patterns 'html-mode
                                  ;; "\\.html?\\'"

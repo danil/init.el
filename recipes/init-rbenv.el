@@ -40,7 +40,7 @@
 (add-hook 'after-init-hook 'noxrcp-rbenv)
 
 (defun noxrcp-rbenv ()
-  "My init."
+  "No X recipe init."
   (global-rbenv-mode)
   (rbenv-use-corresponding))
 

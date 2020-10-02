@@ -37,7 +37,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-flycheck-bashate)
 ;; (defun noxrcp-flycheck-bashate ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   )
 
 (with-eval-after-load 'flycheck

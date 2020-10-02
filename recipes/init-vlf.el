@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-vlf)
 
 (defun noxrcp-vlf ()
-  "My init."
+  "No X recipe init."
 
  (require 'vlf-setup))
 

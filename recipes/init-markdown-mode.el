@@ -48,7 +48,7 @@
 (add-hook 'after-init-hook 'noxrcp-markdown-mode)
 
 (defun noxrcp-markdown-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (pattern noxrcp-markdown-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'markdown-mode)))

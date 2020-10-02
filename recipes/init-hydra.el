@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-hydra)
 
 ;; (defun noxrcp-hydra ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   )
 
 ;;; init-hydra.el ends here

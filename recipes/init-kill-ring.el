@@ -34,7 +34,7 @@
 (custom-set-variables '(kill-ring-max 1000))
 
 (add-hook 'after-init-hook 'noxrcp-kill-ring)
-(defun noxrcp-kill-ring () "My init.")
+(defun noxrcp-kill-ring () "No X recipe init.")
 
 ;; <http://superuser.com/questions/546619/clear-the-kill-ring-in-emacs#546627>.
 (defun noxrcp-kill-ring--clear ()

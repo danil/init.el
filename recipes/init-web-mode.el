@@ -63,7 +63,7 @@
 (add-hook 'after-init-hook 'noxrcp-web-mode)
 
 (defun noxrcp-web-mode ()
-  "My init."
+  "No X recipe init."
 
   (dolist (pattern noxrcp-web-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'web-mode)))

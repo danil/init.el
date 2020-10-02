@@ -55,7 +55,7 @@
 (add-hook 'after-init-hook 'noxrcp-linum)
 
 (defun noxrcp-linum ()
-  "My init."
+  "No X recipe init."
 
   ;; (dolist (hook noxrcp-linum-modes-hooks)
   ;;   (add-hook hook 'noxrcp-linum--lazyinit))

@@ -56,7 +56,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-mode-line)
 (defun noxrcp-mode-line ()
-  "My init."
+  "No X recipe init."
   ;; (remove-hook 'window-configuration-change-hook 'noxrcp-mode-line--face-mode-line-update-lazy)
   ;; (add-hook 'window-configuration-change-hook 'noxrcp-mode-line--face-mode-line-update-lazy)
   )

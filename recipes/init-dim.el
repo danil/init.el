@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-dim)
 (defun noxrcp-dim ()
-  "My init."
+  "No X recipe init."
   (dim-major-names
    '(
      (clojure-mode "clj")

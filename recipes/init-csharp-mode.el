@@ -32,7 +32,7 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'noxrcp-csharp-mode)
-(defun noxrcp-csharp-mode () "My init.")
+(defun noxrcp-csharp-mode () "No X recipe init.")
 
 (defun noxrcp-csharp-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'csharp-mode)

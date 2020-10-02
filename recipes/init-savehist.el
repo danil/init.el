@@ -52,7 +52,7 @@
 (add-hook 'after-init-hook 'noxrcp-savehist)
 
 (defun noxrcp-savehist ()
-  "My init."
+  "No X recipe init."
 
   (savehist-mode t))
 

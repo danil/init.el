@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-yascroll)
 
 (defun noxrcp-yascroll ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-hooks 'yascroll-bar-mode
                         (-difference noxrcp-read-only-modes-hooks

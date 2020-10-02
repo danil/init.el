@@ -348,7 +348,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ruby-mode)
 (defun noxrcp-ruby-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-ruby-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
   (add-hook 'ruby-mode-hook
@@ -363,9 +363,9 @@
   (define-key ruby-mode-map (kbd "C-c C-f e") 'noxrcp-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'noxrcp-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
-  (define-key ruby-mode-map (my-kbd "m f h") 'noxrcp-ruby-mode--align-hash)
-  (define-key ruby-mode-map (my-kbd "m f v") 'noxrcp-ruby-mode--align-variable-defenition)
-  (define-key ruby-mode-map (my-kbd "m t b") 'noxrcp-ruby-mode--toggle-block)
+  (define-key ruby-mode-map (nox-kbd "m f h") 'noxrcp-ruby-mode--align-hash)
+  (define-key ruby-mode-map (nox-kbd "m f v") 'noxrcp-ruby-mode--align-variable-defenition)
+  (define-key ruby-mode-map (nox-kbd "m t b") 'noxrcp-ruby-mode--toggle-block)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -461,9 +461,9 @@
 
 ;; My keyboard macroses.
 ;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
-;; (fset 'my-kbd-macro-ruby-new-hash-syntax
+;; (fset 'nox-kbd-macro-ruby-new-hash-syntax
 ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
-(fset 'my-kbd-macro-ruby-string-to-symbol
+(fset 'nox-kbd-macro-ruby-string-to-symbol
       "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 
 (defun noxrcp-ruby-mode--toggle-block ()

@@ -47,7 +47,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-counsel)
 (defun noxrcp-counsel ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'counsel-mode) (noxrcp-counsel--setup)
     (with-eval-after-load 'counsel (noxrcp-counsel--setup)))
   ;; (counsel-mode t)

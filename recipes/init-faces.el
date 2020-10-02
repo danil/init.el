@@ -38,7 +38,7 @@
   :group 'noxrcp-faces)
 
 ;; (add-hook 'after-init-hook 'noxrcp-faces)
-;; (defun noxrcp-faces () "My init.")
+;; (defun noxrcp-faces () "No X recipe init.")
 
 ;; <http://stackoverflow.com/questions/1242352/get-font-face-under-cursor-in-emacs#1242366>.
 (defun my-face-at-point (pos)

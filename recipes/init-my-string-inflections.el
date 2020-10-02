@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-my-string-inflections)
 
 (defun noxrcp-my-string-inflections ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "c i") 'my-toggle-camelcase-and-underscore)
   (define-key noxrcp-map (kbd "c I") 'my-humanize-symbol))

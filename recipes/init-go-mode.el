@@ -226,7 +226,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-go-mode)
 (defun noxrcp-go-mode ()
-  "My init."
+  "No X recipe init."
     (if (boundp 'go-mode-map) (noxrcp-go-mode--customize)
       (with-eval-after-load 'go-mode (noxrcp-go-mode--customize))))
 
@@ -235,7 +235,7 @@
   (define-key go-mode-map (kbd "C-c C-f e") 'noxrcp-go-mode--end-of-defun)
   (define-key go-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
-  (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
+  (define-key go-mode-map (nox-kbd "? ? f") 'godoc-at-point))
 
 (defun noxrcp-go-mode--end-of-defun ()
   (interactive)

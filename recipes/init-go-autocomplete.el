@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-go-autocomplete)
 
 (defun noxrcp-go-autocomplete ()
-  "My init."
+  "No X recipe init."
 
  (require 'go-autocomplete))
 

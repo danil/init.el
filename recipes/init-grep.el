@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-grep)
 
 ;; (defun noxrcp-grep ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'grep
 ;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))

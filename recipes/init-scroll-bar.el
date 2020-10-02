@@ -38,6 +38,6 @@
  '(scroll-bar ((((class color) (min-colors 88) (background dark)) (:background  "white" :foreground "gray" )))))
 
 ;; (add-hook 'after-init-hook 'noxrcp-scroll-bar)
-;; (defun noxrcp-scroll-bar () "My init.")
+;; (defun noxrcp-scroll-bar () "No X recipe init.")
 
 ;;; init-scroll-bar.el ends here

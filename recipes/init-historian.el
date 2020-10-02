@@ -36,7 +36,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-historian)
 ;; (defun noxrcp-historian ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   )
 
 ;;; init-historian.el ends here

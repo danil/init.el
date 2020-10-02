@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-sort)
 
 (defun noxrcp-sort ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "s") 'sort-lines)
   (define-key noxrcp-map (kbd "S f") 'sort-fields))

@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-slim-mode)
 (defun noxrcp-slim-mode ()
-  "My init."
+  "No X recipe init."
   (noxrcp-after-load 'slim-mode
     (define-key slim-mode-map (kbd "\C-c\C-f") nil)
     (define-key slim-mode-map (kbd "M-_") nil)

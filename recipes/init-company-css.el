@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-css)
 (defun noxrcp-company-css ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-css--setup)
     (with-eval-after-load 'company (noxrcp-company-css--setup))))
 

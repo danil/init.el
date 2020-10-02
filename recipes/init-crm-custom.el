@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-crm-custom)
 
 (defun noxrcp-crm-custom ()
-  "My init."
+  "No X recipe init."
 
  (crm-custom-mode t)) ;ido with commands such as describe-face <https://github.com/DarwinAwardWinner/ido-ubiquitous#ido-for-describe-face-and-certain-other-commands>
 

@@ -3,7 +3,7 @@
 (add-hook 'after-init-hook 'noxrcp-projectile-rails)
 
 (defun noxrcp-projectile-rails ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'projectile-rails
 

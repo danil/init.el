@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-kill-emacs)
 (defun noxrcp-kill-emacs ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-exec-map (kbd "k") 'noxrcp-kill-emacs--kill))
 
 (defun noxrcp-kill-emacs--kill ()

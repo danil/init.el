@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-dired-aux)
 
 (defun noxrcp-dired-aux ()
-  "My init."
+  "No X recipe init."
 
   (if (boundp 'dired-mode-map)
       (noxrcp-lazy-dired-aux)

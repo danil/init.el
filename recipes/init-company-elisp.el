@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-elisp)
 (defun noxrcp-company-elisp ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-elisp--setup)
     (with-eval-after-load 'company (noxrcp-company-elisp--setup))))
 

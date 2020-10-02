@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-iedit)
 (defun noxrcp-iedit ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-map (kbd "c s") 'iedit-mode)
   (define-key noxrcp-map (kbd "c S r") 'iedit-rectangle-mode)
   (if (boundp 'iedit-mode) (noxrcp-iedit--setup)

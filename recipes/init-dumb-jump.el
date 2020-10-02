@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-dumb-jump)
 (defun noxrcp-dumb-jump ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'dumb-jump-mode-map) (noxrcp-dumb-jump--setup)
     (with-eval-after-load 'dumb-jump (noxrcp-dumb-jump--setup)))
   (dumb-jump-mode))
@@ -45,7 +45,7 @@
 (defun noxrcp-dumb-jump--setup ()
   (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
   (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
-  (define-key dumb-jump-mode-map (my-kbd "j d") 'noxrcp-dumb-jump--go)
+  (define-key dumb-jump-mode-map (nox-kbd "j d") 'noxrcp-dumb-jump--go)
   (if (boundp 'c-mode-map) (noxrcp-dumb-jump--setup-c-mode)
     (with-eval-after-load 'cc-mode (noxrcp-dumb-jump--setup-c-mode)))
   (if (boundp 'enh-ruby-mode-map) (noxrcp-dumb-jump--setup-enh-ruby-mode)

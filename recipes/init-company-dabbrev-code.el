@@ -35,7 +35,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-company-dabbrev-code)
 ;; (defun noxrcp-company-dabbrev-code ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   (if (boundp 'company-dabbrev-code-modes) (noxrcp-company-dabbrev-code--setup)
 ;;     (with-eval-after-load 'company-dabbrev-code (noxrcp-company-dabbrev-code--setup))))
 

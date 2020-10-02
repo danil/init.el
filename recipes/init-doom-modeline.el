@@ -33,14 +33,14 @@
 
 (add-hook 'after-init-hook 'noxrcp-doom-modeline)
 (defun noxrcp-doom-modeline ()
-  "My init."
+  "No X recipe init."
   (if (fboundp 'doom-modeline-def-segment) (noxrcp-doom-modeline--setup)
     (with-eval-after-load 'doom-modeline (noxrcp-doom-modeline--setup)))
   ;; (doom-modeline-set-modeline 'noxinit t)
   (doom-modeline-set-modeline 'main t))
 
 (defun noxrcp-doom-modeline--setup ()
-  "My init."
+  "No X recipe init."
   (noxrcp-doom-modeline---setup)
   (doom-modeline-def-modeline
    'noxinit
@@ -50,7 +50,7 @@
   (setq doom-modeline-icon nil))
 
 (defun noxrcp-doom-modeline---setup ()
-  "My init."
+  "No X recipe init."
   (doom-modeline-def-segment
    noxinit-buffer-position
    "The buffer position information."

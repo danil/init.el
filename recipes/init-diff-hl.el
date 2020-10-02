@@ -44,7 +44,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-diff-hl)
 ;; (defun noxrcp-diff-hl ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   ;; (with-eval-after-load 'diff-hl)
 ;;   ;; (define-key noxrcp-map (kbd "x v") 'noxrcp-diff-hl-toggle)
 ;;   (dolist (hook noxrcp-programming-modes-hooks)

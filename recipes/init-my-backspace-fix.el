@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-my-backspace-fix)
 
 (defun noxrcp-my-backspace-fix ()
-  "My init."
+  "No X recipe init."
 
   (my-backspace-fix)
 

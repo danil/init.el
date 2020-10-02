@@ -5,7 +5,7 @@
 (add-hook 'after-init-hook 'noxrcp-org-mode)
 
 (defun noxrcp-org-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'org
     ;; (define-key org-mode-map "\C-c\C-f" nil)

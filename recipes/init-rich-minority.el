@@ -86,6 +86,6 @@
  '(rm-whitelist " F"))
 
 ;; (add-hook 'after-init-hook 'noxrcp-rich-minority)
-;; (defun noxrcp-rich-minority () "My init.")
+;; (defun noxrcp-rich-minority () "No X recipe init.")
 
 ;;; init-rich-minority.el ends here

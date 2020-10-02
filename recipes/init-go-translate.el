@@ -42,7 +42,7 @@
 (add-hook 'after-init-hook 'noxrcp-go-translate)
 
 (defun noxrcp-go-translate ()
-  "My init."
+  "No X recipe init."
 
   (if (boundp 'go-translate-base-url) (noxrcp-go-translate--init)
     (with-eval-after-load 'go-translate (noxrcp-go-translate--init)))

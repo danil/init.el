@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ido-describe-bindings)
 (defun noxrcp-ido-describe-bindings ()
-  "My init."
+  "No X recipe init."
   (noxrcp-after-load 'help
     (define-key help-map (kbd "b") 'my-describe-bindings)))
 

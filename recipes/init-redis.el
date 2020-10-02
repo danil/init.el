@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-redis)
 
 (defun noxrcp-redis ()
-  "My init."
+  "No X recipe init."
 
   (add-hook 'comint-mode-hook 'noxrcp-redis--turn-on-history))
 

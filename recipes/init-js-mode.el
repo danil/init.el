@@ -1,7 +1,7 @@
 (add-hook 'after-init-hook 'noxrcp-js-mode)
 
 (defun noxrcp-js-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-add-mode-to-patterns 'js-mode
   ;;                               "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>

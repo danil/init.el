@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-replace)
 
 (defun noxrcp-replace ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'lisp-mode
     (define-key noxrcp-map (kbd "l f") 'flush-lines)

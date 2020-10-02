@@ -60,7 +60,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-projectile)
 (defun noxrcp-projectile ()
-  "My init."
+  "No X recipe init."
   (dolist (hook noxrcp-projectile-modes-hooks)
     (add-hook hook 'noxrcp-projectile--setup-hook)))
 

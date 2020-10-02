@@ -34,11 +34,11 @@
 (add-hook 'after-init-hook 'noxrcp-haml-mode)
 
 (defun noxrcp-haml-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'haml-mode
     ;; (noxrcp-after-load 'ruby-mode
-    ;;   (define-key haml-mode-map (my-kbd "m r h") 'ruby-toggle-hash-syntax))
+    ;;   (define-key haml-mode-map (nox-kbd "m r h") 'ruby-toggle-hash-syntax))
 
     ;; (define-key haml-mode-map "\C-c\C-f" nil)
     ))

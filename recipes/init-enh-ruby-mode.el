@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-enh-ruby-mode)
 (defun noxrcp-enh-ruby-mode ()
-  "My init."
+  "No X recipe init."
   ;; (setq enh-ruby-deep-indent-paren nil)
   ;; (setq enh-ruby-bounce-deep-indent t)
   ;; (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))

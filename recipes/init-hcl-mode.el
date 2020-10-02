@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-hcl-mode)
 
 ;; (defun noxrcp-hcl-mode ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   ;; (with-eval-after-load 'hcl-mode)
 ;;   )

@@ -32,6 +32,6 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'noxrcp-powerline)
-(defun noxrcp-powerline () "My init." (powerline-default-theme))
+(defun noxrcp-powerline () "No X recipe init." (powerline-default-theme))
 
 ;;; init-powerline.el ends here

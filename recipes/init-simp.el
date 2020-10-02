@@ -45,7 +45,7 @@
 (add-hook 'after-init-hook 'noxrcp-simp)
 
 (defun noxrcp-simp ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'simp
     (if (fboundp 'ido-mode)

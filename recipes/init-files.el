@@ -48,7 +48,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-files)
 (defun noxrcp-files ()
-  "My init."
+  "No X recipe init."
   ;; (global-set-key (kbd "C-x C-f") 'noxrcp-files--find-file)
   (when (boundp 'noxrcp-map)
     (define-key noxrcp-map (kbd "B r") 'revert-buffer)))

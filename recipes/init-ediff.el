@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ediff)
 (defun noxrcp-ediff ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'ediff-diff-options) (noxrcp-ediff--setup)
     (with-eval-after-load 'ediff (noxrcp-ediff--setup))))
 

@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-corral)
 
 (defun noxrcp-corral ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "d (") 'corral-parentheses-backward)
   (define-key noxrcp-map (kbd "d )") 'corral-parentheses-forward)

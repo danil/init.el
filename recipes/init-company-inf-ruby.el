@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-inf-ruby)
 (defun noxrcp-company-inf-ruby ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-inf-ruby--setup)
     (with-eval-after-load 'company (noxrcp-company-inf-ruby--setup))))
 

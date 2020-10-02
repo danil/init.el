@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-ielm)
 
 (defun noxrcp-ielm ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)))

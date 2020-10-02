@@ -44,7 +44,7 @@
 (add-hook 'after-init-hook 'noxrcp-occur-mode)
 
 (defun noxrcp-occur-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load "replace"
   ;;   (define-key occur-mode-map (kbd "\C-c\C-f") nil))

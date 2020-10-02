@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-modalka)
 
 (defun noxrcp-modalka ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "C-v") 'my-modalka-enable)
 

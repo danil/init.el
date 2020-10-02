@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-feebleline)
 (defun noxrcp-feebleline ()
-  "My init."
+  "No X recipe init."
   (require 'feebleline) (feebleline-mode t))
 
 ;;; init-feebleline.el ends here

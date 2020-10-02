@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-sieve-mode)
 
 ;; (defun noxrcp-sieve-mode ()
-;;   "My init."
+;;   "No X recipe init."
 ;;  )
 
 ;;; init-sieve-mode.el ends here

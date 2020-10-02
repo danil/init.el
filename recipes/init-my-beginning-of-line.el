@@ -54,7 +54,7 @@ the current line."
 ;; (add-hook 'after-init-hook 'noxrcp-my-beginning-of-line)
 
 ;; (defun noxrcp-my-beginning-of-line ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (eval-after-load "cc-mode"
 ;;     '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line)))

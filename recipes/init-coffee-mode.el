@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-coffee-mode)
 
 (defun noxrcp-coffee-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
 

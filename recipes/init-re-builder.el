@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-re-builder)
 
 (defun noxrcp-re-builder ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "B R") 're-builder))
 

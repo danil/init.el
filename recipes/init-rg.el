@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-rg)
 
 (defun noxrcp-rg ()
-  "My init."
+  "No X recipe init."
 
   (when (boundp 'noxrcp-map)
     (define-key noxrcp-map (kbd "j R r") 'rg)

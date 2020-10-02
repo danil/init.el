@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-calendar)
 
 (defun noxrcp-calendar ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'calendar
     ;; Week numbers <http://www.emacswiki.org/emacs/CalendarWeekNumbers#toc1>.

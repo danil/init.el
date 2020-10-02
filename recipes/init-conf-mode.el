@@ -91,7 +91,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-conf-mode)
 (defun noxrcp-conf-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-conf-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'conf-mode)))
 

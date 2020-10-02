@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ruby-tools)
 (defun noxrcp-ruby-tools ()
-  "My init."
+  "No X recipe init."
   ;; (add-hook 'text-mode-hook 'auto-fill-mode)
   ;;    haml-mode
   ;;    rhtml-mode
@@ -50,7 +50,7 @@
     (define-key ruby-tools-mode-map (kbd "C-;")  nil)
     (define-key ruby-tools-mode-map (kbd "#")    nil)
 
-    (define-key ruby-tools-mode-map (my-kbd "m r :")
+    (define-key ruby-tools-mode-map (nox-kbd "m r :")
       'ruby-tools-to-symbol)))
 
 ;;; init-ruby-tools.el ends here

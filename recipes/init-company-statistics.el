@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-statistics)
 (defun noxrcp-company-statistics ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-statistics--setup)
     (with-eval-after-load 'company (noxrcp-company-statistics--setup))))
 

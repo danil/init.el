@@ -36,7 +36,7 @@
 
 ;; (add-hook 'after-init-hook 'noxrcp-toml-mode)
 ;; (defun noxrcp-toml-mode ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   )
 
 (defun noxrcp-toml-mode--rainbow-identifiers-init ()

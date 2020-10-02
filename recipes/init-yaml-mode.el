@@ -46,7 +46,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-yaml-mode)
 (defun noxrcp-yaml-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-yaml-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'yaml-mode))))
 

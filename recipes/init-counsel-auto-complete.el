@@ -34,7 +34,7 @@
 ;; (require 'dabbrev)
 ;; (add-hook 'after-init-hook 'noxrcp-counsel-auto-complete)
 ;; (defun noxrcp-counsel-auto-complete ()
-;;   "My init."
+;;   "No X recipe init."
 ;;   ;; (dolist (pattern noxrcp-counsel-auto-complete-patterns)
 ;;   ;;   (add-to-list 'auto-mode-alist (cons pattern 'counsel-auto-complete)))
 ;;   ;; (if (boundp 'counsel-auto-complete) (noxrcp-counsel-auto-complete--init)

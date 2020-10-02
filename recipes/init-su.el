@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-su)
 (defun noxrcp-su ()
-  "My init."
+  "No X recipe init."
 
   (su-mode t))
 

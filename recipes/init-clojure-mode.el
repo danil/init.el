@@ -34,10 +34,10 @@
 (add-hook 'after-init-hook 'noxrcp-clojure-mode)
 
 (defun noxrcp-clojure-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'clojure-mode
-  ;;   (define-key clojure-mode-map (my-kbd "C-v") 'clojure-yaless-mode-on))
+  ;;   (define-key clojure-mode-map (nox-kbd "C-v") 'clojure-yaless-mode-on))
 
   (noxrcp-add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
 

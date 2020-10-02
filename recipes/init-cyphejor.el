@@ -58,7 +58,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-cyphejor)
 (defun noxrcp-cyphejor ()
-  "My init."
+  "No X recipe init."
   (require 'cyphejor)
   (if (boundp 'cyphejor-rules) (noxrcp-cyphejor--lazyinit)
     (with-eval-after-load 'cyphejor (noxrcp-cyphejor--lazyinit))))

@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-amx)
 (defun noxrcp-amx ()
-  "My init."
+  "No X recipe init."
   (amx-mode +1))
 
 ;;; init-amx.el ends here

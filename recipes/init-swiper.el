@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-swiper)
 (defun noxrcp-swiper ()
-  "My init."
+  "No X recipe init."
   ;; (global-set-key "\C-r" 'swiper)
   (when (boundp 'noxrcp-map)
     (define-key noxrcp-map (kbd "j O") 'swiper-multi)

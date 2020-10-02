@@ -35,7 +35,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-kill-ring-ido)
 (defun noxrcp-kill-ring-ido ()
-  "My init."
+  "No X recipe init."
   ;; (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop-depricatied)
   (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop)
   (noxrcp-after-load 'kill-ring-ido

@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-cc-vars)
 
 (defun noxrcp-cc-vars ()
-  "My init."
+  "No X recipe init."
 
  (custom-set-variables '(c-basic-offset 2)))
 

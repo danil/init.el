@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-expand-region)
 
 (defun noxrcp-expand-region ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-autoload-file-on-functions "expand-region"
                                      'er/expand-region

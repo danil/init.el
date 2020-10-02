@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-nxml-mode)
 
 ;; (defun noxrcp-nxml-mode ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-after-load 'nxml-mode
 ;;     (define-key nxml-mode-map (kbd "\C-c\C-f") nil)))

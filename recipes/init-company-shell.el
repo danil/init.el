@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-shell)
 (defun noxrcp-company-shell ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-shell--setup)
     (with-eval-after-load 'company (noxrcp-company-shell--setup))))
 

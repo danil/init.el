@@ -36,7 +36,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-inf-ruby)
 (defun noxrcp-inf-ruby ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'inf-ruby-mode-map) (noxrcp-inf-ruby--setup)
     (with-eval-after-load 'inf-ruby (noxrcp-inf-ruby--setup))))
 

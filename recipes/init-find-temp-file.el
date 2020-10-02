@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-find-temp-file)
 
 (defun noxrcp-find-temp-file ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-exec-map (kbd "t") 'find-temp-file)
 

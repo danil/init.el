@@ -34,9 +34,9 @@
 (add-hook 'after-init-hook 'noxrcp-godoctor)
 
 (defun noxrcp-godoctor ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'go-mode
-    (define-key go-mode-map (my-kbd "m g r") 'godoctor-rename)))
+    (define-key go-mode-map (nox-kbd "m g r") 'godoctor-rename)))
 
 ;;; init-godoctor.el ends here

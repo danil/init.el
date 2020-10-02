@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ido-ubiquitous)
 (defun noxrcp-ido-ubiquitous ()
-  "My init."
+  "No X recipe init."
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)
   (ido-ubiquitous-mode t))

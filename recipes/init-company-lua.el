@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-lua)
 (defun noxrcp-company-lua ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-lua--setup)
     (with-eval-after-load 'company (noxrcp-company-lua--setup))))
 

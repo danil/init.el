@@ -59,7 +59,7 @@
 (add-hook 'after-init-hook 'noxrcp-deft)
 
 (defun noxrcp-deft ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'deft
   ;;   (define-key deft-mode-map (kbd "C-c C-f") nil))

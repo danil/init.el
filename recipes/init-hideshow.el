@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-hideshow)
 
 (defun noxrcp-hideshow ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 

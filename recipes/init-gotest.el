@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-gotest)
 (defun noxrcp-gotest ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'dired-mode-map) (noxrcp-gotest--customize-keys dired-mode-map)
     (with-eval-after-load 'dired (noxrcp-gotest--customize-keys dired-mode-map)))
   (if (boundp 'shell-mode-map) (noxrcp-gotest--customize-keys shell-mode-map)

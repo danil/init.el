@@ -48,7 +48,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-cc-mode)
 (defun noxrcp-cc-mode ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-c-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'c-mode)))
   (if (boundp 'c-mode) (noxrcp-c-mode--setup)

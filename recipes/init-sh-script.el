@@ -59,7 +59,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-sh-script)
 (defun noxrcp-sh-script ()
-  "My init."
+  "No X recipe init."
   (dolist (pattern noxrcp-sh-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
 

@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-diredfl)
 (defun noxrcp-diredfl ()
-  "My init."
+  "No X recipe init."
   ;; (with-eval-after-load 'diredfl
   ;;   )
   (with-eval-after-load 'dired

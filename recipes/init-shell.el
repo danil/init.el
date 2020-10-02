@@ -33,15 +33,15 @@
 
 (add-hook 'after-init-hook 'noxrcp-shell)
 (defun noxrcp-shell ()
-  "My init."
+  "No X recipe init."
   (define-key noxrcp-exec-map (kbd "s") 'shell)
   (if (boundp 'shell-mode-map) (noxrcp-shell--setup)
     (with-eval-after-load 'shell (noxrcp-shell--setup))))
 
 (defun noxrcp-shell--setup ()
-  "My init."
+  "No X recipe init."
   (define-key shell-mode-map (kbd "TAB") nil)
-  (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear))
+  (define-key shell-mode-map (nox-kbd "C-l") 'my-shell-clear))
 
 (defun my-shell-clear (&optional arg)
   "Delete output from shell or kill output from shell if `ARG'.

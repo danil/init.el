@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-gitignore-mode)
 
 (defun noxrcp-gitignore-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; Git modes <https://github.com/magit/git-modes>.
   (dolist (pattern

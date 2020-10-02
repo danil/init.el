@@ -1,7 +1,7 @@
 (add-hook 'after-init-hook 'noxrcp-subword-mode)
 
 (defun noxrcp-subword-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-hooks 'subword-mode
                          (append noxrcp-programming-modes-hooks

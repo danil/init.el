@@ -46,7 +46,7 @@
 (add-hook 'after-init-hook 'noxrcp-smart-mode-line)
 
 (defun noxrcp-smart-mode-line ()
-  "My init."
+  "No X recipe init."
 
   (setq sml/theme frame-background-mode)
   (setq sml/no-confirm-load-theme t)

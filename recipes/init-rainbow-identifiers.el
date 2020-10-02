@@ -77,7 +77,7 @@
 (add-hook 'after-init-hook 'noxrcp-rainbow-identifiers)
 
 (defun noxrcp-rainbow-identifiers ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-rainbow-identifiers-hooks)
     (let ((h (car hook))

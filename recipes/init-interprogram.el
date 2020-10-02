@@ -1,7 +1,7 @@
 (add-hook 'after-init-hook 'noxrcp-interprogram)
 
 (defun noxrcp-interprogram ()
-  "My init."
+  "No X recipe init."
 
   ;; If emacs is run in a terminal, the clipboard- functions have no
   ;; effect. Instead, we use of xsel, see

@@ -4,7 +4,7 @@
 (add-hook 'after-init-hook 'noxrcp-paren)
 
 (defun noxrcp-paren ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'show-paren
   ;;   (cond ((equal frame-background-mode 'dark)

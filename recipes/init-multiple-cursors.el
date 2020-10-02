@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-multiple-cursors)
 
 (defun noxrcp-multiple-cursors ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "B m c a") 'mc/mark-all-like-this)
   (define-key noxrcp-map (kbd "B m c n") 'mc/mark-next-like-this)

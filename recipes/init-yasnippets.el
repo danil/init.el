@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-yasnippets)
 
 (defun noxrcp-yasnippets ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'yasnippet
     (add-to-list 'yas-snippet-dirs

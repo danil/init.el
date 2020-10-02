@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-sqlup-mode)
 
 (defun noxrcp-sqlup-mode ()
-  "My init."
+  "No X recipe init."
 
   ;; (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
   (add-hook 'sql-interactive-mode-hook 'noxrcp-sqlup-mode-turn-on-or-off) ;capitalize keywords in an interactive session (e.g. psql)

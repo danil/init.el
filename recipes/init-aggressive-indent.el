@@ -43,7 +43,7 @@
 (add-hook 'after-init-hook 'noxrcp-aggressive-indent)
 
 (defun noxrcp-aggressive-indent ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-aggressive-indent-modes-hooks) (add-hook hook #'aggressive-indent-mode)))
 

@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-text-mode)
 (defun noxrcp-company-text-mode ()
-  "My init."
+  "No X recipe init."
   ;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
   (if (boundp 'text-mode) (noxrcp-company-text-mode--setup)
     (with-eval-after-load 'text-mode (noxrcp-company-text-mode--setup))))

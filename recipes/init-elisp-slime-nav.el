@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-elisp-slime-nav)
 (defun noxrcp-elisp-slime-nav ()
-  "My init."
+  "No X recipe init."
   ;; (if (boundp 'elisp-slime-nav-mode) (noxrcp-elisp-slime-nav--setup)
   ;;   (with-eval-after-load 'elisp-slime-nav (noxrcp-elisp-slime-nav--setup)))
   (when (fboundp 'elisp-slime-nav-mode) (noxrcp-elisp-slime-nav--setup)))

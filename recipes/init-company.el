@@ -70,7 +70,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company)
 (defun noxrcp-company ()
-  "My init."
+  "No X recipe init."
   ;; (if (boundp 'company-mode) (noxrcp-company--setup)
   ;;   (with-eval-after-load 'company (noxrcp-company--setup)))
   (global-company-mode t))

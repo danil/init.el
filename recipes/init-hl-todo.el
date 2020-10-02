@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-hl-todo)
 
 (defun noxrcp-hl-todo ()
-  "My init."
+  "No X recipe init."
 
   (if (boundp 'hl-todo-mode-map) (noxrcp-hl-todo--init)
     (with-eval-after-load 'hl-todo (noxrcp-hl-todo--init)))

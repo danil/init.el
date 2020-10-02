@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-align)
 
 (defun noxrcp-align ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "r a c w") 'my-align-whitespace))
 

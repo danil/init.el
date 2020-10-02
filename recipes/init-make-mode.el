@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-make-mode)
 
 (defun noxrcp-make-mode ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-patterns 'makefile-gmake-mode
                                  "/Makefile.port\\'"

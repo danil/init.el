@@ -52,7 +52,7 @@
 (add-hook 'after-init-hook 'noxrcp-mediawiki)
 
 (defun noxrcp-mediawiki ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 

@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-erlang)
 (defun noxrcp-company-erlang ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-erlang--setup)
     (with-eval-after-load 'company (noxrcp-company-erlang--setup))))
 

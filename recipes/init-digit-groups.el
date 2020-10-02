@@ -35,7 +35,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-digit-groups)
 (defun noxrcp-digit-groups ()
-  "My init."
+  "No X recipe init."
   (dolist (hook noxrcp-highlighted-digits-modes-hooks)
     (add-hook hook 'noxrcp-digit-groups--lazyinit)))
 

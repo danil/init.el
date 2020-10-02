@@ -37,7 +37,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-ctrlf)
 (defun noxrcp-ctrlf ()
-  "My init."
+  "No X recipe init."
   (ctrlf-mode +1))
 
 ;;; init-ctrlf.el ends here

@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-column-marker)
 
 (defun noxrcp-column-marker ()
-  "My init."
+  "No X recipe init."
 
   (dolist (hook noxrcp-programming-modes-hooks)
     (add-hook hook 'noxrcp-column-marker--lazyinit))

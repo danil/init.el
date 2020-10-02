@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-add-log)
 
 (defun noxrcp-add-log ()
-  "My init."
+  "No X recipe init."
 
   ;; (noxrcp-after-load 'add-log
   ;;   (define-key change-log-mode-map (kbd "C-c C-f") nil))

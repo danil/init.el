@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-noxrcp)
 
 ;; (defun noxrcp-noxrcp ()
-;;   "My init."
+;;   "No X recipe init."
 
 ;;   (noxrcp-global-mode 1)
 

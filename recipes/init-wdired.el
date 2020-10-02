@@ -34,10 +34,10 @@
 (add-hook 'after-init-hook 'noxrcp-wdired)
 
 (defun noxrcp-wdired ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'dired
     (define-key dired-mode-map (kbd "C-v") nil)
-    (define-key dired-mode-map (my-kbd "x w") 'wdired-change-to-wdired-mode)))
+    (define-key dired-mode-map (nox-kbd "x w") 'wdired-change-to-wdired-mode)))
 
 ;;; init-wdired.el ends here

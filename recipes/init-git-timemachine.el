@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-git-timemachine)
 
 (defun noxrcp-git-timemachine ()
-  "My init."
+  "No X recipe init."
 
   (define-key noxrcp-map (kbd "V r") 'git-timemachine))
 

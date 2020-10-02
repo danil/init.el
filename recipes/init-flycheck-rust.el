@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-flycheck-rust)
 
 (defun noxrcp-flycheck-rust ()
-  "My init."
+  "No X recipe init."
 
  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 

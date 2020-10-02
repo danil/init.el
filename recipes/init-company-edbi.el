@@ -33,7 +33,7 @@
 
 (add-hook 'after-init-hook 'noxrcp-company-edbi)
 (defun noxrcp-company-edbi ()
-  "My init."
+  "No X recipe init."
   (if (boundp 'company-mode) (noxrcp-company-edbi--setup)
     (with-eval-after-load 'company (noxrcp-company-edbi--setup))))
 

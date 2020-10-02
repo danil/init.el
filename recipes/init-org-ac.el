@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-org-ac)
 
 (defun noxrcp-org-ac ()
-  "My init."
+  "No X recipe init."
 
  (org-ac/config-default))
 

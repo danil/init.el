@@ -34,12 +34,12 @@
 (add-hook 'after-init-hook 'noxrcp-yafolding)
 
 (defun noxrcp-yafolding ()
-  "My init."
+  "No X recipe init."
 
   (noxrcp-after-load 'yafolding
-    (define-key yafolding-mode-map (my-kbd "f") 'yafolding-toggle-element)
+    (define-key yafolding-mode-map (nox-kbd "f") 'yafolding-toggle-element)
 
-    (define-key yafolding-mode-map (my-kbd "F c") 'yafolding-hide-all)
-    (define-key yafolding-mode-map (my-kbd "F o") 'yafolding-show-all)))
+    (define-key yafolding-mode-map (nox-kbd "F c") 'yafolding-hide-all)
+    (define-key yafolding-mode-map (nox-kbd "F o") 'yafolding-show-all)))
 
 ;;; init-yafolding.el ends here

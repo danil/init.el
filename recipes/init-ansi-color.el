@@ -34,7 +34,7 @@
 (add-hook 'after-init-hook 'noxrcp-ansi-color)
 
 (defun noxrcp-ansi-color ()
-  "My init."
+  "No X recipe init."
 
   (require 'ansi-color)
 
