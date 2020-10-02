@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-cycle-quotes)
+(add-hook 'after-init-hook 'noxrcp-cycle-quotes)
 
-(defun myinit-cycle-quotes ()
+(defun noxrcp-cycle-quotes ()
   "My init."
 
-  (define-key myinit-map (kbd "q") 'cycle-quotes))
+  (define-key noxrcp-map (kbd "q") 'cycle-quotes))
 
 ;;; init-cycle-quotes.el ends here

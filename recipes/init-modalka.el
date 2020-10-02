@@ -31,18 +31,18 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-modalka)
+(add-hook 'after-init-hook 'noxrcp-modalka)
 
-(defun myinit-modalka ()
+(defun noxrcp-modalka ()
   "My init."
 
-  (define-key myinit-map (kbd "C-v") 'my-modalka-enable)
+  (define-key noxrcp-map (kbd "C-v") 'my-modalka-enable)
 
-  (myinit-add-mode-to-hooks (lambda () (modalka-mode 1))
-                              myinit-modal-modes-hooks)
+  (noxrcp-add-mode-to-hooks (lambda () (modalka-mode 1))
+                              noxrcp-modal-modes-hooks)
   (add-hook 'modalka-mode-hook 'my-on-modalka-enable)
 
-  (myinit-after-load 'modalka
+  (noxrcp-after-load 'modalka
     (setcar (cdr (assq 'modalka-mode minor-mode-alist)) " M")
 
     ;; (modalka-define-kbd "SPC" "C-v") ;DEL ESC RET TAB
@@ -187,7 +187,7 @@
 (defun my-on-modalka-disable ()
   "Callback on modalka disable."
   (when (and (not (minibufferp))
-             (member major-mode myinit-modal-modes))
+             (member major-mode noxrcp-modal-modes))
     (hl-line-mode 1)))
 
 ;;; init-modalka.el ends here

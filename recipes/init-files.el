@@ -46,14 +46,14 @@
  '(version-control t) ;use versioned backups
  )
 
-(add-hook 'after-init-hook 'myinit-files)
-(defun myinit-files ()
+(add-hook 'after-init-hook 'noxrcp-files)
+(defun noxrcp-files ()
   "My init."
-  ;; (global-set-key (kbd "C-x C-f") 'myinit-files--find-file)
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "B r") 'revert-buffer)))
+  ;; (global-set-key (kbd "C-x C-f") 'noxrcp-files--find-file)
+  (when (boundp 'noxrcp-map)
+    (define-key noxrcp-map (kbd "B r") 'revert-buffer)))
 
-;; (defun myinit-files--find-file ()
+;; (defun noxrcp-files--find-file ()
 ;;   (interactive)
 ;;   (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
 ;;         (current-prefix-arg (call-interactively 'find-file-literally))

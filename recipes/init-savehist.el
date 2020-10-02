@@ -49,9 +49,9 @@
                                    shell-command-history))
  '(savehist-file "~/.emacs.var/history"))
 
-(add-hook 'after-init-hook 'myinit-savehist)
+(add-hook 'after-init-hook 'noxrcp-savehist)
 
-(defun myinit-savehist ()
+(defun noxrcp-savehist ()
   "My init."
 
   (savehist-mode t))

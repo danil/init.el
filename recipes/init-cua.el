@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-cua)
+(add-hook 'after-init-hook 'noxrcp-cua)
 
-(defun myinit-cua ()
+(defun noxrcp-cua ()
   "My init."
 
   ;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.

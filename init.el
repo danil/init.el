@@ -3,7 +3,7 @@
 ;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((cask) (myinit))
+;; Package-Requires: ((cask) (noxrcp))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -94,16 +94,16 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-(require 'myinit "~/.emacs.d/myinit.el")
+(require 'noxrcp "~/.emacs.d/noxrcp.el")
 
-(defvar myinit-map (make-sparse-keymap)
-  "Default keymap for myinit commands.")
+(defvar noxrcp-map (make-sparse-keymap)
+  "Default keymap for noxrcp commands.")
 
-(defvar myinit-exec-map (make-sparse-keymap)
-  "Exec keymap for myinit commands.")
+(defvar noxrcp-exec-map (make-sparse-keymap)
+  "Exec keymap for noxrcp commands.")
 
 (custom-set-variables
- '(myinit-safe-modes
+ '(noxrcp-safe-modes
    '(
      ;; mail-mode
      ;; whitespace-mode
@@ -178,15 +178,15 @@
      yaml-mode
      ))
 
- '(myinit-programming-modes
-   (append myinit-safe-modes
+ '(noxrcp-programming-modes
+   (append noxrcp-safe-modes
            '(
              clojure-mode
              emacs-lisp-mode
              )))
 
- '(myinit-auto-completion-modes
-   (append myinit-programming-modes
+ '(noxrcp-auto-completion-modes
+   (append noxrcp-programming-modes
            '(
              redis-cli-mode
              shell-mode
@@ -194,8 +194,8 @@
              wdired-mode
              )))
 
- '(myinit-read-only-modes
-   (append myinit-safe-modes
+ '(noxrcp-read-only-modes
+   (append noxrcp-safe-modes
            '(
              Info-mode
              Man-mode
@@ -214,7 +214,7 @@
              occur-mode
              )))
 
- '(myinit-toggle-quotes-modes
+ '(noxrcp-toggle-quotes-modes
    '(
      awk-mode
      cask-mode
@@ -253,48 +253,48 @@
      yaml-mode
      ))
 
- '(myinit-highlighted-digits-modes
-   (append myinit-programming-modes
+ '(noxrcp-highlighted-digits-modes
+   (append noxrcp-programming-modes
            '(shell-mode)))
 
- '(myinit-modal-modes (append myinit-programming-modes
+ '(noxrcp-modal-modes (append noxrcp-programming-modes
                               '(
                                 ;; shell-mode
                                 ;; sql-interactive-mode
                                 )))
 
- '(myinit-highlighted-digits-modes
-   (append myinit-programming-modes
+ '(noxrcp-highlighted-digits-modes
+   (append noxrcp-programming-modes
            '(shell-mode)))
 
- '(myinit-default-idle-timer-seconds 1))
+ '(noxrcp-default-idle-timer-seconds 1))
 
-(dolist (mode myinit-safe-modes)
-  (add-to-list 'myinit-safe-modes-hooks
+(dolist (mode noxrcp-safe-modes)
+  (add-to-list 'noxrcp-safe-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-programming-modes)
-  (add-to-list 'myinit-programming-modes-hooks
+(dolist (mode noxrcp-programming-modes)
+  (add-to-list 'noxrcp-programming-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-auto-completion-modes)
-  (add-to-list 'myinit-auto-completion-modes-hooks
+(dolist (mode noxrcp-auto-completion-modes)
+  (add-to-list 'noxrcp-auto-completion-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-read-only-modes)
-  (add-to-list 'myinit-read-only-modes-hooks
+(dolist (mode noxrcp-read-only-modes)
+  (add-to-list 'noxrcp-read-only-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-toggle-quotes-modes)
-  (add-to-list 'myinit-toggle-quotes-modes-hooks
+(dolist (mode noxrcp-toggle-quotes-modes)
+  (add-to-list 'noxrcp-toggle-quotes-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-highlighted-digits-modes)
-  (add-to-list 'myinit-highlighted-digits-modes-hooks
+(dolist (mode noxrcp-highlighted-digits-modes)
+  (add-to-list 'noxrcp-highlighted-digits-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-(dolist (mode myinit-modal-modes)
-  (add-to-list 'myinit-modal-modes-hooks
+(dolist (mode noxrcp-modal-modes)
+  (add-to-list 'noxrcp-modal-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
 (defvar my-recipes ())
@@ -329,7 +329,7 @@
 ;; Company mode auto complete.
 ;; (my-recipe '(company-ansible))
 ;; (my-recipe '(company-edbi))
-;; (my-recipe '(company-ispell)) ;; very slow, see `myinit-counsel--company' function
+;; (my-recipe '(company-ispell)) ;; very slow, see `noxrcp-counsel--company' function
 ;; (my-recipe '(company-statistics))
 ;; (my-recipe '(company-go)) ; error( Company: backend (company-go company-dabbrev-code company-gtags company-etags company-keywords) error "GOCODE PANIC: Please check your code by "go build"" with args (candidates keyword-i-type-now)
 (my-recipe '(company))
@@ -524,7 +524,7 @@
 (my-recipe '(my-sum-numbers-in-region))
 (my-recipe '(my-tags))
 (my-recipe '(my-uniquify-lines))
-(my-recipe '(myinit))
+(my-recipe '(noxrcp))
 (my-recipe '(narrow-indirect))
 (my-recipe '(newcomment))
 (my-recipe '(nginx-mode))
@@ -634,16 +634,16 @@
       (display-warning :warning
                        (format "Recipe file not found: %s" recipe-file)))))
 
-(myinit-global-mode 1)
+(noxrcp-global-mode 1)
 
-(add-hook 'after-init-hook 'myinit-init)
+(add-hook 'after-init-hook 'noxrcp-init)
 
-(defun myinit-init ()
+(defun noxrcp-init ()
   "Init."
 
-  (define-key myinit-map (kbd "x") myinit-exec-map)
+  (define-key noxrcp-map (kbd "x") noxrcp-exec-map)
 
-  (global-set-key (kbd "C-v") myinit-map))
+  (global-set-key (kbd "C-v") noxrcp-map))
 
 ;;; init.el ends here
 (put 'magit-diff-edit-hunk-commit 'disabled nil)

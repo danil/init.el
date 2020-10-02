@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-add-log)
+;; (add-hook 'after-init-hook 'noxrcp-add-log)
 
-(defun myinit-add-log ()
+(defun noxrcp-add-log ()
   "My init."
 
-  ;; (myinit-after-load 'add-log
+  ;; (noxrcp-after-load 'add-log
   ;;   (define-key change-log-mode-map (kbd "C-c C-f") nil))
   )
 

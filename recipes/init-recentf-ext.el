@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-recentf-ext)
+(add-hook 'after-init-hook 'noxrcp-recentf-ext)
 
-(defun myinit-recentf-ext ()
+(defun noxrcp-recentf-ext ()
   "My init."
 
   (require 'recentf-ext))

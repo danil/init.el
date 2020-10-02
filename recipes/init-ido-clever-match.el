@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ido-clever-match)
+(add-hook 'after-init-hook 'noxrcp-ido-clever-match)
 
-(defun myinit-ido-clever-match ()
+(defun noxrcp-ido-clever-match ()
   "My init."
-  (if (boundp 'ido-mode) (myinit-lazy-ido-clever-match)
-    (with-eval-after-load 'ido (myinit-lazy-ido-clever-match))))
+  (if (boundp 'ido-mode) (noxrcp-lazy-ido-clever-match)
+    (with-eval-after-load 'ido (noxrcp-lazy-ido-clever-match))))
 
-(defun myinit-lazy-ido-clever-match ()
+(defun noxrcp-lazy-ido-clever-match ()
   "My init lazy."
   (ido-clever-match-enable))
 

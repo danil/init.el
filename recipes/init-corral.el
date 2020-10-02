@@ -34,24 +34,24 @@
 ;;; Corral is an Smartparens replacement
 ;;; (quotes/parentheses/delimiters manager).
 
-(add-hook 'after-init-hook 'myinit-corral)
+(add-hook 'after-init-hook 'noxrcp-corral)
 
-(defun myinit-corral ()
+(defun noxrcp-corral ()
   "My init."
 
-  (define-key myinit-map (kbd "d (") 'corral-parentheses-backward)
-  (define-key myinit-map (kbd "d )") 'corral-parentheses-forward)
+  (define-key noxrcp-map (kbd "d (") 'corral-parentheses-backward)
+  (define-key noxrcp-map (kbd "d )") 'corral-parentheses-forward)
 
-  (define-key myinit-map (kbd "d [") 'corral-brackets-backward)
-  (define-key myinit-map (kbd "d ]") 'corral-brackets-forward)
+  (define-key noxrcp-map (kbd "d [") 'corral-brackets-backward)
+  (define-key noxrcp-map (kbd "d ]") 'corral-brackets-forward)
 
-  (define-key myinit-map (kbd "d {") 'corral-braces-backward)
-  (define-key myinit-map (kbd "d }") 'corral-braces-forward)
+  (define-key noxrcp-map (kbd "d {") 'corral-braces-backward)
+  (define-key noxrcp-map (kbd "d }") 'corral-braces-forward)
 
-  (define-key myinit-map (kbd "d \" b") 'corral-double-quotes-backward)
-  (define-key myinit-map (kbd "d \" f") 'corral-double-quotes-forward)
+  (define-key noxrcp-map (kbd "d \" b") 'corral-double-quotes-backward)
+  (define-key noxrcp-map (kbd "d \" f") 'corral-double-quotes-forward)
 
-  (define-key myinit-map (kbd "d ' b") 'corral-single-quotes-backward)
-  (define-key myinit-map (kbd "d ' f") 'corral-single-quotes-forward))
+  (define-key noxrcp-map (kbd "d ' b") 'corral-single-quotes-backward)
+  (define-key noxrcp-map (kbd "d ' f") 'corral-single-quotes-forward))
 
 ;;; init-corral.el ends here

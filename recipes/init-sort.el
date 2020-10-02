@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-sort)
+(add-hook 'after-init-hook 'noxrcp-sort)
 
-(defun myinit-sort ()
+(defun noxrcp-sort ()
   "My init."
 
-  (define-key myinit-map (kbd "s") 'sort-lines)
-  (define-key myinit-map (kbd "S f") 'sort-fields))
+  (define-key noxrcp-map (kbd "s") 'sort-lines)
+  (define-key noxrcp-map (kbd "S f") 'sort-fields))
 
 ;;; init-sort.el ends here

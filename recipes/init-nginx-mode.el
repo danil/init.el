@@ -33,24 +33,24 @@
 
 ;; (custom-set-variables '(nginx-indent-level 2))
 
-(add-hook 'after-init-hook 'myinit-nginx-mode)
+(add-hook 'after-init-hook 'noxrcp-nginx-mode)
 
-(defun myinit-nginx-mode ()
+(defun noxrcp-nginx-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'nginx-mode
+  (noxrcp-add-mode-to-patterns 'nginx-mode
                                 "/etc/nginx/.*\\.conf\\'"
                                 "/etc/nginx/sites-available/"))
 
-(defun myinit-nginx-mode--rainbow-identifiers-init ()
+(defun noxrcp-nginx-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'nginx-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; init-nginx-mode.el ends here

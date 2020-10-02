@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-hydra)
+;; (add-hook 'after-init-hook 'noxrcp-hydra)
 
-;; (defun myinit-hydra ()
+;; (defun noxrcp-hydra ()
 ;;   "My init."
 ;;   )
 

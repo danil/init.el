@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((myinit))
+;; Package-Requires: ((noxrcp))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -33,21 +33,21 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-dockerfile-mode)
+(add-hook 'after-init-hook 'noxrcp-dockerfile-mode)
 
-(defun myinit-dockerfile-mode ()
+(defun noxrcp-dockerfile-mode ()
   "My init."
-  ;; (myinit-after-load 'dockerfile-mode
-  ;;   (define-key myinit-mode-map (kbd "C-v m") dockerfile-mode-map))
-  (myinit-add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
+  ;; (noxrcp-after-load 'dockerfile-mode
+  ;;   (define-key noxrcp-mode-map (kbd "C-v m") dockerfile-mode-map))
+  (noxrcp-add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
 
-(defun myinit-dockerfile-mode--rainbow-identifiers-init ()
+(defun noxrcp-dockerfile-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'dockerfile-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-dockerfile-mode--rainbow-identifiers-filter)
+              'noxrcp-dockerfile-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
                                                   ;; dockerfile-image-alias
@@ -55,10 +55,10 @@
                                                   ;; font-lock-keyword-face
                                                   ;; font-lock-variable-name-face
                                                   ))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-dockerfile-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-dockerfile-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
   (let ((ch-cur (char-after beg))
         (ch-before (char-before beg))

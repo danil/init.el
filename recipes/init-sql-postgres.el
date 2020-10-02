@@ -39,14 +39,14 @@
                                      ;; password ;password prompt do not work :( use instead `~/.pgpass` <http://stackoverflow.com/questions/26677909/emacs-sql-mode-postgresql-and-inputing-password#26743233>, <https://wiki.postgresql.org/wiki/Pgpass>, <http://www.postgresql.org/docs/current/static/libpq-pgpass.html>
                                      server))))
 
-(add-hook 'after-init-hook 'myinit-sql-postgres)
+(add-hook 'after-init-hook 'noxrcp-sql-postgres)
 
-(defun myinit-sql-postgres ()
+(defun noxrcp-sql-postgres ()
   (if (fboundp 'sql-set-product-feature)
-      (myinit-sql-postgres--prompt)
-    (add-hook 'sql-interactive-mode-hook 'myinit-sql-postgres--prompt)))
+      (noxrcp-sql-postgres--prompt)
+    (add-hook 'sql-interactive-mode-hook 'noxrcp-sql-postgres--prompt)))
 
-(defun myinit-sql-postgres--prompt ()
+(defun noxrcp-sql-postgres--prompt ()
   ;; <https://unix.stackexchange.com/questions/233518/mariadb-client-has-no-prompt-in-emacs-sql-mode>.
   ;; (sql-set-product-feature 'postgres :prompt-cont-regexp "^\[a-zA-Z_\]*\[-(\]\[#>\] ")
   ;; (sql-set-product-feature 'postgres :prompt-length 20)

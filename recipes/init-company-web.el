@@ -31,19 +31,19 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-web)
-(defun myinit-company-web ()
+(add-hook 'after-init-hook 'noxrcp-company-web)
+(defun noxrcp-company-web ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-web--setup)
-    (with-eval-after-load 'company (myinit-company-web--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-web--setup)
+    (with-eval-after-load 'company (noxrcp-company-web--setup))))
 
-(defun myinit-company-web--setup ()
-  (add-hook 'html-mode-hook 'myinit-company-web--setup-web-mode)
-  (add-hook 'jade-mode-hook 'myinit-company-web--setup-jade-mode)
-  (add-hook 'slim-mode-hook 'myinit-company-web--setup-slim-mode)
-  (add-hook 'web-mode-hook 'myinit-company-web--setup-web-mode))
+(defun noxrcp-company-web--setup ()
+  (add-hook 'html-mode-hook 'noxrcp-company-web--setup-web-mode)
+  (add-hook 'jade-mode-hook 'noxrcp-company-web--setup-jade-mode)
+  (add-hook 'slim-mode-hook 'noxrcp-company-web--setup-slim-mode)
+  (add-hook 'web-mode-hook 'noxrcp-company-web--setup-web-mode))
 
-(defun myinit-company-web--setup-web-mode ()
+(defun noxrcp-company-web--setup-web-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-web-html
@@ -53,7 +53,7 @@
                   company-keywords
                   )) company-backends)))
 
-(defun myinit-company-web--setup-jade-mode ()
+(defun noxrcp-company-web--setup-jade-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-web-jade
@@ -63,7 +63,7 @@
                   company-keywords
                   )) company-backends)))
 
-(defun myinit-company-web--setup-slim-mode ()
+(defun noxrcp-company-web--setup-slim-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-web-slim

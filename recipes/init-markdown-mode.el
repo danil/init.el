@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(defcustom myinit-markdown-mode-patterns '()
+(defcustom noxrcp-markdown-mode-patterns '()
   "Regexp patterns associated with `markdown-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables '(markdown-command "blackfriday-tool")
-                      '(myinit-markdown-mode-patterns '(
+                      '(noxrcp-markdown-mode-patterns '(
                                                         "/Dropbox/deft/.*\\.txt\\'"
                                                         "/README\\'"
                                                         "/mutt[-a-zA-Z0-9]+\\'"
@@ -45,15 +45,15 @@
                                                         "\\.mdown\\'"
                                                         )))
 
-(add-hook 'after-init-hook 'myinit-markdown-mode)
+(add-hook 'after-init-hook 'noxrcp-markdown-mode)
 
-(defun myinit-markdown-mode ()
+(defun noxrcp-markdown-mode ()
   "My init."
 
-  (dolist (pattern myinit-markdown-mode-patterns)
+  (dolist (pattern noxrcp-markdown-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'markdown-mode)))
 
- (myinit-after-load 'markdown-mode
+ (noxrcp-after-load 'markdown-mode
    (require 'eww) ;used for eww-mode live preview
 
    (set-face-attribute 'markdown-italic-face nil :slant 'normal) ;some terminals have difficulties with italic/bold

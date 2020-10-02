@@ -31,18 +31,18 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-elisp-slime-nav)
-(defun myinit-elisp-slime-nav ()
+(add-hook 'after-init-hook 'noxrcp-elisp-slime-nav)
+(defun noxrcp-elisp-slime-nav ()
   "My init."
-  ;; (if (boundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)
-  ;;   (with-eval-after-load 'elisp-slime-nav (myinit-elisp-slime-nav--setup)))
-  (when (fboundp 'elisp-slime-nav-mode) (myinit-elisp-slime-nav--setup)))
+  ;; (if (boundp 'elisp-slime-nav-mode) (noxrcp-elisp-slime-nav--setup)
+  ;;   (with-eval-after-load 'elisp-slime-nav (noxrcp-elisp-slime-nav--setup)))
+  (when (fboundp 'elisp-slime-nav-mode) (noxrcp-elisp-slime-nav--setup)))
 
-(defun myinit-elisp-slime-nav--setup ()
-  (if (boundp 'emacs-lisp-mode-map) (myinit-emacs-lisp-mode--setup-emacs-lisp-mode)
-    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup-emacs-lisp-mode))))
+(defun noxrcp-elisp-slime-nav--setup ()
+  (if (boundp 'emacs-lisp-mode-map) (noxrcp-emacs-lisp-mode--setup-emacs-lisp-mode)
+    (with-eval-after-load 'elisp-mode (noxrcp-emacs-lisp-mode--setup-emacs-lisp-mode))))
 
-(defun myinit-emacs-lisp-mode--setup-emacs-lisp-mode ()
+(defun noxrcp-emacs-lisp-mode--setup-emacs-lisp-mode ()
   (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
   (define-key emacs-lisp-mode-map (kbd "C-c C-j") 'elisp-slime-nav-find-elisp-thing-at-point)
   (define-key emacs-lisp-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))

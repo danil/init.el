@@ -1,1 +1,1 @@
-(myinit-after-load 'ruby-pry (require 'pry))
+(noxrcp-after-load 'ruby-pry (require 'pry))

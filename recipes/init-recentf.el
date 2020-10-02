@@ -41,9 +41,9 @@
  '(recentf-max-saved-items nil) ;Maximum number of items of the recent list that will be saved. A nil value means to save the whole list.
  '(recentf-save-file "~/.emacs.var/recentf"))
 
-(add-hook 'after-init-hook 'myinit-recentf)
+(add-hook 'after-init-hook 'noxrcp-recentf)
 
-(defun myinit-recentf ()
+(defun noxrcp-recentf ()
   "My init."
 
   (recentf-mode t))

@@ -43,7 +43,7 @@
      ;; ("\\` Compiling\\'" 'display " C*") ;∞ U+221E infin or infinity
      ;; ("\\` Ovwrt\\'" 'display (concat " "
      ;;                                  (propertize "OVERWRITING" 'font-lock-face
-     ;;                                              '(:inherit myinit-faces--alert-fixme))))
+     ;;                                              '(:inherit noxrcp-faces--alert-fixme))))
      ))
  ;; ;; Hide lighters for some minor modes.
  ;; '(rm-blacklist '(
@@ -57,7 +57,7 @@
  ;;                  " Helm" ;helm-mode
  ;;                  " Isearch" ;isearch-mode
  ;;                  " MRev" ;magit-auto-revert-mode
- ;;                  " Myinit" ;myinit-mode
+ ;;                  " Noxrcp" ;noxrcp-mode
  ;;                  " Projectile" ;projectile-mode
  ;;                  " RSpec" ;rspec-mode
  ;;                  " Rails" ;projectile-rails
@@ -85,7 +85,7 @@
  ;;                  ))
  '(rm-whitelist " F"))
 
-;; (add-hook 'after-init-hook 'myinit-rich-minority)
-;; (defun myinit-rich-minority () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-rich-minority)
+;; (defun noxrcp-rich-minority () "My init.")
 
 ;;; init-rich-minority.el ends here

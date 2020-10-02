@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ansi-color)
+(add-hook 'after-init-hook 'noxrcp-ansi-color)
 
-(defun myinit-ansi-color ()
+(defun noxrcp-ansi-color ()
   "My init."
 
   (require 'ansi-color)

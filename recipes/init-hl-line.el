@@ -31,23 +31,23 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-hl-line)
-(defun myinit-hl-line ()
+(add-hook 'after-init-hook 'noxrcp-hl-line)
+(defun noxrcp-hl-line ()
   "My init."
-  (define-key myinit-map (kbd "C-v") 'hl-line-mode)
-  (if (boundp 'hl-line-mode) (myinit-hl-line--setup)
-    (with-eval-after-load 'hl-line (myinit-hl-line--setup))))
+  (define-key noxrcp-map (kbd "C-v") 'hl-line-mode)
+  (if (boundp 'hl-line-mode) (noxrcp-hl-line--setup)
+    (with-eval-after-load 'hl-line (noxrcp-hl-line--setup))))
 
-(defun myinit-hl-line--setup ()
+(defun noxrcp-hl-line--setup ()
   ;; (defface hl-line-inactive
   ;;   '((t nil))
   ;;   "Inactive variant of `hl-line'."
   ;;   :group 'hl-line)
   ;; (add-hook 'buffer-list-update-hook
-  ;;           (lambda () (walk-windows #'myinit-hl-line--update-face nil t)))
+  ;;           (lambda () (walk-windows #'noxrcp-hl-line--update-face nil t)))
   (set-face-attribute hl-line-face nil :inherit nil :inverse-video t)) ;; :underline t
 
-;; (defun myinit-hl-line--update-face (window)
+;; (defun noxrcp-hl-line--update-face (window)
 ;;   "Update the `hl-line' face in WINDOW to indicate whether the window is selected."
 ;;   (with-current-buffer (window-buffer window)
 ;;     (when hl-line-mode

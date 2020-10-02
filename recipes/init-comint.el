@@ -36,33 +36,33 @@
 
 (custom-set-variables '(comint-input-ring-size 10000))
 
-(add-hook 'after-init-hook 'myinit-comint)
+(add-hook 'after-init-hook 'noxrcp-comint)
 
-(defun myinit-comint ()
+(defun noxrcp-comint ()
   "My init."
 
-  (add-hook 'kill-emacs-hook 'myinit-comint--write-history-each-buffer))
+  (add-hook 'kill-emacs-hook 'noxrcp-comint--write-history-each-buffer))
 
 ;;; Persistent inferior comint command history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>
 
-(defun myinit-comint--write-history-each-buffer ()
+(defun noxrcp-comint--write-history-each-buffer ()
   "Run `comint-write-input-ring' function on each buffer."
 
-  (myinit-comint--fn-on-each-buffer 'comint-write-input-ring))
+  (noxrcp-comint--fn-on-each-buffer 'comint-write-input-ring))
 
-(defun myinit-comint--fn-on-each-buffer (fn)
+(defun noxrcp-comint--fn-on-each-buffer (fn)
   "Run `FN' function on each buffer."
 
   (mapc (lambda (buffer)
           (with-current-buffer buffer
-            (when (and (boundp 'myinit-comint-with-history)
-                       (equal myinit-comint-with-history t))
+            (when (and (boundp 'noxrcp-comint-with-history)
+                       (equal noxrcp-comint-with-history t))
               (funcall fn))))
 
         (buffer-list)))
 
-(defun myinit-comint--write-history (process event)
+(defun noxrcp-comint--write-history (process event)
   "Write `PROCESS' history to the file on `EVENT'.
 Write comint `comint-input-ring' associated with `PROCESS'
 to the file on `EVENT'."
@@ -73,16 +73,16 @@ to the file on `EVENT'."
       (with-current-buffer buf
         (insert (format "\nProcess %s %s" process event))))))
 
-(defmacro myinit-comint--create-history-fn (defun-name history-file)
+(defmacro noxrcp-comint--create-history-fn (defun-name history-file)
   "Create `DEFUN-NAME' function which assign `HISTORY-FILE' and hook event.
 Create function named `DEFUN-NAME' which assign `HISTORY-FILE' to input ring
 and assign hook on sentinel event."
 
   (let ((funsymbol (intern defun-name)))
     `(defun ,funsymbol ()
-       (setq myinit-comint-with-history nil)
-       (make-local-variable 'myinit-comint-with-history)
-       (setq myinit-comint-with-history t)
+       (setq noxrcp-comint-with-history nil)
+       (make-local-variable 'noxrcp-comint-with-history)
+       (setq noxrcp-comint-with-history t)
 
        (add-hook 'kill-buffer-hook 'comint-write-input-ring)
 
@@ -90,6 +90,6 @@ and assign hook on sentinel event."
          (when process
            (setq comint-input-ring-file-name ,history-file)
            (comint-read-input-ring)
-           (set-process-sentinel process #'myinit-comint--write-history))))))
+           (set-process-sentinel process #'noxrcp-comint--write-history))))))
 
 ;;; init-comint.el ends here

@@ -31,21 +31,21 @@
 
 ;;; Code:
 
-(defcustom myinit-go-expr-completion-modes-hooks '()
+(defcustom noxrcp-go-expr-completion-modes-hooks '()
   "Major mode hooks associated with `go-expr-completion'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-go-expr-completion-modes-hooks '(go-mode-hook)))
+ '(noxrcp-go-expr-completion-modes-hooks '(go-mode-hook)))
 
-(add-hook 'after-init-hook 'myinit-go-expr-completion)
-(defun myinit-go-expr-completion ()
+(add-hook 'after-init-hook 'noxrcp-go-expr-completion)
+(defun noxrcp-go-expr-completion ()
   "My init."
 
-  (dolist (hook myinit-go-expr-completion-modes-hooks)
-    (add-hook hook 'myinit-go-expr-completion--setup)))
+  (dolist (hook noxrcp-go-expr-completion-modes-hooks)
+    (add-hook hook 'noxrcp-go-expr-completion--setup)))
 
-(defun myinit-go-expr-completion--setup ()
-  (define-key myinit-map (kbd "m i e") 'go-expr-completion))
+(defun noxrcp-go-expr-completion--setup ()
+  (define-key noxrcp-map (kbd "m i e") 'go-expr-completion))
 
 ;;; init-go-expr-completion.el ends here

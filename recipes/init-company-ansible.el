@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-ansible)
-(defun myinit-company-ansible ()
+(add-hook 'after-init-hook 'noxrcp-company-ansible)
+(defun noxrcp-company-ansible ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-ansible--setup)
-    (with-eval-after-load 'company (myinit-company-ansible--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-ansible--setup)
+    (with-eval-after-load 'company (noxrcp-company-ansible--setup))))
 
-(defun myinit-company-ansible--setup ()
-  (add-hook 'yaml-mode-hook 'myinit-company-ansible--setup-ansible))
+(defun noxrcp-company-ansible--setup ()
+  (add-hook 'yaml-mode-hook 'noxrcp-company-ansible--setup-ansible))
 
-(defun myinit-company-ansible--setup-ansible ()
+(defun noxrcp-company-ansible--setup-ansible ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-ansible

@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-inf-ruby)
-(defun myinit-company-inf-ruby ()
+(add-hook 'after-init-hook 'noxrcp-company-inf-ruby)
+(defun noxrcp-company-inf-ruby ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-inf-ruby--setup)
-    (with-eval-after-load 'company (myinit-company-inf-ruby--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-inf-ruby--setup)
+    (with-eval-after-load 'company (noxrcp-company-inf-ruby--setup))))
 
-(defun myinit-company-inf-ruby--setup ()
-  (add-hook 'inf-ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode)
-  (add-hook 'ruby-mode-hook 'myinit-company-inf-ruby--setup-inf-ruby-mode))
+(defun noxrcp-company-inf-ruby--setup ()
+  (add-hook 'inf-ruby-mode-hook 'noxrcp-company-inf-ruby--setup-inf-ruby-mode)
+  (add-hook 'ruby-mode-hook 'noxrcp-company-inf-ruby--setup-inf-ruby-mode))
 
-(defun myinit-company-inf-ruby--setup-inf-ruby-mode ()
+(defun noxrcp-company-inf-ruby--setup-inf-ruby-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-inf-ruby

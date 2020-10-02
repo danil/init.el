@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-subr)
-(defun myinit-subr ()
+(add-hook 'after-init-hook 'noxrcp-subr)
+(defun noxrcp-subr ()
   "My init."
-    (if (boundp 'esc-map) (myinit-subr--setup-esc-map)
-      (with-eval-after-load 'subr (myinit-subr--setup-esc-map))))
+    (if (boundp 'esc-map) (noxrcp-subr--setup-esc-map)
+      (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map))))
 
-(defun myinit-subr--setup-esc-map () (define-key esc-map "." nil))
+(defun noxrcp-subr--setup-esc-map () (define-key esc-map "." nil))
 
 ;;; init-subr.el ends here

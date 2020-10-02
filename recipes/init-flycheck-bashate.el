@@ -35,8 +35,8 @@
 ;;   (require 'flycheck-bashate)
 ;;   (flycheck-bashate-setup))
 
-;; (add-hook 'after-init-hook 'myinit-flycheck-bashate)
-;; (defun myinit-flycheck-bashate ()
+;; (add-hook 'after-init-hook 'noxrcp-flycheck-bashate)
+;; (defun noxrcp-flycheck-bashate ()
 ;;   "My init."
 ;;   )
 

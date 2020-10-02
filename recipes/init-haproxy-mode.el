@@ -31,34 +31,34 @@
 
 ;;; Code:
 
-(defcustom myinit-haproxy-mode-patterns '()
+(defcustom noxrcp-haproxy-mode-patterns '()
   "Regexp patterns associated with `haproxy-mod'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-haproxy-mode-patterns '(
+ '(noxrcp-haproxy-mode-patterns '(
                                   "/haproxy.*\\.\\(erb\\|cfg\\)\'"
                                   "haproxy/.*\\(erb\\|cfg\\)\\'"
                                   )))
 
-(add-hook 'after-init-hook 'myinit-haproxy-mode)
+(add-hook 'after-init-hook 'noxrcp-haproxy-mode)
 
-(defun myinit-haproxy-mode ()
+(defun noxrcp-haproxy-mode ()
   "My init."
 
-  (dolist (pattern myinit-haproxy-mode-patterns)
+  (dolist (pattern noxrcp-haproxy-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'haproxy-mode))))
 
-(defun myinit-haproxy-mode--rainbow-identifiers-init ()
+(defun noxrcp-haproxy-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'haproxy-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; <https://github.com/XANi/config/blob/master/modules/emacs/files/parts/haproxy-mode.el>.
 (define-generic-mode 'haproxy-mode

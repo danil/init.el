@@ -33,10 +33,10 @@
 
 (custom-set-variables '(magit-blame-heading-format "%-20a %C %s %H"))
 
-(add-hook 'after-init-hook 'myinit-magit-blame)
-(defun myinit-magit-blame ()
+(add-hook 'after-init-hook 'noxrcp-magit-blame)
+(defun noxrcp-magit-blame ()
   "My init."
-  (define-key myinit-map (kbd "V b") 'my-magit-blame))
+  (define-key noxrcp-map (kbd "V b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.

@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-go-stacktracer)
-;; (defun myinit-go-stacktracer () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-go-stacktracer)
+;; (defun noxrcp-go-stacktracer () "My init.")
 
 ;;; init-go-stacktracer.el ends here

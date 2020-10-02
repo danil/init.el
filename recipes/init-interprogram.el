@@ -1,6 +1,6 @@
-(add-hook 'after-init-hook 'myinit-interprogram)
+(add-hook 'after-init-hook 'noxrcp-interprogram)
 
-(defun myinit-interprogram ()
+(defun noxrcp-interprogram ()
   "My init."
 
   ;; If emacs is run in a terminal, the clipboard- functions have no

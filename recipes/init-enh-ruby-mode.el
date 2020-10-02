@@ -31,28 +31,28 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-enh-ruby-mode)
-(defun myinit-enh-ruby-mode ()
+(add-hook 'after-init-hook 'noxrcp-enh-ruby-mode)
+(defun noxrcp-enh-ruby-mode ()
   "My init."
   ;; (setq enh-ruby-deep-indent-paren nil)
   ;; (setq enh-ruby-bounce-deep-indent t)
   ;; (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
   ;; (add-to-list 'interpreter-mode-alist '("\\.ruby\\'" . enh-ruby-mode))
-  ;; (dolist (pattern myinit-ruby-mode-patterns)
+  ;; (dolist (pattern noxrcp-ruby-mode-patterns)
   ;;   (add-to-list 'auto-mode-alist (cons pattern 'enh-ruby-mode)))
-  (if (boundp 'enh-ruby-mode-map) (myinit-enh-ruby-mode--setup)
-    (with-eval-after-load 'enh-ruby-mode (myinit-enh-ruby-mode--setup))))
+  (if (boundp 'enh-ruby-mode-map) (noxrcp-enh-ruby-mode--setup)
+    (with-eval-after-load 'enh-ruby-mode (noxrcp-enh-ruby-mode--setup))))
 
-(defun myinit-enh-ruby-mode--setup ()
+(defun noxrcp-enh-ruby-mode--setup ()
   (define-key enh-ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
-(defun myinit-enh-ruby-mode--rainbow-identifiers-init ()
+(defun noxrcp-enh-ruby-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'enh-ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-ruby-mode--rainbow-identifiers-filter)
+              'noxrcp-ruby-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
@@ -61,6 +61,6 @@
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; init-enh-ruby-mode.el ends here

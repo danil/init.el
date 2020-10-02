@@ -31,28 +31,28 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-static-regexps-hooks '()
+(defcustom noxrcp-highlight-static-regexps-hooks '()
   "Hooks associated with `highlight-static-regexps'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-highlight-static-regexps-hooks
+ '(noxrcp-highlight-static-regexps-hooks
    '(
-     (go-mode-hook myinit-go-mode--highlight-static-regexps-init)
-     ;; (ruby-mode-hook myinit-ruby-mode--highlight-static-regexps-init)
+     (go-mode-hook noxrcp-go-mode--highlight-static-regexps-init)
+     ;; (ruby-mode-hook noxrcp-ruby-mode--highlight-static-regexps-init)
      )))
 
-(add-hook 'after-init-hook 'myinit-highlight-static-regexps)
+(add-hook 'after-init-hook 'noxrcp-highlight-static-regexps)
 
-(defun myinit-highlight-static-regexps ()
+(defun noxrcp-highlight-static-regexps ()
   "My init."
-  (dolist (hook myinit-highlight-static-regexps-hooks)
+  (dolist (hook noxrcp-highlight-static-regexps-hooks)
     (let ((h (car hook))
           (init-fn (nth 1 hook)))
       (when (fboundp init-fn) (add-hook h init-fn))))
   (let ((f (lambda ()
              (setq highlight-static-regexps-choose-face-function
-                   'myinit-go-mode--highlight-static-regexps-choose-face))))
+                   'noxrcp-go-mode--highlight-static-regexps-choose-face))))
     (if (boundp 'highlight-static-regexps-choose-face-function) (funcall f)
       (with-eval-after-load 'highlight-static-regexps (funcall f)))))
 
@@ -60,7 +60,7 @@
 ;;   '(("foo" . "#red")
 ;;     ("bar" . "#green"))
 ;;   "Faces used to highlight specific keywords."
-;;   :group 'myinit
+;;   :group 'noxrcp
 ;;   :type '(repeat (cons (string :tag "Keyword")
 ;;                        (choice :tag "Face   "
 ;;                                (string :tag "Color")
@@ -70,7 +70,7 @@
 ;;   ;;        (hl-todo-set-regexp))
 ;;   )
 
-(defun myinit-go-mode--highlight-static-regexps-choose-face (s)
+(defun noxrcp-go-mode--highlight-static-regexps-choose-face (s)
   (cond
    ((equal s "unsafe") '(:weight bold))
    ((equal s " :=") '(:weight bold))
@@ -81,15 +81,15 @@
    ((equal s "\tgo") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\tgoto") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\treturn") '(:inherit font-lock-keyword-face :weight bold))
-   (t '(:inherit myinit-faces--alert-fixme))))
+   (t '(:inherit noxrcp-faces--alert-fixme))))
 
-(defun myinit-highlight-static-regexps--lazyinit ()
+(defun noxrcp-highlight-static-regexps--lazyinit ()
   "Run `highlight-static-regexps'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'highlight-static-regexps-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'highlight-static-regexps-mode))
 
-(defun myinit-highlight-static-regexps--face-overridable (begin end)
+(defun noxrcp-highlight-static-regexps--face-overridable (begin end)
   "My test if the face of the identifier under BEGIN is overridable."
   (let ((face (get-text-property begin 'face)))
     (cond

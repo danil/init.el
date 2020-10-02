@@ -34,31 +34,31 @@
 ;; My help
 ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
 
-(add-hook 'after-init-hook 'myinit-help)
-(defun myinit-help ()
+(add-hook 'after-init-hook 'noxrcp-help)
+(defun noxrcp-help ()
   "My init."
-  (define-key myinit-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
-  (if (boundp 'help-map) (myinit-help--customize-keys)
-    (with-eval-after-load 'help (myinit-help--customize-keys))))
+  (define-key noxrcp-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
+  (if (boundp 'help-map) (noxrcp-help--customize-keys)
+    (with-eval-after-load 'help (noxrcp-help--customize-keys))))
 
-(defun myinit-help--customize-keys()
+(defun noxrcp-help--customize-keys()
   "My init customize."
-  ;; (define-key help-map "f" 'myinit-map--describe-function)
+  ;; (define-key help-map "f" 'noxrcp-map--describe-function)
   (define-key help-map "?" nil)
   (define-key help-map (kbd "? ?") 'help-for-help)
-  (define-key help-map (kbd "? m") 'myinit-help--man-function)
+  (define-key help-map (kbd "? m") 'noxrcp-help--man-function)
   (define-key help-map (kbd "i") 'describe-symbol)
   (define-key help-map (kbd "l") 'find-library)
   (define-key help-map (kbd "v") 'describe-variable))
 
-(defun myinit-help--man-function ()
+(defun noxrcp-help--man-function ()
   (interactive)
   (cond ((equal current-prefix-arg 1) (call-interactively 'tldr))
         ((equal current-prefix-arg 2) (call-interactively 'woman))
         (current-prefix-arg (call-interactively 'tldr))
         (t (call-interactively 'man))))
 
-;; (defun myinit-map--describe-function (&optional arg)
+;; (defun noxrcp-map--describe-function (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg
 ;;       (call-interactively 'describe-function)

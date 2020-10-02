@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ido-ubiquitous)
-(defun myinit-ido-ubiquitous ()
+(add-hook 'after-init-hook 'noxrcp-ido-ubiquitous)
+(defun noxrcp-ido-ubiquitous ()
   "My init."
   (ido-mode 'both) ;for buffers and files
   (ido-everywhere t)

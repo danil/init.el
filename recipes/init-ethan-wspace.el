@@ -31,31 +31,31 @@
 
 ;;; Code:
 
-(defcustom myinit-ethan-wspace-modes-hooks '()
+(defcustom noxrcp-ethan-wspace-modes-hooks '()
   "Major modes hooks associated with `ethan-wspace-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modes-disallows-no-nl-eof '()
+(defcustom noxrcp-modes-disallows-no-nl-eof '()
   "Major modes disallows no-nl-eof."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modes-disallows-many-nls-eof '()
+(defcustom noxrcp-modes-disallows-many-nls-eof '()
   "Major modes disallows many-nls-eof."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modes-disallows-tabs '()
+(defcustom noxrcp-modes-disallows-tabs '()
   "Major modes disallows tabs."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modes-disallows-eol '()
+(defcustom noxrcp-modes-disallows-eol '()
   "Major modes disallows trailing whitespace at end of line."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-ethan-wspace-modes-hooks myinit-programming-modes-hooks)
- '(myinit-modes-disallows-no-nl-eof myinit-programming-modes)
- '(myinit-modes-disallows-many-nls-eof myinit-programming-modes)
- '(myinit-modes-disallows-tabs '(
+ '(noxrcp-ethan-wspace-modes-hooks noxrcp-programming-modes-hooks)
+ '(noxrcp-modes-disallows-no-nl-eof noxrcp-programming-modes)
+ '(noxrcp-modes-disallows-many-nls-eof noxrcp-programming-modes)
+ '(noxrcp-modes-disallows-tabs '(
                                  autoconf-mode
                                  awk-mode
                                  cask-mode
@@ -118,7 +118,7 @@
                                  xml-mode
                                  yaml-mode
                                  ))
- '(myinit-modes-disallows-eol '(
+ '(noxrcp-modes-disallows-eol '(
                                 autoconf-mode
                                 awk-mode
                                 c-mode
@@ -186,40 +186,40 @@
                                 yaml-mode
                                )))
 
-(add-hook 'after-init-hook 'myinit-ethan-wspace)
+(add-hook 'after-init-hook 'noxrcp-ethan-wspace)
 
-(defun myinit-ethan-wspace ()
+(defun noxrcp-ethan-wspace ()
   "My init."
 
-  (dolist (hook myinit-ethan-wspace-modes-hooks)
-    (add-hook hook 'myinit-ethan-wspace--lazyinit))
+  (dolist (hook noxrcp-ethan-wspace-modes-hooks)
+    (add-hook hook 'noxrcp-ethan-wspace--lazyinit))
 
-  (myinit-after-load 'ethan-wspace
+  (noxrcp-after-load 'ethan-wspace
     (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
     ;; (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'ethan-wspace-face "gray15")))))
 
-(defun myinit-ethan-wspace--lazyinit ()
+(defun noxrcp-ethan-wspace--lazyinit ()
   "Run `ethan-wspace'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil
    (lambda ()
      (unless (boundp 'ethan-wspace-errors) (load "ethan-wspace"))
      (setq ethan-wspace-errors '())
      (make-local-variable 'ethan-wspace-errors)
 
-     (when (member major-mode myinit-modes-disallows-no-nl-eof)
+     (when (member major-mode noxrcp-modes-disallows-no-nl-eof)
        (setq ethan-wspace-errors (push 'no-nl-eof ethan-wspace-errors)))
 
-     (when (member major-mode myinit-modes-disallows-many-nls-eof)
+     (when (member major-mode noxrcp-modes-disallows-many-nls-eof)
        (setq ethan-wspace-errors (push 'many-nls-eof ethan-wspace-errors)))
 
-     (when (member major-mode myinit-modes-disallows-tabs)
+     (when (member major-mode noxrcp-modes-disallows-tabs)
        (setq ethan-wspace-errors (push 'tabs ethan-wspace-errors)))
 
-     (when (member major-mode myinit-modes-disallows-eol)
+     (when (member major-mode noxrcp-modes-disallows-eol)
        (setq ethan-wspace-errors (push 'eol ethan-wspace-errors)))
 
      (ethan-wspace-mode))))

@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-direx)
+;; (add-hook 'after-init-hook 'noxrcp-direx)
 
-;; (defun myinit-direx ()
+;; (defun noxrcp-direx ()
 ;;   "My init."
 
 ;;   ;; (global-set-key (kbd "C-x d") 'my-dired)

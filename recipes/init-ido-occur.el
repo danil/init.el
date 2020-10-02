@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ido-occur)
+(add-hook 'after-init-hook 'noxrcp-ido-occur)
 
-(defun myinit-ido-occur ()
+(defun noxrcp-ido-occur ()
   "My init."
-  (define-key myinit-map (kbd "j o") 'my-ido-occur)
-  (myinit-after-load "isearch"
+  (define-key noxrcp-map (kbd "j o") 'my-ido-occur)
+  (noxrcp-after-load "isearch"
     (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
 
 (defun my-ido-occur (&optional arg)

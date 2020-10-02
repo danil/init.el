@@ -33,8 +33,8 @@
 
 (custom-set-variables '(bookmark-default-file "~/.emacs.var/bookmarks"))
 
-;; (add-hook 'after-init-hook 'myinit-bookmark)
-;; (defun myinit-bookmark ()
+;; (add-hook 'after-init-hook 'noxrcp-bookmark)
+;; (defun noxrcp-bookmark ()
 ;;   "My init."
 ;;   )
 

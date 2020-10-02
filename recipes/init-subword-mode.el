@@ -1,8 +1,8 @@
-(add-hook 'after-init-hook 'myinit-subword-mode)
+(add-hook 'after-init-hook 'noxrcp-subword-mode)
 
-(defun myinit-subword-mode ()
+(defun noxrcp-subword-mode ()
   "My init."
 
-  (myinit-add-mode-to-hooks 'subword-mode
-                         (append myinit-programming-modes-hooks
+  (noxrcp-add-mode-to-hooks 'subword-mode
+                         (append noxrcp-programming-modes-hooks
                                  '(ag-mode-hook ibuffer-mode-hook))))

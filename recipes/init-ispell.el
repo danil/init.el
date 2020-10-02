@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ispell)
-(defun myinit-ispell ()
+(add-hook 'after-init-hook 'noxrcp-ispell)
+(defun noxrcp-ispell ()
   "My init."
-  (if (boundp 'ispell-minor-mode) (myinit-ispell--setup)
-    (with-eval-after-load 'ispell (myinit-ispell--setup))))
+  (if (boundp 'ispell-minor-mode) (noxrcp-ispell--setup)
+    (with-eval-after-load 'ispell (noxrcp-ispell--setup))))
 
-(defun myinit-ispell--setup ()
+(defun noxrcp-ispell--setup ()
   "My init."
   ;; (define-key ispell-menu-map [?\C-\M-i] nil)
   ;; (define-key ispell-menu-map-needed [?\C-\M-i] nil)

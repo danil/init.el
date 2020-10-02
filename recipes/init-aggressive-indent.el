@@ -31,20 +31,20 @@
 
 ;;; Code:
 
-(defcustom myinit-aggressive-indent-modes-hooks '()
+(defcustom noxrcp-aggressive-indent-modes-hooks '()
   "Major modes Hook associated with `aggressive-indent'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-aggressive-indent-modes-hooks '(
+ '(noxrcp-aggressive-indent-modes-hooks '(
                                           emacs-lisp-mode-hook
                                           )))
 
-(add-hook 'after-init-hook 'myinit-aggressive-indent)
+(add-hook 'after-init-hook 'noxrcp-aggressive-indent)
 
-(defun myinit-aggressive-indent ()
+(defun noxrcp-aggressive-indent ()
   "My init."
 
-  (dolist (hook myinit-aggressive-indent-modes-hooks) (add-hook hook #'aggressive-indent-mode)))
+  (dolist (hook noxrcp-aggressive-indent-modes-hooks) (add-hook hook #'aggressive-indent-mode)))
 
 ;;; init-aggressive-indent.el ends here

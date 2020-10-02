@@ -37,13 +37,13 @@
 ;;; <https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html>
 ;;; <https://emacs.stackexchange.com/questions/27841/unable-to-decrypt-gpg-file-using-emacs-but-command-line-gpg-works>
 
-(add-hook 'after-init-hook 'myinit-epa-file)
-(defun myinit-epa-file ()
+(add-hook 'after-init-hook 'noxrcp-epa-file)
+(defun noxrcp-epa-file ()
   "My init."
-  (if (boundp 'epa-file) (myinit-epa-file--init)
-    (with-eval-after-load 'epa-file (myinit-epa-file--init))))
+  (if (boundp 'epa-file) (noxrcp-epa-file--init)
+    (with-eval-after-load 'epa-file (noxrcp-epa-file--init))))
 
-(defun myinit-epa-file--init ()
+(defun noxrcp-epa-file--init ()
   (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
   (epa-file-name-regexp-update))
 

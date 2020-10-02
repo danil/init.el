@@ -31,54 +31,54 @@
 
 ;;; Code:
 
-(defcustom myinit-highlight-symbol-modes '()
+(defcustom noxrcp-highlight-symbol-modes '()
   "Major modes associated with `highlight-symbol'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-highlight-symbol-modes-hooks '()
+(defcustom noxrcp-highlight-symbol-modes-hooks '()
   "Major modes Hook associated with `highlight-symbol'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
  '(highlight-symbol-highlight-single-occurrence nil)
  '(highlight-symbol-idle-delay 0.2) ;; 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
- '(myinit-highlight-symbol-modes (-union myinit-programming-modes
+ '(noxrcp-highlight-symbol-modes (-union noxrcp-programming-modes
                                          '(
                                            dired-mode
                                            shell-mode
                                            sql-interactive-mode
                                            )))
- '(myinit-highlight-symbol-modes-hooks
+ '(noxrcp-highlight-symbol-modes-hooks
    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           myinit-highlight-symbol-modes)))
+           noxrcp-highlight-symbol-modes)))
 
-(add-hook 'after-init-hook 'myinit-highlight-symbol)
-(defun myinit-highlight-symbol ()
+(add-hook 'after-init-hook 'noxrcp-highlight-symbol)
+(defun noxrcp-highlight-symbol ()
   "My init."
-  (dolist (hook myinit-highlight-symbol-modes-hooks)
-    (add-hook hook 'myinit-highlight-symbol--setup-hook))
-  (if (boundp 'highlight-symbol-mode) (myinit-highlight-symbol--setup)
-    (with-eval-after-load 'highlight-symbol (myinit-highlight-symbol--setup))))
+  (dolist (hook noxrcp-highlight-symbol-modes-hooks)
+    (add-hook hook 'noxrcp-highlight-symbol--setup-hook))
+  (if (boundp 'highlight-symbol-mode) (noxrcp-highlight-symbol--setup)
+    (with-eval-after-load 'highlight-symbol (noxrcp-highlight-symbol--setup))))
 
-(defun myinit-highlight-symbol--setup-hook ()
+(defun noxrcp-highlight-symbol--setup-hook ()
   "Setup hook `highlight-symbol'."
-  (if (fboundp 'highlight-symbol-mode) (myinit-highlight-symbol--setup-lazy)
-    (with-eval-after-load 'highlight-symbol (myinit-highlight-symbol--setup-lazy))))
+  (if (fboundp 'highlight-symbol-mode) (noxrcp-highlight-symbol--setup-lazy)
+    (with-eval-after-load 'highlight-symbol (noxrcp-highlight-symbol--setup-lazy))))
 
-(defun myinit-highlight-symbol--setup-lazy ()
+(defun noxrcp-highlight-symbol--setup-lazy ()
   "Lazy setup `highlight-symbol'."
   (cond ((and (member major-mode '(ruby-mode enh-ruby-mode)) (> (buffer-size) 100000)))
         ((and (member major-mode '(js-mode js2-mode)) (> (buffer-size) 100000)))
-        (t (myinit-run-with-idle-timer-in-current-buffer
-            myinit-default-idle-timer-seconds nil 'highlight-symbol-mode))))
+        (t (noxrcp-run-with-idle-timer-in-current-buffer
+            noxrcp-default-idle-timer-seconds nil 'highlight-symbol-mode))))
 
-(defun myinit-highlight-symbol--setup ()
+(defun noxrcp-highlight-symbol--setup ()
   "Setup `highlight-symbol'."
-  ;; (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
-  ;; (define-key myinit-map (kbd "c S q") 'highlight-symbol-query-replace)
-  (define-key myinit-map (kbd "c S c") 'highlight-symbol-count)
-  (define-key myinit-map (kbd "c s") 'highlight-symbol-query-replace)
+  ;; (define-key noxrcp-map (kbd "c S c") 'highlight-symbol-count)
+  ;; (define-key noxrcp-map (kbd "c S q") 'highlight-symbol-query-replace)
+  (define-key noxrcp-map (kbd "c S c") 'highlight-symbol-count)
+  (define-key noxrcp-map (kbd "c s") 'highlight-symbol-query-replace)
   (custom-set-faces '(highlight-symbol-face ((t (:inherit highlight))))))
 
 ;;; init-highlight-symbol.el ends here

@@ -1,8 +1,8 @@
 ;;; Environment variables.
 
-(add-hook 'after-init-hook 'myinit-env)
+(add-hook 'after-init-hook 'noxrcp-env)
 
-(defun myinit-env ()
+(defun noxrcp-env ()
   "My init."
 
   ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>

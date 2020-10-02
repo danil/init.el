@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ruby-tools)
-(defun myinit-ruby-tools ()
+(add-hook 'after-init-hook 'noxrcp-ruby-tools)
+(defun noxrcp-ruby-tools ()
   "My init."
   ;; (add-hook 'text-mode-hook 'auto-fill-mode)
   ;;    haml-mode
   ;;    rhtml-mode
   ;;    ruby-mode
   ;;    slim-mode
-  ;; (myinit-add-mode-to-hooks 'ruby-tools-mode myinit-ruby-tools-modes-hooks)
+  ;; (noxrcp-add-mode-to-hooks 'ruby-tools-mode noxrcp-ruby-tools-modes-hooks)
 
-  (myinit-after-load 'ruby-tools
+  (noxrcp-after-load 'ruby-tools
     ;; Remove keys from a minor-mode keymap
     ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
     (define-key ruby-tools-mode-map (kbd "C-'")  nil)

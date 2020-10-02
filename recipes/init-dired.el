@@ -37,22 +37,22 @@
 
 (custom-set-variables '(dired-listing-switches "-l --all --human-readable"))
 
-(defcustom myinit-dired--list-of-switches
+(defcustom noxrcp-dired--list-of-switches
   '("-l --all --human-readable" "-l --all")
   "List of ls switches for dired to cycle among.")
 
-(add-hook 'after-init-hook 'myinit-dired)
-(defun myinit-dired ()
+(add-hook 'after-init-hook 'noxrcp-dired)
+(defun noxrcp-dired ()
   "My init."
 
-  (global-set-key (kbd "C-x C-d") 'myinit-dired--open)
+  (global-set-key (kbd "C-x C-d") 'noxrcp-dired--open)
 
-  (with-eval-after-load 'dired (myinit-dired--customize)))
+  (with-eval-after-load 'dired (noxrcp-dired--customize)))
 
-(defun myinit-dired--customize ()
-  (define-key dired-mode-map (kbd "^") 'myinit-dired--reuse-directory-buffer))
+(defun noxrcp-dired--customize ()
+  (define-key dired-mode-map (kbd "^") 'noxrcp-dired--reuse-directory-buffer))
 
-(defun myinit-dired--open(&optional arg)
+(defun noxrcp-dired--open(&optional arg)
   "Open `dired'."
   (interactive "P")
 
@@ -65,7 +65,7 @@
       (dired d)
       (when f (dired-goto-file f)))))
 
-(defun myinit-dired--reuse-directory-buffer ()
+(defun noxrcp-dired--reuse-directory-buffer ()
   "Reuse `dired' buffer."
   (interactive)
 

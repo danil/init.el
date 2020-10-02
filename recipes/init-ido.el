@@ -54,8 +54,8 @@
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
  '(ido-work-directory-list '("~/" "~/src" "~/Dropbox/deft")))
 
-(add-hook 'after-init-hook 'myinit-ido)
-(defun myinit-ido ()
+(add-hook 'after-init-hook 'noxrcp-ido)
+(defun noxrcp-ido ()
   "My init."
 
   ;; (ido-mode 'both) ;for buffers and files
@@ -63,10 +63,10 @@
 
   ;; (global-set-key (kbd "C-x b") 'my-switch-to-buffer)
 
-  (if (boundp 'ido-mode) (myinit-lazy-ido)
-    (with-eval-after-load 'ido (myinit-lazy-ido))))
+  (if (boundp 'ido-mode) (noxrcp-lazy-ido)
+    (with-eval-after-load 'ido (noxrcp-lazy-ido))))
 
-(defun myinit-lazy-ido ()
+(defun noxrcp-lazy-ido ()
   "My init lazy."
   ;; (define-key ido-common-completion-map "\C-p" 'ido-toggle-regexp)
   ;; When using ido, the confirmation is rather annoying.

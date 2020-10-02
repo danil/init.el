@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-iedit)
-(defun myinit-iedit ()
+(add-hook 'after-init-hook 'noxrcp-iedit)
+(defun noxrcp-iedit ()
   "My init."
-  (define-key myinit-map (kbd "c s") 'iedit-mode)
-  (define-key myinit-map (kbd "c S r") 'iedit-rectangle-mode)
-  (if (boundp 'iedit-mode) (myinit-iedit--setup)
-    (with-eval-after-load 'iedit (myinit-iedit--setup))
-    (with-eval-after-load 'iedit-lib (myinit-iedit--setup))))
+  (define-key noxrcp-map (kbd "c s") 'iedit-mode)
+  (define-key noxrcp-map (kbd "c S r") 'iedit-rectangle-mode)
+  (if (boundp 'iedit-mode) (noxrcp-iedit--setup)
+    (with-eval-after-load 'iedit (noxrcp-iedit--setup))
+    (with-eval-after-load 'iedit-lib (noxrcp-iedit--setup))))
 
-(defun myinit-iedit--setup ()
+(defun noxrcp-iedit--setup ()
   (set-face-attribute 'iedit-occurrence nil :inherit 'lazy-highlight))
 
 ;;; init-iedit.el ends here

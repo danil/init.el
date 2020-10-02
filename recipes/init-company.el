@@ -68,33 +68,33 @@
  '(company-idle-delay nil) ;; 0.7 tradeoff between typing speed and performance <https://emacs.stackexchange.com/questions/32467/how-can-i-configure-company-mode-to-only-display-candidates-after-an-explicit-ke#32523>
  '(company-minimum-prefix-length 0))
 
-(add-hook 'after-init-hook 'myinit-company)
-(defun myinit-company ()
+(add-hook 'after-init-hook 'noxrcp-company)
+(defun noxrcp-company ()
   "My init."
-  ;; (if (boundp 'company-mode) (myinit-company--setup)
-  ;;   (with-eval-after-load 'company (myinit-company--setup)))
+  ;; (if (boundp 'company-mode) (noxrcp-company--setup)
+  ;;   (with-eval-after-load 'company (noxrcp-company--setup)))
   (global-company-mode t))
 
-;; (defun myinit-company--setup ())
+;; (defun noxrcp-company--setup ())
 
-(defun myinit-company--complete-with-backend (new-backend)
+(defun noxrcp-company--complete-with-backend (new-backend)
   (let ((old-company-backends company-backends))
     (set 'company-backends (cons new-backend '()))
     (company-complete)
     (set 'company-backends old-company-backends)))
 
-(defun myinit-company--grab-symbol ()
+(defun noxrcp-company--grab-symbol ()
   "If point is at the end of a symbol, return it.
 Otherwise, if point is not inside a symbol, return an empty string."
   (buffer-substring (point)
                     (save-excursion (skip-syntax-backward "w_") (point))))
 
-(defun myinit-company--message-used-backend ()
+(defun noxrcp-company--message-used-backend ()
   (interactive)
   (message "Company backend: %s"
-           (pp-to-string (myinit-company--used-backend))))
+           (pp-to-string (noxrcp-company--used-backend))))
 
-(defun myinit-company--used-backend ()
+(defun noxrcp-company--used-backend ()
   (interactive)
   (let* ((bb company-backends)
          backend
@@ -105,7 +105,7 @@ Otherwise, if point is not inside a symbol, return an empty string."
     backend))
 
 ;; ;; <https://stackoverflow.com/questions/3815467/stripping-duplicate-elements-in-a-list-of-strings-in-elisp#3815828>.
-;; (defun myinit-company--strip-duplicates (list)
+;; (defun noxrcp-company--strip-duplicates (list)
 ;;   (let ((new-list nil))
 ;;     (while list
 ;;       (when (and (car list) (not (member (car list) new-list)))

@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-go)
-(defun myinit-company-go ()
+(add-hook 'after-init-hook 'noxrcp-company-go)
+(defun noxrcp-company-go ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-go--setup)
-    (with-eval-after-load 'company (myinit-company-go--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-go--setup)
+    (with-eval-after-load 'company (noxrcp-company-go--setup))))
 
-(defun myinit-company-go--setup ()
-  (add-hook 'go-mode-hook 'myinit-company-go--setup-go-mode))
+(defun noxrcp-company-go--setup ()
+  (add-hook 'go-mode-hook 'noxrcp-company-go--setup-go-mode))
 
-(defun myinit-company-go--setup-go-mode ()
+(defun noxrcp-company-go--setup-go-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-go

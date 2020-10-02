@@ -61,11 +61,11 @@
  '(flycheck-mode-line-prefix "F")
  '(flycheck-idle-change-delay 1.5))
 
-(add-hook 'after-init-hook 'myinit-flycheck)
-(defun myinit-flycheck ()
+(add-hook 'after-init-hook 'noxrcp-flycheck)
+(defun noxrcp-flycheck ()
   "My init."
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-flycheck--lazyinit)))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-flycheck--lazyinit)))
 
 (with-eval-after-load 'flycheck
   ;; ;; Disable jshint since we prefer eslint checking.
@@ -80,9 +80,9 @@
   ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
   (setq flycheck-go-vet-shadow t))
 
-(defun myinit-flycheck--lazyinit ()
+(defun noxrcp-flycheck--lazyinit ()
   "Run `flycheck'."
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'flycheck-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'flycheck-mode))
 
 ;;; init-flycheck.el ends here

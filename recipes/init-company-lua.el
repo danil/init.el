@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-lua)
-(defun myinit-company-lua ()
+(add-hook 'after-init-hook 'noxrcp-company-lua)
+(defun noxrcp-company-lua ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-lua--setup)
-    (with-eval-after-load 'company (myinit-company-lua--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-lua--setup)
+    (with-eval-after-load 'company (noxrcp-company-lua--setup))))
 
-(defun myinit-company-lua--setup ()
-  (add-hook 'lua-mode-hook 'myinit-company-lua--setup-lua-mode))
+(defun noxrcp-company-lua--setup ()
+  (add-hook 'lua-mode-hook 'noxrcp-company-lua--setup-lua-mode))
 
-(defun myinit-company-lua--setup-lua-mode ()
+(defun noxrcp-company-lua--setup-lua-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-lua

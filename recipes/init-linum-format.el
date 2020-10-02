@@ -35,12 +35,12 @@
 ;;; Separating line numbers from text
 ;;; <http://www.emacswiki.org/emacs/LineNumbers#toc7>.
 
-(add-hook 'after-init-hook 'myinit-linum-format)
+(add-hook 'after-init-hook 'noxrcp-linum-format)
 
-(defun myinit-linum-format ()
+(defun noxrcp-linum-format ()
   "My init."
 
-  (myinit-after-load 'linum
+  (noxrcp-after-load 'linum
     (unless window-system
       (setq linum-format 'my-linum-format))
 

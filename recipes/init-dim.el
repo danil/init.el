@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-dim)
-(defun myinit-dim ()
+(add-hook 'after-init-hook 'noxrcp-dim)
+(defun noxrcp-dim ()
   "My init."
   (dim-major-names
    '(
@@ -45,11 +45,11 @@
      (python-mode "py")
      (sh-mode "sh")
      ))
-  ;; (myinit-run-with-idle-timer-in-current-buffer
-  ;;  myinit-default-idle-timer-seconds nil 'myinit-dim--lazy)
+  ;; (noxrcp-run-with-idle-timer-in-current-buffer
+  ;;  noxrcp-default-idle-timer-seconds nil 'noxrcp-dim--lazy)
   )
 
-;; (defun myinit-dim--lazy ()
+;; (defun noxrcp-dim--lazy ()
 ;;   (dim-minor-names
 ;;    '(
 ;;      ;; (???   "") ; " hl-p"
@@ -62,7 +62,7 @@
 ;;      (helm-mode "") ; " Helm" ; helm-mode
 ;;      (isearch-mode "") ; " Isearch" ; isearch-mode
 ;;      (magit-auto-revert-mode "") ; " MRev" ; magit-auto-revert-mode
-;;      (myinit-mode "") ; " Myinit" ; myinit-mode
+;;      (noxrcp-mode "") ; " Noxrcp" ; noxrcp-mode
 ;;      (projectile-rails "") ; " Rails" ; projectile-rails
 ;;      (rainbow-mode "") ; " Rbow" ; rainbow-mode
 ;;      (ruby-refactor-mode "") ; " RubyRef" ; ruby-refactor-mode

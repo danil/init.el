@@ -31,25 +31,25 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-csharp-mode)
-(defun myinit-csharp-mode () "My init.")
+(add-hook 'after-init-hook 'noxrcp-csharp-mode)
+(defun noxrcp-csharp-mode () "My init.")
 
-(defun myinit-csharp-mode--rainbow-identifiers-init ()
+(defun noxrcp-csharp-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'csharp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-csharp-mode--rainbow-identifiers-filter)
+              'noxrcp-csharp-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face font-lock-function-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-csharp-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-csharp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

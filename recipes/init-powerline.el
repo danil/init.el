@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-powerline)
-(defun myinit-powerline () "My init." (powerline-default-theme))
+(add-hook 'after-init-hook 'noxrcp-powerline)
+(defun noxrcp-powerline () "My init." (powerline-default-theme))
 
 ;;; init-powerline.el ends here

@@ -35,17 +35,17 @@
  '(ido-enable-flex-matching t)
  '(ido-use-faces nil))
 
-(add-hook 'after-init-hook 'myinit-flx-ido)
+(add-hook 'after-init-hook 'noxrcp-flx-ido)
 
-(defun myinit-flx-ido ()
+(defun noxrcp-flx-ido ()
   "My init."
 
   ;; (with-eval-after-load 'flx-ido)
 
-  (if (boundp 'ido-mode) (myinit-lazy-flx-ido)
-    (with-eval-after-load 'ido (myinit-lazy-flx-ido))))
+  (if (boundp 'ido-mode) (noxrcp-lazy-flx-ido)
+    (with-eval-after-load 'ido (noxrcp-lazy-flx-ido))))
 
-(defun myinit-lazy-flx-ido ()
+(defun noxrcp-lazy-flx-ido ()
   "My init lazy."
   (flx-ido-mode t))
 

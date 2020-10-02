@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(defcustom myinit-ruby-mode-patterns '()
+(defcustom noxrcp-ruby-mode-patterns '()
   "Regexp patterns associated with `ruby-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-ruby-mode--rainbow-identifiers-stop-words '()
+(defcustom noxrcp-ruby-mode--rainbow-identifiers-stop-words '()
   "Do not highlight in `ruby-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-ruby-mode-patterns
+ '(noxrcp-ruby-mode-patterns
    '(
      "/Capfile\\'"
      "/Gemfile\\'"
@@ -60,7 +60,7 @@
      "\\.thor\\'"
      "\\.yml\\.erb\\'"
      ))
- '(myinit-ruby-mode--rainbow-identifiers-stop-words
+ '(noxrcp-ruby-mode--rainbow-identifiers-stop-words
    '(
      "_"
      "with_indifferent_access"
@@ -346,26 +346,26 @@
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil))
 
-(add-hook 'after-init-hook 'myinit-ruby-mode)
-(defun myinit-ruby-mode ()
+(add-hook 'after-init-hook 'noxrcp-ruby-mode)
+(defun noxrcp-ruby-mode ()
   "My init."
-  (dolist (pattern myinit-ruby-mode-patterns)
+  (dolist (pattern noxrcp-ruby-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'ruby-mode)))
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
-  (if (boundp 'ruby-mode) (myinit-ruby-mode--setup)
-    (with-eval-after-load 'ruby-mode (myinit-ruby-mode--setup))))
+  (if (boundp 'ruby-mode) (noxrcp-ruby-mode--setup)
+    (with-eval-after-load 'ruby-mode (noxrcp-ruby-mode--setup))))
 
-(defun myinit-ruby-mode--setup ()
+(defun noxrcp-ruby-mode--setup ()
   (define-key ruby-mode-map (kbd "C-c C-f") nil)
-  (define-key ruby-mode-map (kbd "C-c C-f e") 'myinit-ruby-mode--end-of-defun)
-  (define-key ruby-mode-map (kbd "C-c C-f n") 'myinit-ruby-mode--beginning-of-defun)
+  (define-key ruby-mode-map (kbd "C-c C-f e") 'noxrcp-ruby-mode--end-of-defun)
+  (define-key ruby-mode-map (kbd "C-c C-f n") 'noxrcp-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
-  (define-key ruby-mode-map (my-kbd "m f h") 'myinit-ruby-mode--align-hash)
-  (define-key ruby-mode-map (my-kbd "m f v") 'myinit-ruby-mode--align-variable-defenition)
-  (define-key ruby-mode-map (my-kbd "m t b") 'myinit-ruby-mode--toggle-block)
+  (define-key ruby-mode-map (my-kbd "m f h") 'noxrcp-ruby-mode--align-hash)
+  (define-key ruby-mode-map (my-kbd "m f v") 'noxrcp-ruby-mode--align-variable-defenition)
+  (define-key ruby-mode-map (my-kbd "m t b") 'noxrcp-ruby-mode--toggle-block)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -391,27 +391,27 @@
                  (indent-line-to arg-indent)))
           (when (> offset 0) (forward-char offset)))))))
 
-(defun myinit-ruby-mode--beginning-of-defun ()
+(defun noxrcp-ruby-mode--beginning-of-defun ()
   (interactive)
   (call-interactively 'beginning-of-defun)
   (search-forward-regexp "def \\(self\\.\\)?" nil t))
 
-(defun myinit-ruby-mode--end-of-defun ()
+(defun noxrcp-ruby-mode--end-of-defun ()
   (interactive)
   (call-interactively 'end-of-defun)
   (when (search-backward "end" nil t) (forward-char 3)))
 
-(defun myinit-ruby-mode--highlight-static-regexps-init ()
+(defun noxrcp-ruby-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'ruby-mode)
     (make-local-variable 'highlight-static-regexps-filter-functions)
     (add-hook 'highlight-static-regexps-filter-functions
-              'myinit-ruby-mode--highlight-static-regexps-filter)
+              'noxrcp-ruby-mode--highlight-static-regexps-filter)
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '( font-lock-keyword-face default))
     (when (<= (buffer-size) 100000)
-      (myinit-highlight-static-regexps--lazyinit))))
+      (noxrcp-highlight-static-regexps--lazyinit))))
 
-(defun myinit-ruby-mode--highlight-static-regexps-filter (beg end)
+(defun noxrcp-ruby-mode--highlight-static-regexps-filter (beg end)
   "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
   (let ((face-cur (or (get-char-property beg 'read-face-name)
                       (get-char-property beg 'face)))
@@ -420,22 +420,22 @@
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
      (and (member str-cur '(" return"))))))
 
-(defun myinit-ruby-mode--rainbow-identifiers-init ()
+(defun noxrcp-ruby-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-ruby-mode--rainbow-identifiers-filter)
+              'noxrcp-ruby-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face
                                                   font-lock-constant-face
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-ruby-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-ruby-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
   (let ((ch-cur (char-after beg))
         (ch-before (char-before beg))
@@ -457,7 +457,7 @@
          ;; (or (not (and (equal ch-before ?\.) (equal ch-after ?\.)))
          ;;     (string-match-p "\\`\\.[[:space:]\n]*\\(blank\\?\\|count\\|first\\|join\\|last\\|extract_options!\\|length\\|new\\|pop\\|present\\?\\|nil\\?\\|save!?\\|scoped\\|second\\|size\\|split\\|to_a\\|to_h\\|to_i\\|to_s\\|upcase\\|update_all\\)[^a-zA-Z0-1]"
          ;;                     str-after))
-         (not (member str-cur myinit-ruby-mode--rainbow-identifiers-stop-words)))))
+         (not (member str-cur noxrcp-ruby-mode--rainbow-identifiers-stop-words)))))
 
 ;; My keyboard macroses.
 ;; <http://emacs-fu.blogspot.ru/20.0.17/keyboard-macros.html>.
@@ -466,7 +466,7 @@
 (fset 'my-kbd-macro-ruby-string-to-symbol
       "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 
-(defun myinit-ruby-mode--toggle-block ()
+(defun noxrcp-ruby-mode--toggle-block ()
   "Toggle block type from do-end to braces or back.
 The block must begin on the current line or above it and end after the point.
 If the result is do-end block, it will always be multiline."
@@ -482,11 +482,11 @@ If the result is do-end block, it will always be multiline."
                    (setq end (point))
                    (> end start)))
             (if (match-beginning 1)
-                (myinit-ruby-mode--brace-to-do-end beg end)
-              (myinit-ruby-mode--do-end-to-brace beg end)))
+                (noxrcp-ruby-mode--brace-to-do-end beg end)
+              (noxrcp-ruby-mode--do-end-to-brace beg end)))
       (goto-char start))))
 
-(defun myinit-ruby-mode--brace-to-do-end (orig end)
+(defun noxrcp-ruby-mode--brace-to-do-end (orig end)
   (let (beg-marker end-marker)
     (goto-char end)
     (when (eq (char-before) ?\})
@@ -516,7 +516,7 @@ If the result is do-end block, it will always be multiline."
       (goto-char beg-marker)
       t)))
 
-(defun myinit-ruby-mode--do-end-to-brace (orig end)
+(defun noxrcp-ruby-mode--do-end-to-brace (orig end)
   (let (beg-marker end-marker beg-pos end-pos)
     (goto-char (- end 3))
     (when (looking-at ruby-block-end-re)
@@ -550,29 +550,29 @@ If the result is do-end block, it will always be multiline."
       t)))
 
 ;; Copyright 2016 John Cinnamond <https://raw.githubusercontent.com/jcinnamond/jc-ruby-extra/master/jc-ruby-extra.el>
-(defun myinit-ruby-mode--align-hash ()
+(defun noxrcp-ruby-mode--align-hash ()
   (interactive)
   (if (region-active-p)
       (let ((selection (buffer-substring-no-properties (region-beginning) (region-end))))
-  (if (myinit-ruby-mode--align-hash-old-style-p selection)
-      (myinit-ruby-mode--align-hash-old-style)
-    (myinit-ruby-mode--align-hash-new-style)))
-    (message "myinit-ruby-mode--align-hash requires an active mark")))
-(defun myinit-ruby-mode--align-hash-old-style-p (string)
+  (if (noxrcp-ruby-mode--align-hash-old-style-p selection)
+      (noxrcp-ruby-mode--align-hash-old-style)
+    (noxrcp-ruby-mode--align-hash-new-style)))
+    (message "noxrcp-ruby-mode--align-hash requires an active mark")))
+(defun noxrcp-ruby-mode--align-hash-old-style-p (string)
   (if (string-match "=>" string) 't nil))
-(defun myinit-ruby-mode--align-hash-old-style ()
+(defun noxrcp-ruby-mode--align-hash-old-style ()
   (message "aligning old")
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=>"))
-(defun myinit-ruby-mode--align-hash-new-style ()
+(defun noxrcp-ruby-mode--align-hash-new-style ()
   (align-regexp (region-beginning) (region-end) ":\\(\\s-*\\)" 1 1 nil))
 
-(defun myinit-ruby-mode--align-variable-defenition ()
+(defun noxrcp-ruby-mode--align-variable-defenition ()
   (interactive)
   (if (region-active-p)
       (let ((selection (buffer-substring-no-properties (region-beginning) (region-end))))
-        (myinit-ruby-mode--align-variable-defenition-new-style))
-    (message "myinit-ruby-mode--align-variable-defenition requires an active mark")))
-(defun myinit-ruby-mode--align-variable-defenition-new-style ()
+        (noxrcp-ruby-mode--align-variable-defenition-new-style))
+    (message "noxrcp-ruby-mode--align-variable-defenition requires an active mark")))
+(defun noxrcp-ruby-mode--align-variable-defenition-new-style ()
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil))
 
 ;;TODO: To refactor below.

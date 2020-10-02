@@ -1,4 +1,4 @@
-;;; myinit.el --- ???.
+;;; noxrcp.el --- ???.
 
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -36,19 +36,19 @@
 (require 'cl-lib)
 (require 'quail)
 
-(defgroup myinit nil
+(defgroup noxrcp nil
   "Easily introduce native modal editing of your own design"
   :group  'editing
-  :tag    "Myinit"
-  :prefix "myinit-"
+  :tag    "Noxrcp"
+  :prefix "noxrcp-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
 ;;;###autoload
-(defcustom myinit-lighter " Myinit"
-  "Lightner for `myinit-mode'.")
+(defcustom noxrcp-lighter " Noxrcp"
+  "Lightner for `noxrcp-mode'.")
 
-(defcustom myinit-cursor-type t
-  "Cursor type to use in `myinit-mode'.
+(defcustom noxrcp-cursor-type t
+  "Cursor type to use in `noxrcp-mode'.
 
 See description of `cursor-type' for mode information, this
 variable should follow the same conventions."
@@ -66,22 +66,22 @@ variable should follow the same conventions."
                  (const hbar (integer :tag "height of cursor")))))
 
 ;;;###autoload
-(defcustom myinit-excluded-modes nil
-  "List of major modes for which `myinit-mode' should not be activated.
+(defcustom noxrcp-excluded-modes nil
+  "List of major modes for which `noxrcp-mode' should not be activated.
 
-This variable is considered when Myinit is enabled globally via
-`myinit-global-mode'."
+This variable is considered when Noxrcp is enabled globally via
+`noxrcp-global-mode'."
   :tag  "Excluded Modes"
   :type '(repeat :tag "Major modes to exclude" symbol))
 
-(defvar myinit-mode-map (make-sparse-keymap)
-  "This is Myinit mode map, used to translate your keys.")
+(defvar noxrcp-mode-map (make-sparse-keymap)
+  "This is Noxrcp mode map, used to translate your keys.")
 
 ;;;###autoload
-(defun myinit-define-key (actual-key target-key)
+(defun noxrcp-define-key (actual-key target-key)
   "Register translation from ACTUAL-KEY to TARGET-KEY."
   (define-key
-    myinit-mode-map
+    noxrcp-mode-map
     actual-key
     `(lambda ()
        (interactive)
@@ -91,140 +91,140 @@ This variable is considered when Myinit is enabled globally via
            (call-interactively binding))))))
 
 ;;;###autoload
-(defun myinit-define-kbd (actual-kbd target-kbd)
+(defun noxrcp-define-kbd (actual-kbd target-kbd)
   "Register translation from ACTUAL-KBD to TARGET-KBD.
 
 Arguments are accepted in in the format used for saving keyboard
 macros (see `edmacro-mode')."
-  (myinit-define-key (kbd actual-kbd) (kbd target-kbd)))
+  (noxrcp-define-key (kbd actual-kbd) (kbd target-kbd)))
 
 ;;;###autoload
-(defun myinit-remove-key (key)
+(defun noxrcp-remove-key (key)
   "Unregister translation from KEY."
-  (define-key myinit-mode-map key nil))
+  (define-key noxrcp-mode-map key nil))
 
 ;;;###autoload
-(defun myinit-remove-kbd (kbd)
+(defun noxrcp-remove-kbd (kbd)
   "Unregister translation from KBD.
 
 Arguments are accepted in in the format used for saving keyboard
 macros (see `edmacro-mode')."
-  (myinit-remove-key (kbd kbd)))
+  (noxrcp-remove-key (kbd kbd)))
 
 ;;;###autoload
-(define-minor-mode myinit-mode
-  "Toggle `myinit-mode' minor mode.
+(define-minor-mode noxrcp-mode
+  "Toggle `noxrcp-mode' minor mode.
 
-With a prefix argument ARG, enable `myinit-mode' if ARG is
+With a prefix argument ARG, enable `noxrcp-mode' if ARG is
 positive, and disable it otherwise.  If called from Lisp, enable
 the mode if ARG is omitted or NIL, and toggle it if ARG is
 `toggle'.
 
 This minor mode setups translation of key bindings according to
-configuration created previously with `myinit-define-key' and
-`myinit-define-keys'."
-  nil myinit-lighter myinit-mode-map
+configuration created previously with `noxrcp-define-key' and
+`noxrcp-define-keys'."
+  nil noxrcp-lighter noxrcp-mode-map
   (setq-local cursor-type
-              (if myinit-mode
-                  myinit-cursor-type
+              (if noxrcp-mode
+                  noxrcp-cursor-type
                 (default-value 'cursor-type))))
 
-(defun myinit-maybe-activate ()
-  "Activate `myinit-mode' if current buffer is not blacklisted.
+(defun noxrcp-maybe-activate ()
+  "Activate `noxrcp-mode' if current buffer is not blacklisted.
 
-This is used by `myinit-global-mode'."
-  (unless (member major-mode myinit-excluded-modes) (myinit-mode 1)))
+This is used by `noxrcp-global-mode'."
+  (unless (member major-mode noxrcp-excluded-modes) (noxrcp-mode 1)))
 
 ;;;###autoload
-(define-globalized-minor-mode myinit-global-mode
-  myinit-mode
-  myinit-maybe-activate)
+(define-globalized-minor-mode noxrcp-global-mode
+  noxrcp-mode
+  noxrcp-maybe-activate)
 
-(defun myinit-input-function-advice (fnc key)
-  "Call FNC with KEY as argument only when `myinit-mode' is disabled.
+(defun noxrcp-input-function-advice (fnc key)
+  "Call FNC with KEY as argument only when `noxrcp-mode' is disabled.
 
 Otherwise use `list'."
-  (funcall (if myinit-mode #'list fnc) key))
+  (funcall (if noxrcp-mode #'list fnc) key))
 
-(advice-add 'quail-input-method :around #'myinit-input-function-advice)
+(advice-add 'quail-input-method :around #'noxrcp-input-function-advice)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;###autoload
-(defcustom myinit-safe-modes '()
+(defcustom noxrcp-safe-modes '()
   "My modes with many minor modes enabled."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-programming-modes '()
+(defcustom noxrcp-programming-modes '()
   "My programming modes."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-auto-completion-modes '()
+(defcustom noxrcp-auto-completion-modes '()
   "My auto completion."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-read-only-modes '()
+(defcustom noxrcp-read-only-modes '()
   "My read only modes."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-toggle-quotes-modes '()
+(defcustom noxrcp-toggle-quotes-modes '()
   "My ruby tools modes."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-highlighted-digits-modes '()
+(defcustom noxrcp-highlighted-digits-modes '()
   "My modes with highlight digits."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modal-modes '()
+(defcustom noxrcp-modal-modes '()
   "My modal modes."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-safe-modes-hooks '()
+(defcustom noxrcp-safe-modes-hooks '()
   "My hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-programming-modes-hooks '()
+(defcustom noxrcp-programming-modes-hooks '()
   "My programming modes hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-auto-completion-modes-hooks '()
+(defcustom noxrcp-auto-completion-modes-hooks '()
   "My auto completion hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-read-only-modes-hooks '()
+(defcustom noxrcp-read-only-modes-hooks '()
   "My read only modes hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-toggle-quotes-modes-hooks '()
+(defcustom noxrcp-toggle-quotes-modes-hooks '()
   "My ruby tools modes hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-highlighted-digits-modes-hooks '()
+(defcustom noxrcp-highlighted-digits-modes-hooks '()
   "My hooks with highlight digits."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-modal-modes-hooks '()
+(defcustom noxrcp-modal-modes-hooks '()
   "My modal modes hooks."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defcustom myinit-default-idle-timer-seconds '()
+(defcustom noxrcp-default-idle-timer-seconds '()
   "My default idle timer wait timeout."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;;;###autoload
-(defmacro myinit-after-load (feature &rest body)
+(defmacro noxrcp-after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
 
   (declare (indent defun))
@@ -242,26 +242,26 @@ Otherwise use `list'."
 ;; )
 
 ;;;###autoload
-(defun myinit-add-mode-to-patterns (mode &rest patterns)
+(defun noxrcp-add-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun myinit-add-pattern-to-modes (pattern &rest modes)
+(defun noxrcp-add-pattern-to-modes (pattern &rest modes)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
-(defun myinit-add-mode-to-hooks (mode hooks)
+(defun noxrcp-add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 
 ;;;###autoload
-(defun myinit-autoload-file-on-functions (file-name &rest functions)
+(defun noxrcp-autoload-file-on-functions (file-name &rest functions)
   "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
   (dolist (function-name functions)
     (autoload function-name file-name nil t)))
@@ -273,7 +273,7 @@ Otherwise use `list'."
 
 ;;;###autoload
 ;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
-(defun myinit-run-with-idle-timer-in-current-buffer (delay-secs with-repeat fn &rest args)
+(defun noxrcp-run-with-idle-timer-in-current-buffer (delay-secs with-repeat fn &rest args)
   "After `DELAY-SECS' with `WITH-REPEAT' run some `FN' with `ARGS'.
 Like `run-with-idle-timer' but always in the `current-buffer'.
 Cancels itself, if this buffer was killed."
@@ -289,6 +289,6 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provide 'myinit)
+(provide 'noxrcp)
 
-;;; myinit.el ends here
+;;; noxrcp.el ends here

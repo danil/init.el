@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-go-autocomplete)
+(add-hook 'after-init-hook 'noxrcp-go-autocomplete)
 
-(defun myinit-go-autocomplete ()
+(defun noxrcp-go-autocomplete ()
   "My init."
 
  (require 'go-autocomplete))

@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-two-column)
-(defun myinit-two-column ()
+(add-hook 'after-init-hook 'noxrcp-two-column)
+(defun noxrcp-two-column ()
   "My init."
   (global-set-key "\C-x6" nil)
   (global-set-key [f2] nil))

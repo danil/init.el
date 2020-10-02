@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-edbi)
-(defun myinit-company-edbi ()
+(add-hook 'after-init-hook 'noxrcp-company-edbi)
+(defun noxrcp-company-edbi ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-edbi--setup)
-    (with-eval-after-load 'company (myinit-company-edbi--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-edbi--setup)
+    (with-eval-after-load 'company (noxrcp-company-edbi--setup))))
 
-(defun myinit-company-edbi--setup ()
-  (add-hook 'sql-interactive-mode-hook 'myinit-company-edbi--setup-sql-mode)
-  (add-hook 'shell-mode-hook 'myinit-company-edbi--setup-sql-mode))
+(defun noxrcp-company-edbi--setup ()
+  (add-hook 'sql-interactive-mode-hook 'noxrcp-company-edbi--setup-sql-mode)
+  (add-hook 'shell-mode-hook 'noxrcp-company-edbi--setup-sql-mode))
 
-(defun myinit-company-edbi--setup-sql-mode ()
+(defun noxrcp-company-edbi--setup-sql-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-edbi

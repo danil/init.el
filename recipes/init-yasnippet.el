@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Version: 0.0.1
-;; Package-Requires: ((myinit))
+;; Package-Requires: ((noxrcp))
 ;; Keywords: convenience
 ;; URL: https://github.com/danil/init.el
 
@@ -37,14 +37,14 @@
 
 (autoload 'yas-reload-all "yasnippet" nil t)
 
-(add-hook 'after-init-hook 'myinit-yasnippet)
+(add-hook 'after-init-hook 'noxrcp-yasnippet)
 
-(defun myinit-yasnippet ()
+(defun noxrcp-yasnippet ()
   "My init."
 
   (yas-reload-all)
 
-  (myinit-after-load 'yasnippet
+  (noxrcp-after-load 'yasnippet
     ;; How to fix Yasnippet and Autocomplete tab key collision
     ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -52,19 +52,19 @@
     ;; Set Yasnippet's key binding to shift+tab
     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
-  ;; (if (fboundp 'hydra-repeat) (myinit-yasnippet--hydra)
-  ;;   (with-eval-after-load 'hydra (myinit-yasnippet--hydra)))
+  ;; (if (fboundp 'hydra-repeat) (noxrcp-yasnippet--hydra)
+  ;;   (with-eval-after-load 'hydra (noxrcp-yasnippet--hydra)))
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-yasnippet--lazyinit)))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-yasnippet--lazyinit)))
 
-(defun myinit-yasnippet--lazyinit ()
+(defun noxrcp-yasnippet--lazyinit ()
   "Run `yasnippet'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'yas-minor-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'yas-minor-mode))
 
-;; (defun myinit-yasnippet--hydra ()
+;; (defun noxrcp-yasnippet--hydra ()
 ;;   (defhydra hydra-yasnippet (:color blue :hint nil)
 ;;     "
 ;;               ^YASnippets^

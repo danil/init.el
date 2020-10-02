@@ -31,44 +31,44 @@
 
 ;;; Code:
 
-(defcustom myinit-lua-mode-patterns '()
+(defcustom noxrcp-lua-mode-patterns '()
   "Regexp patterns associated with `lua-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-lua-mode-patterns
+(custom-set-variables '(noxrcp-lua-mode-patterns
                         '(
                           "\\.lua\\.example\\'"
                           "\\.ws\\'"
                           )))
 
-(add-hook 'after-init-hook 'myinit-lua-mode)
-(defun myinit-lua-mode ()
+(add-hook 'after-init-hook 'noxrcp-lua-mode)
+(defun noxrcp-lua-mode ()
   "My init."
-  (dolist (pattern myinit-lua-mode-patterns)
+  (dolist (pattern noxrcp-lua-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'lua-mode)))
-  (myinit-after-load 'lua-mode
+  (noxrcp-after-load 'lua-mode
     ;; <http://lua-users.org/wiki/LuaStyleGuide>,
     ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>.
     (setq lua-indent-level 2)
     ;; (define-key lua-mode-map "\C-c\C-f" nil)
     (define-key lua-mode-map "\C-v" nil)))
 
-(defun myinit-lua-mode--rainbow-identifiers-init ()
+(defun noxrcp-lua-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'lua-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-lua-mode--rainbow-identifiers-filter)
+              'noxrcp-lua-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face font-lock-function-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-lua-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-lua-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

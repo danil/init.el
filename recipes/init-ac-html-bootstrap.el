@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ac-html-bootstrap)
+(add-hook 'after-init-hook 'noxrcp-ac-html-bootstrap)
 
-(defun myinit-ac-html-bootstrap ()
+(defun noxrcp-ac-html-bootstrap ()
   "My init."
 
-  (myinit-after-load 'ac-html (ac-html-bootstrap+)))
+  (noxrcp-after-load 'ac-html (ac-html-bootstrap+)))
 
 ;;; init-ac-html-bootstrap.el ends here

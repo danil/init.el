@@ -33,11 +33,11 @@
 
 (autoload 'json-reformat-region "json-reformat" nil t)
 
-(add-hook 'after-init-hook 'myinit-json-reformat)
+(add-hook 'after-init-hook 'noxrcp-json-reformat)
 
-(defun myinit-json-reformat ()
+(defun noxrcp-json-reformat ()
   "My init."
 
-  (define-key myinit-map (kbd "m j j r") 'json-reformat-region))
+  (define-key noxrcp-map (kbd "m j j r") 'json-reformat-region))
 
 ;;; init-json-reformat.el ends here

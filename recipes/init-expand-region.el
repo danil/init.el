@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-expand-region)
+(add-hook 'after-init-hook 'noxrcp-expand-region)
 
-(defun myinit-expand-region ()
+(defun noxrcp-expand-region ()
   "My init."
 
-  (myinit-autoload-file-on-functions "expand-region"
+  (noxrcp-autoload-file-on-functions "expand-region"
                                      'er/expand-region
                                      'er/mark-comment
                                      'er/mark-defun
@@ -52,20 +52,20 @@
                                      'er/mark-url
                                      'er/mark-word)
 
-  (define-key myinit-map (kbd "e e") 'er/expand-region)
+  (define-key noxrcp-map (kbd "e e") 'er/expand-region)
 
-  (define-key myinit-map (kbd "e c") 'er/mark-comment)
-  (define-key myinit-map (kbd "e d") 'er/mark-defun)
-  (define-key myinit-map (kbd "e m c") 'er/mark-method-call)
-  (define-key myinit-map (kbd "e m m") 'er/mark-email)
-  (define-key myinit-map (kbd "e n") 'er/mark-next-accessor)
-  (define-key myinit-map (kbd "e p i") 'er/mark-inside-pairs)
-  (define-key myinit-map (kbd "e p o") 'er/mark-outside-pairs)
-  (define-key myinit-map (kbd "e q i") 'er/mark-inside-quotes)
-  (define-key myinit-map (kbd "e q o") 'er/mark-outside-quotes)
-  (define-key myinit-map (kbd "e s p") 'er/mark-symbol-with-prefix)
-  (define-key myinit-map (kbd "e s s") 'er/mark-symbol)
-  (define-key myinit-map (kbd "e u") 'er/mark-url)
-  (define-key myinit-map (kbd "e w") 'er/mark-word))
+  (define-key noxrcp-map (kbd "e c") 'er/mark-comment)
+  (define-key noxrcp-map (kbd "e d") 'er/mark-defun)
+  (define-key noxrcp-map (kbd "e m c") 'er/mark-method-call)
+  (define-key noxrcp-map (kbd "e m m") 'er/mark-email)
+  (define-key noxrcp-map (kbd "e n") 'er/mark-next-accessor)
+  (define-key noxrcp-map (kbd "e p i") 'er/mark-inside-pairs)
+  (define-key noxrcp-map (kbd "e p o") 'er/mark-outside-pairs)
+  (define-key noxrcp-map (kbd "e q i") 'er/mark-inside-quotes)
+  (define-key noxrcp-map (kbd "e q o") 'er/mark-outside-quotes)
+  (define-key noxrcp-map (kbd "e s p") 'er/mark-symbol-with-prefix)
+  (define-key noxrcp-map (kbd "e s s") 'er/mark-symbol)
+  (define-key noxrcp-map (kbd "e u") 'er/mark-url)
+  (define-key noxrcp-map (kbd "e w") 'er/mark-word))
 
 ;;; init-expand-region.el ends here

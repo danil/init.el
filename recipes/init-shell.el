@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-shell)
-(defun myinit-shell ()
+(add-hook 'after-init-hook 'noxrcp-shell)
+(defun noxrcp-shell ()
   "My init."
-  (define-key myinit-exec-map (kbd "s") 'shell)
-  (if (boundp 'shell-mode-map) (myinit-shell--setup)
-    (with-eval-after-load 'shell (myinit-shell--setup))))
+  (define-key noxrcp-exec-map (kbd "s") 'shell)
+  (if (boundp 'shell-mode-map) (noxrcp-shell--setup)
+    (with-eval-after-load 'shell (noxrcp-shell--setup))))
 
-(defun myinit-shell--setup ()
+(defun noxrcp-shell--setup ()
   "My init."
   (define-key shell-mode-map (kbd "TAB") nil)
   (define-key shell-mode-map (my-kbd "C-l") 'my-shell-clear))

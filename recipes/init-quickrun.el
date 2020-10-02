@@ -34,19 +34,19 @@
 ;; (custom-set-variables
 ;;  '(quickrun-timeout-seconds 10))
 
-(add-hook 'after-init-hook 'myinit-quickrun)
+(add-hook 'after-init-hook 'noxrcp-quickrun)
 
-(defun myinit-quickrun ()
+(defun noxrcp-quickrun ()
   "My init."
 
-  ;; (if (boundp 'quickrun--mode-map) (myinit-quickrun--customize)
-  ;;   (with-eval-after-load 'quickrun (myinit-quickrun--customize)))
+  ;; (if (boundp 'quickrun--mode-map) (noxrcp-quickrun--customize)
+  ;;   (with-eval-after-load 'quickrun (noxrcp-quickrun--customize)))
 
-  ;; (define-key myinit-map (kbd "! s") 'quickrun-shell)
-  (define-key myinit-map (kbd "! b") 'my-quickrun)
-  (define-key myinit-map (kbd "! r") 'my-quickrun-region))
+  ;; (define-key noxrcp-map (kbd "! s") 'quickrun-shell)
+  (define-key noxrcp-map (kbd "! b") 'my-quickrun)
+  (define-key noxrcp-map (kbd "! r") 'my-quickrun-region))
 
-;; (defun myinit-quickrun--customize()
+;; (defun noxrcp-quickrun--customize()
 ;;   "My init customize."
 ;;   (define-key quickrun--mode-map (kbd "g") 'recompile))
 

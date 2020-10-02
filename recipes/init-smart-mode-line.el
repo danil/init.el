@@ -43,9 +43,9 @@
 
 (autoload 'sml/setup "smart-mode-line" nil t)
 
-(add-hook 'after-init-hook 'myinit-smart-mode-line)
+(add-hook 'after-init-hook 'noxrcp-smart-mode-line)
 
-(defun myinit-smart-mode-line ()
+(defun noxrcp-smart-mode-line ()
   "My init."
 
   (setq sml/theme frame-background-mode)

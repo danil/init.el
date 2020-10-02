@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-org-ac)
+(add-hook 'after-init-hook 'noxrcp-org-ac)
 
-(defun myinit-org-ac ()
+(defun noxrcp-org-ac ()
   "My init."
 
  (org-ac/config-default))

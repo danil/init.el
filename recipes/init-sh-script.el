@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(defcustom myinit-sh-mode-patterns '()
+(defcustom noxrcp-sh-mode-patterns '()
   "Regexp patterns associated with `sh-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-sh-mode-patterns
+ '(noxrcp-sh-mode-patterns
    '(
      "/Procfile\\'"
      "/\\.ackrc\\'"
@@ -57,19 +57,19 @@
      )))
 
 
-(add-hook 'after-init-hook 'myinit-sh-script)
-(defun myinit-sh-script ()
+(add-hook 'after-init-hook 'noxrcp-sh-script)
+(defun noxrcp-sh-script ()
   "My init."
-  (dolist (pattern myinit-sh-mode-patterns)
+  (dolist (pattern noxrcp-sh-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
 
-(defun myinit-sh-mode--rainbow-identifiers-init ()
+(defun noxrcp-sh-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'sh-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-sh-mode--rainbow-identifiers-filter)
+              'noxrcp-sh-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
@@ -79,10 +79,10 @@
                                                   sh-quoted-exec
                                                   ))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-sh-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-sh-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-after (char-after end))

@@ -33,15 +33,15 @@
 
 ;;; Uniquify buffer name.
 
-(add-hook 'after-init-hook 'myinit-uniquify)
-(defun myinit-uniquify ()
+(add-hook 'after-init-hook 'noxrcp-uniquify)
+(defun noxrcp-uniquify ()
   "My init."
   ;; Uniquify
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
   (require 'uniquify)
   (custom-set-variables '(uniquify-min-dir-content 20))
-  (myinit-after-load 'uniquify
+  (noxrcp-after-load 'uniquify
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq
      uniquify-buffer-name-style 'post-forward ; 'forward

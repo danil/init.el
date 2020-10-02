@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-newcomment)
+(add-hook 'after-init-hook 'noxrcp-newcomment)
 
-(defun myinit-newcomment ()
+(defun noxrcp-newcomment ()
   "My init."
 
   (global-set-key (kbd "C-x ;") nil);unbind comment-set-column

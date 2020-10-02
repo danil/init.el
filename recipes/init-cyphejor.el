@@ -56,15 +56,15 @@
                                          ("text" "txt")
                                          ("wdired" "wdir"))))
 
-(add-hook 'after-init-hook 'myinit-cyphejor)
-(defun myinit-cyphejor ()
+(add-hook 'after-init-hook 'noxrcp-cyphejor)
+(defun noxrcp-cyphejor ()
   "My init."
   (require 'cyphejor)
-  (if (boundp 'cyphejor-rules) (myinit-cyphejor--lazyinit)
-    (with-eval-after-load 'cyphejor (myinit-cyphejor--lazyinit))))
+  (if (boundp 'cyphejor-rules) (noxrcp-cyphejor--lazyinit)
+    (with-eval-after-load 'cyphejor (noxrcp-cyphejor--lazyinit))))
 
-(defun myinit-cyphejor--lazyinit ()
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil (lambda () (cyphejor-mode 1))))
+(defun noxrcp-cyphejor--lazyinit ()
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil (lambda () (cyphejor-mode 1))))
 
 ;;; init-cyphejor.el ends here

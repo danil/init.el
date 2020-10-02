@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-sgml-mode)
+(add-hook 'after-init-hook 'noxrcp-sgml-mode)
 
-(defun myinit-sgml-mode ()
+(defun noxrcp-sgml-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'html-mode
+  (noxrcp-add-mode-to-patterns 'html-mode
                                  ;; "\\.html?\\'"
                                  "\\.lp\\'"
                                  "\\.op\\'")
-  (myinit-after-load 'sgml-mode
+  (noxrcp-after-load 'sgml-mode
     ;; (define-key sgml-mode-map "\C-c\C-f" nil)
     (define-key sgml-mode-map "\C-v" nil)))
 

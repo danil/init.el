@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-mouse)
+;; (add-hook 'after-init-hook 'noxrcp-mouse)
 
-;; (defun myinit-mouse ()
+;; (defun noxrcp-mouse ()
 ;;   "My init."
 
 ;;   (global-unset-key [C-down-mouse-1])

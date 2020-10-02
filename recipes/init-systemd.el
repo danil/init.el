@@ -31,40 +31,40 @@
 
 ;;; Code:
 
-(defcustom myinit-systemd-patterns '()
+(defcustom noxrcp-systemd-patterns '()
   "Regexp patterns associated with `systemd'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-systemd--rainbow-identifiers-stop-words '()
+(defcustom noxrcp-systemd--rainbow-identifiers-stop-words '()
   "Do not highlight in `systemd'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-systemd-patterns '())
- '(myinit-systemd--rainbow-identifiers-stop-words '()))
+ '(noxrcp-systemd-patterns '())
+ '(noxrcp-systemd--rainbow-identifiers-stop-words '()))
 
-;; (add-hook 'after-init-hook 'myinit-systemd)
-;; (defun myinit-systemd ()
+;; (add-hook 'after-init-hook 'noxrcp-systemd)
+;; (defun noxrcp-systemd ()
 ;;   "My init."
-;;   (dolist (pattern myinit-systemd-patterns)
+;;   (dolist (pattern noxrcp-systemd-patterns)
 ;;     (add-to-list 'auto-mode-alist (cons pattern 'systemd-mode)))
-;;   (if (boundp 'systemd) (myinit-systemd--setup)
-;;     (with-eval-after-load 'systemd (myinit-systemd--setup))))
-;; (defun myinit-systemd--setup ())
+;;   (if (boundp 'systemd) (noxrcp-systemd--setup)
+;;     (with-eval-after-load 'systemd (noxrcp-systemd--setup))))
+;; (defun noxrcp-systemd--setup ())
 
-(defun myinit-systemd--rainbow-identifiers-init ()
+(defun noxrcp-systemd--rainbow-identifiers-init ()
   (when (equal major-mode 'systemd)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-systemd--rainbow-identifiers-filter)
+              'noxrcp-systemd--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-systemd--rainbow-identifiers-filter (beg end)
+(defun noxrcp-systemd--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
   (let (;; (ch-cur (char-after beg))
         ;; (ch-before (char-before beg))
@@ -74,6 +74,6 @@
         ;; (str-after (buffer-substring-no-properties end (point-max)))
         )
     (and ;; (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ??)))
-         (not (member str-cur myinit-systemd--rainbow-identifiers-stop-words)))))
+         (not (member str-cur noxrcp-systemd--rainbow-identifiers-stop-words)))))
 
 ;;; init-systemd.el ends here

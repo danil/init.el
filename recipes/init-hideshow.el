@@ -33,14 +33,14 @@
 
 ;; Hide Show minor mode (a-la folding)
 ;; <http://www.emacswiki.org/emacs/HideShow>.
-(add-hook 'after-init-hook 'myinit-hideshow)
+(add-hook 'after-init-hook 'noxrcp-hideshow)
 
-(defun myinit-hideshow ()
+(defun noxrcp-hideshow ()
   "My init."
 
-  ;; (myinit-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
+  ;; (noxrcp-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 
-  (myinit-after-load 'hs-minor-mode
+  (noxrcp-after-load 'hs-minor-mode
     ;; (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)
 
     ;; Folding Ruby code (hide show minor mode).

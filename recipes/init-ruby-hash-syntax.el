@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ruby-hash-syntax)
-(defun myinit-ruby-hash-syntax ()
+(add-hook 'after-init-hook 'noxrcp-ruby-hash-syntax)
+(defun noxrcp-ruby-hash-syntax ()
   "My init."
-  (define-key myinit-map (kbd "m t h") 'ruby-toggle-hash-syntax))
+  (define-key noxrcp-map (kbd "m t h") 'ruby-toggle-hash-syntax))
 
 ;;; init-ruby-hash-syntax.el ends here

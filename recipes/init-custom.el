@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-custom)
-;; (defun myinit-custom () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-custom)
+;; (defun noxrcp-custom () "My init.")
 
 ;;; init-custom.el ends here

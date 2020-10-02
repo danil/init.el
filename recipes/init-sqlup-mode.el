@@ -33,17 +33,17 @@
 
 ;;; <https://www.emacswiki.org/emacs/SortWords>.
 
-(add-hook 'after-init-hook 'myinit-sqlup-mode)
+(add-hook 'after-init-hook 'noxrcp-sqlup-mode)
 
-(defun myinit-sqlup-mode ()
+(defun noxrcp-sqlup-mode ()
   "My init."
 
   ;; (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
-  (add-hook 'sql-interactive-mode-hook 'myinit-sqlup-mode-turn-on-or-off) ;capitalize keywords in an interactive session (e.g. psql)
+  (add-hook 'sql-interactive-mode-hook 'noxrcp-sqlup-mode-turn-on-or-off) ;capitalize keywords in an interactive session (e.g. psql)
 
-  (define-key myinit-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
+  (define-key noxrcp-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
 
-(defun myinit-sqlup-mode-turn-on-or-off ()
+(defun noxrcp-sqlup-mode-turn-on-or-off ()
   "Enable or disable the `sqlup-mode' depending on current buffer `sql-product'."
   (interactive)
 

@@ -41,13 +41,13 @@
  '(selectrum-secondary-highlight
    ((t :background "blue"))))
 
-(add-hook 'after-init-hook 'myinit-selectrum)
-(defun myinit-selectrum ()
+(add-hook 'after-init-hook 'noxrcp-selectrum)
+(defun noxrcp-selectrum ()
   "My init."
   (selectrum-mode +1)
   (global-set-key (kbd "C-c C-r") #'selectrum-repeat)
-  ;; (global-set-key (kbd "C-x C-r") 'myinit-selectrum--recentf)
-  (global-set-key (kbd "M-y") 'myinit-selectrum--yank-pop))
+  ;; (global-set-key (kbd "C-x C-r") 'noxrcp-selectrum--recentf)
+  (global-set-key (kbd "M-y") 'noxrcp-selectrum--yank-pop))
 
 ;; Handle completion order for refs in magit with prescient
 ;; https://github.com/raxod502/selectrum/wiki/Additional-Configuration#handle-completion-order-for-refs-in-magit-with-prescient
@@ -62,7 +62,7 @@
       (prescient-sort res))))
 
 ;; ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#switch-to-recent-file>
-;; (defun myinit-selectrum--recentf ()
+;; (defun noxrcp-selectrum--recentf ()
 ;;   "Use `completing-read' to open a recent file."
 ;;   (interactive)
 ;;   ;; (let ((files (mapcar 'abbreviate-file-name recentf-list)))
@@ -72,7 +72,7 @@
 ;; Yank kill ring
 ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#my-yank-pop>,
 ;; <https://www.gnu.org/software/emacs/manual/html_node/eintr/yank.html>
-(defun myinit-selectrum--yank-pop (&optional arg)
+(defun noxrcp-selectrum--yank-pop (&optional arg)
   "Paste a previously killed string.
 With just \\[universal-argument] as ARG, put point at beginning,
 and mark at end.  Otherwise, put point at the end, and mark at
@@ -105,16 +105,16 @@ This is like `yank-pop'.  The differences are:
 
 ;; Markers (mark ring)
 ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#markers-the-mark-ring>
-(defcustom myinit-selectrum--mark-ring-highlight-face 'highlight
+(defcustom noxrcp-selectrum--mark-ring-highlight-face 'highlight
   "The face used to highlight the mark (shown as \"|\") in `selectrum-marks'."
   :type 'face
   :group 'selectrum)
 
-(defvar myinit-selectrum--mark-ring-history ()
+(defvar noxrcp-selectrum--mark-ring-history ()
   "History for the command `selectrum-marks'.
 This is probably not so useful, since marks can move with text.")
 
-(defun myinit-selectrum--mark-ring ()
+(defun noxrcp-selectrum--mark-ring ()
   "Jump to a marker in `mark-ring', signified by a highlighted \"|\" (the vertical bar character).
 Currently truncates line if longer than window body width."
   (interactive)
@@ -151,7 +151,7 @@ Currently truncates line if longer than window body width."
                        for highlighted-candidate = (concat (substring line-string 0 str-pos)
                                                            (propertize
                                                             "|"
-                                                            'face myinit-selectrum--mark-ring-highlight-face)
+                                                            'face noxrcp-selectrum--mark-ring-highlight-face)
                                                            (substring line-string str-pos))
 
                        ;; Create the final formatting of each candidate.
@@ -181,7 +181,7 @@ Currently truncates line if longer than window body width."
                                               marker-pos)))))
            ;; Get the desired marker from the user.
            (chosen-cand (completing-read "Go to marker: " formatted-candidates nil
-                                         t nil myinit-selectrum--mark-ring-history)))
+                                         t nil noxrcp-selectrum--mark-ring-history)))
       ;; Go to the chosen marker.
       (goto-char (cdr (assoc chosen-cand formatted-candidates))))))
 

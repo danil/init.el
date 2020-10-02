@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-erlang)
-(defun myinit-company-erlang ()
+(add-hook 'after-init-hook 'noxrcp-company-erlang)
+(defun noxrcp-company-erlang ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-erlang--setup)
-    (with-eval-after-load 'company (myinit-company-erlang--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-erlang--setup)
+    (with-eval-after-load 'company (noxrcp-company-erlang--setup))))
 
-(defun myinit-company-erlang--setup ()
-  (add-hook 'erlang-mode-hook 'myinit-company-erlang--setup-erlang-mode))
+(defun noxrcp-company-erlang--setup ()
+  (add-hook 'erlang-mode-hook 'noxrcp-company-erlang--setup-erlang-mode))
 
-(defun myinit-company-erlang--setup-erlang-mode ()
+(defun noxrcp-company-erlang--setup-erlang-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-erlang

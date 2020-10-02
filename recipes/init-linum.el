@@ -35,45 +35,45 @@
 
 (autoload 'linum-mode "linum" nil t)
 
-(defcustom myinit-linum-max-lines 1000
+(defcustom noxrcp-linum-max-lines 1000
   "My `linume-mode' max number of lines."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-linum-modes '()
+(defcustom noxrcp-linum-modes '()
   "Major modes associated with `linum-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-linum-modes-hooks '()
+(defcustom noxrcp-linum-modes-hooks '()
   "Major modes hooks associated with `linum-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-linum-max-lines 5000)
- '(myinit-linum-modes (-difference myinit-programming-modes '(org-mode)))
- '(myinit-linum-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) myinit-linum-modes)))
+ '(noxrcp-linum-max-lines 5000)
+ '(noxrcp-linum-modes (-difference noxrcp-programming-modes '(org-mode)))
+ '(noxrcp-linum-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) noxrcp-linum-modes)))
 
-(add-hook 'after-init-hook 'myinit-linum)
+(add-hook 'after-init-hook 'noxrcp-linum)
 
-(defun myinit-linum ()
+(defun noxrcp-linum ()
   "My init."
 
-  ;; (dolist (hook myinit-linum-modes-hooks)
-  ;;   (add-hook hook 'myinit-linum--lazyinit))
+  ;; (dolist (hook noxrcp-linum-modes-hooks)
+  ;;   (add-hook hook 'noxrcp-linum--lazyinit))
 
-  ;; (add-hook 'after-save-hook 'myinit-linum--turn-off)
+  ;; (add-hook 'after-save-hook 'noxrcp-linum--turn-off)
 
-  ;; (define-key myinit-map (kbd "x l") 'myinit-linum--toggle)
+  ;; (define-key noxrcp-map (kbd "x l") 'noxrcp-linum--toggle)
 
   (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
 
-;; (defun myinit-linum--lazyinit ()
+;; (defun noxrcp-linum--lazyinit ()
 ;;   "Run `linum'."
-;;   (myinit-run-with-idle-timer-in-current-buffer
-;;    myinit-default-idle-timer-seconds nil 'myinit-linum--turn-on-or-off))
+;;   (noxrcp-run-with-idle-timer-in-current-buffer
+;;    noxrcp-default-idle-timer-seconds nil 'noxrcp-linum--turn-on-or-off))
 
-;; (defun myinit-linum--toggle ()
+;; (defun noxrcp-linum--toggle ()
 ;;   "Toggle the `linume-mode'."
 ;;   (interactive)
 ;;   (cond ((and (boundp 'linum-mode) (equal linum-mode t))
@@ -81,21 +81,21 @@
 ;;         (t
 ;;          (linum-mode t))))
 
-;; (defun myinit-linum--turn-on-or-off ()
+;; (defun noxrcp-linum--turn-on-or-off ()
 ;;   "Enable or disable the `linume-mode' depending on current buffer lines number."
 ;;   (interactive)
-;;   (if (myinit-linum--is-suitable) (linum-mode t) (linum-mode -1)))
+;;   (if (noxrcp-linum--is-suitable) (linum-mode t) (linum-mode -1)))
 
-;; (defun myinit-linum--turn-off ()
+;; (defun noxrcp-linum--turn-off ()
 ;;   "Disable the `linume-mode' if current buffer have to many lines."
 ;;   (interactive)
-;;   (unless (myinit-linum--is-suitable) (linum-mode -1)))
+;;   (unless (noxrcp-linum--is-suitable) (linum-mode -1)))
 
-;; (defun myinit-linum--is-suitable ()
+;; (defun noxrcp-linum--is-suitable ()
 ;;   "Decides is suitably or not the `linume-mode' for the current buffer."
-;;   (when (and (member major-mode myinit-linum-modes)
+;;   (when (and (member major-mode noxrcp-linum-modes)
 ;;              (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
-;;                (<= buffer-lines myinit-linum-max-lines)))
+;;                (<= buffer-lines noxrcp-linum-max-lines)))
 ;;     t))
 
 ;;; init-linum.el ends here

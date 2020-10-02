@@ -36,9 +36,9 @@
 
 ;; (custom-set-variables '(nvm-dir (f-full "~/n/n")))
 
-(add-hook 'after-init-hook 'myinit-nvm)
+(add-hook 'after-init-hook 'noxrcp-nvm)
 
-(defun myinit-nvm ()
+(defun noxrcp-nvm ()
   "My init."
 
   ;; (nvm-use "0.11")

@@ -31,42 +31,42 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-protobuf-mode)
-(defun myinit-protobuf-mode ()
+(add-hook 'after-init-hook 'noxrcp-protobuf-mode)
+(defun noxrcp-protobuf-mode ()
   "My init."
-  (if (boundp 'protobuf-mode-map) (myinit-protobuf-mode--setup)
-    (with-eval-after-load 'protobuf-mode (myinit-protobuf-mode--setup))))
+  (if (boundp 'protobuf-mode-map) (noxrcp-protobuf-mode--setup)
+    (with-eval-after-load 'protobuf-mode (noxrcp-protobuf-mode--setup))))
 
-(defun myinit-protobuf-mode--setup ()
-  (define-key protobuf-mode-map (kbd "C-c C-f e") 'myinit-protobuf-mode--end-of-defun)
-  (define-key protobuf-mode-map (kbd "C-c C-f n") 'myinit-protobuf-mode--beginning-of-defun))
+(defun noxrcp-protobuf-mode--setup ()
+  (define-key protobuf-mode-map (kbd "C-c C-f e") 'noxrcp-protobuf-mode--end-of-defun)
+  (define-key protobuf-mode-map (kbd "C-c C-f n") 'noxrcp-protobuf-mode--beginning-of-defun))
 
-(defun myinit-protobuf-mode--beginning-of-defun ()
+(defun noxrcp-protobuf-mode--beginning-of-defun ()
   (interactive)
   (call-interactively 'beginning-of-defun)
   (search-forward "message "))
 
-(defun myinit-protobuf-mode--end-of-defun ()
+(defun noxrcp-protobuf-mode--end-of-defun ()
   (interactive)
   (call-interactively 'end-of-defun)
   (when (search-backward "}" nil t) (forward-char)))
 
-(defun myinit-protobuf-mode--rainbow-identifiers-init ()
+(defun noxrcp-protobuf-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'protobuf-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-protobuf-mode--rainbow-identifiers-filter)
+              'noxrcp-protobuf-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
                                                   font-lock-type-face
                                                   font-lock-variable-name-face
                                                   ))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-protobuf-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-protobuf-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

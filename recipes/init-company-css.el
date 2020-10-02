@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-css)
-(defun myinit-company-css ()
+(add-hook 'after-init-hook 'noxrcp-company-css)
+(defun noxrcp-company-css ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-css--setup)
-    (with-eval-after-load 'company (myinit-company-css--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-css--setup)
+    (with-eval-after-load 'company (noxrcp-company-css--setup))))
 
-(defun myinit-company-css--setup ()
-  (add-hook 'css-mode-hook 'myinit-company-css--setup-css-mode))
+(defun noxrcp-company-css--setup ()
+  (add-hook 'css-mode-hook 'noxrcp-company-css--setup-css-mode))
 
-(defun myinit-company-css--setup-css-mode ()
+(defun noxrcp-company-css--setup-css-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-css

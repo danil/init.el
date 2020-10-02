@@ -33,26 +33,26 @@
 
 (autoload 'column-marker-1 "column-marker" nil t)
 
-(add-hook 'after-init-hook 'myinit-column-marker)
+(add-hook 'after-init-hook 'noxrcp-column-marker)
 
-(defun myinit-column-marker ()
+(defun noxrcp-column-marker ()
   "My init."
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-column-marker--lazyinit))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-column-marker--lazyinit))
 
-  (myinit-after-load 'column-marker
+  (noxrcp-after-load 'column-marker
     (cond ((equal frame-background-mode 'light)
            (set-face-background 'column-marker-1 "gray80"))
 
           ((equal frame-background-mode 'dark)
            (set-face-background 'column-marker-1 "gray35")))))
 
-(defun myinit-column-marker--lazyinit ()
+(defun noxrcp-column-marker--lazyinit ()
   "Run `rainbow-column-marker'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds
    nil
    (lambda () (column-marker-1 79))))
 

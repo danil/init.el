@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-go-playground)
+(add-hook 'after-init-hook 'noxrcp-go-playground)
 
-(defun myinit-go-playground ()
+(defun noxrcp-go-playground ()
   "My init."
 
-  (myinit-after-load 'go-playground
+  (noxrcp-after-load 'go-playground
     (define-key go-playground-mode-map (kbd "C-c C-z")
       'go-playground-remove-current-snippet)
     (define-key go-playground-mode-map (kbd "C-j") 'go-playground-save-and-run))
 
-  (myinit-after-load 'go-mode
+  (noxrcp-after-load 'go-mode
     (define-key go-mode-map (kbd "C-c C-z") 'go-playground)))
 
 ;;; init-go-playground.el ends here

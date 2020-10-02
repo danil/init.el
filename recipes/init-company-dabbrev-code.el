@@ -33,12 +33,12 @@
 
 (custom-set-variables '(company-dabbrev-code-everywhere t))
 
-;; (add-hook 'after-init-hook 'myinit-company-dabbrev-code)
-;; (defun myinit-company-dabbrev-code ()
+;; (add-hook 'after-init-hook 'noxrcp-company-dabbrev-code)
+;; (defun noxrcp-company-dabbrev-code ()
 ;;   "My init."
-;;   (if (boundp 'company-dabbrev-code-modes) (myinit-company-dabbrev-code--setup)
-;;     (with-eval-after-load 'company-dabbrev-code (myinit-company-dabbrev-code--setup))))
+;;   (if (boundp 'company-dabbrev-code-modes) (noxrcp-company-dabbrev-code--setup)
+;;     (with-eval-after-load 'company-dabbrev-code (noxrcp-company-dabbrev-code--setup))))
 
-;; (defun myinit-company-dabbrev-code--setup ())
+;; (defun noxrcp-company-dabbrev-code--setup ())
 
 ;;; init-company-dabbrev-code.el ends here

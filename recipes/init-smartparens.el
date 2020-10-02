@@ -31,18 +31,18 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-smartparens)
+(add-hook 'after-init-hook 'noxrcp-smartparens)
 
-(defun myinit-smartparens ()
+(defun noxrcp-smartparens ()
   "My init."
 
-  (myinit-add-mode-to-hooks (lambda ()
+  (noxrcp-add-mode-to-hooks (lambda ()
                           (turn-on-smartparens-mode)
                           (turn-on-show-smartparens-mode))
                         '(cider-repl-mode-hook
                           clojure-mode-hook))
 
-  (myinit-after-load 'smartparens
+  (noxrcp-after-load 'smartparens
     (sp-with-modes sp--lisp-modes (sp-local-pair "'" nil :actions nil)) ;adds `' as a local pair in lisp <https://github.com/Fuco1/smartparens/issues/286#issuecomment-32324743>, <https://github.com/Fuco1/smartparens/wiki/Pair-management#local-pair-definitions>
     (define-key sp-keymap (my-kbd "m s u") 'sp-unwrap-sexp)
     (define-key sp-keymap (my-kbd "m s s f") 'sp-forward-slurp-sexp)

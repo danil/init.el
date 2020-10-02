@@ -37,16 +37,16 @@
  '(save-place-file "~/.emacs.var/places") ; Name of the file that records `save-place-alist' value.
  '(save-place-limit 10000))
 
-(add-hook 'after-init-hook 'myinit-saveplace)
+(add-hook 'after-init-hook 'noxrcp-saveplace)
 
-(defun myinit-saveplace ()
+(defun noxrcp-saveplace ()
   "My init."
 
   (if (>= emacs-major-version 25)
       (save-place-mode)
 
     (require 'saveplace)
-    (myinit-after-load 'saveplace
+    (noxrcp-after-load 'saveplace
       (setq-default save-place t))))
 
 ;;; init-saveplace.el ends here

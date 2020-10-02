@@ -34,14 +34,14 @@
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(add-hook 'after-init-hook 'myinit-redis)
+(add-hook 'after-init-hook 'noxrcp-redis)
 
-(defun myinit-redis ()
+(defun noxrcp-redis ()
   "My init."
 
-  (add-hook 'comint-mode-hook 'myinit-redis--turn-on-history))
+  (add-hook 'comint-mode-hook 'noxrcp-redis--turn-on-history))
 
-(defun myinit-redis--turn-on-history ()
+(defun noxrcp-redis--turn-on-history ()
   "Set Redis history file path and assign hook on sentinel event."
 
   (when (equal (buffer-name) "*redis*")
@@ -49,6 +49,6 @@
       (when process
         (setq comint-input-ring-file-name "~/.rediscli_history")
         (comint-read-input-ring)
-        (set-process-sentinel process #'myinit-comint--write-history)))))
+        (set-process-sentinel process #'noxrcp-comint--write-history)))))
 
 ;;; init-redis.el ends here

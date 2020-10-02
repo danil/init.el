@@ -35,17 +35,17 @@
  '(tldr-directory-path (expand-file-name "tldr/" "~/.emacs.var"))
  '(tldr-use-word-at-point t))
 
-(defconst myinit-tldr-face-code-background "gray10")
+(defconst noxrcp-tldr-face-code-background "gray10")
 
-(add-hook 'after-init-hook 'myinit-tldr)
+(add-hook 'after-init-hook 'noxrcp-tldr)
 
-(defun myinit-tldr ()
+(defun noxrcp-tldr ()
   "My init."
 
-  (if (boundp 'tldr-directory-path) (myinit-tldr--customize)
-    (with-eval-after-load 'tldr (myinit-tldr--customize))))
+  (if (boundp 'tldr-directory-path) (noxrcp-tldr--customize)
+    (with-eval-after-load 'tldr (noxrcp-tldr--customize))))
 
-(defun myinit-tldr--customize()
+(defun noxrcp-tldr--customize()
   "My init customize."
 
   ;; (when (equal frame-background-mode 'dark)
@@ -53,10 +53,10 @@
 
   (when (equal frame-background-mode 'dark)
     (set-face-attribute 'tldr-code-block nil
-                        :background myinit-tldr-face-code-background))
+                        :background noxrcp-tldr-face-code-background))
 
   (when (equal frame-background-mode 'dark)
     (set-face-attribute 'tldr-command-argument nil
-                        :background myinit-tldr-face-code-background)))
+                        :background noxrcp-tldr-face-code-background)))
 
 ;;; init-tldr.el ends here

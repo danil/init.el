@@ -35,25 +35,25 @@
  '(anzu-mode-line ((((class color) (min-colors 88) (background dark))
                     (:background "black" :foreground "magenta" :weight bold))))
  '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark))
-                             (:inherit myinit-faces--alert-fixme)))))
+                             (:inherit noxrcp-faces--alert-fixme)))))
 
-(add-hook 'after-init-hook 'myinit-anzu)
+(add-hook 'after-init-hook 'noxrcp-anzu)
 
-(defun myinit-anzu ()
+(defun noxrcp-anzu ()
   "My init."
 
   (global-set-key (kbd "M-%") 'anzu-query-replace)
   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
-  (if (boundp 'global-anzu-mode) (myinit-lazy-anzu)
-    (with-eval-after-load 'anzu (myinit-lazy-anzu))))
+  (if (boundp 'global-anzu-mode) (noxrcp-lazy-anzu)
+    (with-eval-after-load 'anzu (noxrcp-lazy-anzu))))
 
-(defun myinit-lazy-anzu ()
+(defun noxrcp-lazy-anzu ()
   "My init lazy."
   (global-anzu-mode t)
-  ;; (myinit-customize-anzu)
+  ;; (noxrcp-customize-anzu)
   )
 
-;; (defun myinit-customize-anzu () "My init customize.")
+;; (defun noxrcp-customize-anzu () "My init customize.")
 
 ;;; init-anzu.el ends here

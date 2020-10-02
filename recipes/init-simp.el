@@ -42,15 +42,15 @@
 ;; (global-set-key (kbd "C-c f f") 'simp-project-find-file)
 ;; (global-set-key (kbd "C-c f g") 'simp-project-rgrep)
 
-(add-hook 'after-init-hook 'myinit-simp)
+(add-hook 'after-init-hook 'noxrcp-simp)
 
-(defun myinit-simp ()
+(defun noxrcp-simp ()
   "My init."
 
-  (myinit-after-load 'simp
+  (noxrcp-after-load 'simp
     (if (fboundp 'ido-mode)
         (setq simp-completing-read-command 'ido-completing-read)
-      (myinit-after-load 'ido
+      (noxrcp-after-load 'ido
         (setq simp-completing-read-command 'ido-completing-read)))
 
     (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>

@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-git-timemachine)
+(add-hook 'after-init-hook 'noxrcp-git-timemachine)
 
-(defun myinit-git-timemachine ()
+(defun noxrcp-git-timemachine ()
   "My init."
 
-  (define-key myinit-map (kbd "V r") 'git-timemachine))
+  (define-key noxrcp-map (kbd "V r") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here

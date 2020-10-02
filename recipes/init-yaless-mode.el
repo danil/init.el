@@ -35,12 +35,12 @@
 
 ;;; TODO: Move to trash branch (not yaless-mode not used).
 
-(add-hook 'after-init-hook 'myinit-yaless-mode)
+(add-hook 'after-init-hook 'noxrcp-yaless-mode)
 
-(defun myinit-yaless-mode ()
+(defun noxrcp-yaless-mode ()
   "My init."
 
-  (define-key myinit-map (kbd "C-f") 'yaless-mode-on))
+  (define-key noxrcp-map (kbd "C-f") 'yaless-mode-on))
 
 (defun yaless-mode-on ()
   (interactive)

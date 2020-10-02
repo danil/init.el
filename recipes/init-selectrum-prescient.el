@@ -31,15 +31,15 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-selectrum-prescient)
+(add-hook 'after-init-hook 'noxrcp-selectrum-prescient)
 
-(defun myinit-selectrum-prescient ()
+(defun noxrcp-selectrum-prescient ()
   "My init."
 
-  (if (boundp 'selectrum-mode) (myinit-selectrum-prescient--setup)
-    (with-eval-after-load 'selectrum (myinit-selectrum-prescient--setup))))
+  (if (boundp 'selectrum-mode) (noxrcp-selectrum-prescient--setup)
+    (with-eval-after-load 'selectrum (noxrcp-selectrum-prescient--setup))))
 
-(defun myinit-selectrum-prescient--setup ()
+(defun noxrcp-selectrum-prescient--setup ()
   ;; to make sorting and filtering more intelligent
   (selectrum-prescient-mode +1))
 

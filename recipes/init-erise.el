@@ -31,15 +31,15 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-erise)
+(add-hook 'after-init-hook 'noxrcp-erise)
 
-(defun myinit-erise ()
+(defun noxrcp-erise ()
   "My init."
 
-  ;; (myinit-after-load 'erise
+  ;; (noxrcp-after-load 'erise
   ;;   (setq erise-key-length-limit 30)
   ;;   (setq erise-shell-command "erise"))
 
-  (define-key myinit-map (kbd "m r i s") 'erise))
+  (define-key noxrcp-map (kbd "m r i s") 'erise))
 
 ;;; init-erise.el ends here

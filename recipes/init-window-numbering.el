@@ -34,14 +34,14 @@
 (autoload 'window-numbering-mode "window-numbering"
   "Numbered window shortcuts" t)
 
-(add-hook 'after-init-hook 'myinit-window-numbering)
+(add-hook 'after-init-hook 'noxrcp-window-numbering)
 
-(defun myinit-window-numbering ()
+(defun noxrcp-window-numbering ()
   "My init."
 
   (window-numbering-mode)
 
-  (myinit-after-load 'window-numbering
+  (noxrcp-after-load 'window-numbering
     ;; <http://blog.binchen.org/?p=512#sec-1>.
     (custom-set-faces
      '(window-numbering-face

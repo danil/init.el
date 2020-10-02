@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-ispall)
-(defun myinit-company-ispall ()
+(add-hook 'after-init-hook 'noxrcp-company-ispall)
+(defun noxrcp-company-ispall ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-ispall--setup)
-    (with-eval-after-load 'company (myinit-company-ispall--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-ispall--setup)
+    (with-eval-after-load 'company (noxrcp-company-ispall--setup))))
 
-(defun myinit-company-ispall--setup ()
+(defun noxrcp-company-ispall--setup ()
   (add-to-list 'company-backends 'company-ispell))
 
 ;;; init-company-ispall.el ends here

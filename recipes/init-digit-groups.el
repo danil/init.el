@@ -33,15 +33,15 @@
 
 ;;; highlighting digit groups in numbers.
 
-(add-hook 'after-init-hook 'myinit-digit-groups)
-(defun myinit-digit-groups ()
+(add-hook 'after-init-hook 'noxrcp-digit-groups)
+(defun noxrcp-digit-groups ()
   "My init."
-  (dolist (hook myinit-highlighted-digits-modes-hooks)
-    (add-hook hook 'myinit-digit-groups--lazyinit)))
+  (dolist (hook noxrcp-highlighted-digits-modes-hooks)
+    (add-hook hook 'noxrcp-digit-groups--lazyinit)))
 
-(defun myinit-digit-groups--lazyinit ()
+(defun noxrcp-digit-groups--lazyinit ()
   "Run `digit-groups'."
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'digit-groups-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'digit-groups-mode))
 
 ;;; init-digit-groups.el ends here

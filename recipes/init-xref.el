@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-xref)
-;; (defun myinit-xref ()
+;; (add-hook 'after-init-hook 'noxrcp-xref)
+;; (defun noxrcp-xref ()
 ;;   "My init."
-;;     (if (fboundp 'xref-pop-marker-stack) (myinit-xref--setup)
-;;       (with-eval-after-load 'xref (myinit-xref--setup))))
+;;     (if (fboundp 'xref-pop-marker-stack) (noxrcp-xref--setup)
+;;       (with-eval-after-load 'xref (noxrcp-xref--setup))))
 
-;; ;; (defun myinit-xref--setup ()
+;; ;; (defun noxrcp-xref--setup ()
 ;; ;;   (define-key esc-map (kbd "C-c C-k") #'xref-pop-marker-stack))
 
 ;;; init-xref.el ends here

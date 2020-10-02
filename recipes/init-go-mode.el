@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(defcustom myinit-go-mode--rainbow-identifiers-stop-words '()
+(defcustom noxrcp-go-mode--rainbow-identifiers-stop-words '()
   "Do not highlight in `go-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
  '(gofmt-command "goimports") ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
- '(myinit-go-mode--rainbow-identifiers-stop-words
+ '(noxrcp-go-mode--rainbow-identifiers-stop-words
    '(
      "adler32"
      "aes"
@@ -224,37 +224,37 @@
      "Valid"
      )))
 
-(add-hook 'after-init-hook 'myinit-go-mode)
-(defun myinit-go-mode ()
+(add-hook 'after-init-hook 'noxrcp-go-mode)
+(defun noxrcp-go-mode ()
   "My init."
-    (if (boundp 'go-mode-map) (myinit-go-mode--customize)
-      (with-eval-after-load 'go-mode (myinit-go-mode--customize))))
+    (if (boundp 'go-mode-map) (noxrcp-go-mode--customize)
+      (with-eval-after-load 'go-mode (noxrcp-go-mode--customize))))
 
-(defun myinit-go-mode--customize ()
+(defun noxrcp-go-mode--customize ()
   (add-hook 'before-save-hook #'gofmt-before-save)
-  (define-key go-mode-map (kbd "C-c C-f e") 'myinit-go-mode--end-of-defun)
+  (define-key go-mode-map (kbd "C-c C-f e") 'noxrcp-go-mode--end-of-defun)
   (define-key go-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (my-kbd "? ? f") 'godoc-at-point))
 
-(defun myinit-go-mode--end-of-defun ()
+(defun noxrcp-go-mode--end-of-defun ()
   (interactive)
   (call-interactively 'end-of-defun)
   (when (search-backward "}" nil t) (forward-char)))
 
-(defun myinit-go-mode--highlight-static-regexps-init ()
+(defun noxrcp-go-mode--highlight-static-regexps-init ()
   (when (equal major-mode 'go-mode)
     (make-local-variable 'highlight-static-regexps-filter-functions)
     (add-hook 'highlight-static-regexps-filter-functions
-              'myinit-go-mode--highlight-static-regexps-filter)
+              'noxrcp-go-mode--highlight-static-regexps-filter)
 
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (myinit-highlight-static-regexps--lazyinit))))
+      (noxrcp-highlight-static-regexps--lazyinit))))
 
-(defun myinit-go-mode--highlight-static-regexps-filter (beg end)
+(defun noxrcp-go-mode--highlight-static-regexps-filter (beg end)
   "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)
@@ -274,17 +274,17 @@
                             "\treturn"
                             ))))))
 
-(defun myinit-go-mode--rainbow-identifiers-init ()
+(defun noxrcp-go-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'go-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-go-mode--rainbow-identifiers-filter)
+              'noxrcp-go-mode--rainbow-identifiers-filter)
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (myinit-rainbow-identifiers--lazyinit))))
+      (noxrcp-rainbow-identifiers--lazyinit))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-go-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-go-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)
@@ -308,7 +308,7 @@
        (eq face-cur 'font-lock-function-name-face)
        (eq face-cur 'font-lock-type-face)
        (eq face-cur 'font-lock-variable-name-face))
-      (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))
+      (not (member str-cur noxrcp-go-mode--rainbow-identifiers-stop-words)))
      (and
       (or
        ;; (eq face-cur 'default)
@@ -323,17 +323,17 @@
       ;;                     ch80-after))
       (or
        (equal ch-before ?.)
-       (not (member str-cur myinit-go-mode--rainbow-identifiers-stop-words)))))))
+       (not (member str-cur noxrcp-go-mode--rainbow-identifiers-stop-words)))))))
 
-;; (defun myinit-go-mode--non-ascii-identifiers-init ()
+;; (defun noxrcp-go-mode--non-ascii-identifiers-init ()
 ;;   (when (equal major-mode 'go-mode)
 ;;     (make-local-variable 'non-ascii-identifiers-filter-functions)
 ;;     (add-hook 'non-ascii-identifiers-filter-functions
-;;               'myinit-go-mode--non-ascii-identifiers-filter)
+;;               'noxrcp-go-mode--non-ascii-identifiers-filter)
 
-;;     (myinit-non-ascii-identifiers--lazyinit)))
+;;     (noxrcp-non-ascii-identifiers--lazyinit)))
 
-;; (defun myinit-go-mode--non-ascii-identifiers-filter (beg end)
+;; (defun noxrcp-go-mode--non-ascii-identifiers-filter (beg end)
 ;;   "My non-ascii-identifiers custom init for symbol between `BEG' and `END'."
 
 ;;   (let ((face-cur (or (get-char-property beg 'read-face-name)

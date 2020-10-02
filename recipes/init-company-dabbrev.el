@@ -33,7 +33,7 @@
 
 (custom-set-variables '(company-dabbrev-minimum-length 1))
 
-;; (add-hook 'after-init-hook 'myinit-company-dabbrev)
-;; (defun myinit-company-dabbrev () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-company-dabbrev)
+;; (defun noxrcp-company-dabbrev () "My init.")
 
 ;;; init-company-dabbrev.el ends here

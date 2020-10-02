@@ -51,9 +51,9 @@ the current line."
       (when (eq my-point (point))
         (beginning-of-line-text)))))
 
-;; (add-hook 'after-init-hook 'myinit-my-beginning-of-line)
+;; (add-hook 'after-init-hook 'noxrcp-my-beginning-of-line)
 
-;; (defun myinit-my-beginning-of-line ()
+;; (defun noxrcp-my-beginning-of-line ()
 ;;   "My init."
 
 ;;   (eval-after-load "cc-mode"

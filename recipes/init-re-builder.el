@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-re-builder)
+(add-hook 'after-init-hook 'noxrcp-re-builder)
 
-(defun myinit-re-builder ()
+(defun noxrcp-re-builder ()
   "My init."
 
-  (define-key myinit-map (kbd "B R") 're-builder))
+  (define-key noxrcp-map (kbd "B R") 're-builder))
 
 ;;; init-re-builder.el ends here

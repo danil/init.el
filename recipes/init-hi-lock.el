@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-hi-lock)
+(add-hook 'after-init-hook 'noxrcp-hi-lock)
 
-(defun myinit-hi-lock ()
+(defun noxrcp-hi-lock ()
   "My init."
 
-  (define-key myinit-map (kbd "B h") 'my-highlight-regexp))
+  (define-key noxrcp-map (kbd "B h") 'my-highlight-regexp))
 
 (defun my-highlight-regexp (&optional arg)
   (interactive "P")

@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-vlf)
+(add-hook 'after-init-hook 'noxrcp-vlf)
 
-(defun myinit-vlf ()
+(defun noxrcp-vlf ()
   "My init."
 
  (require 'vlf-setup))

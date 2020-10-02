@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-text-mode)
-(defun myinit-company-text-mode ()
+(add-hook 'after-init-hook 'noxrcp-company-text-mode)
+(defun noxrcp-company-text-mode ()
   "My init."
   ;; (add-to-list 'auto-mode-alist '("\\`[^.]+\\'" . text-mode))
-  (if (boundp 'text-mode) (myinit-company-text-mode--setup)
-    (with-eval-after-load 'text-mode (myinit-company-text-mode--setup))))
+  (if (boundp 'text-mode) (noxrcp-company-text-mode--setup)
+    (with-eval-after-load 'text-mode (noxrcp-company-text-mode--setup))))
 
-(defun myinit-company-text-mode--setup ()
+(defun noxrcp-company-text-mode--setup ()
   ;; (setq text-mode-map (make-sparse-keymap))
   (define-key text-mode-map [?\C-\M-i] nil))
 

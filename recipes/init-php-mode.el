@@ -31,34 +31,34 @@
 
 ;;; Code:
 
-;; (defcustom myinit-not-php-mode-patterns '()
+;; (defcustom noxrcp-not-php-mode-patterns '()
 ;;   "Regexp patterns NOT associated with `php-mode'."
-;;   :group 'myinit)
-;; (custom-set-variables '(myinit-not-php-mode-patterns
+;;   :group 'noxrcp)
+;; (custom-set-variables '(noxrcp-not-php-mode-patterns
 ;;                         '('("\\.php[s345t]?\\'" . php-mode)
 ;;                           '("\\.phtml\\'" . php-mode)
 ;;                           '( "/Amkfile\\'" . php-mode)
 ;;                           '( "\\.amk\\'" . php-mode))))
 
-(add-hook 'after-init-hook 'myinit-php-mode)
+(add-hook 'after-init-hook 'noxrcp-php-mode)
 
-(defun myinit-php-mode ()
+(defun noxrcp-php-mode ()
   "My init."
 
-  ;; (myinit-after-load 'php-mode
+  ;; (noxrcp-after-load 'php-mode
   ;;   (define-key php-mode-map (kbd "C-c C-f") nil))
   )
 
-(defun myinit-php-mode--rainbow-identifiers-init ()
+(defun noxrcp-php-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'php-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
           '(default font-lock-variable-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; init-php-mode.el ends here

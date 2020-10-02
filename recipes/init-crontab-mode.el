@@ -31,22 +31,22 @@
 
 ;;; Code:
 
-(defcustom myinit-crontab-mode-patterns '()
+(defcustom noxrcp-crontab-mode-patterns '()
   "Regexp patterns associated with `crontab-mod'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-crontab-mode-patterns '(
+ '(noxrcp-crontab-mode-patterns '(
                                   "/etc/cron.d/"
                                   "crontab\\'"
                                   )))
 
-(add-hook 'after-init-hook 'myinit-crontab-mode)
+(add-hook 'after-init-hook 'noxrcp-crontab-mode)
 
-(defun myinit-crontab-mode ()
+(defun noxrcp-crontab-mode ()
   "My init."
 
-  (dolist (pattern myinit-crontab-mode-patterns)
+  (dolist (pattern noxrcp-crontab-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'crontab-mode))))
 
 ;;; init-crontab-mode.el ends here

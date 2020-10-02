@@ -35,23 +35,23 @@
 
 ;; (custom-set-variables '(css-indent-offset 2))
 
-;; (add-hook 'after-init-hook 'myinit-css)
+;; (add-hook 'after-init-hook 'noxrcp-css)
 
-;; (defun myinit-css ()
+;; (defun noxrcp-css ()
 ;;   "My init."
 
-;;   (myinit-after-load 'css-mode
+;;   (noxrcp-after-load 'css-mode
 ;;     (setq css-indent-offset 2)))
 
-(defun myinit-css-mode--rainbow-identifiers-init ()
+(defun noxrcp-css-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'css-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(css-property css-selector))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; init-css.el ends here

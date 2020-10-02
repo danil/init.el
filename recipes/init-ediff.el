@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ediff)
-(defun myinit-ediff ()
+(add-hook 'after-init-hook 'noxrcp-ediff)
+(defun noxrcp-ediff ()
   "My init."
-  (if (boundp 'ediff-diff-options) (myinit-ediff--setup)
-    (with-eval-after-load 'ediff (myinit-ediff--setup))))
+  (if (boundp 'ediff-diff-options) (noxrcp-ediff--setup)
+    (with-eval-after-load 'ediff (noxrcp-ediff--setup))))
 
-(defun myinit-ediff--setup ()
+(defun noxrcp-ediff--setup ()
   (cond ((equal frame-background-mode 'light)
          )
         ((equal frame-background-mode 'dark)

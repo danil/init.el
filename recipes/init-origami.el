@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-origami)
+(add-hook 'after-init-hook 'noxrcp-origami)
 
-(defun myinit-origami ()
+(defun noxrcp-origami ()
   "My init."
 
-  (myinit-after-load 'origami
+  (noxrcp-after-load 'origami
     (define-key origami-mode-map (my-kbd "f") 'origami-recursively-toggle-node)
 
     (define-key origami-mode-map (my-kbd "F c") 'origami-close-all-nodes)

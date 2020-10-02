@@ -34,27 +34,27 @@
 (custom-set-variables
  '(magit-completing-read-function 'selectrum-completing-read)) ;'ivy-completing-read ;'magit-ido-completing-read
 
-(add-hook 'after-init-hook 'myinit-magit)
+(add-hook 'after-init-hook 'noxrcp-magit)
 
-(defun myinit-magit ()
+(defun noxrcp-magit ()
   "My init."
 
-  (define-key myinit-map (kbd "v") 'magit-status)
+  (define-key noxrcp-map (kbd "v") 'magit-status)
 
-  (define-key myinit-map (kbd "V d") 'magit-diff-buffer-file)
-  (define-key myinit-map (kbd "V D") 'magit-diff)
+  (define-key noxrcp-map (kbd "V d") 'magit-diff-buffer-file)
+  (define-key noxrcp-map (kbd "V D") 'magit-diff)
 
-  (define-key myinit-map (kbd "V f") 'magit-find-file)
+  (define-key noxrcp-map (kbd "V f") 'magit-find-file)
 
-  (define-key myinit-map (kbd "V l") 'magit-log)
+  (define-key noxrcp-map (kbd "V l") 'magit-log)
 
-  (define-key myinit-map (kbd "V L l") 'magit-log-long)
-  (define-key myinit-map (kbd "V L f") 'magit-file-log)
+  (define-key noxrcp-map (kbd "V L l") 'magit-log-long)
+  (define-key noxrcp-map (kbd "V L f") 'magit-file-log)
 
-  (define-key myinit-map (kbd "V s") 'magit-show-commit)
-  (define-key myinit-map (kbd "V S c") 'magit-show)
+  (define-key noxrcp-map (kbd "V s") 'magit-show-commit)
+  (define-key noxrcp-map (kbd "V S c") 'magit-show)
 
-  (myinit-after-load 'magit
+  (noxrcp-after-load 'magit
     (define-key magit-mode-map (my-kbd "V S 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (my-kbd "V S 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (my-kbd "V S 3") 'magit-show-level-3-all)

@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-cus-face)
-;; (defun myinit-cus-face () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-cus-face)
+;; (defun noxrcp-cus-face () "My init.")
 
 ;;; init-cus-face.el ends here

@@ -31,15 +31,15 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-simple)
+(add-hook 'after-init-hook 'noxrcp-simple)
 
-(defun myinit-simple ()
+(defun noxrcp-simple ()
   "My init."
 
-  (define-key myinit-map (kbd "l c") 'count-words-region)
-  (define-key myinit-map (kbd "l t") 'toggle-truncate-lines)
+  (define-key noxrcp-map (kbd "l c") 'count-words-region)
+  (define-key noxrcp-map (kbd "l t") 'toggle-truncate-lines)
 
-  ;; (myinit-after-load 'simple
+  ;; (noxrcp-after-load 'simple
   ;;   ;; (define-key visual-line-mode-map "C-SPC" nil)
   ;;   (define-key special-mode-map " " nil))
 

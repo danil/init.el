@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-flycheck-golangci-lint)
-(defun myinit-flycheck-golangci-lint ()
+(add-hook 'after-init-hook 'noxrcp-flycheck-golangci-lint)
+(defun noxrcp-flycheck-golangci-lint ()
   "My init."
-  (if (boundp 'flycheck-mode) (myinit-flycheck-golangci-lint--init)
-    (with-eval-after-load 'flycheck (myinit-flycheck-golangci-lint--init))))
+  (if (boundp 'flycheck-mode) (noxrcp-flycheck-golangci-lint--init)
+    (with-eval-after-load 'flycheck (noxrcp-flycheck-golangci-lint--init))))
 
-(defun myinit-flycheck-golangci-lint--init ()
+(defun noxrcp-flycheck-golangci-lint--init ()
   (flycheck-golangci-lint-setup)
   ;; (setq flycheck-golangci-lint-config "path/to/config") ;; --config (default: nil)
   ;; (setq flycheck-golangci-lint-fast t) ;; --fast (default: nil)

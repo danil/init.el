@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-su)
-(defun myinit-su ()
+(add-hook 'after-init-hook 'noxrcp-su)
+(defun noxrcp-su ()
   "My init."
 
   (su-mode t))

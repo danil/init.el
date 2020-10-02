@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-grep)
+;; (add-hook 'after-init-hook 'noxrcp-grep)
 
-;; (defun myinit-grep ()
+;; (defun noxrcp-grep ()
 ;;   "My init."
 
-;;   (myinit-after-load 'grep
+;;   (noxrcp-after-load 'grep
 ;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-grep.el ends here

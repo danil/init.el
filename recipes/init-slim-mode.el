@@ -31,23 +31,23 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-slim-mode)
-(defun myinit-slim-mode ()
+(add-hook 'after-init-hook 'noxrcp-slim-mode)
+(defun noxrcp-slim-mode ()
   "My init."
-  (myinit-after-load 'slim-mode
+  (noxrcp-after-load 'slim-mode
     (define-key slim-mode-map (kbd "\C-c\C-f") nil)
     (define-key slim-mode-map (kbd "M-_") nil)
     (define-key slim-mode-map (kbd "M-?") nil)
     (define-key slime-parent-map (kbd "M-_") nil)
     (define-key slime-parent-map (kbd "M-?") nil)))
 
-(defun myinit-slim-mode--rainbow-identifiers-init ()
+(defun noxrcp-slim-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'slim-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-slim-mode--rainbow-identifiers-filter)
+              'noxrcp-slim-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
                                                   font-lock-type-face
@@ -55,10 +55,10 @@
                                                   font-lock-function-name-face
                                                   font-lock-constant-face
                                                   ))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-slim-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-slim-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

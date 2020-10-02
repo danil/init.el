@@ -34,12 +34,12 @@
 ;; (custom-set-variables
 ;;  '(colir-compose-method 'colir-compose-soft-light))
 
-;; (add-hook 'after-init-hook 'myinit-colir)
-;; (defun myinit-colir ()
+;; (add-hook 'after-init-hook 'noxrcp-colir)
+;; (defun noxrcp-colir ()
 ;;   "My init."
-;;   (if (boundp 'colir-compose-alpha) (myinit-lazy-colir)
-;;     (with-eval-after-load 'colir (myinit-lazy-colir))))
-;; (defun myinit-lazy-colir ()
+;;   (if (boundp 'colir-compose-alpha) (noxrcp-lazy-colir)
+;;     (with-eval-after-load 'colir (noxrcp-lazy-colir))))
+;; (defun noxrcp-lazy-colir ()
 ;;   "My init lazy."
 ;;   )
 

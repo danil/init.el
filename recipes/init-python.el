@@ -31,31 +31,31 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-python)
+(add-hook 'after-init-hook 'noxrcp-python)
 
-(defun myinit-python ()
+(defun noxrcp-python ()
   "My init."
 
-  ;; (myinit-after-load 'python
+  ;; (noxrcp-after-load 'python
   ;;   (define-key python-mode-map (kbd "C-c C-f") nil))
 
-  (myinit-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
+  (noxrcp-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
 
-(defun myinit-python-mode--rainbow-identifiers-init ()
+(defun noxrcp-python-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'python-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-python-mode--rainbow-identifiers-filter)
+              'noxrcp-python-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-python-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-python-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

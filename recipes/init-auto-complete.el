@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(defcustom myinit-auto-complete--modes '()
+(defcustom noxrcp-auto-complete--modes '()
   "Modes associated with `auto-complete-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 ;; The common sources for all modes
 ;; <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>.
 (custom-set-variables
- '(myinit-auto-complete--modes '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+ '(noxrcp-auto-complete--modes '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
                                  autoconf-mode
                                  awk-mode
                                  c-mode
@@ -161,26 +161,26 @@
      ac-source-yasnippet))
  )
 
-(add-hook 'after-init-hook 'myinit-auto-complete)
-(defun myinit-auto-complete ()
+(add-hook 'after-init-hook 'noxrcp-auto-complete)
+(defun noxrcp-auto-complete ()
   "My init."
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
-  (if (boundp 'auto-complete-mode) (myinit-auto-complete--setup)
-    (with-eval-after-load 'auto-complete (myinit-auto-complete--setup)))
+  (if (boundp 'auto-complete-mode) (noxrcp-auto-complete--setup)
+    (with-eval-after-load 'auto-complete (noxrcp-auto-complete--setup)))
   (dolist (hook '(
                   less-css-mode-hook
                   sass-mode-hook
                   scss-mode-hook
                   ))
-    (add-hook hook 'myinit-auto-complete--setup-css))
+    (add-hook hook 'noxrcp-auto-complete--setup-css))
   (ac-config-default))
 
-(defun myinit-auto-complete--setup ()
+(defun noxrcp-auto-complete--setup ()
   (add-to-list 'ac-dictionary-directories
                (expand-file-name (concat user-emacs-directory
                                          "my-auto-complete/dict")
                                  default-directory))
-  (dolist (mode myinit-auto-complete--modes)
+  (dolist (mode noxrcp-auto-complete--modes)
     (add-to-list 'ac-modes mode))
   (ac-linum-workaround) ;<https://github.com/auto-complete/auto-complete/blob/da864398a96805a2c79ac61fadeebd420ccb3cdc/doc/manual.md#linum-mode-tries-to-display-the-line-numbers-even-for-the-comletion-menu--linum-mode-bug>
 
@@ -190,10 +190,10 @@
   (define-key ac-completing-map [return] nil) ;; Remove auto-complet from enter/return keys <http://stackoverflow.com/questions/18461584/emacs-autocomplete-disable-ret-to-enter#18462502>.
   )
 
-(defun myinit-auto-complete--setup-css ()
+(defun noxrcp-auto-complete--setup-css ()
   (add-to-list 'ac-sources 'ac-source-css-property))
 
-;; (defun myinit-auto-complete--grab-symbol ()
+;; (defun noxrcp-auto-complete--grab-symbol ()
 ;;   "If point is at the end of a symbol, return it.
 ;; Otherwise, if point is not inside a symbol, return an empty string."
 ;;   (buffer-substring (point)

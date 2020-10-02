@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-flycheck-rust)
+(add-hook 'after-init-hook 'noxrcp-flycheck-rust)
 
-(defun myinit-flycheck-rust ()
+(defun noxrcp-flycheck-rust ()
   "My init."
 
  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))

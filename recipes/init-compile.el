@@ -33,24 +33,24 @@
 
 (custom-set-variables '(compilation-scroll-output t))
 
-(add-hook 'after-init-hook 'myinit-compile)
+(add-hook 'after-init-hook 'noxrcp-compile)
 
-(defun myinit-compile ()
+(defun noxrcp-compile ()
   "My init."
 
-  ;; (myinit-after-load 'compile
+  ;; (noxrcp-after-load 'compile
   ;;   (define-key compilation-mode-map "\C-c\C-f" nil))
 
-  (define-key myinit-map (kbd "! c") 'compile)
+  (define-key noxrcp-map (kbd "! c") 'compile)
 
-  (myinit-after-load 'compile
+  (noxrcp-after-load 'compile
     (require 'ansi-color)
     (add-hook 'compilation-filter-hook
-              #'myinit-compile--colorize-compilation)))
+              #'noxrcp-compile--colorize-compilation)))
 
 ;; ANSI-colors
 ;; <http://endlessparentheses.com/ansi-colors-in-the-compilation-buffer-output.html>.
-(defun myinit-compile--colorize-compilation ()
+(defun noxrcp-compile--colorize-compilation ()
   "Colorize from `compilation-filter-start' to `point'."
   (let ((inhibit-read-only t))
     (ansi-color-apply-on-region

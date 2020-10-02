@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-nodejs)
+(add-hook 'after-init-hook 'noxrcp-nodejs)
 
-(defun myinit-nodejs ()
+(defun noxrcp-nodejs ()
   "My init."
 
   ;; <http://stackoverflow.com/questions/18392303/adding-binary-path-to-emacs-path#18393068>.

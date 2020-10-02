@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-bytecomp)
+(add-hook 'after-init-hook 'noxrcp-bytecomp)
 
-(defun myinit-bytecomp ()
+(defun noxrcp-bytecomp ()
   "My init."
 
-  (myinit-after-load 'lisp-mode
+  (noxrcp-after-load 'lisp-mode
     (define-key emacs-lisp-mode-map (my-kbd "! f") 'byte-compile-file)))
 
 ;;; init-bytecomp.el ends here

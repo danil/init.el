@@ -39,11 +39,11 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
-(defcustom myinit-web-mode-patterns '()
+(defcustom noxrcp-web-mode-patterns '()
   "Regexp patterns associated with `web-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-web-mode-patterns
+(custom-set-variables '(noxrcp-web-mode-patterns
                         '(
                           "/src/vendor/narus/narus-web/.+\\.jsx?\\'"
                           "\\.\\(html\\|text\\)\\.erb\\'"
@@ -60,25 +60,25 @@
                           "\\.tpl\\.php\\'"
                           )))
 
-(add-hook 'after-init-hook 'myinit-web-mode)
+(add-hook 'after-init-hook 'noxrcp-web-mode)
 
-(defun myinit-web-mode ()
+(defun noxrcp-web-mode ()
   "My init."
 
-  (dolist (pattern myinit-web-mode-patterns)
+  (dolist (pattern noxrcp-web-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'web-mode)))
 
-  (add-hook 'web-mode-hook 'myinit-web-mode--armor5games-settings)
+  (add-hook 'web-mode-hook 'noxrcp-web-mode--armor5games-settings)
 
-  (myinit-after-load 'web-mode
+  (noxrcp-after-load 'web-mode
     ;; (define-key web-mode-map (kbd "C-c C-f") nil)
     (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))))
 
-(defun myinit-web-mode--rainbow-identifiers-init ()
+(defun noxrcp-web-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'web-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
@@ -89,9 +89,9 @@
                                                   web-mode-html-tag-face
                                                   ))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-web-mode--armor5games-settings ()
+(defun noxrcp-web-mode--armor5games-settings ()
   "Custom Armor5games settings."
 
   (when (and (buffer-file-name)

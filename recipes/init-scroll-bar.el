@@ -37,7 +37,7 @@
 (custom-set-faces
  '(scroll-bar ((((class color) (min-colors 88) (background dark)) (:background  "white" :foreground "gray" )))))
 
-;; (add-hook 'after-init-hook 'myinit-scroll-bar)
-;; (defun myinit-scroll-bar () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-scroll-bar)
+;; (defun noxrcp-scroll-bar () "My init.")
 
 ;;; init-scroll-bar.el ends here

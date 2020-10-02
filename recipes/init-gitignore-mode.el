@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-gitignore-mode)
+(add-hook 'after-init-hook 'noxrcp-gitignore-mode)
 
-(defun myinit-gitignore-mode ()
+(defun noxrcp-gitignore-mode ()
   "My init."
 
   ;; Git modes <https://github.com/magit/git-modes>.

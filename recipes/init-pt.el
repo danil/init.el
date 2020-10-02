@@ -31,15 +31,15 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-pt)
+(add-hook 'after-init-hook 'noxrcp-pt)
 
-(defun myinit-pt ()
+(defun noxrcp-pt ()
   "My init."
 
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j P p") 'pt-regexp)
+  (when (boundp 'noxrcp-map)
+    (define-key noxrcp-map (kbd "j P p") 'pt-regexp)
 
-    (define-key myinit-map (kbd "j P f") 'pt-regexp-file-pattern)
-    (define-key myinit-map (kbd "j P p") 'projectile-pt)))
+    (define-key noxrcp-map (kbd "j P f") 'pt-regexp-file-pattern)
+    (define-key noxrcp-map (kbd "j P p") 'projectile-pt)))
 
 ;;; init-pt.el ends here

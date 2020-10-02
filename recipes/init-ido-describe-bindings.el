@@ -31,10 +31,10 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ido-describe-bindings)
-(defun myinit-ido-describe-bindings ()
+(add-hook 'after-init-hook 'noxrcp-ido-describe-bindings)
+(defun noxrcp-ido-describe-bindings ()
   "My init."
-  (myinit-after-load 'help
+  (noxrcp-after-load 'help
     (define-key help-map (kbd "b") 'my-describe-bindings)))
 
 (defun my-describe-bindings (&optional arg)

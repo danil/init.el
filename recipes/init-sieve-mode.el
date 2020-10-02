@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-sieve-mode)
+;; (add-hook 'after-init-hook 'noxrcp-sieve-mode)
 
-;; (defun myinit-sieve-mode ()
+;; (defun noxrcp-sieve-mode ()
 ;;   "My init."
 ;;  )
 

@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-statistics)
-(defun myinit-company-statistics ()
+(add-hook 'after-init-hook 'noxrcp-company-statistics)
+(defun noxrcp-company-statistics ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-statistics--setup)
-    (with-eval-after-load 'company (myinit-company-statistics--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-statistics--setup)
+    (with-eval-after-load 'company (noxrcp-company-statistics--setup))))
 
-(defun myinit-company-statistics--setup ()
+(defun noxrcp-company-statistics--setup ()
   (company-statistics-mode))
 
 ;;; init-company-statistics.el ends here

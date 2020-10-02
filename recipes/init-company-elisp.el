@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-elisp)
-(defun myinit-company-elisp ()
+(add-hook 'after-init-hook 'noxrcp-company-elisp)
+(defun noxrcp-company-elisp ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-elisp--setup)
-    (with-eval-after-load 'company (myinit-company-elisp--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-elisp--setup)
+    (with-eval-after-load 'company (noxrcp-company-elisp--setup))))
 
-(defun myinit-company-elisp--setup ()
-  (add-hook 'emacs-lisp-mode-hook 'myinit-company-elisp--setup-emacs-lisp-mode))
+(defun noxrcp-company-elisp--setup ()
+  (add-hook 'emacs-lisp-mode-hook 'noxrcp-company-elisp--setup-emacs-lisp-mode))
 
-(defun myinit-company-elisp--setup-emacs-lisp-mode ()
+(defun noxrcp-company-elisp--setup-emacs-lisp-mode ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-elisp

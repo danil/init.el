@@ -35,8 +35,8 @@
  '(amx-history-length 1000)
  '(amx-save-file "~/.emacs.var/amx-items"))
 
-(add-hook 'after-init-hook 'myinit-amx)
-(defun myinit-amx ()
+(add-hook 'after-init-hook 'noxrcp-amx)
+(defun noxrcp-amx ()
   "My init."
   (amx-mode +1))
 

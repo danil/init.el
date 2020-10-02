@@ -31,23 +31,23 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-dired-aux)
+(add-hook 'after-init-hook 'noxrcp-dired-aux)
 
-(defun myinit-dired-aux ()
+(defun noxrcp-dired-aux ()
   "My init."
 
   (if (boundp 'dired-mode-map)
-      (myinit-lazy-dired-aux)
+      (noxrcp-lazy-dired-aux)
 
     (with-eval-after-load 'dired
-      (myinit-lazy-dired-aux))))
+      (noxrcp-lazy-dired-aux))))
 
-(defun myinit-lazy-dired-aux ()
+(defun noxrcp-lazy-dired-aux ()
   "My init lazy."
 
-  (define-key dired-mode-map (kbd "C-c Q") 'myinit-dired-aux--dired-do-query-replace))
+  (define-key dired-mode-map (kbd "C-c Q") 'noxrcp-dired-aux--dired-do-query-replace))
 
-(defun myinit-dired-aux--dired-do-query-replace (from to &optional delimited)
+(defun noxrcp-dired-aux--dired-do-query-replace (from to &optional delimited)
   "Do `query-replace' of FROM with TO, on all marked files.
 Third arg DELIMITED (prefix arg) means replace only word-delimited matches.
 If you exit (\\[keyboard-quit], RET or q), you can resume the query replace
@@ -63,10 +63,10 @@ with the command \\[tags-loop-continue]."
       (if (and buffer (with-current-buffer buffer
                         buffer-read-only))
           (error "File `%s' is visited read-only" file))))
-  (myinit-dired-aux--tags-query-replace
+  (noxrcp-dired-aux--tags-query-replace
    from to delimited '(dired-get-marked-files nil nil 'dired-nondirectory-p)))
 
-(defun myinit-dired-aux--tags-query-replace (from to &optional delimited file-list-form)
+(defun noxrcp-dired-aux--tags-query-replace (from to &optional delimited file-list-form)
   "Do `query-replace' of FROM with TO on all files listed in tags table.
 Third arg DELIMITED (prefix arg) means replace only word-delimited matches.
 If you exit (\\[keyboard-quit], RET or q), you can resume the query replace

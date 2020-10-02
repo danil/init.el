@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(defface myinit-faces--alert-fixme
+(defface noxrcp-faces--alert-fixme
   '((((background dark)) :foreground "green" :background "red" :weight bold)
     (((background light)) :foreground "green" :background "red" :weight bold))
   "Face for alert that need immediate attention."
-  :group 'myinit-faces)
+  :group 'noxrcp-faces)
 
-;; (add-hook 'after-init-hook 'myinit-faces)
-;; (defun myinit-faces () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-faces)
+;; (defun noxrcp-faces () "My init.")
 
 ;; <http://stackoverflow.com/questions/1242352/get-font-face-under-cursor-in-emacs#1242366>.
 (defun my-face-at-point (pos)

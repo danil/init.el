@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-feebleline)
-(defun myinit-feebleline ()
+(add-hook 'after-init-hook 'noxrcp-feebleline)
+(defun noxrcp-feebleline ()
   "My init."
   (require 'feebleline) (feebleline-mode t))
 

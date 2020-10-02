@@ -35,15 +35,15 @@
 ;;  '(swiper-include-line-number-in-search nil)
 ;;  '(swiper-goto-start-of-match nil))
 
-(add-hook 'after-init-hook 'myinit-swiper)
-(defun myinit-swiper ()
+(add-hook 'after-init-hook 'noxrcp-swiper)
+(defun noxrcp-swiper ()
   "My init."
   ;; (global-set-key "\C-r" 'swiper)
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j O") 'swiper-multi)
-    (define-key myinit-map (kbd "j o") 'myinit-swiper--swiper)))
+  (when (boundp 'noxrcp-map)
+    (define-key noxrcp-map (kbd "j O") 'swiper-multi)
+    (define-key noxrcp-map (kbd "j o") 'noxrcp-swiper--swiper)))
 
-(defun myinit-swiper--swiper (&optional arg)
+(defun noxrcp-swiper--swiper (&optional arg)
   "Run `swiper' with optional argument `ARG' from `symbol-at-point'."
   (interactive "P")
   (if arg

@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(defcustom myinit-rainbow-modes '()
+(defcustom noxrcp-rainbow-modes '()
   "Major modes associated with `rainbow-modes'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-rainbow-modes-hooks '()
+(defcustom noxrcp-rainbow-modes-hooks '()
   "Major modes Hook associated with `rainbow-modes'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-rainbow-modes '(
+ '(noxrcp-rainbow-modes '(
                           css-mode
                           less-css-mode
                           nxml-mode
@@ -50,9 +50,9 @@
                           web-mode
                           xml-mode
                           ))
- '(myinit-rainbow-modes-hooks
+ '(noxrcp-rainbow-modes-hooks
    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           myinit-rainbow-modes))
+           noxrcp-rainbow-modes))
  '(rainbow-html-colors-major-mode-list '(
                                          css-mode
                                          html-mode
@@ -64,18 +64,18 @@
                                          xml-mode
                                          )))
 
-(add-hook 'after-init-hook 'myinit-rainbow-mode)
+(add-hook 'after-init-hook 'noxrcp-rainbow-mode)
 
-(defun myinit-rainbow-mode ()
+(defun noxrcp-rainbow-mode ()
   "My init."
 
-  (dolist (hook myinit-rainbow-modes-hooks)
-    (add-hook hook 'myinit-rainbow-mode--lazyinit)))
+  (dolist (hook noxrcp-rainbow-modes-hooks)
+    (add-hook hook 'noxrcp-rainbow-mode--lazyinit)))
 
-(defun myinit-rainbow-mode--lazyinit ()
+(defun noxrcp-rainbow-mode--lazyinit ()
   "Run `rainbow-mode'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil (lambda () (rainbow-mode t))))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil (lambda () (rainbow-mode t))))
 
 ;;; init-rainbow-mode.el ends here

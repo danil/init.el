@@ -31,21 +31,21 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-rainbow-delimiters)
+(add-hook 'after-init-hook 'noxrcp-rainbow-delimiters)
 
-(defun myinit-rainbow-delimiters ()
+(defun noxrcp-rainbow-delimiters ()
   "My init."
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-rainbow-delimiters--lazyinit))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-rainbow-delimiters--lazyinit))
 
-  ;; (myinit-add-mode-to-hooks (lambda ()
+  ;; (noxrcp-add-mode-to-hooks (lambda ()
   ;;                               (when (or (not (boundp 'rainbow-delimiters-mode))
   ;;                                         (not (eq rainbow-delimiters-mode t)))
   ;;                                 (rainbow-delimiters-mode)))
-  ;;                             myinit-programming-modes-hooks)
+  ;;                             noxrcp-programming-modes-hooks)
 
-  (myinit-after-load 'rainbow-delimiters
+  (noxrcp-after-load 'rainbow-delimiters
     ;; <https://ericscrivner.me/2015/06/better-emacs-rainbow-delimiters-color-scheme/>.
     (custom-set-faces
      ;; custom-set-faces was added by Custom.
@@ -61,10 +61,10 @@
      '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
      '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1")))))))
 
-(defun myinit-rainbow-delimiters--lazyinit ()
+(defun noxrcp-rainbow-delimiters--lazyinit ()
   "Run `rainbow-delimiters'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'rainbow-delimiters-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'rainbow-delimiters-mode))
 
 ;;; init-rainbow-delimiters.el ends here

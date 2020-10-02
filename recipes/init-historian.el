@@ -34,8 +34,8 @@
 (custom-set-variables
  '(historian-save-file "~/.emacs.var/.historian"))
 
-;; (add-hook 'after-init-hook 'myinit-historian)
-;; (defun myinit-historian ()
+;; (add-hook 'after-init-hook 'noxrcp-historian)
+;; (defun noxrcp-historian ()
 ;;   "My init."
 ;;   )
 

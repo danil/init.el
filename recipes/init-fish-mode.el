@@ -1,6 +1,6 @@
-(add-hook 'after-init-hook 'myinit-fish-mode)
+(add-hook 'after-init-hook 'noxrcp-fish-mode)
 
-(defun myinit-fish-mode ()
+(defun noxrcp-fish-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'fish-mode "\\.fish\\'"))
+  (noxrcp-add-mode-to-patterns 'fish-mode "\\.fish\\'"))

@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-shell)
-(defun myinit-company-shell ()
+(add-hook 'after-init-hook 'noxrcp-company-shell)
+(defun noxrcp-company-shell ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-shell--setup)
-    (with-eval-after-load 'company (myinit-company-shell--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-shell--setup)
+    (with-eval-after-load 'company (noxrcp-company-shell--setup))))
 
-(defun myinit-company-shell--setup ()
-  (add-hook 'sh-mode-hook 'myinit-company-shell--setup-sh-mode)
-  (add-hook 'shell-mode-hook 'myinit-company-shell--setup-sh-mode))
+(defun noxrcp-company-shell--setup ()
+  (add-hook 'sh-mode-hook 'noxrcp-company-shell--setup-sh-mode)
+  (add-hook 'shell-mode-hook 'noxrcp-company-shell--setup-sh-mode))
 
-(defun myinit-company-shell--setup-sh-mode ()
+(defun noxrcp-company-shell--setup-sh-mode ()
   ;; (add-to-list 'company-backends '(company-shell company-shell-env company-fish-shell))
   (set (make-local-variable 'company-backends)
        (append '((

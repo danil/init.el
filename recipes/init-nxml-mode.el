@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-nxml-mode)
+;; (add-hook 'after-init-hook 'noxrcp-nxml-mode)
 
-;; (defun myinit-nxml-mode ()
+;; (defun noxrcp-nxml-mode ()
 ;;   "My init."
 
-;;   (myinit-after-load 'nxml-mode
+;;   (noxrcp-after-load 'nxml-mode
 ;;     (define-key nxml-mode-map (kbd "\C-c\C-f") nil)))
 
 ;;; init-nxml-mode.el ends here

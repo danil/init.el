@@ -31,30 +31,30 @@
 
 ;;; Code:
 
-(defcustom myinit-rspec-mode-patterns '()
+(defcustom noxrcp-rspec-mode-patterns '()
   "Regexp patterns associated with `rspec-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-rspec-mode-patterns
+(custom-set-variables '(noxrcp-rspec-mode-patterns
                         '(
                           "_spec\\.rb\\'"
                           "/spec[0-9]*\\.rb\\'"
                           )))
 
-(add-hook 'after-init-hook 'myinit-rspec-mode)
-(defun myinit-rspec-mode ()
+(add-hook 'after-init-hook 'noxrcp-rspec-mode)
+(defun noxrcp-rspec-mode ()
   "My init."
   ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
-  ;; (dolist (hook myinit-rspec-mode-patterns)
-  ;;   (add-hook hook 'myinit-rspec-mode--lazyinit))
+  ;; (dolist (hook noxrcp-rspec-mode-patterns)
+  ;;   (add-hook hook 'noxrcp-rspec-mode--lazyinit))
   (custom-set-variables '(rspec-use-spring-when-possible nil))
-  (myinit-after-load 'rspec-mode
+  (noxrcp-after-load 'rspec-mode
     ;; (setq rspec-use-rvm t)
     (setq rspec-use-rake-when-possible nil)))
 
-(defun myinit-rspec-mode--lazyinit ()
+(defun noxrcp-rspec-mode--lazyinit ()
   "Run `highlight-symbol'."
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil (lambda () (rspec-mode t))))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil (lambda () (rspec-mode t))))
 
 ;;; init-rspec-mode.el ends here

@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-help-mode)
+;; (add-hook 'after-init-hook 'noxrcp-help-mode)
 
-;; (defun myinit-help-mode ()
+;; (defun noxrcp-help-mode ()
 ;;   "My init."
 
-;;   (myinit-after-load 'help-mode
+;;   (noxrcp-after-load 'help-mode
 ;;     (define-key help-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-help-mode.el ends here

@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-replace)
+(add-hook 'after-init-hook 'noxrcp-replace)
 
-(defun myinit-replace ()
+(defun noxrcp-replace ()
   "My init."
 
-  (myinit-after-load 'lisp-mode
-    (define-key myinit-map (kbd "l f") 'flush-lines)
-    (define-key myinit-map (kbd "l k") 'keep-lines)))
+  (noxrcp-after-load 'lisp-mode
+    (define-key noxrcp-map (kbd "l f") 'flush-lines)
+    (define-key noxrcp-map (kbd "l k") 'keep-lines)))
 
 ;;; init-replace.el ends here

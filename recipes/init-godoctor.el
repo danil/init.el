@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-godoctor)
+(add-hook 'after-init-hook 'noxrcp-godoctor)
 
-(defun myinit-godoctor ()
+(defun noxrcp-godoctor ()
   "My init."
 
-  (myinit-after-load 'go-mode
+  (noxrcp-after-load 'go-mode
     (define-key go-mode-map (my-kbd "m g r") 'godoctor-rename)))
 
 ;;; init-godoctor.el ends here

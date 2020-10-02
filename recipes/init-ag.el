@@ -33,21 +33,21 @@
 
 ;; (custom-set-variables '(ag-context-lines 5))
 
-(add-hook 'after-init-hook 'myinit-ag)
+(add-hook 'after-init-hook 'noxrcp-ag)
 
-(defun myinit-ag ()
+(defun noxrcp-ag ()
   "My init."
 
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j A a") 'ag)
+  (when (boundp 'noxrcp-map)
+    (define-key noxrcp-map (kbd "j A a") 'ag)
 
-    (define-key myinit-map (kbd "j A D") 'ag-dired-regexp)
-    (define-key myinit-map (kbd "j A d") 'ag-dired)
-    (define-key myinit-map (kbd "j A f") 'ag-files)
-    (define-key myinit-map (kbd "j A k") 'my-ag-kill-buffers)
-    (define-key myinit-map (kbd "j A r") 'ag-regexp))
+    (define-key noxrcp-map (kbd "j A D") 'ag-dired-regexp)
+    (define-key noxrcp-map (kbd "j A d") 'ag-dired)
+    (define-key noxrcp-map (kbd "j A f") 'ag-files)
+    (define-key noxrcp-map (kbd "j A k") 'my-ag-kill-buffers)
+    (define-key noxrcp-map (kbd "j A r") 'ag-regexp))
 
-  (myinit-after-load 'ag
+  (noxrcp-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")
     ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))

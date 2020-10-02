@@ -32,19 +32,19 @@
 ;;; Code:
 
 ;; (require 'dabbrev)
-;; (add-hook 'after-init-hook 'myinit-counsel-auto-complete)
-;; (defun myinit-counsel-auto-complete ()
+;; (add-hook 'after-init-hook 'noxrcp-counsel-auto-complete)
+;; (defun noxrcp-counsel-auto-complete ()
 ;;   "My init."
-;;   ;; (dolist (pattern myinit-counsel-auto-complete-patterns)
+;;   ;; (dolist (pattern noxrcp-counsel-auto-complete-patterns)
 ;;   ;;   (add-to-list 'auto-mode-alist (cons pattern 'counsel-auto-complete)))
-;;   ;; (if (boundp 'counsel-auto-complete) (myinit-counsel-auto-complete--init)
-;;   ;;   (with-eval-after-load 'counsel-auto-complete (myinit-counsel-auto-complete--init)))
+;;   ;; (if (boundp 'counsel-auto-complete) (noxrcp-counsel-auto-complete--init)
+;;   ;;   (with-eval-after-load 'counsel-auto-complete (noxrcp-counsel-auto-complete--init)))
 ;;   )
 
-;; ;; (defun myinit-counsel-auto-complete--init ())
+;; ;; (defun noxrcp-counsel-auto-complete--init ())
 
 ;; ;; <https://emacs.stackexchange.com/questions/30690/code-auto-completion-with-ivy>.
-;; (defun myinit-counsel-auto-complete--complete ()
+;; (defun noxrcp-counsel-auto-complete--complete ()
 ;;   (interactive)
 ;;   (dabbrev--reset-global-variables)
 ;;   (let* ((abbrev (dabbrev--abbrev-at-point))
@@ -55,12 +55,12 @@
 ;;                                 :sort t))
 ;;             (abbrev-length (length abbrev)))
 ;;         (insert (substring found-match abbrev-length))))))
-;; ;; (defun myinit-counsel-auto-complete--complete ()
+;; ;; (defun noxrcp-counsel-auto-complete--complete ()
 ;; ;;   (dabbrev--reset-global-variables)
 ;; ;;   (let* ((abbrev (dabbrev--abbrev-at-point))
 ;; ;;          (candidates (dabbrev--find-all-expansions abbrev t))
 ;; ;;          (bnd (bounds-of-thing-at-point 'symbol)))
 ;; ;;     (list (car bnd) (cdr bnd) candidates)))
-;; ;; (add-to-list 'completion-at-point-functions 'myinit-counsel-auto-complete--complete)
+;; ;; (add-to-list 'completion-at-point-functions 'noxrcp-counsel-auto-complete--complete)
 
 ;;; init-counsel-auto-complete.el ends here

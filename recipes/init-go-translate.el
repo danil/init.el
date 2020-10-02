@@ -39,17 +39,17 @@
 ;;   installed, or on Windows it will fallback to use powershell to do
 ;;   the tts job.
 
-(add-hook 'after-init-hook 'myinit-go-translate)
+(add-hook 'after-init-hook 'noxrcp-go-translate)
 
-(defun myinit-go-translate ()
+(defun noxrcp-go-translate ()
   "My init."
 
-  (if (boundp 'go-translate-base-url) (myinit-go-translate--init)
-    (with-eval-after-load 'go-translate (myinit-go-translate--init)))
+  (if (boundp 'go-translate-base-url) (noxrcp-go-translate--init)
+    (with-eval-after-load 'go-translate (noxrcp-go-translate--init)))
 
-  (define-key myinit-map (kbd "t") 'go-translate))
+  (define-key noxrcp-map (kbd "t") 'go-translate))
 
-(defun myinit-go-translate--init ()
+(defun noxrcp-go-translate--init ()
   (setq go-translate-local-language "ru")
   (setq go-translate-target-language "en")
 

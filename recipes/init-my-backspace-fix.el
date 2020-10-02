@@ -34,14 +34,14 @@
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 
 ;; (global-set-key [(control h)] 'delete-backward-char)
-(add-hook 'after-init-hook 'myinit-my-backspace-fix)
+(add-hook 'after-init-hook 'noxrcp-my-backspace-fix)
 
-(defun myinit-my-backspace-fix ()
+(defun noxrcp-my-backspace-fix ()
   "My init."
 
   (my-backspace-fix)
 
-  (myinit-after-load 'term-mode (my-backspace-fix)))
+  (noxrcp-after-load 'term-mode (my-backspace-fix)))
 
 (defun my-backspace-fix ()
   (keyboard-translate ?\C-h ?\C-?)

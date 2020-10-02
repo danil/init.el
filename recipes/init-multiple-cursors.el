@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-multiple-cursors)
+(add-hook 'after-init-hook 'noxrcp-multiple-cursors)
 
-(defun myinit-multiple-cursors ()
+(defun noxrcp-multiple-cursors ()
   "My init."
 
-  (define-key myinit-map (kbd "B m c a") 'mc/mark-all-like-this)
-  (define-key myinit-map (kbd "B m c n") 'mc/mark-next-like-this)
-  (define-key myinit-map (kbd "B m c p") 'mc/mark-previous-like-this))
+  (define-key noxrcp-map (kbd "B m c a") 'mc/mark-all-like-this)
+  (define-key noxrcp-map (kbd "B m c n") 'mc/mark-next-like-this)
+  (define-key noxrcp-map (kbd "B m c p") 'mc/mark-previous-like-this))
 
 ;;; init-multiple-cursors.el ends here

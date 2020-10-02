@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-fringe)
+(add-hook 'after-init-hook 'noxrcp-fringe)
 
-(defun myinit-fringe ()
+(defun noxrcp-fringe ()
   "My init."
-  (define-key myinit-map (kbd "x l") 'myinit-fringe--toggle))
+  (define-key noxrcp-map (kbd "x l") 'noxrcp-fringe--toggle))
 
-(defun myinit-fringe--toggle ()
+(defun noxrcp-fringe--toggle ()
   "Toggle modes in the fringe (left margin of the window).
 Toggle the `linume-mode', `diff-hl-mode' and so on."
   (interactive)
@@ -45,11 +45,11 @@ Toggle the `linume-mode', `diff-hl-mode' and so on."
           (and (boundp 'linum-mode) (equal linum-mode t))
           (and (boundp 'diff-hl-mode) (equal diff-hl-mode t)))
          (when (fboundp 'linum-mode) (linum-mode -1))
-         (when (fboundp 'myinit-diff-hl--init) (myinit-diff-hl--init -1)))
+         (when (fboundp 'noxrcp-diff-hl--init) (noxrcp-diff-hl--init -1)))
         (t
          (when (fboundp 'linum-mode) (linum-mode t))
-         (myinit-run-with-idle-timer-in-current-buffer
-          myinit-default-idle-timer-seconds nil
-          (lambda () (myinit-diff-hl--init t))))))
+         (noxrcp-run-with-idle-timer-in-current-buffer
+          noxrcp-default-idle-timer-seconds nil
+          (lambda () (noxrcp-diff-hl--init t))))))
 
 ;;; init-fringe.el ends here

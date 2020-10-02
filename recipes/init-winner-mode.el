@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-winner-mode)
+(add-hook 'after-init-hook 'noxrcp-winner-mode)
 
-(defun myinit-winner-mode ()
+(defun noxrcp-winner-mode ()
   "My init."
 
   (custom-set-variables '(winner-dont-bind-my-keys t))
 
   (when (fboundp 'winner-mode) (winner-mode t))
 
-  (myinit-after-load 'winner
-    (define-key myinit-map (kbd "w u") 'winner-undo)
-    (define-key myinit-map (kbd "w r") 'winner-redo)))
+  (noxrcp-after-load 'winner
+    (define-key noxrcp-map (kbd "w u") 'winner-undo)
+    (define-key noxrcp-map (kbd "w r") 'winner-redo)))
 
 ;;; init-winner-mode.el ends here

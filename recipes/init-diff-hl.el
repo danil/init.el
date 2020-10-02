@@ -42,29 +42,29 @@
  '(diff-hl-draw-borders nil)
  '(diff-hl-side 'right))
 
-;; (add-hook 'after-init-hook 'myinit-diff-hl)
-;; (defun myinit-diff-hl ()
+;; (add-hook 'after-init-hook 'noxrcp-diff-hl)
+;; (defun noxrcp-diff-hl ()
 ;;   "My init."
 ;;   ;; (with-eval-after-load 'diff-hl)
-;;   ;; (define-key myinit-map (kbd "x v") 'myinit-diff-hl-toggle)
-;;   (dolist (hook myinit-programming-modes-hooks)
-;;     (add-hook hook 'myinit-diff-hl--lazyinit)))
+;;   ;; (define-key noxrcp-map (kbd "x v") 'noxrcp-diff-hl-toggle)
+;;   (dolist (hook noxrcp-programming-modes-hooks)
+;;     (add-hook hook 'noxrcp-diff-hl--lazyinit)))
 
-(defun myinit-diff-hl--init (myarg)
+(defun noxrcp-diff-hl--init (myarg)
   "Run `diff-hl'."
   (when (and
-         (fboundp 'myinit-diff-hl--setup)
+         (fboundp 'noxrcp-diff-hl--setup)
          (fboundp 'diff-hl-mode)
          (fboundp 'diff-hl-margin-mode))
     (diff-hl-margin-mode myarg)
     (diff-hl-mode myarg)
-    (myinit-diff-hl--setup myarg)))
+    (noxrcp-diff-hl--setup myarg)))
 
-(defun myinit-diff-hl--setup (myarg)
+(defun noxrcp-diff-hl--setup (myarg)
   "Init/setup or teardown/deinit `diff-hl'."
-  (if myarg (myinit-diff-hl---setup) (myinit-diff-hl---teardown)))
+  (if myarg (noxrcp-diff-hl---setup) (noxrcp-diff-hl---teardown)))
 
-(defun myinit-diff-hl---setup ()
+(defun noxrcp-diff-hl---setup ()
   "Init/setup `diff-hl'."
      (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
      ;; (custom-set-faces
@@ -80,11 +80,11 @@
        ;;                     :foreground "brightred" :background "black")
        (set-face-attribute 'diff-hl-delete nil :inherit 'diff-removed)))
 
-(defun myinit-diff-hl---teardown ()
+(defun noxrcp-diff-hl---teardown ()
   "Teardown/deinit `diff-hl'."
   (remove-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
-;; (defun myinit-diff-hl-toggle ()
+;; (defun noxrcp-diff-hl-toggle ()
 ;;   "Toggle the `diff-hl-mode'."
 ;;   (interactive)
 ;;   (let ((g (lambda (x) (when (fboundp 'diff-hl-mode) (diff-hl-mode x)))))

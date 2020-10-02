@@ -31,46 +31,40 @@
 
 ;;; Code:
 
-(defcustom myinit-json-mode-patterns '()
-  "Regexp patterns associated with `json-mode'."
-  :group 'myinit)
+(defcustom noxrcp-json-mode-patterns '() "Regexp patterns associated with `json-mode'." :group 'noxrcp)
 
 (custom-set-variables
  '(json-encoding-default-indentation "    ")
- '(myinit-json-mode-patterns
-   '(
-     "/composer\\.lock\\'"
-     "\\.bowerrc\\'"
-     )))
+ '(noxrcp-json-mode-patterns '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'")))
 
-(add-hook 'after-init-hook 'myinit-json-mode)
+(add-hook 'after-init-hook 'noxrcp-json-mode)
 
-(defun myinit-json-mode ()
+(defun noxrcp-json-mode ()
   "My init."
 
-  (dolist (pattern myinit-json-mode-patterns)
+  (dolist (pattern noxrcp-json-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'json-mode)))
 
-  (add-hook 'json-mode-hook 'myinit-json-mode--customize)
-  ;; (myinit-after-load 'json-mode
+  (add-hook 'json-mode-hook 'noxrcp-json-mode--customize)
+  ;; (noxrcp-after-load 'json-mode
   ;;   (define-key json-mode-map (kbd "C-c C-f") nil)
   ;;   (define-key json-mode-map (kbd "C-c C-p") nil))
   )
 
-(defun myinit-json-mode--customize ()
+(defun noxrcp-json-mode--customize ()
   (make-local-variable 'js-indent-level)
   (setq js-indent-level 4))
 
-(defun myinit-json-mode--rainbow-identifiers-init ()
+(defun noxrcp-json-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'json-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (myinit-rainbow-identifiers--lazyinit))))
+      (noxrcp-rainbow-identifiers--lazyinit))))
 
 ;;; init-json-mode.el ends here

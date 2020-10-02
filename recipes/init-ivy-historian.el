@@ -31,14 +31,14 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ivy-historian)
+(add-hook 'after-init-hook 'noxrcp-ivy-historian)
 
-(defun myinit-ivy-historian ()
+(defun noxrcp-ivy-historian ()
   "My init."
-  (if (boundp 'ivy-historian-mode) (myinit-lazy-ivy-historian)
-    (with-eval-after-load 'ivy-historian (myinit-lazy-ivy-historian))))
+  (if (boundp 'ivy-historian-mode) (noxrcp-lazy-ivy-historian)
+    (with-eval-after-load 'ivy-historian (noxrcp-lazy-ivy-historian))))
 
-(defun myinit-lazy-ivy-historian ()
+(defun noxrcp-lazy-ivy-historian ()
   "My init lazy."
   (ivy-historian-mode t))
 

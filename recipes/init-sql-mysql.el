@@ -34,12 +34,12 @@
 ;; (custom-set-variables
 ;;  '(sql-mysql-login-params (append sql-mysql-login-params '(port))))
 
-(add-hook 'after-init-hook 'myinit-sql-mysql)
+(add-hook 'after-init-hook 'noxrcp-sql-mysql)
 
-(defun myinit-sql-mysql ()
+(defun noxrcp-sql-mysql ()
   "My init."
 
-  (myinit-after-load 'sql
+  (noxrcp-after-load 'sql
     (setq sql-mysql-login-params (append sql-mysql-login-params '(port)))))
 
 ;;; init-sql-mysql.el ends here

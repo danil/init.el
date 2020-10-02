@@ -33,11 +33,11 @@
 
 (custom-set-variables '(ac-ispell-requires 1)) ;minimum input for starting completion
 
-(add-hook 'after-init-hook 'myinit-ac-ispell)
-(defun myinit-ac-ispell ()
+(add-hook 'after-init-hook 'noxrcp-ac-ispell)
+(defun noxrcp-ac-ispell ()
   "My init."
-  (myinit-add-mode-to-hooks 'my-ac-ispell-setup
-                            myinit-auto-completion-modes-hooks))
+  (noxrcp-add-mode-to-hooks 'my-ac-ispell-setup
+                            noxrcp-auto-completion-modes-hooks))
 
 (defun my-ac-ispell-setup ()
   (ac-ispell-setup)

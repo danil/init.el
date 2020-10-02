@@ -33,11 +33,11 @@
 
 ;;; alternative: less-minor-mode <http://emacswiki.org/emacs/less.el>
 
-;; (add-hook 'after-init-hook 'myinit-twittering-mode)
+;; (add-hook 'after-init-hook 'noxrcp-twittering-mode)
 
-;; (defun myinit-twittering-mode ()
+;; (defun noxrcp-twittering-mode ()
 ;;   "My init."
-;;   (myinit-after-load 'twittering-mode
+;;   (noxrcp-after-load 'twittering-mode
 ;;     (define-key twittering-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-twittering-mode.el ends here

@@ -33,19 +33,19 @@
 
 ;; (custom-set-variables '(vc-display-status nil))
 
-;; (add-hook 'after-init-hook 'myinit-vc-hooks)
+;; (add-hook 'after-init-hook 'noxrcp-vc-hooks)
 
-;; (defun myinit-vc-hooks ()
+;; (defun noxrcp-vc-hooks ()
 ;;   "My init."
 
-;;   (dolist (hook myinit-programming-modes-hooks)
-;;     (add-hook hook 'myinit-vc-hooks--lazyinit)))
+;;   (dolist (hook noxrcp-programming-modes-hooks)
+;;     (add-hook hook 'noxrcp-vc-hooks--lazyinit)))
 
-;; (defun myinit-vc-hooks--lazyinit ()
+;; (defun noxrcp-vc-hooks--lazyinit ()
 ;;   "Run `vc-hooks'."
 
-;;   (myinit-run-with-idle-timer-in-current-buffer
-;;    myinit-default-idle-timer-seconds nil
+;;   (noxrcp-run-with-idle-timer-in-current-buffer
+;;    noxrcp-default-idle-timer-seconds nil
 ;;    (lambda () (vc-hooks-mode))))
 
 ;;; init-vc-hooks.el ends here

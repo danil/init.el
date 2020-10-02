@@ -31,16 +31,16 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-company-nginx)
-(defun myinit-company-nginx ()
+(add-hook 'after-init-hook 'noxrcp-company-nginx)
+(defun noxrcp-company-nginx ()
   "My init."
-  (if (boundp 'company-mode) (myinit-company-nginx--setup)
-    (with-eval-after-load 'company (myinit-company-nginx--setup))))
+  (if (boundp 'company-mode) (noxrcp-company-nginx--setup)
+    (with-eval-after-load 'company (noxrcp-company-nginx--setup))))
 
-(defun myinit-company-nginx--setup ()
-  (add-hook 'nginx-mode-hook 'myinit-company-nginx--setup-nginx-mode))
+(defun noxrcp-company-nginx--setup ()
+  (add-hook 'nginx-mode-hook 'noxrcp-company-nginx--setup-nginx-mode))
 
-(defun myinit-company-nginx--setup-nginx-mode ()
+(defun noxrcp-company-nginx--setup-nginx-mode ()
   ;; (eval-after-load 'nginx-mode
   ;;   '(add-hook 'nginx-mode-hook #'company-nginx-keywords))
   (set (make-local-variable 'company-backends)

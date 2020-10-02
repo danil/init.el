@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-font-core)
+(add-hook 'after-init-hook 'noxrcp-font-core)
 
-(defun myinit-font-core ()
+(defun noxrcp-font-core ()
   "My init."
 
   (global-font-lock-mode t))

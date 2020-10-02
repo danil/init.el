@@ -33,14 +33,14 @@
 
 (custom-set-variables '(inf-mongo-command "/usr/bin/mongo 127.0.0.1:27017"))
 
-(add-hook 'after-init-hook 'myinit-inf-mongo)
+(add-hook 'after-init-hook 'noxrcp-inf-mongo)
 
-(defun myinit-inf-mongo ()
+(defun noxrcp-inf-mongo ()
   "My init."
 
-  (myinit-comint--create-history-fn "myinit-inf-mongo--turn-on-history"
+  (noxrcp-comint--create-history-fn "noxrcp-inf-mongo--turn-on-history"
                                     "~/.emacs.var/mongodb_history")
 
-  (add-hook 'inf-mongo-mode-hook 'myinit-inf-mongo--turn-on-history))
+  (add-hook 'inf-mongo-mode-hook 'noxrcp-inf-mongo--turn-on-history))
 
 ;;; init-inf-mongo.el ends here

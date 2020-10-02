@@ -39,14 +39,14 @@
  '(split-height-threshold nil)
  '(split-width-threshold 64))
 
-(add-hook 'after-init-hook 'myinit-window)
+(add-hook 'after-init-hook 'noxrcp-window)
 
-(defun myinit-window ()
+(defun noxrcp-window ()
   "My init."
 
-  (global-set-key (kbd "C-x 1") 'myinit-window--delete-other-windows)
-  (global-set-key (kbd "C-x 4 0") 'myinit-window--maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
-  (global-set-key (kbd "C-x k") 'myinit-window--maybe-delete-window-maybe-kill-buffer-open-dired)
+  (global-set-key (kbd "C-x 1") 'noxrcp-window--delete-other-windows)
+  (global-set-key (kbd "C-x 4 0") 'noxrcp-window--maybe-delete-window-maybe-kill-buffer) ;kill-buffer-and-window
+  (global-set-key (kbd "C-x k") 'noxrcp-window--maybe-delete-window-maybe-kill-buffer-open-dired)
 
   (global-set-key (kbd "<up>") #'scroll-down-line)
   (global-set-key (kbd "<down>") #'scroll-up-line)
@@ -54,11 +54,11 @@
   (global-set-key (kbd "<left>") #'scroll-right)
   (global-set-key (kbd "<right>") #'scroll-left)
 
-  (define-key myinit-map (kbd "b") 'myinit-window--bury-buffer-maybe-delete-window)
+  (define-key noxrcp-map (kbd "b") 'noxrcp-window--bury-buffer-maybe-delete-window)
 
-  (define-key myinit-map (kbd "B n") 'rename-buffer))
+  (define-key noxrcp-map (kbd "B n") 'rename-buffer))
 
-(defun myinit-window--delete-other-windows ()
+(defun noxrcp-window--delete-other-windows ()
   "Make WINDOW fill its frame (`delete-other-windows').
 
 If `current-prefix-arg' is the default argument then
@@ -69,7 +69,7 @@ run `maximize-window' function."
       (call-interactively 'maximize-window)
     (call-interactively 'delete-other-windows)))
 
-(defun myinit-window--bury-buffer-maybe-delete-window (&optional arg)
+(defun noxrcp-window--bury-buffer-maybe-delete-window (&optional arg)
   "Bury current buffer.
 Delete selected window if `ARG' and other windows present."
   (interactive "P")
@@ -79,7 +79,7 @@ Delete selected window if `ARG' and other windows present."
              (> (length (window-list)) 1))
     (delete-window (selected-window))))
 
-(defun myinit-window--maybe-delete-window-maybe-kill-buffer-open-dired (&optional arg)
+(defun noxrcp-window--maybe-delete-window-maybe-kill-buffer-open-dired (&optional arg)
   "If `ARG' then `kill-buffer' or maybe kill buffer and open `dired'."
   (interactive "P")
 
@@ -89,12 +89,12 @@ Delete selected window if `ARG' and other windows present."
     (let* ((f buffer-file-name)
            (d (if f (file-name-directory f) default-directory)))
 
-      (myinit-window--maybe-delete-window-maybe-kill-buffer arg)
+      (noxrcp-window--maybe-delete-window-maybe-kill-buffer arg)
       (dired d)
       (when f (dired-goto-file f)))))
 
 ;; <http://stackoverflow.com/questions/18325973/a-smarter-alternative-to-delete-window#18754481>.
-(defun myinit-window--maybe-delete-window-maybe-kill-buffer (&optional arg)
+(defun noxrcp-window--maybe-delete-window-maybe-kill-buffer (&optional arg)
   "Delete selected window unless `ARG'.
 If no other window shows it buffer, kill the buffer too."
   (interactive "P")

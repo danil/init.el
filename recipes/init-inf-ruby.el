@@ -34,16 +34,33 @@
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 
-(add-hook 'after-init-hook 'myinit-inf-ruby)
-(defun myinit-inf-ruby ()
+(add-hook 'after-init-hook 'noxrcp-inf-ruby)
+(defun noxrcp-inf-ruby ()
   "My init."
-  (if (boundp 'inf-ruby-mode-map) (myinit-inf-ruby--setup)
-    (with-eval-after-load 'inf-ruby (myinit-inf-ruby--setup))))
+  (if (boundp 'inf-ruby-mode-map) (noxrcp-inf-ruby--setup)
+    (with-eval-after-load 'inf-ruby (noxrcp-inf-ruby--setup))))
 
-(defun myinit-inf-ruby--setup ()
+(defun noxrcp-inf-ruby--setup ()
   (define-key inf-ruby-mode-map (kbd "TAB") nil)
-  (myinit-comint--create-history-fn "myinit-inf-ruby--turn-on-history"
+  (noxrcp-comint--create-history-fn "noxrcp-inf-ruby--turn-on-history"
                                     "~/.irb-history")
-  (add-hook 'inf-ruby-mode-hook 'myinit-inf-ruby--turn-on-history))
+  (add-hook 'inf-ruby-mode-hook 'noxrcp-inf-ruby--turn-on-history))
+
+;; a-la inf-ruby-console-rails
+(defun noxrcp-inf-ruby--projectile-rails-console (dir)
+  "Run Rails console in DIR."
+  (interactive (list (inf-ruby-console-read-directory 'rails)))
+  (let* ((default-directory (file-name-as-directory dir))
+         (env (inf-ruby-console-rails-env))
+         (with-bundler (file-exists-p "Gemfile")))
+    (inf-ruby-console-run
+     (concat (when with-bundler "bundle exec ")
+             "rails console -e "
+             env
+             ;; Note: this only has effect in Rails < 5.0 or >= 5.1.4
+             ;; https://github.com/rails/rails/pull/29010
+             (when (inf-ruby--irb-needs-nomultiline-p)
+               " -- --nomultiline"))
+     "rails")))
 
 ;;; init-inf-ruby.el ends here

@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-transpose-frame)
+(add-hook 'after-init-hook 'noxrcp-transpose-frame)
 
-(defun myinit-transpose-frame ()
+(defun noxrcp-transpose-frame ()
   "My init."
 
-  (define-key myinit-map (kbd "T") 'my-transpose-frame))
+  (define-key noxrcp-map (kbd "T") 'my-transpose-frame))
 
 (defun my-transpose-frame ()
   (interactive)

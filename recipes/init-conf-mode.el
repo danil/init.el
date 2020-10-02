@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(defcustom myinit-conf-mode-patterns '()
+(defcustom noxrcp-conf-mode-patterns '()
   "Regexp patterns associated with `conf-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-conf-mode-patterns
+(custom-set-variables '(noxrcp-conf-mode-patterns
                         '(
                           "/.config/sxhkd/"
                           "/Pipfile2\\'"
@@ -89,10 +89,10 @@
                           "\\torrc\\'"
                           )))
 
-(add-hook 'after-init-hook 'myinit-conf-mode)
-(defun myinit-conf-mode ()
+(add-hook 'after-init-hook 'noxrcp-conf-mode)
+(defun noxrcp-conf-mode ()
   "My init."
-  (dolist (pattern myinit-conf-mode-patterns)
+  (dolist (pattern noxrcp-conf-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'conf-mode)))
 
   ;; Logrotate scripts.
@@ -125,44 +125,44 @@
   (dolist (pattern '("/rsyncd.secrets\\'" "\\.pgpass\\'"))
     (add-to-list 'auto-mode-alist (cons pattern 'conf-colon-mode))))
 
-(defun myinit-conf-colon-mode--rainbow-identifiers-init ()
+(defun noxrcp-conf-colon-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'conf-colon-mode)
-    (myinit-conf-mode--rainbow-identifiers-init)
+    (noxrcp-conf-mode--rainbow-identifiers-init)
 
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-conf-colon-mode--rainbow-identifiers-filter)
+              'noxrcp-conf-colon-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-conf-space-mode--rainbow-identifiers-init ()
+(defun noxrcp-conf-space-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'conf-space-mode)
-    (myinit-conf-mode--rainbow-identifiers-init)
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-conf-mode--rainbow-identifiers-init)
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-conf-unix-mode--rainbow-identifiers-init ()
+(defun noxrcp-conf-unix-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'conf-unix-mode)
-    (myinit-conf-mode--rainbow-identifiers-init)
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-conf-mode--rainbow-identifiers-init)
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-conf-xdefaults-mode--rainbow-identifiers-init ()
+(defun noxrcp-conf-xdefaults-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'conf-xdefaults-mode)
-    (myinit-conf-mode--rainbow-identifiers-init)
+    (noxrcp-conf-mode--rainbow-identifiers-init)
 
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-conf-colon-mode--rainbow-identifiers-filter)
+              'noxrcp-conf-colon-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-conf-mode--rainbow-identifiers-init ()
+(defun noxrcp-conf-mode--rainbow-identifiers-init ()
   (make-local-variable 'rainbow-identifiers-filter-functions)
   (add-hook 'rainbow-identifiers-filter-functions
-            'myinit-rainbow-identifiers--face-overridable)
+            'noxrcp-rainbow-identifiers--face-overridable)
 
   (make-local-variable 'rainbow-identifiers-faces-to-override)
   (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-conf-colon-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-conf-colon-mode--rainbow-identifiers-filter (beg end)
   (let ((str-after (buffer-substring-no-properties end (point-max))))
     (string-match-p "\\`:[[:space:]]*[^[:space:]]+$" str-after)))
 

@@ -1,6 +1,6 @@
-(add-hook 'after-init-hook 'myinit-info)
+(add-hook 'after-init-hook 'noxrcp-info)
 
-(defun myinit-info ()
+(defun noxrcp-info ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'Info-mode "\\.info\\'"))
+  (noxrcp-add-mode-to-patterns 'Info-mode "\\.info\\'"))

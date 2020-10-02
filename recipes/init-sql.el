@@ -31,47 +31,47 @@
 
 ;;; Code:
 
-(defcustom myinit-sql-mode-patterns '()
+(defcustom noxrcp-sql-mode-patterns '()
   "Regexp patterns associated with `sql-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
+(custom-set-variables '(noxrcp-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
 
-(add-hook 'after-init-hook 'myinit-sql)
-(defun myinit-sql ()
+(add-hook 'after-init-hook 'noxrcp-sql)
+(defun noxrcp-sql ()
   "My init."
-  (dolist (pattern myinit-sql-mode-patterns)
+  (dolist (pattern noxrcp-sql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
-  (add-hook 'sql-login-hook 'myinit-sql--turn-on-history)
-  (if (boundp 'sql-interactive-mode-map) (myinit-sql--setup)
-    (with-eval-after-load 'sql (myinit-sql--setup))))
+  (add-hook 'sql-login-hook 'noxrcp-sql--turn-on-history)
+  (if (boundp 'sql-interactive-mode-map) (noxrcp-sql--setup)
+    (with-eval-after-load 'sql (noxrcp-sql--setup))))
 
-(defun myinit-sql--setup ()
-  (add-hook 'sql-interactive-mode-hook 'myinit-sql--setup-keys)
+(defun noxrcp-sql--setup ()
+  (add-hook 'sql-interactive-mode-hook 'noxrcp-sql--setup-keys)
   (add-hook 'sql-interactive-mode-hook
-            'myinit-sql--sql-interactive-mode-setup-company-mode))
+            'noxrcp-sql--sql-interactive-mode-setup-company-mode))
 
-(defun myinit-sql--setup-keys ()
-  (define-key sql-interactive-mode-map (my-kbd "C-l") 'myinit-sql--shell-clear))
+(defun noxrcp-sql--setup-keys ()
+  (define-key sql-interactive-mode-map (my-kbd "C-l") 'noxrcp-sql--shell-clear))
 
-(defun myinit-sql--sql-interactive-mode-setup-company-mode ()
+(defun noxrcp-sql--sql-interactive-mode-setup-company-mode ()
   (if (boundp 'company-dabbrev-code-modes)
-      (myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup)
+      (noxrcp-sql--sql-interactive-mode-noxrcp-company-dabbrev-code-setup)
     (with-eval-after-load 'company-dabbrev
-      (myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup))))
+      (noxrcp-sql--sql-interactive-mode-noxrcp-company-dabbrev-code-setup))))
 
-(defun myinit-sql--sql-interactive-mode-myinit-company-dabbrev-code-setup ()
+(defun noxrcp-sql--sql-interactive-mode-noxrcp-company-dabbrev-code-setup ()
   (set (make-local-variable 'company-backends)
        (append '(company-dabbrev-code) company-backends))
   (setq company-dabbrev-code-modes
         (append '(sql-interactive-mode)
                 (append company-dabbrev-code-modes
-                        myinit-programming-modes))))
+                        noxrcp-programming-modes))))
 
 ;;; SQL inferior comint mode history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
 ;;; <http://www.emacswiki.org/emacs/SqlMode#toc3>.
-(defun myinit-sql--turn-on-history ()
+(defun noxrcp-sql--turn-on-history ()
   "Set SQL history file path and assign hook on sentinel event."
 
   (let* ((product (symbol-name (symbol-value 'sql-product)))
@@ -84,9 +84,9 @@
       (when process
         (setq comint-input-ring-file-name history-file)
         (comint-read-input-ring)
-        (set-process-sentinel process #'myinit-comint--write-history)))))
+        (set-process-sentinel process #'noxrcp-comint--write-history)))))
 
-(defun myinit-sql--shell-clear (&optional arg)
+(defun noxrcp-sql--shell-clear (&optional arg)
   "Delete output from `SQl' shell or kill output from `SQL' shell if `ARG'.
 Clear current `SQL' shell beginning with a-la prompt to `point-min'.
 Clearing by `delete-region' or by `kill-region' if `ARG'."

@@ -2,12 +2,12 @@
 ;; (global-set-key "\C-cl" 'org-store-link)
 ;; (global-set-key "\C-ca" 'org-agenda)
 
-(add-hook 'after-init-hook 'myinit-org-mode)
+(add-hook 'after-init-hook 'noxrcp-org-mode)
 
-(defun myinit-org-mode ()
+(defun noxrcp-org-mode ()
   "My init."
 
-  (myinit-after-load 'org
+  (noxrcp-after-load 'org
     ;; (define-key org-mode-map "\C-c\C-f" nil)
 
     (setq org-log-done t)
@@ -15,7 +15,7 @@
     ;; Org-mode with Ido (interactively do things).
     (if (featurep 'ido-mode)
         (setq org-completion-use-ido t)
-      (myinit-after-load 'ido
+      (noxrcp-after-load 'ido
         (setq org-completion-use-ido t)))
 
     ;; Org Clock.

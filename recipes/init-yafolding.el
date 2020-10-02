@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-yafolding)
+(add-hook 'after-init-hook 'noxrcp-yafolding)
 
-(defun myinit-yafolding ()
+(defun noxrcp-yafolding ()
   "My init."
 
-  (myinit-after-load 'yafolding
+  (noxrcp-after-load 'yafolding
     (define-key yafolding-mode-map (my-kbd "f") 'yafolding-toggle-element)
 
     (define-key yafolding-mode-map (my-kbd "F c") 'yafolding-hide-all)

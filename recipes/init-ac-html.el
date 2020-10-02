@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-ac-html)
+(add-hook 'after-init-hook 'noxrcp-ac-html)
 
-(defun myinit-ac-html ()
+(defun noxrcp-ac-html ()
   "My init."
 
-  ;; (myinit-add-mode-to-hooks (lambda ()
+  ;; (noxrcp-add-mode-to-hooks (lambda ()
   ;;                         (require 'ac-html)
   ;;                         (require 'ac-html-default-data-provider)
   ;;                         (ac-html-enable-data-provider 'ac-html-default-data-provider)
@@ -85,6 +85,6 @@
   (add-hook 'haml-mode-hook 'ac-haml-enable)
   (add-hook 'jade-mode-hook 'ac-jade-enable)
   (add-hook 'slim-mode-hook 'ac-slim-enable)
-  (myinit-add-mode-to-hooks 'ac-html-enable '(html-mode-hook web-mode-hook)))
+  (noxrcp-add-mode-to-hooks 'ac-html-enable '(html-mode-hook web-mode-hook)))
 
 ;;; init-ac-html.el ends here

@@ -31,26 +31,26 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-elixir-mode)
-;; (defun myinit-elixir-mode () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-elixir-mode)
+;; (defun noxrcp-elixir-mode () "My init.")
 
-(defun myinit-elixir-mode--rainbow-identifiers-init ()
+(defun noxrcp-elixir-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'elixir-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-elixir-mode--rainbow-identifiers-filter)
+              'noxrcp-elixir-mode--rainbow-identifiers-filter)
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
                                                   elixir-attribute-face
                                                   elixir-atom-face
                                                   font-lock-type-face
                                                   ))
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-elixir-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-elixir-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

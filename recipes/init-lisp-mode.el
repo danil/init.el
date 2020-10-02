@@ -31,35 +31,35 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-lisp-mode)
-(defun myinit-lisp-mode ()
+(add-hook 'after-init-hook 'noxrcp-lisp-mode)
+(defun noxrcp-lisp-mode ()
   "My init."
   (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'"))
     (add-to-list 'auto-mode-alist (cons pattern 'lisp-mode)))
-  (if (boundp 'lisp-mode-map) (myinit-lisp-mode--setup)
-    (with-eval-after-load 'lisp-mode (myinit-lisp-mode--setup))))
+  (if (boundp 'lisp-mode-map) (noxrcp-lisp-mode--setup)
+    (with-eval-after-load 'lisp-mode (noxrcp-lisp-mode--setup))))
 
-(defun myinit-lisp-mode--setup ()
-  ;; (myinit-run-with-idle-timer-in-current-buffer
-  ;;  myinit-default-idle-timer-seconds nil 'myinit-lisp-mode--lazy-setup)
+(defun noxrcp-lisp-mode--setup ()
+  ;; (noxrcp-run-with-idle-timer-in-current-buffer
+  ;;  noxrcp-default-idle-timer-seconds nil 'noxrcp-lisp-mode--lazy-setup)
   (define-key lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
   (define-key lisp-mode-map [?\C-\M-i] nil))
 
-;; (defun myinit-lisp-mode--lazy-setup ()
+;; (defun noxrcp-lisp-mode--lazy-setup ()
 ;;   (let ((f "~/.roswell/helper.el"))
 ;;     (when (file-exists-p f)
 ;;       (load (expand-file-name f))
 ;;       (setq inferior-lisp-program "ros -Q run"))))
 
-(defun myinit-lisp-mode--rainbow-identifiers-init ()
+(defun noxrcp-lisp-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'lisp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-lisp-mode--rainbow-identifiers-filter)
+              'noxrcp-lisp-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-lisp-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-lisp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)

@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-elpa-mirror)
+(add-hook 'after-init-hook 'noxrcp-elpa-mirror)
 
-(defun myinit-elpa-mirror ()
+(defun noxrcp-elpa-mirror ()
   "My init."
 
-  (myinit-after-load 'elpa-mirror
+  (noxrcp-after-load 'elpa-mirror
     (setq elpamr-default-output-directory "/var/elpa/mirror"
           elpamr-email "danil@kutkevich.org"
           elpamr-repository-name "kutkevich"

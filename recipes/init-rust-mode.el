@@ -31,22 +31,22 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-rust-mode)
-;; (defun myinit-rust-mode ()
+;; (add-hook 'after-init-hook 'noxrcp-rust-mode)
+;; (defun noxrcp-rust-mode ()
 ;;   "My init."
-;;   ;; (myinit-after-load 'rust-mode
+;;   ;; (noxrcp-after-load 'rust-mode
 ;;   ;;   )
 ;;   )
 
-(defun myinit-rust-mode--rainbow-identifiers-init ()
+(defun noxrcp-rust-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'rust-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rust-mode--rainbow-identifiers-filter)
+              'noxrcp-rust-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-rust-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-rust-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)

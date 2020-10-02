@@ -1,20 +1,20 @@
-Emacs configs
-=============
+noxrcp
+======
 
-My emacs configuration.
+Is an no X11 recipes for the emacs.
 
 Features
 --------
 
 * KISS [1][KISS]
-* 100% usable in terminal
+* 100% usable in terminal without X11
 
 [KISS]: http://en.wikipedia.org/wiki/KISS_principle
 
 Copying
 -------
 
-Copyright (C) 2014, 2015, 2016, 2017, 2018 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2014, 2015, 2016, 2017, 2018, 2019, 2020 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

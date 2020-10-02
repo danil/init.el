@@ -31,8 +31,8 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-bindings)
-(defun myinit-bindings ()
+(add-hook 'after-init-hook 'noxrcp-bindings)
+(defun noxrcp-bindings ()
   "My init."
   (global-set-key (kbd "C-c C-f e") 'end-of-defun))
 

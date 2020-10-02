@@ -36,25 +36,25 @@
  '(dired-details-hide-extra-lines nil)
  '(dired-details-hide-link-targets nil))
 
-(add-hook 'after-init-hook 'myinit-dired-details)
+(add-hook 'after-init-hook 'noxrcp-dired-details)
 
-(defun myinit-dired-details ()
+(defun noxrcp-dired-details ()
   "My init."
 
   (with-eval-after-load 'dired-details
-    (define-key dired-mode-map (kbd "b") 'myinit-dired--toggle-view)
+    (define-key dired-mode-map (kbd "b") 'noxrcp-dired--toggle-view)
     ;; (define-key dired-mode-map "(" 'dired-details-hide)
     ;; (define-key dired-mode-map ")" 'dired-details-show)
     (defadvice dired-revert (before remember-the-details activate)
       (dired-details-delete-overlays)))
 
   (with-eval-after-load 'dired
-    (myinit-run-with-idle-timer-in-current-buffer
+    (noxrcp-run-with-idle-timer-in-current-buffer
      0.5 nil 'require 'dired-details)
-    (add-hook 'dired-after-readin-hook 'myinit-dired-details--lazyinit)))
+    (add-hook 'dired-after-readin-hook 'noxrcp-dired-details--lazyinit)))
 
 
-(defun myinit-dired--toggle-view ()
+(defun noxrcp-dired--toggle-view ()
   "Toggle through the list `dired-details-hide` `dired-details-show` and `ls` `dired-listing-switches` human readable and non human readable."
   (interactive)
 
@@ -73,11 +73,11 @@
          (dired-sort-other "-l --all")
          (digit-groups-mode -1))))
 
-(defun myinit-dired-details--lazyinit ()
+(defun noxrcp-dired-details--lazyinit ()
   "Run `dired-details'."
-  (remove-hook 'dired-after-readin-hook 'myinit-dired-details--lazyinit)
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
+  (remove-hook 'dired-after-readin-hook 'noxrcp-dired-details--lazyinit)
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil
    (lambda ()
      (dired-details-activate)
      (add-hook 'dired-after-readin-hook 'dired-details-activate))))

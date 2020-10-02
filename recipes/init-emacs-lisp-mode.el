@@ -31,18 +31,18 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-emacs-lisp-mode)
-(defun myinit-emacs-lisp-mode ()
+(add-hook 'after-init-hook 'noxrcp-emacs-lisp-mode)
+(defun noxrcp-emacs-lisp-mode ()
   "My init."
-  (myinit-add-mode-to-patterns 'emacs-lisp-mode
+  (noxrcp-add-mode-to-patterns 'emacs-lisp-mode
                                  "/\\.?abbrev_defs\\'"
                                  "/\\.emacs\\.d/bookmarks\\'"
                                  "/ac-comphist\\.dat\\'"
                                  "\\.el\\.\\(tpl\\|template\\)\\'")
-  (if (boundp 'emacs-lisp-mode-map) (myinit-emacs-lisp-mode--setup)
-    (with-eval-after-load 'elisp-mode (myinit-emacs-lisp-mode--setup))))
+  (if (boundp 'emacs-lisp-mode-map) (noxrcp-emacs-lisp-mode--setup)
+    (with-eval-after-load 'elisp-mode (noxrcp-emacs-lisp-mode--setup))))
 
-(defun myinit-emacs-lisp-mode--setup ()
+(defun noxrcp-emacs-lisp-mode--setup ()
   (define-key emacs-lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
   (define-key emacs-lisp-mode-map (my-kbd "! b") 'my-eval-buffer)
   (define-key emacs-lisp-mode-map (my-kbd "! r") 'my-eval-region)
@@ -59,15 +59,15 @@
   (message "Eval region")
   (eval-region start end))
 
-(defun myinit-emacs-lisp-mode--rainbow-identifiers-init ()
+(defun noxrcp-emacs-lisp-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'emacs-lisp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-emacs-lisp-mode--rainbow-identifiers-filter)
+              'noxrcp-emacs-lisp-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-emacs-lisp-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-emacs-lisp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)

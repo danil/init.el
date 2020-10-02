@@ -33,12 +33,12 @@
 
 (custom-set-variables '(cider-mode-line " cider"))
 
-;; (add-hook 'after-init-hook 'myinit-cider)
+;; (add-hook 'after-init-hook 'noxrcp-cider)
 
-;; (defun myinit-cider ()
+;; (defun noxrcp-cider ()
 ;;   "My init."
 
-;;   (myinit-after-load 'cider-mode
+;;   (noxrcp-after-load 'cider-mode
 ;;     (define-key cider-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-cider.el ends here

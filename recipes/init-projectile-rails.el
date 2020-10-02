@@ -1,11 +1,11 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-(add-hook 'after-init-hook 'myinit-projectile-rails)
+(add-hook 'after-init-hook 'noxrcp-projectile-rails)
 
-(defun myinit-projectile-rails ()
+(defun noxrcp-projectile-rails ()
   "My init."
 
-  (myinit-after-load 'projectile-rails
+  (noxrcp-after-load 'projectile-rails
 
     ;; Override rails server arguments.
     (defun projectile-rails-server ()

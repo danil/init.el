@@ -31,25 +31,25 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-clojure-mode)
+(add-hook 'after-init-hook 'noxrcp-clojure-mode)
 
-(defun myinit-clojure-mode ()
+(defun noxrcp-clojure-mode ()
   "My init."
 
-  ;; (myinit-after-load 'clojure-mode
+  ;; (noxrcp-after-load 'clojure-mode
   ;;   (define-key clojure-mode-map (my-kbd "C-v") 'clojure-yaless-mode-on))
 
-  (myinit-add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
+  (noxrcp-add-mode-to-patterns 'clojure-mode "/\\.lein-env\\'"))
 
-(defun myinit-clojure-mode--rainbow-identifiers-init ()
+(defun noxrcp-clojure-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'clojure-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-clojure-mode--rainbow-identifiers-filter)
+              'noxrcp-clojure-mode--rainbow-identifiers-filter)
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
-(defun myinit-clojure-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-clojure-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((face-cur (or (get-char-property beg 'read-face-name)

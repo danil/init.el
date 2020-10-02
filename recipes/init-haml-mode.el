@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-haml-mode)
+(add-hook 'after-init-hook 'noxrcp-haml-mode)
 
-(defun myinit-haml-mode ()
+(defun noxrcp-haml-mode ()
   "My init."
 
-  (myinit-after-load 'haml-mode
-    ;; (myinit-after-load 'ruby-mode
+  (noxrcp-after-load 'haml-mode
+    ;; (noxrcp-after-load 'ruby-mode
     ;;   (define-key haml-mode-map (my-kbd "m r h") 'ruby-toggle-hash-syntax))
 
     ;; (define-key haml-mode-map "\C-c\C-f" nil)

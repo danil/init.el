@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(defcustom myinit-yaml-mode-patterns '()
+(defcustom noxrcp-yaml-mode-patterns '()
   "Regexp patterns associated with `yaml-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-yaml-mode-patterns
+ '(noxrcp-yaml-mode-patterns
    '(
      "/\\(group\\|host\\)_vars/[^.]*\\'"
      "/\\.kube/[^/.]*\\'"
@@ -44,21 +44,21 @@
      "\\.yml\\.j2\\'"
      )))
 
-(add-hook 'after-init-hook 'myinit-yaml-mode)
-(defun myinit-yaml-mode ()
+(add-hook 'after-init-hook 'noxrcp-yaml-mode)
+(defun noxrcp-yaml-mode ()
   "My init."
-  (dolist (pattern myinit-yaml-mode-patterns)
+  (dolist (pattern noxrcp-yaml-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'yaml-mode))))
 
-(defun myinit-yaml-mode--rainbow-identifiers-init ()
+(defun noxrcp-yaml-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'yaml-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-rainbow-identifiers--face-overridable)
+              'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;;; init-yaml-mode.el ends here

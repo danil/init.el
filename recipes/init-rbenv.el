@@ -37,9 +37,9 @@
  ;; '(rbenv-modeline-function 'my-rbenv--modeline-with-face)
  '(rbenv-show-active-ruby-in-modeline nil))
 
-(add-hook 'after-init-hook 'myinit-rbenv)
+(add-hook 'after-init-hook 'noxrcp-rbenv)
 
-(defun myinit-rbenv ()
+(defun noxrcp-rbenv ()
   "My init."
   (global-rbenv-mode)
   (rbenv-use-corresponding))

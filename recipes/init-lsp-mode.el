@@ -31,30 +31,30 @@
 
 ;;; Code:
 
-;; (defcustom myinit-lsp-mode--mode '()
+;; (defcustom noxrcp-lsp-mode--mode '()
 ;;   "Modes associated with `lsp-mode'."
-;;   :group 'myinit)
+;;   :group 'noxrcp)
 
-;; (defcustom myinit-lsp-mode--mode-hooks '()
+;; (defcustom noxrcp-lsp-mode--mode-hooks '()
 ;;   "Mode hooks associated with `lsp-mode'."
-;;   :group 'myinit)
+;;   :group 'noxrcp)
 
 ;; (custom-set-variables
-;;  '(myinit-lsp-mode--mode '(go-mode))
-;;  '(myinit-lsp-mode--mode-hooks
+;;  '(noxrcp-lsp-mode--mode '(go-mode))
+;;  '(noxrcp-lsp-mode--mode-hooks
 ;;    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-;;            myinit-lsp-mode--mode)))
+;;            noxrcp-lsp-mode--mode)))
 
-(add-hook 'after-init-hook 'myinit-lsp-mode)
-(defun myinit-lsp-mode ()
+(add-hook 'after-init-hook 'noxrcp-lsp-mode)
+(defun noxrcp-lsp-mode ()
   "My init."
   (require 'lsp-mode)
-  ;; (if (boundp 'lsp-mode-map) (myinit-lsp-mode--customize)
-  ;;   (with-eval-after-load 'lsp-mode (myinit-lsp-mode--customize)))
+  ;; (if (boundp 'lsp-mode-map) (noxrcp-lsp-mode--customize)
+  ;;   (with-eval-after-load 'lsp-mode (noxrcp-lsp-mode--customize)))
   )
 
-;; (defun myinit-lsp-mode--customize ()
+;; (defun noxrcp-lsp-mode--customize ()
 ;;   ;; (setq lsp-keymap-prefix "s-l")
-;;   (dolist (hook myinit-lsp-mode--mode-hooks) (add-hook hook #'lsp)))
+;;   (dolist (hook noxrcp-lsp-mode--mode-hooks) (add-hook hook #'lsp)))
 
 ;;; init-lsp-mode.el ends here

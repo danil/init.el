@@ -37,9 +37,9 @@
  '(ido-vertical-disable-if-short nil)
  '(ido-vertical-show-count t))
 
-(add-hook 'after-init-hook 'myinit-ido-vertical-mode)
+(add-hook 'after-init-hook 'noxrcp-ido-vertical-mode)
 
-(defun myinit-ido-vertical-mode ()
+(defun noxrcp-ido-vertical-mode ()
   "My init."
   (if (fboundp 'ido-mode) (ido-vertical-mode t)
     (with-eval-after-load 'ido (ido-vertical-mode t))))

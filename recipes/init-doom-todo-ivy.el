@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-doom-todo-ivy)
-;; (defun myinit-doom-todo-ivy ()
+;; (add-hook 'after-init-hook 'noxrcp-doom-todo-ivy)
+;; (defun noxrcp-doom-todo-ivy ()
 ;;   "My init."
-;;   (if (boundp 'doom-todo-ivy) (myinit-doom-todo-ivy--setup)
-;;     (with-eval-after-load 'doom-todo-ivy (myinit-doom-todo-ivy--setup))))
+;;   (if (boundp 'doom-todo-ivy) (noxrcp-doom-todo-ivy--setup)
+;;     (with-eval-after-load 'doom-todo-ivy (noxrcp-doom-todo-ivy--setup))))
 
-;; (defun myinit-doom-todo-ivy--setup ())
+;; (defun noxrcp-doom-todo-ivy--setup ())
 
 ;;; init-doom-todo-ivy.el ends here

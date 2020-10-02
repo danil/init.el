@@ -31,11 +31,11 @@
 
 ;;; Code:
 
-(defcustom myinit-js2-mode-patterns '()
+(defcustom noxrcp-js2-mode-patterns '()
   "Regexp patterns associated with `js2-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(custom-set-variables '(myinit-js2-mode-patterns
+(custom-set-variables '(noxrcp-js2-mode-patterns
                         '(
                           "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
                           ;; "\\.js.erb\\'"
@@ -48,24 +48,24 @@
  ;; '(js2-highlight-level 3)
  '(js2-mode-show-strict-warnings nil))
 
-(add-hook 'after-init-hook 'myinit-js2-mode)
+(add-hook 'after-init-hook 'noxrcp-js2-mode)
 
-(defun myinit-js2-mode ()
+(defun noxrcp-js2-mode ()
   "My init."
 
-  ;; (myinit-after-load 'js2-mode
+  ;; (noxrcp-after-load 'js2-mode
   ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))
 
-  (dolist (pattern myinit-js2-mode-patterns)
+  (dolist (pattern noxrcp-js2-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'js2-mode))))
 
-(defun myinit-js2-mode--rainbow-identifiers-init ()
+(defun noxrcp-js2-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'js2-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-js2-mode--rainbow-identifiers-filter)
+              'noxrcp-js2-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
@@ -76,10 +76,10 @@
             js2-object-property
             ))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-js2-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-js2-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

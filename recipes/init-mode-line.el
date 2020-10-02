@@ -54,18 +54,18 @@
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30";; (:background "MidnightBlue")
                         ))))
 
-(add-hook 'after-init-hook 'myinit-mode-line)
-(defun myinit-mode-line ()
+(add-hook 'after-init-hook 'noxrcp-mode-line)
+(defun noxrcp-mode-line ()
   "My init."
-  ;; (remove-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
-  ;; (add-hook 'window-configuration-change-hook 'myinit-mode-line--face-mode-line-update-lazy)
+  ;; (remove-hook 'window-configuration-change-hook 'noxrcp-mode-line--face-mode-line-update-lazy)
+  ;; (add-hook 'window-configuration-change-hook 'noxrcp-mode-line--face-mode-line-update-lazy)
   )
 
-;; (defun myinit-mode-line--face-mode-line-update-lazy ()
+;; (defun noxrcp-mode-line--face-mode-line-update-lazy ()
 ;;   (run-with-idle-timer 0.1 nil (lambda ()
-;;                                  (myinit-mode-line--face-mode-line-update))))
+;;                                  (noxrcp-mode-line--face-mode-line-update))))
 
-;; (defun myinit-mode-line--face-mode-line-update ()
+;; (defun noxrcp-mode-line--face-mode-line-update ()
 ;;   ;; (unless (active-minibuffer-window))
 ;;   (if (equal (count-windows) 1)
 ;;       (custom-set-faces
@@ -73,7 +73,7 @@
 ;;     (custom-set-faces
 ;;      '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "MidnightBlue")))))))
 
-;; ;; (defun myinit-mode-line--count-windows (&optional minibuf)
+;; ;; (defun noxrcp-mode-line--count-windows (&optional minibuf)
 ;; ;;   "Return the number of visible windows.
 ;; ;; The optional argument MINIBUF specifies whether the minibuffer
 ;; ;; window shall be counted.  See `walk-windows' for the precise

@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-undo-tree)
+(add-hook 'after-init-hook 'noxrcp-undo-tree)
 
-(defun myinit-undo-tree ()
+(defun noxrcp-undo-tree ()
   "My init."
 
  (global-undo-tree-mode))

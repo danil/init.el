@@ -33,11 +33,11 @@
 
 ;; (custom-set-variables '(browse-url-activate-in-modes '()))
 
-(add-hook 'after-init-hook 'myinit-browse-url)
+(add-hook 'after-init-hook 'noxrcp-browse-url)
 
-(defun myinit-browse-url ()
+(defun noxrcp-browse-url ()
   "My init."
 
-  (define-key myinit-map (kbd "x u") 'browse-url-at-point))
+  (define-key noxrcp-map (kbd "x u") 'browse-url-at-point))
 
 ;;; init-browse-url.el ends here

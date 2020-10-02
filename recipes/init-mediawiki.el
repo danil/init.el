@@ -49,12 +49,12 @@
                            ""
                            "Main Page"))))
 
-(add-hook 'after-init-hook 'myinit-mediawiki)
+(add-hook 'after-init-hook 'noxrcp-mediawiki)
 
-(defun myinit-mediawiki ()
+(defun noxrcp-mediawiki ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
+  (noxrcp-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 
   (add-hook 'mediawiki-mode-hook
             (lambda () (define-key mediawiki-mode-map "\C-x\C-s" 'save-buffer))))

@@ -31,17 +31,17 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-make-mode)
+(add-hook 'after-init-hook 'noxrcp-make-mode)
 
-(defun myinit-make-mode ()
+(defun noxrcp-make-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'makefile-gmake-mode
+  (noxrcp-add-mode-to-patterns 'makefile-gmake-mode
                                  "/Makefile.port\\'"
                                  "/Makefile.shlib\\'"
                                  "/etc/portage/savedconfig/x11-misc/slock")
 
-  ;; (myinit-after-load 'make-mode
+  ;; (noxrcp-after-load 'make-mode
   ;;   (define-key makefile-mode-map (kbd "C-c C-f") nil))
   )
 

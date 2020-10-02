@@ -43,7 +43,7 @@
      ))
  '(pack-dired-default-extension ".tar.xz"))
 
-;; (add-hook 'after-init-hook 'myinit-pack)
-;; (defun myinit-pack () "My init.")
+;; (add-hook 'after-init-hook 'noxrcp-pack)
+;; (defun noxrcp-pack () "My init.")
 
 ;;; init-pack.el ends here

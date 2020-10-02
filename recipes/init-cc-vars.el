@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-cc-vars)
+(add-hook 'after-init-hook 'noxrcp-cc-vars)
 
-(defun myinit-cc-vars ()
+(defun noxrcp-cc-vars ()
   "My init."
 
  (custom-set-variables '(c-basic-offset 2)))

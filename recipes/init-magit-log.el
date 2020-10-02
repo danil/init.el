@@ -33,10 +33,10 @@
 
 (custom-set-variables '(magit-log-section-commit-count 3))
 
-;; (add-hook 'after-init-hook 'myinit-magit-log)
-;; (defun myinit-magit-log ()
+;; (add-hook 'after-init-hook 'noxrcp-magit-log)
+;; (defun noxrcp-magit-log ()
 ;;   "My init."
-;;   (myinit-after-load 'magit-log
+;;   (noxrcp-after-load 'magit-log
 ;;     (define-key magit-log-mode-map (kbd "C-c C-f") nil)))
 
 ;;; init-magit-log.el ends here

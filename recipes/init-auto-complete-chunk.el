@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-auto-complete-chunk)
+;; (add-hook 'after-init-hook 'noxrcp-auto-complete-chunk)
 
-;; (defun myinit-auto-complete-chunk ()
+;; (defun noxrcp-auto-complete-chunk ()
 ;;   "My init."
 
-;;   (myinit-after-load 'auto-complete-config
-;;     (myinit-add-mode-to-hooks (lambda ()
+;;   (noxrcp-after-load 'auto-complete-config
+;;     (noxrcp-add-mode-to-hooks (lambda ()
 ;;                             ;; Make sure `ac-source-chunk-list' comes first.
 ;;                             (setq ac-sources (append '(ac-source-chunk-list) ac-sources))
 ;;                             ;; (setq ac-chunk-list

@@ -33,25 +33,25 @@
 
 ;; (custom-set-variables '(hl-todo-activate-in-modes '()))
 
-(add-hook 'after-init-hook 'myinit-hl-todo)
+(add-hook 'after-init-hook 'noxrcp-hl-todo)
 
-(defun myinit-hl-todo ()
+(defun noxrcp-hl-todo ()
   "My init."
 
-  (if (boundp 'hl-todo-mode-map) (myinit-hl-todo--init)
-    (with-eval-after-load 'hl-todo (myinit-hl-todo--init)))
+  (if (boundp 'hl-todo-mode-map) (noxrcp-hl-todo--init)
+    (with-eval-after-load 'hl-todo (noxrcp-hl-todo--init)))
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-hl-todo--lazyinit)))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-hl-todo--lazyinit)))
 
-(defun myinit-hl-todo--lazyinit ()
+(defun noxrcp-hl-todo--lazyinit ()
   "Run `hl-todo'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil
    (lambda () (hl-todo-mode))))
 
-(defun myinit-hl-todo--init ()
+(defun noxrcp-hl-todo--init ()
   (setq hl-todo-keyword-faces
         (append hl-todo-keyword-faces '(("CHORE" . "#d0bf8f")))))
 

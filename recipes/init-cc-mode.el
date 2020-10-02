@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(defcustom myinit-c-mode-patterns '()
+(defcustom noxrcp-c-mode-patterns '()
   "Regexp patterns associated with `c-mode'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
- '(myinit-c-mode-patterns
+ '(noxrcp-c-mode-patterns
    '(
      "/etc/portage/savedconfig/www-servers/quark"
      "/etc/portage/savedconfig/x11-misc/dmenu"
@@ -46,32 +46,32 @@
      "/etc/portage/savedconfig/x11-wm/dwm"
      )))
 
-(add-hook 'after-init-hook 'myinit-cc-mode)
-(defun myinit-cc-mode ()
+(add-hook 'after-init-hook 'noxrcp-cc-mode)
+(defun noxrcp-cc-mode ()
   "My init."
-  (dolist (pattern myinit-c-mode-patterns)
+  (dolist (pattern noxrcp-c-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'c-mode)))
-  (if (boundp 'c-mode) (myinit-c-mode--setup)
-    (with-eval-after-load 'cc-mode (myinit-c-mode--setup))))
+  (if (boundp 'c-mode) (noxrcp-c-mode--setup)
+    (with-eval-after-load 'cc-mode (noxrcp-c-mode--setup))))
 
-(defun myinit-c-mode--setup ()
+(defun noxrcp-c-mode--setup ()
   (define-key c-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
-(defun myinit-c-mode--rainbow-identifiers-init ()
+(defun noxrcp-c-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'c-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'myinit-c-mode--rainbow-identifiers-filter)
+              'noxrcp-c-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (myinit-rainbow-identifiers--lazyinit)))
+    (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun myinit-c-mode--rainbow-identifiers-filter (beg end)
+(defun noxrcp-c-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))

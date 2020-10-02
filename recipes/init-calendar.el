@@ -33,12 +33,12 @@
 
 (custom-set-variables '(calendar-week-start-day 1))
 
-(add-hook 'after-init-hook 'myinit-calendar)
+(add-hook 'after-init-hook 'noxrcp-calendar)
 
-(defun myinit-calendar ()
+(defun noxrcp-calendar ()
   "My init."
 
-  (myinit-after-load 'calendar
+  (noxrcp-after-load 'calendar
     ;; Week numbers <http://www.emacswiki.org/emacs/CalendarWeekNumbers#toc1>.
     (copy-face font-lock-constant-face 'calendar-iso-week-face)
 

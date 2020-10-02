@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-fill)
+(add-hook 'after-init-hook 'noxrcp-fill)
 
-(defun myinit-fill ()
+(defun noxrcp-fill ()
   "My init."
 
   (global-set-key (my-kbd "r f") 'fill-region))

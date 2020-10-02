@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(defconst myinit-counsel--ag-base-command-name "ag")
+(defconst noxrcp-counsel--ag-base-command-name "ag")
 
-(defconst myinit-counsel--ag-base-command-args
+(defconst noxrcp-counsel--ag-base-command-args
   (if (memq system-type '(ms-dos windows-nt))
       "--vimgrep"
     "--nocolor --nogroup"))
@@ -41,48 +41,48 @@
 (custom-set-variables
  '(counsel-yank-pop-truncate-radius 4)
  '(counsel-ag-base-command (format "%s %s %s"
-                                   myinit-counsel--ag-base-command-name
-                                   myinit-counsel--ag-base-command-args
+                                   noxrcp-counsel--ag-base-command-name
+                                   noxrcp-counsel--ag-base-command-args
                                    "%s")))
 
-(add-hook 'after-init-hook 'myinit-counsel)
-(defun myinit-counsel ()
+(add-hook 'after-init-hook 'noxrcp-counsel)
+(defun noxrcp-counsel ()
   "My init."
-  (if (boundp 'counsel-mode) (myinit-counsel--setup)
-    (with-eval-after-load 'counsel (myinit-counsel--setup)))
+  (if (boundp 'counsel-mode) (noxrcp-counsel--setup)
+    (with-eval-after-load 'counsel (noxrcp-counsel--setup)))
   ;; (counsel-mode t)
   )
 
-(defun myinit-counsel--setup ()
+(defun noxrcp-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
-  ;; (global-set-key (kbd "C-x C-f") 'myinit-counsel--find-file) ; and also please see `init-files.el'
+  ;; (global-set-key (kbd "C-x C-f") 'noxrcp-counsel--find-file) ; and also please see `init-files.el'
   (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
   ;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   ;; (global-set-key (kbd "M-x") 'counsel-M-x)
-  ;; (global-set-key (kbd "M-y") 'myinit-counsel--yank-pop)
+  ;; (global-set-key (kbd "M-y") 'noxrcp-counsel--yank-pop)
 
-  ;; (if (boundp 'counsel-find-file-map) (myinit-counsel--customize-keys)
-  ;;   (with-eval-after-load 'counsel (myinit-counsel--customize-keys)))
+  ;; (if (boundp 'counsel-find-file-map) (noxrcp-counsel--customize-keys)
+  ;;   (with-eval-after-load 'counsel (noxrcp-counsel--customize-keys)))
 
-  (if (boundp 'help-map) (myinit-counsel--customize-help)
-    (with-eval-after-load 'help (myinit-counsel--customize-help)))
+  (if (boundp 'help-map) (noxrcp-counsel--customize-help)
+    (with-eval-after-load 'help (noxrcp-counsel--customize-help)))
 
   (when (boundp 'minibuffer-local-map)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
-  (when (boundp 'myinit-map)
-    ;; (define-key myinit-map (kbd "j x") 'counsel-colors-web)
-    ;; (define-key myinit-map (kbd "j x") 'counsel-git-log)
-    (define-key myinit-map (kbd "j a") 'myinit-counsel--counsel-ag)
-    (define-key myinit-map (kbd "j g") 'counsel-git-grep)
-    (define-key myinit-map (kbd "j l") 'counsel-locate)
-    (define-key myinit-map (kbd "j p") 'counsel-pt)
-    (define-key myinit-map (kbd "j r") 'myinit-counsel--counsel-rg) ; counsel-projectile-rg
+  (when (boundp 'noxrcp-map)
+    ;; (define-key noxrcp-map (kbd "j x") 'counsel-colors-web)
+    ;; (define-key noxrcp-map (kbd "j x") 'counsel-git-log)
+    (define-key noxrcp-map (kbd "j a") 'noxrcp-counsel--counsel-ag)
+    (define-key noxrcp-map (kbd "j g") 'counsel-git-grep)
+    (define-key noxrcp-map (kbd "j l") 'counsel-locate)
+    (define-key noxrcp-map (kbd "j p") 'counsel-pt)
+    (define-key noxrcp-map (kbd "j r") 'noxrcp-counsel--counsel-rg) ; counsel-projectile-rg
     )
-  (if (boundp 'company-mode) (myinit-counsel--company-setup)
-    (with-eval-after-load 'company (myinit-counsel--company-setup))))
+  (if (boundp 'company-mode) (noxrcp-counsel--company-setup)
+    (with-eval-after-load 'company (noxrcp-counsel--company-setup))))
 
-(defun myinit-counsel--customize-help()
+(defun noxrcp-counsel--customize-help()
   "My init customize."
   ;; (define-key help-map (kbd "F") 'counsel-describe-face)
   (define-key help-map (kbd "F") 'counsel-faces)
@@ -93,32 +93,32 @@
   ;; (define-key help-map (kbd "v") 'counsel-describe-variable)
   (define-key help-map (kbd "u") 'counsel-unicode-char))
 
-(defun myinit-counsel--company-setup ()
-  (global-set-key [?\C-\M-i] 'myinit-counsel--company) ;; counsel-company completion-at-point
+(defun noxrcp-counsel--company-setup ()
+  (global-set-key [?\C-\M-i] 'noxrcp-counsel--company) ;; counsel-company completion-at-point
   )
 
-(defun myinit-counsel--company ()
+(defun noxrcp-counsel--company ()
   (interactive)
   (company-mode t)
   (when current-prefix-arg (make-local-variable 'company-backends))
   (cond ((equal current-prefix-arg 2)
-         (myinit-company--complete-with-backend 'company-capf))
+         (noxrcp-company--complete-with-backend 'company-capf))
         ((equal current-prefix-arg 3)
-         (myinit-company--complete-with-backend 'company-abbrev))
+         (noxrcp-company--complete-with-backend 'company-abbrev))
         ((equal current-prefix-arg 4)
-         (myinit-company--complete-with-backend 'company-files))
+         (noxrcp-company--complete-with-backend 'company-files))
         ((equal current-prefix-arg 7)
-         (myinit-company--complete-with-backend 'company-dabbrev-code))
+         (noxrcp-company--complete-with-backend 'company-dabbrev-code))
         ((equal current-prefix-arg 8)
-         (myinit-company--complete-with-backend 'company-dabbrev))
+         (noxrcp-company--complete-with-backend 'company-dabbrev))
         (current-prefix-arg
-         (myinit-company--complete-with-backend 'company-ispell)))
-  (call-interactively 'myinit-counsel---company))
+         (noxrcp-company--complete-with-backend 'company-ispell)))
+  (call-interactively 'noxrcp-counsel---company))
 
-(defun myinit-counsel---company ()
+(defun noxrcp-counsel---company ()
   "Complete using `company-candidates'."
   (interactive)
-  (let ((initial-input (myinit-company--grab-symbol)))
+  (let ((initial-input (noxrcp-company--grab-symbol)))
     (unless company-candidates (company-complete))
     (when (and company-candidates company-point)
       (when (looking-back company-common (line-beginning-position))
@@ -129,7 +129,7 @@
                 :initial-input initial-input ;(when initial-input (format "%s" initial-input))
                 :unwind #'company-abort))))
 
-;; (defun myinit-counsel--yank-pop ()
+;; (defun noxrcp-counsel--yank-pop ()
 ;;   (interactive)
 ;;   (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
 ;;         (current-prefix-arg (call-interactively 'yank-pop))
@@ -137,25 +137,25 @@
 ;;                (call-interactively 'yank-pop)
 ;;                (call-interactively 'counsel-yank-pop)))))
 
-;; (defun myinit-counsel--find-file ()
+;; (defun noxrcp-counsel--find-file ()
 ;;   (interactive)
 ;;   (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
 ;;         (current-prefix-arg (call-interactively 'find-file-literally))
 ;;         (t (call-interactively 'counsel-find-file))))
 
-;; (defun myinit-counsel--customize-keys ()
+;; (defun noxrcp-counsel--customize-keys ()
 ;;   "My init customize keys."
-;;   (define-key counsel-find-file-map (kbd "C-x C-f") 'myinit-counsel--counsel-find-file-fallback-command))
+;;   (define-key counsel-find-file-map (kbd "C-x C-f") 'noxrcp-counsel--counsel-find-file-fallback-command))
 
 ;; ;; <https://github.com/abo-abo/swiper/issues/257#issuecomment-147059504>,
 ;; ;; <https://github.com/abo-abo/swiper/issues/1333#issuecomment-436960474>.
-;; (defun myinit-counsel--counsel-find-file-fallback-command ()
+;; (defun noxrcp-counsel--counsel-find-file-fallback-command ()
 ;;   "Fallback to non-counsel version of current command."
 ;;   (interactive)
 ;;   (when (bound-and-true-p ivy-mode)
 ;;     (ivy-mode -1)
 ;;     (add-hook 'minibuffer-setup-hook
-;;               'myinit-counsel--counsel-find-file-fallback-command--enable-ivy))
+;;               'noxrcp-counsel--counsel-find-file-fallback-command--enable-ivy))
 ;;   (ivy-set-action
 ;;    (lambda (current-path)
 ;;      (let ((old-default-directory default-directory))
@@ -166,12 +166,12 @@
 ;;        (setq default-directory old-default-directory))))
 ;;   (ivy-done))
 
-(defun myinit-counsel--counsel-find-file-fallback-command--enable-ivy ()
+(defun noxrcp-counsel--counsel-find-file-fallback-command--enable-ivy ()
   (remove-hook 'minibuffer-setup-hook
-               'myinit-counsel--counsel-find-file-fallback-command--enable-ivy)
+               'noxrcp-counsel--counsel-find-file-fallback-command--enable-ivy)
   (ivy-mode t))
 
-(defun myinit-counsel--counsel-ag (initial-directory)
+(defun noxrcp-counsel--counsel-ag (initial-directory)
   "Search using ag in a given `INITIAL-DIRECTORY`.
 
 If `current-prefix-arg' is a integer then
@@ -185,12 +185,12 @@ If there is a symbol under cursor, then pass it as initial ag imput."
           (setq current-prefix-arg nil)
           (counsel-ag initial-input initial-directory
                       (format "%s %s"
-                              myinit-counsel--ag-base-command-args
+                              noxrcp-counsel--ag-base-command-args
                               (format "--context=%s" n))))
 
       (counsel-ag initial-input initial-directory))))
 
-(defun myinit-counsel--counsel-rg (initial-directory)
+(defun noxrcp-counsel--counsel-rg (initial-directory)
   "Search using rg in a given `INITIAL-DIRECTORY`.
 
 If `current-prefix-arg' is a integer then
@@ -206,7 +206,7 @@ If there is a symbol under cursor, then pass it as initial rg imput."
 
       (counsel-rg initial-input initial-directory))))
 
-;; (defun myinit-counsel--counsel-yank-pop ()
+;; (defun noxrcp-counsel--counsel-yank-pop ()
 ;;   "Ivy replacement for `yank-pop'."
 ;;   (interactive)
 ;;   (if (member last-command '(yank yank-secondary yank-pop yank-pop-commands))

@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-my-uniquify)
+(add-hook 'after-init-hook 'noxrcp-my-uniquify)
 
-(defun myinit-my-uniquify ()
+(defun noxrcp-my-uniquify ()
   "My init."
 
-  (define-key myinit-map (kbd "l U") 'my-uniquify-lines-buffer)
-  (define-key myinit-map (kbd "l u") 'my-uniquify-lines-region))
+  (define-key noxrcp-map (kbd "l U") 'my-uniquify-lines-buffer)
+  (define-key noxrcp-map (kbd "l u") 'my-uniquify-lines-region))
 
 ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
 (defun my-uniquify-lines-region (start end)

@@ -39,9 +39,9 @@
 ;;         ad-do-it)
 ;;     ad-do-it))
 
-(add-hook 'after-init-hook 'myinit-bash-completion)
+(add-hook 'after-init-hook 'noxrcp-bash-completion)
 
-(defun myinit-bash-completion ()
+(defun noxrcp-bash-completion ()
   "My init."
 
   (autoload 'bash-completion-dynamic-complete "bash-completion"

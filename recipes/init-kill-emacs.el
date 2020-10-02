@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-kill-emacs)
-(defun myinit-kill-emacs ()
+(add-hook 'after-init-hook 'noxrcp-kill-emacs)
+(defun noxrcp-kill-emacs ()
   "My init."
-  (define-key myinit-exec-map (kbd "k") 'myinit-kill-emacs--kill))
+  (define-key noxrcp-exec-map (kbd "k") 'noxrcp-kill-emacs--kill))
 
-(defun myinit-kill-emacs--kill ()
+(defun noxrcp-kill-emacs--kill ()
   (interactive)
   ;; First update the alist.
   ;; This loads the old save-place-file if nec.

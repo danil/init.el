@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-completion-ignored-extensions)
+(add-hook 'after-init-hook 'noxrcp-completion-ignored-extensions)
 
-(defun myinit-completion-ignored-extensions ()
+(defun noxrcp-completion-ignored-extensions ()
   "My init."
 
   ;; <http://endlessparentheses.com/improving-emacs-file-name-completion.html>.

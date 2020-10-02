@@ -33,11 +33,11 @@
 
 (custom-set-variables '(kill-ring-max 1000))
 
-(add-hook 'after-init-hook 'myinit-kill-ring)
-(defun myinit-kill-ring () "My init.")
+(add-hook 'after-init-hook 'noxrcp-kill-ring)
+(defun noxrcp-kill-ring () "My init.")
 
 ;; <http://superuser.com/questions/546619/clear-the-kill-ring-in-emacs#546627>.
-(defun myinit-kill-ring--clear ()
+(defun noxrcp-kill-ring--clear ()
   (interactive)
   (progn (setq kill-ring nil) (garbage-collect)))
 

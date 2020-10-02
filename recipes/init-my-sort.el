@@ -33,14 +33,14 @@
 
 ;;; <https://www.emacswiki.org/emacs/SortWords>.
 
-(add-hook 'after-init-hook 'myinit-my-sort)
+(add-hook 'after-init-hook 'noxrcp-my-sort)
 
-(defun myinit-my-sort ()
+(defun noxrcp-my-sort ()
   "My init."
 
-  (define-key myinit-map (kbd "S c") 'my-sort-chars)
-  (define-key myinit-map (kbd "S s") 'my-sort-symbols)
-  (define-key myinit-map (kbd "S w") 'my-sort-words))
+  (define-key noxrcp-map (kbd "S c") 'my-sort-chars)
+  (define-key noxrcp-map (kbd "S s") 'my-sort-symbols)
+  (define-key noxrcp-map (kbd "S w") 'my-sort-words))
 
 (defun my-sort-chars (reverse beg end)
   "Sort chars alphabetically in region (in `REVERSE' if negative)

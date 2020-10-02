@@ -33,12 +33,12 @@
 
 ;; (add-hook 'markdown-mode-hook #'markdownfmt-enable-on-save)
 
-(add-hook 'after-init-hook 'myinit-markdownfmt)
+(add-hook 'after-init-hook 'noxrcp-markdownfmt)
 
-(defun myinit-markdownfmt ()
+(defun noxrcp-markdownfmt ()
   "My init."
 
-  (myinit-after-load 'markdown-mode
+  (noxrcp-after-load 'markdown-mode
     (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))
 
 ;;; init-markdownfmt.el ends here

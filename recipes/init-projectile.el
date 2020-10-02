@@ -31,48 +31,52 @@
 
 ;;; Code:
 
-(defcustom myinit-projectile-modes '()
+(defcustom noxrcp-projectile-modes '()
   "Major modes associated with `projectile'."
-  :group 'myinit)
+  :group 'noxrcp)
 
-(defcustom myinit-projectile-modes-hooks '()
+(defcustom noxrcp-projectile-modes-hooks '()
   "Major modes hook associated with `projectile'."
-  :group 'myinit)
+  :group 'noxrcp)
 
 (custom-set-variables
  '(projectile-completion-system 'default) ;default=selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
- '(projectile-dynamic-mode-line nil)
+ ;; '(projectile-completion-system (lambda (prompt choices)
+ ;;                                  (message "aaaaaaaaaa 1")
+ ;;                                  (selectrum-read prompt choices)
+ ;;        ))
+ ;; '(projectile-completion-system #'selectrum-read)
  '(projectile-indexing-method 'alien) ; 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil)
- '(myinit-projectile-modes (-union myinit-programming-modes
+ '(noxrcp-projectile-modes (-union noxrcp-programming-modes
                                    '(
                                      dired-mode
                                      shell-mode
                                      sql-interactive-mode
                                      )))
- '(myinit-projectile-modes-hooks
+ '(noxrcp-projectile-modes-hooks
    (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           myinit-projectile-modes)))
+           noxrcp-projectile-modes)))
 
-(add-hook 'after-init-hook 'myinit-projectile)
-(defun myinit-projectile ()
+(add-hook 'after-init-hook 'noxrcp-projectile)
+(defun noxrcp-projectile ()
   "My init."
-  (dolist (hook myinit-projectile-modes-hooks)
-    (add-hook hook 'myinit-projectile--setup-hook)))
+  (dolist (hook noxrcp-projectile-modes-hooks)
+    (add-hook hook 'noxrcp-projectile--setup-hook)))
 
-(defun myinit-projectile--setup-hook ()
+(defun noxrcp-projectile--setup-hook ()
   "Setup hook `projectile'."
-  (if (boundp 'projectile) (myinit-projectile--setup-lazy)
-    (with-eval-after-load 'projectile (myinit-projectile--setup-lazy))))
+  (if (boundp 'projectile) (noxrcp-projectile--setup-lazy)
+    (with-eval-after-load 'projectile (noxrcp-projectile--setup-lazy))))
 
-(defun myinit-projectile--setup-lazy ()
+(defun noxrcp-projectile--setup-lazy ()
   "Lazy setup `projectile'."
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'myinit-projectile--init))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'noxrcp-projectile--init))
 
-(defun myinit-projectile--init ()
+(defun noxrcp-projectile--init ()
   (projectile-mode +1)
-  (define-key myinit-mode-map (kbd "C-c p") projectile-command-map)
+  (define-key noxrcp-mode-map (kbd "C-c p") projectile-command-map)
   (counsel-projectile-mode +1))
 
 ;;; init-projectile.el ends here

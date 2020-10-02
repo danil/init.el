@@ -31,13 +31,13 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-rg)
+(add-hook 'after-init-hook 'noxrcp-rg)
 
-(defun myinit-rg ()
+(defun noxrcp-rg ()
   "My init."
 
-  (when (boundp 'myinit-map)
-    (define-key myinit-map (kbd "j R r") 'rg)
-    (define-key myinit-map (kbd "j R p") 'rg)))
+  (when (boundp 'noxrcp-map)
+    (define-key noxrcp-map (kbd "j R r") 'rg)
+    (define-key noxrcp-map (kbd "j R p") 'rg)))
 
 ;;; init-rg.el ends here

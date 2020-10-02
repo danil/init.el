@@ -33,21 +33,21 @@
 
 (autoload 'kill-ring-ido "kill-ring-ido" nil t)
 
-(add-hook 'after-init-hook 'myinit-kill-ring-ido)
-(defun myinit-kill-ring-ido ()
+(add-hook 'after-init-hook 'noxrcp-kill-ring-ido)
+(defun noxrcp-kill-ring-ido ()
   "My init."
-  ;; (global-set-key (kbd "M-y") 'myinit-kill-ring-ido--yank-pop-depricatied)
-  (global-set-key (kbd "M-y") 'myinit-kill-ring-ido--yank-pop)
-  (myinit-after-load 'kill-ring-ido
+  ;; (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop-depricatied)
+  (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop)
+  (noxrcp-after-load 'kill-ring-ido
     (setq kill-ring-ido-shortage-length 500)))
 
-(defun myinit-kill-ring-ido--yank-pop (&optional arg)
+(defun noxrcp-kill-ring-ido--yank-pop (&optional arg)
   (interactive "P")
   (if arg
       (call-interactively 'browse-kill-ring)
     (call-interactively 'kill-ring-ido)))
 
-;; (defun myinit-kill-ring-ido--yank-pop-depricatied (&optional arg)
+;; (defun noxrcp-kill-ring-ido--yank-pop-depricatied (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg
 ;;       (call-interactively 'yank-pop)

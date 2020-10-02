@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'myinit-occur-edit-mode)
+;; (add-hook 'after-init-hook 'noxrcp-occur-edit-mode)
 
-;; (defun myinit-occur-edit-mode ()
+;; (defun noxrcp-occur-edit-mode ()
 ;;   "My init."
 
-;;   (myinit-after-load "replace"
+;;   (noxrcp-after-load "replace"
 ;;     (define-key occur-edit-mode-map (kbd "\C-c\C-f") nil)))
 
 ;;; init-occur-edit-mode.el ends here

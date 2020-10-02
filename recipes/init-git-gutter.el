@@ -31,30 +31,30 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-git-gutter)
+(add-hook 'after-init-hook 'noxrcp-git-gutter)
 
-(defun myinit-git-gutter ()
+(defun noxrcp-git-gutter ()
   "My init."
 
-  (define-key myinit-map (kbd "V h k") 'git-gutter:revert-hunk)
-  (define-key myinit-map (kbd "V h n") 'git-gutter:next-hunk)
-  (define-key myinit-map (kbd "V h p") 'git-gutter:previous-hunk)
+  (define-key noxrcp-map (kbd "V h k") 'git-gutter:revert-hunk)
+  (define-key noxrcp-map (kbd "V h n") 'git-gutter:next-hunk)
+  (define-key noxrcp-map (kbd "V h p") 'git-gutter:previous-hunk)
 
-  ;; (myinit-after-load 'git-gutter
+  ;; (noxrcp-after-load 'git-gutter
   ;;   (setq git-gutter:disabled-modes '(shell-mode magit-mode)))
 
-  (dolist (hook myinit-programming-modes-hooks)
-    (add-hook hook 'myinit-git-gutter--lazyinit))
+  (dolist (hook noxrcp-programming-modes-hooks)
+    (add-hook hook 'noxrcp-git-gutter--lazyinit))
 
-  (define-key myinit-map (kbd "x g") 'myinit-git-gutter-toggle))
+  (define-key noxrcp-map (kbd "x g") 'noxrcp-git-gutter-toggle))
 
-(defun myinit-git-gutter--lazyinit ()
+(defun noxrcp-git-gutter--lazyinit ()
   "Run `git-gutter'."
 
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil 'git-gutter-mode))
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil 'git-gutter-mode))
 
-(defun myinit-git-gutter-toggle ()
+(defun noxrcp-git-gutter-toggle ()
   "Toggle the `git-gutter-mode'."
   (interactive)
 

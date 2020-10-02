@@ -31,33 +31,33 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-robe)
-(defun myinit-robe ()
+(add-hook 'after-init-hook 'noxrcp-robe)
+(defun noxrcp-robe ()
   "My init."
   (add-hook 'robe-mode-hook 'ac-robe-setup)
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  (if (boundp 'robe-mode-map) (myinit-robe--setup)
-    (with-eval-after-load 'robe (myinit-robe--setup))))
+  (if (boundp 'robe-mode-map) (noxrcp-robe--setup)
+    (with-eval-after-load 'robe (noxrcp-robe--setup))))
 
-(defun myinit-robe--setup ()
+(defun noxrcp-robe--setup ()
   (define-key robe-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   ;; (define-key robe-mode-map (kbd "C-c C-S-k") 'robe-rails-refresh)
-  (if (boundp 'enh-ruby-mode-map) (myinit-robe--setup-enh-ruby-mode)
-    (with-eval-after-load 'enh-ruby-mode (myinit-robe--setup-enh-ruby-mode)))
-  (if (boundp 'ruby-mode-map) (myinit-robe--setup-ruby-mode)
-    (with-eval-after-load 'ruby-mode (myinit-robe--setup-ruby-mode))))
+  (if (boundp 'enh-ruby-mode-map) (noxrcp-robe--setup-enh-ruby-mode)
+    (with-eval-after-load 'enh-ruby-mode (noxrcp-robe--setup-enh-ruby-mode)))
+  (if (boundp 'ruby-mode-map) (noxrcp-robe--setup-ruby-mode)
+    (with-eval-after-load 'ruby-mode (noxrcp-robe--setup-ruby-mode))))
 
-(defun myinit-robe--setup-enh-ruby-mode ()
-  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'myinit-robe--jump))
+(defun noxrcp-robe--setup-enh-ruby-mode ()
+  (define-key enh-ruby-mode-map (kbd "C-c C-j") 'noxrcp-robe--jump))
 
-(defun myinit-robe--setup-ruby-mode ()
-  (define-key ruby-mode-map (kbd "C-c C-j") 'myinit-robe--jump))
+(defun noxrcp-robe--setup-ruby-mode ()
+  (define-key ruby-mode-map (kbd "C-c C-j") 'noxrcp-robe--jump))
 
-(defun myinit-robe--jump ()
+(defun noxrcp-robe--jump ()
   (interactive)
   (if (not current-prefix-arg)
-      (call-interactively 'myinit-dumb-jump---go)
+      (call-interactively 'noxrcp-dumb-jump---go)
     (let ((current-prefix-arg 'nil))
       (cond
        ((equal current-prefix-arg 4)

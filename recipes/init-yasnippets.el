@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-yasnippets)
+(add-hook 'after-init-hook 'noxrcp-yasnippets)
 
-(defun myinit-yasnippets ()
+(defun noxrcp-yasnippets ()
   "My init."
 
-  (myinit-after-load 'yasnippet
+  (noxrcp-after-load 'yasnippet
     (add-to-list 'yas-snippet-dirs
                  (let* ((pkg 'yasnippets)
 

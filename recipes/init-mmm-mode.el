@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-mmm-mode)
+(add-hook 'after-init-hook 'noxrcp-mmm-mode)
 
-(defun myinit-mmm-mode ()
+(defun noxrcp-mmm-mode ()
   "My init."
 
   (require 'mmm-auto)
@@ -54,12 +54,12 @@
 
 ;; (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t)
 
-;; (add-hook 'after-init-hook 'myinit-mmm-mode)
+;; (add-hook 'after-init-hook 'noxrcp-mmm-mode)
 
-;; (defun myinit-mmm-mode ()
+;; (defun noxrcp-mmm-mode ()
 ;;   "My init."
 
-;;   (myinit-after-load 'mmm-mode
+;;   (noxrcp-after-load 'mmm-mode
 ;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
 ;;     (setq mmm-global-mode 'buffers-with-submode-classes)
 ;;     (setq mmm-submode-decoration-level 2)
@@ -69,7 +69,7 @@
 ;;     (defun sanityinc/ensure-mmm-erb-loaded ()
 ;;       (require 'mmm-erb))
 
-;;     (myinit-add-mode-to-hooks 'sanityinc/ensure-mmm-erb-loaded
+;;     (noxrcp-add-mode-to-hooks 'sanityinc/ensure-mmm-erb-loaded
 ;;                            '(html-mode-hook
 ;;                              nxml-mode-hook
 ;;                              yaml-mode-hook))
@@ -88,7 +88,7 @@
 ;;     (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
 ;;     (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
 
-;;     (myinit-add-mode-to-patterns 'html-erb-mode
+;;     (noxrcp-add-mode-to-patterns 'html-erb-mode
 ;;                                   "\\.jst\\.ejs\\'"
 ;;                                   "\\.r?html\\'"
 ;;                                   "\\.r?html\\.erb\\'")))

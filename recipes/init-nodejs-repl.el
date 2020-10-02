@@ -31,21 +31,21 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-nodejs-repl)
+(add-hook 'after-init-hook 'noxrcp-nodejs-repl)
 
-(defun myinit-nodejs-repl ()
+(defun noxrcp-nodejs-repl ()
   "My init."
 
   ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
 
-  (myinit-after-load 'js
+  (noxrcp-after-load 'js
     (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
-  (myinit-after-load 'js2-mode
+  (noxrcp-after-load 'js2-mode
     (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
-  (myinit-comint--create-history-fn "myinit-nodejs-repl--turn-on-history"
+  (noxrcp-comint--create-history-fn "noxrcp-nodejs-repl--turn-on-history"
                                     "~/.node_repl_history")
-  (add-hook 'nodejs-repl-mode-hook 'myinit-nodejs-repl--turn-on-history))
+  (add-hook 'nodejs-repl-mode-hook 'noxrcp-nodejs-repl--turn-on-history))
 
 ;;; init-nodejs-repl.el ends here

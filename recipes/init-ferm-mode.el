@@ -1,10 +1,10 @@
 (autoload 'ferm-mode "ferm-mode" nil t)
 
-(add-hook 'after-init-hook 'myinit-ferm-mode)
+(add-hook 'after-init-hook 'noxrcp-ferm-mode)
 
-(defun myinit-ferm-mode ()
+(defun noxrcp-ferm-mode ()
   "My init."
 
-  (myinit-add-mode-to-patterns 'ferm-mode
+  (noxrcp-add-mode-to-patterns 'ferm-mode
                                 "/etc/iptables/rules.v[46]"
                                 "\\.rules\\'"))

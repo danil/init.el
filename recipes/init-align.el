@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-align)
+(add-hook 'after-init-hook 'noxrcp-align)
 
-(defun myinit-align ()
+(defun noxrcp-align ()
   "My init."
 
-  (define-key myinit-map (kbd "r a c w") 'my-align-whitespace))
+  (define-key noxrcp-map (kbd "r a c w") 'my-align-whitespace))
 
 ;; <http://pragmaticemacs.com/emacs/aligning-text/>.
 (defun my-align-whitespace (start end)

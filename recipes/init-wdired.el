@@ -31,12 +31,12 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'myinit-wdired)
+(add-hook 'after-init-hook 'noxrcp-wdired)
 
-(defun myinit-wdired ()
+(defun noxrcp-wdired ()
   "My init."
 
-  (myinit-after-load 'dired
+  (noxrcp-after-load 'dired
     (define-key dired-mode-map (kbd "C-v") nil)
     (define-key dired-mode-map (my-kbd "x w") 'wdired-change-to-wdired-mode)))
 

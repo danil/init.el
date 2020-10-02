@@ -35,21 +35,21 @@
  ;; '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst"))
  '(diredfl-ignore-compressed-flag nil))
 
-(add-hook 'after-init-hook 'myinit-diredfl)
-(defun myinit-diredfl ()
+(add-hook 'after-init-hook 'noxrcp-diredfl)
+(defun noxrcp-diredfl ()
   "My init."
   ;; (with-eval-after-load 'diredfl
   ;;   )
   (with-eval-after-load 'dired
-    (myinit-run-with-idle-timer-in-current-buffer
+    (noxrcp-run-with-idle-timer-in-current-buffer
      0.5 nil 'require 'diredfl)
-    (add-hook 'dired-after-readin-hook 'myinit-diredfl--lazyinit)))
+    (add-hook 'dired-after-readin-hook 'noxrcp-diredfl--lazyinit)))
 
-(defun myinit-diredfl--lazyinit ()
+(defun noxrcp-diredfl--lazyinit ()
   "Run `diredfl'."
-  (remove-hook 'dired-after-readin-hook 'myinit-diredfl--lazyinit)
-  (myinit-run-with-idle-timer-in-current-buffer
-   myinit-default-idle-timer-seconds nil
+  (remove-hook 'dired-after-readin-hook 'noxrcp-diredfl--lazyinit)
+  (noxrcp-run-with-idle-timer-in-current-buffer
+   noxrcp-default-idle-timer-seconds nil
    (lambda ()
      (diredfl-mode)
      (add-hook 'dired-after-readin-hook 'diredfl-mode))))

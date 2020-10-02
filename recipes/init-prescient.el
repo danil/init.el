@@ -35,14 +35,14 @@
 
 (custom-set-variables '(prescient-save-file "~/.emacs.var/prescient-save.el"))
 
-(add-hook 'after-init-hook 'myinit-prescient)
-(defun myinit-prescient ()
+(add-hook 'after-init-hook 'noxrcp-prescient)
+(defun noxrcp-prescient ()
   "My init."
 
-  (if (boundp 'selectrum-prescient-mode) (myinit-prescient--setup)
-    (with-eval-after-load 'selectrum-prescient (myinit-prescient--setup))))
+  (if (boundp 'selectrum-prescient-mode) (noxrcp-prescient--setup)
+    (with-eval-after-load 'selectrum-prescient (noxrcp-prescient--setup))))
 
-(defun myinit-prescient--setup ()
+(defun noxrcp-prescient--setup ()
   ;; to save your command history on disk, so the sorting gets more
   ;; intelligent over time
   (prescient-persist-mode +1))

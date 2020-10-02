@@ -44,12 +44,12 @@
  '(desktop-path '(user-emacs-directory "~/.emacs.var/"))
  '(desktop-restore-frames nil))
 
-(add-hook 'after-init-hook 'myinit-desktop)
+(add-hook 'after-init-hook 'noxrcp-desktop)
 
-(defun myinit-desktop ()
+(defun noxrcp-desktop ()
   "My init."
-  (define-key myinit-map (kbd "D s") 'save-my-desktop)
-  (define-key myinit-map (kbd "D l") 'load-my-desktop))
+  (define-key noxrcp-map (kbd "D s") 'save-my-desktop)
+  (define-key noxrcp-map (kbd "D l") 'load-my-desktop))
 
 (defun save-my-desktop ()
   "Save the desktop."
