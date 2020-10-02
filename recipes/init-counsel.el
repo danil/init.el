@@ -94,26 +94,8 @@
   (define-key help-map (kbd "u") 'counsel-unicode-char))
 
 (defun noxrcp-counsel--company-setup ()
-  (global-set-key [?\C-\M-i] 'noxrcp-counsel--company) ;; counsel-company completion-at-point
+  (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read) ;; counsel-company completion-at-point
   )
-
-(defun noxrcp-counsel--company ()
-  (interactive)
-  (company-mode t)
-  (when current-prefix-arg (make-local-variable 'company-backends))
-  (cond ((equal current-prefix-arg 2)
-         (noxrcp-company--complete-with-backend 'company-capf))
-        ((equal current-prefix-arg 3)
-         (noxrcp-company--complete-with-backend 'company-abbrev))
-        ((equal current-prefix-arg 4)
-         (noxrcp-company--complete-with-backend 'company-files))
-        ((equal current-prefix-arg 7)
-         (noxrcp-company--complete-with-backend 'company-dabbrev-code))
-        ((equal current-prefix-arg 8)
-         (noxrcp-company--complete-with-backend 'company-dabbrev))
-        (current-prefix-arg
-         (noxrcp-company--complete-with-backend 'company-ispell)))
-  (call-interactively 'noxrcp-counsel---company))
 
 (defun noxrcp-counsel---company ()
   "Complete using `company-candidates'."

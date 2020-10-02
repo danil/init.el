@@ -45,9 +45,25 @@
 (defun noxrcp-selectrum ()
   "No X recipe init."
   (selectrum-mode +1)
+
+  ;; (if (boundp 'company-mode) (noxrcp-selectrum--company-setup)
+  ;;   (with-eval-after-load 'company (noxrcp-selectrum--company-setup)))
+
   (global-set-key (kbd "C-c C-r") #'selectrum-repeat)
   ;; (global-set-key (kbd "C-x C-r") 'noxrcp-selectrum--recentf)
   (global-set-key (kbd "M-y") 'noxrcp-selectrum--yank-pop))
+
+;; (defun noxrcp-selectrum--company-setup ()
+;;   (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read))
+
+;; (defun noxrcp-selectrum---company ()
+;;   "Complete using `company-candidates'."
+;;   (interactive)
+;;   (let ((initial-input (noxrcp-company--grab-symbol)))
+;;     (unless company-candidates (company-complete))
+;;     (when (and company-candidates company-point)
+;;       (selectrum-read "Candidates: " company-candidates
+;;                       :initial-input initial-input))))
 
 ;; Handle completion order for refs in magit with prescient
 ;; https://github.com/raxod502/selectrum/wiki/Additional-Configuration#handle-completion-order-for-refs-in-magit-with-prescient
