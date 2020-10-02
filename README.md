@@ -1,7 +1,7 @@
 noxrcp
 ======
 
-Is an no X11 recipes for the emacs.
+No X11 recipes for the emacs.
 
 Features
 --------
