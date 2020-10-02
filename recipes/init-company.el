@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(defcustom noxrcp-company--completing-read-function 'noxrcp-counsel---company ;'noxrcp-selectrum---company
+(defcustom noxrcp-company--completing-read-function 'noxrcp-selectrum--company ; 'noxrcp-counsel--company
   "No X recipe custom variable for the company completing read function."
   :group 'noxrcp)
 
@@ -77,11 +77,13 @@
   "No X recipe init."
   ;; (if (boundp 'company-mode) (noxrcp-company--setup)
   ;;   (with-eval-after-load 'company (noxrcp-company--setup)))
+
+  (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read) ; counsel-company completion-at-point
+
   (global-company-mode t))
 
 ;; (defun noxrcp-company--setup ())
 
-;;;###autoload
 (defun noxrcp-company--completing-read ()
   (interactive)
   (company-mode t)

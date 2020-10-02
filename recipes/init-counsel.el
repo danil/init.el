@@ -56,7 +56,7 @@
 (defun noxrcp-counsel--setup ()
   ;; (global-set-key (kbd "C-c g") 'counsel-git)
   ;; (global-set-key (kbd "C-x C-f") 'noxrcp-counsel--find-file) ; and also please see `init-files.el'
-  (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
+  ;; (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
   ;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   ;; (global-set-key (kbd "M-x") 'counsel-M-x)
 
@@ -77,9 +77,7 @@
     (define-key noxrcp-map (kbd "j l") 'counsel-locate)
     (define-key noxrcp-map (kbd "j p") 'counsel-pt)
     (define-key noxrcp-map (kbd "j r") 'noxrcp-counsel--counsel-rg) ; counsel-projectile-rg
-    )
-  (if (boundp 'company-mode) (noxrcp-counsel--company-setup)
-    (with-eval-after-load 'company (noxrcp-counsel--company-setup))))
+    ))
 
 (defun noxrcp-counsel--customize-help()
   "My init customize."
@@ -92,11 +90,7 @@
   ;; (define-key help-map (kbd "v") 'counsel-describe-variable)
   (define-key help-map (kbd "u") 'counsel-unicode-char))
 
-(defun noxrcp-counsel--company-setup ()
-  (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read) ;; counsel-company completion-at-point
-  )
-
-(defun noxrcp-counsel---company ()
+(defun noxrcp-counsel--company ()
   "Complete using `company-candidates'."
   (interactive)
   (let ((initial-input (noxrcp-company--grab-symbol)))
