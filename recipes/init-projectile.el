@@ -71,7 +71,7 @@
 
 (defun noxrcp-projectile--init ()
   (projectile-mode +1)
-  (define-key noxrcp-mode-map (kbd "C-c p") projectile-command-map)
-  (counsel-projectile-mode +1))
+  ;; (counsel-projectile-mode +1)
+  (define-key noxrcp-mode-map (kbd "C-c p") projectile-command-map))
 
 ;;; init-projectile.el ends here
