@@ -31,10 +31,16 @@
 
 ;;; Code:
 
+(defcustom noxrcp-simple--yank-pop-function 'noxrcp-selectrum--yank-pop ;'counsel-yank-pop
+  "No X recipe custom variable for the custom yank pop function."
+  :group 'noxrcp)
+
 (add-hook 'after-init-hook 'noxrcp-simple)
 
 (defun noxrcp-simple ()
   "No X recipe init."
+
+  (global-set-key (kbd "M-y") 'noxrcp-simple--yank-pop)
 
   (define-key noxrcp-map (kbd "l c") 'count-words-region)
   (define-key noxrcp-map (kbd "l t") 'toggle-truncate-lines)
@@ -49,5 +55,13 @@
         overwrite-mode-textual " OVERWRITING")
   ;; Transient mark mode <http://emacswiki.org/TransientMarkMode>.
   (transient-mark-mode t))
+
+(defun noxrcp-simple--yank-pop ()
+  (interactive)
+  (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
+        (current-prefix-arg (call-interactively 'yank-pop))
+        (t (if (equal 'yank last-command)
+               (call-interactively 'yank-pop)
+               (call-interactively noxrcp-simple--yank-pop-function)))))
 
 ;;; init-simple.el ends here

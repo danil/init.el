@@ -59,7 +59,6 @@
   (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
   ;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   ;; (global-set-key (kbd "M-x") 'counsel-M-x)
-  ;; (global-set-key (kbd "M-y") 'noxrcp-counsel--yank-pop)
 
   ;; (if (boundp 'counsel-find-file-map) (noxrcp-counsel--customize-keys)
   ;;   (with-eval-after-load 'counsel (noxrcp-counsel--customize-keys)))
@@ -110,14 +109,6 @@
                 :action #'ivy-completion-in-region-action
                 :initial-input initial-input ;(when initial-input (format "%s" initial-input))
                 :unwind #'company-abort))))
-
-;; (defun noxrcp-counsel--yank-pop ()
-;;   (interactive)
-;;   (cond ((equal current-prefix-arg 1) (call-interactively 'yank-pop))
-;;         (current-prefix-arg (call-interactively 'yank-pop))
-;;         (t (if (equal 'yank last-command)
-;;                (call-interactively 'yank-pop)
-;;                (call-interactively 'counsel-yank-pop)))))
 
 ;; (defun noxrcp-counsel--find-file ()
 ;;   (interactive)

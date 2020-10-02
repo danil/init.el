@@ -49,9 +49,8 @@
   ;; (if (boundp 'company-mode) (noxrcp-selectrum--company-setup)
   ;;   (with-eval-after-load 'company (noxrcp-selectrum--company-setup)))
 
-  (global-set-key (kbd "C-c C-r") #'selectrum-repeat)
   ;; (global-set-key (kbd "C-x C-r") 'noxrcp-selectrum--recentf)
-  (global-set-key (kbd "M-y") 'noxrcp-selectrum--yank-pop))
+  (global-set-key (kbd "C-c C-r") #'selectrum-repeat))
 
 ;; (defun noxrcp-selectrum--company-setup ()
 ;;   (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read))
