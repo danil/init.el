@@ -40,7 +40,7 @@
   :group 'noxrcp)
 
 (custom-set-variables
- '(projectile-completion-system 'noxrcp-selectrum--projectile-completing-read) ;'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
+ '(projectile-completion-system 'noxrcp-selectrum--unsorted-read) ;'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
  '(projectile-indexing-method 'alien) ; 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil)
  '(noxrcp-projectile-modes (-union noxrcp-programming-modes

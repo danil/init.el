@@ -157,7 +157,7 @@ The previous string is between `completion-beg' and `completion-end'."
         (goto-char (prog1 (mark t)
                      (set-marker (mark-marker) (point) (current-buffer)))))))
 
-(defun noxrcp-selectrum--projectile-completing-read (prompt choices)
+(defun noxrcp-selectrum--unsorted-read (prompt choices)
   (let ((selectrum-should-sort-p nil))
     (completing-read prompt choices)))
 
