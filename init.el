@@ -540,6 +540,7 @@
 
 (nox-recipe '(paren))
 (nox-recipe '(php-mode))
+(nox-recipe '(pinentry)) ;gnupg password in minibuffer prompt instead of graphical dialog <https://unix.stackexchange.com/questions/55638/can-emacs-use-gpg-agent-in-a-terminal-at-all/278875#278875>
 (nox-recipe '(protobuf-mode))
 (nox-recipe '(python))
 (nox-recipe '(quickrun))
