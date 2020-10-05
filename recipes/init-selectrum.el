@@ -171,12 +171,6 @@ The previous string is between `completion-beg' and `completion-end'."
         res
       (prescient-sort res))))
 
-(defun noxrcp-selectrum--M-x ()
-  (interactive)
-
-  (push last-input-event "^")
-  (amx))
-
 ;; ;; Markers (mark ring)
 ;; ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#markers-the-mark-ring>
 ;; (defcustom noxrcp-selectrum--mark-ring-highlight-face 'highlight
