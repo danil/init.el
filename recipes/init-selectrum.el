@@ -167,11 +167,15 @@ The previous string is between `completion-beg' and `completion-end'."
                                         prescient-sort)
   "Apply prescient sorting when listing refs."
   (let ((res (funcall orig namespaces format sortby)))
-    (if (or sortby
-            magit-list-refs-sortby
-            (not selectrum-should-sort-p))
+    (if (or sortby magit-list-refs-sortby (not selectrum-should-sort-p))
         res
       (prescient-sort res))))
+
+(defun noxrcp-selectrum--M-x ()
+  (interactive)
+
+  (push last-input-event "^")
+  (amx))
 
 ;; ;; Markers (mark ring)
 ;; ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#markers-the-mark-ring>
