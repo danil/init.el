@@ -118,6 +118,7 @@
 (depends-on "highlight-symbol")
 (depends-on "hl-todo")
 (depends-on "hydra") ; key bindings
+(depends-on "i3wm-config-mode")
 (depends-on "ibuffer-vc")
 (depends-on "inf-mongo")
 
