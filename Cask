@@ -122,16 +122,6 @@
 (depends-on "ibuffer-vc")
 (depends-on "inf-mongo")
 
-;; ;; Ido.
-;; ;; (depends-on "flx-ido") ;  incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
-;; ;; (depends-on "ido-occur")
-;; (depends-on "ido-clever-match") ; ido fuzzy matching
-;; (depends-on "ido-describe-bindings")
-;; (depends-on "ido-ubiquitous" :git "https://github.com/technomancy/ido-ubiquitous.git")
-;; (depends-on "ido-vertical-mode")
-;; (depends-on "ido-yes-or-no")
-;; (depends-on "smex") ; is a m-x enhancement
-
 ;; Ivy (is an ido replacement).
 ;; (depends-on "counsel-projectile") ; projectile respect selectrum instead of counsel
 (depends-on "counsel")

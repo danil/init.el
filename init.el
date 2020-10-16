@@ -464,20 +464,6 @@
 (nox-recipe '(ivy-historian))
 (nox-recipe '(swiper)) ; a-la ido-occur
 
-;; ;; Ido.
-;; ;; (nox-recipe '(flx-ido)) ; incompatible with `kill-ring-ido` from `browse-kill-ring` (ido fuzzy matching)
-;; ;; (nox-recipe '(ido-describe-bindings))
-;; ;; (nox-recipe '(ido-occur)) ; use swiper instead
-;; ;; (nox-recipe '(kill-ring-ido))
-;; ;; (nox-recipe '(recentf-ido-find-file))
-;; ;; (nox-recipe '(smex))
-;; (nox-recipe '(ido-ubiquitous))
-;; (nox-recipe '(crm-custom))
-;; (nox-recipe '(ido))
-;; (nox-recipe '(ido-clever-match)) ; ido fuzzy matching
-;; (nox-recipe '(ido-vertical-mode))
-;; (nox-recipe '(ido-yes-or-no))
-
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (nox-recipe '(ibuffer))
 (nox-recipe '(ielm))
