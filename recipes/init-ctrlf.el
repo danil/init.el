@@ -35,53 +35,9 @@
  '(ctrlf-highlight-active
    ((t :background "brightwhite" :foreground "brightred"))))
 
-(add-hook 'after-init-hook 'noxrcp-ctrlf)
-(defun noxrcp-ctrlf ()
-  "No X recipe init."
-  ;; (ctrlf-mode +1)
-
-  (global-set-key (kbd "C-s")   'noxrcp-ctrlf--forward-literal)          ;; isearch-forward                 or ctrlf-forward-literal
-  (global-set-key (kbd "C-r")   'noxrcp-ctrlf--backward-literal)         ;; isearch-backward                or ctrlf-backward-literal
-  (global-set-key (kbd "C-M-s") 'noxrcp-ctrlf--forward-regexp)           ;; isearch-forward-regexp          or ctrlf-forward-regexp
-  (global-set-key (kbd "C-M-r") 'noxrcp-ctrlf--backward-regexp)          ;; isearch-backward-regexp         or ctrlf-backward-regexp
-  (global-set-key (kbd "M-s _") 'noxrcp-ctrlf--forward-symbol)           ;; isearch-forward-symbol          or ctrlf-forward-symbol
-  (global-set-key (kbd "M-s .") 'noxrcp-ctrlf--forward-symbol-at-point)  ;; isearch-forward-symbol-at-point or ctrlf-forward-symbol-at-point
-  )
-
-(defun noxrcp-ctrlf--forward-literal ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-forward-literal))
-    (isearch-forward)))
-
-(defun noxrcp-ctrlf--backward-literal ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-backward-literal))
-    (isearch-backward)))
-
-(defun noxrcp-ctrlf--forward-regexp ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-forward-regexp))
-    (isearch-forward-regexp)))
-
-(defun noxrcp-ctrlf--backward-regexp ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-backward-regexp))
-    (isearch-backward-regexp)))
-
-(defun noxrcp-ctrlf--forward-symbol ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-forward-symbol))
-    (isearch-forward-symbol)))
-
-(defun noxrcp-ctrlf--forward-symbol-at-point ()
-  (interactive)
-  (if current-prefix-arg
-      (progn (setq current-prefix-arg nil) (ctrlf-forward-symbol-at-point))
-    (isearch-forward-symbol-at-point)))
+;; (add-hook 'after-init-hook 'noxrcp-ctrlf)
+;; (defun noxrcp-ctrlf ()
+;;   "No X recipe init."
+;;   (ctrlf-mode +1))
 
 ;;; init-ctrlf.el ends here

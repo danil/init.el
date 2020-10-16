@@ -1,6 +1,6 @@
 ;;; init-swiper.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,19 +35,19 @@
 ;;  '(swiper-include-line-number-in-search nil)
 ;;  '(swiper-goto-start-of-match nil))
 
-(add-hook 'after-init-hook 'noxrcp-swiper)
-(defun noxrcp-swiper ()
-  "No X recipe init."
-  ;; (global-set-key "\C-r" 'swiper)
-  (when (boundp 'noxrcp-map)
-    (define-key noxrcp-map (kbd "j O") 'swiper-multi)
-    (define-key noxrcp-map (kbd "j o") 'noxrcp-swiper--swiper)))
+;; (add-hook 'after-init-hook 'noxrcp-swiper)
+;; (defun noxrcp-swiper ()
+;;   "No X recipe init."
+;;   ;; (global-set-key "\C-r" 'swiper)
+;;   (when (boundp 'noxrcp-map)
+;;     (define-key noxrcp-map (kbd "j O") 'swiper-multi)
+;;     (define-key noxrcp-map (kbd "j o") 'noxrcp-swiper--swiper)))
 
-(defun noxrcp-swiper--swiper (&optional arg)
-  "Run `swiper' with optional argument `ARG' from `symbol-at-point'."
-  (interactive "P")
-  (if arg
-      (swiper)
-    (swiper (if (symbol-at-point) (symbol-name (symbol-at-point)) ""))))
+;; (defun noxrcp-swiper--swiper (&optional arg)
+;;   "Run `swiper' with optional argument `ARG' from `symbol-at-point'."
+;;   (interactive "P")
+;;   (if arg
+;;       (swiper)
+;;     (swiper (if (symbol-at-point) (symbol-name (symbol-at-point)) ""))))
 
 ;;; init-swiper.el ends here
