@@ -59,6 +59,7 @@
      (lisp-mode-hook noxrcp-lisp-mode--rainbow-identifiers-init)
      (lua-mode-hook noxrcp-lua-mode--rainbow-identifiers-init)
      (nginx-mode-hook noxrcp-nginx-mode--rainbow-identifiers-init)
+     (nxml-mode-hook noxrcp-nxml-mode--rainbow-identifiers-init)
      (php-mode-hook noxrcp-php-mode--rainbow-identifiers-init)
      (protobuf-mode-hook noxrcp-protobuf-mode--rainbow-identifiers-init)
      (python-mode-hook noxrcp-python-mode--rainbow-identifiers-init)

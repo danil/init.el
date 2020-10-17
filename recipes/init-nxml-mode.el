@@ -1,6 +1,6 @@
 ;;; init-nxml-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,12 +31,28 @@
 
 ;;; Code:
 
-;; (add-hook 'after-init-hook 'noxrcp-nxml-mode)
+(add-hook 'after-init-hook 'noxrcp-nxml-mode)
 
-;; (defun noxrcp-nxml-mode ()
-;;   "No X recipe init."
+(defun noxrcp-nxml-mode ()
+  "No X recipe init."
 
-;;   (noxrcp-after-load 'nxml-mode
-;;     (define-key nxml-mode-map (kbd "\C-c\C-f") nil)))
+  (if (boundp 'nxml-mode-map) (noxrcp-nxml-mode--setup)
+    (with-eval-after-load 'nxml-mode (noxrcp-nxml-mode--setup))))
+
+(defun noxrcp-nxml-mode--setup ()
+  (define-key nxml-mode-map (kbd "\C-c\C-f") nil))
+
+(defun noxrcp-nxml-mode--rainbow-identifiers-init ()
+  (when (equal major-mode 'nxml-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'noxrcp-rainbow-identifiers--face-overridable)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(nxml-element-local-name
+                                                  font-lock-function-name-face))
+
+    (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
+      (noxrcp-rainbow-identifiers--lazyinit))))
 
 ;;; init-nxml-mode.el ends here
