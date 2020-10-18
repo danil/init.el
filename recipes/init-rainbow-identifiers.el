@@ -51,6 +51,7 @@
      (elixir-mode-hook noxrcp-elixir-mode--rainbow-identifiers-init)
      (emacs-lisp-mode-hook noxrcp-emacs-lisp-mode--rainbow-identifiers-init)
      (enh-ruby-mode-hook noxrcp-enh-ruby-mode--rainbow-identifiers-init)
+     (ferm-mode-hook noxrcp-ferm-mode--rainbow-identifiers-init)
      (go-mode-hook noxrcp-go-mode--rainbow-identifiers-init)
      (haproxy-mode-hook noxrcp-haproxy-mode--rainbow-identifiers-init)
      (hcl-mode-hook noxrcp-hcl-mode--rainbow-identifiers-init)
