@@ -58,7 +58,7 @@
       (let ((n current-prefix-arg))
         (setq current-prefix-arg nil)
         (cond ((equal n 4)
-               (swiper))
+               (swiper (if (symbol-at-point) (symbol-name (symbol-at-point)) "")))
               ((equal n 5)
                (swiper-multi))
               (t
