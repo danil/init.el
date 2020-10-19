@@ -150,6 +150,7 @@
 
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
+(depends-on "logview")
 (depends-on "lsp-mode")
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
@@ -217,6 +218,7 @@
 (depends-on "tldr")
 (depends-on "toml-mode")
 (depends-on "top-mode" :git "https://github.com/emacsmirror/top-mode.git")
+(depends-on "tramp")
 (depends-on "transpose-frame")
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
