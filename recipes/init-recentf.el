@@ -43,9 +43,6 @@
 
 (add-hook 'after-init-hook 'noxrcp-recentf)
 
-(defun noxrcp-recentf ()
-  "No X recipe init."
-
-  (recentf-mode t))
+(defun noxrcp-recentf () "No X recipe init." (recentf-mode t))
 
 ;;; init-recentf.el ends here
