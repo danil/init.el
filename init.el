@@ -318,14 +318,6 @@
 (nox-recipe '(ansi-color))
 (nox-recipe '(anzu))
 
-;; ;; AC mode auto complete.
-;; ;; (nox-recipe '(ac-html-bootstrap))
-;; (nox-recipe '(ac-html))
-;; (nox-recipe '(ac-ispell))
-;; (nox-recipe '(auto-complete))
-;; (nox-recipe '(auto-complete-chunk))
-;; (nox-recipe '(go-autocomplete))
-
 ;; Company mode auto complete.
 ;; (nox-recipe '(company-ansible))
 ;; (nox-recipe '(company-edbi))
