@@ -476,8 +476,9 @@
 (nox-recipe '(kill-emacs))
 (nox-recipe '(kill-ring))
 
-(nox-recipe '(lisp-mode))
 ;; (nox-recipe '(lsp-mode))
+(nox-recipe '(lisp-mode))
+(nox-recipe '(logview))
 (nox-recipe '(lua-mode))
 
 (nox-recipe '(magit))
