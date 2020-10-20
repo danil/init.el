@@ -37,10 +37,17 @@
 
 (custom-set-variables '(noxrcp-logview-mode-patterns
                         '(
-                          "/access_log\\'"
-                          "/error_log\\'"
-                          "\\.access_log\\'"
-                          "\\.error_log\\'"
+                          "/access_log\\(?:\\.[0-9]+\\)?\\'"
+                          "/error_log\\(?:\\.[0-9]+\\)?\\'"
+                          "/var/log/boot\\'"
+                          "/var/log/cups/access_log\\(?:\\.[0-9]+\\)?\\'"
+                          "/var/log/dmesg\\(?:\\.[0-9]+\\)?\\'"
+                          "/var/log/messages\\'"
+                          "/var/log/mysql/mysql.err\\'"
+                          "/var/log/mysql/mysqld.err\\'"
+                          "/var/log/syslog\\(?:\\.[0-9]+\\)?\\'"
+                          "\\.access_log\\(?:\\.[0-9]+\\)?\\'"
+                          "\\.error_log\\(?:\\.[0-9]+\\)?\\'"
                           "\\.log\\(?:\\.[0-9]+\\)?\\'"
                           )))
 
