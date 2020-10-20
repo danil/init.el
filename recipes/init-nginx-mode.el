@@ -1,6 +1,6 @@
 ;;; init-nginx-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2017 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,16 +31,23 @@
 
 ;;; Code:
 
-;; (custom-set-variables '(nginx-indent-level 2))
+(defcustom noxrcp-nginx-mode-patterns '()
+  "Regexp patterns associated with `logview'."
+  :group 'noxrcp)
+
+(custom-set-variables '(noxrcp-nginx-mode-patterns
+                        '(
+                          "/etc/nginx/.*\\.conf\\'"
+                          "/etc/nginx/sites-available/"
+                          )))
 
 (add-hook 'after-init-hook 'noxrcp-nginx-mode)
 
 (defun noxrcp-nginx-mode ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'nginx-mode
-                                "/etc/nginx/.*\\.conf\\'"
-                                "/etc/nginx/sites-available/"))
+  (dolist (pattern noxrcp-nginx-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'nginx-mode))))
 
 (defun noxrcp-nginx-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'nginx-mode)
@@ -49,7 +56,8 @@
               'noxrcp-rainbow-identifiers--face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
+    (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face
+                                                  font-lock-variable-name-face))
 
     (noxrcp-rainbow-identifiers--lazyinit)))
 
