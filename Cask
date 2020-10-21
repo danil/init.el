@@ -154,6 +154,7 @@
 (depends-on "package-build")
 (depends-on "php-mode")
 (depends-on "pinentry") ; gnupg password in minibuffer prompt instead of graphical dialog <https://unix.stackexchange.com/questions/55638/can-emacs-use-gpg-agent-in-a-terminal-at-all/278875#278875>
+(depends-on "pkgbuild-mode")
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "protobuf-mode")

@@ -81,6 +81,7 @@
                           ("/sshd_config\\'"                        conf-mode)
                           ("/sudoers\\'"                            conf-mode)
                           ("/tint2rc\\'"                            conf-mode)
+                          ("\\.SRCINFO\\'"                          conf-mode)
                           ("\\.cnf\\'"                              conf-mode)
                           ("\\.eixrc\\'"                            conf-mode)
                           ("\\.features\\'"                         conf-mode) ; cucumber features
