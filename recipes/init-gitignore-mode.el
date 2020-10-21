@@ -31,14 +31,28 @@
 
 ;;; Code:
 
+(defcustom noxrcp-gitignore-mode-patterns '()
+  "Regexp patterns associated with `logview'."
+  :group 'noxrcp)
+
+(custom-set-variables '(noxrcp-gitignore-mode-patterns
+                        '(
+                          "/\\.agignore\\'"
+                          "/\\.dockerignore\\'"
+                          "/\\.gitignore_global\\'"
+                          "/\\.stglobalignore\\'"
+                          "/\\.stignore\\'"
+                          "/\\.stignore_global\\'"
+                          "/\\.stignoreglobal\\'"
+                          )))
+
 (add-hook 'after-init-hook 'noxrcp-gitignore-mode)
 
 (defun noxrcp-gitignore-mode ()
   "No X recipe init."
 
   ;; Git modes <https://github.com/magit/git-modes>.
-  (dolist (pattern
-           '("/.agignore\\'" "/.dockerignore\\'" "/.gitignore_global\\'"))
+  (dolist (pattern noxrcp-gitignore-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'gitignore-mode))))
 
 ;;; init-gitignore-mode.el ends here
