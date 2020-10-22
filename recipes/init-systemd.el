@@ -54,13 +54,14 @@
 
 (defun noxrcp-systemd--rainbow-identifiers-init ()
   (when (equal major-mode 'systemd)
-    ;; (make-local-variable 'rainbow-identifiers-filter-functions)
-    ;; (add-hook 'rainbow-identifiers-filter-functions
-    ;;           'rainbow-identifiers-face-overridable)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
     ;; (add-hook 'rainbow-identifiers-filter-functions
     ;;           'noxrcp-systemd--rainbow-identifiers-filter)
-    ;; (make-local-variable 'rainbow-identifiers-faces-to-override)
-    ;; (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override '(font-lock-type-face
+                                                  font-lock-keyword-face))
     (noxrcp-rainbow-identifiers--lazyinit)))
 
 ;; ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
