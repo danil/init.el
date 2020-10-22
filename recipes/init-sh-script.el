@@ -47,6 +47,7 @@
      "/\\.mkshrc\\'"
      "/\\.xprofile\\'"
      "/dwmrc\\'"
+     "/etc/profile\\'"
 
      ;; Ubuntu.
      "/apt/.+\\.list\\(\\.save\\)?\\'"
