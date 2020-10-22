@@ -53,7 +53,7 @@
 ;; (defun noxrcp-systemd--setup ())
 
 (defun noxrcp-systemd--rainbow-identifiers-init ()
-  (when (equal major-mode 'systemd)
+  (when (equal major-mode 'systemd-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
