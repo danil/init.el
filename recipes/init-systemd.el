@@ -56,25 +56,19 @@
   (when (equal major-mode 'systemd-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'rainbow-identifiers-face-overridable)
-    ;; (add-hook 'rainbow-identifiers-filter-functions
-    ;;           'noxrcp-systemd--rainbow-identifiers-filter)
-    (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-type-face
-                                                  font-lock-keyword-face))
+              'noxrcp-systemd--rainbow-identifiers-filter)
     (noxrcp-rainbow-identifiers--lazyinit)))
 
-;; ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-;; (defun noxrcp-systemd--rainbow-identifiers-filter (beg end)
-;;   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
-;;   (let (;; (ch-cur (char-after beg))
-;;         ;; (ch-before (char-before beg))
-;;         ;; (ch-after (char-after end))
-;;         (str-cur (buffer-substring-no-properties beg end))
-;;         ;; (str-before (buffer-substring-no-properties (point-min) beg))
-;;         ;; (str-after (buffer-substring-no-properties end (point-max)))
-;;         )
-;;     (and ;; (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ??)))
-;;          (not (member str-cur noxrcp-systemd--rainbow-identifiers-stop-words)))))
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun noxrcp-systemd--rainbow-identifiers-filter (beg end)
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+  (let ((face-cur (or (get-char-property beg 'read-face-name)
+                      (get-char-property beg 'face)))
+        (ch-cur (char-after beg))
+        (str-cur (buffer-substring-no-properties beg end)))
+    (or
+      (eq face-cur 'font-lock-type-face)
+      (eq face-cur 'font-lock-keyword-face)
+      (eq face-cur nil))))
 
 ;;; init-systemd.el ends here
