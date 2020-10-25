@@ -42,6 +42,7 @@
 (custom-set-variables
  '(noxrcp-rainbow-modes '(
                           css-mode
+                          i3wm-config-mode
                           less-css-mode
                           nxml-mode
                           php-mode
