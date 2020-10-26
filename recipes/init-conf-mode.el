@@ -78,6 +78,7 @@
                           ("/rsyncd\\.secrets\\'"                   conf-colon-mode)
                           ("/securetty\\'"                          conf-mode)
                           ("/share/applications/defaults\\.list\\'" conf-mode)
+                          ("/shells\\'"                             conf-mode)
                           ("/sshd_config\\'"                        conf-mode)
                           ("/sudoers\\'"                            conf-mode)
                           ("/tint2rc\\'"                            conf-mode)
