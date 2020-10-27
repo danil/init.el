@@ -37,9 +37,23 @@
   "Regexp patterns associated with `ferm-mode'."
   :group 'noxrcp)
 
+
+(defcustom noxrcp-ferm-mode--rainbow-identifiers-stop-words '()
+  "Do not highlight in `ferm-mode'."
+  :group 'noxrcp)
+
 (custom-set-variables
  '(noxrcp-ferm-mode-patterns '("/etc/iptables/rules.v[46]"
-                               "\\.rules\\'")))
+                               "\\.rules\\'"))
+ '(noxrcp-ferm-mode--rainbow-identifiers-stop-words
+   '(
+     "ACCEPT"
+     "DROP"
+     "FORWARD"
+     "INPUT"
+     "OUTPUT"
+     "REJECT"
+     )))
 
 (add-hook 'after-init-hook 'noxrcp-ferm-mode)
 
@@ -50,13 +64,22 @@
 
 (defun noxrcp-ferm-mode--rainbow-identifiers-init ()
   (when (equal major-mode 'ferm-mode)
-    ;; (make-local-variable 'rainbow-identifiers-filter-functions)
-    ;; (add-hook 'rainbow-identifiers-filter-functions
-    ;;           'noxrcp-rainbow-identifiers--face-overridable)
-
-    ;; (make-local-variable 'rainbow-identifiers-faces-to-override)
-    ;; (setq rainbow-identifiers-faces-to-override '())
-
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'noxrcp-ferm-mode--rainbow-identifiers-filter)
     (noxrcp-rainbow-identifiers--lazyinit)))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun noxrcp-ferm-mode--rainbow-identifiers-filter (beg end)
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+  (let ((face-cur (or (get-char-property beg 'read-face-name)
+                      (get-char-property beg 'face)))
+        (ch-cur (char-after beg))
+        (str-cur (buffer-substring-no-properties beg end)))
+    (and
+     (or
+      ;; (eq face-cur 'font-lock-preprocessor-face)
+      (eq face-cur nil))
+     (not (member str-cur noxrcp-ferm-mode--rainbow-identifiers-stop-words)))))
 
 ;;; init-ferm-mode.el ends here
