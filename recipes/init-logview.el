@@ -49,6 +49,10 @@
                           "\\.access_log\\(?:\\.[0-9]+\\)?\\'"
                           "\\.error_log\\(?:\\.[0-9]+\\)?\\'"
                           "\\.log\\(?:\\.[0-9]+\\)?\\'"
+
+                          ;; Exim.
+                          "/mainlog\\'"
+                          "/rejectlog\\'"
                           )))
 
 (add-hook 'after-init-hook 'noxrcp-logview)
