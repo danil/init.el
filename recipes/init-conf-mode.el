@@ -102,6 +102,12 @@
                           ("/etc/logrotate\\.d/" conf-mode)
                           ("\\.logrotate\\'"     conf-mode)
 
+                          ;; Exim configs
+                          ("/system_filter\\.exim\\'"         conf-mode)
+                          ("/passwd\\.client\\'"              conf-mode)
+                          ("/exim\\.conf\\.dist\\'"           conf-mode)
+                          ("/exim4\\.conf\\.localmacros\\'"   conf-mode)
+
                           ;; Gentoo configs
                           ("/etc/conf\\.d/"                     conf-mode)
                           ("/etc/eixrc/"                        conf-mode)
