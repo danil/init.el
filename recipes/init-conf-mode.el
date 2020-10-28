@@ -60,6 +60,7 @@
                           ("/etc/fstab\\'"                          conf-mode)
                           ("/etc/mail/aliases\\'"                   conf-mode)
                           ("/etc/mailutils\\.d/"                    conf-mode)
+                          ("/etc/smtpd/aliases\\'"                  conf-mode)
                           ("/etc/sudoers\\.tmp\\'"                  conf-mode)
                           ("/fail2ban/.*\\.local\\'"                conf-mode)
                           ("/hosts\\'"                              conf-mode)
