@@ -47,7 +47,21 @@
   (selectrum-mode +1)
 
   (global-set-key (kbd "C-x C-r") 'noxrcp-selectrum--recentf)
-  (global-set-key (kbd "C-c C-r") #'selectrum-repeat))
+  (global-set-key (kbd "C-c C-r") #'selectrum-repeat)
+
+  (if (boundp 'selectrum-minibuffer-map) (noxrcp-selectrum--setup)
+    (with-eval-after-load 'selectrum (noxrcp-selectrum--setup))))
+
+(defun noxrcp-selectrum--setup ()
+  (interactive)
+  (define-key selectrum-minibuffer-map (kbd "C-j") nil)
+  (define-key selectrum-minibuffer-map (kbd "C-c C-j") #'selectrum-submit-exact-input))
+
+;; (defun noxrcp-selectrum--submit-exact-input (isearch-fn ctrlf-fn)
+;;   (interactive)
+;;   (if current-prefix-arg
+;;       (progn (setq current-prefix-arg nil) (selectrum-submit-exact-input))
+;;     ??????????))
 
 ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#switch-to-recent-file>
 (defun noxrcp-selectrum--recentf ()
