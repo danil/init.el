@@ -1,6 +1,6 @@
 ;;; init-go-playground.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -36,12 +36,6 @@
 (defun noxrcp-go-playground ()
   "No X recipe init."
 
-  (noxrcp-after-load 'go-playground
-    (define-key go-playground-mode-map (kbd "C-c C-z")
-      'go-playground-remove-current-snippet)
-    (define-key go-playground-mode-map (kbd "C-j") 'go-playground-save-and-run))
-
-  (noxrcp-after-load 'go-mode
-    (define-key go-mode-map (kbd "C-c C-z") 'go-playground)))
+  (define-key noxrcp-map (kbd "p g") #'go-playground))
 
 ;;; init-go-playground.el ends here
