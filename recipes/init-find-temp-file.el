@@ -31,27 +31,25 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'noxrcp-find-temp-file)
+(custom-set-variables
+ ;; Default template for temporary files.
+ ;; %N: prefix taken from `find-temp-file-prefix'
+ ;; %S: shortened sha-1 of the extension
+ ;; %T: shortened sha-1 of the extension + machine
+ ;; %E: extension
+ ;; %M: replace by mode name associated with the extension
+ ;; %D: date with format %Y-%m-%d
+ '(find-temp-template-default "danil/%D%N.%E")
 
+ '(find-temp-custom-spec
+   '((?D . (lambda () (format-time-string "%Y%m%d")))))
+
+ ;; Alist with file extensions and corresponding file name template.
+ '(find-temp-template-alist '(("go" . "danil/%D%N/%N.%E"))))
+
+(add-hook 'after-init-hook 'noxrcp-find-temp-file)
 (defun noxrcp-find-temp-file ()
   "No X recipe init."
-
-  (define-key noxrcp-exec-map (kbd "t") 'find-temp-file)
-
-  (noxrcp-after-load 'find-temp-file
-    ;; Default template for temporary files.
-    ;; %N: prefix taken from `find-temp-file-prefix'
-    ;; %S: shortened sha-1 of the extension
-    ;; %T: shortened sha-1 of the extension + machine
-    ;; %E: extension
-    ;; %M: replace by mode name associated with the extension
-    ;; %D: date with format %Y-%m-%d
-    (setq find-temp-template-default "danil/%D%N.%E")
-
-    (setq find-temp-custom-spec
-          '((?D . (lambda () (format-time-string "%Y%m%d")))))
-
-    ;; Alist with file extensions and corresponding file name template.
-    (setq find-temp-template-alist '(("go" . "danil/%D%N/%N.%E")))))
+  (define-key noxrcp-exec-map (kbd "t") 'find-temp-file))
 
 ;;; init-find-temp-file.el ends here
