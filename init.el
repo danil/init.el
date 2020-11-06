@@ -510,6 +510,7 @@
 (nox-recipe '(narrow-indirect))
 (nox-recipe '(newcomment))
 (nox-recipe '(nginx-mode))
+(nox-recipe '(noccur))
 (nox-recipe '(nodejs))
 (nox-recipe '(nodejs-repl))
 (nox-recipe '(noxrcp))
