@@ -76,7 +76,7 @@
     (define-key noxrcp-map (kbd "j g") 'counsel-git-grep)
     (define-key noxrcp-map (kbd "j l") 'counsel-locate)
     (define-key noxrcp-map (kbd "j p") 'counsel-pt)
-    (define-key noxrcp-map (kbd "j r") 'noxrcp-counsel--counsel-rg) ; counsel-projectile-rg
+    (define-key noxrcp-map (kbd "j r") 'noxrcp-counsel--rg) ; counsel-projectile-rg
     ))
 
 (defun noxrcp-counsel--customize-help()
@@ -157,7 +157,7 @@ If there is a symbol under cursor, then pass it as initial ag imput."
 
       (counsel-ag initial-input initial-directory))))
 
-(defun noxrcp-counsel--counsel-rg (initial-directory)
+(defun noxrcp-counsel--rg (initial-directory)
   "Search using rg in a given `INITIAL-DIRECTORY`.
 
 If `current-prefix-arg' is a integer then
