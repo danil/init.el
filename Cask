@@ -83,6 +83,12 @@
 (depends-on "fish-mode")
 (depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
+
+;; fd a-la find replacement https://github.com/sharkdp/fd
+(depends-on "counsel-fd")
+(depends-on "fd-dired")
+
+;; Golang.
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
 (depends-on "go-expr-completion") ; complete a left-hand side from given expression

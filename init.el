@@ -398,6 +398,10 @@
 (nox-recipe '(fish-mode))
 (nox-recipe '(font-core))
 
+;; fd a-la find replacement https://github.com/sharkdp/fd
+(nox-recipe '(counsel-fd))
+(nox-recipe '(fd-dired))
+
 ;; (nox-recipe '(flycheck-gometalinter))
 ;; (nox-recipe '(flycheck-bashate))
 (nox-recipe '(flycheck))

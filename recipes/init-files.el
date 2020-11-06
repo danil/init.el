@@ -1,6 +1,6 @@
 ;;; init-files.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -37,27 +37,48 @@
  ;; Get rid of annoying backups, temporary files and autosaves
  ;; (Built-in backup settings
  ;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>).
- '(backup-by-copying t) ;don't clobber symlinks
- '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;don't litter my fs tree
+ '(backup-by-copying t) ; don't clobber symlinks
+ '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ; don't litter my fs tree
  '(delete-old-versions t)
  '(directory-free-space-args "--human-readable")
  '(kept-new-versions 6)
  '(kept-old-versions 2)
- '(version-control t) ;use versioned backups
+ '(version-control t) ; use versioned backups
  )
 
 (add-hook 'after-init-hook 'noxrcp-files)
+
 (defun noxrcp-files ()
   "No X recipe init."
-  ;; (global-set-key (kbd "C-x C-f") 'noxrcp-files--find-file)
+
+  (global-set-key (kbd "C-x C-f") 'noxrcp-files--find-file)
+  (global-set-key (kbd "C-x C-d") 'noxrcp-files--list) ; 'list-directory
+
   (when (boundp 'noxrcp-map)
     (define-key noxrcp-map (kbd "B r") 'revert-buffer)))
 
-;; (defun noxrcp-files--find-file ()
-;;   (interactive)
-;;   (cond ((equal current-prefix-arg 1) (call-interactively 'find-file))
-;;         (current-prefix-arg (call-interactively 'find-file-literally))
-;;         (t (call-interactively 'counsel-find-file))))
+(defun noxrcp-files--find-file ()
+  (interactive)
+  (let ((n current-prefix-arg))
+    (setq current-prefix-arg nil)
+    (cond ((equal n '(4))
+           (setq current-prefix-arg '(4))
+           (call-interactively 'counsel-fd-file-jump))
+          ((equal n 7)
+           (counsel-find-file))
+          (t
+           (call-interactively 'find-file)))))
+
+(defun noxrcp-files--list ()
+  (interactive)
+  (let ((n current-prefix-arg))
+    (cond ((equal n '(4))
+           (call-interactively 'counsel-fd-dired-jump))
+          ((equal n 7)
+           (call-interactively 'list-directory))
+          (t
+           (setq current-prefix-arg '(4))
+           (call-interactively 'fd-dired)))))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function

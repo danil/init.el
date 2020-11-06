@@ -1,4 +1,4 @@
-;;; init-dired.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-fd-dired.el --- This file is part of Danil <danil@kutkevich.org> home.
 
 ;; Copyright (C) 2020 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
@@ -31,32 +31,9 @@
 
 ;;; Code:
 
-;;; Reuse directory buffer
-;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
-(put 'dired-find-alternate-file 'disabled nil)
+(custom-set-variables '(fd-dired-display-in-current-window t))
 
-(custom-set-variables '(dired-listing-switches "-l --all --human-readable"))
+(add-hook 'after-init-hook 'noxrcp-fd-dired)
+(defun noxrcp-fd-dired () "No X recipe init.")
 
-(defcustom noxrcp-dired--list-of-switches
-  '("-l --all --human-readable" "-l --all")
-  "List of ls switches for dired to cycle among.")
-
-(add-hook 'after-init-hook 'noxrcp-dired)
-(defun noxrcp-dired ()
-  "No X recipe init."
-
-  (with-eval-after-load 'dired (noxrcp-dired--setup)))
-
-(defun noxrcp-dired--setup ()
-  (define-key dired-mode-map (kbd "^") 'noxrcp-dired--reuse-directory-buffer))
-
-(defun noxrcp-dired--reuse-directory-buffer ()
-  "Reuse `dired' buffer."
-  (interactive)
-
-  (let ((d (expand-file-name default-directory)))
-
-    (find-alternate-file "..")
-    (when d (dired-goto-file d))))
-
-;;; init-dired.el ends here
+;;; init-fd-dired.el ends here
