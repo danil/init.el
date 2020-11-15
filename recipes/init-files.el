@@ -74,8 +74,10 @@
   (let ((n current-prefix-arg))
     (cond ((equal n '(4))
            (call-interactively 'counsel-fd-dired-jump))
-          ((equal n 7)
+          ((equal n 1)
            (call-interactively 'list-directory))
+          ((equal n 7)
+           (call-interactively 'counsel-locate))
           (t
            (setq current-prefix-arg '(4))
            (call-interactively 'fd-dired)))))

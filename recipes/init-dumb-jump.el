@@ -45,7 +45,7 @@
 (defun noxrcp-dumb-jump--setup ()
   (define-key dumb-jump-mode-map (kbd "C-M-g") nil)
   (define-key dumb-jump-mode-map (kbd "C-M-p") nil)
-  (define-key dumb-jump-mode-map (nox-kbd "j d") 'noxrcp-dumb-jump--go)
+  ;; (define-key dumb-jump-mode-map (nox-kbd "? ?") 'noxrcp-dumb-jump--go)
   (if (boundp 'c-mode-map) (noxrcp-dumb-jump--setup-c-mode)
     (with-eval-after-load 'cc-mode (noxrcp-dumb-jump--setup-c-mode)))
   (if (boundp 'enh-ruby-mode-map) (noxrcp-dumb-jump--setup-enh-ruby-mode)

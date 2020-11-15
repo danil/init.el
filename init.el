@@ -515,7 +515,6 @@
 (nox-recipe '(nodejs-repl))
 (nox-recipe '(noxrcp))
 (nox-recipe '(nxml-mode))
-(nox-recipe '(occur-mode))
 (nox-recipe '(org-mode org-ac))
 (nox-recipe '(org-mode))
 (nox-recipe '(origami))

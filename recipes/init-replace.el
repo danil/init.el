@@ -31,13 +31,28 @@
 
 ;;; Code:
 
+;; Truncate lines <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>.
+(add-hook 'occur-mode-hook (lambda () (setq truncate-lines t)))
+
+;; <http://lists.gnu.org/archive/html/emacs-devel/2005-07/msg00411.html>
+(add-hook 'occur-hook (lambda () (occur-rename-buffer t)))
+
 (add-hook 'after-init-hook 'noxrcp-replace)
 
 (defun noxrcp-replace ()
   "No X recipe init."
 
-  (noxrcp-after-load 'lisp-mode
-    (define-key noxrcp-map (kbd "l f") 'flush-lines)
-    (define-key noxrcp-map (kbd "l k") 'keep-lines)))
+  (global-set-key (kbd "M-s o") 'noxrcp-replace--occur))
+
+(defun noxrcp-replace--occur ()
+  (interactive)
+  (let ((n current-prefix-arg))
+    (setq current-prefix-arg nil)
+    (cond ((equal n '(4))
+           (call-interactively 'noccur-dired))
+          ((equal n 4)
+           (call-interactively 'multi-occur-in-matching-buffers))
+          (t
+           (call-interactively 'occur)))))
 
 ;;; init-replace.el ends here

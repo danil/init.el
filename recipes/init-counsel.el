@@ -70,14 +70,7 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
   (when (boundp 'noxrcp-map)
-    ;; (define-key noxrcp-map (kbd "j x") 'counsel-colors-web)
-    ;; (define-key noxrcp-map (kbd "j x") 'counsel-git-log)
-    (define-key noxrcp-map (kbd "j a") 'noxrcp-counsel--counsel-ag)
-    (define-key noxrcp-map (kbd "j g") 'counsel-git-grep)
-    (define-key noxrcp-map (kbd "j l") 'counsel-locate)
-    (define-key noxrcp-map (kbd "j p") 'counsel-pt)
-    (define-key noxrcp-map (kbd "j r") 'noxrcp-counsel--rg) ; counsel-projectile-rg
-    ))
+    (define-key noxrcp-map (kbd "j") 'noxrcp-counsel--jump-line)))
 
 (defun noxrcp-counsel--customize-help()
   "My init customize."
@@ -103,6 +96,23 @@
                 :action #'ivy-completion-in-region-action
                 :initial-input initial-input ;(when initial-input (format "%s" initial-input))
                 :unwind #'company-abort))))
+
+(defun noxrcp-counsel--jump-line ()
+  (interactive)
+  (let ((n current-prefix-arg))
+    (setq current-prefix-arg nil)
+    (cond ((equal n '(4))
+           (call-interactively 'noxrcp-counsel--rg)) ; counsel-projectile-rg
+          ((equal n 4)
+           (call-interactively 'counsel-pt))
+          ((equal n 7)
+           (call-interactively 'counsel-git-grep))
+          ;; ((equal n 8)
+          ;;  (call-interactively 'counsel-colors-web))
+          ;; ((equal n 9)
+          ;;  (call-interactively 'counsel-git-log))
+          (t
+           (call-interactively 'noxrcp-counsel--counsel-ag)))))
 
 ;; (defun noxrcp-counsel--find-file ()
 ;;   (interactive)
