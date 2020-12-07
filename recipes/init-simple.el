@@ -42,7 +42,7 @@
 
   (global-set-key (kbd "M-y") 'noxrcp-simple--yank-pop)
 
-  (define-key noxrcp-map (kbd "l c") 'count-words-region)
+  (define-key noxrcp-map (kbd "r c") 'count-words-region)
   (define-key noxrcp-map (kbd "l t") 'toggle-truncate-lines)
 
   ;; (noxrcp-after-load 'simple
