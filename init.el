@@ -309,10 +309,6 @@
 ;; (require 'non-ascii-identifiers "~/.emacs.d/recipes/non-ascii-identifiers.el")
 ;; (nox-recipe '(non-ascii-identifiers))
 
-;; (nox-recipe '(rg)) ;using `counsel-rg` instead
-;; (nox-recipe '(ag)) ;using `counsel-ag` instead ;the silver searcher (ack replacement) <https://github.com/ggreer/the_silver_searcher>
-;; (nox-recipe '(pt)) ;using `counsel-pt` instead ;the platinum searcher (ag and ack replacement) <https://github.com/monochromegane/the_platinum_searcher>
-
 (nox-recipe '(abbrev))
 (nox-recipe '(align))
 (nox-recipe '(ansi-color))
