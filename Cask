@@ -138,6 +138,7 @@
 (depends-on "json-mode")
 (depends-on "json-reformat")
 (depends-on "literate-coffee-mode")
+(depends-on "typescript-mode")
 
 (depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")

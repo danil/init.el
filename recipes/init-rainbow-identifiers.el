@@ -72,6 +72,7 @@
      (sql-mode-hook noxrcp-sql-mode--rainbow-identifiers-init)
      (systemd-mode-hook noxrcp-systemd--rainbow-identifiers-init)
      (toml-mode-hook noxrcp-toml-mode--rainbow-identifiers-init)
+     (typescript-mode-hook noxrcp-typescript-mode--rainbow-identifiers-init)
      (web-mode-hook noxrcp-web-mode--rainbow-identifiers-init)
      (yaml-mode-hook noxrcp-yaml-mode--rainbow-identifiers-init)
      )))

@@ -472,6 +472,7 @@
 (nox-recipe '(js2-mode))
 (nox-recipe '(json-mode))
 (nox-recipe '(json-reformat))
+(nox-recipe '(typescript-mode))
 
 (nox-recipe '(kill-emacs))
 (nox-recipe '(kill-ring))
