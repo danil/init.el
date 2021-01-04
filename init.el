@@ -588,6 +588,7 @@
 (nox-recipe '(undo-tree))
 (nox-recipe '(uniquify)) ; uniquify buffer name
 (nox-recipe '(vc-hooks))
+(nox-recipe '(visual-regexp))
 (nox-recipe '(vlf))
 (nox-recipe '(web-mode))
 (nox-recipe '(window))

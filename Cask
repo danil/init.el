@@ -222,6 +222,7 @@
 (depends-on "undo-tree")
 (depends-on "unicode-troll-stopper")
 (depends-on "vimrc-mode")
+(depends-on "visual-regexp")
 (depends-on "vlf")
 (depends-on "web-mode")
 (depends-on "window-numbering")
