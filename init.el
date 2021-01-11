@@ -486,6 +486,7 @@
 (nox-recipe '(magit-blame))
 
 (nox-recipe '(markdown-mode))
+(nox-recipe '(markdown-toc))
 (nox-recipe '(markdownfmt))
 
 (nox-recipe '(make-mode))

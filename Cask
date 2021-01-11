@@ -150,6 +150,7 @@
 (depends-on "lsp-mode")
 (depends-on "lua-mode")
 (depends-on "markdown-mode")
+(depends-on "markdown-toc")
 (depends-on "markdownfmt")
 (depends-on "mediawiki")
 (depends-on "mustache-mode")
