@@ -42,17 +42,9 @@
 (defun noxrcp-replace ()
   "No X recipe init."
 
-  (global-set-key (kbd "M-s o") 'noxrcp-replace--occur))
-
-(defun noxrcp-replace--occur ()
-  (interactive)
-  (let ((n current-prefix-arg))
-    (setq current-prefix-arg nil)
-    (cond ((equal n '(4))
-           (call-interactively 'noccur-dired))
-          ((equal n 4)
-           (call-interactively 'multi-occur-in-matching-buffers))
-          (t
-           (call-interactively 'occur)))))
+  (global-set-key (kbd "M-s o") nil)
+  (global-set-key (kbd "M-s o o") 'occur)
+  (global-set-key (kbd "M-s o n") 'noccur-dired)
+  (global-set-key (kbd "M-s o m") 'multi-occur-in-matching-buffers))
 
 ;;; init-replace.el ends here
