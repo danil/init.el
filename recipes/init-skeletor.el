@@ -39,9 +39,11 @@
 (defun noxrcp-skeletor ()
   "No X recipe init."
 
+  (define-key noxrcp-exec-map (kbd "t p") 'skeletor-create-project-at)
+
   (skeletor-define-template "go-module"
     :title "Go Module"
-    :default-license (rx bol "MIT")
+    :no-license? t
     :substitutions
     '(("__GO-VERSION__" . (lambda ()
                             (shell-command-to-string "echo $(go version) | \
