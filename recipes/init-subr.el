@@ -38,9 +38,9 @@
     (if (boundp 'esc-map) (noxrcp-subr--setup-esc-map)
       (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map)))
 
-    (define-key noxrcp-map (kbd "x i t u") 'noxrcp-subr--insert-timestamp-unix)
-    (define-key noxrcp-map (kbd "x i t t") 'noxrcp-subr--insert-timestamp-time)
-    (define-key noxrcp-map (kbd "x i t d") 'noxrcp-subr--insert-timestamp-date))
+    (define-key noxrcp-exec-map (kbd "i t u") 'noxrcp-subr--insert-timestamp-unix)
+    (define-key noxrcp-exec-map (kbd "i t t") 'noxrcp-subr--insert-timestamp-time)
+    (define-key noxrcp-exec-map (kbd "i t d") 'noxrcp-subr--insert-timestamp-date))
 
 (defun noxrcp-subr--setup-esc-map () (define-key esc-map "." nil))
 
