@@ -1,6 +1,6 @@
 ;;; init-subr.el --- This file is part of Danil <danil@kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
+;; Copyright (C) 2021 Danil <danil@kutkevich.org>.
 ;; Author: Danil <danil@kutkevich.org>
 ;; Maintainer: Danil <danil@kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -35,8 +35,22 @@
 (defun noxrcp-subr ()
   "No X recipe init."
     (if (boundp 'esc-map) (noxrcp-subr--setup-esc-map)
-      (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map))))
+      (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map)))
+    (define-key noxrcp-map (kbd "x i d") 'noxrcp-subr--insert-timestamp))
 
 (defun noxrcp-subr--setup-esc-map () (define-key esc-map "." nil))
+
+(defun noxrcp-subr--insert-timestamp ()
+  (interactive)
+
+  (let ((n current-prefix-arg))
+    (setq current-prefix-arg nil)
+
+    (insert (cond ((equal n '(4))
+                   (format-time-string "%s" nil "UTC0"))
+                  ((equal n 4)
+                   (format-time-string "%Y%m%d" nil "UTC0"))
+                  (t
+                   (format-time-string "%Y%m%dT%H%M%SZ" nil "UTC0"))))))
 
 ;;; init-subr.el ends here
