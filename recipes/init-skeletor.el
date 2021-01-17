@@ -33,8 +33,7 @@
 
 (custom-set-variables
  '(skeletor-completing-read-function 'selectrum-completing-read)
- '(skeletor-init-with-git nil)
- )
+ '(skeletor-init-with-git nil))
 
 (add-hook 'after-init-hook 'noxrcp-skeletor)
 (defun noxrcp-skeletor ()
