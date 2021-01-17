@@ -568,6 +568,7 @@
 (nox-recipe '(shell))
 (nox-recipe '(simp))
 (nox-recipe '(simple))
+(nox-recipe '(skeletor))
 (nox-recipe '(slim-mode))
 (nox-recipe '(sort))
 (nox-recipe '(su))

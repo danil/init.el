@@ -214,6 +214,7 @@
 (depends-on "sed-mode")
 (depends-on "speed-type")
 (depends-on "systemd")
+(depends-on "skeletor") ; skeletons/scaffolding
 (depends-on "tldr")
 (depends-on "toml-mode")
 (depends-on "top-mode" :git "https://github.com/emacsmirror/top-mode.git")
