@@ -34,23 +34,26 @@
 (add-hook 'after-init-hook 'noxrcp-subr)
 (defun noxrcp-subr ()
   "No X recipe init."
+
     (if (boundp 'esc-map) (noxrcp-subr--setup-esc-map)
       (with-eval-after-load 'subr (noxrcp-subr--setup-esc-map)))
-    (define-key noxrcp-map (kbd "x i d") 'noxrcp-subr--insert-timestamp))
+
+    (define-key noxrcp-map (kbd "x i t u") 'noxrcp-subr--insert-timestamp-unix)
+    (define-key noxrcp-map (kbd "x i t t") 'noxrcp-subr--insert-timestamp-time)
+    (define-key noxrcp-map (kbd "x i t d") 'noxrcp-subr--insert-timestamp-date))
 
 (defun noxrcp-subr--setup-esc-map () (define-key esc-map "." nil))
 
-(defun noxrcp-subr--insert-timestamp ()
+(defun noxrcp-subr--insert-timestamp-unix ()
   (interactive)
+  (insert (format-time-string "%s" nil "UTC0")))
 
-  (let ((n current-prefix-arg))
-    (setq current-prefix-arg nil)
+(defun noxrcp-subr--insert-timestamp-time ()
+  (interactive)
+  (insert (format-time-string "%Y%m%dT%H%M%SZ" nil "UTC0")))
 
-    (insert (cond ((equal n '(4))
-                   (format-time-string "%s" nil "UTC0"))
-                  ((equal n 4)
-                   (format-time-string "%Y%m%d" nil "UTC0"))
-                  (t
-                   (format-time-string "%Y%m%dT%H%M%SZ" nil "UTC0"))))))
+(defun noxrcp-subr--insert-timestamp-date ()
+  (interactive)
+  (insert (format-time-string "%Y%m%d" nil "UTC0")))
 
 ;;; init-subr.el ends here
