@@ -45,7 +45,7 @@
    '((?D . (lambda () (format-time-string "%Y%m%d")))))
 
  ;; Alist with file extensions and corresponding file name template.
- '(find-temp-template-alist '(("go" . "danil/%D%N/%N.%E"))))
+ '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))))
 
 (add-hook 'after-init-hook 'noxrcp-find-temp-file)
 (defun noxrcp-find-temp-file ()
