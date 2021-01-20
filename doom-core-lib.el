@@ -3,7 +3,7 @@
 (require 'subr-x)
 (load "async-autoloads" nil t)
 
-;; Danil <danil@kutkevich.org>
+;; Danil <https://danil.kutkevich.org>
 ;; i comment out this.
 ;; (load "persistent-soft-autoloads" nil t)
 

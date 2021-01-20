@@ -1,7 +1,13 @@
 package __PROJECT-NAME___test
 
-import "testing"
+import (
+	"testing"
 
-func Test___PROJECT-NAME__(t *testing.T) {
-	t.Fatal("rails something went wrong")
+	"__PROJECT-NAME__"
+)
+
+func TestHello(t *testing.T) {
+	if __PROJECT-NAME__.Hello() != "Hello, World!" {
+		t.Error("rails something went wrong")
+	}
 }

@@ -1,8 +1,8 @@
-;;; init-cc-mode.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-cc-mode.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
-;; Author: Danil <danil@kutkevich.org>
-;; Maintainer: Danil <danil@kutkevich.org>
+;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Author: Danil <https://danil.kutkevich.org>
+;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
 
 ;;; Commentary:
@@ -66,7 +66,7 @@
               'noxrcp-c-mode--rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
-    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
+    (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face font-lock-type-face))
 
     (noxrcp-rainbow-identifiers--lazyinit)))
 

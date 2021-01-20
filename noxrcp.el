@@ -1,7 +1,7 @@
 ;;; noxrcp.el --- ???.
 
-;; Copyright (C) 2016 Danil <danil@kutkevich.org>.
-;; Author: Danil <danil@kutkevich.org>
+;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Author: Danil <https://danil.kutkevich.org>
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: convenience

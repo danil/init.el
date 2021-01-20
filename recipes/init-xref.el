@@ -1,8 +1,8 @@
-;;; init-xref.el --- This file is part of Danil <danil@kutkevich.org> home.
+;;; init-xref.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2018 Danil <danil@kutkevich.org>.
-;; Author: Danil <danil@kutkevich.org>
-;; Maintainer: Danil <danil@kutkevich.org>
+;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Author: Danil <https://danil.kutkevich.org>
+;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
 
 ;;; Commentary:
