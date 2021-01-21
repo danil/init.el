@@ -394,16 +394,12 @@
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-cur (char-after beg))
-        (ch-before (char-before beg))
-        (ch-after (char-after end))
         (str-cur (buffer-substring-no-properties beg end))
         (str-after (buffer-substring-no-properties end (point-max))))
     (and (not (member ch-cur
                       '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
          (not (string-match-p "[?!]\\'" str-cur))
          (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
-         (not (and (string-match-p "\\`[[:space:]]+[^=!,/*?&#|:<>{}+-]" str-after)
-                   (not (string-match-p "\\`[[:space:]]+\\(if\\|unless\\)" str-after))))
          (not (member str-cur noxrcp-c-mode--rainbow-identifiers-stop-words)))))
 
 ;;; init-cc-mode.el ends here
