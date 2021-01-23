@@ -436,8 +436,8 @@
 ;; (autoload 'doom-modeline-set-modeline "~/.emacs.d/doom-modeline.el" nil t)
 
 ;; doom todo ivy.a
-(require 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el")
-;; (autoload 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el" nil t)
+;; (require 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el")
+(autoload 'doom-todo-ivy "~/.emacs.d/doom-todo-ivy.el" nil t)
 (nox-recipe '(doom-todo-ivy))
 
 ;; mode-line
@@ -501,7 +501,6 @@
 (nox-recipe '(my-project))
 (nox-recipe '(my-shell-command-on-current-file))
 (nox-recipe '(my-sort))
-(nox-recipe '(my-string-inflections))
 (nox-recipe '(my-sum-numbers-in-region))
 (nox-recipe '(my-tags))
 (nox-recipe '(my-uniquify-lines))
@@ -565,6 +564,7 @@
 (nox-recipe '(scss-mode))
 (nox-recipe '(sgml-mode))
 (nox-recipe '(sh-script))
+(nox-recipe '(string-inflection))
 (nox-recipe '(shell))
 (nox-recipe '(simp))
 (nox-recipe '(simple))

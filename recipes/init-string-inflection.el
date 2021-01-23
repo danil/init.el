@@ -1,4 +1,4 @@
-;;; init-my-string-inflections.el --- This file is part of Danil <https://danil.kutkevich.org> home.
+;;; init-string-inflection.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
 ;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
@@ -31,19 +31,19 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook 'noxrcp-my-string-inflections)
+(add-hook 'after-init-hook 'noxrcp-string-inflection)
 
-(defun noxrcp-my-string-inflections ()
+(defun noxrcp-string-inflection ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "c i") 'my-toggle-camelcase-and-underscore)
-  (define-key noxrcp-map (kbd "c I") 'my-humanize-symbol))
+  (define-key noxrcp-map (kbd "c i") 'noxrcp-string-inflection--toggle-camelcase-and-underscore)
+  (define-key noxrcp-map (kbd "c I") 'noxrcp-string-inflection--humanize-symbol))
 
 ;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
 ;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
 ;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
-(defun my-toggle-camelcase-and-underscore ()
+(defun noxrcp-string-inflection--toggle-camelcase-and-underscore ()
   "Toggles the symbol at point between C-style naming,
 e.g. `hello_world_string', and camel case,
 e.g. `HelloWorldString'."
@@ -71,7 +71,7 @@ e.g. `HelloWorldString'."
                        t nil))
       (widen))))
 
-(defun my-humanize-symbol ()
+(defun noxrcp-string-inflection--humanize-symbol ()
   "Humanize the symbol at point from
 C-style naming, e.g. `hello_world_string',
 and camel case, e.g. `HelloWorldString',
@@ -100,4 +100,4 @@ and Lisp-style nameing, e.g. `hello-world-string'."
                        t nil))
       (widen))))
 
-;;; init-my-string-inflections.el ends here
+;;; init-string-inflection.el ends here
