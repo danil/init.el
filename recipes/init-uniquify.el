@@ -33,6 +33,8 @@
 
 ;;; Uniquify buffer name.
 
+(custom-set-variables '(uniquify-min-dir-content 20))
+
 (add-hook 'after-init-hook 'noxrcp-uniquify)
 (defun noxrcp-uniquify ()
   "No X recipe init."
@@ -40,7 +42,6 @@
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
   (require 'uniquify)
-  (custom-set-variables '(uniquify-min-dir-content 20))
   (noxrcp-after-load 'uniquify
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq

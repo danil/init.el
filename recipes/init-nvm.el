@@ -37,12 +37,9 @@
 ;; (custom-set-variables '(nvm-dir (f-full "~/n/n")))
 
 (add-hook 'after-init-hook 'noxrcp-nvm)
-
 (defun noxrcp-nvm ()
   "No X recipe init."
-
   ;; (nvm-use "0.11")
-
   ;; Use Node.js version from ~/.nvmrc
   (nvm-use-for))
 

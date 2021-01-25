@@ -42,22 +42,16 @@
 (custom-set-variables
  '(highlight-symbol-highlight-single-occurrence nil)
  '(highlight-symbol-idle-delay 0.2) ;; 0.5 1.5
- '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+"))
- '(noxrcp-highlight-symbol-modes (-union noxrcp-programming-modes
-                                         '(
-                                           dired-mode
-                                           shell-mode
-                                           sql-interactive-mode
-                                           )))
- '(noxrcp-highlight-symbol-modes-hooks
-   (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           noxrcp-highlight-symbol-modes)))
+ '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")))
 
 (add-hook 'after-init-hook 'noxrcp-highlight-symbol)
+
 (defun noxrcp-highlight-symbol ()
   "No X recipe init."
+
   (dolist (hook noxrcp-highlight-symbol-modes-hooks)
     (add-hook hook 'noxrcp-highlight-symbol--setup-hook))
+
   (if (boundp 'highlight-symbol-mode) (noxrcp-highlight-symbol--setup)
     (with-eval-after-load 'highlight-symbol (noxrcp-highlight-symbol--setup))))
 
@@ -75,6 +69,12 @@
 
 (defun noxrcp-highlight-symbol--setup ()
   "Setup `highlight-symbol'."
+
+  (custom-set-variables
+   '(noxrcp-highlight-symbol-modes-hooks
+     (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
+             noxrcp-highlight-symbol-modes)))
+
   ;; (define-key noxrcp-map (kbd "c S c") 'highlight-symbol-count)
   ;; (define-key noxrcp-map (kbd "c S q") 'highlight-symbol-query-replace)
   (define-key noxrcp-map (kbd "c S c") 'highlight-symbol-count)

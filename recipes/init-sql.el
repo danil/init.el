@@ -38,11 +38,15 @@
 (custom-set-variables '(noxrcp-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
 
 (add-hook 'after-init-hook 'noxrcp-sql)
+
 (defun noxrcp-sql ()
   "No X recipe init."
+
   (dolist (pattern noxrcp-sql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sql-mode)))
+
   (add-hook 'sql-login-hook 'noxrcp-sql--turn-on-history)
+
   (if (boundp 'sql-interactive-mode-map) (noxrcp-sql--setup)
     (with-eval-after-load 'sql (noxrcp-sql--setup))))
 

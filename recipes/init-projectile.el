@@ -42,23 +42,15 @@
 (custom-set-variables
  '(projectile-completion-system 'noxrcp-selectrum--unsorted-read) ;'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
  '(projectile-indexing-method 'alien) ; 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
- '(projectile-mode-line nil)
- '(projectile-project-root-files (-union projectile-project-root-files '("go.mod")))
- '(noxrcp-projectile-modes (-union noxrcp-programming-modes
-                                   '(
-                                     dired-mode
-                                     shell-mode
-                                     sql-interactive-mode
-                                     )))
- '(noxrcp-projectile-modes-hooks
-   (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
-           noxrcp-projectile-modes)))
+ '(projectile-mode-line nil))
 
 (add-hook 'after-init-hook 'noxrcp-projectile)
 (defun noxrcp-projectile ()
   "No X recipe init."
   (dolist (hook noxrcp-projectile-modes-hooks)
-    (add-hook hook 'noxrcp-projectile--setup-hook)))
+    (add-hook hook 'noxrcp-projectile--setup-hook))
+
+  )
 
 (defun noxrcp-projectile--setup-hook ()
   "Setup hook `projectile'."
@@ -71,6 +63,18 @@
    noxrcp-default-idle-timer-seconds nil 'noxrcp-projectile--init))
 
 (defun noxrcp-projectile--init ()
+  (custom-set-variables
+   '(projectile-project-root-files (-union projectile-project-root-files '("go.mod")))
+   '(noxrcp-projectile-modes (-union noxrcp-programming-modes
+                                     '(
+                                       dired-mode
+                                       shell-mode
+                                       sql-interactive-mode
+                                       )))
+   '(noxrcp-projectile-modes-hooks
+     (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook")))
+             noxrcp-projectile-modes)))
+
   (projectile-mode +1)
   ;; (counsel-projectile-mode +1)
   (define-key noxrcp-mode-map (kbd "C-c p") projectile-command-map))

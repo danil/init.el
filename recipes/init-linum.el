@@ -35,67 +35,12 @@
 
 (autoload 'linum-mode "linum" nil t)
 
-(defcustom noxrcp-linum-max-lines 1000
-  "My `linume-mode' max number of lines."
-  :group 'noxrcp)
-
-(defcustom noxrcp-linum-modes '()
-  "Major modes associated with `linum-mode'."
-  :group 'noxrcp)
-
-(defcustom noxrcp-linum-modes-hooks '()
-  "Major modes hooks associated with `linum-mode'."
-  :group 'noxrcp)
-
-(custom-set-variables
- '(noxrcp-linum-max-lines 5000)
- '(noxrcp-linum-modes (-difference noxrcp-programming-modes '(org-mode)))
- '(noxrcp-linum-modes-hooks (mapcar (lambda (m) (intern (concat (symbol-name m) "-hook"))) noxrcp-linum-modes)))
-
 (add-hook 'after-init-hook 'noxrcp-linum)
-
 (defun noxrcp-linum ()
   "No X recipe init."
-
-  ;; (dolist (hook noxrcp-linum-modes-hooks)
-  ;;   (add-hook hook 'noxrcp-linum--lazyinit))
-
-  ;; (add-hook 'after-save-hook 'noxrcp-linum--turn-off)
-
-  ;; (define-key noxrcp-map (kbd "x l") 'noxrcp-linum--toggle)
 
   (with-eval-after-load 'linum
     (set-face-foreground 'linum my-line-numbers-foreground)
     (set-face-background 'linum my-line-numbers-background)))
-
-;; (defun noxrcp-linum--lazyinit ()
-;;   "Run `linum'."
-;;   (noxrcp-run-with-idle-timer-in-current-buffer
-;;    noxrcp-default-idle-timer-seconds nil 'noxrcp-linum--turn-on-or-off))
-
-;; (defun noxrcp-linum--toggle ()
-;;   "Toggle the `linume-mode'."
-;;   (interactive)
-;;   (cond ((and (boundp 'linum-mode) (equal linum-mode t))
-;;          (linum-mode -1))
-;;         (t
-;;          (linum-mode t))))
-
-;; (defun noxrcp-linum--turn-on-or-off ()
-;;   "Enable or disable the `linume-mode' depending on current buffer lines number."
-;;   (interactive)
-;;   (if (noxrcp-linum--is-suitable) (linum-mode t) (linum-mode -1)))
-
-;; (defun noxrcp-linum--turn-off ()
-;;   "Disable the `linume-mode' if current buffer have to many lines."
-;;   (interactive)
-;;   (unless (noxrcp-linum--is-suitable) (linum-mode -1)))
-
-;; (defun noxrcp-linum--is-suitable ()
-;;   "Decides is suitably or not the `linume-mode' for the current buffer."
-;;   (when (and (member major-mode noxrcp-linum-modes)
-;;              (let ((buffer-lines (count-lines (point-min) (point-max)))) ;number of lines in current buffer
-;;                (<= buffer-lines noxrcp-linum-max-lines)))
-;;     t))
 
 ;;; init-linum.el ends here

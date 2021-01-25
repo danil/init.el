@@ -52,9 +52,6 @@
   :group 'noxrcp)
 
 (custom-set-variables
- '(noxrcp-ethan-wspace-modes-hooks noxrcp-programming-modes-hooks)
- '(noxrcp-modes-disallows-no-nl-eof noxrcp-programming-modes)
- '(noxrcp-modes-disallows-many-nls-eof noxrcp-programming-modes)
  '(noxrcp-modes-disallows-tabs '(
                                  autoconf-mode
                                  awk-mode
@@ -202,26 +199,33 @@
 
 (defun noxrcp-ethan-wspace--lazyinit ()
   "Run `ethan-wspace'."
-
   (noxrcp-run-with-idle-timer-in-current-buffer
    noxrcp-default-idle-timer-seconds nil
-   (lambda ()
-     (unless (boundp 'ethan-wspace-errors) (load "ethan-wspace"))
-     (setq ethan-wspace-errors '())
-     (make-local-variable 'ethan-wspace-errors)
+   'noxrcp-ethan-wspace-init))
 
-     (when (member major-mode noxrcp-modes-disallows-no-nl-eof)
-       (setq ethan-wspace-errors (push 'no-nl-eof ethan-wspace-errors)))
+(defun noxrcp-ethan-wspace-init ()
+  (custom-set-variables
+   '(noxrcp-ethan-wspace-modes-hooks noxrcp-programming-modes-hooks)
+   '(noxrcp-modes-disallows-no-nl-eof noxrcp-programming-modes)
+   '(noxrcp-modes-disallows-many-nls-eof noxrcp-programming-modes)
+   )
 
-     (when (member major-mode noxrcp-modes-disallows-many-nls-eof)
-       (setq ethan-wspace-errors (push 'many-nls-eof ethan-wspace-errors)))
+  (unless (boundp 'ethan-wspace-errors) (load "ethan-wspace"))
+  (setq ethan-wspace-errors '())
+  (make-local-variable 'ethan-wspace-errors)
 
-     (when (member major-mode noxrcp-modes-disallows-tabs)
-       (setq ethan-wspace-errors (push 'tabs ethan-wspace-errors)))
+  (when (member major-mode noxrcp-modes-disallows-no-nl-eof)
+    (setq ethan-wspace-errors (push 'no-nl-eof ethan-wspace-errors)))
 
-     (when (member major-mode noxrcp-modes-disallows-eol)
-       (setq ethan-wspace-errors (push 'eol ethan-wspace-errors)))
+  (when (member major-mode noxrcp-modes-disallows-many-nls-eof)
+    (setq ethan-wspace-errors (push 'many-nls-eof ethan-wspace-errors)))
 
-     (ethan-wspace-mode))))
+  (when (member major-mode noxrcp-modes-disallows-tabs)
+    (setq ethan-wspace-errors (push 'tabs ethan-wspace-errors)))
+
+  (when (member major-mode noxrcp-modes-disallows-eol)
+    (setq ethan-wspace-errors (push 'eol ethan-wspace-errors)))
+
+  (ethan-wspace-mode))
 
 ;;; init-ethan-wspace.el ends here

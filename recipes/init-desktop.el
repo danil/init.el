@@ -40,7 +40,6 @@
  '(desktop-base-lock-name (convert-standard-filename "desktop.lock"))
  '(desktop-dirname "~/.emacs.var/")
  '(desktop-globals-to-save '())
- '(desktop-locals-to-save '(desktop-locals-to-save)) ; Itself! Think it over.
  '(desktop-path '(user-emacs-directory "~/.emacs.var/"))
  '(desktop-restore-frames nil))
 
@@ -48,18 +47,25 @@
 
 (defun noxrcp-desktop ()
   "No X recipe init."
-  (define-key noxrcp-map (kbd "D s") 'save-my-desktop)
-  (define-key noxrcp-map (kbd "D l") 'load-my-desktop))
 
-(defun save-my-desktop ()
+  (if (boundp 'desktop-save-mode) (noxrcp-desktop--setup)
+    (with-eval-after-load 'desktop (noxrcp-desktop--setup)))
+
+  (define-key noxrcp-map (kbd "D s") 'noxrcp-desktop--save)
+  (define-key noxrcp-map (kbd "D l") 'noxrcp-desktop--load))
+
+(defun noxrcp-desktop--setup ()
+  (custom-set-variables
+   '(desktop-locals-to-save '(desktop-locals-to-save)) ; Itself! Think it over.
+   ))
+
+(defun noxrcp-desktop--save ()
   "Save the desktop."
-
   (interactive)
   (call-interactively 'desktop-save-in-desktop-dir))
 
-(defun load-my-desktop ()
+(defun noxrcp-desktop--load ()
   "Load the desktop."
-
   (interactive)
   (call-interactively 'desktop-read))
 

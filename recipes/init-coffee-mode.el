@@ -32,15 +32,13 @@
 ;;; Code:
 
 (custom-set-variables '(coffee-tab-width 2))
+
 (add-hook 'coffee-mode-hook 'turn-off-auto-fill) ;get rid of annoying auto-fill-mode in coffee-mode
 
 (add-hook 'after-init-hook 'noxrcp-coffee-mode)
-
 (defun noxrcp-coffee-mode ()
   "No X recipe init."
-
   (noxrcp-add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
-
   (noxrcp-after-load 'coffee-mode
     (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
           (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode))))

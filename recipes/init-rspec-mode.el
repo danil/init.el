@@ -35,11 +35,12 @@
   "Regexp patterns associated with `rspec-mode'."
   :group 'noxrcp)
 
-(custom-set-variables '(noxrcp-rspec-mode-patterns
-                        '(
-                          "_spec\\.rb\\'"
-                          "/spec[0-9]*\\.rb\\'"
-                          )))
+(custom-set-variables
+ '(noxrcp-rspec-mode-patterns '(
+                                "_spec\\.rb\\'"
+                                "/spec[0-9]*\\.rb\\'"
+                                ))
+ '(rspec-use-spring-when-possible nil))
 
 (add-hook 'after-init-hook 'noxrcp-rspec-mode)
 (defun noxrcp-rspec-mode ()
@@ -47,7 +48,6 @@
   ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
   ;; (dolist (hook noxrcp-rspec-mode-patterns)
   ;;   (add-hook hook 'noxrcp-rspec-mode--lazyinit))
-  (custom-set-variables '(rspec-use-spring-when-possible nil))
   (noxrcp-after-load 'rspec-mode
     ;; (setq rspec-use-rvm t)
     (setq rspec-use-rake-when-possible nil)))

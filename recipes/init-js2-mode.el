@@ -35,18 +35,17 @@
   "Regexp patterns associated with `js2-mode'."
   :group 'noxrcp)
 
-(custom-set-variables '(noxrcp-js2-mode-patterns
-                        '(
-                          "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
-                          ;; "\\.js.erb\\'"
-                          "\\.js\\'"
-                          )))
-
-(autoload 'js2-mode "js2-mode" nil t)
-
 (custom-set-variables
  ;; '(js2-highlight-level 3)
- '(js2-mode-show-strict-warnings nil))
+ '(js2-mode-show-strict-warnings nil)
+ '(noxrcp-js2-mode-patterns
+   '(
+     "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
+     ;; "\\.js.erb\\'"
+     "\\.js\\'"
+     )))
+
+(autoload 'js2-mode "js2-mode" nil t)
 
 (add-hook 'after-init-hook 'noxrcp-js2-mode)
 

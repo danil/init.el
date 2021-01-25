@@ -32,10 +32,8 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'noxrcp-cc-vars)
-
 (defun noxrcp-cc-vars ()
   "No X recipe init."
-
- (custom-set-variables '(c-basic-offset 2)))
+  (custom-set-variables '(c-basic-offset 2)))
 
 ;;; init-cc-vars.el ends here

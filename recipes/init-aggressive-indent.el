@@ -36,15 +36,11 @@
   :group 'noxrcp)
 
 (custom-set-variables
- '(noxrcp-aggressive-indent-modes-hooks '(
-                                          emacs-lisp-mode-hook
-                                          )))
+ '(noxrcp-aggressive-indent-modes-hooks '(emacs-lisp-mode-hook)))
 
 (add-hook 'after-init-hook 'noxrcp-aggressive-indent)
-
 (defun noxrcp-aggressive-indent ()
   "No X recipe init."
-
   (dolist (hook noxrcp-aggressive-indent-modes-hooks) (add-hook hook #'aggressive-indent-mode)))
 
 ;;; init-aggressive-indent.el ends here

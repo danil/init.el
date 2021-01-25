@@ -49,25 +49,6 @@
  ;; '(company-tooltip-offset-display 'scrollbar)
  ;; '(company-lighter-base "company")
  ;; '(company-tooltip-idle-delay nil) ;; .5
- '(company-backends `(,@(unless (version< "24.3.51" emacs-version)
-                          (list 'company-elisp))
-                      company-bbdb
-                      ,@(unless (version<= "26" emacs-version)
-                          (list 'company-nxml))
-                      ,@(unless (version<= "26" emacs-version)
-                          (list 'company-css))
-                      company-semantic
-                      company-clang
-                      company-cmake
-                      company-files
-                      (company-dabbrev-code
-                       company-gtags
-                       company-etags
-                       company-keywords)
-                      company-dabbrev
-                      company-abbrev
-                      company-oddmuse
-                      company-capf))
  '(company-frontends nil) ;; nil '()
  '(company-idle-delay nil) ;; 0.7 tradeoff between typing speed and performance <https://emacs.stackexchange.com/questions/32467/how-can-i-configure-company-mode-to-only-display-candidates-after-an-explicit-ke#32523>
  '(company-minimum-prefix-length 0))
@@ -75,14 +56,35 @@
 (add-hook 'after-init-hook 'noxrcp-company)
 (defun noxrcp-company ()
   "No X recipe init."
-  ;; (if (boundp 'company-mode) (noxrcp-company--setup)
-  ;;   (with-eval-after-load 'company (noxrcp-company--setup)))
+
+  (if (boundp 'company-mode) (noxrcp-company--setup)
+    (with-eval-after-load 'company (noxrcp-company--setup)))
 
   (global-set-key [?\C-\M-i] 'noxrcp-company--completing-read) ; counsel-company completion-at-point
 
   (global-company-mode t))
 
-;; (defun noxrcp-company--setup ())
+(defun noxrcp-company--setup ()
+  (custom-set-variables
+   '(company-backends `(,@(unless (version< "24.3.51" emacs-version)
+                            (list 'company-elisp))
+                        company-bbdb
+                        ,@(unless (version<= "26" emacs-version)
+                            (list 'company-nxml))
+                        ,@(unless (version<= "26" emacs-version)
+                            (list 'company-css))
+                        company-semantic
+                        company-clang
+                        company-cmake
+                        company-files
+                        (company-dabbrev-code
+                         company-gtags
+                         company-etags
+                         company-keywords)
+                        company-dabbrev
+                        company-abbrev
+                        company-oddmuse
+                        company-capf))))
 
 (defun noxrcp-company--completing-read ()
   (interactive)

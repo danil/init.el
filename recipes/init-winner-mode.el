@@ -31,12 +31,12 @@
 
 ;;; Code:
 
+(custom-set-variables '(winner-dont-bind-my-keys t))
+
 (add-hook 'after-init-hook 'noxrcp-winner-mode)
 
 (defun noxrcp-winner-mode ()
   "No X recipe init."
-
-  (custom-set-variables '(winner-dont-bind-my-keys t))
 
   (when (fboundp 'winner-mode) (winner-mode t))
 
