@@ -94,12 +94,6 @@ Cancels itself, if this buffer was killed."
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-(require 'noxrcp "~/.emacs.d/noxrcp.el")
-
-(defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ;; TODO: remove me!
-
-(defun noxel-kbd-fn (key) (kbd (concat "C-v " key))) ;; TODO: remove me!
-
 (add-to-list 'load-path (concat user-emacs-directory "init/"))
 
 (require 'init-align "init-align")
@@ -176,6 +170,12 @@ Cancels itself, if this buffer was killed."
 (require 'init-projectile-rails "init-projectile-rails") (init-projectile-rails)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'noxrcp "~/.emacs.d/noxrcp.el")
+
+(defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ;; TODO: remove me!
+
+(defun noxel-kbd-fn (key) (kbd (concat "C-v " key))) ;; TODO: remove me!
 
 (defvar nox-recipes ())
 

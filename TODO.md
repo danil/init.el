@@ -1,4 +1,5 @@
-# TODO
+TODO
+====
 
 * ido-list-unicode-display.el
 * place `window-numbering` in mode-line near scroll position percentage
