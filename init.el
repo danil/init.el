@@ -173,8 +173,7 @@ Cancels itself, if this buffer was killed."
 
 ;; Projectile.
 (require 'init-projectile "init-projectile") (init-projectile)
-
-;; (nox-recipe '(projectile-rails))
+(require 'init-projectile-rails "init-projectile-rails") (init-projectile-rails)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
