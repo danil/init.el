@@ -37,6 +37,12 @@
 ;; (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;;; counsel-yank-pop (swiper/ivy) in minibuffer.
+(setq enable-recursive-minibuffers t)
+
+;;; ElDoc annoying in all buffers/modes.
+(global-eldoc-mode -1)
+
 (setq init-key-prefix "C-v ")
 (setq init-exec-key-prefix (concat init-key-prefix "x "))
 
@@ -81,12 +87,6 @@ Cancels itself, if this buffer was killed."
 ;; <https://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el/106>.
 (setq custom-file (concat user-emacs-directory "custom-variables.el"))
 (load custom-file)
-
-;;; counsel-yank-pop (swiper/ivy) in minibuffer.
-(setq enable-recursive-minibuffers t)
-
-;;; ElDoc annoying in all buffers/modes.
-(global-eldoc-mode -1)
 
 ;;; Cask.
 ;;; Initialize Elpa packages via Cask
