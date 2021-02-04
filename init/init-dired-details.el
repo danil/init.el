@@ -1,33 +1,40 @@
-(defun init-dired-details ()
-  (if (boundp 'dired-mode-map) (init-dired-details-lazy-init)
-    (with-eval-after-load 'dired (init-dired-details-lazy-init))))
+(defgroup init-dired-details nil
+  "init-dired-details"
+  :group  'editing
+  :tag    "init-dired-details"
+  :prefix "init-dired-details-"
+  :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defun init-dired-details-lazy-init ()
-  (define-key dired-mode-map (kbd "b") 'init-dired-toggle-view)
+(defcustom init-dired-details-key "b" "init-dired-details" :group 'init-dired-details)
+
+(defun init-dired-details ()
+  (if (boundp 'dired-details-internal-overlay-list) (init-dired-details-setup-details)
+    (with-eval-after-load 'dired-details (init-dired-details-setup-details)))
+
+  (if (boundp 'dired-mode-map) (init-dired-details-setup-dired)
+    (with-eval-after-load 'dired (init-dired-details-setup-dired))))
+
+(defun init-dired-details-setup-details ()
+  (define-key dired-mode-map (kbd init-dired-details-key) 'init-dired-details-toggle-view)
   ;; (define-key dired-mode-map "(" 'dired-details-hide)
   ;; (define-key dired-mode-map ")" 'dired-details-show)
-
-  (if (boundp 'dired-details-internal-overlay-list) (init-dired-details--lazy-init)
-    (with-eval-after-load 'dired-details (init-dired-details--lazy-init)))
-
-  (init-lazy (/ init-lazy-seconds 2) nil 'require 'dired-details))
-
-(defun init-dired-details--lazy-init ()
-  (add-hook 'dired-after-readin-hook 'init-dired-details--lazy-setup)
-
   (defadvice dired-revert (before remember-the-details activate)
     (dired-details-delete-overlays)))
 
-(defun init-dired-details--lazy-setup ()
-  "Run `dired-details'."
-  (remove-hook 'dired-after-readin-hook 'init-dired-details--lazy-setup)
-  (init-lazy init-lazy-seconds nil 'init-dired-details---lazy-setup))
+(defun init-dired-details-setup-dired ()
+  (init-lazy (/ init-lazy-seconds 2) nil 'require 'dired-details)
+  (add-hook 'dired-after-readin-hook 'init-dired-details--setup-dired))
 
-(defun init-dired-details---lazy-setup ()
+(defun init-dired-details--setup-dired ()
+  "Run `dired-details'."
+  (remove-hook 'dired-after-readin-hook 'init-dired-details--setup-dired)
+  (init-lazy init-lazy-seconds nil 'init-dired-details---setup-dired))
+
+(defun init-dired-details---setup-dired ()
   (dired-details-activate)
   (add-hook 'dired-after-readin-hook 'dired-details-activate))
 
-(defun init-dired-toggle-view ()
+(defun init-dired-details-toggle-view ()
   "Toggle through the list `dired-details-hide` `dired-details-show` and `ls` `dired-listing-switches` human readable and non human readable."
   (interactive)
 

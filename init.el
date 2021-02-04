@@ -183,7 +183,6 @@ Cancels itself, if this buffer was killed."
 (defun nox-recipe (recipes)
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
-
 (nox-recipe '(disp-table-line-wrap-and-truncation))
 (nox-recipe '(disp-table-vertical-border))
 (nox-recipe '(dockerfile-mode))

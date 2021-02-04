@@ -232,9 +232,10 @@
  '(init-cycle-quotes-mode-map-prefix init-key-prefix) ;; init-cycle-quotes.el
  '(init-counsel-mode-map-prefix init-key-prefix) ;; init-counsel.el
  '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ;; init-crontab-mode.el
- '(init-desktop-mode-map-prefix init-key-prefix) ;; init-desktop.el
  '(init-deft-mode-map-exec-prefix init-exec-key-prefix) ;; init-deft.el
+ '(init-desktop-mode-map-prefix init-key-prefix) ;; init-desktop.el
  '(init-digit-groups-mode-hooks (append init-programming-modes-hooks '(shell-mode-hook)))
+ '(init-dired-details-key "b")
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix)
  '(init-rainbow-identifiers-hooks
