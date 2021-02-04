@@ -36,7 +36,7 @@
 (defun noxrcp-transpose-frame ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "T") 'my-transpose-frame))
+  (define-key noxel-map (kbd "T") 'my-transpose-frame))
 
 (defun my-transpose-frame ()
   (interactive)

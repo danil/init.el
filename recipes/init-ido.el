@@ -36,7 +36,7 @@
 (custom-set-variables
  ;; '(ido-decorations '( "{ " " }" " | " " | ..." "[ " " ]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
  ;; '(ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*")) ;ignore these guys
- ;; '(ido-save-directory-list-file "~/.emacs.d/cache/ido.last")
+ ;; '(ido-save-directory-list-file (concat user-emacs-directory "cache/ido.last"))
  ;; '(ido-use-virtual-buffers t) ;if Recentf is enabled
  ;; '(ido-enable-regexp t) ; ???
  '(ido-case-fold t) ;be case-insensitive

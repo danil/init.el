@@ -46,7 +46,11 @@
       (save-place-mode)
 
     (require 'saveplace)
-    (noxrcp-after-load 'saveplace
-      (setq-default save-place t))))
+
+    (if (boundp 'save-place) (init-saveplace-xxxxxxxxxx)
+      (with-eval-after-load 'saveplace (init-saveplace-xxxxxxxxxx)))))
+
+(defun init-saveplace-xxxxxxxxxx ()
+  (setq-default save-place t))
 
 ;;; init-saveplace.el ends here

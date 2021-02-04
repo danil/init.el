@@ -44,25 +44,28 @@
 
   (yas-reload-all)
 
-  (noxrcp-after-load 'yasnippet
-    ;; How to fix Yasnippet and Autocomplete tab key collision
-    ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    ;; Set Yasnippet's key binding to shift+tab
-    (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
+  (if (boundp 'yas-minor-mode-map) (init-yasnippet-xxxxxxxxxx)
+    (with-eval-after-load 'yasnippet (init-yasnippet-xxxxxxxxxx)))
 
   ;; (if (fboundp 'hydra-repeat) (noxrcp-yasnippet--hydra)
   ;;   (with-eval-after-load 'hydra (noxrcp-yasnippet--hydra)))
 
-  (dolist (hook noxrcp-programming-modes-hooks)
+  (dolist (hook init-programming-modes-hooks)
     (add-hook hook 'noxrcp-yasnippet--lazyinit)))
+
+(defun init-yasnippet-xxxxxxxxxx ()
+  ;; How to fix Yasnippet and Autocomplete tab key collision
+  ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
+  (define-key yas-minor-mode-map (kbd "<tab>") nil)
+  (define-key yas-minor-mode-map (kbd "TAB") nil)
+  ;; Set Yasnippet's key binding to shift+tab
+  (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
 (defun noxrcp-yasnippet--lazyinit ()
   "Run `yasnippet'."
 
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil 'yas-minor-mode))
+  (init-lazy
+   init-lazy-seconds nil 'yas-minor-mode))
 
 ;; (defun noxrcp-yasnippet--hydra ()
 ;;   (defhydra hydra-yasnippet (:color blue :hint nil)

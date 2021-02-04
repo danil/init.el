@@ -39,13 +39,13 @@
 ;;   ;; (with-eval-after-load 'hcl-mode)
 ;;   )
 
-(defun noxrcp-hcl-mode--rainbow-identifiers-init ()
+(defun init-hcl-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'hcl-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-hcl-mode--rainbow-identifiers-filter)
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 (defun noxrcp-hcl-mode--rainbow-identifiers-filter (beg end)
   (let ((ch-current (char-after beg))

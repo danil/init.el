@@ -36,16 +36,19 @@
 (defun noxrcp-origami ()
   "No X recipe init."
 
-  (noxrcp-after-load 'origami
-    (define-key origami-mode-map (nox-kbd "f") 'origami-recursively-toggle-node)
+  (if (boundp 'origami-mode-map) (init-origami-xxxxxxxxxx)
+    (with-eval-after-load 'origami (init-origami-xxxxxxxxxx))))
 
-    (define-key origami-mode-map (nox-kbd "F c") 'origami-close-all-nodes)
-    (define-key origami-mode-map (nox-kbd "F o") 'origami-open-all-nodes)
+(defun init-origami-xxxxxxxxxx ()
+  (define-key origami-mode-map (noxel-kbd-fn "f") 'origami-recursively-toggle-node)
 
-    (cond ((equal frame-background-mode 'dark)
-       (set-face-attribute 'origami-fold-replacement-face nil
-                           :foreground "Black"
-                           :background "White"
-                           :bold t)))))
+  (define-key origami-mode-map (noxel-kbd-fn "F c") 'origami-close-all-nodes)
+  (define-key origami-mode-map (noxel-kbd-fn "F o") 'origami-open-all-nodes)
+
+  (cond ((equal frame-background-mode 'dark)
+         (set-face-attribute 'origami-fold-replacement-face nil
+                             :foreground "Black"
+                             :background "White"
+                             :bold t))))
 
 ;;; init-origami.el ends here

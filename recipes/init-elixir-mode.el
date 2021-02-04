@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-elixir-mode)
 ;; (defun noxrcp-elixir-mode () "No X recipe init.")
 
-(defun noxrcp-elixir-mode--rainbow-identifiers-init ()
+(defun init-elixir-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'elixir-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -47,7 +47,7 @@
                                                   elixir-atom-face
                                                   font-lock-type-face
                                                   ))
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-elixir-mode--rainbow-identifiers-filter (beg end)

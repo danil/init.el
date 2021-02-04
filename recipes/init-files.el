@@ -32,18 +32,11 @@
 ;;; Code:
 
 (custom-set-variables
- '(mode-require-final-newline nil) ;otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
-
- ;; Get rid of annoying backups, temporary files and autosaves
- ;; (Built-in backup settings
- ;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>).
- '(backup-by-copying t) ; don't clobber symlinks
- '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ; don't litter my fs tree
- '(delete-old-versions t)
- '(directory-free-space-args "--human-readable")
- '(kept-new-versions 6)
- '(kept-old-versions 2)
- '(version-control t) ; use versioned backups
+ '(mode-require-final-newline nil) ;; files.el: otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
+ '(directory-free-space-args "--human-readable") ;; files.el
+ '(kept-new-versions 6) ;; files.el
+ '(kept-old-versions 2) ;; files.el
+ '(version-control t) ;; files.el: use versioned backups
  )
 
 (add-hook 'after-init-hook 'noxrcp-files)
@@ -54,8 +47,8 @@
   (global-set-key (kbd "C-x C-f") 'noxrcp-files--find-file)
   (global-set-key (kbd "C-x C-d") 'noxrcp-files--list) ; 'list-directory
 
-  (when (boundp 'noxrcp-map)
-    (define-key noxrcp-map (kbd "B r") 'revert-buffer)))
+  (when (boundp 'noxel-map)
+    (define-key noxel-map (kbd "B r") 'revert-buffer)))
 
 (defun noxrcp-files--find-file ()
   (interactive)

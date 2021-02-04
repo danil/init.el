@@ -38,7 +38,7 @@
 (defun noxrcp-inf-mongo ()
   "No X recipe init."
 
-  (noxrcp-comint--create-history-fn "noxrcp-inf-mongo--turn-on-history"
+  (init-comint-create-history-fn "noxrcp-inf-mongo--turn-on-history"
                                     "~/.emacs.var/mongodb_history")
 
   (add-hook 'inf-mongo-mode-hook 'noxrcp-inf-mongo--turn-on-history))

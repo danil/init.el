@@ -7,36 +7,43 @@
 (defun noxrcp-org-mode ()
   "No X recipe init."
 
-  (noxrcp-after-load 'org
-    ;; (define-key org-mode-map "\C-c\C-f" nil)
+  (if (boundp 'org-mode-map) (init-org-mode-xxxxxxxxxx)
+    (with-eval-after-load 'org (init-org-mode-xxxxxxxxxx))))
 
-    (setq org-log-done t)
+(defun init-org-mode-xxxxxxxxxx ()
+  ;; (define-key org-mode-map "\C-c\C-f" nil)
 
-    ;; Org-mode with Ido (interactively do things).
-    (if (featurep 'ido-mode)
-        (setq org-completion-use-ido t)
-      (noxrcp-after-load 'ido
-        (setq org-completion-use-ido t)))
+  (setq org-log-done t)
 
-    ;; Org Clock.
-    ;; Sometimes I change tasks I'm clocking
-    ;; quickly - this removes clocked tasks with
-    ;; 0:00 duration.
-    ;;(setq org-clock-out-remove-zero-time-clocks t)
+  ;; Org-mode with Ido (interactively do things).
+  (if (featurep 'ido-mode)
+      (setq org-completion-use-ido t)
 
-    ;; Org Agenda.
-    (setq org-agenda-files
-          (append (file-expand-wildcards "~/org/*.org")
-                  (file-expand-wildcards "~/org/home/*.org")
-                  (file-expand-wildcards "~/org/work/*.org")))
+    (if (boundp 'org-completion-use-ido) (init-org-mode-yyyyyyyyyy)
+      (with-eval-after-load 'ido (init-org-mode-yyyyyyyyyy))))
 
-    ;; (load-library "find-lisp")
-    ;; (setq org-agenda-files
-    ;;       (find-lisp-find-files "~/org" "\.org\\'"))
-    (setq org-agenda-custom-commands
-          '(("h" "Home" todo "TODO"
-             ((org-agenda-files
-               (file-expand-wildcards "~/org/home/*.org"))))
-            ("w" "Work" todo "TODO"
-             ((org-agenda-files
-               (file-expand-wildcards "~/org/work/*.org"))))))))
+  ;; Org Clock.
+  ;; Sometimes I change tasks I'm clocking
+  ;; quickly - this removes clocked tasks with
+  ;; 0:00 duration.
+  ;;(setq org-clock-out-remove-zero-time-clocks t)
+
+  ;; Org Agenda.
+  (setq org-agenda-files
+        (append (file-expand-wildcards "~/org/*.org")
+                (file-expand-wildcards "~/org/home/*.org")
+                (file-expand-wildcards "~/org/work/*.org")))
+
+  ;; (load-library "find-lisp")
+  ;; (setq org-agenda-files
+  ;;       (find-lisp-find-files "~/org" "\.org\\'"))
+  (setq org-agenda-custom-commands
+        '(("h" "Home" todo "TODO"
+           ((org-agenda-files
+             (file-expand-wildcards "~/org/home/*.org"))))
+          ("w" "Work" todo "TODO"
+           ((org-agenda-files
+             (file-expand-wildcards "~/org/work/*.org")))))))
+
+(defun init-org-mode-yyyyyyyyyy ()
+  (setq org-completion-use-ido t))

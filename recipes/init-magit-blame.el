@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-magit-blame)
 (defun noxrcp-magit-blame ()
   "No X recipe init."
-  (define-key noxrcp-map (kbd "V b") 'my-magit-blame))
+  (define-key noxel-map (kbd "V b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.

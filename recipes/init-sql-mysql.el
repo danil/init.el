@@ -39,7 +39,10 @@
 (defun noxrcp-sql-mysql ()
   "No X recipe init."
 
-  (noxrcp-after-load 'sql
-    (setq sql-mysql-login-params (append sql-mysql-login-params '(port)))))
+  (if (boundp 'sql-mysql-login-params) (init-sql-mysql-xxxxxxxxxx)
+    (with-eval-after-load 'sql (init-sql-mysql-xxxxxxxxxx))))
+
+(defun init-sql-mysql-xxxxxxxxxx ()
+  (setq sql-mysql-login-params (append sql-mysql-login-params '(port))))
 
 ;;; init-sql-mysql.el ends here

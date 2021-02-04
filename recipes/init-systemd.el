@@ -33,11 +33,11 @@
 
 ;; (defcustom noxrcp-systemd-patterns '()
 ;;   "Regexp patterns associated with `systemd'."
-;;   :group 'noxrcp)
+;;   :group 'noxinit)
 
 ;; (defcustom noxrcp-systemd--rainbow-identifiers-stop-words '()
 ;;   "Do not highlight in `systemd'."
-;;   :group 'noxrcp)
+;;   :group 'noxinit)
 
 ;; (custom-set-variables
 ;;  '(noxrcp-systemd-patterns '())
@@ -52,12 +52,12 @@
 ;;     (with-eval-after-load 'systemd (noxrcp-systemd--setup))))
 ;; (defun noxrcp-systemd--setup ())
 
-(defun noxrcp-systemd--rainbow-identifiers-init ()
+(defun init-systemd-rainbow-identifiers-setup ()
   (when (equal major-mode 'systemd-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-systemd--rainbow-identifiers-filter)
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-systemd--rainbow-identifiers-filter (beg end)

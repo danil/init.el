@@ -36,7 +36,6 @@
 ;; (add-hook 'after-init-hook 'noxrcp-magit-log)
 ;; (defun noxrcp-magit-log ()
 ;;   "No X recipe init."
-;;   (noxrcp-after-load 'magit-log
-;;     (define-key magit-log-mode-map (kbd "C-c C-f") nil)))
+;; )
 
 ;;; init-magit-log.el ends here

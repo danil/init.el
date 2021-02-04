@@ -36,10 +36,13 @@
 (defun noxrcp-elpa-mirror ()
   "No X recipe init."
 
-  (noxrcp-after-load 'elpa-mirror
-    (setq elpamr-default-output-directory "/var/elpa/mirror"
-          elpamr-email "danil@kutkevich.org"
-          elpamr-repository-name "kutkevich"
-          elpamr-repository-path "http://elpa.kutkevich.org")))
+  (if (boundp 'elpamr-default-output-directory) (init-ielm-xxxxxxxxxx)
+    (with-eval-after-load 'elpa-mirror (init-ielm-xxxxxxxxxx))))
+
+(defun init-elpa-mirror-xxxxxxxxxx ()
+  (setq elpamr-default-output-directory "/var/elpa/mirror"
+        elpamr-email "danil@kutkevich.org"
+        elpamr-repository-name "kutkevich"
+        elpamr-repository-path "http://elpa.kutkevich.org"))
 
 ;;; init-elpa-mirror.el ends here

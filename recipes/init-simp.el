@@ -47,28 +47,36 @@
 (defun noxrcp-simp ()
   "No X recipe init."
 
-  (noxrcp-after-load 'simp
-    (if (fboundp 'ido-mode)
-        (setq simp-completing-read-command 'ido-completing-read)
-      (noxrcp-after-load 'ido
-        (setq simp-completing-read-command 'ido-completing-read)))
+  (if (boundp 'simp-completing-read-command) (init-simp-xxxxxxxxxx)
+    (with-eval-after-load 'simp (init-simp-xxxxxxxxxx))))
 
-    (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
 
-    (let ((rails-ignore '(.git
-                          coverage
-                          public/assets
-                          public/images
-                          public/system
-                          tmp
-                          vendor/cache))))
+(defun init-simp-yyyyyyyyyy ()
+  (setq simp-completing-read-command 'ido-completing-read))
 
-    (simp-project-define '(:has (.git) :ignore (.git)))
-    (simp-project-define
-     '(:type rails
-             :has (config.ru app/models app/views app/controllers)
-             :ignore ,rails-ignore))
-    (simp-project-define
-     '(:type emacs :has (init.el) :ignore (.git)))))
+(defun init-simp-xxxxxxxxxx ()
+  (if (fboundp 'ido-mode)
+      (setq simp-completing-read-command 'ido-completing-read)
+
+    (if (boundp 'simp-completing-read-command) (init-simp-yyyyyyyyyy)
+      (with-eval-after-load 'ido (init-simp-yyyyyyyyyy))))
+
+  (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
+
+  (let ((rails-ignore '(.git
+                        coverage
+                        public/assets
+                        public/images
+                        public/system
+                        tmp
+                        vendor/cache))))
+
+  (simp-project-define '(:has (.git) :ignore (.git)))
+  (simp-project-define
+   '(:type rails
+           :has (config.ru app/models app/views app/controllers)
+           :ignore ,rails-ignore))
+  (simp-project-define
+   '(:type emacs :has (init.el) :ignore (.git))))
 
 ;;; init-simp.el ends here

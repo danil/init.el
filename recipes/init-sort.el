@@ -36,7 +36,7 @@
 (defun noxrcp-sort ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "s") 'sort-lines)
-  (define-key noxrcp-map (kbd "S f") 'sort-fields))
+  (define-key noxel-map (kbd "s") 'sort-lines)
+  (define-key noxel-map (kbd "S f") 'sort-fields))
 
 ;;; init-sort.el ends here

@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-yaml-mode-patterns '()
   "Regexp patterns associated with `yaml-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-yaml-mode-patterns
@@ -50,15 +50,15 @@
   (dolist (pattern noxrcp-yaml-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'yaml-mode))))
 
-(defun noxrcp-yaml-mode--rainbow-identifiers-init ()
+(defun init-yaml-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'yaml-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;;; init-yaml-mode.el ends here

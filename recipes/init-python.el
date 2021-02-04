@@ -36,12 +36,9 @@
 (defun noxrcp-python ()
   "No X recipe init."
 
-  ;; (noxrcp-after-load 'python
-  ;;   (define-key python-mode-map (kbd "C-c C-f") nil))
-
   (noxrcp-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
 
-(defun noxrcp-python-mode--rainbow-identifiers-init ()
+(defun init-python-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'python-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -52,7 +49,7 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-python-mode--rainbow-identifiers-filter (beg end)

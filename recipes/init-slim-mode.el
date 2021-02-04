@@ -34,14 +34,18 @@
 (add-hook 'after-init-hook 'noxrcp-slim-mode)
 (defun noxrcp-slim-mode ()
   "No X recipe init."
-  (noxrcp-after-load 'slim-mode
-    (define-key slim-mode-map (kbd "\C-c\C-f") nil)
-    (define-key slim-mode-map (kbd "M-_") nil)
-    (define-key slim-mode-map (kbd "M-?") nil)
-    (define-key slime-parent-map (kbd "M-_") nil)
-    (define-key slime-parent-map (kbd "M-?") nil)))
 
-(defun noxrcp-slim-mode--rainbow-identifiers-init ()
+  (if (boundp 'slim-mode-map) (init-slim-mode-xxxxxxxxxx)
+    (with-eval-after-load 'slim-mode (init-slim-mode-xxxxxxxxxx))))
+
+(defun init-slim-mode-xxxxxxxxxx ()
+  (define-key slim-mode-map (kbd "\C-c\C-f") nil)
+  (define-key slim-mode-map (kbd "M-_") nil)
+  (define-key slim-mode-map (kbd "M-?") nil)
+  (define-key slime-parent-map (kbd "M-_") nil)
+  (define-key slime-parent-map (kbd "M-?") nil))
+
+(defun init-slim-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'slim-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -55,7 +59,7 @@
                                                   font-lock-function-name-face
                                                   font-lock-constant-face
                                                   ))
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-slim-mode--rainbow-identifiers-filter (beg end)

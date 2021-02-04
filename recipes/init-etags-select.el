@@ -35,13 +35,16 @@
 (defun noxrcp-etags-select ()
   "No X recipe init."
   ;; (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
-  (noxrcp-after-load 'etags-select
-    (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)
-    (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
-    (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)
-    (define-key etags-select-mode-map (kbd "M-RET")
-      'etags-select-goto-tag-other-window)
-    (define-key etags-select-mode-map (kbd "RET") 'etags-select-goto-tag)))
+
+  (if (boundp 'etags-select-mode-map) (init-etags-select-xxxxxxxxxx)
+    (with-eval-after-load 'etags-select (init-etags-select-xxxxxxxxxx))))
+
+(defun init-etags-select-xxxxxxxxxx ()
+  (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)
+  (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
+  (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)
+  (define-key etags-select-mode-map (kbd "M-RET") 'etags-select-goto-tag-other-window)
+  (define-key etags-select-mode-map (kbd "RET") 'etags-select-goto-tag))
 
 (defun etags-select-find-tag-at-point-or-region ()
   "Finds tag at point or selected region using etags-select."

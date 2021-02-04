@@ -1,38 +1,3 @@
-;;; noxrcp.el --- ???.
-
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
-;; Author: Danil <https://danil.kutkevich.org>
-;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.4"))
-;; Keywords: convenience
-;; URL: https://github.com/danil/init.el
-
-;;; Commentary:
-
-;; Please see README.md for documentation.
-
-;;; License:
-
-;; This file is not part of GNU Emacs.
-;; However, it is distributed under the same license.
-
-;; GNU Emacs is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
-
-;;; Code:
-
 (require 'cl-lib)
 (require 'quail)
 
@@ -133,7 +98,7 @@ configuration created previously with `noxrcp-define-key' and
   "Activate `noxrcp-mode' if current buffer is not blacklisted.
 
 This is used by `noxrcp-global-mode'."
-  (unless (member major-mode noxrcp-excluded-modes) (noxrcp-mode 1)))
+  (unless (member major-mode noxrcp-excluded-modes) (noxrcp-mode +1)))
 
 ;;;###autoload
 (define-globalized-minor-mode noxrcp-global-mode
@@ -151,85 +116,35 @@ Otherwise use `list'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;###autoload
-(defcustom noxrcp-safe-modes '()
-  "No X recipe modes with many minor modes enabled."
-  :group 'noxrcp)
-
-;;;###autoload
-(defcustom noxrcp-programming-modes '()
-  "No X recipe programming modes."
-  :group 'noxrcp)
-
-;;;###autoload
 (defcustom noxrcp-auto-completion-modes '()
   "No X recipe auto completion."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 ;;;###autoload
 (defcustom noxrcp-read-only-modes '()
   "No X recipe read only modes."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 ;;;###autoload
 (defcustom noxrcp-toggle-quotes-modes '()
   "No X recipe ruby tools modes."
-  :group 'noxrcp)
+  :group 'noxinit)
 
-;;;###autoload
-(defcustom noxrcp-highlighted-digits-modes '()
-  "No X recipe modes with highlight digits."
-  :group 'noxrcp)
-
-(defcustom noxrcp-modal-modes '()
-  "No X recipe modal modes."
-  :group 'noxrcp)
-
-;;;###autoload
-(defcustom noxrcp-safe-modes-hooks '()
-  "No X recipe hooks."
-  :group 'noxrcp)
-
-;;;###autoload
-(defcustom noxrcp-programming-modes-hooks '()
-  "No X recipe programming modes hooks."
-  :group 'noxrcp)
 
 ;;;###autoload
 (defcustom noxrcp-auto-completion-modes-hooks '()
   "No X recipe auto completion hooks."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 ;;;###autoload
 (defcustom noxrcp-read-only-modes-hooks '()
   "No X recipe read only modes hooks."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 ;;;###autoload
 (defcustom noxrcp-toggle-quotes-modes-hooks '()
   "No X recipe ruby tools modes hooks."
-  :group 'noxrcp)
-
-;;;###autoload
-(defcustom noxrcp-highlighted-digits-modes-hooks '()
-  "No X recipe hooks with highlight digits."
-  :group 'noxrcp)
-
-(defcustom noxrcp-modal-modes-hooks '()
-  "No X recipe modal modes hooks."
-  :group 'noxrcp)
-
-;;;###autoload
-(defcustom noxrcp-default-idle-timer-seconds '()
-  "No X recipe default idle timer wait timeout."
-  :group 'noxrcp)
-
-;;;###autoload
-(defmacro noxrcp-after-load (feature &rest body)
-  "After FEATURE is loaded, evaluate BODY."
-
-  (declare (indent defun))
-  `(eval-after-load ,feature
-     '(progn ,@body)))
+  :group 'noxinit)
 
 ;; (defmacro my-eval-if-defined-or-after-load (symbol feature &rest body)
 ;;   "If function SYMBOL definded or variable SYMBOL defined or after
@@ -248,12 +163,6 @@ Otherwise use `list'."
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
-;;;###autoload
-(defun noxrcp-add-pattern-to-modes (pattern &rest modes)
-  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
-
-  (dolist (mode modes)
-    (add-to-list 'auto-mode-alist (cons pattern mode))))
 
 ;;;###autoload
 (defun noxrcp-add-mode-to-hooks (mode hooks)
@@ -267,28 +176,12 @@ Otherwise use `list'."
     (autoload function-name file-name nil t)))
 
 ;;;###autoload
-(defun nox-kbd (key)
+(defun noxel-kbd-fn (key)
   "No X recipe key bindings start with \\<<C-v>> follow by `KEY'."
   (kbd (concat "C-v " key)))
 
 ;;;###autoload
-;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
-(defun noxrcp-run-with-idle-timer-in-current-buffer (delay-secs with-repeat fn &rest args)
-  "After `DELAY-SECS' with `WITH-REPEAT' run some `FN' with `ARGS'.
-Like `run-with-idle-timer' but always in the `current-buffer'.
-Cancels itself, if this buffer was killed."
-  (let* (;; Chicken and egg problem.
-         (fns (make-symbol "local-idle-timer"))
-         (timer (apply 'run-with-idle-timer delay-secs with-repeat fns args))
-         (fn `(lambda (&rest args)
-                (if (not (buffer-live-p ,(current-buffer)))
-                    (cancel-timer ,timer)
-                  (with-current-buffer ,(current-buffer)
-                    (apply (function ,fn) args))))))
-    (fset fns fn) fn))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'noxrcp)
-
-;;; noxrcp.el ends here

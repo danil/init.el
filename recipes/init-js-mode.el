@@ -6,4 +6,8 @@
   ;; (noxrcp-add-mode-to-patterns 'js-mode
   ;;                               "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
   ;;                               )
-  (noxrcp-after-load 'js (setq js-indent-level 2)))
+  (if (boundp 'js-indent-level) (init-js-mode-xxxxxxxxxx)
+    (with-eval-after-load 'js (init-js-mode-xxxxxxxxxx))))
+
+(defun init-js-mode-xxxxxxxxxx ()
+  (setq js-indent-level 2))

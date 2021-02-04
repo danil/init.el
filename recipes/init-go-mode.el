@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-go-mode--rainbow-identifiers-stop-words '()
   "Do not highlight in `go-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(gofmt-command "goimports") ; The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
@@ -235,7 +235,7 @@
   (define-key go-mode-map (kbd "C-c C-f e") 'noxrcp-go-mode--end-of-defun)
   (define-key go-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
-  (define-key go-mode-map (nox-kbd "? ? f") 'godoc-at-point))
+  (define-key go-mode-map (noxel-kbd-fn "? ? f") 'godoc-at-point))
 
 (defun noxrcp-go-mode--end-of-defun ()
   (interactive)
@@ -274,14 +274,14 @@
                             "\treturn"
                             ))))))
 
-(defun noxrcp-go-mode--rainbow-identifiers-init ()
+(defun init-go-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'go-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-go-mode--rainbow-identifiers-filter)
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (noxrcp-rainbow-identifiers--lazyinit))))
+      (init-rainbow-identifiers--lazy-setup))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-go-mode--rainbow-identifiers-filter (beg end)

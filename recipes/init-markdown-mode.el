@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-markdown-mode-patterns '()
   "Regexp patterns associated with `markdown-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(markdown-command "blackfriday-tool")
                       '(noxrcp-markdown-mode-patterns '(
@@ -53,13 +53,17 @@
   (dolist (pattern noxrcp-markdown-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'markdown-mode)))
 
- (noxrcp-after-load 'markdown-mode
-   (require 'eww) ;used for eww-mode live preview
+  (if (boundp 'markdown-mode-map) (init-markdown-mode-xxxxxxxxxx)
+    (with-eval-after-load 'markdown-mode (init-markdown-mode-xxxxxxxxxx))))
 
-   (set-face-attribute 'markdown-italic-face nil :slant 'normal) ;some terminals have difficulties with italic/bold
+(defun init-markdown-mode-xxxxxxxxxx ()
+  ;; (require 'eww) ;; used for eww-mode live preview
 
-   (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
-   (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
-   (define-key markdown-mode-map (kbd "TAB") 'markdown-cycle)))
+  (set-face-attribute 'markdown-italic-face nil :slant 'normal) ;some terminals have difficulties with italic/bold
+
+  (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
+  (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
+  (define-key markdown-mode-map (kbd "TAB") nil) 'markdown-cycle
+  )
 
 ;;; init-markdown-mode.el ends here

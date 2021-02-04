@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-gitignore-mode-patterns '()
   "Regexp patterns associated with `logview'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-gitignore-mode-patterns
                         '(

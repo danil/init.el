@@ -31,9 +31,9 @@
 
 ;;; Code:
 
-(defcustom noxrcp-simple--yank-pop-function 'noxrcp-selectrum--yank-pop ;'counsel-yank-pop
+(defcustom noxrcp-simple--yank-pop-function 'init-selectrum-yank-pop ;'counsel-yank-pop
   "No X recipe custom variable for the custom yank pop function."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (add-hook 'after-init-hook 'noxrcp-simple)
 
@@ -42,12 +42,8 @@
 
   (global-set-key (kbd "M-y") 'noxrcp-simple--yank-pop)
 
-  (define-key noxrcp-map (kbd "r c") 'count-words-region)
-  (define-key noxrcp-map (kbd "l t") 'toggle-truncate-lines)
-
-  ;; (noxrcp-after-load 'simple
-  ;;   ;; (define-key visual-line-mode-map "C-SPC" nil)
-  ;;   (define-key special-mode-map " " nil))
+  (define-key noxel-map (kbd "r c") 'count-words-region)
+  (define-key noxel-map (kbd "l t") 'toggle-truncate-lines)
 
   ;; (setq line-number-mode t)
 

@@ -41,7 +41,10 @@
 
   (my-backspace-fix)
 
-  (noxrcp-after-load 'term-mode (my-backspace-fix)))
+  (with-eval-after-load 'term-mode (noxrcp-my-backspace-fix-xxxxxxxxxx)))
+
+(defun noxrcp-my-backspace-fix-xxxxxxxxxx ()
+  (my-backspace-fix))
 
 (defun my-backspace-fix ()
   (keyboard-translate ?\C-h ?\C-?)

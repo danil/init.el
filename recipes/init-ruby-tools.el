@@ -41,16 +41,19 @@
   ;;    slim-mode
   ;; (noxrcp-add-mode-to-hooks 'ruby-tools-mode noxrcp-ruby-tools-modes-hooks)
 
-  (noxrcp-after-load 'ruby-tools
-    ;; Remove keys from a minor-mode keymap
-    ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-    (define-key ruby-tools-mode-map (kbd "C-'")  nil)
-    (define-key ruby-tools-mode-map (kbd "C-\"") nil)
-    (define-key ruby-tools-mode-map (kbd "C-:")  nil)
-    (define-key ruby-tools-mode-map (kbd "C-;")  nil)
-    (define-key ruby-tools-mode-map (kbd "#")    nil)
+  (if (boundp 'ruby-tools-mode-map) (init-ruby-tools-xxxxxxxxxx)
+    (with-eval-after-load 'ruby-tools (init-ruby-tools-xxxxxxxxxx))))
 
-    (define-key ruby-tools-mode-map (nox-kbd "m r :")
-      'ruby-tools-to-symbol)))
+(defun init-ruby-tools-xxxxxxxxxx ()
+  ;; Remove keys from a minor-mode keymap
+  ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+  (define-key ruby-tools-mode-map (kbd "C-'")  nil)
+  (define-key ruby-tools-mode-map (kbd "C-\"") nil)
+  (define-key ruby-tools-mode-map (kbd "C-:")  nil)
+  (define-key ruby-tools-mode-map (kbd "C-;")  nil)
+  (define-key ruby-tools-mode-map (kbd "#")    nil)
+
+  (define-key ruby-tools-mode-map (noxel-kbd-fn "m r :")
+    'ruby-tools-to-symbol))
 
 ;;; init-ruby-tools.el ends here

@@ -40,8 +40,11 @@
 
   (when (fboundp 'winner-mode) (winner-mode t))
 
-  (noxrcp-after-load 'winner
-    (define-key noxrcp-map (kbd "w u") 'winner-undo)
-    (define-key noxrcp-map (kbd "w r") 'winner-redo)))
+  (if (boundp 'winner-undo) (init-winner-mode-xxxxxxxxxx)
+    (with-eval-after-load 'winner (init-winner-mode-xxxxxxxxxx))))
+
+(defun init-winner-mode-xxxxxxxxxx ()
+  (define-key noxel-map (kbd "w u") 'winner-undo)
+  (define-key noxel-map (kbd "w r") 'winner-redo))
 
 ;;; init-winner-mode.el ends here

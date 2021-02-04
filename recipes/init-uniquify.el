@@ -42,13 +42,16 @@
   ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
   ;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
   (require 'uniquify)
-  (noxrcp-after-load 'uniquify
-    ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-    (setq
-     uniquify-buffer-name-style 'post-forward ; 'forward
-     uniquify-separator " " ; ":"
-     ;; uniquify-after-kill-buffer-p t ; rename after killing uniquified
-     ;; uniquify-ignore-buffers-re "^\\*" ; don't muck with special buffers
-     )))
+
+  (if (boundp 'uniquify-buffer-name-style) (init-uniquify-xxxxxxxxxx)
+    (with-eval-after-load 'uniquify (init-uniquify-xxxxxxxxxx))))
+
+(defun init-uniquify-xxxxxxxxxx ()
+  ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
+  (setq uniquify-buffer-name-style 'post-forward ; 'forward
+        uniquify-separator " " ; ":"
+        ;; uniquify-after-kill-buffer-p t ; rename after killing uniquified
+        ;; uniquify-ignore-buffers-re "^\\*" ; don't muck with special buffers
+        ))
 
 ;;; init-uniquify.el ends here

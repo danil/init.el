@@ -43,7 +43,6 @@
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
-;; (depends-on "dim")
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "bash-completion")

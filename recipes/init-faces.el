@@ -35,7 +35,7 @@
   '((((background dark)) :foreground "green" :background "red" :weight bold)
     (((background light)) :foreground "green" :background "red" :weight bold))
   "Face for alert that need immediate attention."
-  :group 'noxrcp-faces)
+  :group 'noxinit-faces)
 
 ;; (add-hook 'after-init-hook 'noxrcp-faces)
 ;; (defun noxrcp-faces () "No X recipe init.")

@@ -33,7 +33,7 @@
 
 ;; (defcustom noxrcp-not-php-mode-patterns '()
 ;;   "Regexp patterns NOT associated with `php-mode'."
-;;   :group 'noxrcp)
+;;   :group 'noxinit)
 ;; (custom-set-variables '(noxrcp-not-php-mode-patterns
 ;;                         '('("\\.php[s345t]?\\'" . php-mode)
 ;;                           '("\\.phtml\\'" . php-mode)
@@ -45,20 +45,18 @@
 (defun noxrcp-php-mode ()
   "No X recipe init."
 
-  ;; (noxrcp-after-load 'php-mode
-  ;;   (define-key php-mode-map (kbd "C-c C-f") nil))
   )
 
-(defun noxrcp-php-mode--rainbow-identifiers-init ()
+(defun init-php-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'php-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override
           '(default font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;;; init-php-mode.el ends here

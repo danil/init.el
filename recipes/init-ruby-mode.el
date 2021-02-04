@@ -33,11 +33,11 @@
 
 (defcustom noxrcp-ruby-mode-patterns '()
   "Regexp patterns associated with `ruby-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (defcustom noxrcp-ruby-mode--rainbow-identifiers-stop-words '()
   "Do not highlight in `ruby-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-ruby-mode-patterns
@@ -363,9 +363,9 @@
   (define-key ruby-mode-map (kbd "C-c C-f e") 'noxrcp-ruby-mode--end-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-f n") 'noxrcp-ruby-mode--beginning-of-defun)
   (define-key ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack)
-  (define-key ruby-mode-map (nox-kbd "m f h") 'noxrcp-ruby-mode--align-hash)
-  (define-key ruby-mode-map (nox-kbd "m f v") 'noxrcp-ruby-mode--align-variable-defenition)
-  (define-key ruby-mode-map (nox-kbd "m t b") 'noxrcp-ruby-mode--toggle-block)
+  (define-key ruby-mode-map (noxel-kbd-fn "m f h") 'noxrcp-ruby-mode--align-hash)
+  (define-key ruby-mode-map (noxel-kbd-fn "m f v") 'noxrcp-ruby-mode--align-variable-defenition)
+  (define-key ruby-mode-map (noxel-kbd-fn "m t b") 'noxrcp-ruby-mode--toggle-block)
   ;; (modify-coding-system-alist 'file "\\.rb\\'" nil)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -420,7 +420,7 @@
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
      (and (member str-cur '(" return"))))))
 
-(defun noxrcp-ruby-mode--rainbow-identifiers-init ()
+(defun init-ruby-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -432,7 +432,7 @@
                                                   font-lock-constant-face
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-ruby-mode--rainbow-identifiers-filter (beg end)
@@ -583,7 +583,7 @@ If the result is do-end block, it will always be multiline."
 ;;         (rval 'sql-product))
 ;;     (if (symbol-value rval)
 ;;         (let ((filename
-;;                (concat "~/.emacs.d/irb/"
+;;                (concat user-emacs-directory "irb/"
 ;;                        (symbol-name (symbol-value rval))
 ;;                        "-history.sql")))
 ;;           (set (make-local-variable lval) filename))

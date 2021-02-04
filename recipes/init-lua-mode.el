@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-lua-mode-patterns '()
   "Regexp patterns associated with `lua-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-lua-mode-patterns
                         '(
@@ -46,14 +46,18 @@
   "No X recipe init."
   (dolist (pattern noxrcp-lua-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'lua-mode)))
-  (noxrcp-after-load 'lua-mode
-    ;; <http://lua-users.org/wiki/LuaStyleGuide>,
-    ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>.
-    (setq lua-indent-level 2)
-    ;; (define-key lua-mode-map "\C-c\C-f" nil)
-    (define-key lua-mode-map "\C-v" nil)))
 
-(defun noxrcp-lua-mode--rainbow-identifiers-init ()
+  (if (boundp 'lua-mode-map) (init-lua-mode-xxxxxxxxxx)
+    (with-eval-after-load 'lua-mode (init-lua-mode-xxxxxxxxxx))))
+
+(defun init-lua-mode-xxxxxxxxxx ()
+  ;; <http://lua-users.org/wiki/LuaStyleGuide>,
+  ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>.
+  (setq lua-indent-level 2)
+  ;; (define-key lua-mode-map "\C-c\C-f" nil)
+  (define-key lua-mode-map "\C-v" nil))
+
+(defun init-lua-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'lua-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -65,7 +69,7 @@
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face font-lock-function-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-lua-mode--rainbow-identifiers-filter (beg end)

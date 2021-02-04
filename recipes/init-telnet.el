@@ -49,6 +49,6 @@
       (when process
         (setq comint-input-ring-file-name "~/.emacs.var/inferior-telnet-history")
         (comint-read-input-ring)
-        (set-process-sentinel process #'noxrcp-comint--write-history)))))
+        (set-process-sentinel process #'init-comint-write-history)))))
 
 ;;; init-telnet.el ends here

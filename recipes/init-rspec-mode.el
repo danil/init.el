@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-rspec-mode-patterns '()
   "Regexp patterns associated with `rspec-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-rspec-mode-patterns '(
@@ -48,13 +48,16 @@
   ;; (add-hook 'dired-mode-hook 'rspec-dired-mode)
   ;; (dolist (hook noxrcp-rspec-mode-patterns)
   ;;   (add-hook hook 'noxrcp-rspec-mode--lazyinit))
-  (noxrcp-after-load 'rspec-mode
-    ;; (setq rspec-use-rvm t)
-    (setq rspec-use-rake-when-possible nil)))
+  (if (boundp 'rspec-use-rake-when-possible) (init-rspec-mode-xxxxxxxxxx)
+    (with-eval-after-load 'rspec-mode (init-rspec-mode-xxxxxxxxxx))))
+
+(defun init-rspec-mode-xxxxxxxxxx ()
+  ;; (setq rspec-use-rvm t)
+  (setq rspec-use-rake-when-possible nil))
 
 (defun noxrcp-rspec-mode--lazyinit ()
   "Run `highlight-symbol'."
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil (lambda () (rspec-mode t))))
+  (init-lazy
+   init-lazy-seconds nil (lambda () (rspec-mode t))))
 
 ;;; init-rspec-mode.el ends here

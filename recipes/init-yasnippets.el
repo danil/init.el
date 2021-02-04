@@ -36,20 +36,23 @@
 (defun noxrcp-yasnippets ()
   "No X recipe init."
 
-  (noxrcp-after-load 'yasnippet
-    (add-to-list 'yas-snippet-dirs
-                 (let* ((pkg 'yasnippets)
+  (if (boundp 'yas-snippet-dirs) (init-yasnippets-xxxxxxxxxx)
+    (with-eval-after-load 'yasnippet (init-yasnippets-xxxxxxxxxx))))
 
-                        (desc (or
-                               (if (package-desc-p pkg) pkg)
-                               (cadr (assq pkg package-alist))
-                               (let ((built-in (assq pkg package--builtins)))
-                                 (if built-in
-                                     (package--from-builtin built-in)
-                                   (cadr (assq pkg package-archive-contents))))))
+(defun init-yasnippets-xxxxxxxxxx ()
+  (add-to-list 'yas-snippet-dirs
+               (let* ((pkg 'yasnippets)
 
-                        (pkg-dir (if desc (package-desc-dir desc))))
+                      (desc (or
+                             (if (package-desc-p pkg) pkg)
+                             (cadr (assq pkg package-alist))
+                             (let ((built-in (assq pkg package--builtins)))
+                               (if built-in
+                                   (package--from-builtin built-in)
+                                 (cadr (assq pkg package-archive-contents))))))
 
-                   pkg-dir))))
+                      (pkg-dir (if desc (package-desc-dir desc))))
+
+                 pkg-dir)))
 
 ;;; init-yasnippets.el ends here

@@ -33,23 +33,23 @@
 
 (defcustom noxrcp-ethan-wspace-modes-hooks '()
   "Major modes hooks associated with `ethan-wspace-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (defcustom noxrcp-modes-disallows-no-nl-eof '()
   "Major modes disallows no-nl-eof."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (defcustom noxrcp-modes-disallows-many-nls-eof '()
   "Major modes disallows many-nls-eof."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (defcustom noxrcp-modes-disallows-tabs '()
   "Major modes disallows tabs."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (defcustom noxrcp-modes-disallows-eol '()
   "Major modes disallows trailing whitespace at end of line."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-modes-disallows-tabs '(
@@ -191,23 +191,24 @@
   (dolist (hook noxrcp-ethan-wspace-modes-hooks)
     (add-hook hook 'noxrcp-ethan-wspace--lazyinit))
 
-  (noxrcp-after-load 'ethan-wspace
-    (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
-    ;; (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
-    (cond ((equal frame-background-mode 'dark)
-           (set-face-background 'ethan-wspace-face "gray15")))))
+  (if (boundp 'ethan-wspace-face-customized) (init-ethan-wspace-xxxxxxxxxx)
+    (with-eval-after-load 'ethan-wspace (init-ethan-wspace-xxxxxxxxxx))))
+
+(defun init-ethan-wspace-xxxxxxxxxx ()
+  (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
+  ;; (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
+  (cond ((equal frame-background-mode 'dark)
+         (set-face-background 'ethan-wspace-face "gray15"))))
 
 (defun noxrcp-ethan-wspace--lazyinit ()
   "Run `ethan-wspace'."
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil
-   'noxrcp-ethan-wspace-init))
+  (init-lazy init-lazy-seconds nil 'noxrcp-ethan-wspace-init))
 
 (defun noxrcp-ethan-wspace-init ()
   (custom-set-variables
-   '(noxrcp-ethan-wspace-modes-hooks noxrcp-programming-modes-hooks)
-   '(noxrcp-modes-disallows-no-nl-eof noxrcp-programming-modes)
-   '(noxrcp-modes-disallows-many-nls-eof noxrcp-programming-modes)
+   '(noxrcp-ethan-wspace-modes-hooks init-programming-modes-hooks)
+   '(noxrcp-modes-disallows-no-nl-eof init-programming-modes)
+   '(noxrcp-modes-disallows-many-nls-eof init-programming-modes)
    )
 
   (unless (boundp 'ethan-wspace-errors) (load "ethan-wspace"))

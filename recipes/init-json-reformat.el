@@ -38,6 +38,6 @@
 (defun noxrcp-json-reformat ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "m j j r") 'json-reformat-region))
+  (define-key noxel-map (kbd "m j j r") 'json-reformat-region))
 
 ;;; init-json-reformat.el ends here

@@ -41,14 +41,14 @@
   (if (boundp 'hl-todo-mode-map) (noxrcp-hl-todo--init)
     (with-eval-after-load 'hl-todo (noxrcp-hl-todo--init)))
 
-  (dolist (hook noxrcp-programming-modes-hooks)
+  (dolist (hook init-programming-modes-hooks)
     (add-hook hook 'noxrcp-hl-todo--lazyinit)))
 
 (defun noxrcp-hl-todo--lazyinit ()
   "Run `hl-todo'."
 
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil
+  (init-lazy
+   init-lazy-seconds nil
    (lambda () (hl-todo-mode))))
 
 (defun noxrcp-hl-todo--init ()

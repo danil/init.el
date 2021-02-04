@@ -38,14 +38,20 @@
 
   ;; (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node"))
 
-  (noxrcp-after-load 'js
-    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
+  (if (boundp 'js-mode-map) (init-nodejs-repl-xxxxxxxxxx)
+    (with-eval-after-load 'js (init-nodejs-repl-xxxxxxxxxx)))
 
-  (noxrcp-after-load 'js2-mode
-    (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
+  (if (boundp 'js2-mode-map) (init-nodejs-repl-yyyyyyyyyy)
+    (with-eval-after-load 'js2-mode (init-nodejs-repl-yyyyyyyyyy)))
 
-  (noxrcp-comint--create-history-fn "noxrcp-nodejs-repl--turn-on-history"
+  (init-comint-create-history-fn "noxrcp-nodejs-repl--turn-on-history"
                                     "~/.node_repl_history")
   (add-hook 'nodejs-repl-mode-hook 'noxrcp-nodejs-repl--turn-on-history))
+
+(defun init-nodejs-repl-xxxxxxxxxx ()
+  (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl))
+
+(defun init-nodejs-repl-yyyyyyyyyy ()
+  (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl))
 
 ;;; init-nodejs-repl.el ends here

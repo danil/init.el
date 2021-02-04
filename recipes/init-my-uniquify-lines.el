@@ -36,8 +36,8 @@
 (defun noxrcp-my-uniquify ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "l U") 'my-uniquify-lines-buffer)
-  (define-key noxrcp-map (kbd "l u") 'my-uniquify-lines-region))
+  (define-key noxel-map (kbd "l U") 'my-uniquify-lines-buffer)
+  (define-key noxel-map (kbd "l u") 'my-uniquify-lines-region))
 
 ;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
 (defun my-uniquify-lines-region (start end)

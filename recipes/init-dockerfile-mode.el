@@ -37,11 +37,9 @@
 
 (defun noxrcp-dockerfile-mode ()
   "No X recipe init."
-  ;; (noxrcp-after-load 'dockerfile-mode
-  ;;   (define-key noxrcp-mode-map (kbd "C-v m") dockerfile-mode-map))
   (noxrcp-add-mode-to-patterns 'dockerfile-mode "/Dockerfile\\'"))
 
-(defun noxrcp-dockerfile-mode--rainbow-identifiers-init ()
+(defun init-dockerfile-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'dockerfile-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -55,7 +53,7 @@
                                                   ;; font-lock-keyword-face
                                                   ;; font-lock-variable-name-face
                                                   ))
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-dockerfile-mode--rainbow-identifiers-filter (beg end)

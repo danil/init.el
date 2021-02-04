@@ -42,9 +42,9 @@
   ;; (if (boundp 'quickrun--mode-map) (noxrcp-quickrun--customize)
   ;;   (with-eval-after-load 'quickrun (noxrcp-quickrun--customize)))
 
-  ;; (define-key noxrcp-map (kbd "! s") 'quickrun-shell)
-  (define-key noxrcp-map (kbd "! b") 'my-quickrun)
-  (define-key noxrcp-map (kbd "! r") 'my-quickrun-region))
+  ;; (define-key noxel-map (kbd "! s") 'quickrun-shell)
+  (define-key noxel-map (kbd "! b") 'my-quickrun)
+  (define-key noxel-map (kbd "! r") 'my-quickrun-region))
 
 ;; (defun noxrcp-quickrun--customize()
 ;;   "My init customize."

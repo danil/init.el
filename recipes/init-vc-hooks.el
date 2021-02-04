@@ -38,14 +38,14 @@
 ;; (defun noxrcp-vc-hooks ()
 ;;   "No X recipe init."
 
-;;   (dolist (hook noxrcp-programming-modes-hooks)
+;;   (dolist (hook init-programming-modes-hooks)
 ;;     (add-hook hook 'noxrcp-vc-hooks--lazyinit)))
 
 ;; (defun noxrcp-vc-hooks--lazyinit ()
 ;;   "Run `vc-hooks'."
 
-;;   (noxrcp-run-with-idle-timer-in-current-buffer
-;;    noxrcp-default-idle-timer-seconds nil
+;;   (init-lazy
+;;    init-lazy-seconds nil
 ;;    (lambda () (vc-hooks-mode))))
 
 ;;; init-vc-hooks.el ends here

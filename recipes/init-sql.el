@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-sql-mode-patterns '()
   "Regexp patterns associated with `sql-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'")))
 
@@ -56,7 +56,7 @@
             'noxrcp-sql--sql-interactive-mode-setup-company-mode))
 
 (defun noxrcp-sql--setup-keys ()
-  (define-key sql-interactive-mode-map (nox-kbd "C-l") 'noxrcp-sql--shell-clear))
+  (define-key sql-interactive-mode-map (noxel-kbd-fn "C-l") 'noxrcp-sql--shell-clear))
 
 (defun noxrcp-sql--sql-interactive-mode-setup-company-mode ()
   (if (boundp 'company-dabbrev-code-modes)
@@ -70,7 +70,7 @@
   (setq company-dabbrev-code-modes
         (append '(sql-interactive-mode)
                 (append company-dabbrev-code-modes
-                        noxrcp-programming-modes))))
+                        init-programming-modes))))
 
 ;;; SQL inferior comint mode history
 ;;; <https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-in-emacs/>,
@@ -88,7 +88,7 @@
       (when process
         (setq comint-input-ring-file-name history-file)
         (comint-read-input-ring)
-        (set-process-sentinel process #'noxrcp-comint--write-history)))))
+        (set-process-sentinel process #'init-comint-write-history)))))
 
 (defun noxrcp-sql--shell-clear (&optional arg)
   "Delete output from `SQl' shell or kill output from `SQL' shell if `ARG'.

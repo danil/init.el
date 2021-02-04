@@ -35,8 +35,6 @@
 
 ;; (defun noxrcp-occur-edit-mode ()
 ;;   "No X recipe init."
-
-;;   (noxrcp-after-load "replace"
-;;     (define-key occur-edit-mode-map (kbd "\C-c\C-f") nil)))
+;; )
 
 ;;; init-occur-edit-mode.el ends here

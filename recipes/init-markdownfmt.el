@@ -38,7 +38,10 @@
 (defun noxrcp-markdownfmt ()
   "No X recipe init."
 
-  (noxrcp-after-load 'markdown-mode
-    (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer)))
+  (if (boundp 'markdown-mode-map) (init-markdownfmt-xxxxxxxxxx)
+    (with-eval-after-load 'markdown-mode (init-markdownfmt-xxxxxxxxxx))))
+
+(defun init-markdownfmt-xxxxxxxxxx ()
+  (define-key markdown-mode-map (kbd "C-c C-f") #'markdownfmt-format-buffer))
 
 ;;; init-markdownfmt.el ends here

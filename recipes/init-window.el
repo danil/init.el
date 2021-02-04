@@ -54,9 +54,9 @@
   (global-set-key (kbd "<left>") #'scroll-right)
   (global-set-key (kbd "<right>") #'scroll-left)
 
-  (define-key noxrcp-map (kbd "b") 'noxrcp-window--bury-buffer-maybe-delete-window)
+  (define-key noxel-map (kbd "b") 'noxrcp-window--bury-buffer-maybe-delete-window)
 
-  (define-key noxrcp-map (kbd "B n") 'rename-buffer))
+  (define-key noxel-map (kbd "B n") 'rename-buffer))
 
 (defun noxrcp-window--delete-other-windows ()
   "Make WINDOW fill its frame (`delete-other-windows').

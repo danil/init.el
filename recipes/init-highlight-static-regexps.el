@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-highlight-static-regexps-hooks '()
   "Hooks associated with `highlight-static-regexps'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-highlight-static-regexps-hooks
@@ -60,7 +60,7 @@
 ;;   '(("foo" . "#red")
 ;;     ("bar" . "#green"))
 ;;   "Faces used to highlight specific keywords."
-;;   :group 'noxrcp
+;;   :group 'noxinit
 ;;   :type '(repeat (cons (string :tag "Keyword")
 ;;                        (choice :tag "Face   "
 ;;                                (string :tag "Color")
@@ -86,8 +86,8 @@
 (defun noxrcp-highlight-static-regexps--lazyinit ()
   "Run `highlight-static-regexps'."
 
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil 'highlight-static-regexps-mode))
+  (init-lazy
+   init-lazy-seconds nil 'highlight-static-regexps-mode))
 
 (defun noxrcp-highlight-static-regexps--face-overridable (begin end)
   "My test if the face of the identifier under BEGIN is overridable."

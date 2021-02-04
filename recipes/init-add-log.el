@@ -36,8 +36,6 @@
 (defun noxrcp-add-log ()
   "No X recipe init."
 
-  ;; (noxrcp-after-load 'add-log
-  ;;   (define-key change-log-mode-map (kbd "C-c C-f") nil))
   )
 
 ;;; init-add-log.el ends here

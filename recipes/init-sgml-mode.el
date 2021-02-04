@@ -40,8 +40,12 @@
                                  ;; "\\.html?\\'"
                                  "\\.lp\\'"
                                  "\\.op\\'")
-  (noxrcp-after-load 'sgml-mode
-    ;; (define-key sgml-mode-map "\C-c\C-f" nil)
-    (define-key sgml-mode-map "\C-v" nil)))
+
+  (if (boundp 'sgml-mode-map) (init-sgml-mode-xxxxxxxxxx)
+    (with-eval-after-load 'sgml-mode (init-sgml-mode-xxxxxxxxxx))))
+
+(defun init-sgml-mode-xxxxxxxxxx ()
+  ;; (define-key sgml-mode-map "\C-c\C-f" nil)
+  (define-key sgml-mode-map "\C-v" nil))
 
 ;;; init-sql-mode.el ends here

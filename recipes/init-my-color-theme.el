@@ -95,16 +95,11 @@
        (set-face-attribute 'my-default nil :foreground nil :background nil)
        (setq my-lazy-highlight-background "yellow1") ;lightgoldenrod2
        (setq my-match-foreground "lightskyblue1")
-
-       (setq my-line-numbers-foreground "black")
-       (setq my-line-numbers-background "gray90")
        (set-face-attribute 'lazy-highlight nil
                            :foreground my-match-foreground
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
-       (setq my-line-numbers-foreground "DarkGray") ;DimGray
-       (setq my-line-numbers-background "gray25")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
        (set-face-attribute 'region nil :inverse-video t)

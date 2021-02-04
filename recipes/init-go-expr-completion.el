@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-go-expr-completion-modes-hooks '()
   "Major mode hooks associated with `go-expr-completion'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-go-expr-completion-modes-hooks '(go-mode-hook)))
@@ -46,6 +46,6 @@
     (add-hook hook 'noxrcp-go-expr-completion--setup)))
 
 (defun noxrcp-go-expr-completion--setup ()
-  (define-key noxrcp-map (kbd "m i e") 'go-expr-completion))
+  (define-key noxel-map (kbd "m i e") 'go-expr-completion))
 
 ;;; init-go-expr-completion.el ends here

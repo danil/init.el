@@ -2,7 +2,7 @@
 
 * ido-list-unicode-display.el
 * place `window-numbering` in mode-line near scroll position percentage
-* remove `nox-kbd` function
+* remove `noxel-kbd-fn` function
 * fix `savehist` for `kill-ring`
 * enable `copyright` mode in my emacs lisp recipes files
 * implements `find-temp-file` templating

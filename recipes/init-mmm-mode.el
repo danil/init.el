@@ -59,38 +59,6 @@
 ;; (defun noxrcp-mmm-mode ()
 ;;   "No X recipe init."
 
-;;   (noxrcp-after-load 'mmm-mode
-;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
-;;     (setq mmm-global-mode 'buffers-with-submode-classes)
-;;     (setq mmm-submode-decoration-level 2)
-;;     ;; (setq mmm-parse-when-idle t)
-
-;;     ;; <https://github.com/purcell/emacs.d/blob/master/init-ruby-mode.el>.
-;;     (defun sanityinc/ensure-mmm-erb-loaded ()
-;;       (require 'mmm-erb))
-
-;;     (noxrcp-add-mode-to-hooks 'sanityinc/ensure-mmm-erb-loaded
-;;                            '(html-mode-hook
-;;                              nxml-mode-hook
-;;                              yaml-mode-hook))
-
-;;     (dolist (mode (list 'html-mode 'html-erb-mode 'nxml-mode))
-;;       (mmm-add-mode-ext-class
-;;        mode "\\.r?html\\(\\.erb\\)?\\'" 'html-js)
-;;       (mmm-add-mode-ext-class
-;;        mode "\\.r?html\\(\\.erb\\)?\\'" 'html-css)
-;;       (mmm-add-mode-ext-class
-;;        mode "\\.erb\\'" 'erb))
-
-;;     (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
-;;       (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))
-
-;;     (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
-;;     (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
-
-;;     (noxrcp-add-mode-to-patterns 'html-erb-mode
-;;                                   "\\.jst\\.ejs\\'"
-;;                                   "\\.r?html\\'"
-;;                                   "\\.r?html\\.erb\\'")))
+;;   )
 
 ;;; init-mmm-mode.el ends here

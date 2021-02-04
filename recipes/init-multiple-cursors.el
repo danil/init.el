@@ -36,8 +36,8 @@
 (defun noxrcp-multiple-cursors ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "B m c a") 'mc/mark-all-like-this)
-  (define-key noxrcp-map (kbd "B m c n") 'mc/mark-next-like-this)
-  (define-key noxrcp-map (kbd "B m c p") 'mc/mark-previous-like-this))
+  (define-key noxel-map (kbd "B m c a") 'mc/mark-all-like-this)
+  (define-key noxel-map (kbd "B m c n") 'mc/mark-next-like-this)
+  (define-key noxel-map (kbd "B m c p") 'mc/mark-previous-like-this))
 
 ;;; init-multiple-cursors.el ends here

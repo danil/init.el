@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(defcustom noxrcp-json-mode-patterns '() "Regexp patterns associated with `json-mode'." :group 'noxrcp)
+(defcustom noxrcp-json-mode-patterns '() "Regexp patterns associated with `json-mode'." :group 'noxinit)
 
 (custom-set-variables
  '(json-encoding-default-indentation "    ")
@@ -46,25 +46,22 @@
     (add-to-list 'auto-mode-alist (cons pattern 'json-mode)))
 
   (add-hook 'json-mode-hook 'noxrcp-json-mode--customize)
-  ;; (noxrcp-after-load 'json-mode
-  ;;   (define-key json-mode-map (kbd "C-c C-f") nil)
-  ;;   (define-key json-mode-map (kbd "C-c C-p") nil))
   )
 
 (defun noxrcp-json-mode--customize ()
   (make-local-variable 'js-indent-level)
   (setq js-indent-level 4))
 
-(defun noxrcp-json-mode--rainbow-identifiers-init ()
+(defun init-json-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'json-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (noxrcp-rainbow-identifiers--lazyinit))))
+      (init-rainbow-identifiers--lazy-setup))))
 
 ;;; init-json-mode.el ends here

@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-sh-mode-patterns '()
   "Regexp patterns associated with `sh-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-sh-mode-patterns
@@ -65,7 +65,7 @@
   (dolist (pattern noxrcp-sh-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
 
-(defun noxrcp-sh-mode--rainbow-identifiers-init ()
+(defun init-sh-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'sh-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -81,7 +81,7 @@
                                                   sh-quoted-exec
                                                   ))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-sh-mode--rainbow-identifiers-filter (beg end)

@@ -36,7 +36,7 @@
 (defun noxrcp-hi-lock ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "B h") 'my-highlight-regexp))
+  (define-key noxel-map (kbd "B h") 'my-highlight-regexp))
 
 (defun my-highlight-regexp (&optional arg)
   (interactive "P")

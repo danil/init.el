@@ -65,7 +65,7 @@
 (add-hook 'after-init-hook 'noxrcp-flycheck)
 (defun noxrcp-flycheck ()
   "No X recipe init."
-  (dolist (hook noxrcp-programming-modes-hooks)
+  (dolist (hook init-programming-modes-hooks)
     (add-hook hook 'noxrcp-flycheck--lazyinit)))
 
 (with-eval-after-load 'flycheck
@@ -83,7 +83,7 @@
 
 (defun noxrcp-flycheck--lazyinit ()
   "Run `flycheck'."
-  (noxrcp-run-with-idle-timer-in-current-buffer
-   noxrcp-default-idle-timer-seconds nil 'flycheck-mode))
+  (init-lazy
+   init-lazy-seconds nil 'flycheck-mode))
 
 ;;; init-flycheck.el ends here

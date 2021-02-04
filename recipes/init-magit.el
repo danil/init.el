@@ -39,30 +39,33 @@
 (defun noxrcp-magit ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "v") 'magit-status)
+  (define-key noxel-map (kbd "v") 'magit-status)
 
-  (define-key noxrcp-map (kbd "V d") 'magit-diff-buffer-file)
-  (define-key noxrcp-map (kbd "V D") 'magit-diff)
+  (define-key noxel-map (kbd "V d") 'magit-diff-buffer-file)
+  (define-key noxel-map (kbd "V D") 'magit-diff)
 
-  (define-key noxrcp-map (kbd "V f") 'magit-find-file)
+  (define-key noxel-map (kbd "V f") 'magit-find-file)
 
-  (define-key noxrcp-map (kbd "V l") 'magit-log)
+  (define-key noxel-map (kbd "V l") 'magit-log)
 
-  (define-key noxrcp-map (kbd "V L l") 'magit-log-long)
-  (define-key noxrcp-map (kbd "V L f") 'magit-file-log)
+  (define-key noxel-map (kbd "V L l") 'magit-log-long)
+  (define-key noxel-map (kbd "V L f") 'magit-file-log)
 
-  (define-key noxrcp-map (kbd "V s") 'magit-show-commit)
-  (define-key noxrcp-map (kbd "V S c") 'magit-show)
+  (define-key noxel-map (kbd "V s") 'magit-show-commit)
+  (define-key noxel-map (kbd "V S c") 'magit-show)
 
-  (noxrcp-after-load 'magit
-    (define-key magit-mode-map (nox-kbd "V S 1") 'magit-show-level-1-all)
-    (define-key magit-mode-map (nox-kbd "V S 2") 'magit-show-level-2-all)
-    (define-key magit-mode-map (nox-kbd "V S 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (nox-kbd "V S 4") 'magit-show-level-4-all)
+  (if (boundp 'magit-mode-map) (init-magit-xxxxxxxxxx)
+    (with-eval-after-load 'magit (init-magit-xxxxxxxxxx))))
 
-    ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
+(defun init-magit-xxxxxxxxxx ()
+  (define-key magit-mode-map (noxel-kbd-fn "V S 1") 'magit-show-level-1-all)
+  (define-key magit-mode-map (noxel-kbd-fn "V S 2") 'magit-show-level-2-all)
+  (define-key magit-mode-map (noxel-kbd-fn "V S 3") 'magit-show-level-3-all)
+  (define-key magit-mode-map (noxel-kbd-fn "V S 4") 'magit-show-level-4-all)
 
-    (set-face-background 'magit-section-highlight nil)))
+  ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
+
+  (set-face-background 'magit-section-highlight nil))
 
 ;;; TODO: Pass appropriate arguments to highlight-regexp.
 ;; (defun my-magit-show (&optional arg)

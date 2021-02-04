@@ -33,11 +33,11 @@
 
 ;; (defcustom noxrcp-lsp-mode--mode '()
 ;;   "Modes associated with `lsp-mode'."
-;;   :group 'noxrcp)
+;;   :group 'noxinit)
 
 ;; (defcustom noxrcp-lsp-mode--mode-hooks '()
 ;;   "Mode hooks associated with `lsp-mode'."
-;;   :group 'noxrcp)
+;;   :group 'noxinit)
 
 ;; (custom-set-variables
 ;;  '(noxrcp-lsp-mode--mode '(go-mode))

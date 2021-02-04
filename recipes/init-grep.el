@@ -35,8 +35,6 @@
 
 ;; (defun noxrcp-grep ()
 ;;   "No X recipe init."
-
-;;   (noxrcp-after-load 'grep
-;;     (define-key grep-mode-map (kbd "C-c C-f") nil)))
+;; )
 
 ;;; init-grep.el ends here

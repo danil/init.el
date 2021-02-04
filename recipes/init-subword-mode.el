@@ -4,5 +4,5 @@
   "No X recipe init."
 
   (noxrcp-add-mode-to-hooks 'subword-mode
-                         (append noxrcp-programming-modes-hooks
+                         (append init-programming-modes-hooks
                                  '(ag-mode-hook ibuffer-mode-hook))))

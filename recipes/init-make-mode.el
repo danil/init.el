@@ -41,8 +41,6 @@
                                  "/Makefile.shlib\\'"
                                  "/etc/portage/savedconfig/x11-misc/slock")
 
-  ;; (noxrcp-after-load 'make-mode
-  ;;   (define-key makefile-mode-map (kbd "C-c C-f") nil))
   )
 
 ;;; init-make-mode.el ends here

@@ -50,14 +50,17 @@
 (defun noxrcp-ibuffer ()
   "No X recipe init."
 
-  (noxrcp-after-load 'ibuffer
-    ;; (setq ibuffer-use-other-window 1)
-    ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-    (define-key ibuffer-mode-map "\M-g" nil) ;ibuffer-jump-to-buffer
-    (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
-    (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
+  (if (boundp 'ibuffer-mode-map) (init-ibuffer-xxxxxxxxxx)
+    (with-eval-after-load 'ibuffer (init-ibuffer-xxxxxxxxxx))))
 
-    (add-hook 'ibuffer-hook 'my-get-rid-of-ibuffer-buffer)))
+(defun init-ibuffer-xxxxxxxxxx ()
+  ;; (setq ibuffer-use-other-window 1)
+  ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+  (define-key ibuffer-mode-map "\M-g" nil) ;ibuffer-jump-to-buffer
+  (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
+  (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
+
+  (add-hook 'ibuffer-hook 'my-get-rid-of-ibuffer-buffer))
 
 (defun my-get-rid-of-ibuffer-buffer ()
 "Bury annoying *Ibuffer*."

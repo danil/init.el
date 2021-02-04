@@ -41,8 +41,12 @@
   (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;this is your old M-x
-  (noxrcp-after-load 'smex
-    ;; <http://stackoverflow.com/questions/19781529/how-to-disable-emacs-messages-like-you-can-run-the-command-x-with-y#comment-29432155>
-    (setq smex-key-advice-ignore-menu-bar t)))
+
+  (if (boundp 'smex-key-advice-ignore-menu-bar) (init-smex-xxxxxxxxxx)
+    (with-eval-after-load 'smex (init-smex-xxxxxxxxxx))))
+
+(defun init-smex-xxxxxxxxxx ()
+  ;; <http://stackoverflow.com/questions/19781529/how-to-disable-emacs-messages-like-you-can-run-the-command-x-with-y#comment-29432155>
+  (setq smex-key-advice-ignore-menu-bar t))
 
 ;;; init-smex.el ends here

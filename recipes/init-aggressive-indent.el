@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-aggressive-indent-modes-hooks '()
   "Major modes Hook associated with `aggressive-indent'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-aggressive-indent-modes-hooks '(emacs-lisp-mode-hook)))

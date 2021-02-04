@@ -34,8 +34,12 @@
 (add-hook 'after-init-hook 'noxrcp-ido-describe-bindings)
 (defun noxrcp-ido-describe-bindings ()
   "No X recipe init."
-  (noxrcp-after-load 'help
-    (define-key help-map (kbd "b") 'my-describe-bindings)))
+
+  (if (boundp 'help-map) (init-ido-describe-bindings-xxxxxxxxxx)
+    (with-eval-after-load 'help (init-ido-describe-bindings-xxxxxxxxxx))))
+
+(defun init-ido-describe-bindings-xxxxxxxxxx ()
+  (define-key help-map (kbd "b") 'my-describe-bindings))
 
 (defun my-describe-bindings (&optional arg)
   "My `describe-bindings' wrapper.

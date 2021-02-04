@@ -41,7 +41,7 @@
 (defun noxrcp-shell--setup ()
   "No X recipe init."
   (define-key shell-mode-map (kbd "TAB") nil)
-  (define-key shell-mode-map (nox-kbd "C-l") 'my-shell-clear))
+  (define-key shell-mode-map (noxel-kbd-fn "C-l") 'my-shell-clear))
 
 (defun my-shell-clear (&optional arg)
   "Delete output from shell or kill output from shell if `ARG'.

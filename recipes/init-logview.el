@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-logview-mode-patterns '()
   "Regexp patterns associated with `logview'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-logview-mode-patterns
                         '(

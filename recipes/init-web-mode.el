@@ -41,7 +41,7 @@
 
 (defcustom noxrcp-web-mode-patterns '()
   "Regexp patterns associated with `web-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-web-mode-patterns
                         '(
@@ -70,15 +70,18 @@
 
   (add-hook 'web-mode-hook 'noxrcp-web-mode--armor5games-settings)
 
-  (noxrcp-after-load 'web-mode
-    ;; (define-key web-mode-map (kbd "C-c C-f") nil)
-    (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))))
+  (if (boundp 'web-mode-content-types-alist) (init-web-mode-xxxxxxxxxx)
+    (with-eval-after-load 'web-mode (init-web-mode-xxxxxxxxxx))))
 
-(defun noxrcp-web-mode--rainbow-identifiers-init ()
+(defun init-web-mode-xxxxxxxxxx ()
+  ;; (define-key web-mode-map (kbd "C-c C-f") nil)
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+
+(defun init-web-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'web-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
@@ -89,7 +92,7 @@
                                                   web-mode-html-tag-face
                                                   ))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 (defun noxrcp-web-mode--armor5games-settings ()
   "Custom Armor5games settings."

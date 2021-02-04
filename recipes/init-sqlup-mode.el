@@ -41,7 +41,7 @@
   ;; (add-hook 'sql-mode-hook 'sqlup-mode) ;capitalize keywords in SQL mode
   (add-hook 'sql-interactive-mode-hook 'noxrcp-sqlup-mode-turn-on-or-off) ;capitalize keywords in an interactive session (e.g. psql)
 
-  (define-key noxrcp-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
+  (define-key noxel-map (kbd "m s") 'sqlup-capitalize-keywords-in-region))
 
 (defun noxrcp-sqlup-mode-turn-on-or-off ()
   "Enable or disable the `sqlup-mode' depending on current buffer `sql-product'."

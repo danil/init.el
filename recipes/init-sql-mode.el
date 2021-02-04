@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-sql-mode-patterns '()
   "Regexp patterns associated with `sql-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-sql-mode-patterns '("/\\.?psqlrc\\'")))
 
@@ -48,21 +48,21 @@
 (defun noxrcp-sql-mode--setup ()
   (define-key sql-mode-map (kbd "C-c C-p") 'sql-set-product))
 
-(defun noxrcp-sql-mode--rainbow-identifiers-init ()
+(defun init-sql-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'sql-mode)
     (noxrcp-sql--rainbow-identifiers-init)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-sql-mode--rainbow-identifiers-filter)
     (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
-      (noxrcp-rainbow-identifiers--lazyinit))))
+      (init-rainbow-identifiers--lazy-setup))))
 
-(defun noxrcp-sql-interactive-mode--rainbow-identifiers-init ()
+(defun init-sql-interactive-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'sql-interactive-mode)
     (noxrcp-sql--rainbow-identifiers-init)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-sql-mode--rainbow-identifiers-filter)
     (when (<= (count-lines (point-min) (point-max)) 200) ;number of lines in current buffer
-      (noxrcp-rainbow-identifiers--lazyinit))))
+      (init-rainbow-identifiers--lazy-setup))))
 
 (defun noxrcp-sql--rainbow-identifiers-init ()
   (make-local-variable 'rainbow-identifiers-filter-functions)

@@ -31,17 +31,28 @@
 
 ;;; Code:
 
+(defcustom noxrcp-lisp-mode-patterns '()
+  "Regexp patterns associated with `lisp-mode'."
+  :group 'noxinit)
+
+(custom-set-variables '(noxrcp-lisp-mode-patterns '(
+                                                    "/\\.stumpwmrc\\'"
+                                                    "/\\.sbclrc\\'"
+                                                    "\\.ros\\'"
+                                                    "\\.sexp\\'"
+                                                    )))
+
 (add-hook 'after-init-hook 'noxrcp-lisp-mode)
 (defun noxrcp-lisp-mode ()
   "No X recipe init."
-  (dolist (pattern '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'"))
+  (dolist (pattern noxrcp-lisp-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'lisp-mode)))
   (if (boundp 'lisp-mode-map) (noxrcp-lisp-mode--setup)
     (with-eval-after-load 'lisp-mode (noxrcp-lisp-mode--setup))))
 
 (defun noxrcp-lisp-mode--setup ()
-  ;; (noxrcp-run-with-idle-timer-in-current-buffer
-  ;;  noxrcp-default-idle-timer-seconds nil 'noxrcp-lisp-mode--lazy-setup)
+  ;; (init-lazy
+  ;;  init-lazy-seconds nil 'noxrcp-lisp-mode--lazy-setup)
   (define-key lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
   (define-key lisp-mode-map [?\C-\M-i] nil))
 
@@ -51,13 +62,13 @@
 ;;       (load (expand-file-name f))
 ;;       (setq inferior-lisp-program "ros -Q run"))))
 
-(defun noxrcp-lisp-mode--rainbow-identifiers-init ()
+(defun init-lisp-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'lisp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-lisp-mode--rainbow-identifiers-filter)
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 (defun noxrcp-lisp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."

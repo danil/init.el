@@ -36,7 +36,10 @@
 (defun noxrcp-godoctor ()
   "No X recipe init."
 
-  (noxrcp-after-load 'go-mode
-    (define-key go-mode-map (nox-kbd "m g r") 'godoctor-rename)))
+  (if (boundp 'go-mode-map) (init-godoctor-xxxxxxxxxx)
+    (with-eval-after-load 'go-mode (init-godoctor-xxxxxxxxxx))))
+
+(defun init-godoctor-xxxxxxxxxx ()
+  (define-key go-mode-map (noxel-kbd-fn "m g r") 'godoctor-rename))
 
 ;;; init-godoctor.el ends here

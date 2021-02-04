@@ -36,6 +36,6 @@
 (defun noxrcp-git-timemachine ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "V r") 'git-timemachine))
+  (define-key noxel-map (kbd "V r") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here

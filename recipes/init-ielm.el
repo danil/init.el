@@ -38,7 +38,10 @@
 (defun noxrcp-ielm ()
   "No X recipe init."
 
-  (noxrcp-after-load 'lisp-mode
-    (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm)))
+  (if (boundp 'emacs-lisp-mode-map) (init-ielm-xxxxxxxxxx)
+    (with-eval-after-load 'lisp-mode (init-ielm-xxxxxxxxxx))))
+
+(defun init-ielm-xxxxxxxxxx ()
+  (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'ielm))
 
 ;;; init-ielm.el ends here

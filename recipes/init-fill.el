@@ -36,6 +36,6 @@
 (defun noxrcp-fill ()
   "No X recipe init."
 
-  (global-set-key (nox-kbd "r f") 'fill-region))
+  (global-set-key (noxel-kbd-fn "r f") 'fill-region))
 
 ;;; init-fill.el ends here

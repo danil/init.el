@@ -35,9 +35,13 @@
 
 (defun noxrcp-ido-occur ()
   "No X recipe init."
-  (define-key noxrcp-map (kbd "j o") 'my-ido-occur)
-  (noxrcp-after-load "isearch"
-    (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch)))
+  (define-key noxel-map (kbd "j o") 'my-ido-occur)
+
+  (if (boundp 'isearch-mode-map) (init-ido-occur-xxxxxxxxxx)
+    (with-eval-after-load 'isearch (init-ido-occur-xxxxxxxxxx))))
+
+(defun init-ido-occur-xxxxxxxxxx ()
+  (define-key isearch-mode-map (kbd "C-o") 'ido-occur-from-isearch))
 
 (defun my-ido-occur (&optional arg)
   "Run `ido-occur-at-point' or `ido-occur' if `ARG'."

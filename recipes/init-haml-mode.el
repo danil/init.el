@@ -36,11 +36,6 @@
 (defun noxrcp-haml-mode ()
   "No X recipe init."
 
-  (noxrcp-after-load 'haml-mode
-    ;; (noxrcp-after-load 'ruby-mode
-    ;;   (define-key haml-mode-map (nox-kbd "m r h") 'ruby-toggle-hash-syntax))
-
-    ;; (define-key haml-mode-map "\C-c\C-f" nil)
-    ))
+)
 
 ;;; init-haml-mode.el ends here

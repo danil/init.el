@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-js2-mode-patterns '()
   "Regexp patterns associated with `js2-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  ;; '(js2-highlight-level 3)
@@ -52,13 +52,10 @@
 (defun noxrcp-js2-mode ()
   "No X recipe init."
 
-  ;; (noxrcp-after-load 'js2-mode
-  ;;   (define-key js2-mode-map (kbd "C-c C-f") nil))
-
   (dolist (pattern noxrcp-js2-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'js2-mode))))
 
-(defun noxrcp-js2-mode--rainbow-identifiers-init ()
+(defun init-js2-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'js2-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -75,7 +72,7 @@
             js2-object-property
             ))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-js2-mode--rainbow-identifiers-filter (beg end)

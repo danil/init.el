@@ -37,7 +37,7 @@
 (add-hook 'after-init-hook 'noxrcp-help)
 (defun noxrcp-help ()
   "No X recipe init."
-  (define-key noxrcp-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
+  (define-key noxel-map (kbd "?") 'help-command) ;<http://www.gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>
   (if (boundp 'help-map) (noxrcp-help--customize-keys)
     (with-eval-after-load 'help (noxrcp-help--customize-keys))))
 

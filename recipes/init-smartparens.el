@@ -42,20 +42,23 @@
                         '(cider-repl-mode-hook
                           clojure-mode-hook))
 
-  (noxrcp-after-load 'smartparens
-    (sp-with-modes sp--lisp-modes (sp-local-pair "'" nil :actions nil)) ;adds `' as a local pair in lisp <https://github.com/Fuco1/smartparens/issues/286#issuecomment-32324743>, <https://github.com/Fuco1/smartparens/wiki/Pair-management#local-pair-definitions>
-    (define-key sp-keymap (nox-kbd "m s u") 'sp-unwrap-sexp)
-    (define-key sp-keymap (nox-kbd "m s s f") 'sp-forward-slurp-sexp)
-    (define-key sp-keymap (nox-kbd "m s s b") 'sp-backward-slurp-sexp)
-    (define-key sp-keymap (kbd "M-(") (lambda ()
-                                        (interactive)
-                                        (sp-wrap-with-pair "(")))
-    (define-key sp-keymap (kbd "M-[") (lambda ()
-                                        (interactive)
-                                        (sp-wrap-with-pair "[")))
-    ;; (define-key sp-keymap (kbd "m s s k a") 'sp-splice-sexp-killing-around)
-    (define-key sp-keymap (kbd "M-{") (lambda ()
-                                        (interactive)
-                                        (sp-wrap-with-pair "{")))))
+  (if (boundp 'sp-keymap) (init-smartparens-xxxxxxxxxx)
+    (with-eval-after-load 'smartparens (init-smartparens-xxxxxxxxxx))))
+
+(defun init-smartparens-xxxxxxxxxx ()
+  (sp-with-modes sp--lisp-modes (sp-local-pair "'" nil :actions nil)) ;adds `' as a local pair in lisp <https://github.com/Fuco1/smartparens/issues/286#issuecomment-32324743>, <https://github.com/Fuco1/smartparens/wiki/Pair-management#local-pair-definitions>
+  (define-key sp-keymap (noxel-kbd-fn "m s u") 'sp-unwrap-sexp)
+  (define-key sp-keymap (noxel-kbd-fn "m s s f") 'sp-forward-slurp-sexp)
+  (define-key sp-keymap (noxel-kbd-fn "m s s b") 'sp-backward-slurp-sexp)
+  (define-key sp-keymap (kbd "M-(") (lambda ()
+                                      (interactive)
+                                      (sp-wrap-with-pair "(")))
+  (define-key sp-keymap (kbd "M-[") (lambda ()
+                                      (interactive)
+                                      (sp-wrap-with-pair "[")))
+  ;; (define-key sp-keymap (kbd "m s s k a") 'sp-splice-sexp-killing-around)
+  (define-key sp-keymap (kbd "M-{") (lambda ()
+                                      (interactive)
+                                      (sp-wrap-with-pair "{"))))
 
 ;;; init-smartparens.el ends here

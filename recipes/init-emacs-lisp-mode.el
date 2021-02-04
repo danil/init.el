@@ -44,9 +44,9 @@
 
 (defun noxrcp-emacs-lisp-mode--setup ()
   (define-key emacs-lisp-mode-map (kbd "C-c C-f n") 'beginning-of-defun)
-  (define-key emacs-lisp-mode-map (nox-kbd "! b") 'my-eval-buffer)
-  (define-key emacs-lisp-mode-map (nox-kbd "! r") 'my-eval-region)
-  (define-key emacs-lisp-mode-map (nox-kbd "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map (noxel-kbd-fn "! b") 'my-eval-buffer)
+  (define-key emacs-lisp-mode-map (noxel-kbd-fn "! r") 'my-eval-region)
+  (define-key emacs-lisp-mode-map (noxel-kbd-fn "! r") 'my-eval-region)
   (define-key emacs-lisp-mode-map [?\C-\M-i] nil))
 
 (defun my-eval-buffer ()
@@ -59,13 +59,13 @@
   (message "Eval region")
   (eval-region start end))
 
-(defun noxrcp-emacs-lisp-mode--rainbow-identifiers-init ()
+(defun init-emacs-lisp-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'emacs-lisp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-emacs-lisp-mode--rainbow-identifiers-filter)
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 (defun noxrcp-emacs-lisp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."

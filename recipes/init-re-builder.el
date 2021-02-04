@@ -36,6 +36,6 @@
 (defun noxrcp-re-builder ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "B R") 're-builder))
+  (define-key noxel-map (kbd "B R") 're-builder))
 
 ;;; init-re-builder.el ends here

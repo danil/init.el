@@ -39,15 +39,15 @@
 ;;   "No X recipe init."
 ;;   )
 
-(defun noxrcp-toml-mode--rainbow-identifiers-init ()
+(defun init-toml-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'toml-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;;; init-toml-mode.el ends here

@@ -35,12 +35,12 @@
 
 (defcustom noxrcp-ferm-mode-patterns '()
   "Regexp patterns associated with `ferm-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 
 (defcustom noxrcp-ferm-mode--rainbow-identifiers-stop-words '()
   "Do not highlight in `ferm-mode'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables
  '(noxrcp-ferm-mode-patterns '("/etc/iptables/rules.v[46]"
@@ -62,12 +62,12 @@
   (dolist (pattern noxrcp-ferm-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'ferm-mode))))
 
-(defun noxrcp-ferm-mode--rainbow-identifiers-init ()
+(defun init-ferm-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'ferm-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-ferm-mode--rainbow-identifiers-filter)
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-ferm-mode--rainbow-identifiers-filter (beg end)

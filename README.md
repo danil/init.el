@@ -1,7 +1,7 @@
-noxrcp
-======
+init.el
+=======
 
-No X11 recipes for the emacs.
+Emacs init files
 
 Features
 --------

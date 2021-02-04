@@ -33,7 +33,7 @@
 
 (defcustom noxrcp-nginx-mode-patterns '()
   "Regexp patterns associated with `logview'."
-  :group 'noxrcp)
+  :group 'noxinit)
 
 (custom-set-variables '(noxrcp-nginx-mode-patterns
                         '(
@@ -49,16 +49,16 @@
   (dolist (pattern noxrcp-nginx-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'nginx-mode))))
 
-(defun noxrcp-nginx-mode--rainbow-identifiers-init ()
+(defun init-nginx-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'nginx-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-rainbow-identifiers--face-overridable)
+              'init-rainbow-identifiers-face-overridable)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face
                                                   font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;;; init-nginx-mode.el ends here

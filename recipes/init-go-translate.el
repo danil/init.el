@@ -47,7 +47,7 @@
   (if (boundp 'go-translate-base-url) (noxrcp-go-translate--init)
     (with-eval-after-load 'go-translate (noxrcp-go-translate--init)))
 
-  (define-key noxrcp-map (kbd "t") 'go-translate))
+  (define-key noxel-map (kbd "t") 'go-translate))
 
 (defun noxrcp-go-translate--init ()
   (setq go-translate-local-language "ru")

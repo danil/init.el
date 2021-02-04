@@ -31,19 +31,21 @@
 
 ;;; Code:
 
-(custom-set-variables '(coffee-tab-width 2))
-
 (add-hook 'coffee-mode-hook 'turn-off-auto-fill) ;get rid of annoying auto-fill-mode in coffee-mode
 
 (add-hook 'after-init-hook 'noxrcp-coffee-mode)
 (defun noxrcp-coffee-mode ()
   "No X recipe init."
   (noxrcp-add-mode-to-patterns 'coffee-mode "\\.coffee\\'" "/Cakefile\\'")
-  (noxrcp-after-load 'coffee-mode
-    (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
-          (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode))))
 
-(defun noxrcp-coffee-mode--rainbow-identifiers-init ()
+  (if (boundp 'coffee-mode-map) (init-ielm-xxxxxxxxxx)
+    (with-eval-after-load 'coffee-mode (init-ielm-xxxxxxxxxx))))
+
+(defun init-coffee-mode-xxxxxxxxxx ()
+  (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+        (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode)))
+
+(defun init-coffee-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'coffee-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -55,6 +57,6 @@
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face))
 
-    (noxrcp-rainbow-identifiers--lazyinit)))
+    (init-rainbow-identifiers--lazy-setup)))
 
 ;;; init-coffee-mode.el ends here

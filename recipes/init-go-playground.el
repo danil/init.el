@@ -36,6 +36,6 @@
 (defun noxrcp-go-playground ()
   "No X recipe init."
 
-  (define-key noxrcp-map (kbd "p g") #'go-playground))
+  (define-key noxel-map (kbd "p g") #'go-playground))
 
 ;;; init-go-playground.el ends here

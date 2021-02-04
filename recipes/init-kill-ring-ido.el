@@ -38,8 +38,10 @@
   "No X recipe init."
   ;; (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop-depricatied)
   (global-set-key (kbd "M-y") 'noxrcp-kill-ring-ido--yank-pop)
-  (noxrcp-after-load 'kill-ring-ido
-    (setq kill-ring-ido-shortage-length 500)))
+  (if (boundp 'kill-ring-ido-shortage-length) (init-kill-ring-ido-xxxxxxxxxx)
+    (with-eval-after-load 'kill-ring-ido (init-kill-ring-ido-xxxxxxxxxx))))
+
+(defun init-kill-ring-ido-xxxxxxxxxx () (setq kill-ring-ido-shortage-length 500))
 
 (defun noxrcp-kill-ring-ido--yank-pop (&optional arg)
   (interactive "P")
