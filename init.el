@@ -46,24 +46,6 @@
 (setq init-key-prefix "C-v ")
 (setq init-exec-key-prefix (concat init-key-prefix "x "))
 
-;; Modes with many minor modes enabled.
-(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode haml-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
-
-;; ;; Hooks with many minor modes enabled.
-;; (setq init-base-modes-hooks '())
-;; (dolist (mode init-base-modes)
-;;   (add-to-list 'init-base-modes-hooks
-;;                (intern (concat (symbol-name mode) "-hook"))))
-
-;; Programming modes.
-(setq init-programming-modes (append init-base-modes '(clojure-mode emacs-lisp-mode)))
-
-;; Programming modes hooks.
-(setq init-programming-modes-hooks '())
-(dolist (mode init-programming-modes)
-  (add-to-list 'init-programming-modes-hooks
-               (intern (concat (symbol-name mode) "-hook"))))
-
 ;; Seconds to wait for lazy timer.
 (setq init-lazy-seconds 1)
 
@@ -81,6 +63,24 @@ Cancels itself, if this buffer was killed."
                   (with-current-buffer ,(current-buffer)
                     (apply (function ,fn) args))))))
     (fset fns fn) fn))
+
+;; Modes with many minor modes enabled.
+(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode haml-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
+
+;; ;; Hooks with many minor modes enabled.
+;; (setq init-base-modes-hooks '())
+;; (dolist (mode init-base-modes)
+;;   (add-to-list 'init-base-modes-hooks
+;;                (intern (concat (symbol-name mode) "-hook"))))
+
+;; Programming modes.
+(setq init-programming-modes (append init-base-modes '(clojure-mode emacs-lisp-mode)))
+
+;; Programming modes hooks.
+(setq init-programming-modes-hooks '())
+(dolist (mode init-programming-modes)
+  (add-to-list 'init-programming-modes-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
 
 ;; My custom variables
 ;; <https://emacs.stackexchange.com/questions/55018/init-el-and-trampling-of-custom-set-variables>,
