@@ -144,7 +144,8 @@ Cancels itself, if this buffer was killed."
 (require 'init-dockerfile-mode "init-dockerfile-mode") (init-dockerfile-mode)
 (require 'init-dumb-jump "init-dumb-jump") (init-dumb-jump)
 (require 'init-elisp-slime-nav "init-elisp-slime-nav") (init-elisp-slime-nav)
-
+(autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
+(require 'init-elpa-mirror "init-elpa-mirror") (init-elpa-mirror)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
@@ -188,9 +189,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(nox-recipe '(elixir-mode))
-(nox-recipe '(elpa-mirror))
 (nox-recipe '(emacs-lisp-mode))
 (nox-recipe '(env))
 (nox-recipe '(etags-select))
