@@ -146,13 +146,6 @@ Cancels itself, if this buffer was killed."
 (require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (add-hook 'after-init-hook 'init-disp-table-vertical-border)
 (require 'init-dockerfile-mode "init-dockerfile-mode") (add-hook 'after-init-hook 'init-dockerfile-mode)
 (require 'init-dumb-jump "init-dumb-jump") (add-hook 'after-init-hook 'init-dumb-jump)
-(require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
-(autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
-(require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
-(require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
-(require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
-(require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
 (require 'init-dired "init-dired") (add-hook 'after-init-hook 'init-dired)
@@ -160,6 +153,15 @@ Cancels itself, if this buffer was killed."
 (require 'init-dired-details "init-dired-details") (add-hook 'after-init-hook 'init-dired-details)
 (require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
 (require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
+
+(require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
+(autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
+(require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
+(require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
+(require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
+(require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
+(require 'init-faces "init-faces") ;; TODO: autoload
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 
@@ -197,7 +199,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(faces))
 (nox-recipe '(ferm-mode))
 (nox-recipe '(files))
 (nox-recipe '(fill))

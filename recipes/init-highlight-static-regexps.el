@@ -81,7 +81,7 @@
    ((equal s "\tgo") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\tgoto") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\treturn") '(:inherit font-lock-keyword-face :weight bold))
-   (t '(:inherit noxrcp-faces--alert-fixme))))
+   (t '(:inherit init-alert))))
 
 (defun noxrcp-highlight-static-regexps--lazyinit ()
   "Run `highlight-static-regexps'."

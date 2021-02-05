@@ -483,7 +483,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "black" :foreground "magenta" :weight bold)))) ;; anzu.el
- '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit noxrcp-faces--alert-fixme)))) ;; anzu.el
+ '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit init-alert)))) ;; anzu.el
  '(column-marker-1 ((((class color) (min-colors 88) (background light)) :background "gray80")
                     (((class color) (min-colors 88) (background dark)) :background "gray35"))) ;; column-marker.el
  '(ctrlf-highlight-active ((t :background "brightwhite" :foreground "brightred"))) ;; ctrlf.el
@@ -507,6 +507,7 @@
  '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ;; ediff-init.el
  '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ;; ethan-wspace.el
  '(highlight-symbol-face ((t (:inherit highlight)))) ;; highlight-symbol.el
+ '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ;; init-faces.el
  '(init-truncation-glyph-face ((t (:background "orchid3")))) ;; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
  '(init-wrap-glyph-face ((t (:background "limegreen")))) ;; ;; init-disp-table-line-wrap-and-truncation.el: green4 ;; green3 ;; light green
  '(ivy-current-match ((t :inverse-video t))) ;; ivy.el: :inherit highlight
