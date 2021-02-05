@@ -96,6 +96,7 @@
  '(diredfl-ignore-compressed-flag nil) ;; diredfl.el
  '(dumb-jump-max-find-time 10) ;; dumb-jump.el
  '(dumb-jump-selector 'ivy) ;; dumb-jump.el
+ '(ethan-wspace-face-customized t) ;; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
  '(fd-dired-display-in-current-window t)
  '(find-temp-custom-spec '((68 lambda nil (format-time-string "%Y%m%d"))))
  '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E")))
@@ -237,6 +238,11 @@
  '(init-dired-details-key "b")
  '(init-emacs-lisp-mode-map-prefix init-key-prefix)
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ;; init-emacs-lisp-mode.el
+ '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ;; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-eol-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dockerfile-mode ebuild-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ;; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ;; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix)
  '(init-rainbow-identifiers-hooks
@@ -356,7 +362,6 @@
  '(noxrcp-auto-completion-modes
    (append init-programming-modes
            '(redis-cli-mode shell-mode telnet-mode wdired-mode)))
- '(noxrcp-ethan-wspace-modes-hooks init-programming-modes-hooks)
  '(noxrcp-ferm-mode--rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT"))
  '(noxrcp-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'"))
  '(noxrcp-gitignore-mode-patterns
@@ -387,12 +392,6 @@
  '(noxrcp-lua-mode-patterns '("\\.lua\\.example\\'" "\\.ws\\'"))
  '(noxrcp-markdown-mode-patterns
    '("/Dropbox/deft/.*\\.txt\\'" "/README\\'" "/mutt[-a-zA-Z0-9]+\\'" "\\.markdown\\'" "\\.md\\'" "\\.mdown\\'"))
- '(noxrcp-modes-disallows-eol
-   '(autoconf-mode awk-mode c-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dockerfile-mode ebuild-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode))
- '(noxrcp-modes-disallows-many-nls-eof init-programming-modes)
- '(noxrcp-modes-disallows-no-nl-eof init-programming-modes)
- '(noxrcp-modes-disallows-tabs
-   '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode))
  '(noxrcp-nginx-mode-patterns '("/etc/nginx/.*\\.conf\\'" "/etc/nginx/sites-available/"))
  '(noxrcp-read-only-modes
    (append init-base-modes
@@ -505,6 +504,7 @@
  '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "color-52")))) ;; ediff-init.el: DarkRed
  '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "color-22")))) ;; ediff-init.el: DarkGreen
  '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ;; ediff-init.el
+ '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ;; ethan-wspace.el
  '(highlight-symbol-face ((t (:inherit highlight)))) ;; highlight-symbol.el
  '(init-truncation-glyph-face ((t (:background "orchid3")))) ;; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
  '(init-wrap-glyph-face ((t (:background "limegreen")))) ;; ;; init-disp-table-line-wrap-and-truncation.el: green4 ;; green3 ;; light green

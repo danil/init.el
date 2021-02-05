@@ -43,6 +43,9 @@
 ;;; ElDoc annoying in all buffers/modes.
 (global-eldoc-mode -1)
 
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;; terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
+(setenv "GIT_PAGER" "")
+
 (setq init-key-prefix "C-v ")
 (setq init-exec-key-prefix (concat init-key-prefix "x "))
 
@@ -146,6 +149,8 @@ Cancels itself, if this buffer was killed."
 (require 'init-elisp-slime-nav "init-elisp-slime-nav") (init-elisp-slime-nav)
 (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
 (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (init-emacs-lisp-mode)
+(require 'init-etags-select "init-etags-select") (init-etags-select)
+(require 'init-ethan-wspace "init-ethan-wspace") (init-ethan-wspace)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
@@ -154,6 +159,8 @@ Cancels itself, if this buffer was killed."
 (require 'init-dired-details "init-dired-details") (init-dired-details)
 (require 'init-diredfl "init-diredfl") (init-diredfl)
 (require 'init-wdired "init-wdired") (init-wdired)
+
+(require 'init-rails "init-rails") (init-rails)
 
 (require 'init-rainbow-delimiters "init-rainbow-delimiters") (init-rainbow-delimiters)
 (require 'init-rainbow-identifiers "init-rainbow-identifiers") (init-rainbow-identifiers)
@@ -189,9 +196,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(env))
-(nox-recipe '(etags-select))
-(nox-recipe '(ethan-wspace))
 (nox-recipe '(expand-region))
 (nox-recipe '(faces))
 (nox-recipe '(ferm-mode))
