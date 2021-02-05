@@ -188,7 +188,6 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(nox-recipe '(ediff))
 (nox-recipe '(elisp-slime-nav))
 (nox-recipe '(elixir-mode))
 (nox-recipe '(elpa-mirror))
