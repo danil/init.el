@@ -245,7 +245,9 @@
  '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
  '(init-expand-region-map-prefix init-key-prefix) ;; init-expand-region.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
- '(init-fringe-mode-map-exec-prefix init-exec-key-prefix)
+ '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
+ '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
+ '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-rainbow-identifiers-hooks
   '(
     (c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
@@ -363,8 +365,6 @@
  '(noxrcp-auto-completion-modes
    (append init-programming-modes
            '(redis-cli-mode shell-mode telnet-mode wdired-mode)))
- '(noxrcp-ferm-mode--rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT"))
- '(noxrcp-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'"))
  '(noxrcp-gitignore-mode-patterns
    '("/\\.agignore\\'" "/\\.dockerignore\\'" "/\\.gitignore_global\\'" "/\\.stglobalignore\\'" "/\\.stignore\\'" "/\\.stignore_global\\'" "/\\.stignoreglobal\\'"))
  '(noxrcp-go-expr-completion-modes-hooks '(go-mode-hook))
