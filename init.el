@@ -140,6 +140,9 @@ Cancels itself, if this buffer was killed."
 (require 'init-diff-mode "init-diff-mode") (init-diff-mode)
 (require 'init-digit-groups "init-digit-groups") (init-digit-groups)
 (require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (init-disp-table-line-wrap-and-truncation)
+(require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (init-disp-table-vertical-border)
+(require 'init-dockerfile-mode "init-dockerfile-mode") (init-dockerfile-mode)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -170,7 +173,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-projectile "init-projectile") (init-projectile)
 (require 'init-projectile-rails "init-projectile-rails") (init-projectile-rails)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (require 'noxrcp "~/.emacs.d/noxrcp.el")
 
@@ -183,8 +186,8 @@ Cancels itself, if this buffer was killed."
 (defun nox-recipe (recipes)
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
-(nox-recipe '(disp-table-vertical-border))
-(nox-recipe '(dockerfile-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (nox-recipe '(dumb-jump))
 (nox-recipe '(ediff))
 (nox-recipe '(elisp-slime-nav))
