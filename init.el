@@ -139,6 +139,9 @@ Cancels itself, if this buffer was killed."
 (require 'init-desktop "init-desktop") (init-global-desktop-mode +1)
 (require 'init-diff-mode "init-diff-mode") (init-diff-mode)
 (require 'init-digit-groups "init-digit-groups") (init-digit-groups)
+(require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (init-disp-table-line-wrap-and-truncation)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
 (require 'init-dired "init-dired") (init-dired)
@@ -146,8 +149,6 @@ Cancels itself, if this buffer was killed."
 (require 'init-dired-details "init-dired-details") (init-dired-details)
 (require 'init-diredfl "init-diredfl") (init-diredfl)
 (require 'init-wdired "init-wdired") (init-wdired)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'init-rainbow-delimiters "init-rainbow-delimiters") (init-rainbow-delimiters)
 (require 'init-rainbow-identifiers "init-rainbow-identifiers") (init-rainbow-identifiers)
@@ -182,7 +183,6 @@ Cancels itself, if this buffer was killed."
 (defun nox-recipe (recipes)
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
-(nox-recipe '(disp-table-line-wrap-and-truncation))
 (nox-recipe '(disp-table-vertical-border))
 (nox-recipe '(dockerfile-mode))
 (nox-recipe '(dumb-jump))

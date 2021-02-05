@@ -490,6 +490,8 @@
  '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ;; diff-mode.el
  '(diff-changed ((((class color) (min-colors 88) (background dark)) :foreground "brightblue"))) ;; diff-mode.el
  '(highlight-symbol-face ((t (:inherit highlight)))) ;; highlight-symbol.el
+ '(init-truncation-glyph-face ((t (:background "orchid3")))) ;; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
+ '(init-wrap-glyph-face ((t (:background "limegreen")))) ;; ;; init-disp-table-line-wrap-and-truncation.el: green4 ;; green3 ;; light green
  '(ivy-current-match ((t :inverse-video t))) ;; ivy.el: :inherit highlight
  '(ivy-minibuffer-match-face-1 ((t :background "gray10"))) ;; ivy.el
  '(ivy-minibuffer-match-face-2 ((t :background "red"))) ;; ivy.el
