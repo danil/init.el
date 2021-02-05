@@ -94,8 +94,8 @@
  '(dired-listing-switches "-l --all --human-readable") ;; dired.el
  ;; '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst")) ;; diredfl.el
  '(diredfl-ignore-compressed-flag nil) ;; diredfl.el
- '(dumb-jump-max-find-time 10)
- '(dumb-jump-selector 'ivy)
+ '(dumb-jump-max-find-time 10) ;; dumb-jump.el
+ '(dumb-jump-selector 'ivy) ;; dumb-jump.el
  '(fd-dired-display-in-current-window t)
  '(find-temp-custom-spec '((68 lambda nil (format-time-string "%Y%m%d"))))
  '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E")))

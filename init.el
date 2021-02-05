@@ -142,7 +142,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (init-disp-table-line-wrap-and-truncation)
 (require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (init-disp-table-vertical-border)
 (require 'init-dockerfile-mode "init-dockerfile-mode") (init-dockerfile-mode)
-
+(require 'init-dumb-jump "init-dumb-jump") (init-dumb-jump)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -188,7 +188,6 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(nox-recipe '(dumb-jump))
 (nox-recipe '(ediff))
 (nox-recipe '(elisp-slime-nav))
 (nox-recipe '(elixir-mode))
