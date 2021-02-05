@@ -145,7 +145,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-dumb-jump "init-dumb-jump") (init-dumb-jump)
 (require 'init-elisp-slime-nav "init-elisp-slime-nav") (init-elisp-slime-nav)
 (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
-(require 'init-elpa-mirror "init-elpa-mirror") (init-elpa-mirror)
+(require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (init-emacs-lisp-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
@@ -189,7 +189,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(emacs-lisp-mode))
 (nox-recipe '(env))
 (nox-recipe '(etags-select))
 (nox-recipe '(ethan-wspace))

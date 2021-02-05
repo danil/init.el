@@ -36,7 +36,7 @@
 (defun noxrcp-sgml-mode ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'html-mode
+  (noxrcp-removeme-add-mode-to-patterns 'html-mode
                                  ;; "\\.html?\\'"
                                  "\\.lp\\'"
                                  "\\.op\\'")

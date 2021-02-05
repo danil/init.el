@@ -130,8 +130,7 @@
  '(init-anzu-mode-map-exec-prefix init-exec-key-prefix) ;; init-anzu.el
  '(init-browse-url-mode-map-exec-prefix init-exec-key-prefix)
  '(init-bytecomp-mode-map-prefix init-exec-key-prefix)
- '(init-c-mode-patterns
-   '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ;; init-cc-mode.el
+ '(init-c-mode-patterns '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ;; init-cc-mode.el
  '(init-cc-mode-map-prefix init-key-prefix)
  '(init-company-completing-read-function 'init-selectrum-company) ;; init-company.el
  '(init-compile-mode-map-prefix init-key-prefix) ;; init-compile.el
@@ -236,6 +235,8 @@
  '(init-desktop-mode-map-prefix init-key-prefix) ;; init-desktop.el
  '(init-digit-groups-mode-hooks (append init-programming-modes-hooks '(shell-mode-hook)))
  '(init-dired-details-key "b")
+ '(init-emacs-lisp-mode-map-prefix init-key-prefix)
+ '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ;; init-emacs-lisp-mode.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix)
  '(init-rainbow-identifiers-hooks

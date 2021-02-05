@@ -3,4 +3,4 @@
 (defun noxrcp-fish-mode ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'fish-mode "\\.fish\\'"))
+  (noxrcp-removeme-add-mode-to-patterns 'fish-mode "\\.fish\\'"))

@@ -54,7 +54,7 @@
 (defun noxrcp-mediawiki ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
+  (noxrcp-removeme-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 
   (add-hook 'mediawiki-mode-hook
             (lambda () (define-key mediawiki-mode-map "\C-x\C-s" 'save-buffer))))

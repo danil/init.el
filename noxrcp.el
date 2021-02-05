@@ -157,7 +157,7 @@ Otherwise use `list'."
 ;; )
 
 ;;;###autoload
-(defun noxrcp-add-mode-to-patterns (mode &rest patterns)
+(defun noxrcp-removeme-add-mode-to-patterns (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
 
   (dolist (pattern patterns)

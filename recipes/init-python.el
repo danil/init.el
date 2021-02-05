@@ -36,7 +36,7 @@
 (defun noxrcp-python ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
+  (noxrcp-removeme-add-mode-to-patterns 'python-mode "/requirements\\.txt\\'"))
 
 (defun init-python-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'python-mode)

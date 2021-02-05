@@ -3,4 +3,4 @@
 (defun noxrcp-info ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'Info-mode "\\.info\\'"))
+  (noxrcp-removeme-add-mode-to-patterns 'Info-mode "\\.info\\'"))

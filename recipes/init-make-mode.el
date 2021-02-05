@@ -36,7 +36,7 @@
 (defun noxrcp-make-mode ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-patterns 'makefile-gmake-mode
+  (noxrcp-removeme-add-mode-to-patterns 'makefile-gmake-mode
                                  "/Makefile.port\\'"
                                  "/Makefile.shlib\\'"
                                  "/etc/portage/savedconfig/x11-misc/slock")
