@@ -143,6 +143,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (init-disp-table-vertical-border)
 (require 'init-dockerfile-mode "init-dockerfile-mode") (init-dockerfile-mode)
 (require 'init-dumb-jump "init-dumb-jump") (init-dumb-jump)
+(require 'init-elisp-slime-nav "init-elisp-slime-nav") (init-elisp-slime-nav)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -188,7 +189,6 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(nox-recipe '(elisp-slime-nav))
 (nox-recipe '(elixir-mode))
 (nox-recipe '(elpa-mirror))
 (nox-recipe '(emacs-lisp-mode))
