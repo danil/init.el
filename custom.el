@@ -87,7 +87,7 @@
      (unknown . " ") ;"?"
      )) ;; diff-hl.el
  '(diff-hl-side 'right) ;; diff-hl.el
- '(directory-free-space-args "--human-readable")
+ '(directory-free-space-args "--human-readable") ;; files.el
  '(dired-details-hidden-string "") ;; dired-details.el
  '(dired-details-hide-extra-lines nil) ;; dired-details.el
  '(dired-details-hide-link-targets nil) ;; dired-details.el
@@ -247,6 +247,7 @@
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
+ '(init-files-map-prefix init-key-prefix) ;; init-files.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-rainbow-identifiers-hooks
   '(
@@ -299,8 +300,8 @@
  '(ivy-use-virtual-buffers nil) ;; ivy.el: virtual buffers slow down switching between buffers
  '(js2-mode-show-strict-warnings nil)
  '(json-encoding-default-indentation "    " t)
- '(kept-new-versions 6)
- '(kept-old-versions 2)
+ '(kept-new-versions 6) ;; files.el
+ '(kept-old-versions 2) ;; files.el
  '(kill-ring-max 1000)
  '(magit-blame-heading-format "%-20a %C %s %H")
  '(magit-completing-read-function 'selectrum-completing-read)
@@ -327,7 +328,7 @@
                       (vc-mode vc-mode)
                       mode-line-misc-info
                       mode-line-end-spaces)) ;; mode-line.el
- '(mode-require-final-newline nil)
+ '(mode-require-final-newline nil) ;; files.el: otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
  '(multi-compile-alist
    '(("/Cask\\'"
       ("cask outdated" . "cd %dir && cask --verbose outdated")
@@ -472,7 +473,7 @@
  '(tldr-directory-path (expand-file-name "tldr/" "~/.emacs.var"))
  '(tldr-use-word-at-point t)
  '(uniquify-min-dir-content 20)
- '(version-control t)
+ '(version-control t) ;; files.el: use versioned backups
  '(window-min-height 1)
  '(window-min-width 1)
  '(winner-dont-bind-my-keys t))
