@@ -85,7 +85,7 @@ Cancels itself, if this buffer was killed."
 ;; My custom variables
 ;; <https://emacs.stackexchange.com/questions/55018/init-el-and-trampling-of-custom-set-variables>,
 ;; <https://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el/106>.
-(setq custom-file (concat user-emacs-directory "custom-variables.el"))
+(setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file)
 
 ;;; Cask.
