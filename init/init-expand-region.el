@@ -7,9 +7,7 @@
 
 (defcustom init-expand-region-map-prefix "C-v " "init-expand-region" :group 'init-expand-region)
 
-(defun init-expand-region () (add-hook 'after-init-hook 'init-expand-region-after-init))
-
-(defun init-expand-region-after-init ()
+(defun init-expand-region ()
   (setq modes '(er/expand-region
                 er/mark-comment
                 er/mark-defun
