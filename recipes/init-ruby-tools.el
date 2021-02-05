@@ -39,7 +39,7 @@
   ;;    rhtml-mode
   ;;    ruby-mode
   ;;    slim-mode
-  ;; (noxrcp-add-mode-to-hooks 'ruby-tools-mode noxrcp-ruby-tools-modes-hooks)
+  ;; (noxrcp-removeme-add-mode-to-hooks 'ruby-tools-mode noxrcp-ruby-tools-modes-hooks)
 
   (if (boundp 'ruby-tools-mode-map) (init-ruby-tools-xxxxxxxxxx)
     (with-eval-after-load 'ruby-tools (init-ruby-tools-xxxxxxxxxx))))

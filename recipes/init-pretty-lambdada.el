@@ -38,7 +38,7 @@
 (defun noxrcp-pretty-lambdada ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-hooks 'turn-on-pretty-lambda-mode
+  (noxrcp-removeme-add-mode-to-hooks 'turn-on-pretty-lambda-mode
                               '(emacs-lisp-mode-hook lisp-mode-hook)))
 
 ;;; init-pretty-lambdada.el ends here

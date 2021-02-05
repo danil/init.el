@@ -36,7 +36,7 @@
 (defun noxrcp-ac-html ()
   "No X recipe init."
 
-  ;; (noxrcp-add-mode-to-hooks (lambda ()
+  ;; (noxrcp-removeme-add-mode-to-hooks (lambda ()
   ;;                         (require 'ac-html)
   ;;                         (require 'ac-html-default-data-provider)
   ;;                         (ac-html-enable-data-provider 'ac-html-default-data-provider)
@@ -85,6 +85,6 @@
   (add-hook 'haml-mode-hook 'ac-haml-enable)
   (add-hook 'jade-mode-hook 'ac-jade-enable)
   (add-hook 'slim-mode-hook 'ac-slim-enable)
-  (noxrcp-add-mode-to-hooks 'ac-html-enable '(html-mode-hook web-mode-hook)))
+  (noxrcp-removeme-add-mode-to-hooks 'ac-html-enable '(html-mode-hook web-mode-hook)))
 
 ;;; init-ac-html.el ends here

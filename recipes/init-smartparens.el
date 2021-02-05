@@ -36,7 +36,7 @@
 (defun noxrcp-smartparens ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-hooks (lambda ()
+  (noxrcp-removeme-add-mode-to-hooks (lambda ()
                           (turn-on-smartparens-mode)
                           (turn-on-show-smartparens-mode))
                         '(cider-repl-mode-hook

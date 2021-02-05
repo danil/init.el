@@ -38,7 +38,7 @@
 (defun noxrcp-hideshow ()
   "No X recipe init."
 
-  ;; (noxrcp-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
+  ;; (noxrcp-removeme-add-mode-to-hooks 'hs-minor-mode '(ruby-mode-hook))
 
   (if (boundp 'hs-special-modes-alist) (init-hideshow-xxxxxxxxxx)
     (with-eval-after-load 'hs-minor-mode (init-hideshow-xxxxxxxxxx))))

@@ -165,15 +165,10 @@ Otherwise use `list'."
 
 
 ;;;###autoload
-(defun noxrcp-add-mode-to-hooks (mode hooks)
+(defun noxrcp-removeme-add-mode-to-hooks (mode hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
 
-;;;###autoload
-(defun noxrcp-autoload-file-on-functions (file-name &rest functions)
-  "Autoload `FILE-NAME' if one of the given `FUNCTIONS' called."
-  (dolist (function-name functions)
-    (autoload function-name file-name nil t)))
 
 ;;;###autoload
 (defun noxel-kbd-fn (key)

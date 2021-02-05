@@ -243,6 +243,7 @@
  '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
+ '(init-expand-region-map-prefix init-key-prefix) ;; init-expand-region.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix)
  '(init-rainbow-identifiers-hooks

@@ -151,6 +151,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (init-emacs-lisp-mode)
 (require 'init-etags-select "init-etags-select") (init-etags-select)
 (require 'init-ethan-wspace "init-ethan-wspace") (init-ethan-wspace)
+(require 'init-expand-region "init-expand-region") (init-expand-region)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Dired.
@@ -196,7 +197,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(expand-region))
 (nox-recipe '(faces))
 (nox-recipe '(ferm-mode))
 (nox-recipe '(files))

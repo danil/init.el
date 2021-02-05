@@ -3,6 +3,6 @@
 (defun noxrcp-subword-mode ()
   "No X recipe init."
 
-  (noxrcp-add-mode-to-hooks 'subword-mode
+  (noxrcp-removeme-add-mode-to-hooks 'subword-mode
                          (append init-programming-modes-hooks
                                  '(ag-mode-hook ibuffer-mode-hook))))
