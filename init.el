@@ -99,94 +99,94 @@ Cancels itself, if this buffer was killed."
 
 (add-to-list 'load-path (concat user-emacs-directory "init/"))
 
-(require 'init-align "init-align")
-(require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
-(require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)
-(require 'init-bash-completion "init-bash-completion") (add-hook 'after-init-hook 'init-bash-completion)
-(require 'init-bindings "init-bindings") (add-hook 'after-init-hook 'init-global-bindings-mode)
-(require 'init-browse-url "init-browse-url") (add-hook 'after-init-hook 'init-global-browse-url-mode)
-(require 'init-bytecomp "init-bytecomp") (add-hook 'after-init-hook 'init-bytecomp)
-(require 'init-calendar "init-calendar") (add-hook 'after-init-hook 'init-calendar)
-(require 'init-cc-mode "init-cc-mode") (add-hook 'after-init-hook 'init-cc-mode)
-(require 'init-clojure-mode "init-clojure-mode") (add-hook 'after-init-hook 'init-clojure-mode)
-(require 'init-column-marker "init-column-marker") (add-hook 'after-init-hook 'init-column-marker)
-(require 'init-csharp-mode "init-csharp-mode") ;; TODO: autoload
-(require 'init-comint "init-comint") (add-hook 'after-init-hook 'init-comint)
-(require 'init-compile "init-compile") (add-hook 'after-init-hook 'init-compile) (add-hook 'after-init-hook 'init-global-compile-mode)
-(require 'init-conf-mode "init-conf-mode") (add-hook 'after-init-hook 'init-conf-mode)
-(require 'init-corral "init-corral") (add-hook 'after-init-hook 'init-global-corral-mode) ;; smartparens replacement (quotes/parentheses/delimiters manager)
-(require 'init-crontab-mode "init-crontab-mode") (add-hook 'after-init-hook 'init-crontab-mode)
-(autoload 'init-css-mode-rainbow-identifiers-setup "init-css" nil t)
-(require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
+(message "Initializing align") (require 'init-align "init-align")
+(message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
+(message "Initializing anzu") (require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)
+(message "Initializing bash-completion") (require 'init-bash-completion "init-bash-completion") (add-hook 'after-init-hook 'init-bash-completion)
+(message "Initializing bindings") (require 'init-bindings "init-bindings") (add-hook 'after-init-hook 'init-global-bindings-mode)
+(message "Initializing browse-url") (require 'init-browse-url "init-browse-url") (add-hook 'after-init-hook 'init-global-browse-url-mode)
+(message "Initializing bytecomp") (require 'init-bytecomp "init-bytecomp") (add-hook 'after-init-hook 'init-bytecomp)
+(message "Initializing calendar") (require 'init-calendar "init-calendar") (add-hook 'after-init-hook 'init-calendar)
+(message "Initializing cc-mode") (require 'init-cc-mode "init-cc-mode") (add-hook 'after-init-hook 'init-cc-mode)
+(message "Initializing clojure-mode") (require 'init-clojure-mode "init-clojure-mode") (add-hook 'after-init-hook 'init-clojure-mode)
+(message "Initializing column-marker") (require 'init-column-marker "init-column-marker") (add-hook 'after-init-hook 'init-column-marker)
+(message "Initializing csharp-mode") (require 'init-csharp-mode "init-csharp-mode") ;; TODO: autoload
+(message "Initializing comint") (require 'init-comint "init-comint") (add-hook 'after-init-hook 'init-comint)
+(message "Initializing compile") (require 'init-compile "init-compile") (add-hook 'after-init-hook 'init-compile) (add-hook 'after-init-hook 'init-global-compile-mode)
+(message "Initializing conf-mode") (require 'init-conf-mode "init-conf-mode") (add-hook 'after-init-hook 'init-conf-mode)
+(message "Initializing corral") (require 'init-corral "init-corral") (add-hook 'after-init-hook 'init-global-corral-mode) ;; smartparens replacement (quotes/parentheses/delimiters manager)
+(message "Initializing crontab-mode") (require 'init-crontab-mode "init-crontab-mode") (add-hook 'after-init-hook 'init-crontab-mode)
+(message "Initializing init css") (autoload 'init-css-mode-rainbow-identifiers-setup "init-css" nil t)
+(message "Initializing cycle-quotes") (require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
 
 ;; Company mode auto complete.
-(require 'init-company "init-company") (add-hook 'after-init-hook 'init-company) (add-hook 'after-init-hook 'init-global-company-mode)
-(require 'init-company-css "init-company-css") (add-hook 'after-init-hook 'init-company-css)
-(require 'init-company-elisp "init-company-elisp") (add-hook 'after-init-hook 'init-company-elisp)
-(require 'init-company-erlang "init-company-erlang") (add-hook 'after-init-hook 'init-company-erlang)
-(require 'init-company-inf-ruby "init-company-inf-ruby") (add-hook 'after-init-hook 'init-company-inf-ruby)
-(require 'init-company-lua "init-company-lua") (add-hook 'after-init-hook 'init-company-lua)
-(require 'init-company-nginx "init-company-nginx") (add-hook 'after-init-hook 'init-company-nginx)
-(require 'init-company-shell "init-company-shell") (add-hook 'after-init-hook 'init-company-shell)
-(require 'init-company-web "init-company-web") (add-hook 'after-init-hook 'init-company-web)
+(message "Initializing company") (require 'init-company "init-company") (add-hook 'after-init-hook 'init-company) (add-hook 'after-init-hook 'init-global-company-mode)
+(message "Initializing company-css") (require 'init-company-css "init-company-css") (add-hook 'after-init-hook 'init-company-css)
+(message "Initializing company-elisp") (require 'init-company-elisp "init-company-elisp") (add-hook 'after-init-hook 'init-company-elisp)
+(message "Initializing company-erlang") (require 'init-company-erlang "init-company-erlang") (add-hook 'after-init-hook 'init-company-erlang)
+(message "Initializing company-inf-ruby") (require 'init-company-inf-ruby "init-company-inf-ruby") (add-hook 'after-init-hook 'init-company-inf-ruby)
+(message "Initializing company-lua") (require 'init-company-lua "init-company-lua") (add-hook 'after-init-hook 'init-company-lua)
+(message "Initializing company-nginx") (require 'init-company-nginx "init-company-nginx") (add-hook 'after-init-hook 'init-company-nginx)
+(message "Initializing company-shell") (require 'init-company-shell "init-company-shell") (add-hook 'after-init-hook 'init-company-shell)
+(message "Initializing company-web") (require 'init-company-web "init-company-web") (add-hook 'after-init-hook 'init-company-web)
 
 ;; Counsel/Ivy/Swiper (is an ido replacement).
-(require 'init-counsel "init-counsel") (add-hook 'after-init-hook 'init-counsel) (add-hook 'after-init-hook 'init-global-counsel-mode)
-(require 'init-ivy-historian "init-ivy-historian") (add-hook 'after-init-hook 'init-ivy-historian)
+(message "Initializing counsel") (require 'init-counsel "init-counsel") (add-hook 'after-init-hook 'init-counsel) (add-hook 'after-init-hook 'init-global-counsel-mode)
+(message "Initializing ivy-historian") (require 'init-ivy-historian "init-ivy-historian") (add-hook 'after-init-hook 'init-ivy-historian)
 
 ;; Fringe <https://www.emacswiki.org/emacs/TheFringe>.
-(require 'init-diff-hl "init-diff-hl") ;; TODO: autoload
-(require 'init-fringe "init-fringe") (add-hook 'after-init-hook 'init-global-fringe-mode)
+(message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ;; TODO: autoload
+(message "Initializing fringe") (require 'init-fringe "init-fringe") (add-hook 'after-init-hook 'init-global-fringe-mode)
 
-(require 'init-deft "init-deft") (add-hook 'after-init-hook 'init-global-deft-mode)
-(require 'init-desktop "init-desktop") (add-hook 'after-init-hook 'init-global-desktop-mode)
-(require 'init-diff-mode "init-diff-mode") (add-hook 'after-init-hook 'init-diff-mode)
-(require 'init-digit-groups "init-digit-groups") (add-hook 'after-init-hook 'init-digit-groups)
-(require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (add-hook 'after-init-hook 'init-disp-table-line-wrap-and-truncation)
-(require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (add-hook 'after-init-hook 'init-disp-table-vertical-border)
-(require 'init-dockerfile-mode "init-dockerfile-mode") (add-hook 'after-init-hook 'init-dockerfile-mode)
-(require 'init-dumb-jump "init-dumb-jump") (add-hook 'after-init-hook 'init-dumb-jump)
+(message "Initializing deft") (require 'init-deft "init-deft") (add-hook 'after-init-hook 'init-global-deft-mode)
+(message "Initializing desktop") (require 'init-desktop "init-desktop") (add-hook 'after-init-hook 'init-global-desktop-mode)
+(message "Initializing diff-mode") (require 'init-diff-mode "init-diff-mode") (add-hook 'after-init-hook 'init-diff-mode)
+(message "Initializing digit-groups") (require 'init-digit-groups "init-digit-groups") (add-hook 'after-init-hook 'init-digit-groups)
+(message "Initializing disp-table-line-wrap-and-truncation") (require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (add-hook 'after-init-hook 'init-disp-table-line-wrap-and-truncation)
+(message "Initializing disp-table-vertical-border") (require 'init-disp-table-vertical-border "init-disp-table-vertical-border") (add-hook 'after-init-hook 'init-disp-table-vertical-border)
+(message "Initializing dockerfile-mode") (require 'init-dockerfile-mode "init-dockerfile-mode") (add-hook 'after-init-hook 'init-dockerfile-mode)
+(message "Initializing dumb-jump") (require 'init-dumb-jump "init-dumb-jump") (add-hook 'after-init-hook 'init-dumb-jump)
 
 ;; Dired.
-(require 'init-dired "init-dired") (add-hook 'after-init-hook 'init-dired)
-(require 'init-dired-aux "init-dired-aux") (add-hook 'after-init-hook 'init-dired-aux)
-(require 'init-dired-details "init-dired-details") (add-hook 'after-init-hook 'init-dired-details)
-(require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
-(require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
+(message "Initializing dired") (require 'init-dired "init-dired") (add-hook 'after-init-hook 'init-dired)
+(message "Initializing dired-aux") (require 'init-dired-aux "init-dired-aux") (add-hook 'after-init-hook 'init-dired-aux)
+(message "Initializing dired-details") (require 'init-dired-details "init-dired-details") (add-hook 'after-init-hook 'init-dired-details)
+(message "Initializing diredfl") (require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
+(message "Initializing wdired") (require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
 
-(require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
-(autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
-(require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
-(require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
-(require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
-(require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
-(require 'init-faces "init-faces") ;; TODO: autoload
-(require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
-(require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
-(require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
+(message "Initializing elisp-slime-nav") (require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
+(message "Initializing elixir-mode") (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
+(message "Initializing emacs-lisp-mode") (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
+(message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
+(message "Initializing ethan-wspace") (require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
+(message "Initializing expand-region") (require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
+(message "Initializing faces") (require 'init-faces "init-faces") ;; TODO: autoload
+(message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
+(message "Initializing files") (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
+(message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
+(message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 
-(require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
-(require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
-(require 'init-rainbow-mode "init-rainbow-mode") (add-hook 'after-init-hook 'init-rainbow-mode)
+(message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
+(message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
+(message "Initializing rainbow-mode") (require 'init-rainbow-mode "init-rainbow-mode") (add-hook 'after-init-hook 'init-rainbow-mode)
 
 ;; Selectrum a-la ido/ivy/counsel <https://github.com/raxod502/selectrum>.
-(require 'init-selectrum "init-selectrum") (add-hook 'after-init-hook 'init-selectrum) (add-hook 'after-init-hook 'init-global-selectrum-mode) ;; a-la ido/ivy/counsel
-(require 'init-selectrum-prescient "init-selectrum-prescient") (add-hook 'after-init-hook 'init-selectrum-prescient)
-(require 'init-prescient "init-prescient") (add-hook 'after-init-hook 'init-prescient)
-(amx-mode +1)
+(message "Initializing selectrum") (require 'init-selectrum "init-selectrum") (add-hook 'after-init-hook 'init-selectrum) (add-hook 'after-init-hook 'init-global-selectrum-mode) ;; a-la ido/ivy/counsel
+(message "Initializing selectrum-prescient") (require 'init-selectrum-prescient "init-selectrum-prescient") (add-hook 'after-init-hook 'init-selectrum-prescient)
+(message "Initializing prescient") (require 'init-prescient "init-prescient") (add-hook 'after-init-hook 'init-prescient)
+(message "Initializing amx-mode") (amx-mode +1)
 
 ;; Mode line.
-(require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line)
-(require 'init-window-numbering "init-window-numbering") (add-hook 'after-init-hook 'init-window-numbering)
+(message "Initializing smart-mode-line") (require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line)
+(message "Initializing window-numbering") (require 'init-window-numbering "init-window-numbering") (add-hook 'after-init-hook 'init-window-numbering)
 
-(require 'init-highlight-symbol "init-highlight-symbol") (add-hook 'after-init-hook 'init-highlight-symbol)
+(message "Initializing highlight-symbol") (require 'init-highlight-symbol "init-highlight-symbol") (add-hook 'after-init-hook 'init-highlight-symbol)
 
 ;; Projectile.
-(require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
-(require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
+(message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
+(message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
 
 
