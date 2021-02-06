@@ -4,9 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ag-context-lines 5)
- '(amx-history-length 1000) ;; amx.el
+ '(amx-history-length 500) ;; amx.el
  '(amx-save-file "~/.emacs.var/amx-items") ;; amx.el
- '(anzu-search-threshold 7000) ;; anzu.el
+ '(anzu-search-threshold 500) ;; anzu.el
  '(backup-by-copying t) ;; files.el: don't clobber symlinks, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
  '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
  '(bookmark-default-file "~/.emacs.var/bookmarks") ;; bookmark.el
@@ -14,7 +14,7 @@
  '(calendar-week-start-day 1) ;; calendar.el
  '(cider-mode-line " cider")
  '(coffee-tab-width 2) ;; coffee-mode.el
- '(comint-input-ring-size 10000) ;; comint.el
+ '(comint-input-ring-size 500) ;; comint.el
  '(company-backends
    `(,@(unless
            (version< "24.3.51" emacs-version)
@@ -303,7 +303,7 @@
  '(json-encoding-default-indentation "    " t)
  '(kept-new-versions 6) ;; files.el
  '(kept-old-versions 2) ;; files.el
- '(kill-ring-max 1000)
+ '(kill-ring-max 500)
  '(magit-blame-heading-format "%-20a %C %s %H")
  '(magit-completing-read-function 'selectrum-completing-read)
  '(markdown-command "blackfriday-tool")
@@ -432,7 +432,7 @@
  '(projectile-indexing-method 'alien) ;; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil) ;; projectile.el
  '(recentf-auto-cleanup 'never)
- '(recentf-max-menu-items 9000)
+ '(recentf-max-menu-items 500)
  '(recentf-max-saved-items nil)
  '(recentf-save-file "~/.emacs.var/recentf")
  '(rm-text-properties '()) ;; rich-minority.el
@@ -442,7 +442,7 @@
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values '((encoding . utf-8)))
  '(save-place-file "~/.emacs.var/places")
- '(save-place-limit 10000)
+ '(save-place-limit 500)
  '(savehist-additional-variables
    '(compile-command compile-history dired-regexp-history dired-shell-command-history file-name-history kill-ring minibuffer-history query-replace-history regexp-history regexp-search-ring search-ring shell-command-history))
  '(savehist-file "~/.emacs.var/history")
