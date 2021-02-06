@@ -163,6 +163,7 @@ Cancels itself, if this buffer was killed."
 (require 'init-faces "init-faces") ;; TODO: autoload
 (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
 (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
+(require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
@@ -201,7 +202,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(fill))
 (nox-recipe '(find-temp-file))
 (nox-recipe '(fish-mode))
 (nox-recipe '(font-core))
