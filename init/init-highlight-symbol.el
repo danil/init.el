@@ -13,14 +13,13 @@
   "Major modes hooks associated with `highlight-symbol'."
   :group 'init-highlight-symbol)
 
-(defcustom init-highlight-symbol-mode-map
+(defvar init-highlight-symbol-mode-map
   (let ((map (make-sparse-keymap))
         (prfx init-highlight-symbol-mode-prefix))
     (define-key map (kbd (concat prfx " c S c")) 'highlight-symbol-count)
     (define-key map (kbd (concat prfx " c s")) 'highlight-symbol-query-replace)
     map)
-  "Keymap for `init-highlight-symbol-mode'."
-  :group 'init-highlight-symbol)
+  "Keymap for `init-highlight-symbol-mode'.")
 
 (define-minor-mode init-highlight-symbol-mode "init-highlight-symbol" nil init-highlight-symbol-mode-lighter init-highlight-symbol-mode-map
   (init-highlight-symbol-setup))
