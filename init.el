@@ -53,6 +53,7 @@
 (setq init-lazy-seconds 1)
 
 ;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
+;; TODO: seconds/repeat via named argument.
 (defun init-lazy (delay-secs with-repeat fn &rest args)
   "After `DELAY-SECS' with `WITH-REPEAT' run some `FN' with `ARGS'.
 Like `run-with-idle-timer' but always in the `current-buffer'.
