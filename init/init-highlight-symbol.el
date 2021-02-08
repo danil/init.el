@@ -13,9 +13,8 @@
 
 (defcustom init-highlight-symbol-bindings '()
   "Keybindings enabled in `highlight-symbol'. This is not a keymap.
-Rather it is an alist that is converted into a keymap just before
-`highlight-symbol' is (re-)enabled. The keys are strings or raw key
-events and the values are command symbols."
+Rather it is an alist that is converted into a keymap just before `highlight-symbol'
+is (re-)enabled. The keys are strings and the values are command symbols."
   :group 'init-highlight-symbol
   :type '(alist
           :key-type sexp
