@@ -249,8 +249,8 @@
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
  '(init-files-map-prefix init-key-prefix) ;; init-files.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
+ '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
- '(init-highlight-symbol-mode-prefix init-key-prefix) ;; init-highlight-symbol.el
  '(init-rainbow-identifiers-hooks
   '(
     (c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
