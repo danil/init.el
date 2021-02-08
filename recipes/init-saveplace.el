@@ -35,7 +35,7 @@
 
 (custom-set-variables
  '(save-place-file "~/.emacs.var/places") ; Name of the file that records `save-place-alist' value.
- '(save-place-limit 10000))
+ )
 
 (add-hook 'after-init-hook 'noxrcp-saveplace)
 
