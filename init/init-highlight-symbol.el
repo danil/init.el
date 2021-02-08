@@ -46,7 +46,6 @@ See `init-highlight-symbol-bindings'.")
   (dolist (b init-highlight-symbol-bindings)
     (let ((key (car b)) (cmd (cdr b))
           (map init-highlight-symbol-mode-map))
-      (when (stringp key) (setq key (kbd key)))
-      (define-key map key cmd))))
+      (define-key map (kbd key) cmd))))
 
 (provide 'init-highlight-symbol)
