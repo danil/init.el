@@ -249,6 +249,7 @@
  '(init-files-map-prefix init-key-prefix) ;; init-files.el
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
+ '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
  '(init-rainbow-identifiers-hooks
@@ -294,6 +295,8 @@
  '(init-projectile-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-mode-hooks '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
+ '(init-simple-bindings '(("M-y" . init-simple-yank-pop) ("C-v r c" . count-words-region) ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
+ '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
  '(init-wdired-map-exec-prefix init-exec-key-prefix) ;; init-wdired.el
  '(init-window-numbering-mode-map-prefix init-key-prefix) ;; init-window-numbering.el
  '(ivy-count-format "(%d/%d) ") ;; ivy.el

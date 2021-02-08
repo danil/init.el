@@ -189,6 +189,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
 (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
+(message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
+
+
 
 
 (require 'noxrcp "~/.emacs.d/noxrcp.el")
@@ -344,7 +347,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(string-inflection))
 (nox-recipe '(shell))
 (nox-recipe '(simp))
-(nox-recipe '(simple))
 (nox-recipe '(skeletor))
 (nox-recipe '(slim-mode))
 (nox-recipe '(sort))
