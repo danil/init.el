@@ -107,7 +107,7 @@
  '(flycheck-indication-mode nil)
  '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json")
  '(flycheck-mode-line-prefix "F")
- '(gofmt-command "goimports")
+ '(gofmt-command "goimports") ;; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
  '(highlight-symbol-highlight-single-occurrence nil) ;; highlight-symbol.el
  '(highlight-symbol-idle-delay 0.2) ;; highlight-symbol.el: 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ;; highlight-symbol.el
@@ -251,7 +251,7 @@
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
- '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook)))
+ '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
  '(init-rainbow-identifiers-hooks
   '(
     (c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
@@ -373,8 +373,6 @@
  '(noxrcp-gitignore-mode-patterns
    '("/\\.agignore\\'" "/\\.dockerignore\\'" "/\\.gitignore_global\\'" "/\\.stglobalignore\\'" "/\\.stignore\\'" "/\\.stignore_global\\'" "/\\.stignoreglobal\\'"))
  '(noxrcp-go-expr-completion-modes-hooks '(go-mode-hook))
- '(noxrcp-go-mode--rainbow-identifiers-stop-words
-   '("adler32" "aes" "ascii85" "asn1" "ast" "atomic" "base32" "base64" "big" "binary" "bufio" "build" "builtin" "bytes" "bzip2" "cgi" "cgo" "cipher" "cmplx" "color" "constant" "context" "cookiejar" "crc32" "crc64" "crypto" "csv" "debug" "des" "doc" "draw" "driver" "dsa" "dwarf" "ecdsa" "elf" "elliptic" "encoding" "errors" "exec" "expvar" "fcgi" "filepath" "flag" "flate" "fnv" "format" "gif" "gob" "gosym" "gzip" "hash" "heap" "hex" "hmac" "html" "http" "httptest" "httptrace" "httputil" "image" "importer" "init" "internal" "io" "iotest" "ioutil" "jpeg" "json" "jsonrpc" "list" "log" "lzw" "macho" "mail" "main" "math" "md5" "mime" "multipart" "net" "os" "palette" "parse" "parser" "path" "pe" "pem" "pkix" "plan9obj" "png" "pprof" "pprof" "printer" "quick" "quotedprintable" "race" "rand" "rand" "rc4" "reflect" "regexp" "ring" "rpc" "rsa" "runtime" "scanner" "scanner" "sha1" "sha256" "sha512" "signal" "smtp" "sort" "sql" "strconv" "strings" "subtle" "suffixarray" "sync" "syntax" "syscall" "syslog" "tabwriter" "tar" "template" "template" "testing" "textproto" "tls" "token" "types" "unicode" "unsafe" "url" "user" "utf16" "utf8" "x509" "xml" "zip" "zlib" "bool" "Bool" "byte" "Byte" "Bytes" "chan" "Chan" "complex128" "Complex128" "complex64" "Complex64" "error" "float32" "Float32" "float64" "Float64" "fmt" "Stringer" "int" "Int" "int16" "Int16" "int32" "Int32" "int64" "Int64" "int8" "Int8" "rune" "Rune" "string" "String" "struct" "Struct" "time" "Time" "uint" "Uint" "uint16" "Uint16" "uint32" "Uint32" "uint64" "Uint64" "uint8" "Uint8" "uintptr" "Uintptr" "DB" "DBStats" "NullBool" "NullFloat64" "NullInt64" "NullString" "RawBytes" "Result" "Row" "Rows" "Scanner" "Stmt" "Tx" "Valid"))
  '(noxrcp-haproxy-mode-patterns
    '("/haproxy.*\\.\\(erb\\|cfg\\)'" "haproxy/.*\\(erb\\|cfg\\)\\'"))
  '(noxrcp-highlight-static-regexps-hooks
