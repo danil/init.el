@@ -103,6 +103,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing align") (require 'init-align "init-align")
 (message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
 (message "Initializing anzu") (require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)
+(message "Initializing back-button") (require 'init-back-button "init-back-button") (add-hook 'after-init-hook 'init-global-back-button-mode-on)
 (message "Initializing bash-completion") (require 'init-bash-completion "init-bash-completion") (add-hook 'after-init-hook 'init-bash-completion)
 (message "Initializing bindings") (require 'init-bindings "init-bindings") (add-hook 'after-init-hook 'init-global-bindings-mode)
 (message "Initializing browse-url") (require 'init-browse-url "init-browse-url") (add-hook 'after-init-hook 'init-global-browse-url-mode)
@@ -165,7 +166,6 @@ Cancels itself, if this buffer was killed."
 (message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
 (message "Initializing files") (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
 (message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
-(message "Initializing goto-chg") (require 'init-goto-chg "init-goto-chg") (add-hook 'after-init-hook 'init-global-goto-chg-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Go programming language.

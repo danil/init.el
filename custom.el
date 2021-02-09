@@ -7,6 +7,8 @@
  '(amx-history-length 500) ;; amx.el
  '(amx-save-file "~/.emacs.var/amx-items") ;; amx.el
  '(anzu-search-threshold 500) ;; anzu.el
+ '(back-button-index-timeout nil) ;; back-button.el
+ '(back-button-no-wrap t) ;; back-button.el
  '(backup-by-copying t) ;; files.el: don't clobber symlinks, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
  '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
  '(bookmark-default-file "~/.emacs.var/bookmarks") ;; bookmark.el
@@ -129,6 +131,7 @@
  ;; '(ivy-fixed-height-minibuffer t) ;; ivy.el
  ;; '(ivy-height 11) ;; ivy.el
  '(init-anzu-mode-map-exec-prefix init-exec-key-prefix) ;; init-anzu.el
+ '(init-back-button-mode-bindings '(("C-v j j" . back-button-local-backward) ("C-v j k" . back-button-local-forward) ("C-v j J" . back-button-global-backward) ("C-v j K" . back-button-global-forward))) ;; init-back-button.el
  '(init-browse-url-mode-map-exec-prefix init-exec-key-prefix)
  '(init-bytecomp-mode-map-prefix init-exec-key-prefix)
  '(init-c-mode-patterns '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ;; init-cc-mode.el
@@ -136,8 +139,7 @@
  '(init-company-completing-read-function 'init-selectrum-company) ;; init-company.el
  '(init-compile-mode-map-prefix init-key-prefix) ;; init-compile.el
  '(init-conf-mode-patterns
-   '(
-     ("/Pipfile2\\'"                           conf-mode)
+   '(("/Pipfile2\\'"                           conf-mode)
      ("/Pipfile3\\'"                           conf-mode)
      ("/Pipfile\\'"                            conf-mode)
      ("/\\.Xmodmap\\'"                         conf-xdefaults-mode)
@@ -226,8 +228,7 @@
      ("/profiles/repo_name\\'"             conf-mode)
      ("/var/lib/portage/world_sets\\'"     conf-mode)
      ("\\world\\'"                         conf-mode)
-     )
-   ) ;; init-conf-mode.el
+     )) ;; init-conf-mode.el
  '(init-corral-mode-map-prefix init-key-prefix) ;; init-corral.el
  '(init-counsel-mode-map-prefix init-key-prefix) ;; init-counsel.el
  '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ;; init-crontab-mode.el
@@ -244,14 +245,13 @@
  '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
  '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ;; init-ethan-wspace.el
  '(init-expand-region-map-prefix init-key-prefix) ;; init-expand-region.el
- '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
- '(init-fill-map-prefix init-key-prefix) ;; init-fill.el
- '(init-files-map-prefix init-key-prefix) ;; init-files.el
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
+ '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
+ '(init-files-map-prefix init-key-prefix) ;; init-files.el
+ '(init-fill-map-prefix init-key-prefix) ;; init-fill.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
  '(init-go-mode-bindings '(("C-c C-f e" . init-go-mode-end-of-defun) ("C-c C-k" . xref-pop-marker-stack) ("M-." . godef-jump) ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
- '(init-goto-chg-mode-bindings '(("C-v j j" . goto-last-change) ("C-v j k" . goto-last-change-reverse))) ;; init-goto-chg.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
  '(init-projectile-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
@@ -294,8 +294,7 @@
      (toml-mode-hook init-toml-mode-rainbow-identifiers-setup)
      (typescript-mode-hook init-typescript-mode-rainbow-identifiers-setup)
      (web-mode-hook init-web-mode-rainbow-identifiers-setup)
-     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup)
-     )) ;; init-rainbow-identifiers.el
+     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup))) ;; init-rainbow-identifiers.el
  '(init-rainbow-mode-hooks '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
  '(init-simple-bindings '(("M-y" . init-simple-yank-pop) ("C-v r c" . count-words-region) ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
@@ -429,7 +428,7 @@
      ("\\.tgz\\'" :pack "tar -czf" :unpack "tar -xf")
      ("\\.zip\\'" :pack "zip -r" :unpack "unzip"))) ;; pack.el
  '(package-selected-packages
-   '(goto-chg string-inflection skeletor markdown-toc visual-regexp typescript-mode noccur fd-dired counsel-fd pkgbuild-mode logview tramp i3wm-config-mode pinentry ctrlf amx selectrum-prescient selectrum go-translate su go-expr-completion flatbuffers-mode pacfiles-mode lsp-ivy lsp-mode counsel-jq ansi package-build shut-up epl git commander f dash s dart-mode rbtagger counsel-world-clock ztree yasnippets yasnippet-snippets yaml-mode window-numbering wgrep-pt wgrep-ag web-mode vlf vimrc-mode unicode-troll-stopper undo-tree twittering-mode transpose-frame top-mode toml-mode tldr systemd speed-type smart-mode-line slim-mode simp sed-mode scss-mode sass-mode rust-mode ruby-tools ruby-refactor ruby-pry ruby-hash-syntax ruby-guard rspec-mode robe restclient redis recentf-ext rainbow-mode rainbow-identifiers rainbow-delimiters quickrun quelpa protobuf-mode projectile-rails pack origami org-ac noflet nodejs-repl nginx-mode narrow-indirect mustache-mode multi-compile minitest mediawiki markdownfmt markdown-mode magit-popup magit literate-coffee-mode list-unicode-display json-mode jsfmt js2-mode jade-mode ivy-hydra ivy-historian ivy-dired-history inf-mongo ibuffer-vc hl-todo highlight-symbol gotest godoctor go-stacktracer go-snippets gitignore-mode gitconfig-mode git-timemachine flycheck-golangci-lint fish-mode findr find-temp-file ferm-mode expand-region ethan-wspace etags-select enh-ruby-mode elpa-mirror elixir-mode elisp-slime-nav ebuild-mode dumb-jump dockerfile-mode direx diredfl dired-details digit-groups diffview diff-hl deft cycle-quotes csv-mode css-comb csharp-mode crontab-mode crm-custom corral company-web company-shell company-php company-lua company-inf-ruby company-go company-erlang column-marker clojure-mode cask-mode cask browse-kill-ring bash-completion apache-mode anzu ac-html))
+   '(back-button string-inflection skeletor markdown-toc visual-regexp typescript-mode noccur fd-dired counsel-fd pkgbuild-mode logview tramp i3wm-config-mode pinentry ctrlf amx selectrum-prescient selectrum go-translate su go-expr-completion flatbuffers-mode pacfiles-mode lsp-ivy lsp-mode counsel-jq ansi package-build shut-up epl git commander f dash s dart-mode rbtagger counsel-world-clock ztree yasnippets yasnippet-snippets yaml-mode window-numbering wgrep-pt wgrep-ag web-mode vlf vimrc-mode unicode-troll-stopper undo-tree twittering-mode transpose-frame top-mode toml-mode tldr systemd speed-type smart-mode-line slim-mode simp sed-mode scss-mode sass-mode rust-mode ruby-tools ruby-refactor ruby-pry ruby-hash-syntax ruby-guard rspec-mode robe restclient redis recentf-ext rainbow-mode rainbow-identifiers rainbow-delimiters quickrun quelpa protobuf-mode projectile-rails pack origami org-ac noflet nodejs-repl nginx-mode narrow-indirect mustache-mode multi-compile minitest mediawiki markdownfmt markdown-mode magit-popup magit literate-coffee-mode list-unicode-display json-mode jsfmt js2-mode jade-mode ivy-hydra ivy-historian ivy-dired-history inf-mongo ibuffer-vc hl-todo highlight-symbol gotest godoctor go-stacktracer go-snippets gitignore-mode gitconfig-mode git-timemachine flycheck-golangci-lint fish-mode findr find-temp-file ferm-mode expand-region ethan-wspace etags-select enh-ruby-mode elpa-mirror elixir-mode elisp-slime-nav ebuild-mode dumb-jump dockerfile-mode direx diredfl dired-details digit-groups diffview diff-hl deft cycle-quotes csv-mode css-comb csharp-mode crontab-mode crm-custom corral company-web company-shell company-php company-lua company-inf-ruby company-go company-erlang column-marker clojure-mode cask-mode cask browse-kill-ring bash-completion apache-mode anzu ac-html))
  '(password-cache-expiry 3600)
  '(prescient-save-file "~/.emacs.var/prescient-save.el") ;; prescient.el
  '(projectile-completion-system 'init-selectrum-unsorted-read) ;; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido

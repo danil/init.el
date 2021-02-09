@@ -45,6 +45,7 @@
 
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
+(depends-on "back-button") ;; two-way navigation through mark ring forward/backward
 (depends-on "bash-completion")
 (depends-on "cask")
 (depends-on "cask-mode")
@@ -83,7 +84,6 @@
 (depends-on "fish-mode")
 (depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
-(depends-on "goto-chg") ;; goto last change
 
 ;; fd a-la find replacement https://github.com/sharkdp/fd
 (depends-on "counsel-fd")
