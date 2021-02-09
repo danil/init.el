@@ -35,13 +35,6 @@
   "Regexp patterns associated with `lisp-mode'."
   :group 'noxinit)
 
-(custom-set-variables '(noxrcp-lisp-mode-patterns '(
-                                                    "/\\.stumpwmrc\\'"
-                                                    "/\\.sbclrc\\'"
-                                                    "\\.ros\\'"
-                                                    "\\.sexp\\'"
-                                                    )))
-
 (add-hook 'after-init-hook 'noxrcp-lisp-mode)
 (defun noxrcp-lisp-mode ()
   "No X recipe init."

@@ -83,6 +83,7 @@
 (depends-on "fish-mode")
 (depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
+(depends-on "goto-chg") ;; goto last change
 
 ;; fd a-la find replacement https://github.com/sharkdp/fd
 (depends-on "counsel-fd")

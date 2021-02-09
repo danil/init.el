@@ -251,50 +251,51 @@
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
  '(init-go-mode-bindings '(("C-c C-f e" . init-go-mode-end-of-defun) ("C-c C-k" . xref-pop-marker-stack) ("M-." . godef-jump) ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
+ '(init-goto-chg-mode-bindings '(("C-v j j" . goto-last-change) ("C-v j k" . goto-last-change-reverse))) ;; init-goto-chg.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
- '(init-rainbow-identifiers-hooks
-  '(
-    (c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
-    (clojure-mode-hook init-clojure-mode-rainbow-identifiers-setup)
-    (coffee-mode-hook init-coffee-mode-rainbow-identifiers-setup)
-    (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-setup)
-    (conf-space-mode-hook init-conf-space-mode-rainbow-identifiers-setup)
-    (conf-unix-mode-hook init-conf-unix-mode-rainbow-identifiers-setup)
-    (conf-xdefaults-mode-hook init-conf-xdefaults-mode-rainbow-identifiers-setup)
-    (csharp-mode-hook init-csharp-mode-rainbow-identifiers-setup)
-    (css-mode-hook init-css-mode-rainbow-identifiers-setup)
-    (dockerfile-mode-hook init-dockerfile-mode-rainbow-identifiers-setup)
-    (elixir-mode-hook init-elixir-mode-rainbow-identifiers-setup)
-    (emacs-lisp-mode-hook init-emacs-lisp-mode-rainbow-identifiers-setup)
-    (enh-ruby-mode-hook init-enh-ruby-mode-rainbow-identifiers-setup)
-    (ferm-mode-hook init-ferm-mode-rainbow-identifiers-setup)
-    (go-mode-hook init-go-mode-rainbow-identifiers-setup)
-    (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-setup)
-    (hcl-mode-hook init-hcl-mode-rainbow-identifiers-setup)
-    (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-setup)
-    (json-mode-hook init-json-mode-rainbow-identifiers-setup)
-    (lisp-mode-hook init-lisp-mode-rainbow-identifiers-setup)
-    (lua-mode-hook init-lua-mode-rainbow-identifiers-setup)
-    (nginx-mode-hook init-nginx-mode-rainbow-identifiers-setup)
-    (nxml-mode-hook init-nxml-mode-rainbow-identifiers-setup)
-    (php-mode-hook init-php-mode-rainbow-identifiers-setup)
-    (protobuf-mode-hook init-protobuf-mode-rainbow-identifiers-setup)
-    (python-mode-hook init-python-mode-rainbow-identifiers-setup)
-    (ruby-mode-hook init-ruby-mode-rainbow-identifiers-setup)
-    (rust-mode-hook init-rust-mode-rainbow-identifiers-setup)
-    (sh-mode-hook init-sh-mode-rainbow-identifiers-setup)
-    (slim-mode-hook init-slim-mode-rainbow-identifiers-setup)
-    (sql-interactive-mode-hook init-sql-interactive-mode-rainbow-identifiers-setup)
-    (sql-mode-hook init-sql-mode-rainbow-identifiers-setup)
-    (systemd-mode-hook init-systemd-rainbow-identifiers-setup)
-    (toml-mode-hook init-toml-mode-rainbow-identifiers-setup)
-    (typescript-mode-hook init-typescript-mode-rainbow-identifiers-setup)
-    (web-mode-hook init-web-mode-rainbow-identifiers-setup)
-    (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup)
-    )) ;; init-rainbow-identifiers.el
  '(init-projectile-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
  '(init-projectile-project-root-files '("go.mod"))
+ '(init-rainbow-identifiers-hooks
+   '((c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
+     (clojure-mode-hook init-clojure-mode-rainbow-identifiers-setup)
+     (coffee-mode-hook init-coffee-mode-rainbow-identifiers-setup)
+     (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-setup)
+     (conf-space-mode-hook init-conf-space-mode-rainbow-identifiers-setup)
+     (conf-unix-mode-hook init-conf-unix-mode-rainbow-identifiers-setup)
+     (conf-xdefaults-mode-hook init-conf-xdefaults-mode-rainbow-identifiers-setup)
+     (csharp-mode-hook init-csharp-mode-rainbow-identifiers-setup)
+     (css-mode-hook init-css-mode-rainbow-identifiers-setup)
+     (dockerfile-mode-hook init-dockerfile-mode-rainbow-identifiers-setup)
+     (elixir-mode-hook init-elixir-mode-rainbow-identifiers-setup)
+     (emacs-lisp-mode-hook init-emacs-lisp-mode-rainbow-identifiers-setup)
+     (enh-ruby-mode-hook init-enh-ruby-mode-rainbow-identifiers-setup)
+     (ferm-mode-hook init-ferm-mode-rainbow-identifiers-setup)
+     (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-setup)
+     (go-mode-hook init-go-mode-rainbow-identifiers-setup)
+     (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-setup)
+     (hcl-mode-hook init-hcl-mode-rainbow-identifiers-setup)
+     (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-setup)
+     (json-mode-hook init-json-mode-rainbow-identifiers-setup)
+     (lisp-mode-hook init-lisp-mode-rainbow-identifiers-setup)
+     (lua-mode-hook init-lua-mode-rainbow-identifiers-setup)
+     (nginx-mode-hook init-nginx-mode-rainbow-identifiers-setup)
+     (nxml-mode-hook init-nxml-mode-rainbow-identifiers-setup)
+     (php-mode-hook init-php-mode-rainbow-identifiers-setup)
+     (protobuf-mode-hook init-protobuf-mode-rainbow-identifiers-setup)
+     (python-mode-hook init-python-mode-rainbow-identifiers-setup)
+     (ruby-mode-hook init-ruby-mode-rainbow-identifiers-setup)
+     (rust-mode-hook init-rust-mode-rainbow-identifiers-setup)
+     (sh-mode-hook init-sh-mode-rainbow-identifiers-setup)
+     (slim-mode-hook init-slim-mode-rainbow-identifiers-setup)
+     (sql-interactive-mode-hook init-sql-interactive-mode-rainbow-identifiers-setup)
+     (sql-mode-hook init-sql-mode-rainbow-identifiers-setup)
+     (systemd-mode-hook init-systemd-rainbow-identifiers-setup)
+     (toml-mode-hook init-toml-mode-rainbow-identifiers-setup)
+     (typescript-mode-hook init-typescript-mode-rainbow-identifiers-setup)
+     (web-mode-hook init-web-mode-rainbow-identifiers-setup)
+     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup)
+     )) ;; init-rainbow-identifiers.el
  '(init-rainbow-mode-hooks '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
  '(init-simple-bindings '(("M-y" . init-simple-yank-pop) ("C-v r c" . count-words-region) ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
@@ -392,6 +393,8 @@
         (symbol-name m)
         "-hook")))
     noxrcp-linum-modes))
+ '(noxrcp-lisp-mode-patterns
+   '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'")) ;; init-lisp-mode.el
  '(noxrcp-logview-mode-patterns
    '("/access_log\\(?:\\.[0-9]+\\)?\\'" "/error_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/boot\\'" "/var/log/cups/access_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/dmesg\\(?:\\.[0-9]+\\)?\\'" "/var/log/messages\\'" "/var/log/mysql/mysql.err\\'" "/var/log/mysql/mysqld.err\\'" "/var/log/syslog\\(?:\\.[0-9]+\\)?\\'" "\\.access_log\\(?:\\.[0-9]+\\)?\\'" "\\.error_log\\(?:\\.[0-9]+\\)?\\'" "\\.log\\(?:\\.[0-9]+\\)?\\'" "/mainlog\\'" "/rejectlog\\'"))
  '(noxrcp-lua-mode-patterns '("\\.lua\\.example\\'" "\\.ws\\'"))
@@ -426,7 +429,7 @@
      ("\\.tgz\\'" :pack "tar -czf" :unpack "tar -xf")
      ("\\.zip\\'" :pack "zip -r" :unpack "unzip"))) ;; pack.el
  '(package-selected-packages
-   '(string-inflection skeletor markdown-toc visual-regexp typescript-mode noccur fd-dired counsel-fd pkgbuild-mode logview tramp i3wm-config-mode pinentry ctrlf amx selectrum-prescient selectrum go-translate su go-expr-completion flatbuffers-mode pacfiles-mode lsp-ivy lsp-mode counsel-jq ansi package-build shut-up epl git commander f dash s dart-mode rbtagger counsel-world-clock ztree yasnippets yasnippet-snippets yaml-mode window-numbering wgrep-pt wgrep-ag web-mode vlf vimrc-mode unicode-troll-stopper undo-tree twittering-mode transpose-frame top-mode toml-mode tldr systemd speed-type smart-mode-line slim-mode simp sed-mode scss-mode sass-mode rust-mode ruby-tools ruby-refactor ruby-pry ruby-hash-syntax ruby-guard rspec-mode robe restclient redis recentf-ext rainbow-mode rainbow-identifiers rainbow-delimiters quickrun quelpa protobuf-mode projectile-rails pack origami org-ac noflet nodejs-repl nginx-mode narrow-indirect mustache-mode multi-compile minitest mediawiki markdownfmt markdown-mode magit-popup magit literate-coffee-mode list-unicode-display json-mode jsfmt js2-mode jade-mode ivy-hydra ivy-historian ivy-dired-history inf-mongo ibuffer-vc hl-todo highlight-symbol gotest godoctor go-stacktracer go-snippets gitignore-mode gitconfig-mode git-timemachine flycheck-golangci-lint fish-mode findr find-temp-file ferm-mode expand-region ethan-wspace etags-select enh-ruby-mode elpa-mirror elixir-mode elisp-slime-nav ebuild-mode dumb-jump dockerfile-mode direx diredfl dired-details digit-groups diffview diff-hl deft cycle-quotes csv-mode css-comb csharp-mode crontab-mode crm-custom corral company-web company-shell company-php company-lua company-inf-ruby company-go company-erlang column-marker clojure-mode cask-mode cask browse-kill-ring bash-completion apache-mode anzu ac-html))
+   '(goto-chg string-inflection skeletor markdown-toc visual-regexp typescript-mode noccur fd-dired counsel-fd pkgbuild-mode logview tramp i3wm-config-mode pinentry ctrlf amx selectrum-prescient selectrum go-translate su go-expr-completion flatbuffers-mode pacfiles-mode lsp-ivy lsp-mode counsel-jq ansi package-build shut-up epl git commander f dash s dart-mode rbtagger counsel-world-clock ztree yasnippets yasnippet-snippets yaml-mode window-numbering wgrep-pt wgrep-ag web-mode vlf vimrc-mode unicode-troll-stopper undo-tree twittering-mode transpose-frame top-mode toml-mode tldr systemd speed-type smart-mode-line slim-mode simp sed-mode scss-mode sass-mode rust-mode ruby-tools ruby-refactor ruby-pry ruby-hash-syntax ruby-guard rspec-mode robe restclient redis recentf-ext rainbow-mode rainbow-identifiers rainbow-delimiters quickrun quelpa protobuf-mode projectile-rails pack origami org-ac noflet nodejs-repl nginx-mode narrow-indirect mustache-mode multi-compile minitest mediawiki markdownfmt markdown-mode magit-popup magit literate-coffee-mode list-unicode-display json-mode jsfmt js2-mode jade-mode ivy-hydra ivy-historian ivy-dired-history inf-mongo ibuffer-vc hl-todo highlight-symbol gotest godoctor go-stacktracer go-snippets gitignore-mode gitconfig-mode git-timemachine flycheck-golangci-lint fish-mode findr find-temp-file ferm-mode expand-region ethan-wspace etags-select enh-ruby-mode elpa-mirror elixir-mode elisp-slime-nav ebuild-mode dumb-jump dockerfile-mode direx diredfl dired-details digit-groups diffview diff-hl deft cycle-quotes csv-mode css-comb csharp-mode crontab-mode crm-custom corral company-web company-shell company-php company-lua company-inf-ruby company-go company-erlang column-marker clojure-mode cask-mode cask browse-kill-ring bash-completion apache-mode anzu ac-html))
  '(password-cache-expiry 3600)
  '(prescient-save-file "~/.emacs.var/prescient-save.el") ;; prescient.el
  '(projectile-completion-system 'init-selectrum-unsorted-read) ;; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
@@ -434,7 +437,7 @@
  '(projectile-indexing-method 'alien) ;; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil) ;; projectile.el
  '(recentf-auto-cleanup 'never)
- '(recentf-max-menu-items 500)
+ '(recentf-max-menu-items 500) ;; init-recentf.el
  '(recentf-max-saved-items nil)
  '(recentf-save-file "~/.emacs.var/recentf")
  '(rm-text-properties '()) ;; rich-minority.el

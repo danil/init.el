@@ -205,6 +205,11 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Do not highlight in `go-mode'."
   :group 'init-go-mode)
 
+(defcustom init-go-dot-mod-mode-rainbow-identifiers-stop-words
+  '("go" "module" "require" )
+  "Do not highlight in `go-dot-mod-mode'."
+  :group 'init-go-mode)
+
 (defvar init-go-mode-map (make-sparse-keymap)
   "Keymap for `init-go-mode'. Populated when mode is enabled.
 See `init-go-mode-bindings'.")
@@ -317,5 +322,35 @@ See `init-go-mode-bindings'.")
       (or
        (equal ch-before ?.)
        (not (member str-cur init-go-mode-rainbow-identifiers-stop-words)))))))
+
+(defun init-go-dot-mod-mode-rainbow-identifiers-setup ()
+  (when (equal major-mode 'go-dot-mod-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'init-go-dot-mod-mode-rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override
+          '(
+            font-lock-keyword-face
+            go-dot-mod-module-name
+            ))
+
+    (init-rainbow-identifiers--lazy-setup)))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun init-go-dot-mod-mode-rainbow-identifiers-filter (beg end)
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((ch-cur (char-after beg))
+        (ch-before (char-before beg))
+        (ch-after (char-after end))
+        (str-cur (buffer-substring-no-properties beg end))
+        (str-after (buffer-substring-no-properties end (point-max))))
+    (and
+     (not (member ch-cur '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
+     (not (member str-cur init-go-dot-mod-mode-rainbow-identifiers-stop-words)))))
 
 (provide 'init-go-mode)
