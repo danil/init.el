@@ -20,6 +20,10 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
+(defcustom init-simple-yank-pop-function 'init-selectrum-yank-pop ;'counsel-yank-pop
+  "No X recipe custom variable for the custom yank pop function."
+  :group 'noxinit)
+
 (defvar init-simple-mode-map (make-sparse-keymap)
   "Keymap for `init-simple-mode'. Populated when mode is enabled.
 See `init-simple-bindings'.")
@@ -29,10 +33,6 @@ See `init-simple-bindings'.")
 
 (define-globalized-minor-mode init-global-simple-mode init-simple-mode
   (lambda () (init-simple-mode +1)))
-
-(defcustom init-simple-yank-pop-function 'init-selectrum-yank-pop ;'counsel-yank-pop
-  "No X recipe custom variable for the custom yank pop function."
-  :group 'noxinit)
 
 (defun init-simple ()
   ;; (setq line-number-mode t)

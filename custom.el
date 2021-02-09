@@ -250,6 +250,7 @@
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
+ '(init-go-mode-bindings '(("C-c C-f e" . init-go-mode-end-of-defun) ("C-c C-k" . xref-pop-marker-stack) ("M-." . godef-jump) ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
  '(init-rainbow-identifiers-hooks
@@ -376,7 +377,7 @@
  '(noxrcp-haproxy-mode-patterns
    '("/haproxy.*\\.\\(erb\\|cfg\\)'" "haproxy/.*\\(erb\\|cfg\\)\\'"))
  '(noxrcp-highlight-static-regexps-hooks
-   '((go-mode-hook noxrcp-go-mode--highlight-static-regexps-init)))
+   '((go-mode-hook init-go-mode-highlight-static-regexps-init)))
  '(noxrcp-js2-mode-patterns '("\\.htc\\'" "\\.js\\'"))
  '(noxrcp-json-mode-patterns
    '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'"))

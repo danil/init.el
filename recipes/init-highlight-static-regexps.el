@@ -38,7 +38,7 @@
 (custom-set-variables
  '(noxrcp-highlight-static-regexps-hooks
    '(
-     (go-mode-hook noxrcp-go-mode--highlight-static-regexps-init)
+     (go-mode-hook init-go-mode-highlight-static-regexps-init)
      ;; (ruby-mode-hook noxrcp-ruby-mode--highlight-static-regexps-init)
      )))
 
@@ -83,7 +83,7 @@
    ((equal s "\treturn") '(:inherit font-lock-keyword-face :weight bold))
    (t '(:inherit init-alert))))
 
-(defun noxrcp-highlight-static-regexps--lazyinit ()
+(defun init-highlight-static-regexps--lazyinit ()
   "Run `highlight-static-regexps'."
 
   (init-lazy

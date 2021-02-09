@@ -165,7 +165,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
 (message "Initializing files") (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
 (message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
-(message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-go-mode)
+(message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)

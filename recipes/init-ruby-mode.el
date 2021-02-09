@@ -409,7 +409,7 @@
     (make-local-variable 'highlight-static-regexps-faces-to-override)
     (setq highlight-static-regexps-faces-to-override '( font-lock-keyword-face default))
     (when (<= (buffer-size) 100000)
-      (noxrcp-highlight-static-regexps--lazyinit))))
+      (init-highlight-static-regexps--lazyinit))))
 
 (defun noxrcp-ruby-mode--highlight-static-regexps-filter (beg end)
   "My highlight-static-regexps custom init for symbol between `BEG' and `END'."
