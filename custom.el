@@ -254,7 +254,7 @@
  '(init-go-mode-bindings '(("C-c C-f e" . init-go-mode-end-of-defun) ("C-c C-k" . xref-pop-marker-stack) ("M-." . godef-jump) ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
  '(init-highlight-symbol-bindings '(("C-v c S c" . highlight-symbol-count) ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
  '(init-highlight-symbol-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
- '(init-projectile-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook go-test-mode-hook magit-process-mode-hook magit-revision-mode-hook magit-stash-mode-hook magit-status-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
+ '(init-projectile-mode-hooks (append init-programming-modes-hooks '(dired-mode-hook go-test-mode-hook ivy-occur-grep-mode-hook magit-process-mode-hook magit-revision-mode-hook magit-stash-mode-hook magit-status-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-identifiers-hooks
    '((c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
