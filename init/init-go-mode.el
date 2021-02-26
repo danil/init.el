@@ -215,17 +215,19 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 See `init-go-mode-bindings'.")
 
 (define-minor-mode init-go-mode "init-go-mode" nil init-go-mode-lighter init-go-mode-map
-  (init-go-mode-setup))
+  (if init-go-mode (init-go-mode-setup) (init-go-mode-teardown)))
 
 (define-globalized-minor-mode init-global-go-mode init-go-mode
-  (lambda () (init-global-go-mode-setup)))
+  (lambda () (init-global-go-mode-setup))
+  (unless init-global-go-mode (init-global-go-mode-teardown)))
 
-(defun init-go-mode-on () "Turn `init-go-mode' on." (init-go-mode +1))
-(defun init-go-mode-off () "Turn `init-go-mode' off." (init-go-mode -1))
+(defun init-go-mode-on () (init-go-mode +1))
+(defun init-global-go-mode-on () (init-global-go-mode +1))
 
-(defun init-global-go-mode-on () "Turn `init-global-go-mode' on." (init-global-go-mode +1))
-(defun init-global-go-mode-off () "Turn `init-global-go-mode' off." (init-global-go-mode -1))
-(defun init-global-go-mode-setup () (add-hook 'go-mode-hook 'init-go-mode-on))
+(defun init-global-go-mode-setup ()
+  (when (eq major-mode 'go-mode) (init-go-mode-on))
+  (add-hook 'go-mode-hook 'init-go-mode-on))
+
 (defun init-global-go-mode-teardown () (remove-hook 'go-mode-hook 'init-go-mode-on))
 
 (defun init-go-mode-setup ()
@@ -234,6 +236,9 @@ See `init-go-mode-bindings'.")
       (define-key map (kbd key) cmd)))
 
   (add-hook 'before-save-hook #'gofmt-before-save))
+
+(defun init-go-mode-teardown ()
+  (remove-hook 'before-save-hook #'gofmt-before-save))
 
 (defun init-go-mode-end-of-defun ()
   (interactive)
