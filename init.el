@@ -166,6 +166,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
 (message "Initializing files") (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
 (message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
+(message "Initializing find-temp-file") (require 'init-find-temp-file-mode "init-find-temp-file-mode") (add-hook 'after-init-hook 'init-global-find-temp-file-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Go programming language.
@@ -210,7 +211,6 @@ Cancels itself, if this buffer was killed."
   (dolist (recipe recipes) (add-to-list 'nox-recipes recipe)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(nox-recipe '(find-temp-file))
 (nox-recipe '(fish-mode))
 (nox-recipe '(font-core))
 

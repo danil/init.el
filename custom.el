@@ -100,9 +100,9 @@
  '(dumb-jump-selector 'ivy) ;; dumb-jump.el
  '(ethan-wspace-face-customized t) ;; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
  '(fd-dired-display-in-current-window t)
- '(find-temp-custom-spec '((68 lambda nil (format-time-string "%Y%m%d"))))
- '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E")))
- '(find-temp-template-default "danil/%D%N.%E")
+ '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ;; find-temp-file.el
+ '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))) ;; find-temp-file.el
+ '(find-temp-template-default "danil/%D%N.%E") ;; find-temp-file.el
  '(flycheck-disabled-checkers
    '(go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-megacheck json-python-json markdown-mdl proselint ruby-reek ruby-rubylint sh-bash sh-posix-bash yaml-ruby yaml-yamllint))
  '(flycheck-idle-change-delay 1.5)
@@ -249,6 +249,7 @@
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
  '(init-files-map-prefix init-key-prefix) ;; init-files.el
  '(init-fill-map-prefix init-key-prefix) ;; init-fill.el
+ '(init-find-temp-file-mode-bindings '(("C-v x t t" . find-temp-file))) ;; init-find-temp-file-mode.el
  '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
  '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
  '(init-go-mode-bindings '(("C-c C-f e" . init-go-mode-end-of-defun) ("C-c C-k" . xref-pop-marker-stack) ("M-." . godef-jump) ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
