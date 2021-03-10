@@ -8,6 +8,6 @@ import (
 
 func TestHello(t *testing.T) {
 	if __PROJECT-NAME__.Hello() != "Hello, World!" {
-		t.Error("rails something went wrong")
+		t.Error("something went wrong")
 	}
 }
