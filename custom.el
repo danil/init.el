@@ -540,7 +540,7 @@
  '(sml/git ((t :inherit (sml/not-modified sml/prefix)))) ;; smart-mode-line.el
  '(sml/global ((t (:foreground "gray60" :inverse-video nil)))) ;; smart-mode-line.el
  '(sml/line-number ((t (:foreground "brightwhite" :weight normal)))) ;; smart-mode-line.el
- '(sml/position-percentage ((t (:inherit sml/read-only)))) ;; smart-mode-line.el
+ '(sml/position-percentage ((t (:inherit sml/read-only :inverse-video t)))) ;; smart-mode-line.el
  '(sml/projectile ((t (:weight normal :inherit sml/filename)))) ;; smart-mode-line.el
  '(sp-pair-overlay-face ((t nil)))
  ;; '(swiper-include-line-number-in-search nil) ;; swiper.el
