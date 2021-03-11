@@ -103,12 +103,37 @@
  '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ;; find-temp-file.el
  '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))) ;; find-temp-file.el
  '(find-temp-template-default "danil/%D%N.%E") ;; find-temp-file.el
- '(flycheck-disabled-checkers
-   '(go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-megacheck json-python-json markdown-mdl proselint ruby-reek ruby-rubylint sh-bash sh-posix-bash yaml-ruby yaml-yamllint))
- '(flycheck-idle-change-delay 1.5)
- '(flycheck-indication-mode nil)
- '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json")
- '(flycheck-mode-line-prefix "F")
+ '(flycheck-indication-mode nil) ;; flycheck.el
+ ;; '(flycheck-check-syntax-automatically '(idle-change)) ;; flycheck.el
+ '(flycheck-disabled-checkers '(
+                                emacs-lisp ; annoying errors
+
+                                go-gofmt
+                                go-golint
+                                go-vet
+                                go-build
+                                go-test
+                                go-errcheck
+                                go-unconvert
+                                go-megacheck
+
+                                json-python-json ; ruby slower than javascript
+                                markdown-mdl ; ruby slower than javascript
+                                proselint ; slow python/javascript
+
+                                ruby-reek ; annoying errors and undocumented config
+                                ruby-rubylint
+
+                                sh-bash
+                                sh-posix-bash
+
+                                ;; yaml-jsyaml ; annoying errors
+                                yaml-ruby ; i use a yaml-javascript linter so as not to set a ruby linter for each ruby version
+                                yaml-yamllint ; i use a yaml-javascript linter
+                                )) ;; flycheck.el
+ '(flycheck-idle-change-delay 1.5) ;; flycheck.el
+ '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json") ;; flycheck.el
+ '(flycheck-mode-line-prefix "F") ;; flycheck.el
  '(gofmt-command "goimports") ;; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
  '(highlight-symbol-highlight-single-occurrence nil) ;; highlight-symbol.el
  '(highlight-symbol-idle-delay 0.2) ;; highlight-symbol.el: 0.5 1.5
@@ -233,6 +258,7 @@
  '(init-counsel-mode-map-prefix init-key-prefix) ;; init-counsel.el
  '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ;; init-crontab-mode.el
  '(init-cycle-quotes-mode-map-prefix init-key-prefix) ;; init-cycle-quotes.el
+ '(init-dart-mode-bindings '()) ;; init-dart-mode.el
  '(init-deft-mode-map-exec-prefix init-exec-key-prefix) ;; init-deft.el
  '(init-desktop-mode-map-prefix init-key-prefix) ;; init-desktop.el
  '(init-digit-groups-mode-hooks (append init-programming-modes-hooks '(shell-mode-hook)))

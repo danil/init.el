@@ -69,7 +69,7 @@ Cancels itself, if this buffer was killed."
     (fset fns fn) fn))
 
 ;; Modes with many minor modes enabled.
-(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode go-dot-mod-mode haml-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
+(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dart-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-dot-mod-mode go-mode haml-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
 
 ;; ;; Hooks with many minor modes enabled.
 ;; (setq init-base-modes-hooks '())
@@ -140,6 +140,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ;; TODO: autoload
 (message "Initializing fringe") (require 'init-fringe "init-fringe") (add-hook 'after-init-hook 'init-global-fringe-mode)
 
+;; (message "Initializing dart-mode") (require 'init-dart-mode "init-dart-mode") (add-hook 'after-init-hook 'init-global-dart-mode-on)
 (message "Initializing deft") (require 'init-deft "init-deft") (add-hook 'after-init-hook 'init-global-deft-mode)
 (message "Initializing desktop") (require 'init-desktop "init-desktop") (add-hook 'after-init-hook 'init-global-desktop-mode)
 (message "Initializing diff-mode") (require 'init-diff-mode "init-diff-mode") (add-hook 'after-init-hook 'init-diff-mode)
@@ -168,6 +169,8 @@ Cancels itself, if this buffer was killed."
 (message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
 (message "Initializing find-temp-file") (require 'init-find-temp-file-mode "init-find-temp-file-mode") (add-hook 'after-init-hook 'init-global-find-temp-file-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(message "Initializing flycheck") (require 'init-flycheck-mode "init-flycheck-mode") (add-hook 'after-init-hook 'init-global-flycheck-mode-on)
 
 ;; Go programming language.
 (message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
@@ -216,7 +219,6 @@ Cancels itself, if this buffer was killed."
 
 ;; (nox-recipe '(flycheck-gometalinter))
 ;; (nox-recipe '(flycheck-bashate))
-(nox-recipe '(flycheck))
 (nox-recipe '(flycheck-golangci-lint))
 
 (nox-recipe '(go-expr-completion))
