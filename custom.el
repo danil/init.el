@@ -106,7 +106,8 @@
  '(flycheck-indication-mode nil) ;; flycheck.el
  ;; '(flycheck-check-syntax-automatically '(idle-change)) ;; flycheck.el
  '(flycheck-disabled-checkers '(
-                                emacs-lisp ; annoying errors
+                                emacs-lisp ;; annoying errors
+                                emacs-lisp-checkdoc ;; annoying errors
 
                                 go-gofmt
                                 go-golint
