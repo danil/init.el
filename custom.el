@@ -347,6 +347,7 @@
  '(mediawiki-site-default "en")
  '(menu-bar-mode nil)
  '(mode-line-format '("%e"
+                      (:eval (window-numbering-get-number-string))
                       mode-line-position
                       ":"
                       mode-line-front-space ; line number and column number
@@ -572,5 +573,5 @@
  '(sp-pair-overlay-face ((t nil)))
  ;; '(swiper-include-line-number-in-search nil) ;; swiper.el
  ;; '(swiper-goto-start-of-match nil) ;; swiper.el
- '(window-numbering-face ((((class color) (min-colors 88) (background dark)) (:foreground "PaleGreen" :background "unspecified-bg" :inherit mode-line-inactive))) t) ;; window-numbering.el: <http://blog.binchen.org/?p=512#sec-1>.
+ '(window-numbering-face ((((class color) (min-colors 88) (background dark)) (:inherit mode-line-inactive :foreground "OliveDrab" :background "brightwhite" :inverse-video t))) t) ;; :foreground "PaleGreen" ;; window-numbering.el: <http://blog.binchen.org/?p=512#sec-1>.
  )
