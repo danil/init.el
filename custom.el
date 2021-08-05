@@ -290,7 +290,7 @@
      ("C-c C-k" . xref-pop-marker-stack)
      ("M-." . godef-jump)
      ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
- '(init-go-template-mode-patterns '("\\.tmpl\\'"))
+ '(init-go-template-mode-patterns '("\\.go\\.tmpl\\'"))
  '(init-highlight-symbol-bindings
    '(("C-v c S c" . highlight-symbol-count)
      ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
@@ -466,7 +466,9 @@
      "/Procfile\\'"
      "/\\.ackrc\\'"
      "/\\.bash_aliases\\'"
+     "/\\.bc\\'"
      "/\\.bpkgrc\\'"
+     "/\\.config/go/env\\'"
      "/\\.env\\(\\.development\\|\\.production\\|.local\\|.test\\)?\\(\\.example\\)?\\'"
      "/\\.lessfilter\\'"
      "/\\.mkshrc\\'"
@@ -485,7 +487,11 @@
      ;; Emacs shellcheck config.
      "/\\.shellcheckrc\\'"
      ))
- '(noxrcp-sql-mode-patterns '("/Dropbox/deft/sql/.*\\.sql\\.md\\'"))
+ '(noxrcp-sql-mode-patterns '(
+                              "/Dropbox/deft/sql/.*\\.sql\\.md\\'"
+                              "/\\.?psqlrc\\'"
+                              "\\.sql\\.tmpl\\'"
+                              ))
  '(noxrcp-systemd--rainbow-identifiers-stop-words 'nil)
  '(noxrcp-systemd-patterns 'nil)
  '(noxrcp-toggle-quotes-modes
@@ -496,7 +502,7 @@
    '(
      "/\\(group\\|host\\)_vars/[^.]*\\'"
      "/\\.kube/[^/.]*\\'"
-     "\\.ya?ml\\(\\.example\\|\\.sample\\|.ci\\)?\\'"
+     "\\.ya?ml\\(.ci\\)?\\(\\.example\\|\\.sample\\|.ci\\)?\\'"
      "\\.yml\\.j2\\'"
      ))
  '(pack-dired-default-extension ".tar.xz") ;; pack.el
