@@ -360,8 +360,10 @@
  '(kept-new-versions 6) ;; files.el
  '(kept-old-versions 2) ;; files.el
  '(kill-ring-max 500)
+ '(magit-auto-revert-mode nil)
  '(magit-blame-heading-format "%-20a %C %s %H")
  '(magit-completing-read-function 'selectrum-completing-read)
+ '(magit-save-repository-buffers nil)
  '(markdown-command "blackfriday-tool")
  '(markdown-toc-header-toc-title "")
  '(markdown-toc-list-item-marker "*")
