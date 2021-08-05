@@ -35,8 +35,6 @@
   "Regexp patterns associated with `sql-mode'."
   :group 'noxinit)
 
-(custom-set-variables '(noxrcp-sql-mode-patterns '("/\\.?psqlrc\\'")))
-
 (add-hook 'after-init-hook 'noxrcp-sql-mode)
 (defun noxrcp-sql-mode ()
   "No X recipe init."
