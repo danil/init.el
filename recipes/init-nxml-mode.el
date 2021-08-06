@@ -31,10 +31,17 @@
 
 ;;; Code:
 
+(defcustom noxrcp-nxml-mode-patterns '()
+  "Regexp patterns associated with `nxml-mode'."
+  :group 'noxinit)
+
 (add-hook 'after-init-hook 'noxrcp-nxml-mode)
 
 (defun noxrcp-nxml-mode ()
   "No X recipe init."
+
+  (dolist (pattern noxrcp-nxml-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons pattern 'nxml-mode)))
 
   (if (boundp 'nxml-mode-map) (noxrcp-nxml-mode--setup)
     (with-eval-after-load 'nxml-mode (noxrcp-nxml-mode--setup))))

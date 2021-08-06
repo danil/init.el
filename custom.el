@@ -455,6 +455,7 @@
  '(noxrcp-markdown-mode-patterns
    '("/Dropbox/deft/.*\\.txt\\'" "/README\\'" "/mutt[-a-zA-Z0-9]+\\'" "\\.markdown\\'" "\\.md\\'" "\\.mdown\\'"))
  '(noxrcp-nginx-mode-patterns '("/etc/nginx/.*\\.conf\\'" "/etc/nginx/sites-available/"))
+ '(noxrcp-nxml-mode-patterns '("/\\.drirc\\'"))
  '(noxrcp-read-only-modes
    (append init-base-modes
            '(Info-mode Man-mode ag-mode cider-stacktrace-mode compilation-mode dired-mode help-mode ibuffer-mode magit-branch-manager-mode magit-commit-mode magit-diff-mode magit-log-mode magit-process-mode magit-status-mode occur-mode)))
