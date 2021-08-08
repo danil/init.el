@@ -280,6 +280,10 @@
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
  '(init-files-map-prefix init-key-prefix) ;; init-files.el
+ ;; '(init-files-bindings
+ ;;   '(
+ ;;     ;; ("C-v C-f s" . save-some-buffers)
+ ;;     ))
  '(init-fill-map-prefix init-key-prefix) ;; init-fill.el
  '(init-find-temp-file-mode-bindings '(("C-v x t" . find-temp-file))) ;; init-find-temp-file-mode.el
  '(init-find-temp-file-mode-extension-functions '(("go" . init-find-temp-file-go))) ;; init-find-temp-file-mode.el

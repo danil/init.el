@@ -7,6 +7,18 @@
 
 (defcustom init-files-map-prefix "C-v " "init-files" :group 'init-files)
 
+;; (defcustom init-files-bindings '()
+;;   "Keybindings enabled in `init-files'. This is not a keymap.
+;; Rather it is an alist that is converted into a keymap just before `init-files'
+;; is (re-)enabled. The keys are strings and the values are command symbols."
+;;   :group 'init-files
+;;   :type '(alist
+;;           :key-type sexp
+;;           :value-type function))
+
+;; (define-minor-mode init-files "init-files" nil init-files-lighter init-files-map
+;;   (if init-files (init-files-setup) (init-files-teardown)))
+
 (defun init-files ()
   (global-set-key (kbd "C-x C-f") 'init-files-find-file)
   (global-set-key (kbd "C-x C-d") 'init-files-list) ; 'list-directory
