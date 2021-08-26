@@ -69,7 +69,7 @@ Cancels itself, if this buffer was killed."
     (fset fns fn) fn))
 
 ;; Modes with many minor modes enabled.
-(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dart-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-dot-mod-mode go-mode go-template-mode haml-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
+(setq init-base-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dart-mode diff-mode dockerfile-mode ebuild-mode elixir-mode enh-ruby-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-dot-mod-mode go-mode haml-mode handlebars-mode haskell-mode hcl-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode markdown-mode mediawiki-mode mustache-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode protobuf-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; whitespace-mode mail-mode
 
 ;; ;; Hooks with many minor modes enabled.
 ;; (setq init-base-modes-hooks '())
@@ -157,6 +157,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing diredfl") (require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
 (message "Initializing wdired") (require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
 
+;; (message "Initializing dotenv") (require 'dotenv "init-dotenv")
 (message "Initializing elisp-slime-nav") (require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
 (message "Initializing elixir-mode") (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
 (message "Initializing emacs-lisp-mode") (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
@@ -174,8 +175,8 @@ Cancels itself, if this buffer was killed."
 
 ;; Go programming language.
 (message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
-(message "Initializing go-template-mode") (require 'init-go-template-mode "init-go-template-mode") (add-hook 'after-init-hook 'init-global-go-template-mode-on)
 
+(message "Initializing handlebars-mode") (require 'init-handlebars-mode "init-handlebars-mode") (add-hook 'after-init-hook 'init-global-handlebars-mode-on)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 
 (message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
@@ -257,8 +258,6 @@ Cancels itself, if this buffer was killed."
 ;;   (if (file-readable-p f)
 ;;       (require 'doom-todo-ivy f)
 ;;     (display-warning :doom-todo-ivy.el (format "Doom Emacs TODO ivy not found: %s" f))))
-
-(autoload 'go-template-mode (concat user-emacs-directory "go-template-mode") nil t)
 
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (nox-recipe '(ibuffer))

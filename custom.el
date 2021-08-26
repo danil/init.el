@@ -271,7 +271,74 @@
  '(init-dired-details-key "b")
  '(init-emacs-lisp-mode-map-prefix init-key-prefix)
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ;; init-emacs-lisp-mode.el
- '(init-ethan-wspace-disallows-eol-modes '(autoconf-mode awk-mode c-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode crontab-mode csharp-mode css-mode dockerfile-mode ebuild-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode go-mode go-template-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode makefile-gmake-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-eol-modes '(
+                                           autoconf-mode
+                                           awk-mode
+                                           c-mode
+                                           cask-mode
+                                           change-log-mode
+                                           clojure-mode
+                                           coffee-mode
+                                           conf-colon-mode
+                                           conf-mode
+                                           conf-space-mode
+                                           conf-unix-mode
+                                           conf-xdefaults-mode
+                                           crontab-mode
+                                           csharp-mode
+                                           css-mode
+                                           dockerfile-mode
+                                           ebuild-mode
+                                           emacs-lisp-mode
+                                           ferm-mode
+                                           fish-mode
+                                           git-commit-mode
+                                           gitconfig-mode
+                                           gitignore-mode
+                                           go-mode
+                                           haml-mode
+                                           handlebars-mode
+                                           haskell-mode
+                                           html-mode
+                                           inf-mongo-mode
+                                           jade-mode
+                                           java-mode
+                                           js-mode
+                                           js2-mode
+                                           json-mode
+                                           less-css-mode
+                                           lisp-mode
+                                           litcoffee-mode
+                                           lua-mode
+                                           makefile-gmake-mode
+                                           mediawiki-mode
+                                           nginx-mode
+                                           nodejs-repl-mode
+                                           nroff-mode
+                                           nxml-mode
+                                           org-mode
+                                           pascal-mode
+                                           perl-mode
+                                           php-mode
+                                           python-mode
+                                           restclient-mode
+                                           rhtml-mode
+                                           ruby-mode
+                                           rust-mode
+                                           sass-mode
+                                           sed-mode
+                                           sgml-mode
+                                           sh-mode
+                                           sieve-mode
+                                           slim-mode
+                                           sql-mode
+                                           systemd-mode
+                                           text-mode
+                                           toml-mode
+                                           web-mode
+                                           xml-mode
+                                           yaml-mode
+                                           )) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
@@ -294,7 +361,7 @@
      ("C-c C-k" . xref-pop-marker-stack)
      ("M-." . godef-jump)
      ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
- '(init-go-template-mode-patterns '("\\.go\\.tmpl\\'"))
+ '(init-handlebars-mode-patterns '("\\.go\\.tmpl\\'"))
  '(init-highlight-symbol-bindings
    '(("C-v c S c" . highlight-symbol-count)
      ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
@@ -324,7 +391,7 @@
      (ferm-mode-hook init-ferm-mode-rainbow-identifiers-setup)
      (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-setup)
      (go-mode-hook init-go-mode-rainbow-identifiers-setup)
-     (go-template-mode-hook init-go-template-mode-rainbow-identifiers-setup)
+     (handlebars-mode-hook init-handlebars-mode-rainbow-identifiers-setup)
      (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-setup)
      (hcl-mode-hook init-hcl-mode-rainbow-identifiers-setup)
      (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-setup)
@@ -521,7 +588,170 @@
      ("\\.tgz\\'" :pack "tar -czf" :unpack "tar -xf")
      ("\\.zip\\'" :pack "zip -r" :unpack "unzip"))) ;; pack.el
  '(package-selected-packages
-   '(back-button string-inflection skeletor markdown-toc visual-regexp typescript-mode noccur fd-dired counsel-fd pkgbuild-mode logview tramp i3wm-config-mode pinentry ctrlf amx selectrum-prescient selectrum go-translate su go-expr-completion flatbuffers-mode pacfiles-mode lsp-ivy lsp-mode counsel-jq ansi package-build shut-up epl git commander f dash s dart-mode rbtagger counsel-world-clock ztree yasnippets yasnippet-snippets yaml-mode window-numbering wgrep-pt wgrep-ag web-mode vlf vimrc-mode unicode-troll-stopper undo-tree twittering-mode transpose-frame top-mode toml-mode tldr systemd speed-type smart-mode-line slim-mode simp sed-mode scss-mode sass-mode rust-mode ruby-tools ruby-refactor ruby-pry ruby-hash-syntax ruby-guard rspec-mode robe restclient redis recentf-ext rainbow-mode rainbow-identifiers rainbow-delimiters quickrun quelpa protobuf-mode projectile-rails pack origami org-ac noflet nodejs-repl nginx-mode narrow-indirect mustache-mode multi-compile minitest mediawiki markdownfmt markdown-mode magit-popup magit literate-coffee-mode list-unicode-display json-mode jsfmt js2-mode jade-mode ivy-hydra ivy-historian ivy-dired-history inf-mongo ibuffer-vc hl-todo highlight-symbol gotest godoctor go-stacktracer go-snippets gitignore-mode gitconfig-mode git-timemachine flycheck-golangci-lint fish-mode findr find-temp-file ferm-mode expand-region ethan-wspace etags-select enh-ruby-mode elpa-mirror elixir-mode elisp-slime-nav ebuild-mode dumb-jump dockerfile-mode direx diredfl dired-details digit-groups diffview diff-hl deft cycle-quotes csv-mode css-comb csharp-mode crontab-mode crm-custom corral company-web company-shell company-php company-lua company-inf-ruby company-go company-erlang column-marker clojure-mode cask-mode cask browse-kill-ring bash-completion apache-mode anzu ac-html))
+   '(
+     ac-html
+     amx
+     ansi
+     anzu
+     apache-mode
+     back-button
+     bash-completion
+     browse-kill-ring
+     cask
+     cask-mode
+     clojure-mode
+     column-marker
+     commander
+     company-erlang
+     company-go
+     company-inf-ruby
+     company-lua
+     company-php
+     company-shell
+     company-web
+     corral
+     counsel-fd
+     counsel-jq
+     counsel-world-clock
+     crm-custom
+     crontab-mode
+     csharp-mode
+     css-comb
+     csv-mode
+     ctrlf
+     cycle-quotes
+     dart-mode
+     dash
+     deft
+     diff-hl
+     diffview
+     digit-groups
+     dired-details
+     diredfl
+     direx
+     dockerfile-mode
+     dumb-jump
+     ebuild-mode
+     elisp-slime-nav
+     elixir-mode
+     elpa-mirror
+     enh-ruby-mode
+     epl
+     etags-select
+     ethan-wspace
+     expand-region
+     f
+     fd-dired
+     ferm-mode
+     find-temp-file
+     findr
+     fish-mode
+     flatbuffers-mode
+     flycheck-golangci-lint
+     git
+     git-timemachine
+     gitconfig-mode
+     gitignore-mode
+     go-expr-completion
+     go-snippets
+     go-stacktracer
+     go-translate
+     godoctor
+     gotest
+     handlebars-mode
+     highlight-symbol
+     hl-todo
+     i3wm-config-mode
+     ibuffer-vc
+     inf-mongo
+     ivy-dired-history
+     ivy-historian
+     ivy-hydra
+     jade-mode
+     js2-mode
+     jsfmt
+     json-mode
+     list-unicode-display
+     literate-coffee-mode
+     logview
+     lsp-ivy
+     lsp-mode
+     magit
+     magit-popup
+     markdown-mode
+     markdown-toc
+     markdownfmt
+     mediawiki
+     minitest
+     multi-compile
+     mustache-mode
+     narrow-indirect
+     nginx-mode
+     noccur
+     nodejs-repl
+     noflet
+     org-ac
+     origami
+     pacfiles-mode
+     pack
+     package-build
+     pinentry
+     pkgbuild-mode
+     projectile-rails
+     protobuf-mode
+     quelpa
+     quickrun
+     rainbow-delimiters
+     rainbow-identifiers
+     rainbow-mode
+     rbtagger
+     recentf-ext
+     redis
+     restclient
+     robe
+     rspec-mode
+     ruby-guard
+     ruby-hash-syntax
+     ruby-pry
+     ruby-refactor
+     ruby-tools
+     rust-mode
+     s
+     sass-mode
+     scss-mode
+     sed-mode
+     selectrum
+     selectrum-prescient
+     shut-up
+     simp
+     skeletor
+     slim-mode
+     smart-mode-line
+     speed-type
+     string-inflection
+     su
+     systemd
+     tldr
+     toml-mode
+     top-mode
+     tramp
+     transpose-frame
+     twittering-mode
+     typescript-mode
+     undo-tree
+     unicode-troll-stopper
+     vimrc-mode
+     visual-regexp
+     vlf
+     web-mode
+     wgrep-ag
+     wgrep-pt
+     window-numbering
+     yaml-mode
+     yasnippet-snippets
+     yasnippets
+     ztree
+     ))
  '(password-cache-expiry 3600)
  '(prescient-save-file "~/.emacs.var/prescient-save.el") ;; prescient.el
  '(projectile-completion-system 'init-selectrum-unsorted-read) ;; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
