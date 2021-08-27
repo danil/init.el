@@ -259,6 +259,8 @@ Cancels itself, if this buffer was killed."
 ;;       (require 'doom-todo-ivy f)
 ;;     (display-warning :doom-todo-ivy.el (format "Doom Emacs TODO ivy not found: %s" f))))
 
+(autoload 'dotenv-eval-region (concat user-emacs-directory "dotenv") nil t)
+
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (nox-recipe '(ibuffer))
 (nox-recipe '(ielm))
