@@ -672,7 +672,7 @@
      go-translate
      godoctor
      gotest
-     graphql-mode-hook
+     graphql-mode
      handlebars-mode
      highlight-symbol
      hl-todo
