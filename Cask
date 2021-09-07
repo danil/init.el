@@ -145,6 +145,7 @@
 (depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")
 (depends-on "noflet")
 
+(depends-on "graphql-mode") ;; https://github.com/davazp/graphql-mode
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "logview")
