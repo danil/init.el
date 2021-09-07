@@ -372,7 +372,21 @@
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ;; init-make-mode.el
  '(init-projectile-mode-hooks
    (append init-programming-modes-hooks
-           '(compilation-mode-hook dired-mode-hook go-test-mode-hook ivy-occur-grep-mode-hook magit-diff-mode-hook magit-process-mode-hook magit-revision-mode-hook magit-stash-mode-hook magit-status-mode-hook protobuf-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-projectile.el
+           '(
+             compilation-mode-hook
+             dired-mode-hook
+             go-test-mode-hook
+             graphql-mode-hook
+             ivy-occur-grep-mode-hook
+             magit-diff-mode-hook
+             magit-process-mode-hook
+             magit-revision-mode-hook
+             magit-stash-mode-hook
+             magit-status-mode-hook
+             protobuf-mode-hook
+             shell-mode-hook
+             sql-interactive-mode-hook
+             ))) ;; init-projectile.el
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-identifiers-hooks
    '((c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
@@ -658,6 +672,7 @@
      go-translate
      godoctor
      gotest
+     graphql-mode-hook
      handlebars-mode
      highlight-symbol
      hl-todo
