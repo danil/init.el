@@ -296,6 +296,7 @@
                                            gitconfig-mode
                                            gitignore-mode
                                            go-mode
+                                           graphql-mode
                                            haml-mode
                                            handlebars-mode
                                            haskell-mode
@@ -361,6 +362,7 @@
      ("C-c C-k" . xref-pop-marker-stack)
      ("M-." . godef-jump)
      ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
+ '(init-graphql-mode-patterns '("\\.graphql\\'"))
  '(init-handlebars-mode-patterns '("\\.go\\.tmpl\\'"))
  '(init-highlight-symbol-bindings
    '(("C-v c S c" . highlight-symbol-count)
@@ -405,6 +407,7 @@
      (ferm-mode-hook init-ferm-mode-rainbow-identifiers-setup)
      (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-setup)
      (go-mode-hook init-go-mode-rainbow-identifiers-setup)
+     (graphql-mode-hook init-graphql-mode-rainbow-identifiers-setup)
      (handlebars-mode-hook init-handlebars-mode-rainbow-identifiers-setup)
      (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-setup)
      (hcl-mode-hook init-hcl-mode-rainbow-identifiers-setup)
