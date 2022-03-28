@@ -556,6 +556,7 @@
    '(
      "/Procfile\\'"
      "/\\.ackrc\\'"
+     "/\\.alias\\'"
      "/\\.bash_aliases\\'"
      "/\\.bc\\'"
      "/\\.bpkgrc\\'"
