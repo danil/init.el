@@ -837,6 +837,8 @@
  '(ctrlf-highlight-active ((t :background "brightwhite" :foreground "brightred"))) ;; ctrlf.el
  '(diff-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen"))) ;; diff-mode.el
  '(diff-changed ((((class color) (min-colors 88) (background dark)) :foreground "brightblue"))) ;; diff-mode.el
+ '(diff-refine-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen" :background "grey45"))) ;; diff-mode.el
+ '(diff-refine-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred" :background "grey45"))) ;; diff-mode.el
  '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ;; diff-mode.el
  '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "color-52")))) ;; ediff-init.el: DarkRed
  '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "color-22")))) ;; ediff-init.el: DarkGreen
