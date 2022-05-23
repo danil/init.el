@@ -448,7 +448,7 @@ Cancels itself, if this buffer was killed."
 
 (nox-recipe '(telnet))
 (nox-recipe '(text-mode))
-(nox-recipe '(tldr))
+;; (nox-recipe '(tldr))
 (nox-recipe '(toml-mode))
 (nox-recipe '(transpose-frame))
 (nox-recipe '(two-column)) ;disable fucking two-column mode
