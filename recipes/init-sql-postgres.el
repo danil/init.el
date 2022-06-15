@@ -47,9 +47,7 @@
     (add-hook 'sql-interactive-mode-hook 'noxrcp-sql-postgres--prompt)))
 
 (defun noxrcp-sql-postgres--prompt ()
-  ;; <https://unix.stackexchange.com/questions/233518/mariadb-client-has-no-prompt-in-emacs-sql-mode>.
-  ;; (sql-set-product-feature 'postgres :prompt-cont-regexp "^\[a-zA-Z_\]*\[-(\]\[#>\] ")
-  ;; (sql-set-product-feature 'postgres :prompt-length 20)
-  (sql-set-product-feature 'postgres :prompt-regexp "^\[a-zA-Z0-9_\]*\[=-\]\[#>\] "))
+  (setq sql-prompt-regexp "^[-[:alnum:]_]*=[#>] ")
+  (setq sql-prompt-cont-regexp "^[-[:alnum:]_]*[-(][#>] "))
 
 ;;; init-sql-postgres.el ends here
