@@ -75,6 +75,7 @@
    ((equal s "unsafe") '(:weight bold))
    ((equal s " :=") '(:weight bold))
    ((equal s ") (") '(:weight bold))
+   ((equal s "interface{}") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\tbreak") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\tcontinue") '(:inherit font-lock-keyword-face :weight bold))
    ((equal s "\tdefer") '(:inherit font-lock-keyword-face :weight bold))

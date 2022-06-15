@@ -269,6 +269,7 @@ See `init-go-mode-bindings'.")
                             "unsafe"
                             " :="
                             ") ("
+                            "interface{}"
                             "\tbreak"
                             "\tcontinue"
                             "\tdefer"
