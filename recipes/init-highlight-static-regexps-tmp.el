@@ -212,6 +212,8 @@ The color generation can be influenced by changing
                                       "\\|"
                                       "\\<interface{}"
                                       "\\|"
+                                      "\\<any\\_>"
+                                      "\\|"
                                       "\treturn\\_>"
                                       "\\|"
                                       "\tdefer\\_>"

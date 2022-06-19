@@ -20,6 +20,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   '(
     "adler32"
     "aes"
+    "any"
     "ascii85"
     "asn1"
     "ast"
@@ -81,6 +82,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
     "image"
     "importer"
     "init"
+    "interface"
     "internal"
     "io"
     "iotest"
@@ -252,7 +254,7 @@ See `init-go-mode-bindings'.")
               'init-go-mode-highlight-static-regexps-filter)
 
     (make-local-variable 'highlight-static-regexps-faces-to-override)
-    (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default))
+    (setq highlight-static-regexps-faces-to-override '(font-lock-keyword-face default font-lock-type-face))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
       (init-highlight-static-regexps--lazyinit))))
@@ -270,6 +272,7 @@ See `init-go-mode-bindings'.")
                             " :="
                             ") ("
                             "interface{}"
+                            "any"
                             "\tbreak"
                             "\tcontinue"
                             "\tdefer"
