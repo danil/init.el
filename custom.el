@@ -438,6 +438,7 @@
      ("C-v r c" . count-words-region)
      ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
+ '(init-text-mode-patterns '("\\.txt#\\'")) ;; init-text-mode.el
  '(init-wdired-map-exec-prefix init-exec-key-prefix) ;; init-wdired.el
  '(init-window-numbering-mode-map-prefix init-key-prefix) ;; init-window-numbering.el
  '(ivy-count-format "(%d/%d) ") ;; ivy.el

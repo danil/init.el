@@ -1,6 +1,6 @@
 ;;; init-text-mode.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Copyright (C) 2022 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
 ;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -31,6 +31,10 @@
 
 ;;; Code:
 
+(defcustom init-text-mode-patterns '()
+  "Regexp patterns associated with `text-mode'."
+  :group 'init-text-mode)
+
 (add-hook 'after-init-hook 'noxrcp-company-text-mode)
 (defun noxrcp-company-text-mode ()
   "No X recipe init."
@@ -40,6 +44,10 @@
 
 (defun noxrcp-company-text-mode--setup ()
   ;; (setq text-mode-map (make-sparse-keymap))
+
+  (dolist (p init-text-mode-patterns)
+    (add-to-list 'auto-mode-alist (cons p 'text-mode)))
+
   (define-key text-mode-map [?\C-\M-i] nil))
 
 ;;; init-text-mode.el ends here
