@@ -56,6 +56,7 @@
  '(deft-auto-save-interval 30.0) ;; deft.el: Idle time in seconds before automatically saving buffers opened by Deft. Set to zero to disable.
  '(deft-directory "~/Notes") ;; deft.el: <http://jblevins.org/projects/deft>
  '(deft-extensions '("md" "markdown" "org" "mw" "txt" "restclient")) ;; deft.el: Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
+ '(deft-new-file-format "%Y-%m-%dT%H-%M%Z")
  '(deft-recursive t) ;; deft.el: Recursively search for files in subdirectories when non-nil.
  '(deft-recursive-ignore-dir-regexp
     (concat "\\(?:" "\\." "\\|\\.\\." "\\|.*-src" "\\|vendor" "\\)$")) ;; deft.el
@@ -71,6 +72,7 @@
             "\\|#+" ; line with just # chars
             "\\|#!/bin/.*" ; shebang
             "$\\)")) ;; deft.el: Regular expression to remove from file titles. Presently, it removes leading LaTeX comment delimiters, leading and trailing hash marks from Markdown ATX headings, leading astersisks from Org Mode headings, and Emacs mode lines of the form -*-mode-*-.
+ '(deft-use-filename-as-title t)
  '(delete-old-versions t) ;; files.el
  '(desktop-base-file-name (convert-standard-filename "desktop")) ;; desktop.el
  '(desktop-base-lock-name (convert-standard-filename "desktop.lock")) ;; desktop.el
