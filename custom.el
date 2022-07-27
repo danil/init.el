@@ -822,6 +822,7 @@
  '(tab-width 2)
  '(tldr-directory-path (expand-file-name "tldr/" "~/.emacs.var"))
  '(tldr-use-word-at-point t)
+ '(undo-tree-enable-undo-in-region nil) ; https://emacs.stackexchange.com/questions/69779/emacs-get-frozen-due-to-error-reading-undo-tree-history#69790
  '(undo-tree-history-directory-alist '(("." . "~/.emacs.var/undo-tree")))
  '(uniquify-min-dir-content 20)
  '(version-control t) ;; files.el: use versioned backups
