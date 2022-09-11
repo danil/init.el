@@ -52,7 +52,11 @@
    (lambda () (hl-todo-mode))))
 
 (defun noxrcp-hl-todo--init ()
-  (setq hl-todo-keyword-faces
-        (append hl-todo-keyword-faces '(("CHORE" . "#d0bf8f")))))
+  (let ((faces '(("2FA"   . "#ff5fd7")
+                 ("ARC"   . "#d7af00")
+                 ("CHORE" . "#d0bf8f")
+                 ("PIN"   . "#ff875f")
+                 ("PWD"   . "#00afff"))))
+    (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here
