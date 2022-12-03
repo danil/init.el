@@ -34,7 +34,7 @@
 (defcustom noxrcp-json-mode-patterns '() "Regexp patterns associated with `json-mode'." :group 'noxinit)
 
 (custom-set-variables
- '(json-encoding-default-indentation "    ")
+ '(json-encoding-default-indentation "  ")
  '(noxrcp-json-mode-patterns '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'")))
 
 (add-hook 'after-init-hook 'noxrcp-json-mode)
@@ -50,7 +50,7 @@
 
 (defun noxrcp-json-mode--customize ()
   (make-local-variable 'js-indent-level)
-  (setq js-indent-level 4))
+  (setq js-indent-level 2))
 
 (defun init-json-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'json-mode)

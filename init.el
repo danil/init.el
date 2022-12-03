@@ -109,6 +109,7 @@ Cancels itself, if this buffer was killed."
                         js-mode
                         js2-mode
                         json-mode
+                        jsonnet-mode
                         less-css-mode
                         lisp-mode
                         litcoffee-mode

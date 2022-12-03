@@ -46,7 +46,7 @@
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
 (depends-on "back-button") ;; two-way navigation through mark ring forward/backward
-(depends-on "bash-completion")
+;(depends-on "bash-completion")
 (depends-on "cask")
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
@@ -104,10 +104,11 @@
 ;; (depends-on "git-gutter")
 (depends-on "diff-hl")
 (depends-on "git-timemachine")
-(depends-on "gitconfig-mode")
-(depends-on "gitignore-mode")
+;(depends-on "gitconfig-mode")
+;(depends-on "gitignore-mode")
 
 ;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
+;; (depends-on "ibuffer-vc")
 (depends-on "crm-custom")
 (depends-on "css-comb") ; css formater
 (depends-on "haml-mode")
@@ -115,7 +116,6 @@
 (depends-on "hl-todo")
 (depends-on "hydra") ; key bindings
 (depends-on "i3wm-config-mode")
-(depends-on "ibuffer-vc")
 (depends-on "inf-mongo")
 
 ;; Ivy (is an ido replacement).
@@ -182,7 +182,7 @@
 (depends-on "rspec-mode")
 (depends-on "ruby-guard" :git "https://github.com/zhangkaiyulw/ruby-guard.git")
 (depends-on "ruby-hash-syntax")
-(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO"))) ; "Pry support within Emacs"
+;(depends-on "ruby-pry" :git "https://github.com/jacott/emacs-pry.git" :files ("*" (:exclude ".git" ".gitignore" "COPYING" "README.md" "TODO"))) ; "Pry support within Emacs"
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 

@@ -50,6 +50,14 @@
   (define-key noxel-map (kbd "t") 'go-translate))
 
 (defun noxrcp-go-translate--init ()
+  ;; Google has recently imposed certain restrictions on crawling tkk
+  ;; from the page, and it is currently unable to find out the exact
+  ;; rules.
+  ;; Therefore, now the temporary solution is to allow user to
+  ;; manually setup tkk to make translate work.
+  ;; <https://github.com/lorniu/go-translate/pull/8>.
+  (setq go-translate-token-current (cons 430675 2721866130))
+
   (setq go-translate-local-language "ru")
   (setq go-translate-target-language "en")
 

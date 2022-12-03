@@ -62,10 +62,10 @@
 
   (add-hook 'ibuffer-hook 'my-get-rid-of-ibuffer-buffer))
 
-(defun my-get-rid-of-ibuffer-buffer ()
-"Bury annoying *Ibuffer*."
+;; (defun my-get-rid-of-ibuffer-buffer ()
+;; "Bury annoying *Ibuffer*."
 
-  (let ((buffer (get-buffer "*Ibuffer*")))
-    (when buffer (bury-buffer buffer))))
+;;   (let ((buffer (get-buffer "*Ibuffer*")))
+;;     (when buffer (bury-buffer buffer))))
 
 ;;; init-ibuffer.el ends here

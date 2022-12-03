@@ -39,7 +39,8 @@
 
 (defun noxrcp-protobuf-mode--setup ()
   (define-key protobuf-mode-map (kbd "C-c C-f e") 'noxrcp-protobuf-mode--end-of-defun)
-  (define-key protobuf-mode-map (kbd "C-c C-f n") 'noxrcp-protobuf-mode--beginning-of-defun))
+  (define-key protobuf-mode-map (kbd "C-c C-f n") 'noxrcp-protobuf-mode--beginning-of-defun)
+  (define-key protobuf-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
 (defun noxrcp-protobuf-mode--beginning-of-defun ()
   (interactive)
