@@ -364,6 +364,7 @@
      ("C-c C-k" . xref-pop-marker-stack)
      ("M-." . godef-jump)
      ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
+ '(init-gitconfig-mode-patterns '(("/.gitconfig\\.[^./]*\\'" gitconfig-mode))) ;; init-gitconfig-mode.el
  '(init-graphql-mode-patterns '("\\.graphql\\'"))
  '(init-handlebars-mode-patterns '("\\.go\\.tmpl\\'"))
  '(init-highlight-symbol-bindings

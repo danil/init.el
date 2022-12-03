@@ -252,6 +252,7 @@ Cancels itself, if this buffer was killed."
 ;; Go programming language.
 (message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
 
+(message "Initializing gitconfig-mode") (require 'init-gitconfig-mode "init-gitconfig-mode") (add-hook 'after-init-hook 'init-gitconfig-mode)
 (message "Initializing graphql-mode") (require 'init-graphql-mode "init-graphql-mode") (add-hook 'after-init-hook 'init-global-graphql-mode-on)
 (message "Initializing handlebars-mode") (require 'init-handlebars-mode "init-handlebars-mode") (add-hook 'after-init-hook 'init-global-handlebars-mode-on)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
