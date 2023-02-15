@@ -1,6 +1,6 @@
 ;;; init-magit-blame.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
 ;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -36,7 +36,7 @@
 (add-hook 'after-init-hook 'noxrcp-magit-blame)
 (defun noxrcp-magit-blame ()
   "No X recipe init."
-  (define-key noxel-map (kbd "V b") 'my-magit-blame))
+  (define-key noxel-map (kbd "R b") 'my-magit-blame))
 
 (defun my-magit-blame (&optional arg)
   "My magit blame wrapper.

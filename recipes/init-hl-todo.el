@@ -1,6 +1,6 @@
 ;;; init-hl-todo.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
 ;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -51,12 +51,27 @@
    init-lazy-seconds nil
    (lambda () (hl-todo-mode))))
 
+;; 1. #cdcd00
+;; 2. #ff0087
+;; 3. #00cdcd
+;; 4. #af87ff
+;; 5. #00ff87
+;; 6. #ff8700
+;; 7. #ff5faf
+;; 8. #5f87ff
+;; 9. #5f8700
+
 (defun noxrcp-hl-todo--init ()
   (let ((faces '(("2FA"   . "#ff5fd7")
                  ("ARC"   . "#d7af00")
                  ("CHORE" . "#d0bf8f")
+                 ("DEV"   . "#7cb8bb")
+                 ("INVES" . "#af87ff")
+                 ("NETW"  . "#af87ff")
                  ("PIN"   . "#ff875f")
-                 ("PWD"   . "#00afff"))))
+                 ("PROD"  . "#ff5fd7")
+                 ("PWD"   . "#00afff")
+                 ("STG"   . "#af87ff"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here

@@ -1,6 +1,6 @@
 ;;; init-magit.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
 ;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -39,29 +39,29 @@
 (defun noxrcp-magit ()
   "No X recipe init."
 
-  (define-key noxel-map (kbd "v") 'magit-status)
+  (define-key noxel-map (kbd "R R") 'magit-status)
 
-  (define-key noxel-map (kbd "V d") 'magit-diff-buffer-file)
-  (define-key noxel-map (kbd "V D") 'magit-diff)
+  (define-key noxel-map (kbd "R d") 'magit-diff-buffer-file)
+  (define-key noxel-map (kbd "R D") 'magit-diff)
 
-  (define-key noxel-map (kbd "V f") 'magit-find-file)
+  (define-key noxel-map (kbd "R f") 'magit-find-file)
 
-  (define-key noxel-map (kbd "V l") 'magit-log)
+  (define-key noxel-map (kbd "R l") 'magit-log)
 
-  (define-key noxel-map (kbd "V L l") 'magit-log-long)
-  (define-key noxel-map (kbd "V L f") 'magit-file-log)
+  (define-key noxel-map (kbd "R L l") 'magit-log-long)
+  (define-key noxel-map (kbd "R L f") 'magit-file-log)
 
-  (define-key noxel-map (kbd "V s") 'magit-show-commit)
-  (define-key noxel-map (kbd "V S c") 'magit-show)
+  (define-key noxel-map (kbd "R s") 'magit-show-commit)
+  (define-key noxel-map (kbd "R S c") 'magit-show)
 
   (if (boundp 'magit-mode-map) (init-magit-xxxxxxxxxx)
     (with-eval-after-load 'magit (init-magit-xxxxxxxxxx))))
 
 (defun init-magit-xxxxxxxxxx ()
-  (define-key magit-mode-map (noxel-kbd-fn "V S 1") 'magit-show-level-1-all)
-  (define-key magit-mode-map (noxel-kbd-fn "V S 2") 'magit-show-level-2-all)
-  (define-key magit-mode-map (noxel-kbd-fn "V S 3") 'magit-show-level-3-all)
-  (define-key magit-mode-map (noxel-kbd-fn "V S 4") 'magit-show-level-4-all)
+  (define-key magit-mode-map (noxel-kbd-fn "R S 1") 'magit-show-level-1-all)
+  (define-key magit-mode-map (noxel-kbd-fn "R S 2") 'magit-show-level-2-all)
+  (define-key magit-mode-map (noxel-kbd-fn "R S 3") 'magit-show-level-3-all)
+  (define-key magit-mode-map (noxel-kbd-fn "R S 4") 'magit-show-level-4-all)
 
   ;; (define-key magit-diff-mode-map (kbd "C-c C-f") nil)
 

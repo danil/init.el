@@ -1,6 +1,6 @@
 ;;; init-git-timemachine.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
+;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.
 ;; Author: Danil <https://danil.kutkevich.org>
 ;; Maintainer: Danil <https://danil.kutkevich.org>
 ;; URL: https://github.com/danil/init.el
@@ -36,6 +36,6 @@
 (defun noxrcp-git-timemachine ()
   "No X recipe init."
 
-  (define-key noxel-map (kbd "V r") 'git-timemachine))
+  (define-key noxel-map (kbd "R t") 'git-timemachine))
 
 ;;; init-git-timemachine.el ends here
