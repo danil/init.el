@@ -80,7 +80,8 @@
                  ("PWD"   . "#00afff")
                  ("RWX"   . "#db7093")
                  ("RX"    . "#6ca6cd")
-                 ("STG"   . "#af87ff"))))
+                 ("STG"   . "#af87ff")
+                 ("VER"   . "#7cb8bb"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here
