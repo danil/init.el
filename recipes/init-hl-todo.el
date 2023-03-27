@@ -68,7 +68,7 @@
                  ("DEPRECATED" . "#db7093")
                  ("DEV"   . "#7cb8bb")
                  ("GEOS"  . "#2e8b57")
-                 ("HOWTO"  . "#d0bf8f")
+                 ("HOWTO"  . "#5f9ea0")
                  ("INVES" . "#af87ff")
                  ("MERCH" . "#eedd82")
                  ("PICT"  . "#5f9ea0")
@@ -81,7 +81,7 @@
                  ("RWX"   . "#db7093")
                  ("RX"    . "#6ca6cd")
                  ("STG"   . "#af87ff")
-                 ("TROUBLESHOOTING" . "#eedd82")
+                 ("TROUBLESHOOTING" . "#2e8b57")
                  ("VER[0-9]*" . "#7cb8bb"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
