@@ -68,7 +68,7 @@
                  ("DEPRECATED" . "#db7093")
                  ("DEV"   . "#7cb8bb")
                  ("GEOS"  . "#2e8b57")
-                 ("HOWTO"  . "#5f9ea0")
+                 ("HOWTO"  . "#3cb371")
                  ("INVES" . "#af87ff")
                  ("MERCH" . "#eedd82")
                  ("PICT"  . "#5f9ea0")
