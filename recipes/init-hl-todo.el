@@ -71,6 +71,7 @@
                  ("HOWTO"  . "#3cb371")
                  ("INVES" . "#af87ff")
                  ("MERCH" . "#eedd82")
+                 ("NETW"  . "#af87ff")
                  ("PICT"  . "#5f9ea0")
                  ("PIN"   . "#ff875f")
                  ("PROD"  . "#ff5fd7")
