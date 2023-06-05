@@ -82,6 +82,7 @@
                  ("PWD"   . "#00afff")
                  ("RWX"   . "#db7093")
                  ("RX"    . "#6ca6cd")
+                 ("SPLIT" . "#5f7f5f")
                  ("STG"   . "#af87ff")
                  ("TROUBLESHOOTING" . "#2e8b57")
                  ("VER[0-9]*" . "#7cb8bb"))))
