@@ -28,7 +28,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Keymap for `init-simple-mode'. Populated when mode is enabled.
 See `init-simple-bindings'.")
 
-(define-minor-mode init-simple-mode "init-simple" nil init-simple-mode-lighter init-simple-mode-map
+(define-minor-mode init-simple-mode "init-simple" :init-value nil :lighter init-simple-mode-lighter :keymap init-simple-mode-map
   (init-simple-setup))
 
 (define-globalized-minor-mode init-global-simple-mode init-simple-mode

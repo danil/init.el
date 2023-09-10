@@ -16,7 +16,7 @@
 ;;           :key-type sexp
 ;;           :value-type function))
 
-;; (define-minor-mode init-files "init-files" nil init-files-lighter init-files-map
+;; (define-minor-mode init-files "init-files" :init-value nil :lighter init-files-lighter :keymap init-files-map
 ;;   (if init-files (init-files-setup) (init-files-teardown)))
 
 (defun init-files ()

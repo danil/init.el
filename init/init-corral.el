@@ -14,7 +14,7 @@
 
 (defvar init-corral-mode-map (make-sparse-keymap) "init-corral")
 
-(define-minor-mode init-corral-mode "init-corral" nil init-corral-mode-lighter init-corral-mode-map
+(define-minor-mode init-corral-mode "init-corral" :init-value nil :lighter init-corral-mode-lighter :keymap init-corral-mode-map
   (init-corral-setup))
 
 (define-globalized-minor-mode init-global-corral-mode init-corral-mode

@@ -11,7 +11,7 @@
 
 (defvar init-browse-url-mode-map (make-sparse-keymap) "init-browse-url")
 
-(define-minor-mode init-browse-url-mode "init-browse-url" nil init-browse-url-mode-lighter init-browse-url-mode-map
+(define-minor-mode init-browse-url-mode "init-browse-url" :init-value nil :lighter init-browse-url-mode-lighter :keymap init-browse-url-mode-map
   (init-browse-url-setup))
 
 (define-globalized-minor-mode init-global-browse-url-mode init-browse-url-mode

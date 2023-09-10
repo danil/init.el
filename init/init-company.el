@@ -13,7 +13,7 @@
 
 (defvar init-company-mode-map (make-sparse-keymap) "init-company")
 
-(define-minor-mode init-company-mode "init-company" nil init-company-mode-lighter init-company-mode-map
+(define-minor-mode init-company-mode "init-company" :init-value nil :lighter init-company-mode-lighter :keymap init-company-mode-map
   (init-company-setup))
 
 (define-globalized-minor-mode init-global-company-mode init-company-mode

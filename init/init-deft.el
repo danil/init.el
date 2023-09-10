@@ -11,7 +11,7 @@
 
 (defvar init-deft-mode-map (make-sparse-keymap) "init-deft")
 
-(define-minor-mode init-deft-mode "init-deft" nil init-deft-mode-lighter init-deft-mode-map
+(define-minor-mode init-deft-mode "init-deft" :init-value nil :lighter init-deft-mode-lighter :keymap init-deft-mode-map
   (init-deft-setup))
 
 (define-globalized-minor-mode init-global-deft-mode init-deft-mode

@@ -24,7 +24,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Keymap for `init-highlight-symbol-mode'. Populated when mode is enabled.
 See `init-highlight-symbol-bindings'.")
 
-(define-minor-mode init-highlight-symbol-mode "init-highlight-symbol" nil init-highlight-symbol-mode-lighter init-highlight-symbol-mode-map
+(define-minor-mode init-highlight-symbol-mode "init-highlight-symbol" :init-value nil :lighter init-highlight-symbol-mode-lighter :keymap init-highlight-symbol-mode-map
   (init-highlight-symbol-setup))
 
 (defun init-highlight-symbol ()

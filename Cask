@@ -4,6 +4,8 @@
 (source melpa)
 (source org)
 
+;; (depends-on "cask") ;; NOTE: error: Some dependencies were not available: cask ~~~~<danil@kutkevich.org>
+
 ;; (depends-on "erise")
 ;; (depends-on "lfe-mode")
 ;; (depends-on "mmm-mode")
@@ -47,7 +49,6 @@
 (depends-on "apache-mode")
 (depends-on "back-button") ;; two-way navigation through mark ring forward/backward
 ;(depends-on "bash-completion")
-(depends-on "cask")
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
 (depends-on "corral") ; smartparens replacement (quotes/parentheses/delimiters manager)

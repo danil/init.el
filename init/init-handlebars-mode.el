@@ -20,7 +20,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
-(define-minor-mode init-handlebars-mode "init-handlebars-mode" nil init-handlebars-mode-lighter init-handlebars-mode-map
+(define-minor-mode init-handlebars-mode "init-handlebars-mode" :init-value nil :lighter init-handlebars-mode-lighter :keymap init-handlebars-mode-map
   (init-handlebars-mode-setup))
 
 (define-globalized-minor-mode init-global-handlebars-mode init-handlebars-mode

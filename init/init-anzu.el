@@ -11,7 +11,7 @@
 
 (defvar init-anzu-mode-map (make-sparse-keymap) "init-anzu")
 
-(define-minor-mode init-anzu-mode "init-anzu" nil init-anzu-mode-lighter init-anzu-mode-map
+(define-minor-mode init-anzu-mode "init-anzu" :init-value nil :lighter init-anzu-mode-lighter :keymap init-anzu-mode-map
   (init-anzu-setup))
 
 (define-globalized-minor-mode init-global-anzu-mode init-anzu-mode

@@ -21,7 +21,7 @@ See `projectile-register-project-type'."
 
 (defvar init-projectile-mode-map (make-sparse-keymap) "init-projectile")
 
-(define-minor-mode init-projectile-mode "init-projectile" nil init-projectile-mode-lighter init-projectile-mode-map
+(define-minor-mode init-projectile-mode "init-projectile" :init-value nil :lighter init-projectile-mode-lighter :keymap init-projectile-mode-map
   (init-projectile-setup))
 
 (defun init-projectile-mode-on () (init-projectile-mode +1))

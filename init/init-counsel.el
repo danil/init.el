@@ -18,7 +18,7 @@
       "--vimgrep"
     "--nocolor --nogroup"))
 
-(define-minor-mode init-counsel-mode "init-counsel" nil init-counsel-mode-lighter init-counsel-mode-map
+(define-minor-mode init-counsel-mode "init-counsel" :init-value nil :lighter init-counsel-mode-lighter :keymap init-counsel-mode-map
   (init-counsel-setup))
 
 (define-globalized-minor-mode init-global-counsel-mode init-counsel-mode

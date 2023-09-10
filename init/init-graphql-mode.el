@@ -20,7 +20,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
-(define-minor-mode init-graphql-mode "init-graphql-mode" nil init-graphql-mode-lighter init-graphql-mode-map
+(define-minor-mode init-graphql-mode "init-graphql-mode" :init-value nil :lighter init-graphql-mode-lighter :keymap init-graphql-mode-map
   (init-graphql-mode-setup))
 
 (define-globalized-minor-mode init-global-graphql-mode init-graphql-mode

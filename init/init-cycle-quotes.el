@@ -11,7 +11,7 @@
 
 (defvar init-cycle-quotes-mode-map (make-sparse-keymap) "init-cycle-quotes")
 
-(define-minor-mode init-cycle-quotes-mode "init-cycle-quotes" nil init-cycle-quotes-mode-lighter init-cycle-quotes-mode-map
+(define-minor-mode init-cycle-quotes-mode "init-cycle-quotes" :init-value nil :lighter init-cycle-quotes-mode-lighter :keymap init-cycle-quotes-mode-map
   (init-cycle-quotes-setup))
 
 (define-globalized-minor-mode init-global-cycle-quotes-mode init-cycle-quotes-mode

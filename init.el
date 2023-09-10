@@ -168,11 +168,11 @@ Cancels itself, if this buffer was killed."
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file)
 
-;;; Cask.
-;;; Initialize Elpa packages via Cask
-;;; <http://cask.readthedocs.org/en/latest/guide/usage.html#usage>.
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
+(require 'package)
+;;; Cask
+;;; <https://github.com/cask/cask>.
+(setq package-user-dir "~/.emacs.d/elpa") ;; symling to the some cask version, for example ~/.emacs.d/.cask/12.3/elpa
+(package-initialize)
 
 (add-to-list 'load-path (concat user-emacs-directory "init/"))
 
@@ -279,11 +279,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
 (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
-
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
-
-
-
 
 (require 'noxrcp "~/.emacs.d/noxrcp.el")
 

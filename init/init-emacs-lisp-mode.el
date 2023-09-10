@@ -9295,6 +9295,7 @@
 (defun noxrcp-emacs-lisp-mode--init ()
   (let ((prfx init-emacs-lisp-mode-map-prefix)
         (map emacs-lisp-mode-map))
+    (define-key map (kbd "C-c C-f") nil)
     (define-key map (kbd "C-c C-f n") 'beginning-of-defun)
     (define-key map (kbd (concat prfx " ! b")) 'init-emacs-lisp-mode-eval-buffer)
     (define-key map (kbd (concat prfx " ! r")) 'init-emacs-lisp-mode-eval-region)

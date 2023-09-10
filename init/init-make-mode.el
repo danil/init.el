@@ -20,7 +20,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
-(define-minor-mode init-make-mode "init-make-mode" nil init-make-mode-lighter init-make-mode-map
+(define-minor-mode init-make-mode "init-make-mode" :init-value nil :lighter init-make-mode-lighter :keymap init-make-mode-map
   (init-make-mode-setup))
 
 (define-globalized-minor-mode init-global-make-mode init-make-mode

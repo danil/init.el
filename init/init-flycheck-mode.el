@@ -7,7 +7,7 @@
 
 (defcustom init-flycheck-mode-lighter " init-flycheck-mode" "init-flycheck-mode" :group 'init-flycheck-mode)
 
-(define-minor-mode init-flycheck-mode "init-flycheck-mode" nil init-flycheck-mode-lighter nil
+(define-minor-mode init-flycheck-mode "init-flycheck-mode" :init-value nil :lighter init-flycheck-mode-lighter :keymap nil
   (if init-flycheck-mode (init-flycheck-mode-lazy-setup) (flycheck-mode -1)))
 
 (define-globalized-minor-mode init-global-flycheck-mode init-flycheck-mode

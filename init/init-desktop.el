@@ -15,7 +15,7 @@
 
 (defvar init-desktop-mode-map (make-sparse-keymap) "init-desktop")
 
-(define-minor-mode init-desktop-mode "init-desktop" nil init-desktop-mode-lighter init-desktop-mode-map
+(define-minor-mode init-desktop-mode "init-desktop" :init-value nil :lighter init-desktop-mode-lighter :keymap init-desktop-mode-map
   (init-desktop-setup))
 
 (define-globalized-minor-mode init-global-desktop-mode init-desktop-mode

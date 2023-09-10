@@ -88,7 +88,7 @@ the mode if ARG is omitted or NIL, and toggle it if ARG is
 This minor mode setups translation of key bindings according to
 configuration created previously with `noxrcp-define-key' and
 `noxrcp-define-keys'."
-  nil noxrcp-lighter noxrcp-mode-map
+  :init-value nil :lighter noxrcp-lighter :keymap noxrcp-mode-map
   (setq-local cursor-type
               (if noxrcp-mode
                   noxrcp-cursor-type

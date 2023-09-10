@@ -26,7 +26,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Keymap for `init-find-temp-file-mode'. Populated when mode is enabled.
 See `init-find-temp-file-mode-bindings'.")
 
-(define-minor-mode init-find-temp-file-mode "init-find-temp-file-mode" nil init-find-temp-file-mode-lighter init-find-temp-file-mode-map
+(define-minor-mode init-find-temp-file-mode "init-find-temp-file-mode" :init-value nil :lighter init-find-temp-file-mode-lighter :keymap init-find-temp-file-mode-map
   (init-find-temp-file-mode-setup))
 
 (define-globalized-minor-mode init-global-find-temp-file-mode init-find-temp-file-mode

@@ -9,7 +9,7 @@
 
 (defvar init-bindings-mode-map (make-sparse-keymap) "init-bindings")
 
-(define-minor-mode init-bindings-mode "init-bindings" nil init-bindings-mode-lighter init-bindings-mode-map
+(define-minor-mode init-bindings-mode "init-bindings" :init-value nil :lighter init-bindings-mode-lighter :keymap init-bindings-mode-map
   (init-bindings-setup))
 
 (define-globalized-minor-mode init-global-bindings-mode init-bindings-mode

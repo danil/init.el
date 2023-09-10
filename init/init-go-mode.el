@@ -216,7 +216,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Keymap for `init-go-mode'. Populated when mode is enabled.
 See `init-go-mode-bindings'.")
 
-(define-minor-mode init-go-mode "init-go-mode" nil init-go-mode-lighter init-go-mode-map
+(define-minor-mode init-go-mode "init-go-mode" :init-value nil :lighter init-go-mode-lighter :keymap init-go-mode-map
   (if init-go-mode (init-go-mode-setup) (init-go-mode-teardown)))
 
 (define-globalized-minor-mode init-global-go-mode init-go-mode

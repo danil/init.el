@@ -11,7 +11,7 @@
 
 (defvar init-fringe-mode-map (make-sparse-keymap) "init-fringe")
 
-(define-minor-mode init-fringe-mode "init-fringe" nil init-fringe-mode-lighter init-fringe-mode-map
+(define-minor-mode init-fringe-mode "init-fringe" :init-value nil :lighter init-fringe-mode-lighter :keymap init-fringe-mode-map
   (init-fringe-setup))
 
 (define-globalized-minor-mode init-global-fringe-mode init-fringe-mode

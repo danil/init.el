@@ -20,7 +20,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "Keymap for `init-back-button-mode'. Populated when mode is enabled.
 See `init-back-button-mode-bindings'.")
 
-(define-minor-mode init-back-button-mode "init-back-button" nil init-back-button-lighter init-back-button-mode-map
+(define-minor-mode init-back-button-mode "init-back-button" :init-value nil :lighter init-back-button-lighter :keymap init-back-button-mode-map
   (init-back-button-mode-setup))
 
 (define-globalized-minor-mode init-global-back-button-mode init-back-button-mode

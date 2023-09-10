@@ -11,7 +11,7 @@
 
 (defvar init-compile-mode-map (make-sparse-keymap) "init-compile")
 
-(define-minor-mode init-compile-mode "init-compile" nil init-compile-mode-lighter init-compile-mode-map
+(define-minor-mode init-compile-mode "init-compile" :init-value nil :lighter init-compile-mode-lighter :keymap init-compile-mode-map
   (init-compile-setup))
 
 (define-globalized-minor-mode init-global-compile-mode init-compile-mode

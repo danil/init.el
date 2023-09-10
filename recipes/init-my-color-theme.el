@@ -59,19 +59,19 @@
   :group 'sh-indentation)
 
 (defface helm-selection
-  '((((background dark)) :background nil :underline t)
-    (((background light)) :background nil :underline t))
+  '((((background dark)) :background unspecified :underline t)
+    (((background light)) :background unspecified :underline t))
   "Face for currently selected item in the helm buffer."
   :group 'helm)
 
 (defface helm-source-header
   '((((background dark))
-     :background nil
+     :background unspecified
      :foreground "RoyalBlue1"
      :weight bold :height 1.3 :family "Monospace")
     (((background light))
-     :background nil
-     :foreground nil
+     :background unspecified
+     :foreground unspecified
      :weight bold :height 1.3 :family "Monospace"))
   "Face for source header in the helm buffer."
   :group 'helm)

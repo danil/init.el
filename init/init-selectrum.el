@@ -9,7 +9,7 @@
 
 (defvar init-selectrum-mode-map (make-sparse-keymap) "init-selectrum")
 
-(define-minor-mode init-selectrum-mode "init-selectrum" nil init-selectrum-mode-lighter init-selectrum-mode-map
+(define-minor-mode init-selectrum-mode "init-selectrum" :init-value nil :lighter init-selectrum-mode-lighter :keymap init-selectrum-mode-map
   (init-selectrum-setup))
 
 (define-globalized-minor-mode init-global-selectrum-mode init-selectrum-mode
