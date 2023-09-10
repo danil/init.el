@@ -171,7 +171,7 @@ Cancels itself, if this buffer was killed."
 (require 'package)
 ;;; Cask
 ;;; <https://github.com/cask/cask>.
-(setq package-user-dir "~/.emacs.d/elpa") ;; symling to the some cask version, for example ~/.emacs.d/.cask/12.3/elpa
+(setq package-user-dir "~/.emacs.d/cask") ;; symling to the some cask version, for example ~/.emacs.d/.cask/12.3/elpa
 (package-initialize)
 
 (add-to-list 'load-path (concat user-emacs-directory "init/"))
