@@ -43,7 +43,7 @@
                            " " (mode 16 16 :left :elide) " " filename-and-process)
                      (mark " " (name 16 -1) " " filename))))
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer) ;; NOTE: Instead using the `buffer-menu` builtin function.
 
 (add-hook 'after-init-hook 'noxrcp-ibuffer)
 
