@@ -109,7 +109,6 @@
 ;(depends-on "gitignore-mode")
 
 ;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
-;; (depends-on "ibuffer-vc")
 (depends-on "crm-custom")
 (depends-on "css-comb") ; css formater
 (depends-on "haml-mode")
