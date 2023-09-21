@@ -64,7 +64,7 @@
 (defun noxrcp-hl-todo--init ()
   (let ((faces '(("2FA"   . "#ff5fd7")
                  ("ARC"   . "#d7af00")
-                 ("BAK"  . "#5f9ea0")
+                 ("BAK"   . "#5f9ea0")
                  ("BENCH" . "#3cb371")
                  ("CHORE" . "#d0bf8f")
                  ("CONS"  . "#ff875f")
@@ -90,7 +90,8 @@
                  ("STG"   . "#af87ff")
                  ("TROUBLESHOOTING" . "#2e8b57")
                  ("USR"   . "#6ca6cd")
-                 ("VER[0-9]*" . "#7cb8bb"))))
+                 ("VER[0-9]*" . "#7cb8bb")
+                 ("WRKRND" . "#5f9ea0"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here
