@@ -145,6 +145,7 @@ Cancels itself, if this buffer was killed."
                         web-mode
                         xml-mode
                         yaml-mode
+                        zig-mode
                         )) ;; whitespace-mode mail-mode
 
 ;; ;; Hooks with many minor modes enabled.
