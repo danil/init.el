@@ -140,7 +140,7 @@
  '(flycheck-mode-line-prefix "F") ;; flycheck.el
  '(gofmt-command "goimports") ;; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
  '(highlight-symbol-highlight-single-occurrence nil) ;; highlight-symbol.el
- '(highlight-symbol-idle-delay 0.2) ;; highlight-symbol.el: 0.5 1.5
+ '(highlight-symbol-idle-delay 0.9) ;; pause before highlight-symbol-mode of highlight-symbol.el: 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ;; highlight-symbol.el
  '(historian-save-file "~/.emacs.var/.historian") ;; historian.el
  '(ibuffer-formats
