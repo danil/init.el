@@ -22,6 +22,8 @@
         (map init-fringe-mode-map))
     (define-key map (kbd (concat prfx " l")) 'init-fringe-toggle)))
 
+;; FIXME: Warning: `Package linum is deprecated`. TODO: Use `display-line-numbers-mode` or `nlinum`.
+
 (defun init-fringe-toggle ()
   "Toggle modes in the fringe (left margin of the window).
 Toggle the `linume-mode', `diff-hl-mode' and so on."

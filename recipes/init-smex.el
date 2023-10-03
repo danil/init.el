@@ -33,7 +33,7 @@
 
 (custom-set-variables
  '(smex-history-length 1000)
- '(smex-save-file  "~/.emacs.var/smex-items"))
+ '(smex-save-file  "~/.config/emacs.var/smex-items"))
 
 (add-hook 'after-init-hook 'noxrcp-smex)
 (defun noxrcp-smex ()

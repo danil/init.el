@@ -34,7 +34,7 @@
 ;; <http://www.emacswiki.org/emacs/SavePlace>.
 
 (custom-set-variables
- '(save-place-file "~/.emacs.var/places") ; Name of the file that records `save-place-alist' value.
+ '(save-place-file "~/.config/emacs.var/places") ; Name of the file that records `save-place-alist' value.
  )
 
 (add-hook 'after-init-hook 'noxrcp-saveplace)

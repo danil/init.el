@@ -5,13 +5,13 @@
  ;; If there is more than one, they won't work right.
  '(ag-context-lines 5)
  '(amx-history-length 500) ;; amx.el
- '(amx-save-file "~/.emacs.var/amx-items") ;; amx.el
+ '(amx-save-file "~/.config/emacs.var/amx-items") ;; amx.el
  '(anzu-search-threshold 500) ;; anzu.el
  '(back-button-index-timeout nil) ;; back-button.el
  '(back-button-no-wrap t) ;; back-button.el
  '(backup-by-copying t) ;; files.el: don't clobber symlinks, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
- '(backup-directory-alist '(("." . "~/.emacs.var/backups"))) ;; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
- '(bookmark-default-file "~/.emacs.var/bookmarks") ;; bookmark.el
+ '(backup-directory-alist '(("." . "~/.config/emacs.var/backups"))) ;; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
+ '(bookmark-default-file "~/.config/emacs.var/bookmarks") ;; bookmark.el
  '(c-basic-offset 2) ;; cc-vars.el
  '(calendar-week-start-day 1) ;; calendar.el
  '(cider-mode-line " cider")
@@ -76,10 +76,10 @@
  '(delete-old-versions t) ;; files.el
  '(desktop-base-file-name (convert-standard-filename "desktop")) ;; desktop.el
  '(desktop-base-lock-name (convert-standard-filename "desktop.lock")) ;; desktop.el
- '(desktop-dirname "~/.emacs.var/" t) ;; desktop.el
+ '(desktop-dirname "~/.config/emacs.var/" t) ;; desktop.el
  '(desktop-globals-to-save '()) ;; desktop.el
  '(desktop-locals-to-save '(desktop-locals-to-save)) ;; desktop.el: Itself! Think it over.
- '(desktop-path '(user-emacs-directory "~/.emacs.var/")) ;; desktop.el
+ '(desktop-path '(user-emacs-directory "~/.config/emacs.var/")) ;; desktop.el
  '(desktop-restore-frames nil) ;; desktop.el
  '(diff-hl-draw-borders nil) ;; diff-hl.el
  '(diff-hl-margin-symbols-alist
@@ -142,7 +142,7 @@
  '(highlight-symbol-highlight-single-occurrence nil) ;; highlight-symbol.el
  '(highlight-symbol-idle-delay 0.9) ;; pause before highlight-symbol-mode of highlight-symbol.el: 0.5 1.5
  '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ;; highlight-symbol.el
- '(historian-save-file "~/.emacs.var/.historian") ;; historian.el
+ '(historian-save-file "~/.config/emacs.var/.historian") ;; historian.el
  '(ibuffer-formats
    '((mark modified read-only " "
            (name 64 64 :left :elide)
@@ -514,7 +514,7 @@
      (rust-mode
       ("rustc" . "rustc %path"))))
  '(multi-compile-completion-system 'default)
- '(multi-compile-history-file (expand-file-name "multi-compile.cache" "~/.emacs.var"))
+ '(multi-compile-history-file (expand-file-name "multi-compile.cache" "~/.config/emacs.var"))
  '(noxrcp-auto-completion-modes
    (append init-programming-modes
            '(redis-cli-mode shell-mode telnet-mode wdired-mode)))
@@ -776,7 +776,7 @@
      ztree
      ))
  '(password-cache-expiry 3600)
- '(prescient-save-file "~/.emacs.var/prescient-save.el") ;; prescient.el
+ '(prescient-save-file "~/.config/emacs.var/prescient-save.el") ;; prescient.el
  '(projectile-completion-system 'init-selectrum-unsorted-read) ;; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
  '(projectile-dynamic-mode-line nil) ;; projectile.el
  '(projectile-indexing-method 'alien) ;; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
@@ -784,18 +784,18 @@
  '(recentf-auto-cleanup 'never)
  '(recentf-max-menu-items 500) ;; init-recentf.el
  '(recentf-max-saved-items nil)
- '(recentf-save-file "~/.emacs.var/recentf")
+ '(recentf-save-file "~/.config/emacs.var/recentf")
  '(rm-text-properties 'nil) ;; rich-minority.el
  '(rm-whitelist " F") ;; rich-minority.el
  '(rspec-use-spring-when-possible nil)
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values '((encoding . utf-8)))
- '(save-place-file "~/.emacs.var/places")
+ '(save-place-file "~/.config/emacs.var/places")
  '(save-place-limit 500)
  '(savehist-additional-variables
    '(compile-command compile-history dired-regexp-history dired-shell-command-history file-name-history kill-ring minibuffer-history query-replace-history regexp-history regexp-search-ring search-ring shell-command-history))
- '(savehist-file "~/.emacs.var/history")
+ '(savehist-file "~/.config/emacs.var/history")
  '(scroll-bar-width 7 t)
  '(selectrum-count-style 'current/matches) ;; selectrum.el
  '(show-paren-mode t)
@@ -821,10 +821,10 @@
  '(standard-indent 2)
  '(tab-stop-list (number-sequence 2 200 2))
  '(tab-width 2)
- '(tldr-directory-path (expand-file-name "tldr/" "~/.emacs.var"))
+ '(tldr-directory-path (expand-file-name "tldr/" "~/.config/emacs.var"))
  '(tldr-use-word-at-point t)
  '(undo-tree-enable-undo-in-region nil) ; https://emacs.stackexchange.com/questions/69779/emacs-get-frozen-due-to-error-reading-undo-tree-history#69790
- '(undo-tree-history-directory-alist '(("." . "~/.emacs.var/undo-tree")))
+ '(undo-tree-history-directory-alist '(("." . "~/.config/emacs.var/undo-tree")))
  '(uniquify-min-dir-content 20)
  '(version-control t) ;; files.el: use versioned backups
  '(window-min-height 1)

@@ -47,7 +47,7 @@
                                    regexp-search-ring
                                    search-ring
                                    shell-command-history))
- '(savehist-file "~/.emacs.var/history"))
+ '(savehist-file "~/.config/emacs.var/history"))
 
 (add-hook 'after-init-hook 'noxrcp-savehist)
 

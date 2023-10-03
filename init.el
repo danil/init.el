@@ -1,3 +1,8 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
+(setq user-emacs-directory (file-truename "~/.emacs.d/"))
+
 ;;; <https://emacs.stackexchange.com/questions/3447/cannot-set-terminal-process-group-error-when-running-bash-script>,
 ;;; <https://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions>.
 (setq shell-file-name "bash")
@@ -172,7 +177,7 @@ Cancels itself, if this buffer was killed."
 (require 'package)
 ;;; Cask
 ;;; <https://github.com/cask/cask>.
-(setq package-user-dir "~/.emacs.d/cask") ;; symling to the some cask version, for example ~/.emacs.d/.cask/12.3/elpa
+(setq package-user-dir "~/.config/emacs/cask") ;; symling to the some cask version, for example ~/.config/emacs/.cask/12.3/elpa
 (package-initialize)
 
 (add-to-list 'load-path (concat user-emacs-directory "init/"))
@@ -283,7 +288,7 @@ Cancels itself, if this buffer was killed."
 
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
 
-(require 'noxrcp "~/.emacs.d/noxrcp.el")
+(require 'noxrcp "~/.config/emacs/noxrcp.el")
 
 (defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ;; TODO: remove me!
 
