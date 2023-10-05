@@ -35,7 +35,7 @@
 (custom-set-variables
  ;; '(multi-compile-history-length 50)
  '(multi-compile-completion-system 'default)
- '(multi-compile-history-file (expand-file-name "multi-compile.cache" "~/.config/emacs.var"))
+ '(multi-compile-history-file (expand-file-name "multi-compile.cache" init-emacs-var))
  '(multi-compile-alist
    '(("/Cask\\'" . (("cask outdated" . "cd %dir && cask --verbose outdated")
                     ("cask install" . "cd %dir && cask --verbose install")

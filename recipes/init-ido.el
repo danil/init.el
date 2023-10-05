@@ -36,7 +36,7 @@
 (custom-set-variables
  ;; '(ido-decorations '( "{ " " }" " | " " | ..." "[ " " ]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
  ;; '(ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*")) ;ignore these guys
- ;; '(ido-save-directory-list-file (concat user-emacs-directory "cache/ido.last"))
+ ;; '(ido-save-directory-list-file (file-name-concat user-emacs-directory "cache/ido.last"))
  ;; '(ido-use-virtual-buffers t) ;if Recentf is enabled
  ;; '(ido-enable-regexp t) ; ???
  '(ido-case-fold t) ;be case-insensitive
@@ -49,7 +49,7 @@
  '(ido-max-work-directory-list 300) ;should be enough
  '(ido-max-work-file-list 200) ;remember many
  '(ido-mode 'both)
- '(ido-save-directory-list-file "~/.config/emacs.var/ido.last")
+ '(ido-save-directory-list-file (file-name-concat init-emacs-var "ido.last"))
  '(ido-use-filename-at-point nil) ;don't use filename at point (annoying)
  '(ido-use-url-at-point nil) ;don't use url at point (annoying)
  '(ido-work-directory-list '("~/" "~/src" "~/Dropbox/deft")))

@@ -1,7 +1,4 @@
 /.cask
 /.cask?
 /elpa
-/eshell
-/my-auto-complete
-/tramp
-/url
+/var

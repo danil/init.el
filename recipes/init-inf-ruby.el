@@ -43,7 +43,7 @@
 (defun noxrcp-inf-ruby--setup ()
   (define-key inf-ruby-mode-map (kbd "TAB") nil)
   (init-comint-create-history-fn "noxrcp-inf-ruby--turn-on-history"
-                                    "~/.irb-history")
+                                 "~/.irb-history")
   (add-hook 'inf-ruby-mode-hook 'noxrcp-inf-ruby--turn-on-history))
 
 ;; a-la inf-ruby-console-rails

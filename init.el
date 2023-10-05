@@ -1,7 +1,29 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; v↓v↓v User Emacs directory below this comment.
+
 ;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
-(setq user-emacs-directory (file-truename "~/.emacs.d/"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (defun init-path (path &rest paths)
+;;   "Append PATHS to PATH and return the truename of resulting path."
+;;   (file-truename (apply 'file-name-concat path paths)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (defun init-var-path (&rest paths)
+;;   "Append PATHS to var directory and return the truename of resulting path."
+;;   (let ((var-path (concat user-emacs-directory ".var")))
+;;     (file-truename (apply 'file-name-concat var-path paths))))
+
+(setq user-emacs-directory (file-truename "~/.config/emacs")) ;; "~/.emacs.d"
+(setq init-emacs-var (file-name-concat user-emacs-directory "var")) ;; "~/.emacs.d/var" ;; "~/.config/emacs/var"
+
+;;; ^↑^↑^ User Emacs directory above this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; <https://emacs.stackexchange.com/questions/3447/cannot-set-terminal-process-group-error-when-running-bash-script>,
 ;;; <https://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions>.
@@ -171,16 +193,17 @@ Cancels itself, if this buffer was killed."
 ;; My custom variables
 ;; <https://emacs.stackexchange.com/questions/55018/init-el-and-trampling-of-custom-set-variables>,
 ;; <https://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el/106>.
-(setq custom-file (concat user-emacs-directory "custom.el"))
+(setq custom-file (file-name-concat user-emacs-directory "custom.el"))
 (load custom-file)
 
 (require 'package)
 ;;; Cask
 ;;; <https://github.com/cask/cask>.
-(setq package-user-dir "~/.config/emacs/cask") ;; symling to the some cask version, for example ~/.config/emacs/.cask/12.3/elpa
+(setq package-user-dir (file-name-concat user-emacs-directory "cask")) ;; symling to the some cask version, for example ~/.config/emacs/.cask/12.3/elpa
 (package-initialize)
 
-(add-to-list 'load-path (concat user-emacs-directory "init/"))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path (file-name-concat user-emacs-directory "init/"))
 
 (message "Initializing align") (require 'init-align "init-align")
 (message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
@@ -288,7 +311,11 @@ Cancels itself, if this buffer was killed."
 
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
 
-(require 'noxrcp "~/.config/emacs/noxrcp.el")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'noxrcp (file-name-concat user-emacs-directory "noxrcp.el"))
 
 (defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ;; TODO: remove me!
 
@@ -327,20 +354,20 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(hydra))
 
 ;; doom emacs.
-(let ((f (concat user-emacs-directory "doom-core-lib.el")))
+(let ((f (file-name-concat user-emacs-directory "doom-core-lib.el")))
   (if (file-readable-p f)
       (require 'core-lib f) ; provide `add-hook!' which fixes `ivy's `ivy-truncate-lines'
     (display-warning :doom-core-lib (format "Doom Emacs core lib not found: %s" f))))
-;; (autoload 'doom-modeline-set-modeline (concat user-emacs-directory "doom-modeline.el") nil t)
+;; (autoload 'doom-modeline-set-modeline (file-name-concat user-emacs-directory "doom-modeline.el") nil t)
 
 ;; doom todo ivy.a
-(autoload 'doom/ivy-todos (concat user-emacs-directory "doom-todo-ivy") nil t)
-;; (let ((f (concat user-emacs-directory "doom-todo-ivy.el")))
+(autoload 'doom/ivy-todos (file-name-concat user-emacs-directory "doom-todo-ivy") nil t)
+;; (let ((f (file-name-concat user-emacs-directory "doom-todo-ivy.el")))
 ;;   (if (file-readable-p f)
 ;;       (require 'doom-todo-ivy f)
 ;;     (display-warning :doom-todo-ivy.el (format "Doom Emacs TODO ivy not found: %s" f))))
 
-(autoload 'dotenv-eval-region (concat user-emacs-directory "dotenv") nil t)
+(autoload 'dotenv-eval-region (file-name-concat user-emacs-directory "dotenv") nil t)
 
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (nox-recipe '(ibuffer))
@@ -483,7 +510,7 @@ Cancels itself, if this buffer was killed."
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)
 (dolist (recipe nox-recipes)
-  (let ((recipe-file (format "%srecipes/init-%s.el" user-emacs-directory recipe)))
+  (let ((recipe-file (file-name-concat user-emacs-directory "recipes" (format "init-%s.el" recipe))))
     (if (file-readable-p recipe-file)
         (load-file recipe-file)
       (display-warning :noxrcp (format "Recipe file not found: %s" recipe-file)))))
@@ -499,7 +526,7 @@ Cancels itself, if this buffer was killed."
 
   (global-set-key (kbd "C-v") noxel-map))
 
-(let ((f (concat user-emacs-directory "noxrcp.el")))
+(let ((f (file-name-concat user-emacs-directory "noxrcp.el")))
   (if (file-readable-p f)
       (require 'noxrcp f)
     (display-warning :noxrcp (format "nox rcp not found: %s" f))))

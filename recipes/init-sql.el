@@ -82,7 +82,7 @@
 
          (history-file (cond ((equal product "postgres") "~/.psql_history")
                              ((equal product "sqlite") "~/.sqlite_history")
-                             ((equal product "mysql") "~/.config/emacs.var/mysql_history"))))
+                             ((equal product "mysql") (file-name-concat init-emacs-var "mysql_history")))))
 
     (let ((process (get-buffer-process (current-buffer))))
       (when process

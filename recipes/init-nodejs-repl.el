@@ -45,7 +45,7 @@
     (with-eval-after-load 'js2-mode (init-nodejs-repl-yyyyyyyyyy)))
 
   (init-comint-create-history-fn "noxrcp-nodejs-repl--turn-on-history"
-                                    "~/.node_repl_history")
+                                 "~/.node_repl_history")
   (add-hook 'nodejs-repl-mode-hook 'noxrcp-nodejs-repl--turn-on-history))
 
 (defun init-nodejs-repl-xxxxxxxxxx ()

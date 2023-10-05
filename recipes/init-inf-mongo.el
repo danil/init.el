@@ -39,7 +39,7 @@
   "No X recipe init."
 
   (init-comint-create-history-fn "noxrcp-inf-mongo--turn-on-history"
-                                    "~/.config/emacs.var/mongodb_history")
+                                 (file-name-concat init-emacs-var "mongodb_history"))
 
   (add-hook 'inf-mongo-mode-hook 'noxrcp-inf-mongo--turn-on-history))
 

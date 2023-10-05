@@ -46,7 +46,7 @@ See `init-find-temp-file-mode-bindings'.")
   (let* ((directory-path (file-name-directory file-path))
          (module-name (file-name-base (directory-file-name directory-path)))
          (go-mod-text (format "module %s\n" module-name))
-         (go-mod-path (concat directory-path "go.mod")))
+         (go-mod-path (file-name-concat directory-path "go.mod")))
     (write-region go-mod-text nil go-mod-path)))
 
 (defun init-find-temp-file-monkeypatch-setup ()

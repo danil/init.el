@@ -32,7 +32,7 @@
 ;;; Code:
 
 (custom-set-variables
- '(tldr-directory-path (expand-file-name "tldr/" "~/.config/emacs.var"))
+ '(tldr-directory-path (expand-file-name "tldr" init-emacs-var))
  '(tldr-use-word-at-point t))
 
 (defconst noxrcp-tldr-face-code-background "gray10")

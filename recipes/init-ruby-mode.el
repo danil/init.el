@@ -583,7 +583,7 @@ If the result is do-end block, it will always be multiline."
 ;;         (rval 'sql-product))
 ;;     (if (symbol-value rval)
 ;;         (let ((filename
-;;                (concat user-emacs-directory "irb/"
+;;                (file-name-concat user-emacs-directory "irb/"
 ;;                        (symbol-name (symbol-value rval))
 ;;                        "-history.sql")))
 ;;           (set (make-local-variable lval) filename))
