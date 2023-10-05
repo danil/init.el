@@ -202,8 +202,7 @@ Cancels itself, if this buffer was killed."
 (setq package-user-dir (file-name-concat user-emacs-directory "cask")) ;; symling to the some cask version, for example ~/.config/emacs/.cask/12.3/elpa
 (package-initialize)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path (file-name-concat user-emacs-directory "init/"))
+(add-to-list 'load-path (file-name-concat user-emacs-directory "init"))
 
 (message "Initializing align") (require 'init-align "init-align")
 (message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
@@ -509,11 +508,14 @@ Cancels itself, if this buffer was killed."
 
 ;;; Load my recipes.
 (autoload '-difference "dash" nil t)
+
 (dolist (recipe nox-recipes)
-  (let ((recipe-file (file-name-concat user-emacs-directory "recipes" (format "init-%s.el" recipe))))
-    (if (file-readable-p recipe-file)
-        (load-file recipe-file)
-      (display-warning :noxrcp (format "Recipe file not found: %s" recipe-file)))))
+  (let* ((file (format "init-%s.el" recipe))
+         (path (file-name-concat user-emacs-directory "recipes" file)))
+
+    (if (file-readable-p path)
+        (load-file path)
+      (display-warning :noxrcp (format "Recipe file not found: %s" path)))))
 
 (noxrcp-global-mode 1)
 
