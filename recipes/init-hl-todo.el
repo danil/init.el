@@ -71,6 +71,7 @@
                  ("CRT"   . "#ff5fd7")
                  ("DEPRECATED" . "#db7093")
                  ("DEV"   . "#7cb8bb")
+                 ("DOC"   . "#cc9393")
                  ("GEOPOLIT" . "#00688b")
                  ("GEOS"  . "#2e8b57")
                  ("HOWTO" . "#00688b")
