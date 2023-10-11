@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 ;;; <http://emacswiki.org/emacs/css-mode.el>.
 
 (defun init-css-mode-rainbow-identifiers-setup ()
