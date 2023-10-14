@@ -18,9 +18,9 @@
   (lambda () (init-fringe-mode +1)))
 
 (defun init-fringe-setup ()
-  (let ((prfx init-fringe-mode-map-exec-prefix)
+  (let ((prefix init-fringe-mode-map-exec-prefix)
         (map init-fringe-mode-map))
-    (define-key map (kbd (concat prfx " l")) 'init-fringe-toggle)))
+    (define-key map (kbd (concat prefix " l")) 'init-fringe-toggle)))
 
 ;; FIXME: Warning: `Package linum is deprecated`. TODO: Use `display-line-numbers-mode` or `nlinum`.
 

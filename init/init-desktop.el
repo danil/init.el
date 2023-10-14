@@ -23,9 +23,9 @@
 
 (defun init-desktop-setup ()
   (let ((map init-desktop-mode-map)
-        (prfx init-desktop-mode-map-prefix))
-    (define-key map (kbd (concat prfx " D s")) 'init-desktop-save)
-    (define-key map (kbd (concat prfx " D l")) 'init-desktop-load)))
+        (prefix init-desktop-mode-map-prefix))
+    (define-key map (kbd (concat prefix " D s")) 'init-desktop-save)
+    (define-key map (kbd (concat prefix " D l")) 'init-desktop-load)))
 
 (defun init-desktop-save ()
   "Save the desktop."

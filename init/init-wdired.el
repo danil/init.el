@@ -12,9 +12,9 @@
     (with-eval-after-load 'dired (init-wdired--init))))
 
 (defun init-wdired--init ()
-  (let ((prfx init-wdired-map-exec-prefix)
+  (let ((prefix init-wdired-map-exec-prefix)
         (map dired-mode-map))
     (define-key map (kbd "C-v") nil)
-    (define-key map (kbd (concat prfx " w")) 'wdired-change-to-wdired-mode)))
+    (define-key map (kbd (concat prefix " w")) 'wdired-change-to-wdired-mode)))
 
 (provide 'init-wdired)

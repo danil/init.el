@@ -22,20 +22,20 @@
 
 (defun init-corral-setup ()
   (let ((map init-corral-mode-map)
-        (prfx init-corral-mode-map-prefix))
-    (define-key map (kbd (concat prfx " d (")) 'corral-parentheses-backward)
-    (define-key map (kbd (concat prfx " d )")) 'corral-parentheses-forward)
+        (prefix init-corral-mode-map-prefix))
+    (define-key map (kbd (concat prefix " d (")) 'corral-parentheses-backward)
+    (define-key map (kbd (concat prefix " d )")) 'corral-parentheses-forward)
 
-    (define-key map (kbd (concat prfx " d [")) 'corral-brackets-backward)
-    (define-key map (kbd (concat prfx " d ]")) 'corral-brackets-forward)
+    (define-key map (kbd (concat prefix " d [")) 'corral-brackets-backward)
+    (define-key map (kbd (concat prefix " d ]")) 'corral-brackets-forward)
 
-    (define-key map (kbd (concat prfx " d {")) 'corral-braces-backward)
-    (define-key map (kbd (concat prfx " d }")) 'corral-braces-forward)
+    (define-key map (kbd (concat prefix " d {")) 'corral-braces-backward)
+    (define-key map (kbd (concat prefix " d }")) 'corral-braces-forward)
 
-    (define-key map (kbd (concat prfx " d \" b")) 'corral-double-quotes-backward)
-    (define-key map (kbd (concat prfx " d \" f")) 'corral-double-quotes-forward)
+    (define-key map (kbd (concat prefix " d \" b")) 'corral-double-quotes-backward)
+    (define-key map (kbd (concat prefix " d \" f")) 'corral-double-quotes-forward)
 
-    (define-key map (kbd (concat prfx " d ' b")) 'corral-single-quotes-backward)
-    (define-key map (kbd (concat prfx " d ' f")) 'corral-single-quotes-forward)))
+    (define-key map (kbd (concat prefix " d ' b")) 'corral-single-quotes-backward)
+    (define-key map (kbd (concat prefix " d ' f")) 'corral-single-quotes-forward)))
 
 (provide 'init-corral)

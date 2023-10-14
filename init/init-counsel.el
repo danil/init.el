@@ -41,11 +41,11 @@
 
 (defun init-counsel-setup ()
   (let ((map init-counsel-mode-map)
-        (prfx init-counsel-mode-map-prefix))
-    (define-key map (kbd (concat prfx " f a")) 'init-counsel-ag)
-    (define-key map (kbd (concat prfx " f r")) 'init-counsel-rg)
-    (define-key map (kbd (concat prfx " f p")) 'counsel-pt)
-    (define-key map (kbd (concat prfx " f g")) 'counsel-git-grep)))
+        (prefix init-counsel-mode-map-prefix))
+    (define-key map (kbd (concat prefix " f a")) 'init-counsel-ag)
+    (define-key map (kbd (concat prefix " f r")) 'init-counsel-rg)
+    (define-key map (kbd (concat prefix " f p")) 'counsel-pt)
+    (define-key map (kbd (concat prefix " f g")) 'counsel-git-grep)))
 
 (defun init-counsel-customize-help-setup()
   "My init customize."

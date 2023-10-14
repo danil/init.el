@@ -39,8 +39,8 @@ See `projectile-register-project-type'."
        (append projectile-project-root-files init-projectile-project-root-files))
 
   (let ((map init-projectile-mode-map)
-        (prfx init-projectile-mode-prefix))
-    (define-key map (kbd prfx) projectile-command-map))
+        (prefix init-projectile-mode-prefix))
+    (define-key map (kbd prefix) projectile-command-map))
 
   ;; Projectile "make" type conflicts with "go" type.
   ;; FIXME: Absence of the "make" type.

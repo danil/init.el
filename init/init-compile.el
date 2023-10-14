@@ -23,8 +23,8 @@
 
 (defun init-compile-setup ()
   (let ((map init-compile-mode-map)
-        (prfx init-compile-mode-map-prefix))
-    (define-key map (kbd (concat prfx " ! c")) 'compile)))
+        (prefix init-compile-mode-map-prefix))
+    (define-key map (kbd (concat prefix " ! c")) 'compile)))
 
 (defun init-compile--setup ()
   (require 'ansi-color)

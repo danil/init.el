@@ -23,8 +23,8 @@
   (global-set-key (kbd "C-x C-f") 'init-files-find-file)
   (global-set-key (kbd "C-x C-d") 'init-files-list) ; 'list-directory
 
-  (let ((prfx init-files-map-prefix))
-    (global-set-key (kbd (concat prfx " B r")) 'revert-buffer)))
+  (let ((prefix init-files-map-prefix))
+    (global-set-key (kbd (concat prefix " B r")) 'revert-buffer)))
 
 (defun init-files-find-file ()
   (interactive)

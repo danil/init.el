@@ -9293,12 +9293,12 @@
     (with-eval-after-load 'elisp-mode (noxrcp-emacs-lisp-mode--init))))
 
 (defun noxrcp-emacs-lisp-mode--init ()
-  (let ((prfx init-emacs-lisp-mode-map-prefix)
+  (let ((prefix init-emacs-lisp-mode-map-prefix)
         (map emacs-lisp-mode-map))
     (define-key map (kbd "C-c C-f") nil)
     (define-key map (kbd "C-c C-f n") 'beginning-of-defun)
-    (define-key map (kbd (concat prfx " ! b")) 'init-emacs-lisp-mode-eval-buffer)
-    (define-key map (kbd (concat prfx " ! r")) 'init-emacs-lisp-mode-eval-region)
+    (define-key map (kbd (concat prefix " ! b")) 'init-emacs-lisp-mode-eval-buffer)
+    (define-key map (kbd (concat prefix " ! r")) 'init-emacs-lisp-mode-eval-region)
     (define-key map [?\C-\M-i] nil)))
 
 (defun init-emacs-lisp-mode-eval-buffer ()

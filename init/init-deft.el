@@ -19,8 +19,8 @@
 
 (defun init-deft-setup ()
   (let ((map init-deft-mode-map)
-        (prfx init-deft-mode-map-exec-prefix))
-    (define-key map (kbd (concat prfx " d")) 'init-deft-setup-run)))
+        (prefix init-deft-mode-map-exec-prefix))
+    (define-key map (kbd (concat prefix " d")) 'init-deft-setup-run)))
 
 (defun init-deft-setup-run (&optional arg)
   "Open `deft' list or create `deft' item if `ARG'."

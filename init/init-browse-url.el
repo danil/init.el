@@ -19,7 +19,7 @@
 
 (defun init-browse-url-setup ()
   (let ((map init-browse-url-mode-map)
-        (prfx init-browse-url-mode-map-exec-prefix))
-    (define-key map (kbd (concat prfx " u")) 'browse-url-at-point)))
+        (prefix init-browse-url-mode-map-exec-prefix))
+    (define-key map (kbd (concat prefix " u")) 'browse-url-at-point)))
 
 (provide 'init-browse-url)

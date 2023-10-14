@@ -13,7 +13,7 @@
 
 (defun init-bytecomp--init ()
   (let ((map emacs-lisp-mode-map)
-        (prfx init-bytecomp-mode-map-prefix))
-    (define-key map (kbd (concat prfx " ! f")) 'byte-compile-file)))
+        (prefix init-bytecomp-mode-map-prefix))
+    (define-key map (kbd (concat prefix " ! f")) 'byte-compile-file)))
 
 (provide 'init-bytecomp)

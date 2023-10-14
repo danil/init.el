@@ -19,7 +19,7 @@
 
 (defun init-cycle-quotes-setup ()
   (let ((map init-cycle-quotes-mode-map)
-        (prfx init-cycle-quotes-mode-map-prefix))
-    (define-key map (kbd (concat prfx " q")) 'cycle-quotes)))
+        (prefix init-cycle-quotes-mode-map-prefix))
+    (define-key map (kbd (concat prefix " q")) 'cycle-quotes)))
 
 (provide 'init-cycle-quotes)
