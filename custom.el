@@ -783,6 +783,8 @@
  '(projectile-dynamic-mode-line nil) ;; projectile.el
  '(projectile-indexing-method 'alien) ;; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
  '(projectile-mode-line nil) ;; projectile.el
+ ;; '(quickrun-timeout-seconds 10)
+ '(quickrun-focus-p nil)
  '(recentf-auto-cleanup 'never)
  '(recentf-max-menu-items 500) ;; init-recentf.el
  '(recentf-max-saved-items nil)

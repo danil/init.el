@@ -276,6 +276,11 @@ Cancels itself, if this buffer was killed."
 (message "Initializing find-temp-file") (require 'init-find-temp-file-mode "init-find-temp-file-mode") (add-hook 'after-init-hook 'init-global-find-temp-file-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
+(message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (message "Initializing flycheck") (require 'init-flycheck-mode "init-flycheck-mode") (add-hook 'after-init-hook 'init-global-flycheck-mode-on)
 
 ;; Go programming language.
@@ -309,10 +314,6 @@ Cancels itself, if this buffer was killed."
 (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'noxrcp (file-name-concat user-emacs-directory "noxrcp.el"))
 
@@ -432,7 +433,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(pinentry)) ;gnupg password in minibuffer prompt instead of graphical dialog <https://unix.stackexchange.com/questions/55638/can-emacs-use-gpg-agent-in-a-terminal-at-all/278875#278875>
 (nox-recipe '(protobuf-mode))
 (nox-recipe '(python))
-(nox-recipe '(quickrun))
 (nox-recipe '(re-builder))
 (nox-recipe '(recentf))
 (nox-recipe '(recentf))
