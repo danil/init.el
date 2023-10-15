@@ -852,18 +852,18 @@
  '(diff-refine-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen" :background "grey45"))) ;; diff-mode.el
  '(diff-refine-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred" :background "grey45"))) ;; diff-mode.el
  '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ;; diff-mode.el
- '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "color-52")))) ;; ediff-init.el: DarkRed
- '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "color-22")))) ;; ediff-init.el: DarkGreen
+ '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#5f0000")))) ;; ediff-init.el: ,(vector 95  0  0) DarkRed
+ '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#005f00")))) ;; ediff-init.el: ,(vector 0  95  0) DarkGreen
  '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ;; ediff-init.el
- '(ediff-even-diff-A ((((class color) (min-colors 88) (background dark)) (:background "color-236")))) ;; ediff-init.el
- '(ediff-even-diff-A-line ((((class color) (min-colors 88) (background dark)) (:background "color-236")))) ;; ediff-init.el
- '(ediff-even-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "color-235")))) ;; ediff-init.el
- '(ediff-even-diff-B ((((class color) (min-colors 88) (background dark)) (:background "color-237")))) ;; ediff-init.el
- '(ediff-even-diff-C ((((class color) (min-colors 88) (background dark)) (:background "color-238")))) ;; ediff-init.el
- '(ediff-odd-diff-A ((((class color) (min-colors 88) (background dark)) (:background "color-240")))) ;; ediff-init.el
- '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "color-239")))) ;; ediff-init.el
- '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "color-241")))) ;; ediff-init.el
- '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "color-242")))) ;; ediff-init.el
+ '(ediff-even-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ;; ediff-init.el ,(vector 48 48 48)
+ '(ediff-even-diff-A-line ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ;; ediff-init.el ,(vector 48 48 48)
+ '(ediff-even-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#262626")))) ;; ediff-init.el ,(vector 38 38 38)
+ '(ediff-even-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#3a3a3a")))) ;; ediff-init.el ,(vector 58 58 58)
+ '(ediff-even-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#444444")))) ;; ediff-init.el ,(vector 68 68 68)
+ '(ediff-odd-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#585858")))) ;; ediff-init.el ,(vector 88 88 88)
+ '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#4e4e4e")))) ;; ediff-init.el ,(vector 78 78 78)
+ '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#626262")))) ;; ediff-init.el ,(vector 98 98 98)
+ '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#6c6c6c")))) ;; ediff-init.el ,(vector 108 108 108)
  '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ;; ethan-wspace.el
  '(highlight-symbol-face ((t (:inherit highlight)))) ;; highlight-symbol.el
  '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ;; init-faces.el
