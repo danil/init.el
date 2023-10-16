@@ -440,7 +440,8 @@
  '(init-rainbow-mode-hooks
    '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
  '(init-simple-bindings
-   '(("M-y" . init-simple-yank-pop)
+   '(("M-t" . transpose-chars)
+     ("M-y" . init-simple-yank-pop)
      ("C-v r c" . count-words-region)
      ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
