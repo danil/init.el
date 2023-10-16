@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-ferm-mode nil
   "init-ferm-mode"
   :group  'editing
@@ -8,7 +10,6 @@
 (defcustom init-ferm-mode-patterns '()
   "Regexp patterns associated with `ferm-mode'."
   :group 'init-ferm-mode)
-
 
 (defcustom init-ferm-mode-rainbow-identifiers-stop-words '()
   "Do not highlight in `ferm-mode'."

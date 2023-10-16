@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-handlebars-mode nil
   "init-handlebars-mode"
   :group  'editing
