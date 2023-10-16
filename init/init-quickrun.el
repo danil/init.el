@@ -17,7 +17,13 @@
     (global-set-key (kbd (concat prefix "! b")) 'init--quickrun)
     (global-set-key (kbd (concat prefix "! r")) 'init--quickrun-region)))
 
-(defun init-quickrun-setup ())
+(defun init-quickrun-setup ()
+  (add-to-list 'quickrun-file-alist '("\\.zig\\'" . "zig"))
+
+  (quickrun-add-command "zig"
+    '((:command . "zig")
+      (:exec    . ("%c run %s"))
+      (:description . "Compile Zig file and execute"))))
 
 (defun init--quickrun (&optional arg)
   (interactive "P")

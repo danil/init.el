@@ -341,6 +341,7 @@
                                            web-mode
                                            xml-mode
                                            yaml-mode
+                                           zig-mode
                                            )) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ;; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ;; init-ethan-wspace.el
@@ -391,6 +392,7 @@
              protobuf-mode-hook
              shell-mode-hook
              sql-interactive-mode-hook
+             zig-mode-hook
              ))) ;; init-projectile.el
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-identifiers-hooks
@@ -433,7 +435,8 @@
      (toml-mode-hook init-toml-mode-rainbow-identifiers-setup)
      (typescript-mode-hook init-typescript-mode-rainbow-identifiers-setup)
      (web-mode-hook init-web-mode-rainbow-identifiers-setup)
-     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup))) ;; init-rainbow-identifiers.el
+     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup)
+     (zig-mode-hook init-zig-mode-rainbow-identifiers-setup))) ;; init-rainbow-identifiers.el
  '(init-rainbow-mode-hooks
    '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
  '(init-simple-bindings
@@ -775,6 +778,7 @@
      yaml-mode
      yasnippet-snippets
      yasnippets
+     zig-mode
      ztree
      ))
  '(password-cache-expiry 3600)

@@ -279,6 +279,7 @@ Cancels itself, if this buffer was killed."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
+(message "Initializing zig-mode") (require 'init-zig-mode "init-zig-mode") (add-hook 'after-init-hook 'init-global-zig-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing flycheck") (require 'init-flycheck-mode "init-flycheck-mode") (add-hook 'after-init-hook 'init-global-flycheck-mode-on)
