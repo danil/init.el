@@ -278,6 +278,7 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
+(message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
 (message "Initializing zig-mode") (require 'init-zig-mode "init-zig-mode") (add-hook 'after-init-hook 'init-global-zig-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -461,7 +462,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(scroll-bar))
 (nox-recipe '(scss-mode))
 (nox-recipe '(sgml-mode))
-(nox-recipe '(sh-script))
 (nox-recipe '(string-inflection))
 (nox-recipe '(shell))
 (nox-recipe '(simp))

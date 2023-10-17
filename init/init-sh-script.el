@@ -1,45 +1,47 @@
-;;; init-sh-script.el --- This file is part of Danil <https://danil.kutkevich.org> home.
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.
-;; Author: Danil <https://danil.kutkevich.org>
-;; Maintainer: Danil <https://danil.kutkevich.org>
-;; URL: https://github.com/danil/init.el
+(defgroup init-sh-mode nil
+  "init-sh-mode"
+  :group  'editing
+  :tag    "init-sh-mode"
+  :prefix "init-sh-mode-"
+  :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-;;; Commentary:
+(defcustom init-sh-mode-lighter " init-sh-mode" "init-sh-mode" :group 'init-sh-mode)
 
-;; Please see README.md for documentation.
+(defvar init-sh-mode-map (make-sparse-keymap)
+  "Keymap for `init-sh-mode'. Populated when mode is enabled.
+See `init-sh-map-bindings'.")
 
-;;; License:
+(defcustom init-sh-map-bindings '()
+  "Keybindings enabled in `init-sh-mode'. This is not a keymap.
+Rather it is an alist that is converted into a keymap just before `init-sh-mode'
+is (re-)enabled. The keys are strings and the values are command symbols."
+  :group 'init-sh-mode
+  :type '(alist
+          :key-type sexp
+          :value-type function))
 
-;; This file is not part of GNU Emacs.
-;; However, it is distributed under the same license.
+(define-minor-mode init-sh-mode "init-sh-mode" :init-value nil :lighter init-sh-mode-lighter :keymap init-sh-mode-map
+  (init-sh-mode-setup))
 
-;; GNU Emacs is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
+(define-globalized-minor-mode init-global-sh-mode init-sh-mode
+  (lambda () (init-global-sh-mode-setup) )
+  (unless init-global-sh-mode (init-global-sh-mode-teardown)))
 
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
-
-;;; Code:
-
-(defcustom noxrcp-sh-mode-patterns '()
+(defcustom init-sh-mode-patterns '()
   "Regexp patterns associated with `sh-mode'."
-  :group 'noxinit)
+  :group 'init-sh-mode)
 
-(add-hook 'after-init-hook 'noxrcp-sh-script)
-(defun noxrcp-sh-script ()
-  "No X recipe init."
-  (dolist (pattern noxrcp-sh-mode-patterns)
+(defun init-sh-mode-setup ())
+
+(defun init-global-sh-mode-on () (init-global-sh-mode +1))
+
+(defun init-global-sh-mode-setup ()
+  (dolist (pattern init-sh-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
+
+(defun init-global-sh-mode-teardown ())
 
 (defun init-sh-mode-rainbow-identifiers-setup ()
   (when (equal major-mode 'sh-mode)
@@ -47,7 +49,7 @@
     (add-hook 'rainbow-identifiers-filter-functions
               'rainbow-identifiers-face-overridable)
     (add-hook 'rainbow-identifiers-filter-functions
-              'noxrcp-sh-mode--rainbow-identifiers-filter)
+              'init-sh-mode-rainbow-identifiers-filter)
 
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(
@@ -60,7 +62,7 @@
     (init-rainbow-identifiers--lazy-setup)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
-(defun noxrcp-sh-mode--rainbow-identifiers-filter (beg end)
+(defun init-sh-mode-rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
 
   (let ((ch-after (char-after end))
@@ -79,4 +81,4 @@
          (equal ch-before ?$)
          (string-match-p "\\`[[:space:]]*[/*+-]?=" str-after)))))
 
-;;; init-sh-script.el ends here
+(provide 'init-sh-mode)

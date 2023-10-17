@@ -439,6 +439,33 @@
      (zig-mode-hook init-zig-mode-rainbow-identifiers-setup))) ;; init-rainbow-identifiers.el
  '(init-rainbow-mode-hooks
    '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
+ '(init-sh-mode-patterns
+   '(
+     "/Procfile\\'"
+     "/\\.ackrc\\'"
+     "/\\.alias\\'"
+     "/\\.bash_aliases\\'"
+     "/\\.bc\\'"
+     "/\\.bpkgrc\\'"
+     "/\\.config/go/env\\'"
+     "/\\.env\\(\\.development\\|\\.production\\|.local\\|.test\\)?\\(\\.example\\)?\\'"
+     "/\\.lessfilter\\'"
+     "/\\.mkshrc\\'"
+     "/\\.xprofile\\'"
+     "/dwmrc\\'"
+     "/etc/profile\\'"
+     "\\.bashrc\\'"
+
+     ;; Ubuntu.
+     "/apt/.+\\.list\\(\\.save\\)?\\'"
+
+     ;; Gentoo.
+     "/etc/init.d/"
+     "/etc/local.d/.+\\.\\(start\\|stop\\)"
+
+     ;; Emacs shellcheck config.
+     "/\\.shellcheckrc\\'"
+     ))
  '(init-simple-bindings
    '(("M-t" . transpose-chars)
      ("M-y" . init-simple-yank-pop)
@@ -562,33 +589,6 @@
    '("_" "with_indifferent_access" "Integer" "it_behaves_like" "inspect" ":count" ":date" ":errors" ":float" ":json" ":jsonb" ":push" ":uuid" "Array" "assign_attributes" "ascii_only?" "all?" "as_json" "allow_any_instance_of" "ApplicationController" "ArgumentError" "ActiveSupport" "ActiveRecord" "ActiveModel" "after" "any?" "after_create" "after_commit" "after_create_commit" "after_save" "after_update" "alias_attribute" "all" "and" "as:" "Base64" "backtrace" "Base" "base" "boolean" "bigint" "before_action" "between?" "before_save" "before_update" "belongs_to" "blank?" "build" "changed?" "Class" "crated_at" "clear_active_connections!" "call" "class" "clone" "compact!" "compact" "concat" "count" "create!" "create" "Date" "created_at" "datetime" "decimal" "decode64" "default" "default:" "default_scope" "default_scoped" "delegate" "delegate_missing_to" "delete" "delete_at" "delete_if" "destroy!" "destroy" "downcase" "drop" "dup" "Errno" "ENOENT" "extname" "encode64" "Enumerable" "Encoding" "Exception" "except" "each_with_index" "end_with?" "exists?" "each" "each_with_object" "empty?" "enum" "equal_to" "Errors" "errors" "errors:" "even" "extract_options!" "File" "fail" "FalseClass" "Float" "find" "find_each" "find_in_batches" "flatten!" "flatten" "false" "find_by" "find_or_create_by!" "find_or_create_by" "first" "float" "freeze" "full_messages" "gsub" "greater_than" "greater_than_or_equal_to" "hex" "Hash" "has_many" "has_one" "instance_variable_get" "instance_variable_set" "if:" "include?" "included" "index" "initial" "initialize" "integer" "is_a?" "json" "jsonb" "join" "joins" "keys" "LockWaitTimeout" "lock" "ljust" "last" "length" "less_than" "less_than_or_equal_to" "limit" "limit:" "method_missing" "methods" "module_parent" "messages" "map" "match" "match?" "merge" "merge!" "mock_model" "module_function" "none?" "NilClass" "Numeric" "none" "negative?" "new" "nil" "nil?" "not" "null" "null:" "numericality" "OrderedHash" "OpenStruct" "order" "odd" "other_than" "parse" "params:" "performed?" "positive?" "polymorphic" "polymorphic:" "pop" "pluck" "presence" "presence:" "present?" "push" "push:" "persisted?" "JSON" "read" "raise" "reject" "reload" "rescue_from" "rjust" "render" "respond_to?" "sample" "strip" "strict_encode64" "strict_decode64" "stringify_keys" "superclass" "start_with?" "symbolize_keys" "Symbol" "Struct" "send" "set_backtrace" "skip_before_action" "SecureRandom" "string" "String" "select!" "select" "save!" "save" "scope" "scoped" "second" "self" "size" "slice" "split" "status" "shift" "status:" "stub" "sum" "Thread" "TimeWithZone" "to_date" "to_time" "TrueClass" "Time" "transform_values" "text" "tap" "table_name" "third" "to_sym" "to_sym!" "to_a" "to_proc" "to_h" "to_hash" "to_i" "to_json" "to_s" "transform_keys" "true" "try" "UTF_8" "update_at" "uuid" "uniq!" "uniq" "unique" "unique:" "uniqueness" "upcase" "update!" "update" "update_attribute" "update_attribute!" "update_all" "update_column" "update_columns" "updated_at" "values" "valid" "valid?" "validate" "validates" "where" "with_options" "zero?"))
  '(noxrcp-ruby-mode-patterns
    '("/Capfile\\'" "/Gemfile\\'" "/Guardfile\\.private.example\\'" "/Guardfile\\.private\\'" "/Guardfile\\'" "/[rR]akefile\\'" "/[vV]agrantfile.proxy\\'" "/[vV]agrantfile\\'" "\\.atex\\'" "\\.gemspec\\'" "\\.irbrc\\'" "\\.mdlrc\\'" "\\.prawn\\'" "\\.rake\\'" "\\.rb\\.erb\\'" "\\.thor\\'" "\\.yml\\.erb\\'"))
- '(noxrcp-sh-mode-patterns
-   '(
-     "/Procfile\\'"
-     "/\\.ackrc\\'"
-     "/\\.alias\\'"
-     "/\\.bash_aliases\\'"
-     "/\\.bc\\'"
-     "/\\.bpkgrc\\'"
-     "/\\.config/go/env\\'"
-     "/\\.env\\(\\.development\\|\\.production\\|.local\\|.test\\)?\\(\\.example\\)?\\'"
-     "/\\.lessfilter\\'"
-     "/\\.mkshrc\\'"
-     "/\\.xprofile\\'"
-     "/dwmrc\\'"
-     "/etc/profile\\'"
-     "\\.bashrc\\'"
-
-     ;; Ubuntu.
-     "/apt/.+\\.list\\(\\.save\\)?\\'"
-
-     ;; Gentoo.
-     "/etc/init.d/"
-     "/etc/local.d/.+\\.\\(start\\|stop\\)"
-
-     ;; Emacs shellcheck config.
-     "/\\.shellcheckrc\\'"
-     ))
  '(noxrcp-sql-mode-patterns '(
                               "/Dropbox/deft/sql/.*\\.sql\\.md\\'"
                               "/\\.?psqlrc\\'"
