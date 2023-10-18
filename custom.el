@@ -561,17 +561,6 @@
  '(noxrcp-js2-mode-patterns '("\\.htc\\'" "\\.js\\'"))
  '(noxrcp-json-mode-patterns
    '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'"))
- '(noxrcp-linum-max-lines 5000)
- '(noxrcp-linum-modes (-difference init-programming-modes '(org-mode)))
- '(noxrcp-linum-modes-hooks
-   (mapcar
-    (lambda
-      (m)
-      (intern
-       (concat
-        (symbol-name m)
-        "-hook")))
-    noxrcp-linum-modes))
  '(noxrcp-lisp-mode-patterns
    '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'")) ;; init-lisp-mode.el
  '(noxrcp-logview-mode-patterns
@@ -879,8 +868,7 @@
  '(ivy-minibuffer-match-face-2 ((t :background "red"))) ;; ivy.el
  '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ;; ivy.el
  '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ;; ivy.el
- '(line-number ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25"))) ;; linum.el: ((background dark) :foreground "DimGray")
- '(linum ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25"))) ;; linum.el: ((background dark) :foreground "DimGray")
+ ;; '(line-number ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25")))
  '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ;; mode-line.el: :background MidnightBlue black color-52 OrangeRed4 black gray10 purple4 NavyBlue firebrick4 brown4 red4 computers/emacs-colors>
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30"))) ;; mode-line.el:  ;; :background "MidnightBlue" <http://raebear.net/computers/emacs-colors>
  '(rainbow-delimiters-depth-1-face ((((class color) (min-colors 88) (background dark)) :foreground "dark orange"))) ;; rainbow-delimiters.el
