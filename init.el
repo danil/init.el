@@ -465,7 +465,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(string-inflection))
 (nox-recipe '(shell))
 (nox-recipe '(simp))
-(nox-recipe '(skeletor))
 (nox-recipe '(slim-mode))
 (nox-recipe '(sort))
 (nox-recipe '(su))

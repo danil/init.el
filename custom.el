@@ -742,7 +742,6 @@
      selectrum-prescient
      shut-up
      simp
-     skeletor
      slim-mode
      smart-mode-line
      speed-type
@@ -797,8 +796,6 @@
  '(scroll-bar-width 7 t)
  '(selectrum-count-style 'current/matches) ;; selectrum.el
  '(show-paren-mode t)
- '(skeletor-completing-read-function 'selectrum-completing-read)
- '(skeletor-init-with-git nil)
  '(sml/col-number-format "%c") ;; smart-mode-line.el
  '(sml/directory-truncation-string "<") ;; smart-mode-line.el
  '(sml/line-number-format "%l") ;; smart-mode-line.el
