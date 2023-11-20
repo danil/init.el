@@ -266,6 +266,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing elisp-slime-nav") (require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
 (message "Initializing elixir-mode") (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
 (message "Initializing emacs-lisp-mode") (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
+(message "Initializing emacs-lisp-mode-rainbow-identifiers") (require 'init-emacs-lisp-mode-rainbow-identifiers "init-emacs-lisp-mode-rainbow-identifiers")
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 (message "Initializing ethan-wspace") (require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
 (message "Initializing expand-region") (require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
