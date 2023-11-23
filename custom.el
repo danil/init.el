@@ -108,6 +108,10 @@
  '(dumb-jump-max-find-time 10) ; dumb-jump.el
  '(dumb-jump-selector 'ivy) ; dumb-jump.el
  '(ethan-wspace-face-customized t) ; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
+ ;; '(evil-overriding-maps nil) ; evil-vars.el
+ '(evil-undo-system 'undo-tree) ; evil-vars.el
+ '(evil-want-integration t) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-vars.el
+ '(evil-want-keybinding nil) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-collection.el
  '(fd-dired-display-in-current-window t)
  '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ; find-temp-file.el
  '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))) ; find-temp-file.el
@@ -271,6 +275,7 @@
    '(
      ;; ("(" . dired-details-hide)
      ;; (")" . dired-details-show)
+     ;; ("C-x C-x C-x b" . init-dired-details-toggle-view) ; NOTE: Used together with the Emacs Evil because the `b` hot key already taken by the `evil-backward-word-begin` function.~~~~<danil@kutkevich.org> FIXME: Maybe use the `C-z` followed by `b` hot key sequence together with Emacs Evil instead of `C-x C-x C-x b` hot key?
      ("b" . init-dired-details-toggle-view)
      ))
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
@@ -349,6 +354,7 @@
  '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ; init-ethan-wspace.el
  '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ; init-ethan-wspace.el
  '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ; init-ethan-wspace.el
+ '(init-evil-bindings '(("C-x C-x s" . evil-mode))) ; init-evil.el
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings

@@ -108,6 +108,16 @@
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
 
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
+
+(depends-on "evil")
+(depends-on "evil-collection") ;; <https://github.com/emacs-evil/evil-collection#installation>.
+(depends-on "goto-chg")
+
+;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 (depends-on "expand-region")
 (depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ; "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
 (depends-on "find-dupes-dired") ; find dupes/duplicates and handle them in dired-mode https://github.com/ShuguangSun/find-dupes-dired (find using external command fdupes https://github.com/adrianlopezroche/fdupes)

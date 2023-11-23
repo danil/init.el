@@ -275,6 +275,16 @@ Cancels itself, if this buffer was killed."
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 (message "Initializing ethan-wspace") (require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
 
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
+
+(message "Initializing evil") (require 'init-evil "init-evil") (add-hook 'after-init-hook 'init-evil)
+(message "Initializing evil-collection") (require 'init-evil-collection "init-evil-collection") (add-hook 'after-init-hook 'init-evil-collection)
+(message "Initializing evil-repeat") (require 'init-evil-repeat "init-evil-repeat") (add-hook 'after-init-hook 'init-evil-repeat) ; (autoload 'init--evil-repeat "init-evil-repeat" nil t)
+
+;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 (message "Initializing expand-region") (require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
 (message "Initializing faces") (require 'init-faces "init-faces") ; TODO: Autoload.~~~~<danil@kutkevich.org>
 (message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
