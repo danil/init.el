@@ -1,13 +1,13 @@
 (defun init-clojure-mode ()
   (add-to-list 'auto-mode-alist '("/\\.lein-env\\'" . clojure-mode)))
 
-(defun init-clojure-mode-rainbow-identifiers-setup ()
+(defun init-clojure-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'clojure-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'init-clojure-mode-rainbow-identifiers-filter)
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 (defun init-clojure-mode-rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."

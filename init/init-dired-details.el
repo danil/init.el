@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-dired-details nil
   "init-dired-details"
   :group  'editing
@@ -5,32 +7,40 @@
   :prefix "init-dired-details-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-dired-details-key "b" "init-dired-details" :group 'init-dired-details)
+(defcustom init-dired-details-bindings '()
+  "Keybindings enabled in `init-dired-mode'. This is not a keymap.
+Rather it is an alist that is converted into a keymap just before `init-dired-mode'
+is (re-)enabled. The keys are strings and the values are command symbols."
+  :group 'init-dired
+  :type '(alist
+          :key-type sexp
+          :value-type function))
 
 (defun init-dired-details ()
-  (if (boundp 'dired-details-internal-overlay-list) (init-dired-details-setup-details)
-    (with-eval-after-load 'dired-details (init-dired-details-setup-details)))
+  (if (boundp 'dired-details-internal-overlay-list) (init-dired-details-init-details)
+    (with-eval-after-load 'dired-details (init-dired-details-init-details)))
 
-  (if (boundp 'dired-mode-map) (init-dired-details-setup-dired)
-    (with-eval-after-load 'dired (init-dired-details-setup-dired))))
+  (if (boundp 'dired-mode-map) (init-dired-details-init-dired)
+    (with-eval-after-load 'dired (init-dired-details-init-dired))))
 
-(defun init-dired-details-setup-details ()
-  (define-key dired-mode-map (kbd init-dired-details-key) 'init-dired-details-toggle-view)
-  ;; (define-key dired-mode-map "(" 'dired-details-hide)
-  ;; (define-key dired-mode-map ")" 'dired-details-show)
+(defun init-dired-details-init-details ()
+  (dolist (b init-dired-details-bindings)
+    (let ((key (car b)) (cmd (cdr b)) (map dired-mode-map))
+      (define-key map (kbd key) cmd)))
+
   (defadvice dired-revert (before remember-the-details activate)
     (dired-details-delete-overlays)))
 
-(defun init-dired-details-setup-dired ()
+(defun init-dired-details-init-dired ()
   (init-lazy (/ init-lazy-seconds 2) nil 'require 'dired-details)
-  (add-hook 'dired-after-readin-hook 'init-dired-details--setup-dired))
+  (add-hook 'dired-after-readin-hook 'init-dired-details--init-dired))
 
-(defun init-dired-details--setup-dired ()
+(defun init-dired-details--init-dired ()
   "Run `dired-details'."
-  (remove-hook 'dired-after-readin-hook 'init-dired-details--setup-dired)
-  (init-lazy init-lazy-seconds nil 'init-dired-details---setup-dired))
+  (remove-hook 'dired-after-readin-hook 'init-dired-details--init-dired)
+  (init-lazy init-lazy-seconds nil 'init-dired-details---init-dired))
 
-(defun init-dired-details---setup-dired ()
+(defun init-dired-details---init-dired ()
   (dired-details-activate)
   (add-hook 'dired-after-readin-hook 'dired-details-activate))
 

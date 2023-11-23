@@ -55,7 +55,7 @@
   (dolist (pattern noxrcp-js2-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'js2-mode))))
 
-(defun init-js2-mode-rainbow-identifiers-setup ()
+(defun init-js2-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'js2-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -72,7 +72,7 @@
             js2-object-property
             ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-js2-mode--rainbow-identifiers-filter (beg end)

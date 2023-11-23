@@ -4,20 +4,27 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ag-context-lines 5)
- '(amx-history-length 500) ;; amx.el
- '(amx-save-file (file-name-concat init-emacs-var "amx-items")) ;; amx.el
- '(anzu-search-threshold 500) ;; anzu.el
- '(back-button-index-timeout nil) ;; back-button.el
- '(back-button-no-wrap t) ;; back-button.el
- '(backup-by-copying t) ;; files.el: don't clobber symlinks, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
- '(backup-directory-alist `(("." . ,(file-name-concat init-emacs-var "backups")))) ;; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
- '(bookmark-default-file (file-name-concat init-emacs-var "bookmarks")) ;; bookmark.el
- '(c-basic-offset 2) ;; cc-vars.el
- '(calendar-week-start-day 1) ;; calendar.el
+ '(amx-history-length 500) ; amx.el
+ '(amx-save-file (file-name-concat init-emacs-var "amx-items")) ; amx.el
+ '(anzu-search-threshold 500) ; anzu.el
+ '(back-button-global-backward-keystrokes nil) ; back-button.el
+ '(back-button-global-forward-keystrokes nil) ; back-button.el
+ '(back-button-global-keystrokes nil) ; back-button.el
+ '(back-button-index-timeout nil) ; back-button.el
+ '(back-button-local-backward-keystrokes nil) ; back-button.el
+ '(back-button-local-forward-keystrokes nil) ; back-button.el
+ '(back-button-local-keystrokes nil) ; back-button.el
+ '(back-button-no-wrap t) ; back-button.el
+ '(back-button-smartrep-prefix nil) ; back-button.el
+ '(backup-by-copying t) '(kept-new-versions 10) '(kept-old-versions 10) ; files.el: `backup-by-copying` to getting rid of annoying backup/temporary/autosave files <http://emacswiki.org/emacs/BackupDirectory#toc2>. files.el
+ '(backup-directory-alist `(("." . ,(file-name-concat init-emacs-var "backup")))) ; files.el: don't litter my fs tree, get rid of annoying backups, temporary files and autosaves (built-in backup settings <http://www.emacswiki.org/emacs/BackupDirectory#toc2>)
+ '(bookmark-default-file (file-name-concat init-emacs-var "bookmarks")) ; bookmark.el
+ '(c-basic-offset 2) ; cc-vars.el
+ '(calendar-week-start-day 1) ; calendar.el
  '(cider-mode-line " cider")
- '(coffee-tab-width 2) ;; coffee-mode.el
- '(comint-input-ring-size 500) ;; comint.el
- '(company-backends
+ '(coffee-tab-width 2) ; coffee-mode.el
+ '(comint-input-ring-size 500) ; comint.el
+ '(company-backends ; company.el
    `(,@(unless
            (version< "24.3.51" emacs-version)
          (list 'company-elisp))
@@ -29,38 +36,38 @@
          (list 'company-css))
      company-semantic company-clang company-cmake company-files
      (company-dabbrev-code company-gtags company-etags company-keywords)
-     company-dabbrev company-abbrev company-oddmuse company-capf)) ;; company.el
- ;; '(company-abort-manual-when-too-short nil) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-clang-executable (executable-find "clang")) ;; company-clang.el
- ;; '(company-global-modes t) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-lighter-base "company") ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-show-numbers nil) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-idle-delay nil) ;; company.el: .5 <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-limit 10) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-margin 1) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-maximum-width most-positive-fixnum) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-minimum 6) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-minimum-width 0) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- ;; '(company-tooltip-offset-display 'scrollbar) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- '(company-dabbrev-code-everywhere t) ;; company-dabbrev-code.el
- '(company-dabbrev-minimum-length 1) ;; company-dabbrev.el
- '(company-frontends nil) ;; company.el: nil '() <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- '(company-idle-delay nil) ;; company.el: 0.7 tradeoff between typing speed and performance <https://emacs.stackexchange.com/questions/32467/how-can-i-configure-company-mode-to-only-display-candidates-after-an-explicit-ke#32523>, <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- '(company-minimum-prefix-length 0) ;; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
- '(compilation-scroll-output t) ;; compile.el
- '(counsel-ag-base-command
-   (format "%s %s %s" init-counsel-ag-base-command-name init-counsel-ag-base-command-args "%s")) ;; counsel.el
- '(counsel-yank-pop-truncate-radius 4) ;; counsel.el
- ;; '(css-indent-offset 2) ;; css-mode.el
- '(default-tab-width 2) ;; indent.el
- '(deft-auto-save-interval 30.0) ;; deft.el: Idle time in seconds before automatically saving buffers opened by Deft. Set to zero to disable.
- '(deft-directory "~/Notes") ;; deft.el: <http://jblevins.org/projects/deft>
- '(deft-extensions '("md" "markdown" "org" "mw" "txt" "restclient")) ;; deft.el: Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
+     company-dabbrev company-abbrev company-oddmuse company-capf))
+ ;; '(company-abort-manual-when-too-short nil) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-clang-executable (executable-find "clang")) ; company-clang.el
+ ;; '(company-global-modes t) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-lighter-base "company") ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-show-numbers nil) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-idle-delay nil) ; company.el: .5 <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-limit 10) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-margin 1) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-maximum-width most-positive-fixnum) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-minimum 6) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-minimum-width 0) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ ;; '(company-tooltip-offset-display 'scrollbar) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ '(company-dabbrev-code-everywhere t) ; company-dabbrev-code.el
+ '(company-dabbrev-minimum-length 1) ; company-dabbrev.el
+ '(company-frontends nil) ; company.el: nil '() <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ '(company-idle-delay nil) ; company.el: 0.7 tradeoff between typing speed and performance <https://emacs.stackexchange.com/questions/32467/how-can-i-configure-company-mode-to-only-display-candidates-after-an-explicit-ke#32523>, <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ '(company-minimum-prefix-length 0) ; company.el: <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>
+ '(compilation-scroll-output t) ; compile.el
+ '(counsel-ag-base-command ; counsel.el
+   (format "%s %s %s" init-counsel-ag-base-command-name init-counsel-ag-base-command-args "%s"))
+ '(counsel-yank-pop-truncate-radius 4) ; counsel.el
+ ;; '(css-indent-offset 2) ; css-mode.el
+ '(default-tab-width 2) ; indent.el
+ '(deft-auto-save-interval 30.0) ; deft.el: Idle time in seconds before automatically saving buffers opened by Deft. Set to zero to disable.
+ '(deft-directory "~/Notes") ; deft.el: <http://jblevins.org/projects/deft>
+ '(deft-extensions '("md" "markdown" "org" "mw" "txt" "restclient")) ; deft.el: Any files with these extensions will be listed. The first element of the list is used as the default file extension of newly created files, if `deft-default-extension` is not set.
  '(deft-new-file-format "%Y-%m-%dT%H-%M%Z")
- '(deft-recursive t) ;; deft.el: Recursively search for files in subdirectories when non-nil.
- '(deft-recursive-ignore-dir-regexp
-    (concat "\\(?:" "\\." "\\|\\.\\." "\\|.*-src" "\\|vendor" "\\)$")) ;; deft.el
- '(deft-strip-title-regexp
+ '(deft-recursive t) ; deft.el: Recursively search for files in subdirectories when non-nil.
+ '(deft-recursive-ignore-dir-regexp ; deft.el
+    (concat "\\(?:" "\\." "\\|\\.\\." "\\|.*-src" "\\|vendor" "\\)$"))
+ '(deft-strip-title-regexp ; deft.el: Regular expression to remove from file titles. Presently, it removes leading LaTeX comment delimiters, leading and trailing hash marks from Markdown ATX headings, leading astersisks from Org Mode headings, and Emacs mode lines of the form -*-mode-*-.
     (concat "\\(?:"
             "^%+" ; line beg with %
             "\\|^Title:[\t ]*" ; MultiMarkdown metadata
@@ -71,45 +78,45 @@
             "\\|[={']+" ; MediaWiki markup == Header == or {{Infobox or '''Bold'''
             "\\|#+" ; line with just # chars
             "\\|#!/bin/.*" ; shebang
-            "$\\)")) ;; deft.el: Regular expression to remove from file titles. Presently, it removes leading LaTeX comment delimiters, leading and trailing hash marks from Markdown ATX headings, leading astersisks from Org Mode headings, and Emacs mode lines of the form -*-mode-*-.
+            "$\\)"))
  '(deft-use-filename-as-title t)
- '(delete-old-versions t) ;; files.el
- '(desktop-base-file-name (convert-standard-filename "desktop")) ;; desktop.el
- '(desktop-base-lock-name (convert-standard-filename "desktop.lock")) ;; desktop.el
- '(desktop-dirname init-emacs-var t) ;; desktop.el
- '(desktop-globals-to-save '()) ;; desktop.el
- '(desktop-locals-to-save '(desktop-locals-to-save)) ;; desktop.el: Itself! Think it over.
- '(desktop-path (list user-emacs-directory init-emacs-var)) ;; desktop.el
- '(desktop-restore-frames nil) ;; desktop.el
- '(diff-hl-draw-borders nil) ;; diff-hl.el
- '(diff-hl-margin-symbols-alist
+ '(delete-old-versions t) ; files.el
+ '(desktop-base-file-name (convert-standard-filename "desktop")) ; desktop.el
+ '(desktop-base-lock-name (convert-standard-filename "desktop.lock")) ; desktop.el
+ '(desktop-dirname init-emacs-var t) ; desktop.el
+ '(desktop-globals-to-save '()) ; desktop.el
+ '(desktop-locals-to-save '(desktop-locals-to-save)) ; desktop.el: Itself! Think it over.
+ '(desktop-path (list user-emacs-directory init-emacs-var)) ; desktop.el
+ '(desktop-restore-frames nil) ; desktop.el
+ '(diff-hl-draw-borders nil) ; diff-hl.el
+ '(diff-hl-margin-symbols-alist ; diff-hl.el
    '(
      (change . " ") ;"="
      (delete . " ") ;"-"
      (ignored . " ") ;"!"
      (insert . " ") ;"+"
      (unknown . " ") ;"?"
-     )) ;; diff-hl.el
- '(diff-hl-side 'right) ;; diff-hl.el
- '(directory-free-space-args "--human-readable") ;; files.el
- '(dired-details-hidden-string "") ;; dired-details.el
- '(dired-details-hide-extra-lines nil) ;; dired-details.el
- '(dired-details-hide-link-targets nil) ;; dired-details.el
- '(dired-listing-switches "-l --all --human-readable") ;; dired.el
- ;; '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst")) ;; diredfl.el
- '(diredfl-ignore-compressed-flag nil) ;; diredfl.el
- '(dumb-jump-max-find-time 10) ;; dumb-jump.el
- '(dumb-jump-selector 'ivy) ;; dumb-jump.el
- '(ethan-wspace-face-customized t) ;; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
+     ))
+ '(diff-hl-side 'right) ; diff-hl.el
+ '(directory-free-space-args "--human-readable") ; files.el
+ '(dired-details-hidden-string "") ; dired-details.el
+ '(dired-details-hide-extra-lines nil) ; dired-details.el
+ '(dired-details-hide-link-targets nil) ; dired-details.el
+ '(dired-listing-switches "-l --all --human-readable") ; dired.el
+ ;; '(diredfl-compressed-extensions '(".tar" ".taz" ".tgz" ".arj" ".lzh" ".lzma" ".xz" ".zip" ".z" ".Z" ".gz" ".bz2" ".zst")) ; diredfl.el
+ '(diredfl-ignore-compressed-flag nil) ; diredfl.el
+ '(dumb-jump-max-find-time 10) ; dumb-jump.el
+ '(dumb-jump-selector 'ivy) ; dumb-jump.el
+ '(ethan-wspace-face-customized t) ; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
  '(fd-dired-display-in-current-window t)
- '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ;; find-temp-file.el
- '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))) ;; find-temp-file.el
- '(find-temp-template-default "danil/%D%N.%E") ;; find-temp-file.el
- '(flycheck-indication-mode nil) ;; flycheck.el
- ;; '(flycheck-check-syntax-automatically '(idle-change)) ;; flycheck.el
- '(flycheck-disabled-checkers '(
-                                emacs-lisp ;; annoying errors
-                                emacs-lisp-checkdoc ;; annoying errors
+ '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ; find-temp-file.el
+ '(find-temp-template-alist '(("go" . "danil/go%D%N/%N.%E"))) ; find-temp-file.el
+ '(find-temp-template-default "danil/%D%N.%E") ; find-temp-file.el
+ '(flycheck-indication-mode nil) ; flycheck.el
+ ;; '(flycheck-check-syntax-automatically '(idle-change)) ; flycheck.el
+ '(flycheck-disabled-checkers '( ; flycheck.el
+                                emacs-lisp ; annoying errors
+                                emacs-lisp-checkdoc ; annoying errors
 
                                 go-gofmt
                                 go-golint
@@ -133,16 +140,16 @@
                                 ;; yaml-jsyaml ; annoying errors
                                 yaml-ruby ; i use a yaml-javascript linter so as not to set a ruby linter for each ruby version
                                 yaml-yamllint ; i use a yaml-javascript linter
-                                )) ;; flycheck.el
- '(flycheck-idle-change-delay 1.5) ;; flycheck.el
+                                ))
+ '(flycheck-idle-change-delay 1.5) ; flycheck.el
  '(flycheck-indication-mode nil)
- '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json") ;; flycheck.el
- '(flycheck-mode-line-prefix "F") ;; flycheck.el
- '(gofmt-command "goimports") ;; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
- '(highlight-symbol-highlight-single-occurrence nil) ;; highlight-symbol.el
- '(highlight-symbol-idle-delay 0.9) ;; pause before highlight-symbol-mode of highlight-symbol.el: 0.5 1.5
- '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ;; highlight-symbol.el
- '(historian-save-file (file-name-concat init-emacs-var ".historian")) ;; historian.el
+ '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json") ; flycheck.el
+ '(flycheck-mode-line-prefix "F") ; flycheck.el
+ '(gofmt-command "goimports") ; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
+ '(highlight-symbol-highlight-single-occurrence nil) ; highlight-symbol.el
+ '(highlight-symbol-idle-delay 0.9) ; pause before highlight-symbol-mode of highlight-symbol.el: 0.5 1.5
+ '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ; highlight-symbol.el
+ '(historian-save-file (file-name-concat init-emacs-var ".historian")) ; historian.el
  '(ibuffer-formats
    '((mark modified read-only " "
            (name 64 64 :left :elide)
@@ -156,22 +163,17 @@
            " " filename)))
  '(indent-tabs-mode nil)
  '(inf-mongo-command "/usr/bin/mongo 127.0.0.1:27017")
- ;; '(ivy-fixed-height-minibuffer nil) ;; ivy.el
- ;; '(ivy-fixed-height-minibuffer t) ;; ivy.el
- ;; '(ivy-height 11) ;; ivy.el
- '(init-anzu-mode-map-exec-prefix init-exec-key-prefix) ;; init-anzu.el
- '(init-back-button-mode-bindings
-   '(("C-v j j" . back-button-local-backward)
-     ("C-v j k" . back-button-local-forward)
-     ("C-v j J" . back-button-global-backward)
-     ("C-v j K" . back-button-global-forward))) ;; init-back-button.el
- '(init-browse-url-mode-map-exec-prefix init-exec-key-prefix)
- '(init-bytecomp-mode-map-prefix init-exec-key-prefix)
- '(init-c-mode-patterns '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ;; init-cc-mode.el
- '(init-cc-mode-map-prefix init-key-prefix)
- '(init-company-completing-read-function 'init-selectrum-company) ;; init-company.el
- '(init-compile-mode-map-prefix init-key-prefix) ;; init-compile.el
- '(init-conf-mode-patterns
+ ;; '(ivy-fixed-height-minibuffer nil) ; ivy.el
+ ;; '(ivy-fixed-height-minibuffer t) ; ivy.el
+ ;; '(ivy-height 11) ; ivy.el
+ '(init-back-button-mode-bindings ; init-back-button.el
+   '(("C-x C-x j j" . back-button-local-backward)
+     ("C-x C-x j k" . back-button-local-forward)
+     ("C-x C-x j J" . back-button-global-backward)
+     ("C-x C-x j K" . back-button-global-forward)))
+ '(init-c-mode-patterns '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ; init-cc-mode.el
+ '(init-company-completing-read-function 'init-selectrum-company) ; init-company.el
+ '(init-conf-mode-patterns ; init-conf-mode.el
    '(("/Pipfile2\\'"                           conf-mode)
      ("/Pipfile3\\'"                           conf-mode)
      ("/Pipfile\\'"                            conf-mode)
@@ -261,122 +263,134 @@
      ("/profiles/repo_name\\'"             conf-mode)
      ("/var/lib/portage/world_sets\\'"     conf-mode)
      ("\\world\\'"                         conf-mode)
-     )) ;; init-conf-mode.el
- '(init-corral-mode-map-prefix init-key-prefix) ;; init-corral.el
- '(init-counsel-mode-map-prefix init-key-prefix) ;; init-counsel.el
- '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ;; init-crontab-mode.el
- '(init-cycle-quotes-mode-map-prefix init-key-prefix) ;; init-cycle-quotes.el
- '(init-dart-mode-bindings 'nil) ;; init-dart-mode.el
- '(init-deft-mode-map-exec-prefix init-exec-key-prefix) ;; init-deft.el
- '(init-desktop-mode-map-prefix init-key-prefix) ;; init-desktop.el
+     ))
+ '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ; init-crontab-mode.el
+ '(init-dart-mode-bindings 'nil) ; init-dart-mode.el
  '(init-digit-groups-mode-hooks (append init-programming-modes-hooks '(shell-mode-hook)))
- '(init-dired-details-key "b")
- '(init-emacs-lisp-mode-map-prefix init-key-prefix)
- '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ;; init-emacs-lisp-mode.el
- '(init-ethan-wspace-disallows-eol-modes '(
-                                           autoconf-mode
-                                           awk-mode
-                                           c-mode
-                                           cask-mode
-                                           change-log-mode
-                                           clojure-mode
-                                           coffee-mode
-                                           conf-colon-mode
-                                           conf-mode
-                                           conf-space-mode
-                                           conf-unix-mode
-                                           conf-xdefaults-mode
-                                           crontab-mode
-                                           csharp-mode
-                                           css-mode
-                                           dockerfile-mode
-                                           ebuild-mode
-                                           emacs-lisp-mode
-                                           ferm-mode
-                                           fish-mode
-                                           git-commit-mode
-                                           gitconfig-mode
-                                           gitignore-mode
-                                           go-mode
-                                           graphql-mode
-                                           haml-mode
-                                           handlebars-mode
-                                           haskell-mode
-                                           html-mode
-                                           inf-mongo-mode
-                                           jade-mode
-                                           java-mode
-                                           js-mode
-                                           js2-mode
-                                           json-mode
-                                           less-css-mode
-                                           lisp-mode
-                                           litcoffee-mode
-                                           lua-mode
-                                           makefile-gmake-mode
-                                           mediawiki-mode
-                                           nginx-mode
-                                           nodejs-repl-mode
-                                           nroff-mode
-                                           nxml-mode
-                                           org-mode
-                                           pascal-mode
-                                           perl-mode
-                                           php-mode
-                                           python-mode
-                                           restclient-mode
-                                           rhtml-mode
-                                           ruby-mode
-                                           rust-mode
-                                           sass-mode
-                                           sed-mode
-                                           sgml-mode
-                                           sh-mode
-                                           sieve-mode
-                                           slim-mode
-                                           sql-mode
-                                           systemd-mode
-                                           text-mode
-                                           toml-mode
-                                           web-mode
-                                           xml-mode
-                                           yaml-mode
-                                           zig-mode
-                                           )) ;; init-ethan-wspace.el
- '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ;; init-ethan-wspace.el
- '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ;; init-ethan-wspace.el
- '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ;; init-ethan-wspace.el
- '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ;; init-ethan-wspace.el
- '(init-expand-region-map-prefix init-key-prefix) ;; init-expand-region.el
- '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ;; init-ferm-mode.el
- '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ;; init-ferm-mode.el
- '(init-files-map-prefix init-key-prefix) ;; init-files.el
+ '(init-dired-details-bindings ; init-dired-details.el
+   '(
+     ;; ("(" . dired-details-hide)
+     ;; (")" . dired-details-show)
+     ("b" . init-dired-details-toggle-view)
+     ))
+ '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
+ '(init-ethan-wspace-disallows-eol-modes ; init-ethan-wspace.el
+   '(
+     autoconf-mode
+     awk-mode
+     c-mode
+     cask-mode
+     change-log-mode
+     clojure-mode
+     coffee-mode
+     conf-colon-mode
+     conf-mode
+     conf-space-mode
+     conf-unix-mode
+     conf-xdefaults-mode
+     crontab-mode
+     csharp-mode
+     css-mode
+     dockerfile-mode
+     ebuild-mode
+     emacs-lisp-mode
+     ferm-mode
+     fish-mode
+     git-commit-mode
+     gitconfig-mode
+     gitignore-mode
+     go-mode
+     graphql-mode
+     haml-mode
+     handlebars-mode
+     haskell-mode
+     html-mode
+     inf-mongo-mode
+     jade-mode
+     java-mode
+     js-mode
+     js2-mode
+     json-mode
+     less-css-mode
+     lisp-mode
+     litcoffee-mode
+     lua-mode
+     makefile-gmake-mode
+     mediawiki-mode
+     nginx-mode
+     nodejs-repl-mode
+     nroff-mode
+     nxml-mode
+     org-mode
+     pascal-mode
+     perl-mode
+     php-mode
+     python-mode
+     restclient-mode
+     rhtml-mode
+     ruby-mode
+     rust-mode
+     sass-mode
+     sed-mode
+     sgml-mode
+     sh-mode
+     sieve-mode
+     slim-mode
+     sql-mode
+     systemd-mode
+     text-mode
+     toml-mode
+     web-mode
+     xml-mode
+     yaml-mode
+     zig-mode
+     ))
+ '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ; init-ethan-wspace.el
+ '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ; init-ethan-wspace.el
+ '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ; init-ethan-wspace.el
+ '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
+ '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings
  ;;   '(
- ;;     ;; ("C-v C-f s" . save-some-buffers)
+ ;;     ;; ("C-x C-x C-f s" . save-some-buffers)
  ;;     ))
- '(init-fill-map-prefix init-key-prefix) ;; init-fill.el
- '(init-find-temp-file-mode-bindings '(("C-v x t" . find-temp-file))) ;; init-find-temp-file-mode.el
- '(init-find-temp-file-mode-extension-functions '(("go" . init-find-temp-file-go))) ;; init-find-temp-file-mode.el
- '(init-fringe-mode-map-exec-prefix init-exec-key-prefix) ;; init-fringe.el
- '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ;; init-simple.el
- '(init-go-mode-bindings
+ '(init-find-temp-file-mode-bindings '(("C-x C-x C-x t" . find-temp-file))) ; init-find-temp-file-mode.el
+ '(init-find-temp-file-mode-extension-functions '(("go" . init-find-temp-file-go))) ; init-find-temp-file-mode.el
+ '(init-fundamental-mode-patterns '("/\\.bash_history\\'")) ; init-simple.el
+ '(init-go-mode-bindings ; init-go-mode.el
    '(("C-c C-f e" . init-go-mode-end-of-defun)
      ("C-c C-k" . xref-pop-marker-stack)
      ("M-." . godef-jump)
-     ("C-v ? ? f" . godoc-at-point))) ;; init-go-mode.el
- '(init-gitconfig-mode-patterns '(("/.gitconfig\\'" gitconfig-mode) ("/.gitconfig\\.[^/]*\\'" gitconfig-mode))) ;; init-gitconfig-mode.el
+     ("C-x C-x ? ? f" . godoc-at-point)))
+ '(init-gitconfig-mode-patterns '(("/.gitconfig\\'" gitconfig-mode) ("/.gitconfig\\.[^/]*\\'" gitconfig-mode))) ; init-gitconfig-mode.el
  '(init-graphql-mode-patterns '("\\.graphql\\'"))
  '(init-handlebars-mode-patterns '("\\.go\\.tmpl\\'"))
- '(init-highlight-symbol-bindings
-   '(("C-v c S c" . highlight-symbol-count)
-     ("C-v c s" . highlight-symbol-query-replace))) ;; init-highlight-symbol.el
+ '(init-help-bindings ; init-help.el
+   '(("?" . nil)
+     ("? ?" . help-for-help)
+     ("? m" . man)
+     ("? M t" . tldr)
+     ("? M w" . woman)
+     ("b" . counsel-descbinds)
+     ("i" . describe-symbol) ; ("i" . counsel-info-lookup-symbol)
+     ("F" . counsel-faces) ; ("F" . counsel-describe-face)
+     ;; ("f" . counsel-describe-function)
+     ("l" . find-library) ; ("l" . counsel-find-library)
+     ("u" . counsel-unicode-char)
+     ("v" . describe-variable) ; ("v" . counsel-describe-variable)
+     ))
+ '(init-highlight-symbol-bindings ; init-highlight-symbol.el
+   '(("M-s h y" . highlight-symbol)
+     ("M-s h Y r" . highlight-symbol-query-replace)
+     ("M-s h Y c" . highlight-symbol-count)))
  '(init-highlight-symbol-mode-hooks
    (append init-programming-modes-hooks
-           '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ;; init-highlight-symbol.el
+           '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ; init-highlight-symbol.el
  '(init-make-gmake-mode-patterns
-   '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ;; init-make-mode.el
- '(init-projectile-mode-hooks
+   '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
+ '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
+ '(init-projectile-mode-hooks ; init-projectile.el
    (append init-programming-modes-hooks
            '(
              compilation-mode-hook
@@ -393,52 +407,52 @@
              shell-mode-hook
              sql-interactive-mode-hook
              zig-mode-hook
-             ))) ;; init-projectile.el
+             )))
  '(init-projectile-project-root-files '("go.mod"))
- '(init-rainbow-identifiers-hooks
-   '((c-mode-common-hook init-c-mode-rainbow-identifiers-setup)
-     (clojure-mode-hook init-clojure-mode-rainbow-identifiers-setup)
-     (coffee-mode-hook init-coffee-mode-rainbow-identifiers-setup)
-     (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-setup)
-     (conf-space-mode-hook init-conf-space-mode-rainbow-identifiers-setup)
-     (conf-unix-mode-hook init-conf-unix-mode-rainbow-identifiers-setup)
-     (conf-xdefaults-mode-hook init-conf-xdefaults-mode-rainbow-identifiers-setup)
-     (csharp-mode-hook init-csharp-mode-rainbow-identifiers-setup)
-     (css-mode-hook init-css-mode-rainbow-identifiers-setup)
-     (dockerfile-mode-hook init-dockerfile-mode-rainbow-identifiers-setup)
-     (elixir-mode-hook init-elixir-mode-rainbow-identifiers-setup)
-     (emacs-lisp-mode-hook init-emacs-lisp-mode-rainbow-identifiers-setup)
-     (enh-ruby-mode-hook init-enh-ruby-mode-rainbow-identifiers-setup)
-     (ferm-mode-hook init-ferm-mode-rainbow-identifiers-setup)
-     (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-setup)
-     (go-mode-hook init-go-mode-rainbow-identifiers-setup)
-     (graphql-mode-hook init-graphql-mode-rainbow-identifiers-setup)
-     (handlebars-mode-hook init-handlebars-mode-rainbow-identifiers-setup)
-     (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-setup)
-     (hcl-mode-hook init-hcl-mode-rainbow-identifiers-setup)
-     (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-setup)
-     (json-mode-hook init-json-mode-rainbow-identifiers-setup)
-     (lisp-mode-hook init-lisp-mode-rainbow-identifiers-setup)
-     (lua-mode-hook init-lua-mode-rainbow-identifiers-setup)
-     (nginx-mode-hook init-nginx-mode-rainbow-identifiers-setup)
-     (nxml-mode-hook init-nxml-mode-rainbow-identifiers-setup)
-     (php-mode-hook init-php-mode-rainbow-identifiers-setup)
-     (protobuf-mode-hook init-protobuf-mode-rainbow-identifiers-setup)
-     (python-mode-hook init-python-mode-rainbow-identifiers-setup)
-     (ruby-mode-hook init-ruby-mode-rainbow-identifiers-setup)
-     (rust-mode-hook init-rust-mode-rainbow-identifiers-setup)
-     (sh-mode-hook init-sh-mode-rainbow-identifiers-setup)
-     (slim-mode-hook init-slim-mode-rainbow-identifiers-setup)
-     (sql-interactive-mode-hook init-sql-interactive-mode-rainbow-identifiers-setup)
-     (sql-mode-hook init-sql-mode-rainbow-identifiers-setup)
-     (systemd-mode-hook init-systemd-rainbow-identifiers-setup)
-     (toml-mode-hook init-toml-mode-rainbow-identifiers-setup)
-     (typescript-mode-hook init-typescript-mode-rainbow-identifiers-setup)
-     (web-mode-hook init-web-mode-rainbow-identifiers-setup)
-     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-setup)
-     (zig-mode-hook init-zig-mode-rainbow-identifiers-setup))) ;; init-rainbow-identifiers.el
+ '(init-rainbow-identifiers-hooks ; init-rainbow-identifiers.el
+   '((c-mode-common-hook init-c-mode-rainbow-identifiers-init)
+     (clojure-mode-hook init-clojure-mode-rainbow-identifiers-init)
+     (coffee-mode-hook init-coffee-mode-rainbow-identifiers-init)
+     (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-init)
+     (conf-space-mode-hook init-conf-space-mode-rainbow-identifiers-init)
+     (conf-unix-mode-hook init-conf-unix-mode-rainbow-identifiers-init)
+     (conf-xdefaults-mode-hook init-conf-xdefaults-mode-rainbow-identifiers-init)
+     (csharp-mode-hook init-csharp-mode-rainbow-identifiers-init)
+     (css-mode-hook init-css-mode-rainbow-identifiers-init)
+     (dockerfile-mode-hook init-dockerfile-mode-rainbow-identifiers-init)
+     (elixir-mode-hook init-elixir-mode-rainbow-identifiers-init)
+     (emacs-lisp-mode-hook init-emacs-lisp-mode-rainbow-identifiers-init)
+     (enh-ruby-mode-hook init-enh-ruby-mode-rainbow-identifiers-init)
+     (ferm-mode-hook init-ferm-mode-rainbow-identifiers-init)
+     (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-init)
+     (go-mode-hook init-go-mode-rainbow-identifiers-init)
+     (graphql-mode-hook init-graphql-mode-rainbow-identifiers-init)
+     (handlebars-mode-hook init-handlebars-mode-rainbow-identifiers-init)
+     (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-init)
+     (hcl-mode-hook init-hcl-mode-rainbow-identifiers-init)
+     (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-init)
+     (json-mode-hook init-json-mode-rainbow-identifiers-init)
+     (lisp-mode-hook init-lisp-mode-rainbow-identifiers-init)
+     (lua-mode-hook init-lua-mode-rainbow-identifiers-init)
+     (nginx-mode-hook init-nginx-mode-rainbow-identifiers-init)
+     (nxml-mode-hook init-nxml-mode-rainbow-identifiers-init)
+     (php-mode-hook init-php-mode-rainbow-identifiers-init)
+     (protobuf-mode-hook init-protobuf-mode-rainbow-identifiers-init)
+     (python-mode-hook init-python-mode-rainbow-identifiers-init)
+     (ruby-mode-hook init-ruby-mode-rainbow-identifiers-init)
+     (rust-mode-hook init-rust-mode-rainbow-identifiers-init)
+     (sh-mode-hook init-sh-mode-rainbow-identifiers-init)
+     (slim-mode-hook init-slim-mode-rainbow-identifiers-init)
+     (sql-interactive-mode-hook init-sql-interactive-mode-rainbow-identifiers-init)
+     (sql-mode-hook init-sql-mode-rainbow-identifiers-init)
+     (systemd-mode-hook init-systemd-rainbow-identifiers-init)
+     (toml-mode-hook init-toml-mode-rainbow-identifiers-init)
+     (typescript-mode-hook init-typescript-mode-rainbow-identifiers-init)
+     (web-mode-hook init-web-mode-rainbow-identifiers-init)
+     (yaml-mode-hook init-yaml-mode-rainbow-identifiers-init)
+     (zig-mode-hook init-zig-mode-rainbow-identifiers-init)))
  '(init-rainbow-mode-hooks
-   '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ;; init-rainbow-mode.el
+   '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ; init-rainbow-mode.el
  '(init-sh-mode-patterns
    '(
      "/Procfile\\'"
@@ -466,22 +480,77 @@
      ;; Emacs shellcheck config.
      "/\\.shellcheckrc\\'"
      ))
- '(init-simple-bindings
-   '(("M-t" . transpose-chars)
-     ("M-y" . init-simple-yank-pop)
-     ("C-v r c" . count-words-region)
-     ("C-v l t" . toggle-truncate-lines))) ;; init-simple.el
- '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ;; init-simple.el
- '(init-text-mode-patterns '("\\.txt#\\'")) ;; init-text-mode.el
- '(init-wdired-map-exec-prefix init-exec-key-prefix) ;; init-wdired.el
- '(init-window-numbering-mode-map-prefix init-key-prefix) ;; init-window-numbering.el
- '(ivy-count-format "(%d/%d) ") ;; ivy.el
- '(ivy-truncate-lines nil) ;; ivy.el: it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
- '(ivy-use-virtual-buffers nil) ;; ivy.el: virtual buffers slow down switching between buffers
+ '(init-simple-mode-bindings ; init-simple.el
+   '(("C-c C-f e" . end-of-defun)
+     ("C-c C-f n" . beginning-of-defun)
+
+     ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
+     ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
+     ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
+     ("C-x C-f" . init-files-find-file)
+     ("C-x C-d" . init-files-list)
+     ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
+
+     ;; ("C-x C-f" . init-counsel-find-file)
+     ;; ("C-x C-r" . counsel-buffer-or-recentf)
+     ;; ("C-c g" . counsel-git)
+     ;; ("C-x b" . ivy-switch-buffer)
+     ("C-x 1" . init-window-delete-other-windows)
+     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
+     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
+
+     ("C-x C-x ." . repeat) ; init--repeat
+     ("C-x C-x ! b" . init--quickrun)
+     ("C-x C-x ! r" . init--quickrun-region)
+     ("C-x C-x ?" . help-command) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
+     ("C-x C-x b" . init-window-bury-buffer-maybe-delete-window)
+     ("C-x C-x B h" . init-highlight-regexp) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
+     ("C-x C-x B r" . rename-buffer)
+     ("C-x C-x f"   . noxrcp-isearch--forward-literal)
+     ("C-x C-x F a" . init-counsel-ag)
+     ("C-x C-x F g" . counsel-git-grep)
+     ("C-x C-x F p" . counsel-pt)
+     ("C-x C-x F r" . init-counsel-rg)
+     ("C-x C-x F s" . noxrcp-isearch--forward-literal)
+     ("C-x C-x g" . revert-buffer)
+
+     ("C-x C-x C-j" . electric-newline-and-maybe-indent)
+     ("C-x C-x C-o" . open-line)
+     ("C-x C-x i t" . init-subr-insert-timestamp-datetime)
+     ("C-x C-x i T u" . init-subr-insert-timestamp-unix)
+     ("C-x C-x i T d" . init-subr-insert-timestamp-date)
+     ("C-x C-x t" . shell)
+
+     ("C-x C-x l" . init-fringe-toggle)
+     ("C-x C-x L L" . init-hl-line-on)
+     ("C-x C-x L t" . toggle-truncate-lines)
+     ("C-x C-x r f" . fill-region)
+     ("C-x C-x u" . init-unique-lines-region)
+     ("C-x C-x U b" . init-unique-lines-buffer)
+
+     ("C-x C-x C-x n" . init-deft-init)
+     ("C-x C-x C-x s"   . sort-lines)
+     ("C-x C-x C-x S f" . sort-fields)
+     ("C-x C-x C-x T" . init-transpose-frame)
+
+     ("C-x C-x C-x C-x d s" . desktop-save-in-desktop-dir)
+     ("C-x C-x C-x C-x d l" . desktop-read)
+     ("C-x C-x C-x C-x k" . init-kill-emacs)
+     ("C-x C-x C-x C-x u" . browse-url-at-point)
+
+     ("M-t" . transpose-chars)
+     ;; ("M-x" . counsel-M-x)
+     ("M-y" . init-simple-yank-pop)))
+ '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ; init-simple.el
+ '(init-wdired-bindings ; init-wdired.el
+   '(("C-x C-x" . nil)
+     ("C-x C-x C-x C-x w" . wdired-change-to-wdired-mode)))
+ '(init-text-mode-patterns '("\\.txt#\\'")) ; init-text-mode.el
+ '(ivy-count-format "(%d/%d) ") ; ivy.el
+ '(ivy-truncate-lines nil) ; ivy.el: it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
+ '(ivy-use-virtual-buffers nil) ; ivy.el: virtual buffers slow down switching between buffers
  '(js2-mode-show-strict-warnings nil)
  '(json-encoding-default-indentation "    " t)
- '(kept-new-versions 6) ;; files.el
- '(kept-old-versions 2) ;; files.el
  '(kill-ring-max 500)
  '(logview-cache-filename (file-name-concat init-emacs-var "logview-cache.extmap"))
  '(logview-views-file (file-name-concat init-emacs-var "logview.views"))
@@ -497,7 +566,7 @@
      ("ru" "http://ru.wikipedia.org/w/" "danilkutkevich" "" "Main Page")))
  '(mediawiki-site-default "en")
  '(menu-bar-mode nil)
- '(mode-line-format '("%e"
+ '(mode-line-format '("%e" ; mode-line.el
                       (:eval (window-numbering-get-number-string))
                       mode-line-position
                       ":"
@@ -512,8 +581,8 @@
                       mode-line-mule-info
                       (vc-mode vc-mode)
                       mode-line-misc-info
-                      mode-line-end-spaces)) ;; mode-line.el
- '(mode-require-final-newline nil) ;; files.el: otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
+                      mode-line-end-spaces))
+ '(mode-require-final-newline nil) ; files.el: otherwise warning: you have `mode-require-final-newline' turned on. ethan-wspace supersedes `require-final-newline', so `mode-require-final-newline' will be turned off
  '(multi-compile-alist
    '(("/Cask\\'"
       ("cask outdated" . "cd %dir && cask --verbose outdated")
@@ -562,7 +631,7 @@
  '(noxrcp-json-mode-patterns
    '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'"))
  '(noxrcp-lisp-mode-patterns
-   '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'")) ;; init-lisp-mode.el
+   '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'")) ; init-lisp-mode.el
  '(noxrcp-logview-mode-patterns
    '("/access_log\\(?:\\.[0-9]+\\)?\\'" "/error_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/boot\\'" "/var/log/cups/access_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/dmesg\\(?:\\.[0-9]+\\)?\\'" "/var/log/messages\\'" "/var/log/mysql/mysql.err\\'" "/var/log/mysql/mysqld.err\\'" "/var/log/syslog\\(?:\\.[0-9]+\\)?\\'" "\\.access_log\\(?:\\.[0-9]+\\)?\\'" "\\.error_log\\(?:\\.[0-9]+\\)?\\'" "\\.log\\(?:\\.[0-9]+\\)?\\'" "/mainlog\\'" "/rejectlog\\'"))
  '(noxrcp-lua-mode-patterns '("\\.lua\\.example\\'" "\\.ws\\'"))
@@ -596,14 +665,14 @@
      "\\.ya?ml\\(.ci\\)?\\(\\.example\\|\\.sample\\|.ci\\)?\\'"
      "\\.yml\\.j2\\'"
      ))
- '(pack-dired-default-extension ".tar.xz") ;; pack.el
- '(pack-program-alist
+ '(pack-dired-default-extension ".tar.xz") ; pack.el
+ '(pack-program-alist ; pack.el
    '(("\\.7z\\'" :pack "7z a" :unpack "7z x")
      ("\\.tar\\'" :pack "tar -cf" :unpack "tar -xf")
      ("\\.tar\\.gz\\'" :pack "tar -czf" :unpack "tar -xf")
      ("\\.tar\\.xz\\'" :pack "tar -cJf" :unpack "tar -xJf")
      ("\\.tgz\\'" :pack "tar -czf" :unpack "tar -xf")
-     ("\\.zip\\'" :pack "zip -r" :unpack "unzip"))) ;; pack.el
+     ("\\.zip\\'" :pack "zip -r" :unpack "unzip")))
  '(package-selected-packages
    '(
      ac-html
@@ -771,19 +840,19 @@
      ztree
      ))
  '(password-cache-expiry 3600)
- '(prescient-save-file (file-name-concat init-emacs-var "prescient-save.el")) ;; prescient.el
- '(projectile-completion-system 'init-selectrum-unsorted-read) ;; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
- '(projectile-dynamic-mode-line nil) ;; projectile.el
- '(projectile-indexing-method 'alien) ;; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
- '(projectile-mode-line nil) ;; projectile.el
+ '(prescient-save-file (file-name-concat init-emacs-var "prescient-save.el")) ; prescient.el
+ '(projectile-completion-system 'init-selectrum-unsorted-read) ; projectile.el:'default = selectrum <https://github.com/raxod502/selectrum/wiki/Additional-Configuration#working-with-projects-in-projectile> ;'ivy ;'ido
+ '(projectile-dynamic-mode-line nil) ; projectile.el
+ '(projectile-indexing-method 'alien) ; projectile.el: 'native ; 'alien ; 'hybrid ; error: Setting current directory: No such file or directory, some/path: No url found for submodule path 'some-module-name' in .gitmodules <https://github.com/syl20bnr/spacemacs/issues/11507>
+ '(projectile-mode-line nil) ; projectile.el
  ;; '(quickrun-timeout-seconds 10)
  '(quickrun-focus-p nil)
  '(recentf-auto-cleanup 'never)
- '(recentf-max-menu-items 500) ;; init-recentf.el
+ '(recentf-max-menu-items 500) ; init-recentf.el
  '(recentf-max-saved-items nil)
  '(recentf-save-file (file-name-concat init-emacs-var "recentf"))
- '(rm-text-properties 'nil) ;; rich-minority.el
- '(rm-whitelist " F") ;; rich-minority.el
+ '(rm-text-properties '(("\\` OVERWRITING\\'" 'face 'font-lock-warning-face))) ; rich-minority.el
+ '(rm-whitelist " F\\| OVERWRITING") ; rich-minority.el
  '(rspec-use-spring-when-possible nil)
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil)
@@ -794,20 +863,19 @@
    '(compile-command compile-history dired-regexp-history dired-shell-command-history file-name-history kill-ring minibuffer-history query-replace-history regexp-history regexp-search-ring search-ring shell-command-history))
  '(savehist-file (file-name-concat init-emacs-var "history"))
  '(scroll-bar-width 7 t)
- '(selectrum-count-style 'current/matches) ;; selectrum.el
+ '(selectrum-count-style 'current/matches) ; selectrum.el
  '(show-paren-mode t)
- '(sml/col-number-format "%c") ;; smart-mode-line.el
- '(sml/directory-truncation-string "<") ;; smart-mode-line.el
- '(sml/line-number-format "%l") ;; smart-mode-line.el
- '(sml/mode-width 'full) ;; smart-mode-line.el
- '(sml/name-width '(0 . 44)) ;; smart-mode-line.el
- '(sml/no-confirm-load-theme t) ;; smart-mode-line.el
- '(sml/projectile-replacement-format "%s>") ;; smart-mode-line.el
- '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))) ;; smart-mode-line.el
- '(sml/shorten-directory t) ;; smart-mode-line.el
- '(sml/theme 'automatic) ;; smart-mode-line.el
- '(split-height-threshold nil)
- '(split-width-threshold 64)
+ '(sml/col-number-format "%c") ; smart-mode-line.el
+ '(sml/directory-truncation-string "<") ; smart-mode-line.el
+ '(sml/line-number-format "%l") ; smart-mode-line.el
+ '(sml/mode-width 'full) ; smart-mode-line.el
+ '(sml/modified-char (char-to-string (if (char-displayable-p ?╳) ?╳ ?*))) ; ×╳❌❎
+ '(sml/name-width '(0 . 44)) ; smart-mode-line.el
+ '(sml/no-confirm-load-theme t) ; smart-mode-line.el
+ '(sml/projectile-replacement-format "%s>") ; smart-mode-line.el
+ '(sml/replacer-regexp-list '(("^/sudo:.*:" ":SU:"))) ; smart-mode-line.el
+ '(sml/shorten-directory t) ; smart-mode-line.el
+ '(sml/theme 'automatic) ; smart-mode-line.el
  '(sql-postgres-login-params
    '((user :default "danil")
      (database :default "danil")
@@ -818,77 +886,78 @@
  '(tab-width 2)
  '(tldr-directory-path (expand-file-name "tldr/" init-emacs-var))
  '(tldr-use-word-at-point t)
- ;; '(tramp-persistency-file-name (file-name-concat init-emacs-var "tramp")) ;; FAIL: Call of the `custom-set-variables` function for a `tramp-persistency-file-name` variable ignored by the `tramp-cache` (instead use `setq` for `tramp-persistency-file-name`).
+ ;; '(tramp-persistency-file-name (file-name-concat init-emacs-var "tramp")) ; FAIL: Call of the `custom-set-variables` function for a `tramp-persistency-file-name` variable ignored by the `tramp-cache` (instead use `setq` for `tramp-persistency-file-name`).
  '(transient-history-file (file-name-concat init-emacs-var "transient/history.el"))
  '(undo-tree-enable-undo-in-region nil) ; https://emacs.stackexchange.com/questions/69779/emacs-get-frozen-due-to-error-reading-undo-tree-history#69790
  '(undo-tree-history-directory-alist `(("." . ,(file-name-concat init-emacs-var "undo-tree"))))
  '(uniquify-min-dir-content 20)
- '(version-control t) ;; files.el: use versioned backups
- '(window-min-height 1)
- '(window-min-width 1)
- '(winner-dont-bind-my-keys t))
+ '(version-control t) ; files.el: use versioned backups
+ '(window-min-height 1) '(window-min-width 1) '(split-height-threshold nil) '(split-width-threshold 64) ; Split vertical by default <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>. ; window.el
+ '(winner-dont-bind-my-keys t)
+)
 ;;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "black" :foreground "magenta" :weight bold)))) ;; anzu.el
- '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit init-alert)))) ;; anzu.el
- '(column-marker-1 ((((class color) (min-colors 88) (background light)) :background "gray80")
-                    (((class color) (min-colors 88) (background dark)) :background "gray35"))) ;; column-marker.el
- '(ctrlf-highlight-active ((t :background "brightwhite" :foreground "brightred"))) ;; ctrlf.el
- '(diff-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen"))) ;; diff-mode.el
- '(diff-changed ((((class color) (min-colors 88) (background dark)) :foreground "brightblue"))) ;; diff-mode.el
- '(diff-refine-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen" :background "grey45"))) ;; diff-mode.el
- '(diff-refine-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred" :background "grey45"))) ;; diff-mode.el
- '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ;; diff-mode.el
- '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#5f0000")))) ;; ediff-init.el: ,(vector 95  0  0) DarkRed
- '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#005f00")))) ;; ediff-init.el: ,(vector 0  95  0) DarkGreen
- '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ;; ediff-init.el
- '(ediff-even-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ;; ediff-init.el ,(vector 48 48 48)
- '(ediff-even-diff-A-line ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ;; ediff-init.el ,(vector 48 48 48)
- '(ediff-even-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#262626")))) ;; ediff-init.el ,(vector 38 38 38)
- '(ediff-even-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#3a3a3a")))) ;; ediff-init.el ,(vector 58 58 58)
- '(ediff-even-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#444444")))) ;; ediff-init.el ,(vector 68 68 68)
- '(ediff-odd-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#585858")))) ;; ediff-init.el ,(vector 88 88 88)
- '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#4e4e4e")))) ;; ediff-init.el ,(vector 78 78 78)
- '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#626262")))) ;; ediff-init.el ,(vector 98 98 98)
- '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#6c6c6c")))) ;; ediff-init.el ,(vector 108 108 108)
- '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ;; ethan-wspace.el
- '(highlight-symbol-face ((t (:inherit highlight)))) ;; highlight-symbol.el
- '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ;; init-faces.el
- '(init-truncation-glyph-face ((t (:background "orchid3")))) ;; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
- '(init-wrap-glyph-face ((t (:background "limegreen")))) ;; ;; init-disp-table-line-wrap-and-truncation.el: green4 ;; green3 ;; light green
- '(ivy-current-match ((t :inverse-video t))) ;; ivy.el: :inherit highlight
- '(ivy-minibuffer-match-face-1 ((t :background "gray10"))) ;; ivy.el
- '(ivy-minibuffer-match-face-2 ((t :background "red"))) ;; ivy.el
- '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ;; ivy.el
- '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ;; ivy.el
+ '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "black" :foreground "magenta" :weight bold)))) ; anzu.el
+ '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit init-alert)))) ; anzu.el
+ '(column-marker-1 ((((class color) (min-colors 88) (background light)) :background "gray80") ; column-marker.el
+                    (((class color) (min-colors 88) (background dark)) :background "gray35")))
+ '(ctrlf-highlight-active ((t :background "brightwhite" :foreground "brightred"))) ; ctrlf.el
+ '(diff-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen"))) ; diff-mode.el
+ '(diff-changed ((((class color) (min-colors 88) (background dark)) :foreground "brightblue"))) ; diff-mode.el
+ '(diff-refine-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen" :background "grey45"))) ; diff-mode.el
+ '(diff-refine-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred" :background "grey45"))) ; diff-mode.el
+ '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ; diff-mode.el
+ '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#5f0000")))) ; ediff-init.el: ,(vector 95  0  0) DarkRed
+ '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#005f00")))) ; ediff-init.el: ,(vector 0  95  0) DarkGreen
+ '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ; ediff-init.el
+ '(ediff-even-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ; ediff-init.el ,(vector 48 48 48)
+ '(ediff-even-diff-A-line ((((class color) (min-colors 88) (background dark)) (:background "#303030")))) ; ediff-init.el ,(vector 48 48 48)
+ '(ediff-even-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#262626")))) ; ediff-init.el ,(vector 38 38 38)
+ '(ediff-even-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#3a3a3a")))) ; ediff-init.el ,(vector 58 58 58)
+ '(ediff-even-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#444444")))) ; ediff-init.el ,(vector 68 68 68)
+ '(ediff-odd-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#585858")))) ; ediff-init.el ,(vector 88 88 88)
+ '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#4e4e4e")))) ; ediff-init.el ,(vector 78 78 78)
+ '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#626262")))) ; ediff-init.el ,(vector 98 98 98)
+ '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#6c6c6c")))) ; ediff-init.el ,(vector 108 108 108)
+ '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ; ethan-wspace.el
+ '(highlight-symbol-face ((t (:inherit highlight)))) ; highlight-symbol.el
+ '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ; init-faces.el
+ '(init-truncation-glyph-face ((t (:background "orchid3")))) ; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
+ '(init-wrap-glyph-face ((t (:background "limegreen")))) ; ; init-disp-table-line-wrap-and-truncation.el: green4 ; green3 ; light green
+ '(ivy-current-match ((t :inverse-video t))) ; ivy.el: :inherit highlight
+ '(ivy-minibuffer-match-face-1 ((t :background "gray10"))) ; ivy.el
+ '(ivy-minibuffer-match-face-2 ((t :background "red"))) ; ivy.el
+ '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ; ivy.el
+ '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ; ivy.el
  ;; '(line-number ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25")))
- '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ;; mode-line.el: :background MidnightBlue black color-52 OrangeRed4 black gray10 purple4 NavyBlue firebrick4 brown4 red4 computers/emacs-colors>
- '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30"))) ;; mode-line.el:  ;; :background "MidnightBlue" <http://raebear.net/computers/emacs-colors>
- '(rainbow-delimiters-depth-1-face ((((class color) (min-colors 88) (background dark)) :foreground "dark orange"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-2-face ((((class color) (min-colors 88) (background dark)) :foreground "deep pink"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-3-face ((((class color) (min-colors 88) (background dark)) :foreground "chartreuse"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-4-face ((((class color) (min-colors 88) (background dark)) :foreground "deep sky blue"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-5-face ((((class color) (min-colors 88) (background dark)) :foreground "yellow"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-6-face ((((class color) (min-colors 88) (background dark)) :foreground "orchid"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-7-face ((((class color) (min-colors 88) (background dark)) :foreground "spring green"))) ;; rainbow-delimiters.el
- '(rainbow-delimiters-depth-8-face ((((class color) (min-colors 88) (background dark)) :foreground "sienna1"))) ;; rainbow-delimiters.el
+ '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ; mode-line.el: :background MidnightBlue black color-52 OrangeRed4 black gray10 purple4 NavyBlue firebrick4 brown4 red4 computers/emacs-colors>
+ '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30"))) ; mode-line.el:  ; :background "MidnightBlue" <http://raebear.net/computers/emacs-colors>
+ '(rainbow-delimiters-depth-1-face ((((class color) (min-colors 88) (background dark)) :foreground "dark orange"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-2-face ((((class color) (min-colors 88) (background dark)) :foreground "deep pink"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-3-face ((((class color) (min-colors 88) (background dark)) :foreground "chartreuse"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-4-face ((((class color) (min-colors 88) (background dark)) :foreground "deep sky blue"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-5-face ((((class color) (min-colors 88) (background dark)) :foreground "yellow"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-6-face ((((class color) (min-colors 88) (background dark)) :foreground "orchid"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-7-face ((((class color) (min-colors 88) (background dark)) :foreground "spring green"))) ; rainbow-delimiters.el
+ '(rainbow-delimiters-depth-8-face ((((class color) (min-colors 88) (background dark)) :foreground "sienna1"))) ; rainbow-delimiters.el
  '(scroll-bar ((((class color) (min-colors 88) (background dark)) (:background "white" :foreground "gray"))))
- '(selectrum-current-candidate ((t :inverse-video t))) ;; selectrum.el
- '(selectrum-prescient-primary-highlight ((t :background "red"))) ;; selectrum.el
- '(selectrum-prescient-secondary-highlight ((t :background "blue"))) ;; selectrum.el
+ '(selectrum-current-candidate ((t :inverse-video t))) ; selectrum.el
+ '(selectrum-prescient-primary-highlight ((t :background "red"))) ; selectrum.el
+ '(selectrum-prescient-secondary-highlight ((t :background "blue"))) ; selectrum.el
  '(selectrum-primary-highlight ((t :background "red")) t)
  '(selectrum-secondary-highlight ((t :background "blue")) t)
- '(sml/git ((t :inherit (sml/not-modified sml/prefix)))) ;; smart-mode-line.el
- '(sml/global ((t (:foreground "gray60" :inverse-video nil)))) ;; smart-mode-line.el
- '(sml/line-number ((t (:foreground "brightwhite" :weight normal)))) ;; smart-mode-line.el
- '(sml/position-percentage ((t (:inherit sml/read-only :background "brightwhite" :inverse-video t)))) ;; smart-mode-line.el
- '(sml/projectile ((t (:weight normal :inherit sml/filename)))) ;; smart-mode-line.el
+ '(sml/modified ((t :inherit sml/not-modified :foreground "#ff5970" :weight bold))) ; :inherit sml/not-modified :foreground "Red" :weight bold :inverse-video t ; :inherit font-lock-warning-face ; smart-mode-line.el
+ '(sml/git ((t :inherit (sml/not-modified sml/prefix)))) ; smart-mode-line.el
+ '(sml/global ((t (:foreground "gray60" :inverse-video nil)))) ; smart-mode-line.el
+ '(sml/line-number ((t (:foreground "brightwhite" :weight normal)))) ; smart-mode-line.el
+ '(sml/position-percentage ((t (:inherit sml/read-only :background "brightwhite" :inverse-video t)))) ; smart-mode-line.el
+ '(sml/projectile ((t (:weight normal :inherit sml/filename)))) ; smart-mode-line.el
  '(sp-pair-overlay-face ((t nil)))
- ;; '(swiper-include-line-number-in-search nil) ;; swiper.el
- ;; '(swiper-goto-start-of-match nil) ;; swiper.el
- '(window-numbering-face ((((class color) (min-colors 88) (background dark)) (:inherit mode-line-inactive :foreground "OliveDrab" :background "brightwhite" :inverse-video t))) t) ;; :foreground "PaleGreen" ;; window-numbering.el: <http://blog.binchen.org/?p=512#sec-1>.
+ ;; '(swiper-include-line-number-in-search nil) ; swiper.el
+ ;; '(swiper-goto-start-of-match nil) ; swiper.el
+ '(window-numbering-face ((((class color) (min-colors 88) (background dark)) (:inherit mode-line-inactive :foreground "OliveDrab" :background "brightwhite" :inverse-video t))) t) ; :foreground "PaleGreen" ; window-numbering.el: <http://blog.binchen.org/?p=512#sec-1>.
  )

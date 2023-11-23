@@ -24,7 +24,8 @@ See `init-back-button-mode-bindings'.")
   (init-back-button-mode-setup))
 
 (define-globalized-minor-mode init-global-back-button-mode init-back-button-mode
-  (lambda () (init-global-back-button-mode-setup)))
+  init-global-back-button-mode-setup
+  (unless init-global-back-button-mode (init-global-back-button-mode-teardown)))
 
 (defun init-global-back-button-mode-on () "Turn `init-global-back-button-mode' on." (init-global-back-button-mode +1))
 (defun init-global-back-button-mode-off () "Turn `init-global-back-button-mode' off." (init-global-back-button-mode -1))

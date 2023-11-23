@@ -55,9 +55,9 @@
   ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>.
   (setq lua-indent-level 2)
   ;; (define-key lua-mode-map "\C-c\C-f" nil)
-  (define-key lua-mode-map "\C-v" nil))
+  (define-key lua-mode-map (kbd "C-x C-x") nil))
 
-(defun init-lua-mode-rainbow-identifiers-setup ()
+(defun init-lua-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'lua-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -69,7 +69,7 @@
     (setq rainbow-identifiers-faces-to-override
           '(font-lock-variable-name-face font-lock-function-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-lua-mode--rainbow-identifiers-filter (beg end)

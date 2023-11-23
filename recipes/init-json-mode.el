@@ -52,7 +52,7 @@
   (make-local-variable 'js-indent-level)
   (setq js-indent-level 2))
 
-(defun init-json-mode-rainbow-identifiers-setup ()
+(defun init-json-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'json-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -62,6 +62,6 @@
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (init-rainbow-identifiers--lazy-setup))))
+      (init-rainbow-identifiers-lazy-init))))
 
 ;;; init-json-mode.el ends here

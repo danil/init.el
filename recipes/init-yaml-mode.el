@@ -41,7 +41,7 @@
   (dolist (pattern noxrcp-yaml-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'yaml-mode))))
 
-(defun init-yaml-mode-rainbow-identifiers-setup ()
+(defun init-yaml-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'yaml-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -50,6 +50,6 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; init-yaml-mode.el ends here

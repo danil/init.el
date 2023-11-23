@@ -4,7 +4,7 @@
 (source melpa)
 (source org)
 
-;; (depends-on "cask") ;; NOTE: error: Some dependencies were not available: cask ~~~~<danil@kutkevich.org>
+;; (depends-on "cask") ; NOTE: error: Some dependencies were not available: cask ~~~~<danil@kutkevich.org>
 
 ;; (depends-on "erise")
 ;; (depends-on "lfe-mode")
@@ -18,11 +18,26 @@
 ;; (depends-on "cider") ; i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Magit mode <https://github.com/magit/magit> below this comment.
+
 (depends-on "magit")
 (depends-on "magit-popup")
 
+;;; ^^^↑^^^ Magit mode <https://github.com/magit/magit> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Org mode <https://github.com/bzg/org-mode> below this comment.
+
 (depends-on "org" "20150929") ; fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
 (depends-on "org-ac")
+
+;;; ^^^↑^^^ Org mode <https://github.com/bzg/org-mode> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this comment.
 
 ;; Company auto complete.
 ;; (depends-on "company-ansible")
@@ -38,6 +53,12 @@
 (depends-on "company-shell")
 (depends-on "company-web")
 
+;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Fuzzy searching in multiple files below this comment.
+
 ;; Fuzzy searching in multiple files (projectile and friends).
 ;; (depends-on "ag") ; using `counsel-ag` instead
 ;; (depends-on "pt") ; using `counsel-pt` instead ; the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
@@ -45,9 +66,12 @@
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
+;;; ^^^↑^^^ Fuzzy searching in multiple files above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
-(depends-on "back-button") ;; two-way navigation through mark ring forward/backward
+(depends-on "back-button") ; two-way navigation through mark ring forward/backward
 ;(depends-on "bash-completion")
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
@@ -60,14 +84,20 @@
 (depends-on "dash")
 (depends-on "deft")
 (depends-on "diffview")
-(depends-on "digit-groups") ;; highlighting digit groups in numbers
+(depends-on "digit-groups") ; highlighting digit groups in numbers
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Dired mode below this comment.
 
 ;; Dired.
 ;; (depends-on "dired-dups")
 (depends-on "dired-details" :git "https://github.com/emacsmirror/dired-details.git")
 (depends-on "diredfl")
 (depends-on "direx")
-(depends-on "pack") ;; archive/tar/gzip/xz
+(depends-on "pack") ; archive/tar/gzip/xz
+
+;;; ^^^↑^^^ Dired mode above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
@@ -77,36 +107,53 @@
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 (depends-on "ethan-wspace")
+
 (depends-on "expand-region")
 (depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ; "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
-(depends-on "find-dupes-dired") ;; find dupes/duplicates and handle them in dired-mode https://github.com/ShuguangSun/find-dupes-dired (find using external command fdupes https://github.com/adrianlopezroche/fdupes)
+(depends-on "find-dupes-dired") ; find dupes/duplicates and handle them in dired-mode https://github.com/ShuguangSun/find-dupes-dired (find using external command fdupes https://github.com/adrianlopezroche/fdupes)
 (depends-on "find-temp-file")
 (depends-on "findr")
 (depends-on "fish-mode")
 (depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
 
-;; fd a-la find replacement https://github.com/sharkdp/fd
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv fd <https://github.com/sharkdp/fd> below this comment.
+
+;; fd a-la find replacement.
 (depends-on "counsel-fd")
 (depends-on "fd-dired")
 
-;; Golang.
+;;; ^^^↑^^^ fd <https://github.com/sharkdp/fd> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this comment.
+
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
 (depends-on "go-expr-completion") ; complete a left-hand side from given expression
 (depends-on "go-mode")
 (depends-on "go-snippets")
 (depends-on "go-stacktracer")
-(depends-on "go-translate") ;; google translate https://github.com/lorniu/go-translate
+(depends-on "go-translate") ; google translate https://github.com/lorniu/go-translate
 (depends-on "godoctor")
 (depends-on "gotest")
 
-;; Git.
+;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Git below this comment.
+
 ;; (depends-on "git-gutter")
 (depends-on "diff-hl")
 (depends-on "git-timemachine")
 ;(depends-on "gitconfig-mode")
 ;(depends-on "gitignore-mode")
+
+;;; ^^^↑^^^ Git above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 ;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
 (depends-on "crm-custom")
@@ -114,9 +161,12 @@
 (depends-on "haml-mode")
 (depends-on "highlight-symbol")
 (depends-on "hl-todo")
-(depends-on "hydra") ; key bindings
+(depends-on "hydra") ; FIXME: A nested hotkey definition is a anti-pattern instead must use a best practice and do using the `general.el` because that package provides a more convenient method for binding keys in Emacs. ; Key bindings a-la `transient`.~~~~<danil@kutkevich.org>
 (depends-on "i3wm-config-mode")
 (depends-on "inf-mongo")
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this comment.
 
 ;; Ivy (is an ido replacement).
 ;; (depends-on "counsel-projectile") ; projectile respect selectrum instead of counsel
@@ -131,7 +181,12 @@
 (depends-on "swiper")
 (depends-on "wgrep") ; editable `ivy-occur` buffer (grep-mode)
 
-;;; JavaScript.
+;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv JavaScript programming language below this comment.
+
 (depends-on "coffee-mode")
 (depends-on "jade-mode")
 (depends-on "js2-mode")
@@ -142,11 +197,14 @@
 (depends-on "literate-coffee-mode")
 (depends-on "typescript-mode")
 
+;;; ^^^↑^^^ JavaScript programming language above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 (depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")
 (depends-on "noflet")
 
-(depends-on "graphql-mode") ;; https://github.com/davazp/graphql-mode
+(depends-on "graphql-mode") ; https://github.com/davazp/graphql-mode
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "logview")
@@ -173,11 +231,14 @@
 (depends-on "quelpa")
 (depends-on "quickrun")
 
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Ruby programming language below this comment.
+
 ;; (depends-on "rbenv")
 (depends-on "enh-ruby-mode")
 (depends-on "minitest")
 (depends-on "multi-compile")
-(depends-on "rbtagger") ;; ctags via gem-ripper-tags
+(depends-on "rbtagger") ; ctags via gem-ripper-tags
 (depends-on "robe")
 (depends-on "rspec-mode")
 (depends-on "ruby-guard" :git "https://github.com/zhangkaiyulw/ruby-guard.git")
@@ -186,9 +247,18 @@
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 
+;;; ^^^↑^^^ Ruby programming language above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Rust programming language below this comment.
+
 ;; (depends-on "racer")
 ;; (depends-on "flycheck-rust") ; buggy(
 (depends-on "rust-mode")
+
+;;; ^^^↑^^^ Rust programming language above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (depends-on "sass-mode")
 (depends-on "scss-mode")
@@ -196,11 +266,16 @@
 (depends-on "slim-mode")
 (depends-on "su") ; automatically read/write files as other users
 
-;; mode-line
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Mode line below this comment.
+
 ;; (depends-on "cyphejor")
 ;; (depends-on "doom-modeline")
 (depends-on "rich-minority")
 (depends-on "smart-mode-line")
+
+;;; ^^^↑^^^ Mode line above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers") ; highlight each variable uniquely based on its name
@@ -209,10 +284,18 @@
 (depends-on "redis")
 (depends-on "restclient")
 
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this comment.
+
+;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>.~~~~<danil@kutkevich.org>
+
 (depends-on "selectrum") ; a-la ido/ivy/counsel
 (depends-on "selectrum-prescient") ; selectrum sorting/filtering
 (depends-on "ctrlf") ; a-la isearch replacement?
 (depends-on "amx") ; a-la smex is a m-x enhancement
+
+;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (depends-on "sed-mode")
 (depends-on "speed-type")
@@ -221,6 +304,7 @@
 (depends-on "toml-mode")
 (depends-on "top-mode" :git "https://github.com/emacsmirror/top-mode.git")
 (depends-on "tramp")
+(depends-on "transient") ; FIXME: A nested hotkey definition is a anti-pattern instead must use a best practice and do using the `general.el` because that package provides a more convenient method for binding keys in Emacs. ; Key bindings a-la `hydra`.~~~~<danil@kutkevich.org>
 (depends-on "transpose-frame")
 (depends-on "twittering-mode")
 (depends-on "undo-tree")

@@ -13,22 +13,27 @@
   (init-selectrum-setup))
 
 (define-globalized-minor-mode init-global-selectrum-mode init-selectrum-mode
-  (lambda () (init-selectrum-mode +1)))
+  init-global-selectrum-setup
+  ;; (unless init-global-selectrum-mode (init-global-selectrum-teardown))
+  )
 
 (defun init-selectrum ()
   (selectrum-mode +1)
 
-  (if (boundp 'selectrum-minibuffer-map) (init-selectrum--init)
-    (with-eval-after-load 'selectrum (init-selectrum--init))))
+  (if (boundp 'selectrum-minibuffer-map) (init-selectrum-init)
+    (with-eval-after-load 'selectrum (init-selectrum-init))))
 
 (defun init-selectrum-setup ()
-  (define-key init-selectrum-mode-map (kbd "C-x C-r") 'init-selectrum-recentf)
-  (define-key init-selectrum-mode-map (kbd "C-c C-r") #'selectrum-repeat))
+  (define-key init-selectrum-mode-map (kbd "C-x C-r") 'init-selectrum-recentf) ;; FIXME: ????????????????????????????????????????????????????????????????????????????????
+  (define-key init-selectrum-mode-map (kbd "C-c C-r") #'selectrum-repeat)) ;; FIXME: ????????????????????????????????????????????????????????????????????????????????
 
-(defun init-selectrum--init ()
+(defun init-global-selectrum-setup () (init-selectrum-mode +1))
+;; (defun init-global-selectrum-teardown ())
+
+(defun init-selectrum-init ()
   (interactive)
-  (define-key selectrum-minibuffer-map (kbd "C-j") nil)
-  (define-key selectrum-minibuffer-map (kbd "C-c C-j") #'selectrum-submit-exact-input))
+  (define-key selectrum-minibuffer-map (kbd "C-j") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
+  (define-key selectrum-minibuffer-map (kbd "C-c C-j") #'selectrum-submit-exact-input)) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
 
 ;; <https://github.com/raxod502/selectrum/wiki/Useful-Commands#switch-to-recent-file>
 (defun init-selectrum-recentf ()

@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 ;; <http://pragmaticemacs.com/emacs/aligning-text/>.
 (defun init-align-whitespace (start end)
   "Align columns by whitespace in region between `START' and `END'."

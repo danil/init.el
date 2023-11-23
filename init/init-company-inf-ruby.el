@@ -1,12 +1,14 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defun init-company-inf-ruby ()
-  (if (boundp 'company-mode) (init-company-inf-ruby--setup)
-    (with-eval-after-load 'company (init-company-inf-ruby--setup))))
+  (if (boundp 'company-mode) (init-company-inf-ruby-init)
+    (with-eval-after-load 'company (init-company-inf-ruby-init))))
 
-(defun init-company-inf-ruby--setup ()
-  (add-hook 'inf-ruby-mode-hook 'init-company-inf-ruby---setup)
-  (add-hook 'ruby-mode-hook 'init-company-inf-ruby---setup))
+(defun init-company-inf-ruby-init ()
+  (add-hook 'inf-ruby-mode-hook 'init-company-inf-ruby--init)
+  (add-hook 'ruby-mode-hook 'init-company-inf-ruby--init))
 
-(defun init-company-inf-ruby---setup ()
+(defun init-company-inf-ruby--init ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-inf-ruby

@@ -49,7 +49,7 @@
 (defun noxrcp-nxml-mode--setup ()
   (define-key nxml-mode-map (kbd "\C-c\C-f") nil))
 
-(defun init-nxml-mode-rainbow-identifiers-setup ()
+(defun init-nxml-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'nxml-mode)
     ;; (make-local-variable 'rainbow-identifiers-filter-functions)
     ;; (add-hook 'rainbow-identifiers-filter-functions
@@ -60,6 +60,6 @@
     ;;                                               font-lock-function-name-face))
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (init-rainbow-identifiers--lazy-setup))))
+      (init-rainbow-identifiers-lazy-init))))
 
 ;;; init-nxml-mode.el ends here

@@ -23,10 +23,10 @@
   (setq rainbow-identifiers-cie-l*a*b*-lightness 70)
   (setq rainbow-identifiers-cie-l*a*b*-saturation 70))
 
-(defun init-rainbow-identifiers--lazy-setup ()
-  (init-lazy init-lazy-seconds nil 'init-rainbow-identifiers--setup))
+(defun init-rainbow-identifiers-lazy-init ()
+  (init-lazy init-lazy-seconds nil 'init-rainbow-identifiers-init))
 
-(defun init-rainbow-identifiers--setup ()
+(defun init-rainbow-identifiers-init ()
   (rainbow-identifiers-mode +1))
 
 (defun init-rainbow-identifiers-face-overridable (begin end)

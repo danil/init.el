@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-ethan-wspace nil
   "init-ethan-wspace"
   :group  'editing
@@ -30,17 +32,17 @@
   ;;   (with-eval-after-load 'ethan-wspace (init-ethan-wspace--init)))
 
   (dolist (hook init-ethan-wspace-mode-hooks)
-    (add-hook hook 'init-ethan-wspace--lazy-setup)))
+    (add-hook hook 'init-ethan-wspace-lazy-init)))
 
 ;; (defun init-ethan-wspace--init ()
 ;;   (setq ethan-wspace-mode-line-element nil) ;; typically looks like: ew:tLNm
 ;;   )
 
-(defun init-ethan-wspace--lazy-setup ()
+(defun init-ethan-wspace-lazy-init ()
   "Run `ethan-wspace'."
-  (init-lazy init-lazy-seconds nil 'init-ethan-wspace--setup))
+  (init-lazy init-lazy-seconds nil 'init-ethan-wspace-init))
 
-(defun init-ethan-wspace--setup ()
+(defun init-ethan-wspace-init ()
   (unless (boundp 'ethan-wspace-errors) (load "ethan-wspace"))
   (make-local-variable 'ethan-wspace-errors)
   (setq ethan-wspace-errors '())

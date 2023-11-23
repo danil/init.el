@@ -49,7 +49,7 @@
   (dolist (pattern noxrcp-nginx-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'nginx-mode))))
 
-(defun init-nginx-mode-rainbow-identifiers-setup ()
+(defun init-nginx-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'nginx-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -59,6 +59,6 @@
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face
                                                   font-lock-variable-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; init-nginx-mode.el ends here

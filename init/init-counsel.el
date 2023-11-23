@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-counsel nil
   "init-counsel"
   :group  'editing
@@ -5,58 +7,13 @@
   :prefix "init-counsel-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-counsel-mode-lighter " init-counsel" "init-counsel" :group 'init-counsel)
-
-(defcustom init-counsel-mode-map-prefix "C-v " "init-counsel" :group 'init-counsel)
-
-(defvar init-counsel-mode-map (make-sparse-keymap) "init-counsel")
-
 (defconst init-counsel-ag-base-command-name "ag")
+(defconst init-counsel-ag-base-command-args (if (memq system-type '(ms-dos windows-nt)) "--vimgrep" "--nocolor --nogroup"))
 
-(defconst init-counsel-ag-base-command-args
-  (if (memq system-type '(ms-dos windows-nt))
-      "--vimgrep"
-    "--nocolor --nogroup"))
-
-(define-minor-mode init-counsel-mode "init-counsel" :init-value nil :lighter init-counsel-mode-lighter :keymap init-counsel-mode-map
-  (init-counsel-setup))
-
-(define-globalized-minor-mode init-global-counsel-mode init-counsel-mode
-  (lambda () (init-counsel-mode +1)))
-
-(defun init-counsel ()
-  ;; (global-set-key (kbd "C-c g") 'counsel-git)
-  ;; (global-set-key (kbd "C-x C-f") 'init-counsel-find-file) ; and also please see `init-files.el'
-  ;; (global-set-key (kbd "C-x C-r") 'counsel-buffer-or-recentf)
-  ;; (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
-  ;; (global-set-key (kbd "M-x") 'counsel-M-x)
-
-  ;; (if (boundp 'counsel-find-file-map) (init-counsel-customize-keys)
-  ;;   (with-eval-after-load 'counsel (init-counsel-customize-keys)))
-
-  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-
-  (if (boundp 'help-map) (init-counsel-customize-help-setup)
-    (with-eval-after-load 'help (init-counsel-customize-help-setup))))
-
-(defun init-counsel-setup ()
-  (let ((map init-counsel-mode-map)
-        (prefix init-counsel-mode-map-prefix))
-    (define-key map (kbd (concat prefix " f a")) 'init-counsel-ag)
-    (define-key map (kbd (concat prefix " f r")) 'init-counsel-rg)
-    (define-key map (kbd (concat prefix " f p")) 'counsel-pt)
-    (define-key map (kbd (concat prefix " f g")) 'counsel-git-grep)))
-
-(defun init-counsel-customize-help-setup()
-  "My init customize."
-  ;; (define-key help-map (kbd "F") 'counsel-describe-face)
-  (define-key help-map (kbd "F") 'counsel-faces)
-  (define-key help-map (kbd "b") 'counsel-descbinds)
-  ;; (define-key help-map (kbd "f") 'counsel-describe-function)
-  ;; (define-key help-map (kbd "i") 'counsel-info-lookup-symbol)
-  (define-key help-map (kbd "l") 'counsel-find-library)
-  ;; (define-key help-map (kbd "v") 'counsel-describe-variable)
-  (define-key help-map (kbd "u") 'counsel-unicode-char))
+;; (defun init-counsel ()
+;;   (if (boundp 'counsel-find-file-map)
+;;       (init-counsel-customize-keys)
+;;     (with-eval-after-load 'counsel (init-counsel-customize-keys))))
 
 (defun init-counsel-company ()
   "Complete using `company-candidates'."

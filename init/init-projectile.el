@@ -7,8 +7,6 @@
 
 (defcustom init-projectile-mode-lighter " init-projectile" "init-projectile" :group 'init-projectile)
 
-(defcustom init-projectile-mode-prefix "C-c p " "init-projectile" :group 'init-projectile)
-
 (defcustom init-projectile-mode-hooks '()
   "Major modes hook associated with `projectile'."
   :group 'init-projectile)
@@ -38,12 +36,11 @@ See `projectile-register-project-type'."
   (set (make-local-variable 'projectile-project-root-files)
        (append projectile-project-root-files init-projectile-project-root-files))
 
-  (let ((map init-projectile-mode-map)
-        (prefix init-projectile-mode-prefix))
-    (define-key map (kbd prefix) projectile-command-map))
+  (let ((map init-projectile-mode-map))
+    (define-key map (kbd "C-c p ") projectile-command-map))
 
   ;; Projectile "make" type conflicts with "go" type.
-  ;; FIXME: Absence of the "make" type.
+  ;; FIXME: Absence of the "make" type.~~~~<danil@kutkevich.org>
   (setq projectile-project-types
         (cl-delete-if (lambda (type) (equal (car type) 'make)) projectile-project-types)))
 

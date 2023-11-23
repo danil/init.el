@@ -39,7 +39,7 @@
 ;;   "No X recipe init."
 ;;   )
 
-(defun init-toml-mode-rainbow-identifiers-setup ()
+(defun init-toml-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'toml-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -48,6 +48,6 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-variable-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; init-toml-mode.el ends here

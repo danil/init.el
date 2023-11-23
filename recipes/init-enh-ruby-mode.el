@@ -46,7 +46,7 @@
 (defun noxrcp-enh-ruby-mode--setup ()
   (define-key enh-ruby-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
 
-(defun init-enh-ruby-mode-rainbow-identifiers-setup ()
+(defun init-enh-ruby-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'enh-ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -61,6 +61,6 @@
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; init-enh-ruby-mode.el ends here

@@ -52,12 +52,12 @@
 ;;     (with-eval-after-load 'systemd (noxrcp-systemd--setup))))
 ;; (defun noxrcp-systemd--setup ())
 
-(defun init-systemd-rainbow-identifiers-setup ()
+(defun init-systemd-rainbow-identifiers-init ()
   (when (equal major-mode 'systemd-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-systemd--rainbow-identifiers-filter)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-systemd--rainbow-identifiers-filter (beg end)

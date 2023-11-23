@@ -5,8 +5,6 @@
   :prefix "init-compile-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-compile-mode-map-prefix "C-v " "init-compile" :group 'init-compile)
-
 (defcustom init-compile-mode-lighter " init-compile" "init-compile" :group 'init-compile)
 
 (defvar init-compile-mode-map (make-sparse-keymap) "init-compile")
@@ -15,18 +13,23 @@
   (init-compile-setup))
 
 (define-globalized-minor-mode init-global-compile-mode init-compile-mode
-  (lambda () (init-compile-mode +1)))
+  init-global-compile-setup
+  ;; (unless init-global-compile-mode (init-global-compile-teardown))
+  )
 
 (defun init-compile ()
-  (if (fboundp 'compilation-filter-hook) (init-compile--setup)
-    (with-eval-after-load 'compile (init-compile--setup))))
+  (if (fboundp 'compilation-filter-hook) (init-compile-init)
+    (with-eval-after-load 'compile (init-compile-init))))
 
 (defun init-compile-setup ()
-  (let ((map init-compile-mode-map)
-        (prefix init-compile-mode-map-prefix))
-    (define-key map (kbd (concat prefix " ! c")) 'compile)))
+  (let ((map init-compile-mode-map))
+    (define-key map (kbd "C-x C-x ! c") 'compile) ; FIXME: ????????????????????????????????????????????????????????????????????????????????
+    ))
 
-(defun init-compile--setup ()
+(defun init-global-compile-setup () (init-compile-mode +1))
+;; (defun init-global-compile-teardown ())
+
+(defun init-compile-init ()
   (require 'ansi-color)
   (add-hook 'compilation-filter-hook #'init-compile-colorize))
 

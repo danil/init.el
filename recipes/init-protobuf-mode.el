@@ -52,7 +52,7 @@
   (call-interactively 'end-of-defun)
   (when (search-backward "}" nil t) (forward-char)))
 
-(defun init-protobuf-mode-rainbow-identifiers-setup ()
+(defun init-protobuf-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'protobuf-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -64,7 +64,7 @@
                                                   font-lock-type-face
                                                   font-lock-variable-name-face
                                                   ))
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-protobuf-mode--rainbow-identifiers-filter (beg end)

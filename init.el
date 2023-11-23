@@ -1,29 +1,16 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; v↓v↓v User Emacs directory below this comment.
+;; (setq c-x-c-x-prefix "C-x C-x") ;; "C-x C-x" ; FIXME: Maybe use the `c-x-c-x-prefix` custom hot key prefix?~~~~<danil@kutkevich.org>
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv User Emacs directory below this comment.
 
 ;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (defun init-path (path &rest paths)
-;;   "Append PATHS to PATH and return the truename of resulting path."
-;;   (file-truename (apply 'file-name-concat path paths)))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (defun init-var-path (&rest paths)
-;;   "Append PATHS to var directory and return the truename of resulting path."
-;;   (let ((var-path (concat user-emacs-directory ".var")))
-;;     (file-truename (apply 'file-name-concat var-path paths))))
-
 (setq user-emacs-directory (file-truename "~/.config/emacs")) ;; "~/.emacs.d"
 (setq init-emacs-var (file-name-concat user-emacs-directory "var")) ;; "~/.emacs.d/var" ;; "~/.config/emacs/var"
 
-;;; ^↑^↑^ User Emacs directory above this comment.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ^^^↑^^^ User Emacs directory above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 ;;; <https://emacs.stackexchange.com/questions/3447/cannot-set-terminal-process-group-error-when-running-bash-script>,
 ;;; <https://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions>.
@@ -73,14 +60,11 @@
 ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;; terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 (setenv "GIT_PAGER" "")
 
-(setq init-key-prefix "C-v ")
-(setq init-exec-key-prefix (concat init-key-prefix "x "))
-
 ;; Seconds to wait for lazy timer.
 (setq init-lazy-seconds 1)
 
 ;; <http://emacs.stackexchange.com/questions/12532/buffer-local-idle-timer#13275>.
-;; TODO: seconds/repeat via named argument.
+;; TODO: Seconds/repeat via named argument.~~~~<danil@kutkevich.org>
 (defun init-lazy (delay-secs with-repeat fn &rest args)
   "After `DELAY-SECS' with `WITH-REPEAT' run some `FN' with `ARGS'.
 Like `run-with-idle-timer' but always in the `current-buffer'.
@@ -205,26 +189,28 @@ Cancels itself, if this buffer was killed."
 (add-to-list 'load-path (file-name-concat user-emacs-directory "init"))
 
 (message "Initializing align") (require 'init-align "init-align")
-(message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color)
+(message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color) ; FIXME: Maybe rename the `init-ansi-color.el` file to the `c-x-c-x-ansi-color.el` and the `init-ansi-color` function to the `c-x-c-x-ansi-color`?~~~~<danil@kutkevich.org>
 (message "Initializing anzu") (require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)
 (message "Initializing back-button") (require 'init-back-button "init-back-button") (add-hook 'after-init-hook 'init-global-back-button-mode-on)
 (message "Initializing bash-completion") (require 'init-bash-completion "init-bash-completion") (add-hook 'after-init-hook 'init-bash-completion)
-(message "Initializing bindings") (require 'init-bindings "init-bindings") (add-hook 'after-init-hook 'init-global-bindings-mode)
-(message "Initializing browse-url") (require 'init-browse-url "init-browse-url") (add-hook 'after-init-hook 'init-global-browse-url-mode)
 (message "Initializing buff-menu") (require 'init-buff-menu "init-buff-menu") (add-hook 'after-init-hook 'init-buff-menu)
+(message "Initializing built-in-src") (autoload 'init-kill-emacs "init-built-in-src.el" nil t)
 (message "Initializing bytecomp") (require 'init-bytecomp "init-bytecomp") (add-hook 'after-init-hook 'init-bytecomp)
 (message "Initializing calendar") (require 'init-calendar "init-calendar") (add-hook 'after-init-hook 'init-calendar)
 (message "Initializing cc-mode") (require 'init-cc-mode "init-cc-mode") (add-hook 'after-init-hook 'init-cc-mode)
 (message "Initializing clojure-mode") (require 'init-clojure-mode "init-clojure-mode") (add-hook 'after-init-hook 'init-clojure-mode)
 (message "Initializing column-marker") (require 'init-column-marker "init-column-marker") (add-hook 'after-init-hook 'init-column-marker)
-(message "Initializing csharp-mode") (require 'init-csharp-mode "init-csharp-mode") ;; TODO: autoload
+(message "Initializing csharp-mode") (require 'init-csharp-mode "init-csharp-mode") ; TODO: Autoload.~~~~<danil@kutkevich.org>
 (message "Initializing comint") (require 'init-comint "init-comint") (add-hook 'after-init-hook 'init-comint)
 (message "Initializing compile") (require 'init-compile "init-compile") (add-hook 'after-init-hook 'init-compile) (add-hook 'after-init-hook 'init-global-compile-mode)
 (message "Initializing conf-mode") (require 'init-conf-mode "init-conf-mode") (add-hook 'after-init-hook 'init-conf-mode)
 (message "Initializing corral") (require 'init-corral "init-corral") (add-hook 'after-init-hook 'init-global-corral-mode) ;; smartparens replacement (quotes/parentheses/delimiters manager)
 (message "Initializing crontab-mode") (require 'init-crontab-mode "init-crontab-mode") (add-hook 'after-init-hook 'init-crontab-mode)
-(message "Initializing init css") (autoload 'init-css-mode-rainbow-identifiers-setup "init-css" nil t)
+(message "Initializing init-css") (autoload 'init-css-mode-rainbow-identifiers-init "init-css" nil t)
 (message "Initializing cycle-quotes") (require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this comment.
 
 ;; Company mode auto complete.
 (message "Initializing company") (require 'init-company "init-company") (add-hook 'after-init-hook 'init-company) (add-hook 'after-init-hook 'init-global-company-mode)
@@ -237,17 +223,30 @@ Cancels itself, if this buffer was killed."
 (message "Initializing company-shell") (require 'init-company-shell "init-company-shell") (add-hook 'after-init-hook 'init-company-shell)
 (message "Initializing company-web") (require 'init-company-web "init-company-web") (add-hook 'after-init-hook 'init-company-web)
 
+;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this comment.
+
 ;; Counsel/Ivy/Swiper (is an ido replacement).
-(message "Initializing counsel") (require 'init-counsel "init-counsel") (add-hook 'after-init-hook 'init-counsel) (add-hook 'after-init-hook 'init-global-counsel-mode)
+(message "Initializing counsel") (require 'init-counsel "init-counsel")
 (message "Initializing ivy-historian") (require 'init-ivy-historian "init-ivy-historian") (add-hook 'after-init-hook 'init-ivy-historian)
 
-;; Fringe <https://www.emacswiki.org/emacs/TheFringe>.
-(message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ;; TODO: autoload
-(message "Initializing fringe") (require 'init-fringe "init-fringe") (add-hook 'after-init-hook 'init-global-fringe-mode)
+;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Fringe <https://www.emacswiki.org/emacs/TheFringe> below this comment.
+
+(message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ; TODO: Autoload.~~~~<danil@kutkevich.org>
+(message "Initializing fringe") (require 'init-fringe "init-fringe") (autoload 'init-fringe-toggle "init-fringe" nil t)
+
+;;; ^^^↑^^^ Fringe <https://www.emacswiki.org/emacs/TheFringe> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 ;; (message "Initializing dart-mode") (require 'init-dart-mode "init-dart-mode") (add-hook 'after-init-hook 'init-global-dart-mode-on)
-(message "Initializing deft") (require 'init-deft "init-deft") (add-hook 'after-init-hook 'init-global-deft-mode)
-(message "Initializing desktop") (require 'init-desktop "init-desktop") (add-hook 'after-init-hook 'init-global-desktop-mode)
+(message "Initializing deft") (autoload 'init-deft-init "init-deft" nil t)
 (message "Initializing diff-mode") (require 'init-diff-mode "init-diff-mode") (add-hook 'after-init-hook 'init-diff-mode)
 (message "Initializing digit-groups") (require 'init-digit-groups "init-digit-groups") (add-hook 'after-init-hook 'init-digit-groups)
 (message "Initializing disp-table-line-wrap-and-truncation") (require 'init-disp-table-line-wrap-and-truncation "init-disp-table-line-wrap-and-truncation") (add-hook 'after-init-hook 'init-disp-table-line-wrap-and-truncation)
@@ -255,48 +254,71 @@ Cancels itself, if this buffer was killed."
 (message "Initializing dockerfile-mode") (require 'init-dockerfile-mode "init-dockerfile-mode") (add-hook 'after-init-hook 'init-dockerfile-mode)
 (message "Initializing dumb-jump") (require 'init-dumb-jump "init-dumb-jump") (add-hook 'after-init-hook 'init-dumb-jump)
 
-;; Dired.
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Dired mode below this comment.
+
 (message "Initializing dired") (require 'init-dired "init-dired") (add-hook 'after-init-hook 'init-dired)
 (message "Initializing dired-aux") (require 'init-dired-aux "init-dired-aux") (add-hook 'after-init-hook 'init-dired-aux)
 (message "Initializing dired-details") (require 'init-dired-details "init-dired-details") (add-hook 'after-init-hook 'init-dired-details)
 (message "Initializing diredfl") (require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
 (message "Initializing wdired") (require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
 
+;;; ^^^↑^^^ Dired mode above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 ;; (message "Initializing dotenv") (require 'dotenv "init-dotenv")
 (message "Initializing elisp-slime-nav") (require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
-(message "Initializing elixir-mode") (autoload 'init-elixir-mode-rainbow-identifiers-setup "init-elixir-mode" nil t)
+(message "Initializing elixir-mode") (autoload 'init-elixir-mode-rainbow-identifiers-init "init-elixir-mode" nil t)
 (message "Initializing emacs-lisp-mode") (require 'init-emacs-lisp-mode "init-emacs-lisp-mode") (add-hook 'after-init-hook 'init-emacs-lisp-mode)
 (message "Initializing emacs-lisp-mode-rainbow-identifiers") (require 'init-emacs-lisp-mode-rainbow-identifiers "init-emacs-lisp-mode-rainbow-identifiers")
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
+(message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 (message "Initializing ethan-wspace") (require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
+
 (message "Initializing expand-region") (require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
-(message "Initializing faces") (require 'init-faces "init-faces") ;; TODO: autoload
+(message "Initializing faces") (require 'init-faces "init-faces") ; TODO: Autoload.~~~~<danil@kutkevich.org>
 (message "Initializing ferm-mode") (require 'init-ferm-mode "init-ferm-mode") (add-hook 'after-init-hook 'init-ferm-mode)
-(message "Initializing files") (require 'init-files "init-files") (add-hook 'after-init-hook 'init-files)
-(message "Initializing fill") (require 'init-fill "init-fill") (add-hook 'after-init-hook 'init-fill)
+(message "Initializing files") (autoload 'init-files-list "init-files" nil t) (autoload 'init-files-find-file "init-files" nil t)
 (message "Initializing find-temp-file") (require 'init-find-temp-file-mode "init-find-temp-file-mode") (add-hook 'after-init-hook 'init-global-find-temp-file-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
+(message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
+(message "Initializing repeat") (require 'init-repeat "init-repeat") (add-hook 'after-init-hook 'init-repeat) ;; (autoload 'init--repeat "init-repeat" nil t)
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
+(message "Initializing subr") (require 'init-subr "init-subr") (add-hook 'after-init-hook 'init-subr)
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
+(message "Initializing window") (autoload 'init-window-delete-other-windows "init-window" nil t) (autoload 'init-window-bury-buffer-maybe-delete-window "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer-open-dired "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer "init-window" nil t)
 (message "Initializing zig-mode") (require 'init-zig-mode "init-zig-mode") (add-hook 'after-init-hook 'init-global-zig-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing flycheck") (require 'init-flycheck-mode "init-flycheck-mode") (add-hook 'after-init-hook 'init-global-flycheck-mode-on)
 
-;; Go programming language.
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this comment.
+
 (message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
+
+;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (message "Initializing gitconfig-mode") (require 'init-gitconfig-mode "init-gitconfig-mode") (add-hook 'after-init-hook 'init-gitconfig-mode)
 (message "Initializing graphql-mode") (require 'init-graphql-mode "init-graphql-mode") (add-hook 'after-init-hook 'init-global-graphql-mode-on)
 (message "Initializing handlebars-mode") (require 'init-handlebars-mode "init-handlebars-mode") (add-hook 'after-init-hook 'init-global-handlebars-mode-on)
+(message "Initializing hi-lock") (autoload 'init-hi-lock "init-highlight-regexp" nil t)
+(message "Initializing hl-line") (require 'init-hl-line "init-hl-line") (add-hook 'after-init-hook 'init-hl-line)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 
 (message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
 (message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
 (message "Initializing rainbow-mode") (require 'init-rainbow-mode "init-rainbow-mode") (add-hook 'after-init-hook 'init-rainbow-mode)
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this comment.
+
+;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>!~~~~<danil@kutkevich.org>
 
 ;; Selectrum a-la ido/ivy/counsel <https://github.com/raxod502/selectrum>.
 (message "Initializing selectrum") (require 'init-selectrum "init-selectrum") (add-hook 'after-init-hook 'init-selectrum) (add-hook 'after-init-hook 'init-global-selectrum-mode) ;; a-la ido/ivy/counsel
@@ -304,25 +326,40 @@ Cancels itself, if this buffer was killed."
 (message "Initializing prescient") (require 'init-prescient "init-prescient") (add-hook 'after-init-hook 'init-prescient)
 (message "Initializing amx-mode") (amx-mode +1)
 
-;; Mode line.
+;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Mode line below this comment.
+
 (message "Initializing smart-mode-line") (require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line)
 (message "Initializing window-numbering") (require 'init-window-numbering "init-window-numbering") (add-hook 'after-init-hook 'init-window-numbering)
+
+;;; ^^^↑^^^ Mode line above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 (message "Initializing highlight-symbol") (require 'init-highlight-symbol "init-highlight-symbol") (add-hook 'after-init-hook 'init-highlight-symbol)
 
 (message "Initializing make-mode") (require 'init-make-mode "init-make-mode") (add-hook 'after-init-hook 'init-global-make-mode-on)
 
-;; Projectile.
+;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
+;;; vvv↓vvv Projectile mode below this comment.
+
 (message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
 (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
+;;; ^^^↑^^^ Projectile mode above this comment.
+;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
+
+;;; FIXME: nox recipe is DEPRECATED!~~~~<danil@kutkevich.org>
 
 (require 'noxrcp (file-name-concat user-emacs-directory "noxrcp.el"))
 
-(defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ;; TODO: remove me!
+(defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ; TODO: Remove me!~~~~<danil@kutkevich.org>
 
-(defun noxel-kbd-fn (key) (kbd (concat "C-v " key))) ;; TODO: remove me!
+(defun noxel-kbd-fn (key) (kbd (concat "C-x C-x " key))) ; TODO: Remove me!~~~~<danil@kutkevich.org>
 
 (defvar nox-recipes ())
 
@@ -347,12 +384,9 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(go-translate)) ; google translate
 (nox-recipe '(haproxy-mode))
 (nox-recipe '(hcl-mode))
-(nox-recipe '(help))
-(nox-recipe '(hi-lock))
 (nox-recipe '(hideshow))
 (nox-recipe '(highlight-static-regexps))
 (nox-recipe '(highlight-static-regexps-tmp))
-(nox-recipe '(hl-line))
 (nox-recipe '(hl-todo))
 (nox-recipe '(hydra))
 
@@ -390,7 +424,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(json-reformat))
 (nox-recipe '(typescript-mode))
 
-(nox-recipe '(kill-emacs))
 (nox-recipe '(kill-ring))
 
 ;; (nox-recipe '(lsp-mode))
@@ -418,7 +451,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(my-sort))
 (nox-recipe '(my-sum-numbers-in-region))
 (nox-recipe '(my-tags))
-(nox-recipe '(my-uniquify-lines))
 (nox-recipe '(narrow-indirect))
 (nox-recipe '(newcomment))
 (nox-recipe '(nginx-mode))
@@ -467,9 +499,7 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(shell))
 (nox-recipe '(simp))
 (nox-recipe '(slim-mode))
-(nox-recipe '(sort))
 (nox-recipe '(su))
-(nox-recipe '(subr))
 (nox-recipe '(subword-mode))
 (nox-recipe '(systemd))
 
@@ -490,7 +520,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(visual-regexp))
 (nox-recipe '(vlf))
 (nox-recipe '(web-mode))
-(nox-recipe '(window))
 (nox-recipe '(winner-mode))
 (nox-recipe '(xref))
 (nox-recipe '(yaml-mode))
@@ -525,17 +554,12 @@ Cancels itself, if this buffer was killed."
 (defun noxrcp-init ()
   "Init."
 
-  (define-key noxel-map (kbd "x") noxrcp-exec-map)
-
-  (global-set-key (kbd "C-v") noxel-map))
+  (global-set-key (kbd "C-x C-x") noxel-map))
 
 (let ((f (file-name-concat user-emacs-directory "noxrcp.el")))
   (if (file-readable-p f)
       (require 'noxrcp f)
     (display-warning :noxrcp (format "nox rcp not found: %s" f))))
-
-(defvar noxrcp-exec-map (make-sparse-keymap)
-  "Exec keymap for noxrcp commands.")
 
 (custom-set-variables
 

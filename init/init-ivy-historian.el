@@ -1,7 +1,9 @@
-(defun init-ivy-historian ()
-  (if (boundp 'ivy-historian-mode) (init-ivy-historian--setup)
-    (with-eval-after-load 'ivy-historian (init-ivy-historian--setup))))
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-(defun init-ivy-historian--setup () (ivy-historian-mode t))
+(defun init-ivy-historian ()
+  (if (boundp 'ivy-historian-mode) (init-ivy-historian-init)
+    (with-eval-after-load 'ivy-historian (init-ivy-historian-init))))
+
+(defun init-ivy-historian-init () (ivy-historian-mode t))
 
 (provide 'init-ivy-historian)

@@ -11,7 +11,7 @@
   (if init-flycheck-mode (init-flycheck-mode-lazy-setup) (flycheck-mode -1)))
 
 (define-globalized-minor-mode init-global-flycheck-mode init-flycheck-mode
-  (lambda () (init-global-flycheck-mode-setup))
+  init-global-flycheck-mode-setup
   (unless init-global-flycheck-mode (init-global-flycheck-mode-teardown)))
 
 (defun init-global-flycheck-mode-on () (init-global-flycheck-mode +1))

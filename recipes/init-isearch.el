@@ -89,7 +89,7 @@
       (progn (setq current-prefix-arg nil) (ctrlf-forward-symbol-at-point))
     (isearch-forward-symbol-at-point)))
 
-;; FIXME: use custom-set-faces
+;; FIXME: Use `custom-set-faces`.~~~~<danil@kutkevich.org>
 (add-hook 'isearch-mode-hook
           (lambda ()
             (cond ((equal frame-background-mode 'light)

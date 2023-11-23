@@ -222,7 +222,7 @@ See `init-go-mode-bindings'.")
   (if init-go-mode (init-go-mode-setup) (init-go-mode-teardown)))
 
 (define-globalized-minor-mode init-global-go-mode init-go-mode
-  (lambda () (init-global-go-mode-setup))
+  init-global-go-mode-setup
   (unless init-global-go-mode (init-global-go-mode-teardown)))
 
 (defun init-go-mode-on () (init-go-mode +1))
@@ -284,14 +284,14 @@ See `init-go-mode-bindings'.")
                             "\treturn"
                             ))))))
 
-(defun init-go-mode-rainbow-identifiers-setup ()
+(defun init-go-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'go-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'init-go-mode-rainbow-identifiers-filter)
 
     (when (<= (count-lines (point-min) (point-max)) 50000) ;number of lines in current buffer
-      (init-rainbow-identifiers--lazy-setup))))
+      (init-rainbow-identifiers-lazy-init))))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-go-mode-rainbow-identifiers-filter (beg end)
@@ -335,7 +335,7 @@ See `init-go-mode-bindings'.")
        (equal ch-before ?.)
        (not (member str-cur init-go-mode-rainbow-identifiers-stop-words)))))))
 
-(defun init-go-dot-mod-mode-rainbow-identifiers-setup ()
+(defun init-go-dot-mod-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'go-dot-mod-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -350,7 +350,7 @@ See `init-go-mode-bindings'.")
             go-dot-mod-module-name
             ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-go-dot-mod-mode-rainbow-identifiers-filter (beg end)

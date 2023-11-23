@@ -47,7 +47,7 @@
 
   )
 
-(defun init-php-mode-rainbow-identifiers-setup ()
+(defun init-php-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'php-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -57,6 +57,6 @@
     (setq rainbow-identifiers-faces-to-override
           '(default font-lock-variable-name-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; init-php-mode.el ends here

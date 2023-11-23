@@ -1,10 +1,12 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defun init-projectile-rails ()
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-  (if (boundp 'projectile-rails-server-buffer-name) (init-projectile-rails--setup)
-    (with-eval-after-load 'projectile-rails (init-projectile-rails--setup))))
+  (if (boundp 'projectile-rails-server-buffer-name) (init-projectile-rails-init)
+    (with-eval-after-load 'projectile-rails (init-projectile-rails-init))))
 
-(defun init-projectile-rails--setup ()
+(defun init-projectile-rails-init ()
   ;; Override rails server arguments.
   (defun projectile-rails-server ()
     "Runs rails server command"

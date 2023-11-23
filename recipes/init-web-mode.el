@@ -77,7 +77,7 @@
   ;; (define-key web-mode-map (kbd "C-c C-f") nil)
   (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
 
-(defun init-web-mode-rainbow-identifiers-setup ()
+(defun init-web-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'web-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -92,7 +92,7 @@
                                                   web-mode-html-tag-face
                                                   ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 (defun noxrcp-web-mode--armor5games-settings ()
   "Custom Armor5games settings."

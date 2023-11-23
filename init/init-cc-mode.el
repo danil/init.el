@@ -11,8 +11,6 @@
   "Regexp patterns associated with `c-mode'."
   :group 'init-cc-mode)
 
-(defcustom init-cc-mode-map-prefix "C-v " "init-cc-mode" :group 'init-cc-mode)
-
 (defcustom init-c-mode-rainbow-identifiers-stop-words
   '(
     "stdin"
@@ -335,9 +333,10 @@
     (with-eval-after-load 'cc-mode (init-c-mode--init))))
 
 (defun init-c-mode--init ()
-  (define-key c-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
+  (define-key c-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack) ; FIXME: ????????????????????????????????????????????????????????????????????????????????
+  )
 
-(defun init-c-mode-rainbow-identifiers-setup ()
+(defun init-c-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'c-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -352,7 +351,7 @@
             font-lock-type-face
             ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-c-mode-rainbow-identifiers-filter (beg end)

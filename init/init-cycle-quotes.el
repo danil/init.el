@@ -5,8 +5,6 @@
   :prefix "init-cycle-quotes-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-cycle-quotes-mode-map-prefix "C-v " "init-cycle-quotes" :group 'init-cycle-quotes)
-
 (defcustom init-cycle-quotes-mode-lighter " init-cycle-quotes" "init-cycle-quotes" :group 'init-cycle-quotes)
 
 (defvar init-cycle-quotes-mode-map (make-sparse-keymap) "init-cycle-quotes")
@@ -15,11 +13,17 @@
   (init-cycle-quotes-setup))
 
 (define-globalized-minor-mode init-global-cycle-quotes-mode init-cycle-quotes-mode
-  (lambda () (init-cycle-quotes-mode +1)))
+  init-global-cycle-quotes-setup
+  ;; (unless init-global-cycle-quotes-mode (init-global-cycle-quotes-teardown))
+  )
 
 (defun init-cycle-quotes-setup ()
-  (let ((map init-cycle-quotes-mode-map)
-        (prefix init-cycle-quotes-mode-map-prefix))
-    (define-key map (kbd (concat prefix " q")) 'cycle-quotes)))
+  (let ((map init-cycle-quotes-mode-map))
+    (define-key map (kbd "C-x C-x q") 'cycle-quotes) ; FIXME: ????????????????????????????????????????????????????????????????????????????????
+    )
+  )
+
+(defun init-global-cycle-quotes-setup () (init-cycle-quotes-mode +1))
+;; (defun init-global-cycle-quotes-teardown ())
 
 (provide 'init-cycle-quotes)

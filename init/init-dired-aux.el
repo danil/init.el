@@ -1,9 +1,11 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defun init-dired-aux ()
   (if (boundp 'dired-mode-map) (init-dired-aux-lazy-init)
     (with-eval-after-load 'dired (init-dired-aux-lazy-init))))
 
 (defun init-dired-aux-lazy-init ()
-  (define-key dired-mode-map (kbd "C-c Q") 'init-dired-aux-do-query-replace))
+  (define-key dired-mode-map (kbd "C-c Q") 'init-dired-aux-do-query-replace)) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
 
 (defun init-dired-aux-do-query-replace (from to &optional delimited)
   "Do `query-replace' of FROM with TO, on all marked files.

@@ -34,7 +34,7 @@
 ;; (add-hook 'after-init-hook 'noxrcp-typescript-mode)
 ;; (defun noxrcp-typescript-mode () "No X recipe init.")
 
-(defun init-typescript-mode-rainbow-identifiers-setup ()
+(defun init-typescript-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'typescript-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -51,7 +51,7 @@
             typescript-mode-object-property
             ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-typescript-mode--rainbow-identifiers-filter (beg end)

@@ -420,7 +420,7 @@
      (not (member face-cur '('font-lock-string-face 'font-lock-comment-face)))
      (and (member str-cur '(" return"))))))
 
-(defun init-ruby-mode-rainbow-identifiers-setup ()
+(defun init-ruby-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'ruby-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -432,7 +432,7 @@
                                                   font-lock-constant-face
                                                   font-lock-type-face
                                                   font-lock-function-name-face))
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-ruby-mode--rainbow-identifiers-filter (beg end)
@@ -575,7 +575,7 @@ If the result is do-end block, it will always be multiline."
 (defun noxrcp-ruby-mode--align-variable-defenition-new-style ()
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil))
 
-;;TODO: To refactor below.
+;; TODO: Do refactoring below.~~~~<danil@kutkevich.org>
 
 ;; ;;; Inf ruby mode (irb) history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 ;; (defun my-irb-save-history-hook ()

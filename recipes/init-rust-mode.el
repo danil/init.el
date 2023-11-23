@@ -36,13 +36,13 @@
 ;;   "No X recipe init."
 ;;   )
 
-(defun init-rust-mode-rainbow-identifiers-setup ()
+(defun init-rust-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'rust-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-rust-mode--rainbow-identifiers-filter)
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 (defun noxrcp-rust-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."

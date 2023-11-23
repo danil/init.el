@@ -15,33 +15,33 @@
           (mode (nth 1 pattern-mode-pair)))
       (add-to-list 'auto-mode-alist (cons pattern mode)))))
 
-(defun init-conf-colon-mode-rainbow-identifiers-setup ()
+(defun init-conf-colon-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'conf-colon-mode)
     (init-conf-mode--rainbow-identifiers-init)
 
     (add-hook 'rainbow-identifiers-filter-functions
               'init-conf-colon-mode--rainbow-identifiers-filter)
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
-(defun init-conf-space-mode-rainbow-identifiers-setup ()
+(defun init-conf-space-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'conf-space-mode)
     (init-conf-mode--rainbow-identifiers-init)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
-(defun init-conf-unix-mode-rainbow-identifiers-setup ()
+(defun init-conf-unix-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'conf-unix-mode)
     (init-conf-mode--rainbow-identifiers-init)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
-(defun init-conf-xdefaults-mode-rainbow-identifiers-setup ()
+(defun init-conf-xdefaults-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'conf-xdefaults-mode)
     (init-conf-mode--rainbow-identifiers-init)
 
     (add-hook 'rainbow-identifiers-filter-functions
               'init-conf-colon-mode--rainbow-identifiers-filter)
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 (defun init-conf-mode--rainbow-identifiers-init ()
   (make-local-variable 'rainbow-identifiers-filter-functions)

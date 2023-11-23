@@ -1,8 +1,10 @@
-(defun init-selectrum-prescient ()
-  (if (boundp 'selectrum-mode) (init-selectrum-prescient--setup)
-    (with-eval-after-load 'selectrum (init-selectrum-prescient--setup))))
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-(defun init-selectrum-prescient--setup ()
+(defun init-selectrum-prescient ()
+  (if (boundp 'selectrum-mode) (init-selectrum-prescient-init)
+    (with-eval-after-load 'selectrum (init-selectrum-prescient-init))))
+
+(defun init-selectrum-prescient-init ()
   ;; to make sorting and filtering more intelligent
   (selectrum-prescient-mode +1))
 

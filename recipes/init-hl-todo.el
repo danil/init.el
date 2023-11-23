@@ -1,35 +1,4 @@
-;;; init-hl-todo.el --- This file is part of Danil <https://danil.kutkevich.org> home.
-
-;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.
-;; Author: Danil <https://danil.kutkevich.org>
-;; Maintainer: Danil <https://danil.kutkevich.org>
-;; URL: https://github.com/danil/init.el
-
-;;; Commentary:
-
-;; Please see README.md for documentation.
-
-;;; License:
-
-;; This file is not part of GNU Emacs.
-;; However, it is distributed under the same license.
-
-;; GNU Emacs is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
-
-;;; Code:
+;;; TODO: Move this recipe file to init!!!~~~~<danil@kutkevich.org>
 
 ;; (custom-set-variables '(hl-todo-activate-in-modes '()))
 
@@ -66,9 +35,9 @@
                  ("ARC"   . "#d7af00")
                  ("BAK"   . "#5f9ea0")
                  ("BENCH" . "#3cb371")
+                 ("CERT"   . "#ff5fd7")
                  ("CHORE" . "#d0bf8f")
                  ("CONS"  . "#ff875f")
-                 ("CRT"   . "#ff5fd7")
                  ("DEPRECATED" . "#db7093")
                  ("DEV"   . "#7cb8bb")
                  ("DOC"   . "#cc9393")
@@ -94,7 +63,8 @@
                  ("TROUBLESHOOTING" . "#2e8b57")
                  ("USR"   . "#6ca6cd")
                  ("VER[0-9]*" . "#7cb8bb")
-                 ("WRKRND" . "#5f9ea0"))))
+                 ("WIP"   . "#7cb8bb")
+                 ("WORKAROUND" . "#5f9ea0"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here

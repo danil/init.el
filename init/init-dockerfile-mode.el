@@ -1,7 +1,7 @@
 (defun init-dockerfile-mode ()
   (add-to-list 'auto-mode-alist '("/Dockerfile\\'" . dockerfile-mode)))
 
-(defun init-dockerfile-mode-rainbow-identifiers-setup ()
+(defun init-dockerfile-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'dockerfile-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -15,7 +15,7 @@
                                                   ;; font-lock-keyword-face
                                                   ;; font-lock-variable-name-face
                                                   ))
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-dockerfile-mode--rainbow-identifiers-filter (beg end)

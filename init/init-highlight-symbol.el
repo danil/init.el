@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defgroup init-highlight-symbol nil
   "init-highlight-symbol"
   :group  'editing
@@ -29,9 +31,9 @@ See `init-highlight-symbol-bindings'.")
 
 (defun init-highlight-symbol ()
   (dolist (hook init-highlight-symbol-mode-hooks)
-    (add-hook hook 'init-highlight-symbol-lazy-setup)))
+    (add-hook hook 'init-highlight-symbol-lazy-init)))
 
-(defun init-highlight-symbol-lazy-setup ()
+(defun init-highlight-symbol-lazy-init ()
   (init-lazy init-lazy-seconds nil 'init-highlight-symbol-mode +1))
 
 (defun init-highlight-symbol-setup ()

@@ -9,9 +9,9 @@
 
 (defvar init-graphql-mode-map (make-sparse-keymap)
   "Keymap for `init-graphql-mode'. Populated when mode is enabled.
-See `init-graphql-map-bindings'.")
+See `init-graphql-mode-bindings'.")
 
-(defcustom init-graphql-map-bindings '()
+(defcustom init-graphql-mode-bindings '()
   "Keybindings enabled in for example `graphql-mode'. This is not a keymap.
 Rather it is an alist that is converted into a keymap just before `highlight-symbol'
 is (re-)enabled. The keys are strings and the values are command symbols."
@@ -24,8 +24,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (init-graphql-mode-setup))
 
 (define-globalized-minor-mode init-global-graphql-mode init-graphql-mode
-  (lambda () (init-global-graphql-mode-setup) )
-  (unless init-global-graphql-mode (init-global-graphql-mode-teardown)))
+  init-global-graphql-mode-setup
+  ;; (unless init-global-graphql-mode (init-global-graphql-mode-teardown))
+  )
 
 (defcustom init-graphql-mode-patterns '()
   "Regexp patterns associated with `graphql-mode'."
@@ -39,14 +40,14 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (pattern init-graphql-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'graphql-mode))))
 
-(defun init-global-graphql-mode-teardown ())
+;; (defun init-global-graphql-mode-teardown ())
 
-(defun init-graphql-mode-rainbow-identifiers-setup ()
+(defun init-graphql-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'graphql-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'init-graphql-mode-rainbow-identifiers-filter)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-graphql-mode-rainbow-identifiers-filter (beg end)

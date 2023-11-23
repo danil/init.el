@@ -9,9 +9,9 @@
 
 (defvar init-make-mode-map (make-sparse-keymap)
   "Keymap for `init-make-mode'. Populated when mode is enabled.
-See `init-make-map-bindings'.")
+See `init-make-mode-bindings'.")
 
-(defcustom init-make-map-bindings '()
+(defcustom init-make-mode-bindings '()
   "Keybindings enabled in for example `makefile-gmake-mode'. This is not a keymap.
 Rather it is an alist that is converted into a keymap just before `highlight-symbol'
 is (re-)enabled. The keys are strings and the values are command symbols."
@@ -24,8 +24,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (init-make-mode-setup))
 
 (define-globalized-minor-mode init-global-make-mode init-make-mode
-  (lambda () (init-global-make-mode-setup) )
-  (unless init-global-make-mode (init-global-make-mode-teardown)))
+  init-global-make-mode-setup
+  ;; (unless init-global-make-mode (init-global-make-mode-teardown))
+  )
 
 (defcustom init-make-gmake-mode-patterns '()
   "Regexp patterns associated with `gmake-mode-patterns'."
@@ -39,6 +40,6 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (pattern init-make-gmake-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'makefile-gmake-mode))))
 
-(defun init-global-make-mode-teardown ())
+;; (defun init-global-make-mode-teardown ())
 
 (provide 'init-make-mode)

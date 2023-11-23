@@ -55,13 +55,13 @@
 ;;       (load (expand-file-name f))
 ;;       (setq inferior-lisp-program "ros -Q run"))))
 
-(defun init-lisp-mode-rainbow-identifiers-setup ()
+(defun init-lisp-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'lisp-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'noxrcp-lisp-mode--rainbow-identifiers-filter)
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 (defun noxrcp-lisp-mode--rainbow-identifiers-filter (beg end)
   "My rainbow-identifiers custom init for symbol between `BEG' and `END'."

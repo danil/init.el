@@ -1,3 +1,10 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+;;; File `simple.el`
+;;; <https://github.com/emacs-mirror/emacs/blob/master/lisp/simple.el#L26>.
+;; A grab-bag of basic Emacs commands not specifically related to some
+;; major mode or to file-handling.
+
 (defgroup init-simple nil
   "init-simple"
   :group  'editing
@@ -11,7 +18,7 @@
   "Regexp patterns associated with `fundamental-mode'."
   :group 'init-simple-mode)
 
-(defcustom init-simple-bindings '()
+(defcustom init-simple-mode-bindings '()
   "Keybindings enabled in `init-simple-mode'. This is not a keymap.
 Rather it is an alist that is converted into a keymap just before `init-simple-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
@@ -26,18 +33,20 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 
 (defvar init-simple-mode-map (make-sparse-keymap)
   "Keymap for `init-simple-mode'. Populated when mode is enabled.
-See `init-simple-bindings'.")
+See `init-simple-mode-bindings'.")
 
 (define-minor-mode init-simple-mode "init-simple" :init-value nil :lighter init-simple-mode-lighter :keymap init-simple-mode-map
   (init-simple-setup))
 
 (define-globalized-minor-mode init-global-simple-mode init-simple-mode
-  (lambda () (init-simple-mode +1)))
+  init-global-simple-setup
+  ;; (unless init-global-simple-mode (init-global-simple-teardown))
+  )
 
 (defun init-simple ()
-  ;; (setq line-number-mode t)
-  (setq overwrite-mode-textual " OVERWRITING")
+  (setq overwrite-mode-textual " OVERWRITING") ; NOTE: Used by a `rm-whitelist` customizable variable of a `rich-minority-mode` in file `rich-minority.el`. The `OVERWRITING` text is highlighted with a red face by the `rm-text-properties` customizable variable of the `rich-minority-mode`.~~~~<danil@kutkevich.org>
 
+  ;; (setq line-number-mode t)
   ;; Column number mode <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
   (column-number-mode +1)
   ;; Transient mark mode <http://emacswiki.org/TransientMarkMode>.
@@ -47,9 +56,12 @@ See `init-simple-bindings'.")
     (add-to-list 'auto-mode-alist (cons p 'fundamental-mode))))
 
 (defun init-simple-setup ()
-  (dolist (b init-simple-bindings)
+  (dolist (b init-simple-mode-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map init-simple-mode-map))
       (define-key map (kbd key) cmd))))
+
+(defun init-global-simple-setup () (init-simple-mode +1))
+;; (defun init-global-simple-teardown ())
 
 (defun init-simple-yank-pop ()
   (interactive)

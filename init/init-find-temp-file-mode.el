@@ -1,3 +1,5 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 ;; alpha bravo charlie delta echo foxtrot golf hotel india juliet kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whiskey x-ray yankee zulu
 
 (defgroup init-find-temp-file-mode nil
@@ -30,7 +32,9 @@ See `init-find-temp-file-mode-bindings'.")
   (init-find-temp-file-mode-setup))
 
 (define-globalized-minor-mode init-global-find-temp-file-mode init-find-temp-file-mode
-  (lambda () (init-find-temp-file-mode +1)))
+  init-global-find-temp-file-mode-setup
+  ;; (unless init-global-find-temp-file-mode (init-global-find-temp-file-mode-teardown))
+  )
 
 (defun init-global-find-temp-file-mode-on () (init-global-find-temp-file-mode +1))
 
@@ -41,6 +45,9 @@ See `init-find-temp-file-mode-bindings'.")
   (dolist (b init-find-temp-file-mode-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map init-find-temp-file-mode-map))
       (define-key map (kbd key) cmd))))
+
+(defun init-global-find-temp-file-mode-setup () (init-find-temp-file-mode +1))
+;; (defun init-global-find-temp-file-mode-teardown ())
 
 (defun init-find-temp-file-go (file-path)
   (let* ((directory-path (file-name-directory file-path))

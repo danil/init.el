@@ -11,9 +11,9 @@
 
 (defvar init-zig-mode-map (make-sparse-keymap)
   "Keymap for `init-zig-mode'. Populated when mode is enabled.
-See `init-zig-map-bindings'.")
+See `init-zig-mode-bindings'.")
 
-(defcustom init-zig-map-bindings '()
+(defcustom init-zig-mode-bindings '()
   "Keybindings enabled in `init-zig-mode'. This is not a keymap.
 Rather it is an alist that is converted into a keymap just before `init-zig-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
@@ -26,8 +26,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (init-zig-mode-setup))
 
 (define-globalized-minor-mode init-global-zig-mode init-zig-mode
-  (lambda () (init-global-zig-mode-setup) )
-  (unless init-global-zig-mode (init-global-zig-mode-teardown)))
+  init-global-zig-mode-setup
+  ;; (unless init-global-zig-mode (init-global-zig-mode-teardown))
+  )
 
 (defcustom init-zig-mode-patterns '()
   "Regexp patterns associated with `zig-mode'."
@@ -41,14 +42,14 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (pattern init-zig-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'zig-mode))))
 
-(defun init-global-zig-mode-teardown ())
+;; (defun init-global-zig-mode-teardown ())
 
-(defun init-zig-mode-rainbow-identifiers-setup ()
+(defun init-zig-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'zig-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'init-zig-mode-rainbow-identifiers-filter)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-zig-mode-rainbow-identifiers-filter (beg end)

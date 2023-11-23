@@ -1,11 +1,13 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 (defun init-company-elisp ()
-  (if (boundp 'company-mode-map) (init-company-elisp--setup)
-    (with-eval-after-load 'company (init-company-elisp--setup))))
+  (if (boundp 'company-mode-map) (init-company-elisp-init)
+    (with-eval-after-load 'company (init-company-elisp-init))))
 
-(defun init-company-elisp--setup ()
-  (add-hook 'emacs-lisp-mode-hook 'init-company-elisp---setup))
+(defun init-company-elisp-init ()
+  (add-hook 'emacs-lisp-mode-hook 'init-company-elisp--init))
 
-(defun init-company-elisp---setup ()
+(defun init-company-elisp--init ()
   (set (make-local-variable 'company-backends)
        (append '((
                   company-elisp

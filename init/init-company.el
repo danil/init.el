@@ -17,12 +17,18 @@
   (init-company-setup))
 
 (define-globalized-minor-mode init-global-company-mode init-company-mode
-  (lambda () (init-company-mode +1)))
+  init-global-company-setup
+  ;; (unless init-global-company-mode (init-global-company-teardown))
+  )
 
 (defun init-company () (global-company-mode +1))
 
 (defun init-company-setup ()
-  (define-key init-company-mode-map [?\C-\M-i] 'init-company-completing-read)) ;; counsel-company completion-at-point)
+  (define-key init-company-mode-map (kbd "C-M-i") 'init-company-completing-read) ; counsel-company completion-at-point) ; FIXME: ????????????????????????????????????????????????????????????????????????????????
+  )
+
+(defun init-global-company-setup () (init-company-mode +1))
+;; (defun init-global-company-teardown ())
 
 (defun init-company-completing-read ()
   (interactive)

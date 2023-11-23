@@ -49,7 +49,7 @@
   (dolist (pattern noxrcp-haproxy-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'haproxy-mode))))
 
-(defun init-haproxy-mode-rainbow-identifiers-setup ()
+(defun init-haproxy-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'haproxy-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -58,7 +58,7 @@
     (make-local-variable 'rainbow-identifiers-faces-to-override)
     (setq rainbow-identifiers-faces-to-override '(font-lock-keyword-face))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;;; <https://github.com/XANi/config/blob/master/modules/emacs/files/parts/haproxy-mode.el>.
 (define-generic-mode 'haproxy-mode

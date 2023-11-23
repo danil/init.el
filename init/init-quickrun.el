@@ -7,17 +7,11 @@
   :prefix "init-quickrun-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-quickrun-map-prefix "C-v " "init-quickrun" :group 'init-quickrun)
-
 (defun init-quickrun ()
-  (if (boundp 'quickrun-file-alist) (init-quickrun-setup)
-    (with-eval-after-load 'quickrun (init-quickrun-setup)))
+  (if (boundp 'quickrun-file-alist) (init-quickrun-init)
+    (with-eval-after-load 'quickrun (init-quickrun-init))))
 
-  (let ((prefix init-quickrun-map-prefix))
-    (global-set-key (kbd (concat prefix "! b")) 'init--quickrun)
-    (global-set-key (kbd (concat prefix "! r")) 'init--quickrun-region)))
-
-(defun init-quickrun-setup ()
+(defun init-quickrun-init ()
   (add-to-list 'quickrun-file-alist '("\\.zig\\'" . "zig"))
 
   (quickrun-add-command "zig"

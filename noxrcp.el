@@ -172,8 +172,8 @@ Otherwise use `list'."
 
 ;;;###autoload
 (defun noxel-kbd-fn (key)
-  "No X recipe key bindings start with \\<<C-v>> follow by `KEY'."
-  (kbd (concat "C-v " key)))
+  "No X recipe key bindings start with prefix follow by `KEY'."
+  (kbd (concat "C-x C-x " key)))
 
 ;;;###autoload
 

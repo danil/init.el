@@ -21,12 +21,12 @@
   (dolist (p init-ferm-mode-patterns)
     (add-to-list 'auto-mode-alist (cons p 'ferm-mode))))
 
-(defun init-ferm-mode-rainbow-identifiers-setup ()
+(defun init-ferm-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'ferm-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
               'init-ferm-mode-rainbow-identifiers-filter)
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-ferm-mode-rainbow-identifiers-filter (beg end)

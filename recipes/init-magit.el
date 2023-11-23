@@ -67,7 +67,7 @@
 
   (set-face-background 'magit-section-highlight nil))
 
-;;; TODO: Pass appropriate arguments to highlight-regexp.
+;;; TODO: Pass appropriate arguments to highlight-regexp.~~~~<danil@kutkevich.org>
 ;; (defun my-magit-show (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg (magit-show-commit) (magit-show)))

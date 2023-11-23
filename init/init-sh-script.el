@@ -11,9 +11,9 @@
 
 (defvar init-sh-mode-map (make-sparse-keymap)
   "Keymap for `init-sh-mode'. Populated when mode is enabled.
-See `init-sh-map-bindings'.")
+See `init-sh-mode-bindings'.")
 
-(defcustom init-sh-map-bindings '()
+(defcustom init-sh-mode-bindings '()
   "Keybindings enabled in `init-sh-mode'. This is not a keymap.
 Rather it is an alist that is converted into a keymap just before `init-sh-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
@@ -26,8 +26,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (init-sh-mode-setup))
 
 (define-globalized-minor-mode init-global-sh-mode init-sh-mode
-  (lambda () (init-global-sh-mode-setup) )
-  (unless init-global-sh-mode (init-global-sh-mode-teardown)))
+  init-global-sh-mode-setup
+  ;; (unless init-global-sh-mode (init-global-sh-mode-teardown))
+  )
 
 (defcustom init-sh-mode-patterns '()
   "Regexp patterns associated with `sh-mode'."
@@ -41,9 +42,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (pattern init-sh-mode-patterns)
     (add-to-list 'auto-mode-alist (cons pattern 'sh-mode))))
 
-(defun init-global-sh-mode-teardown ())
+;; (defun init-global-sh-mode-teardown ())
 
-(defun init-sh-mode-rainbow-identifiers-setup ()
+(defun init-sh-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'sh-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -59,7 +60,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
                                                   sh-quoted-exec
                                                   ))
 
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun init-sh-mode-rainbow-identifiers-filter (beg end)

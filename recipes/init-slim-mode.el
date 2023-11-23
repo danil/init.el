@@ -45,7 +45,7 @@
   (define-key slime-parent-map (kbd "M-_") nil)
   (define-key slime-parent-map (kbd "M-?") nil))
 
-(defun init-slim-mode-rainbow-identifiers-setup ()
+(defun init-slim-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'slim-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)
     (add-hook 'rainbow-identifiers-filter-functions
@@ -59,7 +59,7 @@
                                                   font-lock-function-name-face
                                                   font-lock-constant-face
                                                   ))
-    (init-rainbow-identifiers--lazy-setup)))
+    (init-rainbow-identifiers-lazy-init)))
 
 ;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
 (defun noxrcp-slim-mode--rainbow-identifiers-filter (beg end)
