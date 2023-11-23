@@ -296,7 +296,6 @@ Cancels itself, if this buffer was killed."
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
-(message "Initializing repeat") (require 'init-repeat "init-repeat") (add-hook 'after-init-hook 'init-repeat) ;; (autoload 'init--repeat "init-repeat" nil t)
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
 (message "Initializing subr") (require 'init-subr "init-subr") (add-hook 'after-init-hook 'init-subr)
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
