@@ -23,9 +23,8 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (when (fboundp 'evil-mode) (evil-mode 1)))
 
 (defun init-evil-init ()
-  (dolist (b init-evil-bindings)
-    (let ((key (car b)) (cmd (cdr b)) (map global-map))
-      (define-key map (kbd key) cmd)))
+  (if (boundp 'undo-tree-map) (init-evil-undo-tree)
+    (with-eval-after-load 'undo-tree (init-evil-undo-tree)))
 
   ;; Color the Evil tag (colors taken from spaceline)
   ;; <https://github.com/Malabarba/smart-mode-line/issues/195#issuecomment-338447042>.
@@ -40,6 +39,10 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   ;; (evil-set-initial-state 'Buffer-menu-mode 'motion) ; NOTE: Instead used `evil-collection` setup.
   (evil-set-initial-state 'ivy-occur-grep-mode 'normal) ; 'ivy-occur-mode
   (evil-set-initial-state 'shell-mode 'motion) ; 'emacs
+
+  (dolist (b init-evil-bindings)
+    (let ((key (car b)) (cmd (cdr b)) (map global-map))
+      (define-key map (kbd key) cmd)))
 
   (define-key evil-motion-state-map (kbd "SPC") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "RET") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
@@ -67,11 +70,23 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state))
 
+(defun init-evil-undo-tree ()
+  ;; <https://github.com/emacs-evil/evil/issues/1382#issuecomment-761087738>.
+  (add-hook 'evil-local-mode-hook #'init-evil-turn-on-undo-tree-mode))
+
 (defun init-evil-init-save-and-goto-normal-state ()
   "Save buffer and go to normal state."
   (interactive)
   (save-buffer)
   (evil-exit-emacs-state)
   (evil-normal-state))
+
+(defun init-evil-turn-on-undo-tree-mode ()
+  "Enable `undo-tree-mode' if evil is enabled.
+This function enables `undo-tree-mode' when Evil is activated in
+some buffer, but only if `global-undo-tree-mode' is also
+activated."
+  (when (and (boundp 'global-undo-tree-mode) global-undo-tree-mode)
+    (if (eq major-mode 'dired-mode) (undo-tree-mode 1) (turn-on-undo-tree-mode))))
 
 (provide 'init-evil)
