@@ -31,8 +31,9 @@ If SAVE-POINT is non-nil, do not move point."
       (setq init-evil-repeat-next-to-last-repeatable-command init-evil-repeat-last-repeatable-command)
       (setq init-evil-repeat-last-repeatable-command last-repeatable-command))
 
-    (when (not (or (eq init-evil-repeat-last-repeatable-command 'repeat)
-                   (eq init-evil-repeat-next-to-last-repeatable-command 'repeat)))
+    (if (or (eq init-evil-repeat-last-repeatable-command 'repeat)
+            (eq init-evil-repeat-next-to-last-repeatable-command 'repeat))
+        (message "There is nothing to repeat through the `evil-repeat' after the `repeat'")
       (evil-repeat count save-point))))
 
 (provide 'init-evil-repeat)
