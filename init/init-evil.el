@@ -38,7 +38,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 
   ;; (evil-set-initial-state 'Buffer-menu-mode 'motion) ; NOTE: Instead used `evil-collection` setup.
   (evil-set-initial-state 'ivy-occur-grep-mode 'normal) ; 'ivy-occur-mode
-  (evil-set-initial-state 'shell-mode 'motion) ; 'emacs
+  (evil-set-initial-state 'shell-mode 'normal) ; 'motion ; 'emacs
 
   (dolist (b init-evil-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map global-map))
