@@ -6,8 +6,8 @@
 ;;; vvv↓vvv User Emacs directory below this comment.
 
 ;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
-(setq user-emacs-directory (file-truename "~/.config/emacs")) ;; "~/.emacs.d"
-(setq init-emacs-var (file-name-concat user-emacs-directory "var")) ;; "~/.emacs.d/var" ;; "~/.config/emacs/var"
+(setq user-emacs-directory (file-truename "~/.config/emacs")) ; "~/.emacs.d"
+(setq init-emacs-var (file-name-concat user-emacs-directory "var")) ; "~/.emacs.d/var" ; "~/.config/emacs/var"
 
 ;;; ^^^↑^^^ User Emacs directory above this comment.
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
