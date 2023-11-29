@@ -158,9 +158,8 @@
 
 ;; (depends-on "git-gutter")
 (depends-on "diff-hl")
+;; (depends-on "git-modes") ; NOTE: Provides gitconfig-mode and gitignore-mode.~~~~<danil@kutkevich.org>
 (depends-on "git-timemachine")
-;(depends-on "gitconfig-mode")
-;(depends-on "gitignore-mode")
 
 ;;; ^^^↑^^^ Git above this comment.
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
