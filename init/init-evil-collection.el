@@ -19,12 +19,13 @@
     (error "evil-collection load failure")))
 
 (defun init-evil-collection--init ()
-  ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-apropos-setup evil-collection-git-timemachine-setup evil-collection-info-setup evil-collection-js2-mode-setup evil-collection-leetcode-setup evil-collection-log-view-setup evil-collection-lua-mode-setup evil-collection-python-setup evil-collection-tar-mode-setup evil-collection-view-setup evil-collection-which-key-setup evil-collection-woman-setup evil-collection-yaml-mode-setup.~~~~<danil@kutkevich.org>
+  ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-apropos-setup evil-collection-info-setup evil-collection-js2-mode-setup evil-collection-leetcode-setup evil-collection-log-view-setup evil-collection-lua-mode-setup evil-collection-python-setup evil-collection-tar-mode-setup evil-collection-view-setup evil-collection-which-key-setup evil-collection-woman-setup evil-collection-yaml-mode-setup.~~~~<danil@kutkevich.org>
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-company-setup evil-collection-diff-mode-setup evil-collection-elisp-mode-setup evil-collection-flycheck-setup evil-collection-flymake-setup evil-collection-grep-setup evil-collection-indent-setup evil-collection-rg-setup evil-collection-ruby-mode-setup.~~~~<danil@kutkevich.org>
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-calc-setup evil-collection-ediff-setup evil-collection-go-mode-setup evil-collection-man-setup evil-collection-markdown-mode-setup evil-collection-minibuffer-setup evil-collection-quickrun-setup evil-collection-replace-setup evil-collection-ripgrep-setup evil-collection-selectrum-setup evil-collection-sh-script-setup evil-collection-simple-setup.~~~~<danil@kutkevich.org>
   (if (boundp 'calendar-mode-map) (evil-collection-calendar-setup) (with-eval-after-load 'calendar (evil-collection-calendar-setup)))
   (if (boundp 'dired-mode-map) (evil-collection-dired-setup) (with-eval-after-load 'dired (evil-collection-dired-setup)))
   (if (boundp 'eshell-buffer-name) (evil-collection-eshell-setup) (with-eval-after-load 'eshell (evil-collection-eshell-setup)))
+  (if (boundp 'git-timemachine-revision) (evil-collection-git-timemachine-setup) (with-eval-after-load 'git-timemachine (evil-collection-git-timemachine-setup)))
   (if (boundp 'help-mode-map) (evil-collection-help-setup) (with-eval-after-load 'help-mode (evil-collection-help-setup)))
   (if (boundp 'ibuffer-mode-map) (evil-collection-ibuffer-setup) (with-eval-after-load 'ibuffer (evil-collection-ibuffer-setup)))
   (if (boundp 'ivy-mode-map) (evil-collection-ivy-setup) (with-eval-after-load 'ivy (evil-collection-ivy-setup)))

@@ -158,7 +158,7 @@
 
 ;; (depends-on "git-gutter")
 (depends-on "diff-hl")
-;; (depends-on "git-modes") ; NOTE: Provides gitconfig-mode and gitignore-mode.~~~~<danil@kutkevich.org>
+(depends-on "git-modes") ; NOTE: Provides gitconfig-mode and gitignore-mode <https://github.com/magit/git-modes>.~~~~<danil@kutkevich.org>
 (depends-on "git-timemachine")
 
 ;;; ^^^↑^^^ Git above this comment.

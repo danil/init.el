@@ -515,11 +515,11 @@
      ("C-x C-x B h" . init-highlight-regexp) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
      ("C-x C-x B r" . rename-buffer)
      ("C-x C-x f"   . noxrcp-isearch--forward-literal)
+     ("C-x C-x F F" . noxrcp-isearch--backward-literal)
      ("C-x C-x F a" . init-counsel-ag)
      ("C-x C-x F g" . counsel-git-grep)
      ("C-x C-x F p" . counsel-pt)
      ("C-x C-x F r" . init-counsel-rg)
-     ("C-x C-x F s" . noxrcp-isearch--forward-literal)
      ("C-x C-x g" . revert-buffer)
 
      ("C-x C-x C-j" . electric-newline-and-maybe-indent)
