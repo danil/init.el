@@ -291,7 +291,7 @@
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
 (depends-on "redis")
-(depends-on "restclient")
+(depends-on "restclient") ; A-la cURL or [JetBrains HTTP Client](https://plugins.jetbrains.com/plugin/13121-http-client).
 
 ;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
 ;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this comment.
