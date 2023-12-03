@@ -53,6 +53,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (evil-define-key '(insert emacs) global-map (kbd "C-x C-s") 'init-evil-init-save-and-goto-normal-state)
 
   (evil-global-set-key 'normal (kbd ".") 'init--evil-repeat)
+  (evil-define-key 'normal global-map (kbd "ш") 'evil-insert) ; NOTE: Same keys in English and Russian layouts "i" and "ш".~~~~<danil@kutkevich.org>
 
   (evil-define-key 'insert global-map (kbd "C-d") 'delete-char) ; NOTE: Overwrited default function `evil-shift-left-line`.~~~~<danil@kutkevivh.org>
   (evil-define-key 'insert global-map (kbd "C-n") 'evil-next-line) ; NOTE: Overwrited default function `evil-complete-next`.~~~~<danil@kutkevivh.org>
@@ -68,6 +69,7 @@ is (re-)enabled. The keys are strings and the values are command symbols."
     (evil-define-key keymap global-map (kbd "C-x C-x S v") 'evil-visual-state)
     (evil-define-key keymap global-map (kbd "C-x C-x S e") 'evil-emacs-state))
 
+  (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-ы") 'evil-change-to-initial-state) ; NOTE: Same keys in English and Russian layouts "C-s" and "C-ы".~~~~<danil@kutkevich.org>
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state))
 
 (defun init-evil-undo-tree ()
