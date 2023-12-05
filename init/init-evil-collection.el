@@ -24,6 +24,7 @@
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-company-setup evil-collection-diff-mode-setup evil-collection-elisp-mode-setup evil-collection-flycheck-setup evil-collection-flymake-setup evil-collection-grep-setup evil-collection-indent-setup evil-collection-rg-setup evil-collection-ruby-mode-setup.~~~~<danil@kutkevich.org>
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-calc-setup evil-collection-ediff-setup evil-collection-go-mode-setup evil-collection-man-setup evil-collection-markdown-mode-setup evil-collection-minibuffer-setup evil-collection-quickrun-setup evil-collection-replace-setup evil-collection-ripgrep-setup evil-collection-selectrum-setup evil-collection-sh-script-setup evil-collection-simple-setup.~~~~<danil@kutkevich.org>
   (if (boundp 'calendar-mode-map) (evil-collection-calendar-setup) (with-eval-after-load 'calendar (evil-collection-calendar-setup)))
+  (if (boundp 'compilation-mode-map) (evil-collection-compile-setup) (with-eval-after-load 'compile (evil-collection-compile-setup)))
   (if (boundp 'dired-mode-map) (evil-collection-dired-setup) (with-eval-after-load 'dired (evil-collection-dired-setup)))
   (if (boundp 'eshell-buffer-name) (evil-collection-eshell-setup) (with-eval-after-load 'eshell (evil-collection-eshell-setup)))
   (if (boundp 'git-timemachine-revision) (evil-collection-git-timemachine-setup) (with-eval-after-load 'git-timemachine (evil-collection-git-timemachine-setup)))
