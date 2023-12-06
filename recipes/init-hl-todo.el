@@ -60,6 +60,7 @@
                  ("RWX"   . "#db7093")
                  ("RX"    . "#6ca6cd")
                  ("STG"   . "#af87ff")
+                 ("SVC"   . "#00688b")
                  ("TROUBLESHOOTING" . "#2e8b57")
                  ("USR"   . "#6ca6cd")
                  ("VER[0-9]*" . "#7cb8bb")
