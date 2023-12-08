@@ -11,10 +11,10 @@
   (interactive)
 
   (let* ((continue t)
-         (keys '("j" "k" "h" "l" "n" "p" "u" "d" "0" "^" "$" "g" "G")))
+         (keys '("j" "k" "h" "l" "u" "d" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
 
     (while continue
-      (message "Scroll: j k u d; move: h l n p; line begin/end: 0 ^ $; buffer begin/end: g G")
+      (message "Scroll: hjkl Page up/down: ud Move: bpnf Line begin/end: 0^$ Buffer begin/end: gG")
 
       (let* ((event (read-event))
              (key (format-kbd-macro (vector event) nil)))
@@ -22,15 +22,18 @@
 
         (if (member key keys)
             (progn
-              (cond ((equal key "j") (condition-case nil (scroll-up-line) (end-of-buffer)))
+              (cond ((equal key "h") (scroll-right 1))
+                    ((equal key "j") (condition-case nil (scroll-up-line) (end-of-buffer)))
                     ((equal key "k") (condition-case nil (scroll-down-line) (beginning-of-buffer)))
+                    ((equal key "l") (scroll-left 1))
+
                     ((equal key "u") (condition-case nil (scroll-down) (beginning-of-buffer)))
                     ((equal key "d") (condition-case nil (scroll-up) (end-of-buffer)))
 
-                    ((equal key "h") (backward-char))
-                    ((equal key "l") (forward-char))
-                    ((equal key "n") (next-line))
+                    ((equal key "b") (backward-char))
                     ((equal key "p") (previous-line))
+                    ((equal key "n") (next-line))
+                    ((equal key "f") (forward-char))
 
                     ((equal key "0") (beginning-of-line))
                     ((equal key "^") (beginning-of-line-text))
