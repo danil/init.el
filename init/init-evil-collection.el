@@ -25,7 +25,7 @@
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-calc-setup evil-collection-ediff-setup evil-collection-go-mode-setup evil-collection-man-setup evil-collection-markdown-mode-setup evil-collection-minibuffer-setup evil-collection-quickrun-setup evil-collection-replace-setup evil-collection-ripgrep-setup evil-collection-selectrum-setup evil-collection-sh-script-setup evil-collection-simple-setup.~~~~<danil@kutkevich.org>
   (if (boundp 'calendar-mode-map) (evil-collection-calendar-setup) (with-eval-after-load 'calendar (evil-collection-calendar-setup)))
   (if (boundp 'compilation-mode-map) (evil-collection-compile-setup) (with-eval-after-load 'compile (evil-collection-compile-setup)))
-  (if (boundp 'dired-mode-map) (evil-collection-dired-setup) (with-eval-after-load 'dired (evil-collection-dired-setup)))
+  (if (boundp 'dired-mode-map) (init-evil-collection-dired) (with-eval-after-load 'dired (init-evil-collection-dired)))
   (if (boundp 'eshell-buffer-name) (evil-collection-eshell-setup) (with-eval-after-load 'eshell (evil-collection-eshell-setup)))
   (if (boundp 'git-timemachine-revision) (evil-collection-git-timemachine-setup) (with-eval-after-load 'git-timemachine (evil-collection-git-timemachine-setup)))
   (if (boundp 'help-mode-map) (evil-collection-help-setup) (with-eval-after-load 'help-mode (evil-collection-help-setup)))
@@ -36,5 +36,14 @@
   (if (boundp 'wdired-mode-map) (evil-collection-wdired-setup) (with-eval-after-load 'wdired (evil-collection-wdired-setup)))
   (if (boundp 'wgrep-mode-map) (evil-collection-wgrep-setup) (with-eval-after-load 'wgrep (evil-collection-wgrep-setup)))
   (when (boundp 'Buffer-menu-marker-char) (evil-collection-buff-menu-setup)))
+
+(defun init-evil-collection-dired ()
+  (evil-collection-dired-setup)
+  (if (fboundp 'init-dired-reuse-directory-buffer) (init-evil-collection--dired) (with-eval-after-load 'init-dired (init-evil-collection--dired))))
+
+(defun init-evil-collection--dired ()
+  (evil-collection-define-key 'normal 'dired-mode-map
+    ;; "-" 'dired-up-directory
+    "^" 'init-dired-reuse-directory-buffer))
 
 (provide 'init-evil-collection)
