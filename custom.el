@@ -532,6 +532,7 @@
      ("C-x C-x l" . init-fringe-toggle)
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
+     ("C-x C-x m" . yaless-stub)
      ("C-x C-x r f" . fill-region)
      ("C-x C-x t" . shell)
      ("C-x C-x u" . init-unique-lines-region)

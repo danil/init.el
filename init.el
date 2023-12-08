@@ -319,6 +319,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing hi-lock") (autoload 'init-hi-lock "init-highlight-regexp" nil t)
 (message "Initializing hl-line") (require 'init-hl-line "init-hl-line") (add-hook 'after-init-hook 'init-hl-line)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
+(message "Initializing yaless-mode") (autoload 'yaless-stub "init-yaless-mode" nil t)
 
 (message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
 (message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
