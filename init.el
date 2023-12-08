@@ -383,7 +383,6 @@ Cancels itself, if this buffer was killed."
 ;; (nox-recipe '(flycheck-bashate))
 (nox-recipe '(flycheck-golangci-lint))
 
-(nox-recipe '(go-expr-completion))
 (nox-recipe '(go-stacktracer))
 (nox-recipe '(godoctor))
 (nox-recipe '(gotest))
@@ -430,7 +429,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(js-mode))
 (nox-recipe '(js2-mode))
 (nox-recipe '(json-mode))
-(nox-recipe '(json-reformat))
 (nox-recipe '(typescript-mode))
 
 (nox-recipe '(kill-ring))
