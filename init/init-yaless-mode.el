@@ -14,7 +14,9 @@
          (keys '("j" "k" "h" "l" "u" "d" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
 
     (while continue
-      (message "SCROLL: hjkl PAGE UP/DOWN: ud MOVE: bpnf LINE BEGIN/END: 0^$ BUFFER BEGIN/END: gG")
+      (message (concat " Less "
+                       (propertize "SCROLL" 'face '((:background "blue" :foreground "white")))
+                       ": hjkl PAGE UP/DOWN: ud MOVE: bpnf LINE BEGIN/END: 0^$ BUFFER BEGIN/END: gG"))
 
       (let* ((event (read-event))
              (key (format-kbd-macro (vector event) nil)))
