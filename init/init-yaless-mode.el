@@ -14,7 +14,7 @@
          (keys '("j" "k" "h" "l" "u" "d" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
 
     (while continue
-      (message "Scroll: hjkl Page up/down: ud Move: bpnf Line begin/end: 0^$ Buffer begin/end: gG")
+      (message "SCROLL: hjkl PAGE UP/DOWN: ud MOVE: bpnf LINE BEGIN/END: 0^$ BUFFER BEGIN/END: gG")
 
       (let* ((event (read-event))
              (key (format-kbd-macro (vector event) nil)))
