@@ -60,14 +60,14 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (evil-define-key 'insert global-map (kbd "C-p") 'evil-previous-line) ; NOTE: Overwrited default function `evil-complete-previous`.~~~~<danil@kutkevivh.org>
 
   (let ((keymap '(normal insert replace motion visual operator emacs)))
-    ;; (evil-define-key keymap global-map (kbd "C-x C-x s") 'evil-mode)
-    (evil-define-key keymap global-map (kbd "C-x C-x S S") 'evil-force-normal-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S n") 'evil-normal-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S i") 'evil-insert-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S r") 'evil-replace-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S m") 'evil-motion-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S v") 'evil-visual-state)
-    (evil-define-key keymap global-map (kbd "C-x C-x S e") 'evil-emacs-state))
+    ;; (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x s") 'evil-mode)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S S") 'evil-force-normal-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S n") 'evil-normal-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S i") 'evil-insert-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S r") 'evil-replace-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S m") 'evil-motion-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S v") 'evil-visual-state)
+    (evil-define-key keymap global-map (kbd "C-x C-x C-x C-x S e") 'evil-emacs-state))
 
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-ы") 'evil-change-to-initial-state) ; NOTE: Same keys in English and Russian layouts "C-s" and "C-ы".~~~~<danil@kutkevich.org>
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state))
