@@ -16,7 +16,7 @@
     (while continue
       (message (concat " Less "
                        (propertize "SCROLL" 'face '((:background "blue" :foreground "white")))
-                       ":hjkl PAGE UP/DOWN:ud MOVE:bpnf LINE BEGIN/END: 0^$ BUFFER BEGIN/END:gG"))
+                       ":hjkl PAGE|UP/DOWN:ud MOVE:bpnf LINE|BEGIN/END:0^$ BUFFER|BEGIN/END:gG"))
 
       (let* ((event (read-event))
              (key (format-kbd-macro (vector event) nil)))
