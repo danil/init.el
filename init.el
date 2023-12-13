@@ -318,9 +318,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing handlebars-mode") (require 'init-handlebars-mode "init-handlebars-mode") (add-hook 'after-init-hook 'init-global-handlebars-mode-on)
 (message "Initializing hi-lock") (autoload 'init-hi-lock "init-highlight-regexp" nil t)
 (message "Initializing hl-line") (require 'init-hl-line "init-hl-line") (add-hook 'after-init-hook 'init-hl-line)
+(message "Initializing less-scroll-mode") (autoload 'less-scroll-stub "init-less-scroll-mode" nil t)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 (message "Initializing sort") (require 'init-sort "init-sort")
-(message "Initializing yaless-mode") (autoload 'yaless-stub "init-yaless-mode" nil t)
 
 (message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
 (message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)

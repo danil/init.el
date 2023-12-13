@@ -541,7 +541,7 @@
      ("C-x C-x l" . init-fringe-toggle)
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
-     ("C-x C-x m" . yaless-stub)
+     ("C-x C-x m" . less-scroll-stub)
      ("C-x C-x r f" . fill-region)
      ("C-x C-x s"   . sort-lines)
      ("C-x C-x S f" . sort-fields)

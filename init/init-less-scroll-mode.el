@@ -1,13 +1,13 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-(defgroup init-yaless-mode nil
-  "init-yaless-mode"
+(defgroup init-less-scroll-mode nil
+  "init-less-scroll-mode"
   :group  'editing
-  :tag    "init-yaless-mode"
-  :prefix "init-yaless-mode-"
+  :tag    "init-less-scroll-mode"
+  :prefix "init-less-scroll-mode-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defun yaless-stub ()
+(defun less-scroll-stub ()
   (interactive)
 
   (let* ((continue t)
@@ -49,4 +49,4 @@
           (setq continue nil)
           (push last-input-event unread-command-events))))))
 
-(provide 'init-yaless-mode)
+(provide 'init-less-scroll-mode)
