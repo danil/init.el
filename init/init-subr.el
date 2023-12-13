@@ -22,4 +22,15 @@
   (interactive)
   (insert (format-time-string "%Y%m%d" nil "UTC0")))
 
+;; <https://emacs.stackexchange.com/questions/53175/when-does-shell-command-on-region-actually-pass-the-region-to-the-command#53176>.
+(defun init-subr-shell-command-with-region-arg (command beginning end)
+  "Prompt for a shell COMMAND, and use the region as an argument.
+
+Buffer text from BEGINNING to END is passed as a single argument to COMMAND."
+  (interactive (list (read-shell-command "Shell command: ")
+                     (region-beginning)
+                     (region-end)))
+  (let ((region (buffer-substring-no-properties beginning end)))
+    (shell-command (concat command " " (shell-quote-argument region)))))
+
 (provide 'init-subr)

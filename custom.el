@@ -508,6 +508,7 @@
      ("C-x C-f" . init-files-find-file)
      ("C-x C-d" . init-files-list)
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
+     ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
      ;; ("C-x C-f" . init-counsel-find-file)
      ;; ("C-x C-r" . counsel-buffer-or-recentf)
