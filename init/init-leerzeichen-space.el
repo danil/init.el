@@ -15,7 +15,7 @@
     (with-eval-after-load 'leerzeichen (init-leerzeichen-space-init))))
 
 (defun init-leerzeichen-space-init ()
-  (setq leerzeichen-line-feed-glyph (make-glyph-code ?⇠ 'leerzeichen)) ; ﹂﹁┐ ╮ ⌡ ⇋ ￩ ⤵	⤶ ↲ ↵ ↩ ↡↜ ↚ ⇇ ⇠ ⇣ ⟳ ↺ ⤎ ⤦ ⤳ ⤸ ⤾ ⥋ ⥊ ⥌⥍⥰ ⬃ ⬰ ⬱ ⬴ ⬵ ⬶ ⬷ ⬸ ⬹ ⬺ ⬻ ⬼ ⬽ ⬾ ⬿╮ ⌞ ﹁⭁ ⭂ ⭃ ⭄ ⭅ ⭆ ⭇ ⭈ ⭉ ⭊ ⭋ ⭌ ⮠ ⮡ ⮢ ⮣ ⮤ ⮥ ⮦ ⮧ ⬳  ⁜⦻ ⮾ Ø ⌏⌯⌿⌟ ⌑⌘ ⌗⌇⎈ ⌍⌝⌭ ⌽ ⌯⎏⏟⟢⤸✶ <https://key-shortcut.com/en/writing-systems/35-symbols/arrows>.
+  (setq leerzeichen-line-feed-glyph (make-glyph-code ?⌑ 'leerzeichen)) ; ﹂﹁┐ ╮ ⌡ ⇋ ￩ ⤵	⤶ ↲ ↵ ↩ ↡↜ ↚ ⇇ ⇠ ⇣ ⟳ ↺ ⤎ ⤦ ⤳ ⤸ ⤾ ⥋ ⥊ ⥌⥍⥰ ⬃ ⬰ ⬱ ⬴ ⬵ ⬶ ⬷ ⬸ ⬹ ⬺ ⬻ ⬼ ⬽ ⬾ ⬿╮ ⌞ ﹁⭁ ⭂ ⭃ ⭄ ⭅ ⭆ ⭇ ⭈ ⭉ ⭊ ⭋ ⭌ ⮠ ⮡ ⮢ ⮣ ⮤ ⮥ ⮦ ⮧ ☈↵ ☇↯⬳  ⇴ ⇵ ⇷ ⇸ ⇹ ⇺ ⇑ ⇓ ⤪ ⤨ ⤧ ⤩ ⤭ ⤮ ⤯ ⤰ ⤱ ⤲ ⤫ ⤬ ⇽ ⇾ ⇿ ⬳ ⟿ ⤉ ⤈ ⇻ ⇼ ⬴⁜⦻ ⮾ Ø ⌏⌯⌿⌟ ⌑⌘ ⌗⌇⎈ ⌍⌝⌭ ⌽ ⌯⎏⏟⟢⤸✶ <https://key-shortcut.com/en/writing-systems/35-symbols/arrows>, <https://symbolspy.com/arrow-symbol.html>.
   (setq leerzeichen-tab-glyph (make-glyph-code ?⏤ 'leerzeichen)) ; ⏤ ― ─ ⭾ ⎯ ━
   (setq leerzeichen-space-glyph (make-glyph-code ?· 'leerzeichen)) ; ·
   )
