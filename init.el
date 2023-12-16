@@ -237,12 +237,12 @@ Cancels itself, if this buffer was killed."
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 ;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Fringe <https://www.emacswiki.org/emacs/TheFringe> below this comment.
+;;; vvv↓vvv Fringe line <https://www.emacswiki.org/emacs/TheFringe> below this comment.
 
 (message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ; TODO: Autoload.~~~~<danil@kutkevich.org>
-(message "Initializing fringe") (require 'init-fringe "init-fringe") (autoload 'init-fringe-toggle "init-fringe" nil t)
+(message "Initializing fringe-line") (require 'init-fringe-line "init-fringe-line") (autoload 'init-fringe-line-toggle "init-fringe-line" nil t)
 
-;;; ^^^↑^^^ Fringe <https://www.emacswiki.org/emacs/TheFringe> above this comment.
+;;; ^^^↑^^^ Fringe line <https://www.emacswiki.org/emacs/TheFringe> above this comment.
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
 ;; (message "Initializing dart-mode") (require 'init-dart-mode "init-dart-mode") (add-hook 'after-init-hook 'init-global-dart-mode-on)

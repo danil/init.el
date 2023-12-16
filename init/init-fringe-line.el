@@ -8,7 +8,7 @@
 ;;       `  pint2str (lnum_buf, it->lnum_width, lnum_to_display);`
 ;;       <https://emacs.stackexchange.com/questions/52269/how-to-change-line-number-gutter-width-using-display-line-numbers-mode#52271>,
 ;;       <https://emacs.stackexchange.com/questions/55752/change-line-number-format-with-line-number-mode#55756>.~~~~<danil@kutkevich.org>
-(defun init-fringe-toggle ()
+(defun init-fringe-line-toggle ()
   "Toggle modes in the fringe (left margin of the window).
 Toggle the `display-line-numbers-mode', `diff-hl-mode' and so on."
   (interactive)
@@ -23,4 +23,4 @@ Toggle the `display-line-numbers-mode', `diff-hl-mode' and so on."
           init-lazy-seconds nil
           (lambda () (init-diff-hl-toggle t))))))
 
-(provide 'init-fringe)
+(provide 'init-fringe-line)
