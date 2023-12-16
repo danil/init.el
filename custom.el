@@ -425,7 +425,9 @@
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
      ("C-x C-f" . init-files-find-file)
      ("C-x C-d" . init-files-list)
-     ("M-s h y" . highlight-thing-mode) ; highlight-thing.el
+     ("M-s h y"   . global-highlight-thing-mode) ; highlight-thing.el
+     ("M-s h Y Y" . highlight-symbol)
+     ("M-s h Y r" . highlight-symbol-query-replace)
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
@@ -457,12 +459,13 @@
      ("C-x C-x i t" . init-subr-insert-timestamp-datetime)
      ("C-x C-x i T u" . init-subr-insert-timestamp-unix)
      ("C-x C-x i T d" . init-subr-insert-timestamp-date)
-     ("C-x C-x l" . init-fringe-line-toggle)
+     ("C-x C-x l" . init-simple-fringe-line-toggle)
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
      ("C-x C-x r f" . fill-region)
-     ("C-x C-x s"   . leerzeichen-mode)
+     ("C-x C-x s"   . init-simple-show-minor-toggle)
+     ("C-x C-x S S" . init-leerzeichen-space-mode)
      ("C-x C-x t" . shell)
      ("C-x C-x u" . init-unique-lines-region)
      ("C-x C-x U b" . init-unique-lines-buffer)
@@ -686,6 +689,7 @@
      gotest
      graphql-mode
      handlebars-mode
+     highlight-symbol
      highlight-thing
      hl-todo
      i3wm-config-mode

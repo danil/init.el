@@ -240,7 +240,6 @@ Cancels itself, if this buffer was killed."
 ;;; vvv↓vvv Fringe line <https://www.emacswiki.org/emacs/TheFringe> below this comment.
 
 (message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ; TODO: Autoload.~~~~<danil@kutkevich.org>
-(message "Initializing fringe-line") (require 'init-fringe-line "init-fringe-line") (autoload 'init-fringe-line-toggle "init-fringe-line" nil t)
 
 ;;; ^^^↑^^^ Fringe line <https://www.emacswiki.org/emacs/TheFringe> above this comment.
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^

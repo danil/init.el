@@ -20,4 +20,6 @@
   (setq leerzeichen-space-glyph (make-glyph-code ?· 'leerzeichen)) ; ·
   )
 
+(defalias 'init-leerzeichen-space-mode 'leerzeichen-mode)
+
 (provide 'init-leerzeichen-space)
