@@ -293,7 +293,7 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
-(message "Initializing leerzeichen") (require 'init-leerzeichen "init-leerzeichen") (add-hook 'after-init-hook 'init-leerzeichen)
+(message "Initializing leerzeichen-space") (require 'init-leerzeichen-space "init-leerzeichen-space") (add-hook 'after-init-hook 'init-leerzeichen-space)
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
