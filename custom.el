@@ -151,9 +151,10 @@
  '(flycheck-markdown-markdownlint-cli-config "~/.markdownlint.json") ; flycheck.el
  '(flycheck-mode-line-prefix "F") ; flycheck.el
  '(gofmt-command "gofmt") ; "goimports" ; go-mode.el: The 'gofmt' command. Some users may replace this with 'goimports'from https://github.com/bradfitz/goimports.
- '(highlight-symbol-highlight-single-occurrence nil) ; highlight-symbol.el
- '(highlight-symbol-idle-delay 0.9) ; pause before highlight-symbol-mode of highlight-symbol.el: 0.5 1.5
- '(highlight-symbol-ignore-list '("[*-]" "[$+=-][$+=-]+")) ; highlight-symbol.el
+ '(highlight-thing-all-visible-buffers-p t) ; highlight-thing.el
+ '(highlight-thing-delay-seconds 0.5) ; highlight-thing.el
+ '(highlight-thing-exclude-thing-under-point t) ; highlight-thing.el
+ '(highlight-thing-large-buffer-limit 5000) ; highlight-thing.el
  '(historian-save-file (file-name-concat init-emacs-var ".historian")) ; historian.el
  '(ibuffer-formats
    '((mark modified read-only " "
@@ -322,13 +323,6 @@
      ("u" . counsel-unicode-char)
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
- '(init-highlight-symbol-bindings ; init-highlight-symbol.el
-   '(("M-s h y" . highlight-symbol)
-     ("M-s h Y r" . highlight-symbol-query-replace)
-     ("M-s h Y c" . highlight-symbol-count)))
- '(init-highlight-symbol-mode-hooks
-   (append init-programming-modes-hooks
-           '(dired-mode-hook ivy-occur-grep-mode-hook shell-mode-hook sql-interactive-mode-hook))) ; init-highlight-symbol.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -431,6 +425,7 @@
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
      ("C-x C-f" . init-files-find-file)
      ("C-x C-d" . init-files-list)
+     ("M-s h y" . highlight-thing-mode) ; highlight-thing.el
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
@@ -691,7 +686,7 @@
      gotest
      graphql-mode
      handlebars-mode
-     highlight-symbol
+     highlight-thing
      hl-todo
      i3wm-config-mode
      ibuffer-vc
@@ -798,7 +793,7 @@
  '(recentf-max-saved-items nil)
  '(recentf-save-file (file-name-concat init-emacs-var "recentf"))
  '(rm-text-properties '(("\\` OVERWRITING\\'" 'face 'font-lock-warning-face))) ; rich-minority.el
- '(rm-whitelist " F\\| OVERWRITING") ; rich-minority.el
+ '(rm-whitelist " F\\| OVERWRITING\\| hlt") ; rich-minority.el
  '(rspec-use-spring-when-possible nil)
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil)
@@ -869,7 +864,7 @@
  '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#4e4e4e")))) ; ediff-init.el ,(vector 78 78 78)
  '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#626262")))) ; ediff-init.el ,(vector 98 98 98)
  '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#6c6c6c")))) ; ediff-init.el ,(vector 108 108 108)
- '(highlight-symbol-face ((t (:inherit highlight)))) ; highlight-symbol.el
+ '(highlight-thing ((t (:inherit highlight)))) ; hi-yellow ; highlight-thing.el
  '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ; init-faces.el
  '(init-truncation-glyph-face ((t (:background "orchid3")))) ; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
  '(init-wrap-glyph-face ((t (:background "limegreen")))) ; ; init-disp-table-line-wrap-and-truncation.el: green4 ; green3 ; light green

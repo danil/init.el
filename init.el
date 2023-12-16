@@ -349,8 +349,6 @@ Cancels itself, if this buffer was killed."
 ;;; ^^^↑^^^ Mode line above this comment.
 ;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
 
-(message "Initializing highlight-symbol") (require 'init-highlight-symbol "init-highlight-symbol") (add-hook 'after-init-hook 'init-highlight-symbol)
-
 (message "Initializing make-mode") (require 'init-make-mode "init-make-mode") (add-hook 'after-init-hook 'init-global-make-mode-on)
 
 ;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv

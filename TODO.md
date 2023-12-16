@@ -1,6 +1,5 @@
 # TODO
 
-* Replace [highlight-symbol](https://github.com/nschum/highlight-symbol.el) by [highlight-thing.el](https://github.com/fgeller/highlight-thing.el).
 * Remove `noxel-kbd-fn` function.
 * Fix `savehist` for `kill-ring`.
 * Implements `find-temp-file` templating.

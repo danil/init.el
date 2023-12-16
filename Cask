@@ -167,7 +167,7 @@
 (depends-on "crm-custom")
 (depends-on "css-comb") ; css formater
 (depends-on "haml-mode")
-(depends-on "highlight-symbol")
+(depends-on "highlight-thing") ; (depends-on "highlight-symbol")
 (depends-on "hl-todo")
 (depends-on "hydra") ; FIXME: A nested hotkey definition is a anti-pattern instead must use a best practice and do using the `general.el` because that package provides a more convenient method for binding keys in Emacs. ; Key bindings a-la `transient`.~~~~<danil@kutkevich.org>
 (depends-on "i3wm-config-mode")
