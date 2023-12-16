@@ -106,7 +106,6 @@
 (depends-on "elixir-mode")
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
-(depends-on "ethan-wspace")
 
 ;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
 ;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
@@ -214,6 +213,7 @@
 (depends-on "noflet")
 
 (depends-on "graphql-mode") ; https://github.com/davazp/graphql-mode
+(depends-on "leerzeichen") ; Minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>. ; (depends-on "ethan-wspace")
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "logview")

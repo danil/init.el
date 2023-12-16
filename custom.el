@@ -107,7 +107,6 @@
  '(diredfl-ignore-compressed-flag nil) ; diredfl.el
  '(dumb-jump-max-find-time 10) ; dumb-jump.el
  '(dumb-jump-selector 'ivy) ; dumb-jump.el
- '(ethan-wspace-face-customized t) ; ethan-wspace.el: http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714
  ;; '(evil-overriding-maps nil) ; evil-vars.el
  ;; '(evil-search-module 'isearch) ; 'evil-search ; evil-search.el
  '(evil-disable-insert-state-bindings t) ; Useed Emacs keybindings instead of the ones that evil makes in insert state <https://github.com/noctuid/evil-guide#switching-between-evil-and-emacs>, <https://stackoverflow.com/questions/25542097/emacs-evil-mode-how-to-change-insert-state-to-emacs-state-automatically#56206909>.
@@ -283,81 +282,6 @@
      ("b" . init-dired-details-toggle-view)
      ))
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
- '(init-ethan-wspace-disallows-eol-modes ; init-ethan-wspace.el
-   '(
-     autoconf-mode
-     awk-mode
-     c-mode
-     cask-mode
-     change-log-mode
-     clojure-mode
-     coffee-mode
-     conf-colon-mode
-     conf-mode
-     conf-space-mode
-     conf-unix-mode
-     conf-xdefaults-mode
-     crontab-mode
-     csharp-mode
-     css-mode
-     dockerfile-mode
-     ebuild-mode
-     emacs-lisp-mode
-     ferm-mode
-     fish-mode
-     git-commit-mode
-     gitconfig-mode
-     gitignore-mode
-     go-mode
-     graphql-mode
-     haml-mode
-     handlebars-mode
-     haskell-mode
-     html-mode
-     inf-mongo-mode
-     jade-mode
-     java-mode
-     js-mode
-     js2-mode
-     json-mode
-     less-css-mode
-     lisp-mode
-     litcoffee-mode
-     lua-mode
-     makefile-gmake-mode
-     mediawiki-mode
-     nginx-mode
-     nodejs-repl-mode
-     nroff-mode
-     nxml-mode
-     org-mode
-     pascal-mode
-     perl-mode
-     php-mode
-     python-mode
-     restclient-mode
-     rhtml-mode
-     ruby-mode
-     rust-mode
-     sass-mode
-     sed-mode
-     sgml-mode
-     sh-mode
-     sieve-mode
-     slim-mode
-     sql-mode
-     systemd-mode
-     text-mode
-     toml-mode
-     web-mode
-     xml-mode
-     yaml-mode
-     zig-mode
-     ))
- '(init-ethan-wspace-disallows-many-nls-eof-modes init-programming-modes) ; init-ethan-wspace.el
- '(init-ethan-wspace-disallows-no-nl-eof-modes init-programming-modes) ; init-ethan-wspace.el
- '(init-ethan-wspace-disallows-tabs-modes '(autoconf-mode awk-mode cask-mode change-log-mode clojure-mode coffee-mode conf-colon-mode conf-mode conf-space-mode conf-unix-mode conf-xdefaults-mode csharp-mode css-mode dockerfile-mode emacs-lisp-mode ferm-mode fish-mode git-commit-mode gitconfig-mode gitignore-mode haml-mode haskell-mode html-mode inf-mongo-mode jade-mode java-mode js-mode js2-mode json-mode less-css-mode lisp-mode litcoffee-mode lua-mode markdown-mode mediawiki-mode nginx-mode nodejs-repl-mode nroff-mode nxml-mode org-mode pascal-mode perl-mode php-mode python-mode restclient-mode rhtml-mode ruby-mode rust-mode sass-mode sed-mode sgml-mode sh-mode sieve-mode slim-mode sql-mode systemd-mode text-mode toml-mode web-mode xml-mode yaml-mode)) ; init-ethan-wspace.el
- '(init-ethan-wspace-mode-hooks init-programming-modes-hooks) ; init-ethan-wspace.el
  '(init-evil-bindings ; init-evil.el
    '(("C-x C-x C-x C-x s" . evil-mode)
      ("C-x C-x C-x C-x S S" . evil-force-normal-state)
@@ -543,15 +467,16 @@
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
      ("C-x C-x r f" . fill-region)
-     ("C-x C-x s"   . sort-lines)
-     ("C-x C-x S f" . sort-fields)
-     ("C-x C-x S c" . init-sort-chars)
-     ("C-x C-x S s" . init-sort-symbols)
-     ("C-x C-x S w" . init-sort-words)
+     ("C-x C-x s"   . leerzeichen-mode)
      ("C-x C-x t" . shell)
      ("C-x C-x u" . init-unique-lines-region)
      ("C-x C-x U b" . init-unique-lines-buffer)
 
+     ("C-x C-x C-x s"   . sort-lines)
+     ("C-x C-x C-x S f" . sort-fields)
+     ("C-x C-x C-x S c" . init-sort-chars)
+     ("C-x C-x C-x S s" . init-sort-symbols)
+     ("C-x C-x C-x S w" . init-sort-words)
      ("C-x C-x C-x n" . init-deft-init)
      ("C-x C-x C-x T" . init-transpose-frame)
 
@@ -745,7 +670,6 @@
      enh-ruby-mode
      epl
      etags-select
-     ethan-wspace
      expand-region
      f
      fd-dired
@@ -779,6 +703,7 @@
      js2-mode
      jsfmt
      json-mode
+     leerzeichen
      list-unicode-display
      literate-coffee-mode
      logview
@@ -944,7 +869,6 @@
  '(ediff-odd-diff-Ancestor ((((class color) (min-colors 88) (background dark)) (:background "#4e4e4e")))) ; ediff-init.el ,(vector 78 78 78)
  '(ediff-odd-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#626262")))) ; ediff-init.el ,(vector 98 98 98)
  '(ediff-odd-diff-C ((((class color) (min-colors 88) (background dark)) (:background "#6c6c6c")))) ; ediff-init.el ,(vector 108 108 108)
- '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ; ethan-wspace.el
  '(highlight-symbol-face ((t (:inherit highlight)))) ; highlight-symbol.el
  '(init-alert ((((background light)) :foreground "green" :background "red" :weight bold) (((background dark)) :foreground "green" :background "red" :weight bold))) ; init-faces.el
  '(init-truncation-glyph-face ((t (:background "orchid3")))) ; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
@@ -954,6 +878,7 @@
  '(ivy-minibuffer-match-face-2 ((t :background "red"))) ; ivy.el
  '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ; ivy.el
  '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ; ivy.el
+ '(leerzeichen ((((class color) (min-colors 88) (background dark)) (:foreground "gray25")))) ; gray15 gray20 gray25 gray30 ; leerzeichen.el ; '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ; ethan-wspace.el
  ;; '(line-number ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25")))
  '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ; mode-line.el: :background MidnightBlue black color-52 OrangeRed4 black gray10 purple4 NavyBlue firebrick4 brown4 red4 computers/emacs-colors>
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30"))) ; mode-line.el:  ; :background "MidnightBlue" <http://raebear.net/computers/emacs-colors>

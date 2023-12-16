@@ -273,7 +273,6 @@ Cancels itself, if this buffer was killed."
 (message "Initializing emacs-lisp-mode-rainbow-identifiers") (require 'init-emacs-lisp-mode-rainbow-identifiers "init-emacs-lisp-mode-rainbow-identifiers")
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
-(message "Initializing ethan-wspace") (require 'init-ethan-wspace "init-ethan-wspace") (add-hook 'after-init-hook 'init-ethan-wspace)
 
 ;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
 ;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
@@ -294,6 +293,7 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
+(message "Initializing leerzeichen") (require 'init-leerzeichen "init-leerzeichen") (add-hook 'after-init-hook 'init-leerzeichen)
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
