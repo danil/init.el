@@ -15,7 +15,7 @@ See `init-handlebars-mode-bindings'.")
 
 (defcustom init-handlebars-mode-bindings '()
   "Keybindings enabled in for example `handlebarsfile-ghandlebars-mode'. This is not a keymap.
-Rather it is an alist that is converted into a keymap just before `highlight-symbol'
+Rather it is an alist that is converted into a keymap just before `handlebars-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
   :group 'init-handlebars-mode
   :type '(alist

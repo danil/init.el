@@ -13,7 +13,7 @@ See `init-graphql-mode-bindings'.")
 
 (defcustom init-graphql-mode-bindings '()
   "Keybindings enabled in for example `graphql-mode'. This is not a keymap.
-Rather it is an alist that is converted into a keymap just before `highlight-symbol'
+Rather it is an alist that is converted into a keymap just before `graphql-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
   :group 'init-graphql-mode
   :type '(alist

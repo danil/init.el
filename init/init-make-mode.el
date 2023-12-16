@@ -13,7 +13,7 @@ See `init-make-mode-bindings'.")
 
 (defcustom init-make-mode-bindings '()
   "Keybindings enabled in for example `makefile-gmake-mode'. This is not a keymap.
-Rather it is an alist that is converted into a keymap just before `highlight-symbol'
+Rather it is an alist that is converted into a keymap just before `make-mode'
 is (re-)enabled. The keys are strings and the values are command symbols."
   :group 'init-make-mode
   :type '(alist

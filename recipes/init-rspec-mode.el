@@ -56,7 +56,7 @@
   (setq rspec-use-rake-when-possible nil))
 
 (defun noxrcp-rspec-mode--lazyinit ()
-  "Run `highlight-symbol'."
+  "Run `rspec-mode'."
   (init-lazy
    init-lazy-seconds nil (lambda () (rspec-mode t))))
 
