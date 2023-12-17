@@ -426,8 +426,8 @@
      ("C-x C-f" . init-files-find-file)
      ("C-x C-d" . init-files-list)
      ("M-s h y"   . global-highlight-thing-mode) ; highlight-thing.el
-     ("M-s h Y Y" . highlight-symbol)
-     ("M-s h Y r" . highlight-symbol-query-replace)
+     ("M-s h Y Y" . highlight-symbol) ; highlight-symbol.el
+     ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
