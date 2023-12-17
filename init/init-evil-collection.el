@@ -19,6 +19,13 @@
     (error "evil-collection load failure")))
 
 (defun init-evil-collection--init ()
+  ;; FIXME: Missing default Evil Occur setup.~~~~<danil@kutkevich.org>
+  (let ((f (file-name-concat user-emacs-directory "evil-collection-occur.el")))
+    (if (file-readable-p f)
+        (progn (require 'evil-collection-occur f)
+               (if (boundp 'occur-mode-map) (evil-collection-occur-setup) (with-eval-after-load 'replace (evil-collection-occur-setup))))
+      (display-warning :evil-collection-occur-setup (format "Evil Emacs Occur setup not found: %s" f))))
+
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-restclient-setup
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-apropos-setup evil-collection-info-setup evil-collection-js2-mode-setup evil-collection-leetcode-setup evil-collection-log-view-setup evil-collection-lua-mode-setup evil-collection-python-setup evil-collection-tar-mode-setup evil-collection-view-setup evil-collection-which-key-setup evil-collection-woman-setup evil-collection-yaml-mode-setup.~~~~<danil@kutkevich.org>
   ;; FIXME: Maybe use setup function of the Evil collection: evil-collection-company-setup evil-collection-diff-mode-setup evil-collection-elisp-mode-setup evil-collection-flycheck-setup evil-collection-flymake-setup evil-collection-grep-setup evil-collection-indent-setup evil-collection-rg-setup evil-collection-ruby-mode-setup.~~~~<danil@kutkevich.org>
