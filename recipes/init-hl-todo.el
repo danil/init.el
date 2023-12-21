@@ -52,7 +52,6 @@
                  ("PICT"  . "#5f9ea0")
                  ("PIN"   . "#ff875f")
                  ("PROD"  . "#ff5fd7")
-                 ("PROHIBITION" . "#db7093")
                  ("PROS"  . "#00afff")
                  ("PROV"  . "#d2691e")
                  ("PUB"   . "#7ec0ee")
