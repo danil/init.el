@@ -37,6 +37,7 @@
                  ("BENCH" . "#3cb371")
                  ("CERT"   . "#ff5fd7")
                  ("CHORE" . "#d0bf8f")
+                 ("CLI"   . "#af87ff")
                  ("CONS"  . "#ff875f")
                  ("DEPRECATED" . "#db7093")
                  ("DEV"   . "#7cb8bb")
