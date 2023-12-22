@@ -1,5 +1,7 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+;;; TODO: Maybe install/use <https://github.com/manateelazycat/aweshell>?~~~~<danil@kutkevich.org>
+
 (defgroup init-shell nil
   "init-shell"
   :group  'editing
