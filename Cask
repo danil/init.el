@@ -325,7 +325,6 @@
 (depends-on "web-mode")
 (depends-on "window-numbering")
 (depends-on "yaml-mode")
-;; (depends-on "yascroll")
 (depends-on "yasnippet")
 (depends-on "yasnippet-snippets" :git "https://github.com/AndreaCrotti/yasnippet-snippets.git" :files ("*" (:exclude ".git" ".gitignore" ".nosearch" "CONTRIBUTORS.txt" "LICENSE" "README.md" "rename_add_contr.py")))
 (depends-on "yasnippets" :git "https://github.com/rejeep/yasnippets.git" :files ("*" (:exclude ".git" ".gitignore" "README.markdown"))) ; "Comprehensive collection of yasnippets"

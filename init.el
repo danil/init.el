@@ -530,7 +530,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(yaml-mode))
 (nox-recipe '(yasnippet))
 ;; (nox-recipe '(yafolding))
-;; (nox-recipe '(yascroll))
 ;; (nox-recipe '(yasnippets))
 
 ;; <https://stackoverflow.com/questions/10639429/emacs-linux-and-international-keyboard-layouts>
@@ -584,26 +583,6 @@ Cancels itself, if this buffer was killed."
 ;;              wdired-mode
 ;;              )))
 
-;;  '(noxrcp-read-only-modes
-;;    (append init-base-modes
-;;            '(
-;;              Info-mode
-;;              Man-mode
-;;              ag-mode
-;;              cider-stacktrace-mode
-;;              compilation-mode
-;;              dired-mode
-;;              help-mode
-;;              ibuffer-mode
-;;              magit-branch-manager-mode
-;;              magit-commit-mode
-;;              magit-diff-mode
-;;              magit-log-mode
-;;              magit-process-mode
-;;              magit-status-mode
-;;              occur-mode
-;;              )))
-
 ;;  '(noxrcp-toggle-quotes-modes
 ;;    '(
 ;;      awk-mode
@@ -645,10 +624,6 @@ Cancels itself, if this buffer was killed."
 
 ;; (dolist (mode noxrcp-auto-completion-modes)
 ;;   (add-to-list 'noxrcp-auto-completion-modes-hooks
-;;                (intern (concat (symbol-name mode) "-hook"))))
-
-;; (dolist (mode noxrcp-read-only-modes)
-;;   (add-to-list 'noxrcp-read-only-modes-hooks
 ;;                (intern (concat (symbol-name mode) "-hook"))))
 
 ;; (dolist (mode noxrcp-toggle-quotes-modes)

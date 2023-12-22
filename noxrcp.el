@@ -121,11 +121,6 @@ Otherwise use `list'."
   :group 'noxinit)
 
 ;;;###autoload
-(defcustom noxrcp-read-only-modes '()
-  "No X recipe read only modes."
-  :group 'noxinit)
-
-;;;###autoload
 (defcustom noxrcp-toggle-quotes-modes '()
   "No X recipe ruby tools modes."
   :group 'noxinit)
@@ -134,11 +129,6 @@ Otherwise use `list'."
 ;;;###autoload
 (defcustom noxrcp-auto-completion-modes-hooks '()
   "No X recipe auto completion hooks."
-  :group 'noxinit)
-
-;;;###autoload
-(defcustom noxrcp-read-only-modes-hooks '()
-  "No X recipe read only modes hooks."
   :group 'noxinit)
 
 ;;;###autoload
