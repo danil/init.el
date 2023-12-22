@@ -416,6 +416,7 @@
      ;; Emacs shellcheck config.
      "/\\.shellcheckrc\\'"
      ))
+ '(init-shell-bindings '(("TAB". nil) ("C-x C-x C-l" . init-shell-clear))) ; init-shell.el
  '(init-simple-mode-bindings ; init-simple.el
    '(("C-c C-f e" . end-of-defun)
      ("C-c C-f n" . beginning-of-defun)
