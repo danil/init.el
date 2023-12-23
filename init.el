@@ -295,6 +295,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing leerzeichen-space") (require 'init-leerzeichen-space "init-leerzeichen-space") (add-hook 'after-init-hook 'init-leerzeichen-space)
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
+(message "Initializing replace") (require 'init-replace "init-replace-occur") (add-hook 'after-init-hook 'init-replace) ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
 (message "Initializing shell") (require 'init-shell "init-shell") (add-hook 'after-init-hook 'init-shell)
 (message "Initializing subr") (require 'init-subr "init-subr") (add-hook 'after-init-hook 'init-subr)
@@ -460,7 +461,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(narrow-indirect))
 (nox-recipe '(newcomment))
 (nox-recipe '(nginx-mode))
-(nox-recipe '(noccur))
 (nox-recipe '(nodejs))
 (nox-recipe '(nodejs-repl))
 (nox-recipe '(nxml-mode))
@@ -479,7 +479,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(recentf))
 (nox-recipe '(recentf-ext))
 (nox-recipe '(redis))
-(nox-recipe '(replace))
 (nox-recipe '(restclient))
 (nox-recipe '(rust-mode))
 

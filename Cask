@@ -227,7 +227,7 @@
 (depends-on "mustache-mode")
 (depends-on "narrow-indirect" :git "https://github.com/emacsmirror/narrow-indirect.git")
 (depends-on "nginx-mode")
-(depends-on "noccur")
+(depends-on "noccur") ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.
 (depends-on "nodejs-repl")
 (depends-on "origami")
 (depends-on "pacfiles-mode") ; diff/update arch linux pacnew and pacsave files

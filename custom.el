@@ -389,6 +389,10 @@
      (zig-mode-hook init-zig-mode-rainbow-identifiers-init)))
  '(init-rainbow-mode-hooks
    '(css-mode-hook i3wm-config-mode-hook less-css-mode-hook nxml-mode-hook php-mode-hook sass-mode-hook scss-mode-hook web-mode-hook xml-mode-hook)) ; init-rainbow-mode.el
+ '(init-replace-bindings
+   '(("M-s o" occur)
+     ("M-s O O" . noccur-dired) ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.
+     ("M-s O m" . multi-occur-in-matching-buffers))) ; init-replace.el
  '(init-sh-mode-patterns
    '(
      "/Procfile\\'"
@@ -429,6 +433,9 @@
      ("M-s h y"   . global-highlight-thing-mode) ; highlight-thing.el
      ("M-s h Y Y" . highlight-symbol) ; highlight-symbol.el
      ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
+     ;; ("M-s o" occur)
+     ;; ("M-s O O" . noccur-dired)
+     ;; ("M-s O m" . multi-occur-in-matching-buffers)
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
