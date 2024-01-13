@@ -882,7 +882,7 @@
  '(ivy-minibuffer-match-face-2 ((t :background "red"))) ; ivy.el
  '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ; ivy.el
  '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ; ivy.el
- '(leerzeichen ((((class color) (min-colors 88) (background dark)) (:foreground "gray25")))) ; gray15 gray20 gray25 gray30 ; leerzeichen.el ; '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ; ethan-wspace.el
+ '(leerzeichen ((((class color) (min-colors 88) (background dark)) (:foreground "gray20")))) ; gray15 gray20 gray25 gray30 ; leerzeichen.el ; '(ethan-wspace-face ((((class color) (min-colors 88) (background dark)) (:background "gray15")))) ; ethan-wspace.el
  ;; '(line-number ((((class color) (min-colors 88) (background light)) :foreground "black" :background "gray90") (((class color) (min-colors 88) (background dark)) :foreground "DarkGray" :background "gray25")))
  '(mode-line ((((class color) (min-colors 88) (background dark)) (:background "black")))) ; mode-line.el: :background MidnightBlue black color-52 OrangeRed4 black gray10 purple4 NavyBlue firebrick4 brown4 red4 computers/emacs-colors>
  '(mode-line-inactive ((((class color) (min-colors 88) (background dark)) :inherit shadow :foreground "grey70" :background "gray30"))) ; mode-line.el:  ; :background "MidnightBlue" <http://raebear.net/computers/emacs-colors>
