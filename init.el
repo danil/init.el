@@ -2,15 +2,17 @@
 
 ;; (setq c-x-c-x-prefix "C-x C-x") ;; "C-x C-x" ; FIXME: Maybe use the `c-x-c-x-prefix` custom hot key prefix?~~~~<danil@kutkevich.org>
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv User Emacs directory below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv User Emacs directory below this line.
 
 ;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
 (setq user-emacs-directory (file-truename "~/.config/emacs")) ; "~/.emacs.d"
 (setq init-emacs-var (file-name-concat user-emacs-directory "var")) ; "~/.emacs.d/var" ; "~/.config/emacs/var"
 
-;;; ^^^↑^^^ User Emacs directory above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ User Emacs directory above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; <https://emacs.stackexchange.com/questions/3447/cannot-set-terminal-process-group-error-when-running-bash-script>,
 ;;; <https://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions>.
@@ -209,8 +211,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing init-css") (autoload 'init-css-mode-rainbow-identifiers-init "init-css" nil t)
 (message "Initializing cycle-quotes") (require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this line.
 
 ;; Company mode auto complete.
 (message "Initializing company") (require 'init-company "init-company") (add-hook 'after-init-hook 'init-company) (add-hook 'after-init-hook 'init-global-company-mode)
@@ -223,26 +226,27 @@ Cancels itself, if this buffer was killed."
 (message "Initializing company-shell") (require 'init-company-shell "init-company-shell") (add-hook 'after-init-hook 'init-company-shell)
 (message "Initializing company-web") (require 'init-company-web "init-company-web") (add-hook 'after-init-hook 'init-company-web)
 
-;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this line.
 
 ;; Counsel/Ivy/Swiper (is an ido replacement).
 (message "Initializing counsel") (require 'init-counsel "init-counsel")
 (message "Initializing ivy-historian") (require 'init-ivy-historian "init-ivy-historian") (add-hook 'after-init-hook 'init-ivy-historian)
 
-;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Fringe line <https://www.emacswiki.org/emacs/TheFringe> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Fringe line <https://www.emacswiki.org/emacs/TheFringe> below this line.
 
 (message "Initializing diff-hl") (require 'init-diff-hl "init-diff-hl") ; TODO: Autoload.~~~~<danil@kutkevich.org>
 
-;;; ^^^↑^^^ Fringe line <https://www.emacswiki.org/emacs/TheFringe> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Fringe line <https://www.emacswiki.org/emacs/TheFringe> above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; (message "Initializing dart-mode") (require 'init-dart-mode "init-dart-mode") (add-hook 'after-init-hook 'init-global-dart-mode-on)
 (message "Initializing deft") (autoload 'init-deft-init "init-deft" nil t)
@@ -253,8 +257,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing dockerfile-mode") (require 'init-dockerfile-mode "init-dockerfile-mode") (add-hook 'after-init-hook 'init-dockerfile-mode)
 (message "Initializing dumb-jump") (require 'init-dumb-jump "init-dumb-jump") (add-hook 'after-init-hook 'init-dumb-jump)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Dired mode below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Dired mode below this line.
 
 (message "Initializing dired") (require 'init-dired "init-dired") (add-hook 'after-init-hook 'init-dired)
 (message "Initializing dired-aux") (require 'init-dired-aux "init-dired-aux") (add-hook 'after-init-hook 'init-dired-aux)
@@ -262,8 +267,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing diredfl") (require 'init-diredfl "init-diredfl") (add-hook 'after-init-hook 'init-diredfl)
 (message "Initializing wdired") (require 'init-wdired "init-wdired") (add-hook 'after-init-hook 'init-wdired)
 
-;;; ^^^↑^^^ Dired mode above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Dired mode above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; (message "Initializing dotenv") (require 'dotenv "init-dotenv")
 (message "Initializing elisp-slime-nav") (require 'init-elisp-slime-nav "init-elisp-slime-nav") (add-hook 'after-init-hook 'init-elisp-slime-nav)
@@ -273,15 +279,17 @@ Cancels itself, if this buffer was killed."
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 (message "Initializing etags-select") (require 'init-etags-select "init-etags-select") (add-hook 'after-init-hook 'init-etags-select)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this line.
 
 (message "Initializing evil") (require 'init-evil "init-evil") (add-hook 'after-init-hook 'init-evil)
 (message "Initializing evil-collection") (require 'init-evil-collection "init-evil-collection") (add-hook 'after-init-hook 'init-evil-collection)
 (message "Initializing evil-repeat") (require 'init-evil-repeat "init-evil-repeat") (add-hook 'after-init-hook 'init-evil-repeat) ; (autoload 'init--evil-repeat "init-evil-repeat" nil t)
 
-;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing expand-region") (require 'init-expand-region "init-expand-region") (add-hook 'after-init-hook 'init-expand-region)
 (message "Initializing faces") (require 'init-faces "init-faces") ; TODO: Autoload.~~~~<danil@kutkevich.org>
@@ -306,13 +314,15 @@ Cancels itself, if this buffer was killed."
 
 (message "Initializing flycheck") (require 'init-flycheck-mode "init-flycheck-mode") (add-hook 'after-init-hook 'init-global-flycheck-mode-on)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this line.
 
 (message "Initializing go-mode") (require 'init-go-mode "init-go-mode") (add-hook 'after-init-hook 'init-global-go-mode-on)
 
-;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing gitconfig-mode") (require 'init-gitconfig-mode "init-gitconfig-mode") (add-hook 'after-init-hook 'init-gitconfig-mode)
 (message "Initializing graphql-mode") (require 'init-graphql-mode "init-graphql-mode") (add-hook 'after-init-hook 'init-global-graphql-mode-on)
@@ -327,8 +337,9 @@ Cancels itself, if this buffer was killed."
 (message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
 (message "Initializing rainbow-mode") (require 'init-rainbow-mode "init-rainbow-mode") (add-hook 'after-init-hook 'init-rainbow-mode)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this line.
 
 ;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>!~~~~<danil@kutkevich.org>
 
@@ -338,28 +349,29 @@ Cancels itself, if this buffer was killed."
 (message "Initializing prescient") (require 'init-prescient "init-prescient") (add-hook 'after-init-hook 'init-prescient)
 (message "Initializing amx-mode") (amx-mode +1)
 
-;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Mode line below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Mode line below this line.
 
 (message "Initializing smart-mode-line") (require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line)
 (message "Initializing window-numbering") (require 'init-window-numbering "init-window-numbering") (add-hook 'after-init-hook 'init-window-numbering)
 
-;;; ^^^↑^^^ Mode line above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Mode line above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing make-mode") (require 'init-make-mode "init-make-mode") (add-hook 'after-init-hook 'init-global-make-mode-on)
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Projectile mode below this comment.
+;;; vvv↓vvv Projectile mode below this line.
 
 (message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
 (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
 
-;;; ^^^↑^^^ Projectile mode above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Projectile mode above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message "Initializing simple") (require 'init-simple "init-simple") (add-hook 'after-init-hook 'init-simple) (add-hook 'after-init-hook 'init-global-simple-mode)
 

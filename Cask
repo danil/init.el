@@ -18,26 +18,27 @@
 ;; (depends-on "cider") ; i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Magit mode <https://github.com/magit/magit> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Magit mode <https://github.com/magit/magit> below this line.
 
 (depends-on "magit")
 (depends-on "magit-popup")
 
-;;; ^^^↑^^^ Magit mode <https://github.com/magit/magit> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Magit mode <https://github.com/magit/magit> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Org mode <https://github.com/bzg/org-mode> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Org mode <https://github.com/bzg/org-mode> below this line.
 
 (depends-on "org" "20150929") ; fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
 (depends-on "org-ac")
 
-;;; ^^^↑^^^ Org mode <https://github.com/bzg/org-mode> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Org mode <https://github.com/bzg/org-mode> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this line.
 
 ;; Company auto complete.
 ;; (depends-on "company-ansible")
@@ -53,11 +54,11 @@
 (depends-on "company-shell")
 (depends-on "company-web")
 
-;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Company mode <https://github.com/company-mode/company-mode> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Fuzzy searching in multiple files below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Fuzzy searching in multiple files below this line.
 
 ;; Fuzzy searching in multiple files (projectile and friends).
 ;; (depends-on "ag") ; using `counsel-ag` instead
@@ -66,8 +67,9 @@
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
-;;; ^^^↑^^^ Fuzzy searching in multiple files above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Fuzzy searching in multiple files above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "anzu") ; isearch and query-replace extension
 (depends-on "apache-mode")
@@ -86,8 +88,9 @@
 (depends-on "diffview")
 (depends-on "digit-groups") ; highlighting digit groups in numbers
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Dired mode below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Dired mode below this line.
 
 ;; Dired.
 ;; (depends-on "dired-dups")
@@ -96,8 +99,9 @@
 (depends-on "direx")
 (depends-on "pack") ; archive/tar/gzip/xz
 
-;;; ^^^↑^^^ Dired mode above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Dired mode above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
@@ -107,15 +111,17 @@
 (depends-on "elpa-mirror")
 (depends-on "etags-select")
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Evil mode <https://github.com/emacs-evil/evil> below this line.
 
 (depends-on "evil")
 (depends-on "evil-collection") ;; <https://github.com/emacs-evil/evil-collection#installation>.
 (depends-on "goto-chg")
 
-;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "expand-region")
 (depends-on "ferm-mode" :git "https://github.com/danil/ferm-mode.git" :files ("ferm-mode.el")) ; "Major mode for ferm iptables tool <https://gitorious.org/kaction-emacs/ferm-mode>, <http://ferm.foo-projects.org>"
@@ -126,18 +132,19 @@
 (depends-on "flatbuffers-mode") ; major mode for editing flatbuffers .fbs files
 (depends-on "flycheck")
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv fd <https://github.com/sharkdp/fd> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv fd <https://github.com/sharkdp/fd> below this line.
 
 ;; fd a-la find replacement.
 (depends-on "counsel-fd")
 (depends-on "fd-dired")
 
-;;; ^^^↑^^^ fd <https://github.com/sharkdp/fd> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ fd <https://github.com/sharkdp/fd> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this line.
 
 ;; (depends-on "flycheck-gometalinter")
 (depends-on "flycheck-golangci-lint")
@@ -149,19 +156,20 @@
 (depends-on "godoctor")
 (depends-on "gotest")
 
-;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Go programming language <https://github.com/dominikh/go-mode.el> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Git below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Git below this line.
 
 ;; (depends-on "git-gutter")
 (depends-on "diff-hl")
 (depends-on "git-modes") ; NOTE: Provides gitconfig-mode and gitignore-mode <https://github.com/magit/git-modes>.~~~~<danil@kutkevich.org>
 (depends-on "git-timemachine")
 
-;;; ^^^↑^^^ Git above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Git above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
 (depends-on "crm-custom")
@@ -174,8 +182,9 @@
 (depends-on "i3wm-config-mode")
 (depends-on "inf-mongo")
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this line.
 
 ;; Ivy (is an ido replacement).
 ;; (depends-on "counsel-projectile") ; projectile respect selectrum instead of counsel
@@ -190,11 +199,11 @@
 (depends-on "swiper")
 (depends-on "wgrep") ; editable `ivy-occur` buffer (grep-mode)
 
-;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv JavaScript programming language below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv JavaScript programming language below this line.
 
 (depends-on "coffee-mode")
 (depends-on "jade-mode")
@@ -206,8 +215,9 @@
 (depends-on "literate-coffee-mode")
 (depends-on "typescript-mode")
 
-;;; ^^^↑^^^ JavaScript programming language above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ JavaScript programming language above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")
@@ -241,8 +251,9 @@
 (depends-on "quelpa")
 (depends-on "quickrun")
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Ruby programming language below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Ruby programming language below this line.
 
 ;; (depends-on "rbenv")
 (depends-on "enh-ruby-mode")
@@ -257,18 +268,19 @@
 (depends-on "ruby-refactor")
 (depends-on "ruby-tools")
 
-;;; ^^^↑^^^ Ruby programming language above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Ruby programming language above this line.
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Rust programming language below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Rust programming language below this line.
 
 ;; (depends-on "racer")
 ;; (depends-on "flycheck-rust") ; buggy(
 (depends-on "rust-mode")
 
-;;; ^^^↑^^^ Rust programming language above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Rust programming language above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "sass-mode")
 (depends-on "scss-mode")
@@ -276,16 +288,18 @@
 (depends-on "slim-mode")
 (depends-on "su") ; automatically read/write files as other users
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Mode line below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Mode line below this line.
 
 ;; (depends-on "cyphejor")
 ;; (depends-on "doom-modeline")
 (depends-on "rich-minority")
 (depends-on "smart-mode-line")
 
-;;; ^^^↑^^^ Mode line above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Mode line above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers") ; highlight each variable uniquely based on its name
@@ -294,8 +308,9 @@
 (depends-on "redis")
 (depends-on "restclient") ; A-la cURL or [JetBrains HTTP Client](https://plugins.jetbrains.com/plugin/13121-http-client).
 
-;;; vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv↓vvv
-;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this comment.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this line.
 
 ;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>.~~~~<danil@kutkevich.org>
 
@@ -304,8 +319,9 @@
 (depends-on "ctrlf") ; a-la isearch replacement?
 (depends-on "amx") ; a-la smex is a m-x enhancement
 
-;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this comment.
-;;; ^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^↑^^^
+;;; ^^^↑^^^ Selectrum mode <https://github.com/radian-software/selectrum> above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (depends-on "sed-mode")
 (depends-on "speed-type")
