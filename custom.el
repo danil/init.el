@@ -109,6 +109,17 @@
  '(dumb-jump-selector 'ivy) ; dumb-jump.el
  ;; '(evil-overriding-maps nil) ; evil-vars.el
  ;; '(evil-search-module 'isearch) ; 'evil-search ; evil-search.el
+ ;; '(evil-ex-interactive-search-highlight 'all-windows) ; evil-vars.el ; Determine in which windows the interactive highlighting should be shown.
+ ;; '(evil-ex-search-case 'smart) ; evil-vars.el ; The case behaviour of the search command. Smart case means that the pattern is case sensitive if and only if it contains an upper case letter, otherwise it is case insensitive.
+ ;; '(evil-ex-search-highlight-all t) ; evil-vars.el ; If t and interactive search is enabled, all matches are highlighted.
+ ;; '(evil-ex-search-incremental t) ; evil-vars.el ; "If t, use incremental search. Note that this only affects the search command if `evil-search-module' is set to `evil-search'.
+ ;; '(evil-ex-search-interactive t) ; evil-vars.el ; If t search is interactive.
+ ;; '(evil-ex-search-persistent-highlight t) ; evil-vars.el ; If non-nil matches remain highlighted when the search ends.
+ ;; '(evil-ex-search-vim-style-regexp nil) ; evil-vars.el ; If non-nil Vim-style backslash codes are supported in search patterns. See `evil-transform-vim-style-regexp' for the supported backslash codes.  Note that this only affects the search command if `evil-search-module' is set to `evil-search'.  The isearch module always uses plain Emacs regular expressions.
+ ;; '(evil-regexp-search t) ; evil-vars.el ; Whether to use regular expressions for searching in `evil-search-forward` and `evil-search-backward`.
+ ;; '(evil-search-module 'isearch) ; evil-vars.el ; The search module to be used.  May be either `isearch', for Emacs' isearch module, or `evil-search', for Evil's own interactive search module.  N.b. changing this will not affect keybindings.
+ ;; '(evil-search-wrap t) ; evil-vars.el ; `evil-motion-state-map`Whether search with `evil-search-forward` and `evil-search-backward` wraps around the buffer. If this is non-nil, search stops at the buffer boundaries.
+ ;; '(evil-symbol-word-search nil) ; evil-vars.el ; If nil then * and # search for words otherwise for symbols.
  '(evil-disable-insert-state-bindings t) ; Useed Emacs keybindings instead of the ones that evil makes in insert state <https://github.com/noctuid/evil-guide#switching-between-evil-and-emacs>, <https://stackoverflow.com/questions/25542097/emacs-evil-mode-how-to-change-insert-state-to-emacs-state-automatically#56206909>.
  '(evil-undo-system 'undo-tree) ; evil-vars.el
  '(evil-want-integration t) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-vars.el
