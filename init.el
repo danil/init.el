@@ -308,6 +308,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing shell") (require 'init-shell "init-shell") (add-hook 'after-init-hook 'init-shell)
 (message "Initializing subr") (require 'init-subr "init-subr") (add-hook 'after-init-hook 'init-subr)
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
+(message "Initializing unique-lines") (autoload 'init-unique-lines-region "init-unique-lines" nil t) (autoload 'init-unique-lines-buffer "init-unique-lines" nil t)
 (message "Initializing window") (autoload 'init-window-delete-other-windows "init-window" nil t) (autoload 'init-window-bury-buffer-maybe-delete-window "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer-open-dired "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer "init-window" nil t)
 (message "Initializing zig-mode") (require 'init-zig-mode "init-zig-mode") (add-hook 'after-init-hook 'init-global-zig-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
