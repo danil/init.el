@@ -487,8 +487,6 @@
      ("C-x C-x s"   . init-simple-show-minor-toggle)
      ("C-x C-x S S" . init-leerzeichen-space-mode)
      ("C-x C-x t" . shell)
-     ("C-x C-x u" . init-unique-lines-region)
-     ("C-x C-x U b" . init-unique-lines-buffer)
 
      ("C-x C-x C-x s"   . sort-lines)
      ("C-x C-x C-x S f" . sort-fields)
@@ -497,6 +495,8 @@
      ("C-x C-x C-x S w" . init-sort-words)
      ("C-x C-x C-x n" . init-deft-init)
      ("C-x C-x C-x T" . init-transpose-frame)
+     ("C-x C-x C-x u" . init-unique-lines-region)
+     ("C-x C-x C-x U b" . init-unique-lines-buffer)
 
      ("C-x C-x C-x C-x d s" . desktop-save-in-desktop-dir)
      ("C-x C-x C-x C-x d l" . desktop-read)
