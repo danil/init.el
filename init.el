@@ -300,7 +300,7 @@ Cancels itself, if this buffer was killed."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
-(message "Initializing leerzeichen-space") (require 'init-leerzeichen-space "init-leerzeichen-space") (add-hook 'after-init-hook 'init-leerzeichen-space)
+(message "Initializing leerzeichen-space") (require 'init-leerzeichen-space "init-leerzeichen-space") (add-hook 'after-init-hook 'init-leerzeichen-space) ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>.
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing replace") (require 'init-replace "init-replace-occur") (add-hook 'after-init-hook 'init-replace) ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.

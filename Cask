@@ -224,7 +224,7 @@
 (depends-on "noflet")
 
 (depends-on "graphql-mode") ; https://github.com/davazp/graphql-mode
-(depends-on "leerzeichen") ; Minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>. ; (depends-on "ethan-wspace")
+(depends-on "leerzeichen") ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>. ; (depends-on "ethan-wspace")
 (depends-on "less-css-mode")
 (depends-on "list-unicode-display")
 (depends-on "logview")
