@@ -54,6 +54,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 
   (evil-global-set-key 'normal (kbd ".") 'init--evil-repeat)
   (evil-define-key 'normal global-map (kbd "ш") 'evil-insert) ; NOTE: Same keys in English and Russian layouts "i" and "ш".~~~~<danil@kutkevich.org>
+  (evil-define-key 'normal global-map (kbd "Ш") 'evil-insert-line) ; NOTE: Same keys in English and Russian layouts "I" and "Ш".~~~~<danil@kutkevich.org>
+  (evil-define-key 'normal global-map (kbd "ф") 'evil-append) ; NOTE: Same keys in English and Russian layouts "a" and "ф".~~~~<danil@kutkevich.org>
+  (evil-define-key 'normal global-map (kbd "Ф") 'evil-append-line) ; NOTE: Same keys in English and Russian layouts "A" and "Ф".~~~~<danil@kutkevich.org>
 
   (evil-define-key 'insert global-map (kbd "C-d") 'delete-char) ; NOTE: Overwrited default function `evil-shift-left-line`.~~~~<danil@kutkevivh.org>
   (evil-define-key 'insert global-map (kbd "C-n") 'evil-next-line) ; NOTE: Overwrited default function `evil-complete-next`.~~~~<danil@kutkevivh.org>
