@@ -339,11 +339,17 @@
    (append init-programming-modes-hooks
            '(
              Buffer-menu-mode-hook
+             Man-mode-hook
              dired-mode-hook
+             help-mode-hook
              ibuffer-mode-hook
              ivy-occur-grep-mode-hook
+             logview-mode-hook
              magit-diff-mode-hook
+             magit-process-mode-hook
+             messages-buffer-mode-hook
              occur-mode-hook
+             shell-mode-hook
              )))
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
