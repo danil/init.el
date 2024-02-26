@@ -335,6 +335,16 @@
      ("u" . counsel-unicode-char)
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
+ '(init-linenumber-mode-hooks ; init-linenumber-mode.el
+   (append init-programming-modes-hooks
+           '(
+             Buffer-menu-mode-hook
+             dired-mode-hook
+             ibuffer-mode-hook
+             ivy-occur-grep-mode-hook
+             magit-diff-mode-hook
+             occur-mode-hook
+             )))
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -479,12 +489,11 @@
      ("C-x C-x i t" . init-subr-insert-timestamp-datetime)
      ("C-x C-x i T u" . init-subr-insert-timestamp-unix)
      ("C-x C-x i T d" . init-subr-insert-timestamp-date)
-     ("C-x C-x l" . init-simple-fringe-line-toggle)
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
      ("C-x C-x r f" . fill-region)
-     ("C-x C-x s"   . init-simple-show-minor-toggle)
+     ("C-x C-x s"   . init-linenumber-mode)
      ("C-x C-x S S" . init-leerzeichen-space-mode)
      ("C-x C-x t" . shell)
 
@@ -814,7 +823,7 @@
  '(recentf-max-saved-items nil)
  '(recentf-save-file (file-name-concat init-emacs-var "recentf"))
  '(rm-text-properties '(("\\` OVERWRITING\\'" 'face 'font-lock-warning-face))) ; rich-minority.el
- '(rm-whitelist " F\\| OVERWRITING\\| hlt") ; rich-minority.el
+ '(rm-whitelist " F\\| OVERWRITING\\| 👁") ; rich-minority.el
  '(rspec-use-spring-when-possible nil)
  '(ruby-encoding-magic-comment-style 'ruby)
  '(ruby-insert-encoding-magic-comment nil)
