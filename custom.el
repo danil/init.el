@@ -294,6 +294,7 @@
      ;; ("C-x C-x C-x b" . init-dired-details-toggle-view) ; NOTE: Used together with the Emacs Evil because the `b` hot key already taken by the `evil-backward-word-begin` function.~~~~<danil@kutkevich.org> FIXME: Maybe use the `C-z` followed by `b` hot key sequence together with Emacs Evil instead of `C-x C-x C-x b` hot key?
      ("b" . init-dired-details-toggle-view)
      ))
+ '(init-display-line-numbers-mode-hooks (append init-overview-mode-hooks '())) ; init-display-line-numbers-mode.el
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
  '(init-evil-bindings ; init-evil.el
    '(("C-x C-x C-x C-x s" . evil-mode)
@@ -335,7 +336,6 @@
      ("u" . counsel-unicode-char)
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
- '(init-display-line-numbers-mode-hooks (append init-overview-mode-hooks '())) ; init-linenumber-mode.el
  '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
