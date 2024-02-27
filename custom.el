@@ -335,24 +335,8 @@
      ("u" . counsel-unicode-char)
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
- '(init-linenumber-mode-hooks ; init-linenumber-mode.el
-   (append init-programming-modes-hooks
-           '(
-             Buffer-menu-mode-hook
-             Man-mode-hook
-             dired-mode-hook
-             help-mode-hook
-             ibuffer-mode-hook
-             ivy-occur-grep-mode-hook
-             logview-mode-hook
-             magit-diff-mode-hook
-             magit-log-mode-hook
-             magit-process-mode-hook
-             magit-status-mode-hook
-             messages-buffer-mode-hook
-             occur-mode-hook
-             shell-mode-hook
-             )))
+ '(init-display-line-numbers-mode-hooks (append init-overview-mode-hooks '())) ; init-linenumber-mode.el
+ '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -500,8 +484,7 @@
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
      ("C-x C-x r f" . fill-region)
-     ("C-x C-x s"   . init-linenumber-mode)
-     ("C-x C-x S S" . init-leerzeichen-space-mode)
+     ("C-x C-x s"   . init-overview-mode-toggle)
      ("C-x C-x t" . shell)
 
      ("C-x C-x C-x s"   . sort-lines)

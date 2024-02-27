@@ -180,6 +180,32 @@ Cancels itself, if this buffer was killed."
   (add-to-list 'init-programming-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
+;; Overview modes.
+(setq init-overview-modes
+      (append init-programming-modes
+              '(
+                Buffer-menu-mode
+                Man-mode
+                dired-mode
+                help-mode
+                ibuffer-mode
+                ivy-occur-grep-mode
+                logview-mode
+                magit-diff-mode
+                magit-log-mode
+                magit-process-mode
+                magit-status-mode
+                messages-buffer-mode
+                occur-mode
+                shell-mode
+                )))
+
+;; Overview mode hooks.
+(setq init-overview-mode-hooks '())
+(dolist (mode init-overview-modes)
+  (add-to-list 'init-overview-mode-hooks
+               (intern (concat (symbol-name mode) "-hook"))))
+
 ;; My custom variables
 ;; <https://emacs.stackexchange.com/questions/55018/init-el-and-trampling-of-custom-set-variables>,
 ;; <https://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el/106>.
@@ -303,10 +329,11 @@ Cancels itself, if this buffer was killed."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Initializing display-line-numbers-mode") (require 'init-display-line-numbers-mode "init-display-line-numbers-mode") (add-hook 'after-init-hook 'init-global-display-line-numbers-mode-on)
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
-(message "Initializing leerzeichen-space") (require 'init-leerzeichen-space "init-leerzeichen-space") (add-hook 'after-init-hook 'init-leerzeichen-space) ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>.
-(message "Initializing linenumber-mode") (require 'init-linenumber-mode "init-linenumber-mode") (add-hook 'after-init-hook 'init-global-linenumber-mode-on)
+(message "Initializing leerzeichen-mode") (require 'init-leerzeichen-mode "init-leerzeichen-mode") (add-hook 'after-init-hook 'init-global-leerzeichen-mode-on) (add-hook 'after-init-hook 'init-leerzeichen-mode-customize) ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>.
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
+(message "Initializing overview-mode") (require 'init-overview-mode "init-overview-mode")
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing replace") (require 'init-replace "init-replace-occur") (add-hook 'after-init-hook 'init-replace) ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.
 (message "Initializing sh-mode") (require 'init-sh-mode "init-sh-script") (add-hook 'after-init-hook 'init-global-sh-mode-on)
