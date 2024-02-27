@@ -5,7 +5,7 @@
   :prefix "init-linenumber-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
-(defcustom init-linenumber-lighter " 👁" "init-linenumber" :group 'init-linenumber)
+(defcustom init-linenumber-lighter " 👁" "init-linenumber" :group 'init-linenumber) ; 👁
 
 (defcustom init-linenumber-mode-hooks '()
   "Hooks for showing line numbers."
