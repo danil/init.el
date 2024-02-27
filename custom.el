@@ -460,8 +460,7 @@
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
      ("C-x C-f" . init-files-find-file)
      ("C-x C-d" . init-files-list)
-     ("M-s h y"   . global-highlight-thing-mode) ; highlight-thing.el
-     ("M-s h Y Y" . highlight-symbol) ; highlight-symbol.el
+     ("M-s h y" . highlight-symbol) ; highlight-symbol.el
      ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
      ;; ("M-s o" occur)
      ;; ("M-s O O" . noccur-dired)

@@ -40,21 +40,21 @@ See `init-linenumber-mode-bindings'.")
   init-global-linenumber-mode-setup
   (unless init-global-linenumber-mode (init-global-linenumber-mode-teardown)))
 
+(defun init-linenumber-mode-on ()  (init-linenumber-mode +1))
 (defun init-global-linenumber-mode-on ()  (init-global-linenumber-mode +1))
+
+(defun init-linenumber-mode-off () (init-linenumber-mode -1))
 (defun init-global-linenumber-mode-off () (init-global-linenumber-mode -1))
 
 (defun init-global-linenumber-mode-setup ()
   (dolist (hook init-linenumber-mode-hooks)
-    (add-hook hook 'lazy-init-linenumber-mode)))
+    (add-hook hook 'init-linenumber-mode-on)))
 
 (defun init-global-linenumber-mode-teardown ()
   (dolist (hook init-linenumber-mode-hooks)
-    (remove-hook hook 'lazy-init-linenumber-mode))
+    (remove-hook hook 'init-linenumber-mode-on))
 
   (init-linenumber-mode -1))
-
-(defun lazy-init-linenumber-mode ()
-  (init-lazy init-lazy-seconds nil (lambda () (init-linenumber-mode +1))))
 
 (defun init-linenumber-mode-setup ()
   (dolist (b init-linenumber-mode-bindings)
@@ -77,7 +77,7 @@ See `init-linenumber-mode-bindings'.")
   (when (fboundp 'display-line-numbers-mode) (display-line-numbers-mode t))
   (when (fboundp 'init-diff-hl-toggle) (init-diff-hl-toggle t))
   (when (fboundp 'init-leerzeichen-space-mode) (init-leerzeichen-space-mode t))
-  (when (fboundp 'less-scroll-stub) (less-scroll-stub)))
+  (when (fboundp 'global-highlight-thing-mode) (global-highlight-thing-mode t)))
 
 (defun init-linenumber-mode--off ()
   "Turn off the `diff-hl-mode' and so on."
@@ -85,7 +85,8 @@ See `init-linenumber-mode-bindings'.")
 
   (when (fboundp 'display-line-numbers-mode) (display-line-numbers-mode -1))
   (when (fboundp 'init-diff-hl-toggle) (init-diff-hl-toggle -1))
-  (when (fboundp 'init-leerzeichen-space-mode) (init-leerzeichen-space-mode -1)))
+  (when (fboundp 'init-leerzeichen-space-mode) (init-leerzeichen-space-mode -1))
+  (when (fboundp 'global-highlight-thing-mode) (global-highlight-thing-mode -1)))
 
 (defun init-linenumber-mode-toggle ()
   "Toggle the `diff-hl-mode' and so on."
@@ -93,7 +94,8 @@ See `init-linenumber-mode-bindings'.")
 
   (cond ((or (and (boundp 'display-line-numbers-mode) (equal display-line-numbers-mode t))
              (and (boundp 'diff-hl-mode) (equal diff-hl-mode t))
-             (and (boundp 'init-leerzeichen-space-mode) (equal init-leerzeichen-space-mode t)))
+             (and (boundp 'init-leerzeichen-space-mode) (equal init-leerzeichen-space-mode t))
+             (and (boundp 'global-highlight-thing-mode) (equal global-highlight-thing-mode t)))
          (init-linenumber-mode--off))
         (t
          (init-linenumber-mode--on))))
