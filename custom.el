@@ -346,6 +346,7 @@
              ivy-occur-grep-mode-hook
              logview-mode-hook
              magit-diff-mode-hook
+             magit-log-mode-hook
              magit-process-mode-hook
              magit-status-mode-hook
              messages-buffer-mode-hook
