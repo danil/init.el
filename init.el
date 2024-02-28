@@ -187,6 +187,8 @@ Cancels itself, if this buffer was killed."
                 Buffer-menu-mode
                 Man-mode
                 dired-mode
+                flycheck-error-list-mode
+                go-test-mode
                 help-mode
                 ibuffer-mode
                 ivy-occur-grep-mode

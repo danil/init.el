@@ -10,7 +10,7 @@
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
 (defcustom init-digit-groups-mode-hooks '()
-  "Hooks with highlight digits."
+  "Hooks for highlighting digits."
   :group 'init-digit-groups)
 
 (defun init-digit-groups ()
