@@ -127,9 +127,9 @@
  '(evil-want-keybinding nil) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-collection.el
  '(fd-dired-display-in-current-window t)
  '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ; find-temp-file.el
- '(find-temp-template-alist '(("go" . "%D%N/%N.%E"))) ; find-temp-file.el
- '(find-temp-file-directory "~/src/") ; temporary-file-directory ; find-temp-file.el
- '(find-temp-template-default "%D%N.%E") ; find-temp-file.el
+ '(find-temp-template-alist '(("go" . "tmp%D%N/%N.%E"))) ; find-temp-file.el
+ '(find-temp-file-directory "~/src/tmp/") ; temporary-file-directory ; find-temp-file.el
+ '(find-temp-template-default "tmp%D%N.%E") ; find-temp-file.el
  '(flycheck-indication-mode nil) ; flycheck.el
  ;; '(flycheck-check-syntax-automatically '(idle-change)) ; flycheck.el
  '(flycheck-disabled-checkers '( ; flycheck.el
