@@ -180,7 +180,7 @@ Cancels itself, if this buffer was killed."
   (add-to-list 'init-programming-modes-hooks
                (intern (concat (symbol-name mode) "-hook"))))
 
-;; Overview modes.
+;; Overview modes (used by display line numbers mode and leerzeichen mode).
 (setq init-overview-modes
       (append init-programming-modes
               '(
@@ -203,7 +203,7 @@ Cancels itself, if this buffer was killed."
                 shell-mode
                 )))
 
-;; Overview mode hooks.
+;; Overview mode hooks (used by display line numbers mode and leerzeichen mode).
 (setq init-overview-mode-hooks '())
 (dolist (mode init-overview-modes)
   (add-to-list 'init-overview-mode-hooks
