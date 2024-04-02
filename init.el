@@ -186,6 +186,7 @@ Cancels itself, if this buffer was killed."
               '(
                 Buffer-menu-mode
                 Man-mode
+                compilation-mode
                 dired-mode
                 flycheck-error-list-mode
                 go-test-mode
