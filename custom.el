@@ -586,7 +586,7 @@
    (append init-programming-modes
            '(redis-cli-mode shell-mode telnet-mode wdired-mode)))
  '(noxrcp-gitignore-mode-patterns
-   '("/\\.agignore\\'" "/\\.dockerignore\\'" "/\\.gitignore_global\\'" "/\\.stglobalignore\\'" "/\\.stignore\\'" "/\\.stignore_global\\'" "/\\.stignoreglobal\\'"))
+   '("/\\.agignore\\'" "/\\.dockerignore\\'" "/\\.gitignore_global\\'" "/\\.megaignore\\'" "/\\.stglobalignore\\'" "/\\.stignore\\'" "/\\.stignore_global\\'" "/\\.stignoreglobal\\'"))
  '(noxrcp-haproxy-mode-patterns
    '("/haproxy.*\\.\\(erb\\|cfg\\)'" "haproxy/.*\\(erb\\|cfg\\)\\'"))
  '(noxrcp-highlight-static-regexps-hooks
