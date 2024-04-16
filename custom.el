@@ -701,7 +701,6 @@
      go-expr-completion
      go-snippets
      go-stacktracer
-     go-translate
      godoctor
      gotest
      graphql-mode

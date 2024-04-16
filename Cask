@@ -152,7 +152,6 @@
 (depends-on "go-mode")
 (depends-on "go-snippets")
 (depends-on "go-stacktracer")
-(depends-on "go-translate") ; google translate https://github.com/lorniu/go-translate
 (depends-on "godoctor")
 (depends-on "gotest")
 
@@ -171,6 +170,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; (depends-on "go-translate") ; google translate https://github.com/lorniu/go-translate
 ;; (depends-on "iedit") ; isearch + edit is an a-la multiple-cursors-mode
 (depends-on "crm-custom")
 (depends-on "css-comb") ; css formater

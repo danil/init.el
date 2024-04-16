@@ -439,7 +439,6 @@ Cancels itself, if this buffer was killed."
 
 (nox-recipe '(git-timemachine))
 (nox-recipe '(gitignore-mode))
-(nox-recipe '(go-translate)) ; google translate
 (nox-recipe '(haproxy-mode))
 (nox-recipe '(hcl-mode))
 (nox-recipe '(hideshow))
