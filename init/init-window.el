@@ -7,6 +7,9 @@
   :prefix "init-window-"
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
+(defun init-window-scroll-right () (interactive) (scroll-right 1))
+(defun init-window-scroll-left () (interactive) (scroll-left 1))
+
 (defun init-window-delete-other-windows ()
   "Make WINDOW fill its frame (`delete-other-windows').
 

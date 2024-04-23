@@ -439,8 +439,8 @@
  '(init-simple-mode-bindings ; init-simple.el
    '(("<mouse-4>" . scroll-down-line)
      ("<mouse-5>" . scroll-up-line)
-     ("<mouse-6>" . init-mouse-scroll-right)
-     ("<mouse-7>" . init-mouse-scroll-left)
+     ("<mouse-6>" . init-window-scroll-right)
+     ("<mouse-7>" . init-window-scroll-left)
  
      ("C-c C-f e" . end-of-defun)
      ("C-c C-f n" . beginning-of-defun)

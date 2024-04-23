@@ -39,9 +39,11 @@
   (if init-display-line-numbers-mode (init-display-line-numbers-mode-setup) (init-display-line-numbers-mode-teardown)))
 
 (defun init-display-line-numbers-mode-setup ()
+  (when (fboundp 'xterm-mouse-mode) (xterm-mouse-mode t))
   (when (fboundp 'display-line-numbers-mode) (display-line-numbers-mode t)))
 
 (defun init-display-line-numbers-mode-teardown ()
+  (when (fboundp 'xterm-mouse-mode) (xterm-mouse-mode -1))
   (when (fboundp 'display-line-numbers-mode) (display-line-numbers-mode -1)))
 
 (defun init-display-line-numbers-mode-on ()  (interactive) (init-display-line-numbers-mode +1))
