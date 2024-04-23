@@ -337,6 +337,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing highlight-thing") (require 'init-highlight-thing "init-highlight-thing") (add-hook 'after-init-hook 'init-global-highlight-thing-mode-on)
 (message "Initializing leerzeichen-mode") (require 'init-leerzeichen-mode "init-leerzeichen-mode") (add-hook 'after-init-hook 'init-global-leerzeichen-mode-on) (add-hook 'after-init-hook 'init-leerzeichen-mode-customize) ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>.
 (message "Initializing minibuffer") (require 'init-minibuffer "init-minibuffer") (add-hook 'after-init-hook 'init-minibuffer)
+(message "Initializing mouse") (require 'init-mouse "init-mouse") (add-hook 'after-init-hook 'init-mouse)
 (message "Initializing overview-mode") (require 'init-overview-mode "init-overview-mode")
 (message "Initializing quickrun") (require 'init-quickrun "init-quickrun") (add-hook 'after-init-hook 'init-quickrun)
 (message "Initializing replace") (require 'init-replace "init-replace-occur") (add-hook 'after-init-hook 'init-replace) ; Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.
@@ -496,7 +497,6 @@ Cancels itself, if this buffer was killed."
 
 (nox-recipe '(mediawiki))
 (nox-recipe '(menu-bar))
-(nox-recipe '(mouse))
 (nox-recipe '(multi-compile))
 (nox-recipe '(my-backspace-fix))
 (nox-recipe '(my-beginning-of-line))

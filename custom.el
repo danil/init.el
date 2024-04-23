@@ -437,7 +437,10 @@
      ))
  '(init-shell-bindings '(("TAB". nil) ("C-x C-x C-l" . init-shell-clear))) ; init-shell.el
  '(init-simple-mode-bindings ; init-simple.el
-   '(("C-c C-f e" . end-of-defun)
+   '(("<mouse-4>" . scroll-down-line)
+     ("<mouse-5>" . scroll-up-line)
+
+     ("C-c C-f e" . end-of-defun)
      ("C-c C-f n" . beginning-of-defun)
 
      ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
@@ -474,6 +477,7 @@
      ("C-x C-x F g" . counsel-git-grep)
      ("C-x C-x F p" . counsel-pt)
      ("C-x C-x F r" . init-counsel-rg)
+     ;; ("C-x C-x F R R" . init-counsel-rg-no-ignore)
      ("C-x C-x g" . revert-buffer)
 
      ("C-x C-x C-j" . electric-newline-and-maybe-indent)
