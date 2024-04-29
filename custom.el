@@ -898,6 +898,8 @@
  '(diff-refine-added ((((class color) (min-colors 88) (background dark)) :foreground "brightgreen" :background "grey45"))) ; diff-mode.el
  '(diff-refine-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred" :background "grey45"))) ; diff-mode.el
  '(diff-removed ((((class color) (min-colors 88) (background dark)) :foreground "brightred"))) ; diff-mode.el
+ '(diredfl-compressed-file-name ((((class color) (min-colors 88) (background dark)) (:foreground "#3f69ee"))))
+ '(diredfl-compressed-file-suffix ((((class color) (min-colors 88) (background dark)) (:foreground "#3f69ee"))))
  '(ediff-current-diff-A ((((class color) (min-colors 88) (background dark)) (:background "#5f0000")))) ; ediff-init.el: ,(vector 95  0  0) DarkRed
  '(ediff-current-diff-B ((((class color) (min-colors 88) (background dark)) (:background "#005f00")))) ; ediff-init.el: ,(vector 0  95  0) DarkGreen
  '(ediff-current-diff-C ((((class color) (min-colors 88) (background dark)) (:background "DarkOrange4")))) ; ediff-init.el
