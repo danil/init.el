@@ -868,6 +868,26 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
+ ;; Color theme (like bash, alacritty and so on)
+ ;; <https://github.com/doomemacs/themes/issues/674#issuecomment-939413854>,
+ ;; <https://github.com/doomemacs/themes/issues/674#issuecomment-1028388882>.
+ `(ansi-color-black ((t (:foreground "#000000"))))
+ `(ansi-color-red ((t (:foreground "#cd0000"))))
+ `(ansi-color-green ((t (:foreground "#00cd00"))))
+ `(ansi-color-yellow ((t (:foreground "#cdcd00"))))
+ `(ansi-color-blue ((t (:foreground "#3f69ee"))))
+ `(ansi-color-magenta ((t (:foreground "#cd00cd"))))
+ `(ansi-color-cyan ((t (:foreground "#00cdcd"))))
+ `(ansi-color-gray ((t (:foreground "#e5e5e5"))))
+ `(ansi-color-bright-black ((t (:foreground "#7f7f7f"))))
+ `(ansi-color-bright-red ((t (:foreground "#ff0000"))))
+ `(ansi-color-bright-green ((t (:foreground "#00ff00"))))
+ `(ansi-color-bright-yellow ((t (:foreground "#ffff00"))))
+ `(ansi-color-bright-blue ((t (:foreground "#5c5cff"))))
+ `(ansi-color-bright-magenta ((t (:foreground "#ff00ff"))))
+ `(ansi-color-bright-cyan ((t (:foreground "#00ffff"))))
+
  '(anzu-mode-line ((((class color) (min-colors 88) (background dark)) (:background "black" :foreground "magenta" :weight bold)))) ; anzu.el
  '(anzu-mode-line-no-match ((((class color) (min-colors 88) (background dark)) (:inherit init-alert)))) ; anzu.el
  '(column-marker-1 ((((class color) (min-colors 88) (background light)) :background "gray80") ; column-marker.el
