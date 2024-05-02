@@ -64,6 +64,7 @@
 ;; (depends-on "ag") ; using `counsel-ag` instead
 ;; (depends-on "pt") ; using `counsel-pt` instead ; the platinum searcher (ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>)
 ;; (depends-on "rg") ; using `counsel-rg` instead ; ripgrep is an a-la ag platinum searcher written in rust
+(depends-on "urgrep")
 (depends-on "wgrep-ag") ; editable grep
 (depends-on "wgrep-pt") ; editable grep
 
@@ -188,11 +189,12 @@
 
 ;; Ivy (is an ido replacement).
 ;; (depends-on "counsel-projectile") ; projectile respect selectrum instead of counsel
+;; (depends-on "ivy-dired-history") ; error: Some dependencies were not available: ivy-dired-history
+(depends-on "consult") ; a-la counsel replacement <https://github.com/minad/consult>
 (depends-on "counsel")
 (depends-on "counsel-jq") ; queries against json
 (depends-on "counsel-world-clock") ; <https://github.com/kchenphy/counsel-world-clock>
 (depends-on "ivy")
-(depends-on "ivy-dired-history")
 (depends-on "ivy-historian")
 (depends-on "ivy-hydra")
 (depends-on "lsp-ivy") ; ivy respects lsp (language server protocol) <https://github.com/emacs-lsp/lsp-mode#configure-lsp-mode>, <https://github.com/emacs-lsp/lsp-ivy>

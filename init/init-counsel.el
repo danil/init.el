@@ -10,10 +10,40 @@
 (defconst init-counsel-ag-base-command-name "ag")
 (defconst init-counsel-ag-base-command-args (if (memq system-type '(ms-dos windows-nt)) "--vimgrep" "--nocolor --nogroup"))
 
-;; (defun init-counsel ()
-;;   (if (boundp 'counsel-find-file-map)
-;;       (init-counsel-customize-keys)
-;;     (with-eval-after-load 'counsel (init-counsel-customize-keys))))
+;; (defcustom init-counsel-ugrep-base-command
+;;   `("ugrep"
+;;     "--bool"
+;;     "--color=never"
+;;     "--line-number"
+;;     "--column-number"
+;;     "--recursive"
+;;     "--hidden"
+;;     "--ignore-case"
+;;     "--ignore-binary"
+;;     "--exclude-dir=.git"
+;;     "%s")
+;;   "Like `counsel-ag-base-command', but for `init-counsel-ugrep'.
+
+;; Note: don't use single quotes for the regexp."
+;;   :package-version '(counsel . "0.14.0")
+;;   :type '(choice (repeat :tag "Command list to call directly" string)
+;;                  (string :tag "Shell command")))
+
+(defun init-counsel ()
+  (if (boundp 'counsel-mode-map) (init-counsel-init)
+    (with-eval-after-load 'counsel (init-counsel-init))))
+
+(defun init-counsel-init ()
+  ;; (if (boundp 'counsel-find-file-map)
+  ;;     (init-counsel-customize-keys)
+  ;;   (with-eval-after-load 'counsel (init-counsel-customize-keys)))
+
+  (ivy-configure 'init-counsel-ugrep
+    :occur #'init-counsel-ugrep-occur
+    :unwind-fn #'counsel--grep-unwind
+    :display-transformer-fn #'counsel-git-grep-transformer
+    :grep-p t
+    :exit-codes '(1 "No matches found")))
 
 (defun init-counsel-company ()
   "Complete using `company-candidates'."
@@ -53,7 +83,7 @@ If there is a symbol under cursor, then pass it as initial ag imput."
 
       (counsel-ag initial-input initial-directory))))
 
-(defun init-counsel-rg (initial-directory)
+(defun init-counsel-rg (initial-directory &optional arguments)
   "Search using rg in a given `INITIAL-DIRECTORY`.
 
 If `current-prefix-arg' is a integer then
@@ -62,11 +92,64 @@ If there is a symbol under cursor, then pass it as initial rg imput."
   (interactive (list (read-directory-name "Directory: ")))
   (let ((initial-input (if (symbol-at-point) (symbol-name (symbol-at-point)) "")))
     ;; counsel-projectile-rg
+    ;; (if arguments
     (if (integerp current-prefix-arg)
         (let ((n current-prefix-arg))
           (setq current-prefix-arg nil)
           (counsel-rg initial-input initial-directory))
 
       (counsel-rg initial-input initial-directory))))
+
+;; (defun init-counsel-rg-no-ignore (initial-directory)
+;;   (interactive (list (read-directory-name "Directory: ")))
+;;   (call-interactively 'init-counsel-rg t (vector initial-directory " --no-ignore")))
+
+;; (defun init-counsel-rg-no-ignore ()
+;;   (interactive)
+;;   (call-interactively 'init-counsel-rg t (vector " --no-ignore")))
+
+;; (defun init-counsel--ugrep-targets ()
+;;   "Return a list of files to operate on, based on `dired-mode' marks."
+;;   (when (eq major-mode 'dired-mode)
+;;     (let ((files
+;;            (dired-get-marked-files 'no-dir nil nil t)))
+;;       (when (or (cdr files)
+;;                 (when (string-match-p "\\*ivy-occur" (buffer-name))
+;;                   (dired-toggle-marks)
+;;                   (setq files (dired-get-marked-files 'no-dir))
+;;                   (dired-toggle-marks)
+;;                   t))
+;;         (delq t files)))))
+
+;; (defun init-counsel-ugrep (&optional initial-input initial-directory extra-ugrep-args ugrep-prompt)
+;;   "Grep for a string in the current directory using `ugrep'.
+;; INITIAL-INPUT can be given as the initial minibuffer input.
+;; INITIAL-DIRECTORY, if non-nil, is used as the root directory for search.
+;; EXTRA-UGREP-ARGS string, if non-nil, is appended to `init-counsel-ugrep-base-command'.
+;; UGREP-PROMPT, if non-nil, is passed as `ivy-read' prompt argument.
+
+;; Example input with inclusion and exclusion file patterns:
+;;     require i -- -g*.el"
+;;   (interactive)
+;;   (let ((counsel-ag-base-command
+;;          (if (listp init-counsel-ugrep-base-command)
+;;              (append init-counsel-ugrep-base-command (init-counsel--ugrep-targets))
+;;            (concat init-counsel-ugrep-base-command " "
+;;                    (mapconcat #'shell-quote-argument (init-counsel--ugrep-targets) " "))))
+;;         (counsel--grep-tool-look-around
+;;          (let ((ugrep (car (if (listp init-counsel-ugrep-base-command) init-counsel-ugrep-base-command
+;;                           (split-string init-counsel-ugrep-base-command))))
+;;                (switch "--pcre2"))
+;;            (and (eq 0 (call-process ugrep nil nil nil switch "--pcre2-version"))
+;;                 switch))))
+;;     (counsel-ag initial-input initial-directory extra-ugrep-args ugrep-prompt
+;;                 :caller 'init-counsel-ugrep)))
+
+;; (defun init-counsel-ugrep-occur (&optional _cands)
+;;   "Generate a custom occur buffer for `init-counsel-ugrep'."
+;;   (counsel-grep-like-occur
+;;    init-counsel-ugrep-command))
+
+;; (defvar init-counsel-ugrep-command nil)
 
 (provide 'init-counsel)

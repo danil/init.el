@@ -266,7 +266,7 @@ Cancels itself, if this buffer was killed."
 ;;; vvv↓vvv Counsel/Ivy <https://github.com/emacsmirror/ivy> below this line.
 
 ;; Counsel/Ivy/Swiper (is an ido replacement).
-(message "Initializing counsel") (require 'init-counsel "init-counsel")
+(message "Initializing counsel") (require 'init-counsel "init-counsel") ;; (add-hook 'after-init-hook 'init-counsel)
 (message "Initializing ivy-historian") (require 'init-ivy-historian "init-ivy-historian") (add-hook 'after-init-hook 'init-ivy-historian)
 
 ;;; ^^^↑^^^ Counsel/Ivy <https://github.com/emacsmirror/ivy> above this line.
@@ -332,6 +332,7 @@ Cancels itself, if this buffer was killed."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Initializing consult") (require 'init-consult "init-consult") (add-hook 'after-init-hook 'init-consult)
 (message "Initializing display-line-numbers-mode") (require 'init-display-line-numbers-mode "init-display-line-numbers-mode") (add-hook 'after-init-hook 'init-global-display-line-numbers-mode-on)
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
 (message "Initializing highlight-thing") (require 'init-highlight-thing "init-highlight-thing") (add-hook 'after-init-hook 'init-global-highlight-thing-mode-on)
