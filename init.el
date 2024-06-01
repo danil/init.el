@@ -332,6 +332,7 @@ Cancels itself, if this buffer was killed."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (message "Initializing xt-mouse") (require 'init-xt-mouse "init-xt-mouse") (add-hook 'after-init-hook 'init-xt-mouse)
 (message "Initializing consult") (require 'init-consult "init-consult") (add-hook 'after-init-hook 'init-consult)
 (message "Initializing display-line-numbers-mode") (require 'init-display-line-numbers-mode "init-display-line-numbers-mode") (add-hook 'after-init-hook 'init-global-display-line-numbers-mode-on)
 (message "Initializing help") (require 'init-help "init-help") (add-hook 'after-init-hook 'init-help)
@@ -347,7 +348,6 @@ Cancels itself, if this buffer was killed."
 (message "Initializing tramp-cache") (require 'init-tramp-cache "init-tramp-cache") (add-hook 'after-init-hook 'init-tramp-cache)
 (message "Initializing unique-lines") (autoload 'init-unique-lines-region "init-unique-lines" nil t) (autoload 'init-unique-lines-buffer "init-unique-lines" nil t)
 (message "Initializing window") (autoload 'init-window-delete-other-windows "init-window" nil t) (autoload 'init-window-bury-buffer-maybe-delete-window "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer-open-dired "init-window" nil t) (autoload 'init-window-maybe-delete-window-maybe-kill-buffer "init-window" nil t)
-(message "Initializing xt-mouse") (require 'init-xt-mouse "init-xt-mouse") (add-hook 'after-init-hook 'init-xt-mouse)
 (message "Initializing zig-mode") (require 'init-zig-mode "init-zig-mode") (add-hook 'after-init-hook 'init-global-zig-mode-on)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
