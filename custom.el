@@ -490,6 +490,7 @@
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
+     ("C-x C-x M M" . xterm-mouse-mode)
      ("C-x C-x r f" . fill-region)
      ("C-x C-x s"   . init-overview-mode-toggle)
      ("C-x C-x t" . shell)
