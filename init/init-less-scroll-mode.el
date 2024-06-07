@@ -11,12 +11,12 @@
   (interactive)
 
   (let* ((continue t)
-         (keys '("j" "k" "h" "l" "u" "d" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
+         (keys '("j" "k" "h" "l" "u" "d" "C-b" "C-f" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
 
     (while continue
       (message (concat " Less "
                        (propertize "SCROLL" 'face '((:background "blue" :foreground "white")))
-                       ":hjkl PAGE/UP|DOWN:ud MOVE:bnpf LINE/BEGIN|END:0^$ BUFFER/BEGIN|END:gG"))
+                       ":hjkl PAGE/UP|DOWN:uC-bdC-f MOVE:bnpf LINE/BEGIN|END:0^$ BUFFER/BEGIN|END:gG"))
 
       (let* ((event (read-event))
              (key (format-kbd-macro (vector event) nil)))
@@ -31,6 +31,9 @@
 
                     ((equal key "u") (condition-case nil (scroll-down) (beginning-of-buffer)))
                     ((equal key "d") (condition-case nil (scroll-up) (end-of-buffer)))
+
+                    ((equal key "C-b") (condition-case nil (scroll-down) (beginning-of-buffer)))
+                    ((equal key "C-f") (condition-case nil (scroll-up) (end-of-buffer)))
 
                     ((equal key "b") (backward-char))
                     ((equal key "p") (previous-line))
