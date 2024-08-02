@@ -918,7 +918,7 @@
  '(init-truncation-glyph-face ((t (:background "orchid3")))) ; init-disp-table-line-wrap-and-truncation.el: orchid3 coral3 red
  '(init-wrap-glyph-face ((t (:background "limegreen")))) ; ; init-disp-table-line-wrap-and-truncation.el: green4 ; green3 ; light green
  '(ivy-current-match ((t :inverse-video t))) ; ivy.el: :inherit highlight
- '(ivy-minibuffer-match-face-1 ((t :background "gray10"))) ; ivy.el
+ '(ivy-minibuffer-match-face-1 ((((class color) (min-colors 88) (background light)) :background "#d3d3d3") (((class color) (min-colors 88) (background dark)) :background "gray10"))) ; ivy.el
  '(ivy-minibuffer-match-face-2 ((t :background "red"))) ; ivy.el
  '(ivy-minibuffer-match-face-3 ((t :background "blue"))) ; ivy.el
  '(ivy-minibuffer-match-face-4 ((t :background "green4"))) ; ivy.el
