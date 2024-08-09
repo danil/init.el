@@ -63,6 +63,7 @@
                  ("SVC"   . "#00688b")
                  ("TEST"  . "#af87ff")
                  ("TROUBLESHOOTING" . "#2e8b57")
+                 ("TX"    . "#db7093")
                  ("USR"   . "#6ca6cd")
                  ("VER[0-9]*" . "#7cb8bb")
                  ("WIP"   . "#7cb8bb")
