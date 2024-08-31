@@ -306,6 +306,8 @@
      ("C-x C-x C-x C-x S m" . evil-motion-state)
      ("C-x C-x C-x C-x S v" . evil-visual-state)
      ("C-x C-x C-x C-x S e" . evil-emacs-state)))
+ '(init-evil-normal-bindings ; init-evil.el
+   '(("=" . init-lsp-format-buffer)))
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings
@@ -317,8 +319,10 @@
  '(init-fundamental-mode-patterns '()) ; init-simple.el
  '(init-go-mode-bindings ; init-go-mode.el
    '(("C-c C-f e" . init-go-mode-end-of-defun)
+     ("C-c C-f i" . lsp-find-implementation)
+     ("C-c C-j" . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition
      ("C-c C-k" . xref-pop-marker-stack)
-     ("M-." . godef-jump)
+     ("M-." . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition ; godef-jump
      ("C-x C-x ? ? f" . godoc-at-point)))
  '(init-gitconfig-mode-patterns '(("/.gitconfig\\'" gitconfig-mode) ("/.gitconfig\\.[^/]*\\'" gitconfig-mode))) ; init-gitconfig-mode.el
  '(init-graphql-mode-patterns '("\\.graphql\\'"))
@@ -526,6 +530,7 @@
  '(kill-ring-max 500)
  '(logview-cache-filename (file-name-concat init-emacs-var "logview-cache.extmap"))
  '(logview-views-file (file-name-concat init-emacs-var "logview.views"))
+ '(lsp-headerline-breadcrumb-enable nil) ; lsp-mode.el
  '(magit-auto-revert-mode nil)
  '(magit-blame-heading-format "%-20a %C %s %H")
  '(magit-completing-read-function 'selectrum-completing-read)

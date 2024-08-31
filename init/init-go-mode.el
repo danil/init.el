@@ -235,14 +235,14 @@ See `init-go-mode-bindings'.")
 (defun init-global-go-mode-teardown () (remove-hook 'go-mode-hook 'init-go-mode-on))
 
 (defun init-go-mode-setup ()
+  ;; (add-hook 'before-save-hook #'gofmt-before-save)
   (dolist (b init-go-mode-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map init-go-mode-map))
-      (define-key map (kbd key) cmd)))
-
-  (add-hook 'before-save-hook #'gofmt-before-save))
+      (define-key map (kbd key) cmd))))
 
 (defun init-go-mode-teardown ()
-  (remove-hook 'before-save-hook #'gofmt-before-save))
+  ;; (remove-hook 'before-save-hook #'gofmt-before-save)
+  )
 
 (defun init-go-mode-end-of-defun ()
   (interactive)

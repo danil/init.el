@@ -369,8 +369,10 @@ Cancels itself, if this buffer was killed."
 (message "Initializing hi-lock") (autoload 'init-hi-lock "init-highlight-regexp" nil t)
 (message "Initializing hl-line") (require 'init-hl-line "init-hl-line") (add-hook 'after-init-hook 'init-hl-line)
 (message "Initializing less-scroll-mode") (autoload 'less-scroll-stub "init-less-scroll-mode" nil t)
+(message "Initializing lsp-mode") (autoload 'lsp-find-definition "lsp-mode" nil t) (autoload 'lsp-format-buffer "lsp-mode" nil t) (autoload 'init-lsp-format-buffer "init-lsp-mode" nil t)
 (message "Initializing rails") (require 'init-rails "init-rails") (add-hook 'after-init-hook 'init-rails)
 (message "Initializing sort") (require 'init-sort "init-sort")
+(message "Initializing xref") (require 'init-xref "init-xref") (add-hook 'after-init-hook 'init-xref)
 
 (message "Initializing rainbow-delimiters") (require 'init-rainbow-delimiters "init-rainbow-delimiters") (add-hook 'after-init-hook 'init-rainbow-delimiters)
 (message "Initializing rainbow-identifiers") (require 'init-rainbow-identifiers "init-rainbow-identifiers") (add-hook 'after-init-hook 'init-rainbow-identifiers)
@@ -484,7 +486,6 @@ Cancels itself, if this buffer was killed."
 
 (nox-recipe '(kill-ring))
 
-;; (nox-recipe '(lsp-mode))
 (nox-recipe '(lisp-mode))
 (nox-recipe '(logview))
 (nox-recipe '(lua-mode))
@@ -574,7 +575,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(vlf))
 (nox-recipe '(web-mode))
 (nox-recipe '(winner-mode))
-(nox-recipe '(xref))
 (nox-recipe '(yaml-mode))
 (nox-recipe '(yasnippet))
 ;; (nox-recipe '(yafolding))

@@ -16,6 +16,15 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
+(defcustom init-evil-normal-bindings '()
+  "Keybindings enabled in `init-evil-mode'. This is not a keymap.
+Rather it is an alist that is converted into a keymap just before `init-evil-mode'
+is (re-)enabled. The keys are strings and the values are command symbols."
+  :group 'init-evil
+  :type '(alist
+          :key-type sexp
+          :value-type function))
+
 (defun init-evil ()
   (if (boundp 'evil-normal-state-map) (init-evil-init)
     (with-eval-after-load 'evil (init-evil-init)))
@@ -43,6 +52,10 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (b init-evil-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map global-map))
       (define-key map (kbd key) cmd)))
+
+  (dolist (b init-evil-normal-bindings)
+    (let ((key (car b)) (cmd (cdr b)) (map global-map))
+      (evil-define-key 'normal global-map (kbd key) cmd)))
 
   (define-key evil-motion-state-map (kbd "SPC") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "RET") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
