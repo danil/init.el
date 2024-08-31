@@ -319,10 +319,6 @@
  '(init-fundamental-mode-patterns '()) ; init-simple.el
  '(init-go-mode-bindings ; init-go-mode.el
    '(("C-c C-f e" . init-go-mode-end-of-defun)
-     ("C-c C-f i" . lsp-find-implementation)
-     ("C-c C-j" . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition
-     ("C-c C-k" . xref-pop-marker-stack)
-     ("M-." . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition ; godef-jump
      ("C-x C-x ? ? f" . godoc-at-point)))
  '(init-gitconfig-mode-patterns '(("/.gitconfig\\'" gitconfig-mode) ("/.gitconfig\\.[^/]*\\'" gitconfig-mode))) ; init-gitconfig-mode.el
  '(init-graphql-mode-patterns '("\\.graphql\\'"))
@@ -445,9 +441,14 @@
      ("<mouse-5>" . scroll-up-line)
      ("<mouse-6>" . init-window-scroll-right)
      ("<mouse-7>" . init-window-scroll-left)
- 
+
      ("C-c C-f e" . end-of-defun)
      ("C-c C-f n" . beginning-of-defun)
+
+     ("C-c C-f i" . lsp-find-implementation)
+     ("C-c C-j" . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition
+     ("C-c C-k" . xref-pop-marker-stack)
+     ("M-." . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition ; godef-jump
 
      ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
      ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
