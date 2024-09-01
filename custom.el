@@ -307,7 +307,7 @@
      ("C-x C-x C-x C-x S v" . evil-visual-state)
      ("C-x C-x C-x C-x S e" . evil-emacs-state)))
  '(init-evil-normal-bindings ; init-evil.el
-   '(("=" . init-lsp-format-buffer)))
+   '(("=" . init-lsp-format-buffer-or-evil-indent)))
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings

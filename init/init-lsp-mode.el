@@ -12,6 +12,9 @@
   :group 'init-lsp-mode)
 
 (defun init-lsp-mode ()
+  (if (fboundp 'lsp) (init-lsp-mode-init)
+    (with-eval-after-load 'lsp-mode (init-lsp-mode-init)))
+
   (defun init-lsp-mode-init-go-mode ()
     (define-key go-mode-map (kbd "C-c C-f i") 'lsp-find-implementation) ; FIXME: ????????????????????????????????????????????????????????????????????????????????
     (define-key go-mode-map (kbd "C-c C-j") 'init-lsp-mode-find-definitions) ; xref-find-definitions ; lsp-find-definition
@@ -54,29 +57,33 @@
     (define-key zig-mode-map (kbd "M-.") 'init-lsp-mode-find-definitions) ; xref-find-definitions ; lsp-find-definition ; godef-jump
     (define-key zig-mode-map (kbd "C-c C-k") 'xref-pop-marker-stack))
   (if (boundp 'zig-mode-map) (init-lsp-mode-init-zig-mode)
-    (with-eval-after-load 'zig-mode (init-lsp-mode-init-zig-mode)))
-
-  (if (fboundp 'lsp) (init-lsp-mode-init)
-    (with-eval-after-load 'lsp-mode (init-lsp-mode-init))))
+    (with-eval-after-load 'zig-mode (init-lsp-mode-init-zig-mode))))
 
 (defun init-lsp-mode-init ()
   (defun init-lsp-mode-find-definitions ()
     (interactive)
 
-    (if (member major-mode init-lsp-mode-modes)
-        (if (and (boundp 'lsp-mode) lsp-mode)
-            (call-interactively 'lsp-find-definition)
-          (call-interactively 'lsp))
+    (if (init-lsp-mode-is-ready)
+        (progn (init-lsp-mode-start-server)
+               (call-interactively 'lsp-find-definition))
       (xref-find-definitions))))
 
 (defalias 'init-lsp-mode-find-definitions 'xref-find-definitions)
 
-(defun init-lsp-format-buffer ()
+(defun init-lsp-format-buffer-or-evil-indent ()
   (interactive)
 
-  (if (or (not (boundp 'lsp-mode))
-          (not lsp-mode))
-      (call-interactively 'lsp)
-    (call-interactively 'lsp-format-buffer)))
+  (if (init-lsp-mode-is-ready)
+      (progn (init-lsp-mode-start-server)
+             (call-interactively 'lsp-organize-imports)
+             (call-interactively 'lsp-format-buffer))
+    (call-interactively 'evil-indent)))
+
+(defun init-lsp-mode-is-ready ()
+  (member major-mode init-lsp-mode-modes))
+
+(defun init-lsp-mode-start-server ()
+  (when (not (and (boundp 'lsp-mode) lsp-mode))
+    (call-interactively 'lsp)))
 
 (provide 'init-lsp-mode)
