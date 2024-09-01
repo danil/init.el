@@ -338,6 +338,7 @@
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
  '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
+ '(init-lsp-mode-modes '(go-mode json-mode markdown-mode sh-mode zig-mode)) ; init-lsp-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -444,11 +445,6 @@
 
      ("C-c C-f e" . end-of-defun)
      ("C-c C-f n" . beginning-of-defun)
-
-     ("C-c C-f i" . lsp-find-implementation)
-     ("C-c C-j" . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition
-     ("C-c C-k" . xref-pop-marker-stack)
-     ("M-." . init-xref-find-definitions) ; xref-find-definitions ; lsp-find-definition ; godef-jump
 
      ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
      ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
@@ -869,6 +865,7 @@
  '(window-min-height 1) '(window-min-width 1) '(split-height-threshold nil) '(split-width-threshold 64) ; Split vertical by default <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>. ; window.el
  '(winner-dont-bind-my-keys t)
 )
+
 ;;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
