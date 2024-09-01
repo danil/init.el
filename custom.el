@@ -528,6 +528,7 @@
  '(logview-cache-filename (file-name-concat init-emacs-var "logview-cache.extmap"))
  '(logview-views-file (file-name-concat init-emacs-var "logview.views"))
  '(lsp-headerline-breadcrumb-enable nil) ; lsp-mode.el
+ '(lsp-lens-enable nil) ; lsp-mode.el
  '(magit-auto-revert-mode nil)
  '(magit-blame-heading-format "%-20a %C %s %H")
  '(magit-completing-read-function 'selectrum-completing-read)
