@@ -46,6 +46,7 @@
                  ("GEOS"  . "#2e8b57")
                  ("GOTO"  . "#5f7f5f")
                  ("HOWTO" . "#00688b")
+                 ("LOCAL" . "#00688b")
                  ("MED"   . "#00afff")
                  ("MERCH" . "#eedd82")
                  ("NETW"  . "#af87ff")
