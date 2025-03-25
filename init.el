@@ -249,9 +249,9 @@ Cancels itself, if this buffer was killed."
 ;;; vvv↓vvv Company mode <https://github.com/company-mode/company-mode> below this line.
 
 ;; Company mode auto complete.
+;; (message "Initializing company-elisp") (require 'init-company-elisp "init-company-elisp") (add-hook 'after-init-hook 'init-company-elisp) ; FAIL: Company backend ’company-elisp’ could not be initialized: Symbol’s function definition is void: company-elisp
 (message "Initializing company") (require 'init-company "init-company") (add-hook 'after-init-hook 'init-company) (add-hook 'after-init-hook 'init-global-company-mode)
 (message "Initializing company-css") (require 'init-company-css "init-company-css") (add-hook 'after-init-hook 'init-company-css)
-(message "Initializing company-elisp") (require 'init-company-elisp "init-company-elisp") (add-hook 'after-init-hook 'init-company-elisp)
 (message "Initializing company-erlang") (require 'init-company-erlang "init-company-erlang") (add-hook 'after-init-hook 'init-company-erlang)
 (message "Initializing company-inf-ruby") (require 'init-company-inf-ruby "init-company-inf-ruby") (add-hook 'after-init-hook 'init-company-inf-ruby)
 (message "Initializing company-lua") (require 'init-company-lua "init-company-lua") (add-hook 'after-init-hook 'init-company-lua)
@@ -407,7 +407,7 @@ Cancels itself, if this buffer was killed."
 ;;; vvv↓vvv Projectile mode below this line.
 
 (message "Initializing projectile") (require 'init-projectile "init-projectile") (add-hook 'after-init-hook 'init-projectile)
-(message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails)
+;; (message "Initializing projectile-rails") (require 'init-projectile-rails "init-projectile-rails") (add-hook 'after-init-hook 'init-projectile-rails) ; FAIL: Eager macro-expansion failure: (error "Shortdoc f function ‘f-older-p’: bad keyword ‘:noeval’")
 
 ;;; ^^^↑^^^ Projectile mode above this line.
 

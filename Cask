@@ -151,7 +151,7 @@
 (depends-on "flycheck-golangci-lint")
 (depends-on "go-expr-completion") ; complete a left-hand side from given expression
 (depends-on "go-mode")
-(depends-on "go-snippets")
+;; (depends-on "go-snippets") ; FAIL: Ignoring unknown directive "contributer" in file: ... Ignoring unknown directive "description" in file: ...
 (depends-on "go-stacktracer")
 (depends-on "godoctor")
 (depends-on "gotest")
@@ -248,7 +248,7 @@
 (depends-on "pinentry") ; gnupg password in minibuffer prompt instead of graphical dialog <https://unix.stackexchange.com/questions/55638/can-emacs-use-gpg-agent-in-a-terminal-at-all/278875#278875>
 (depends-on "pkgbuild-mode")
 (depends-on "projectile")
-(depends-on "projectile-rails")
+;; (depends-on "projectile-rails") ; FAIL: Eager macro-expansion failure: (error "Shortdoc f function ‘f-older-p’: bad keyword ‘:noeval’")
 (depends-on "protobuf-mode")
 (depends-on "quelpa")
 (depends-on "quickrun")
@@ -334,7 +334,7 @@
 (depends-on "tramp")
 (depends-on "transient") ; FIXME: A nested hotkey definition is a anti-pattern instead must use a best practice and do using the `general.el` because that package provides a more convenient method for binding keys in Emacs. ; Key bindings a-la `hydra`.~~~~<danil@kutkevich.org>
 (depends-on "transpose-frame")
-(depends-on "twittering-mode")
+;; (depends-on "twittering-mode") ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
 (depends-on "undo-tree")
 (depends-on "unicode-troll-stopper")
 (depends-on "vimrc-mode")

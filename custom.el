@@ -709,7 +709,7 @@
      gitconfig-mode
      gitignore-mode
      go-expr-completion
-     go-snippets
+     ;; go-snippets ; FAIL: Ignoring unknown directive "contributer" in file: ... Ignoring unknown directive "description" in file: ...
      go-stacktracer
      godoctor
      gotest
@@ -755,7 +755,7 @@
      package-build
      pinentry
      pkgbuild-mode
-     projectile-rails
+     ;; projectile-rails ; FAIL: Eager macro-expansion failure: (error "Shortdoc f function ‘f-older-p’: bad keyword ‘:noeval’")
      protobuf-mode
      quelpa
      quickrun
@@ -793,7 +793,7 @@
      top-mode
      tramp
      transpose-frame
-     twittering-mode
+     ;; twittering-mode ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
      typescript-mode
      undo-tree
      unicode-troll-stopper
