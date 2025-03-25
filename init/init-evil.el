@@ -57,6 +57,21 @@ is (re-)enabled. The keys are strings and the values are command symbols."
     (let ((key (car b)) (cmd (cdr b)) (map global-map))
       (evil-define-key 'normal global-map (kbd key) cmd)))
 
+  ;; ;; (add-hook 'evil-normal-state-exit-hook  'init-evil-mode-line-high)
+  ;; ;; (add-hook 'evil-normal-state-entry-hook 'init-evil-mode-line-low)
+  ;; (setq evil-normal-state-cursor '(box "light blue")
+  ;;       evil-insert-state-cursor '(bar "medium sea green")
+  ;;       evil-visual-state-cursor '(hollow "orange"))
+  (unless (display-graphic-p)
+    (require 'evil-terminal-cursor-changer)
+    (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+    (setq evil-motion-state-cursor 'box)  ; █
+    (setq evil-visual-state-cursor 'box)  ; █
+    (setq evil-normal-state-cursor 'box)  ; █
+    (setq evil-insert-state-cursor 'bar)  ; ⎸
+    (setq evil-emacs-state-cursor  'hbar) ; _
+    )
+ 
   (define-key evil-motion-state-map (kbd "SPC") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "RET") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "TAB") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
@@ -77,6 +92,14 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-ы") 'evil-change-to-initial-state) ; NOTE: Same keys in English and Russian layouts "C-s" and "C-ы".~~~~<danil@kutkevich.org>
   (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state))
+
+(defun init-evil-mode-line-high ()
+  (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "red"))
+        ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "red"))))
+
+(defun init-evil-mode-line-low ()
+  (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "black"))
+        ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "black"))))
 
 (defun init-evil-undo-tree ()
   ;; <https://github.com/emacs-evil/evil/issues/1382#issuecomment-761087738>.

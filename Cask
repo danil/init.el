@@ -118,6 +118,7 @@
 
 (depends-on "evil")
 (depends-on "evil-collection") ;; <https://github.com/emacs-evil/evil-collection#installation>.
+(depends-on "evil-terminal-cursor-changer") ;; <https://github.com/7696122/evil-terminal-cursor-changer>
 (depends-on "goto-chg")
 
 ;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this line.
