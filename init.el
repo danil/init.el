@@ -679,4 +679,13 @@ Cancels itself, if this buffer was killed."
 
 )
 
+(defun my-terminal-cursor-color (color)
+  "Sets the terminal cursor colour by sending the appropriate escape sequence."
+  (interactive
+   (list (read-color "Color (white): " nil :allow-empty)))
+  (when (string= color "")
+    (setq color "white"))
+  (send-string-to-terminal
+   (concat "\033]12;" color "\007")))
+
 ;; (put 'magit-diff-edit-hunk-commit 'disabled nil)

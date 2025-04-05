@@ -298,14 +298,14 @@
  '(init-display-line-numbers-mode-hooks (append init-overview-mode-hooks '())) ; init-display-line-numbers-mode.el
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
  '(init-evil-bindings ; init-evil.el
-   '(("C-x C-x C-x C-x s" . evil-mode)
-     ("C-x C-x C-x C-x S S" . evil-force-normal-state)
-     ("C-x C-x C-x C-x S n" . evil-normal-state)
-     ("C-x C-x C-x C-x S i" . evil-insert-state)
-     ("C-x C-x C-x C-x S r" . evil-replace-state)
-     ("C-x C-x C-x C-x S m" . evil-motion-state)
-     ("C-x C-x C-x C-x S v" . evil-visual-state)
-     ("C-x C-x C-x C-x S e" . evil-emacs-state)))
+   '(;; ("C-x C-x C-x C-x s" . evil-mode)
+     ("C-x C-x C-x C-x s s" . evil-force-normal-state)
+     ("C-x C-x C-x C-x s n" . evil-normal-state)
+     ("C-x C-x C-x C-x s i" . evil-insert-state)
+     ("C-x C-x C-x C-x s r" . evil-replace-state)
+     ("C-x C-x C-x C-x s m" . evil-motion-state)
+     ("C-x C-x C-x C-x s v" . evil-visual-state)
+     ("C-x C-x C-x C-x s e" . evil-emacs-state)))
  '(init-evil-normal-bindings ; init-evil.el
    '(("=" . init-lsp-format-buffer-or-evil-indent)))
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
@@ -491,7 +491,7 @@
      ("C-x C-x L L" . init-hl-line-on)
      ("C-x C-x L t" . toggle-truncate-lines)
      ("C-x C-x m" . less-scroll-stub)
-     ("C-x C-x M M" . xterm-mouse-mode)
+     ;; ("C-x C-x M M" . xterm-mouse-mode)
      ("C-x C-x r f" . fill-region)
      ("C-x C-x s"   . init-overview-mode-toggle)
      ("C-x C-x t" . shell)
