@@ -11,7 +11,10 @@
   (interactive)
 
   (let* ((continue t)
+         ;; (last-xterm-mouse-mode xterm-mouse-mode)
          (keys '("j" "k" "h" "l" "u" "d" "C-b" "C-f" "b" "p" "n" "f" "0" "^" "$" "g" "G")))
+
+    ;; (when (fboundp 'xterm-mouse-mode) (xterm-mouse-mode t))
 
     (while continue
       (message (concat " Less "
@@ -49,6 +52,8 @@
 
               (setq last-input-event nil))
 
+          ;; (message (format "aaaaaaaaaa %s %s" event key))
+          ;; (when (fboundp 'xterm-mouse-mode) (xterm-mouse-mode last-xterm-mouse-mode))
           (setq continue nil)
           (push last-input-event unread-command-events))))))
 

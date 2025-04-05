@@ -466,6 +466,8 @@ Cancels itself, if this buffer was killed."
 
 (autoload 'dotenv-eval-region (file-name-concat user-emacs-directory "dotenv") nil t)
 
+(autoload 'go-mod-mode (file-name-concat user-emacs-directory "go-mod-mode") nil t)
+
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 (nox-recipe '(ibuffer))
 (nox-recipe '(ielm))
