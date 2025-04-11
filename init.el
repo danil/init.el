@@ -85,6 +85,7 @@ Cancels itself, if this buffer was killed."
 (setq init-base-modes '(
                         autoconf-mode
                         awk-mode
+                        c++-mode
                         c-mode
                         cask-mode
                         change-log-mode
