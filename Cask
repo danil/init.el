@@ -15,6 +15,9 @@
 (depends-on "ac-html" :git "https://github.com/zhangkaiyulw/ac-html.git" :ref "v0.31") ; i can not setup new version
 (depends-on "web-completion-data") ; used by ad-html
 
+;; C/C++ compile/make dependencies.
+(depends-on "ccls")
+
 ;; (depends-on "cider") ; i do not want upgrade "cider-nrepl plugin"
 (depends-on "clojure-mode")
 

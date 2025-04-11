@@ -338,7 +338,7 @@
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
  '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
- '(init-lsp-mode-modes '(go-mode json-mode markdown-mode sh-mode zig-mode)) ; init-lsp-mode.el
+ '(init-lsp-mode-modes '(c-mode c++-mode go-mode json-mode markdown-mode sh-mode zig-mode)) ; init-lsp-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -362,8 +362,8 @@
              )))
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-identifiers-hooks ; init-rainbow-identifiers.el
-   '((c++-mode-hook init-c++-mode-rainbow-identifiers-init)
-     (c-mode-common-hook init-c-mode-rainbow-identifiers-init)
+   '((c-mode-common-hook init-c-mode-rainbow-identifiers-init)
+     (c++-mode-hook init-c++-mode-rainbow-identifiers-init)
      (clojure-mode-hook init-clojure-mode-rainbow-identifiers-init)
      (coffee-mode-hook init-coffee-mode-rainbow-identifiers-init)
      (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-init)
