@@ -366,4 +366,34 @@
          (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
          (not (member str-cur init-c-mode-rainbow-identifiers-stop-words)))))
 
+(defun init-c++-mode-rainbow-identifiers-init ()
+  (when (equal major-mode 'c++-mode)
+    (make-local-variable 'rainbow-identifiers-filter-functions)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'rainbow-identifiers-face-overridable)
+    (add-hook 'rainbow-identifiers-filter-functions
+              'init-c++-mode-rainbow-identifiers-filter)
+
+    (make-local-variable 'rainbow-identifiers-faces-to-override)
+    (setq rainbow-identifiers-faces-to-override
+          '(
+            font-lock-variable-name-face
+            font-lock-type-face
+            ))
+
+    (init-rainbow-identifiers-lazy-init)))
+
+;; <http://amitp.blogspot.ru/2014/09/emacs-rainbow-identifiers-customized.html>.
+(defun init-c++-mode-rainbow-identifiers-filter (beg end)
+  "My rainbow-identifiers custom init for symbol between `BEG' and `END'."
+
+  (let ((ch-cur (char-after beg))
+        (str-cur (buffer-substring-no-properties beg end))
+        (str-after (buffer-substring-no-properties end (point-max))))
+    (and (not (member ch-cur
+                      '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9 ?? ?_ ?& ?| ?= ?+ ?- ?* ?/)))
+         (not (string-match-p "[?!]\\'" str-cur))
+         (not (string-match-p "\\`[[:space:]]+:[^[:space:]]" str-after))
+         (not (member str-cur init-c-mode-rainbow-identifiers-stop-words)))))
+
 (provide 'init-cc-mode)

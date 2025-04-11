@@ -362,7 +362,8 @@
              )))
  '(init-projectile-project-root-files '("go.mod"))
  '(init-rainbow-identifiers-hooks ; init-rainbow-identifiers.el
-   '((c-mode-common-hook init-c-mode-rainbow-identifiers-init)
+   '((c++-mode-hook init-c++-mode-rainbow-identifiers-init)
+     (c-mode-common-hook init-c-mode-rainbow-identifiers-init)
      (clojure-mode-hook init-clojure-mode-rainbow-identifiers-init)
      (coffee-mode-hook init-coffee-mode-rainbow-identifiers-init)
      (conf-colon-mode-hook init-conf-colon-mode-rainbow-identifiers-init)
