@@ -24,7 +24,7 @@
 
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
-(set-default 'truncate-lines t) ;wrap long lines
+(set-default 'truncate-lines nil) ;wrap long lines
 (setq truncate-partial-width-windows nil) ;wrap long lines in buffers of any width
 
 (setq system-time-locale "C")
