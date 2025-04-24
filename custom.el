@@ -128,7 +128,7 @@
  '(fd-dired-display-in-current-window t)
  '(find-temp-custom-spec '((?D . (lambda () (format-time-string "%Y%m%d"))))) ; find-temp-file.el
  '(find-temp-template-alist '(("go" . "tmp%D%N/%N.%E"))) ; find-temp-file.el
- '(find-temp-file-directory "~/src/tmp/") ; temporary-file-directory ; find-temp-file.el
+ '(find-temp-file-directory "~/MindWiki/src/tmp/") ; temporary-file-directory ; find-temp-file.el
  '(find-temp-template-default "tmp%D%N.%E") ; find-temp-file.el
  '(flycheck-indication-mode nil) ; flycheck.el
  ;; '(flycheck-check-syntax-automatically '(idle-change)) ; flycheck.el
