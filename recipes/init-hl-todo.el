@@ -54,7 +54,6 @@
                  ("PIN"   . "#ff875f")
                  ("PROD"  . "#ff5fd7")
                  ("PROS"  . "#00afff")
-                 ("PROV"  . "#d2691e")
                  ("PUB"   . "#7ec0ee")
                  ("PVT"   . "#00688b")
                  ("PWD"   . "#00afff")
