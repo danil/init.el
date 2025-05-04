@@ -152,7 +152,7 @@
 ;;; vvv↓vvv Go programming language <https://github.com/dominikh/go-mode.el> below this line.
 
 ;; (depends-on "flycheck-gometalinter")
-(depends-on "flycheck-golangci-lint")
+;; (depends-on "flycheck-golangci-lint")
 (depends-on "go-expr-completion") ; complete a left-hand side from given expression
 (depends-on "go-mode")
 ;; (depends-on "go-snippets") ; FAIL: Ignoring unknown directive "contributer" in file: ... Ignoring unknown directive "description" in file: ...

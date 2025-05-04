@@ -435,7 +435,7 @@ Cancels itself, if this buffer was killed."
 
 ;; (nox-recipe '(flycheck-gometalinter))
 ;; (nox-recipe '(flycheck-bashate))
-(nox-recipe '(flycheck-golangci-lint))
+;; (nox-recipe '(flycheck-golangci-lint))
 
 (nox-recipe '(go-stacktracer))
 (nox-recipe '(godoctor))

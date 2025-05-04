@@ -704,7 +704,7 @@
      findr
      fish-mode
      flatbuffers-mode
-     flycheck-golangci-lint
+     ;; flycheck-golangci-lint
      git
      git-timemachine
      gitconfig-mode
