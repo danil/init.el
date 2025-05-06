@@ -30,6 +30,7 @@
 ;; 8. #5f87ff
 ;; 9. #5f8700
 
+;;; #d2691e
 (defun noxrcp-hl-todo--init ()
   (let ((faces '(("2FA"   . "#ff5fd7")
                  ("ARC"   . "#d7af00")
@@ -37,12 +38,12 @@
                  ("BENCH" . "#3cb371")
                  ("CERT"   . "#ff5fd7")
                  ("CHORE" . "#d0bf8f")
-                 ("CLI"   . "#af87ff")
+                 ("CLI"   . "#db7093")
                  ("CONS"  . "#ff875f")
-                 ("DEPRECATED" . "#db7093")
-                 ("DEV"   . "#7cb8bb")
-                 ("DOC"   . "#cc9393")
-                 ("GEOPOLIT" . "#00688b")
+                 ("DEPRECATED" . "#cc9393")
+                 ("DEV"   . "#2e8b57")
+                 ("DOC"   . "#af87ff")
+                 ("GEOPOLIT" . "#7cb8bb")
                  ("GEOS"  . "#2e8b57")
                  ("GOTO"  . "#5f7f5f")
                  ("HOWTO" . "#00688b")
@@ -62,12 +63,11 @@
                  ("STG"   . "#af87ff")
                  ("SVC"   . "#00688b")
                  ("TEST"  . "#af87ff")
-                 ("TROUBLESHOOTING" . "#2e8b57")
+                 ("TROUBLESHOOTING" . "#7cb8bb")
                  ("TX"    . "#db7093")
                  ("USR"   . "#6ca6cd")
                  ("VER[0-9]*" . "#7cb8bb")
-                 ("WIP"   . "#7cb8bb")
-                 ("WORKAROUND" . "#5f9ea0"))))
+                 ("WIP"   . "#5f9ea0"))))
     (setq hl-todo-keyword-faces (append hl-todo-keyword-faces faces))))
 
 ;;; init-hl-todo.el ends here
