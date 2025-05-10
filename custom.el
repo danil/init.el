@@ -298,16 +298,13 @@
  '(init-display-line-numbers-mode-hooks (append init-overview-mode-hooks '())) ; init-display-line-numbers-mode.el
  '(init-emacs-lisp-mode-patterns '("/\\.?abbrev_defs\\'" "/\\.emacs\\.d/bookmarks\\'" "/ac-comphist\\.dat\\'" "\\.el\\.\\(tpl\\|template\\)\\'")) ; init-emacs-lisp-mode.el
  '(init-evil-bindings ; init-evil.el
-   '(;; ("C-x C-x C-x C-x s" . evil-mode)
-     ("C-x C-x C-x C-x s s" . evil-force-normal-state)
-     ("C-x C-x C-x C-x s n" . evil-normal-state)
-     ("C-x C-x C-x C-x s i" . evil-insert-state)
-     ("C-x C-x C-x C-x s r" . evil-replace-state)
-     ("C-x C-x C-x C-x s m" . evil-motion-state)
-     ("C-x C-x C-x C-x s v" . evil-visual-state)
-     ("C-x C-x C-x C-x s e" . evil-emacs-state)))
+   '(;; ("C-x C-x C-x C-x s" . evil-mode) ;; ("C-x C-x C-x C-x s s" . evil-force-normal-state) ;; ("C-x C-x C-x C-x s n" . evil-normal-state) ;; ("C-x C-x C-x C-x s i" . evil-insert-state) ;; ("C-x C-x C-x C-x s r" . evil-replace-state) ;; ("C-x C-x C-x C-x s m" . evil-motion-state) ;; ("C-x C-x C-x C-x s v" . evil-visual-state) ;; ("C-x C-x C-x C-x s e" . evil-emacs-state)
+     ))
  '(init-evil-normal-bindings ; init-evil.el
-   '(("=" . init-lsp-format-buffer-or-evil-indent)))
+   '(("=" . init-lsp-format-buffer-or-evil-indent)
+     ("C-x C-x s" . evil-insert-state)))
+ '(init-evil-insert-bindings ; init-evil.el
+   '(("C-x C-x s" . evil-normal-state)))
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings
@@ -494,7 +491,6 @@
      ("C-x C-x m" . less-scroll-stub)
      ;; ("C-x C-x M M" . xterm-mouse-mode)
      ("C-x C-x r f" . fill-region)
-     ("C-x C-x s"   . init-overview-mode-toggle)
      ("C-x C-x t" . shell)
 
      ("C-x C-x C-x s"   . sort-lines)
@@ -510,6 +506,7 @@
      ("C-x C-x C-x C-x d s" . desktop-save-in-desktop-dir)
      ("C-x C-x C-x C-x d l" . desktop-read)
      ("C-x C-x C-x C-x k" . init-kill-emacs)
+     ("C-x C-x C-x C-x s" . init-overview-mode-toggle)
      ("C-x C-x C-x C-x u" . browse-url-at-point)
 
      ("M-t" . transpose-chars)

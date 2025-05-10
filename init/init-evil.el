@@ -25,6 +25,15 @@ is (re-)enabled. The keys are strings and the values are command symbols."
           :key-type sexp
           :value-type function))
 
+(defcustom init-evil-insert-bindings '()
+  "Keybindings enabled in `init-evil-mode'. This is not a keymap.
+Rather it is an alist that is converted into a keymap just before `init-evil-mode'
+is (re-)enabled. The keys are strings and the values are command symbols."
+  :group 'init-evil
+  :type '(alist
+          :key-type sexp
+          :value-type function))
+
 (defun init-evil ()
   (if (boundp 'evil-normal-state-map) (init-evil-init)
     (with-eval-after-load 'evil (init-evil-init)))
@@ -56,6 +65,10 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (dolist (b init-evil-normal-bindings)
     (let ((key (car b)) (cmd (cdr b)) (map global-map))
       (evil-define-key 'normal global-map (kbd key) cmd)))
+
+  (dolist (b init-evil-insert-bindings)
+    (let ((key (car b)) (cmd (cdr b)) (map global-map))
+      (evil-define-key 'insert global-map (kbd key) cmd)))
 
   ;; ;; ;; (add-hook 'evil-normal-state-exit-hook  'init-evil-mode-line-high)
   ;; ;; ;; (add-hook 'evil-normal-state-entry-hook 'init-evil-mode-line-low)
