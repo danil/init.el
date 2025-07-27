@@ -122,7 +122,7 @@
  ;; '(evil-symbol-word-search nil) ; evil-vars.el ; If nil then * and # search for words otherwise for symbols.
  '(evil-disable-insert-state-bindings t) ; Useed Emacs keybindings instead of the ones that evil makes in insert state <https://github.com/noctuid/evil-guide#switching-between-evil-and-emacs>, <https://stackoverflow.com/questions/25542097/emacs-evil-mode-how-to-change-insert-state-to-emacs-state-automatically#56206909>.
  '(evil-search-wrap-ring-bell t) ; evil-vars.el ; Whether to ring the bell when search wraps around the buffer.
- '(evil-undo-system 'undo-tree) ; evil-vars.el
+ '(evil-undo-system 'undo-redo) ; undo-tree ; evil-vars.el
  '(evil-want-integration t) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-vars.el
  '(evil-want-keybinding nil) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-collection.el
  '(fd-dired-display-in-current-window t)
@@ -793,7 +793,6 @@
      transpose-frame
      ;; twittering-mode ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
      typescript-mode
-     undo-tree
      unicode-troll-stopper
      vimrc-mode
      visual-regexp
@@ -857,8 +856,6 @@
  '(tldr-use-word-at-point t)
  ;; '(tramp-persistency-file-name (file-name-concat init-emacs-var "tramp")) ; FAIL: Call of the `custom-set-variables` function for a `tramp-persistency-file-name` variable ignored by the `tramp-cache` (instead use `setq` for `tramp-persistency-file-name`).
  '(transient-history-file (file-name-concat init-emacs-var "transient/history.el"))
- '(undo-tree-enable-undo-in-region nil) ; https://emacs.stackexchange.com/questions/69779/emacs-get-frozen-due-to-error-reading-undo-tree-history#69790
- '(undo-tree-history-directory-alist `(("." . ,(file-name-concat init-emacs-var "undo-tree"))))
  '(uniquify-min-dir-content 20)
  '(version-control t) ; files.el: use versioned backups
  '(window-min-height 1) '(window-min-width 1) '(split-height-threshold nil) '(split-width-threshold 64) ; Split vertical by default <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>. ; window.el

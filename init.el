@@ -570,7 +570,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(toml-mode))
 (nox-recipe '(transpose-frame))
 (nox-recipe '(two-column)) ;disable fucking two-column mode
-(nox-recipe '(undo-tree))
 (nox-recipe '(uniquify)) ; uniquify buffer name
 (nox-recipe '(vc-hooks))
 (nox-recipe '(visual-regexp))
