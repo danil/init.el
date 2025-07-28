@@ -57,6 +57,15 @@
  '(compilation-scroll-output t) ; compile.el
  '(counsel-ag-base-command ; counsel.el
    (format "%s %s %s" init-counsel-ag-base-command-name init-counsel-ag-base-command-args "%s"))
+ '(counsel-rg-base-command ; ripgrep ; counsel.el
+   `("rg"
+    "--with-filename"
+    "--no-heading"
+    "--line-number"
+    "--color=never"
+    "%s"
+    ,@(and (memq system-type '(ms-dos windows-nt))
+           (list "--path-separator" "/" "."))))
  '(counsel-yank-pop-truncate-radius 4) ; counsel.el
  ;; '(css-indent-offset 2) ; css-mode.el
  '(default-tab-width 2) ; indent.el
