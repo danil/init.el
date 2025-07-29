@@ -322,6 +322,7 @@
  ;;     ))
  '(init-find-temp-file-mode-bindings '(("C-x C-x C-x t" . find-temp-file))) ; init-find-temp-file-mode.el
  '(init-find-temp-file-mode-extension-functions '(("go" . init-find-temp-file-go))) ; init-find-temp-file-mode.el
+ '(init-find-temp-file-mode-extension-functions '(("zig" . init-find-temp-file-zig))) ; init-find-temp-file-mode.el
  '(init-fundamental-mode-patterns '()) ; init-simple.el
  '(init-go-mode-bindings ; init-go-mode.el
    '(("C-c C-f e" . init-go-mode-end-of-defun)
@@ -865,6 +866,7 @@
  '(tldr-use-word-at-point t)
  ;; '(tramp-persistency-file-name (file-name-concat init-emacs-var "tramp")) ; FAIL: Call of the `custom-set-variables` function for a `tramp-persistency-file-name` variable ignored by the `tramp-cache` (instead use `setq` for `tramp-persistency-file-name`).
  '(transient-history-file (file-name-concat init-emacs-var "transient/history.el"))
+ '(undo-tree-history-directory-alist `(("." . ,(file-name-concat init-emacs-var "undo-tree"))))
  '(uniquify-min-dir-content 20)
  '(version-control t) ; files.el: use versioned backups
  '(window-min-height 1) '(window-min-width 1) '(split-height-threshold nil) '(split-width-threshold 64) ; Split vertical by default <http://stackoverflow.com/questions/20167246/emacs-open-buffer-in-vertical-split-by-default#20514750>. ; window.el
