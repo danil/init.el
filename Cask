@@ -339,6 +339,7 @@
 (depends-on "transient") ; FIXME: A nested hotkey definition is a anti-pattern instead must use a best practice and do using the `general.el` because that package provides a more convenient method for binding keys in Emacs. ; Key bindings a-la `hydra`.~~~~<danil@kutkevich.org>
 (depends-on "transpose-frame")
 ;; (depends-on "twittering-mode") ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
+(depends-on "undo-fu")
 (depends-on "unicode-troll-stopper")
 (depends-on "vimrc-mode")
 (depends-on "visual-regexp")

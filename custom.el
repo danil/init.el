@@ -131,7 +131,7 @@
  ;; '(evil-symbol-word-search nil) ; evil-vars.el ; If nil then * and # search for words otherwise for symbols.
  '(evil-disable-insert-state-bindings t) ; Useed Emacs keybindings instead of the ones that evil makes in insert state <https://github.com/noctuid/evil-guide#switching-between-evil-and-emacs>, <https://stackoverflow.com/questions/25542097/emacs-evil-mode-how-to-change-insert-state-to-emacs-state-automatically#56206909>.
  '(evil-search-wrap-ring-bell t) ; evil-vars.el ; Whether to ring the bell when search wraps around the buffer.
- '(evil-undo-system 'undo-redo) ; undo-tree ; evil-vars.el
+ '(evil-undo-system 'undo-fu) ; 'undo-redo 'undo-fu 'undo-tree ; evil-vars.el
  '(evil-want-integration t) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-vars.el
  '(evil-want-keybinding nil) ; <https://github.com/emacs-evil/evil-collection/tree/master#installation> ; evil-collection.el
  '(fd-dired-display-in-current-window t)
@@ -803,6 +803,7 @@
      transpose-frame
      ;; twittering-mode ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
      typescript-mode
+     undo-fu
      unicode-troll-stopper
      vimrc-mode
      visual-regexp
