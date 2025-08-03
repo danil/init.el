@@ -866,6 +866,7 @@
  '(tldr-use-word-at-point t)
  ;; '(tramp-persistency-file-name (file-name-concat init-emacs-var "tramp")) ; FAIL: Call of the `custom-set-variables` function for a `tramp-persistency-file-name` variable ignored by the `tramp-cache` (instead use `setq` for `tramp-persistency-file-name`).
  '(transient-history-file (file-name-concat init-emacs-var "transient/history.el"))
+ '(undo-tree-enable-undo-in-region nil) ; FAIL: `Unrecognized entry in undo list undo-tree-canary` <https://emacs.stackexchange.com/questions/69779/emacs-get-frozen-due-to-error-reading-undo-tree-history#69790>.
  '(undo-tree-history-directory-alist `(("." . ,(file-name-concat init-emacs-var "undo-tree"))))
  '(uniquify-min-dir-content 20)
  '(version-control t) ; files.el: use versioned backups
