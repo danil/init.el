@@ -56,6 +56,11 @@
 ;;; counsel-yank-pop (swiper/ivy) in minibuffer.
 (setq enable-recursive-minibuffers t)
 
+;;; Undo Limits <https://github.com/emacsmirror/undo-fu#undo-limits>, <https://github.com/emacsmirror/undo-tree/blob/master/undo-tree.el#L798>.
+(setq undo-limit 67108864) ; 64mb.
+(setq undo-strong-limit 100663296) ; 96mb.
+(setq undo-outer-limit 1006632960) ; 960mb.
+
 ;;; ElDoc annoying in all buffers/modes.
 (global-eldoc-mode -1)
 
