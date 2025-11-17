@@ -12,8 +12,11 @@
   :group 'init-lsp-mode)
 
 (defun init-lsp-mode ()
-  (if (fboundp 'lsp) (init-lsp-mode-init)
+  (if (boundp 'lsp-mode-map) (init-lsp-mode-init)
     (with-eval-after-load 'lsp-mode (init-lsp-mode-init)))
+
+  (if (fboundp 'lsp) (init-lsp-mode-defun-find-definition)
+    (with-eval-after-load 'lsp-mode (init-lsp-mode-defun-find-definition)))
 
   (defun init-lsp-mode-init-c-mode ()
     (define-key c-mode-map (kbd "C-c C-f") nil) ; FIXME: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -78,6 +81,10 @@
     (with-eval-after-load 'zig-mode (init-lsp-mode-init-zig-mode))))
 
 (defun init-lsp-mode-init ()
+  ;; (setq lsp-workspace-folders-remove (list (expand-file-name "~")))
+  (add-to-list 'lsp-file-watch-ignored-directories (expand-file-name "~")))
+
+(defun init-lsp-mode-defun-find-definition ()
   (defun init-lsp-find-definition ()
     (interactive)
 
