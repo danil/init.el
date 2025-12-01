@@ -112,6 +112,15 @@
              (call-interactively 'lsp-format-buffer))
     (call-interactively 'evil-indent)))
 
+(defun init-lsp-format-buffer-or-indent-for-tab-command ()
+  (interactive)
+
+  (if (init-lsp-mode-is-ready)
+      (progn (init-lsp-mode-start-server)
+             (call-interactively 'lsp-organize-imports)
+             (call-interactively 'lsp-format-buffer))
+    (call-interactively 'indent-for-tab-command)))
+
 (defun init-lsp-mode-is-ready ()
   (member major-mode init-lsp-mode-modes))
 

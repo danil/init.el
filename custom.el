@@ -190,7 +190,7 @@
      (mark " "
            (name 16 -1)
            " " filename)))
- '(indent-tabs-mode nil)
+ '(indent-tabs-mode nil) ;t ;c-i acting like vim command jump next or acting like emacs command indent-for-tab-command
  '(inf-mongo-command "/usr/bin/mongo 127.0.0.1:27017")
  ;; '(ivy-fixed-height-minibuffer nil) ; ivy.el
  ;; '(ivy-fixed-height-minibuffer t) ; ivy.el
@@ -311,7 +311,8 @@
    '(;; ("C-x C-x C-x C-x s" . evil-mode) ;; ("C-x C-x C-x C-x s s" . evil-force-normal-state) ;; ("C-x C-x C-x C-x s n" . evil-normal-state) ;; ("C-x C-x C-x C-x s i" . evil-insert-state) ;; ("C-x C-x C-x C-x s r" . evil-replace-state) ;; ("C-x C-x C-x C-x s m" . evil-motion-state) ;; ("C-x C-x C-x C-x s v" . evil-visual-state) ;; ("C-x C-x C-x C-x s e" . evil-emacs-state)
      ))
  '(init-evil-normal-bindings ; init-evil.el
-   '(("=" . init-lsp-format-buffer-or-evil-indent)
+   '(("=" . init-lsp-format-buffer-or-evil-indent) ;init-lsp-format-buffer-or-indent-for-tab-command
+     ("TAB". evil-jump-forward)
      ("C-x C-x s" . evil-insert-state)))
  '(init-evil-insert-bindings ; init-evil.el
    '(("C-x C-x s" . evil-normal-state)))
@@ -477,6 +478,7 @@
      ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
 
      ("C-x C-x ." . repeat) ; init--repeat
+     ("C-x C-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
      ("C-x C-x ! b" . init--quickrun)
      ("C-x C-x ! r" . init--quickrun-region)
      ("C-x C-x ?" . help-command) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
