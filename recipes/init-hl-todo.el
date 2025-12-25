@@ -43,6 +43,7 @@
                  ("DEPRECATED" . "#cc9393")
                  ("DEV"   . "#2e8b57")
                  ("DOC"   . "#00688b")
+                 ("EPIC"  . "#ff5fd7")
                  ("GEOPOLIT" . "#7cb8bb")
                  ("GEOS"  . "#2e8b57")
                  ("GOTO"  . "#5f7f5f")
