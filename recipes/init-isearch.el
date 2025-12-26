@@ -36,7 +36,7 @@
   "No X recipe init."
   ;; (ctrlf-mode +1)
 
-  (global-set-key (kbd "C-s")   'noxrcp-isearch--forward-literal)          ;; isearch-forward                 or ctrlf-forward-literal  or swiper or swiper-multi
+  ;; (global-set-key (kbd "C-s")   'noxrcp-isearch--forward-literal)          ;; isearch-forward                 or ctrlf-forward-literal  or swiper or swiper-multi
   (global-set-key (kbd "C-r")   'noxrcp-isearch--backward-literal)         ;; isearch-backward                or ctrlf-backward-literal or swiper or swiper-multi
   (global-set-key (kbd "C-M-s") 'noxrcp-isearch--forward-regexp)           ;; isearch-forward-regexp          or ctrlf-forward-regexp
   (global-set-key (kbd "C-M-r") 'noxrcp-isearch--backward-regexp)          ;; isearch-backward-regexp         or ctrlf-backward-regexp

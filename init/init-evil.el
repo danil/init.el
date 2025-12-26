@@ -100,8 +100,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (evil-define-key 'insert global-map (kbd "C-n") 'evil-next-line) ; NOTE: Overwrited default function `evil-complete-next`.~~~~<danil@kutkevivh.org>
   (evil-define-key 'insert global-map (kbd "C-p") 'evil-previous-line) ; NOTE: Overwrited default function `evil-complete-previous`.~~~~<danil@kutkevivh.org>
 
-  (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-ы") 'evil-change-to-initial-state) ; NOTE: Same keys in English and Russian layouts "C-s" and "C-ы".~~~~<danil@kutkevich.org>
-  (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state))
+  ;; (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-ы") 'evil-change-to-initial-state) ; NOTE: Same keys in English and Russian layouts "C-s" and "C-ы".~~~~<danil@kutkevich.org>
+  ;; (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state)
+  )
 
 (defun init-evil-mode-line-high ()
   (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "red"))
