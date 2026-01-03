@@ -90,6 +90,9 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   ;; <https://reddit.com/r/emacs/comments/4emyt2/how_to_properly_configure_keybindings_for_evil/#t1_d21ia3t>.
   (evil-define-key '(insert emacs) global-map (kbd "C-x C-s") 'init-evil-init-save-and-goto-normal-state)
 
+  ;; (evil-global-set-key 'normal (kbd "TAB") 'tab-to-tab-stop)
+  ;; (evil-define-key 'normal global-map (kbd "TAB") 'evil-jump-forward)
+
   (evil-global-set-key 'normal (kbd ".") 'init--evil-repeat)
   (evil-define-key 'normal global-map (kbd "ш") 'evil-insert) ; NOTE: Same keys in English and Russian layouts "i" and "ш".~~~~<danil@kutkevich.org>
   (evil-define-key 'normal global-map (kbd "Ш") 'evil-insert-line) ; NOTE: Same keys in English and Russian layouts "I" and "Ш".~~~~<danil@kutkevich.org>
