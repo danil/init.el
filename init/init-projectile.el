@@ -42,6 +42,11 @@ See `projectile-register-project-type'."
   ;; Projectile "make" type conflicts with "go" type.
   ;; FIXME: Absence of the "make" type.~~~~<danil@kutkevich.org>
   (setq projectile-project-types
-        (cl-delete-if (lambda (type) (equal (car type) 'make)) projectile-project-types)))
+        (cl-delete-if (lambda (type) (equal (car type) 'make)) projectile-project-types))
+
+  (projectile-register-project-type
+   'go
+   '("go.mod")
+   :project-file "go.mod"))
 
 (provide 'init-projectile)
