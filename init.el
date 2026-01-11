@@ -476,10 +476,10 @@ Cancels itself, if this buffer was killed."
 (autoload 'go-mod-mode (file-name-concat user-emacs-directory "go-mod-mode") nil t)
 
 ;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
+;; (nox-recipe '(inf-mongo)) ; FAIL: Some dependencies were not available: inf-mongo
 (nox-recipe '(ibuffer))
 (nox-recipe '(ielm))
 (nox-recipe '(indent))
-(nox-recipe '(inf-mongo))
 (nox-recipe '(info))
 (nox-recipe '(interprogram))
 (nox-recipe '(isearch))
