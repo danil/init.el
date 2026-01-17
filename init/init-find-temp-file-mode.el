@@ -56,6 +56,13 @@ See `init-find-temp-file-mode-bindings'.")
          (go-mod-path (file-name-concat directory-path "go.mod")))
     (write-region go-mod-text nil go-mod-path)))
 
+(defun init-find-temp-file-zig (file-path)
+  (let* ((directory-path (file-name-directory file-path))
+         (module-name (file-name-base (directory-file-name directory-path)))
+         (zig-mod-text (format "module %s\n" module-name))
+         (zig-mod-path (file-name-concat directory-path "zig.mod")))
+    (write-region zig-mod-text nil zig-mod-path)))
+
 (defun init-find-temp-file-monkeypatch-setup ()
   (fset 'find-temp-file (symbol-function 'init-find-temp-file-monkeypatch)))
 
