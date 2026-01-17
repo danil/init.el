@@ -14,6 +14,20 @@
   "Init/setup or teardown/deinit `diff-hl'."
   (if arg (init-diff-hl-activate) (init-diff-hl-deactivate)))
 
+;; (defface diff-file-header
+;;   '((((class color) (min-colors 88) (background light))
+;;      :background "grey75" :weight bold :extend t)
+;;     (((class color) (min-colors 88) (background dark))
+;;      :background "grey60" :weight bold :extend t)
+;;     (((class color))
+;;      :foreground "cyan" :weight bold :extend t)
+;;     (t :weight bold :extend t))			; :height 1.3
+;;   "`diff-mode' face used to highlight file header lines.")
+
+;; (defface diff-index
+;;   '((t :inherit diff-file-header))
+;;   "`diff-mode' face used to highlight index header lines.")
+
 (defun init-diff-hl-activate () ; FIXME: Maybe rename activate/deactivate function to setup/teardown function after replacing a toggle function by minor mode?~~~~<danil@kutkevich.org>
   "Init/setup `diff-hl'."
      (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
