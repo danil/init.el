@@ -478,6 +478,7 @@
      ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
 
      ("C-x C-x ." . repeat) ; init--repeat
+     ("C-x C-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
      ("C-x C-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
      ("C-x C-x ! b" . init--quickrun)
      ("C-x C-x ! r" . init--quickrun-region)
