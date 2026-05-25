@@ -136,6 +136,7 @@ Cancels itself, if this buffer was killed."
                         lua-mode
                         makefile-gmake-mode
                         markdown-mode
+                        md-ts-mode
                         mediawiki-mode
                         mustache-mode
                         nginx-mode
@@ -660,6 +661,7 @@ Cancels itself, if this buffer was killed."
 ;;      lua-mode
 ;;      makefile-gmake-mode
 ;;      markdown-mode
+;;      md-ts-mode
 ;;      nxml-mode
 ;;      org-mode
 ;;      perl-mode

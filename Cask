@@ -236,9 +236,6 @@
 (depends-on "logview")
 (depends-on "lsp-mode")
 (depends-on "lua-mode")
-(depends-on "markdown-mode")
-(depends-on "markdown-toc")
-(depends-on "markdownfmt")
 (depends-on "mediawiki")
 (depends-on "mustache-mode")
 (depends-on "narrow-indirect" :git "https://github.com/emacsmirror/narrow-indirect.git")
@@ -256,6 +253,17 @@
 (depends-on "protobuf-mode")
 (depends-on "quelpa")
 (depends-on "quickrun")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; vvv↓vvv Markdown markup language below this line.
+
+(depends-on "markdown-mode")
+(depends-on "markdown-toc")
+(depends-on "markdownfmt")
+(depends-on "md-ts-mode")
+
+;;; ^^^↑^^^ Markdown markup language above this line.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

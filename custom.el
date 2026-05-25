@@ -295,6 +295,8 @@
      ("/var/lib/portage/world_sets\\'"     conf-mode)
      ("\\world\\'"                         conf-mode)
      ))
+ '(init-md-ts-mode-patterns
+   '("/Dropbox/deft/.*\\.txt\\'" "/README\\'" "/mutt[-a-zA-Z0-9]+\\'" "\\.markdown\\'" "\\.md\\'" "\\.mdown\\'"))
  '(init-crontab-mode-patterns '("/etc/cron.d/" "crontab\\'")) ; init-crontab-mode.el
  '(init-dart-mode-bindings 'nil) ; init-dart-mode.el
  '(init-digit-groups-mode-hooks (append init-programming-modes-hooks '(shell-mode-hook)))
@@ -347,7 +349,7 @@
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
  '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
- '(init-lsp-mode-modes '(c-mode c++-mode go-mode json-mode markdown-mode sh-mode zig-mode)) ; init-lsp-mode.el
+ '(init-lsp-mode-modes '(c-mode c++-mode go-mode json-mode markdown-mode md-ts-mode sh-mode zig-mode)) ; init-lsp-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -622,8 +624,7 @@
  '(noxrcp-logview-mode-patterns
    '("/access_log\\(?:\\.[0-9]+\\)?\\'" "/error_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/boot\\'" "/var/log/cups/access_log\\(?:\\.[0-9]+\\)?\\'" "/var/log/dmesg\\(?:\\.[0-9]+\\)?\\'" "/var/log/messages\\'" "/var/log/mysql/mysql.err\\'" "/var/log/mysql/mysqld.err\\'" "/var/log/syslog\\(?:\\.[0-9]+\\)?\\'" "\\.access_log\\(?:\\.[0-9]+\\)?\\'" "\\.error_log\\(?:\\.[0-9]+\\)?\\'" "\\.log\\(?:\\.[0-9]+\\)?\\'" "/mainlog\\'" "/rejectlog\\'"))
  '(noxrcp-lua-mode-patterns '("\\.lua\\.example\\'" "\\.ws\\'"))
- '(noxrcp-markdown-mode-patterns
-   '("/Dropbox/deft/.*\\.txt\\'" "/README\\'" "/mutt[-a-zA-Z0-9]+\\'" "\\.markdown\\'" "\\.md\\'" "\\.mdown\\'"))
+ '(noxrcp-markdown-mode-patterns '())
  '(noxrcp-nginx-mode-patterns '("/etc/nginx/.*\\.conf\\'" "/etc/nginx/sites-available/"))
  '(noxrcp-nxml-mode-patterns '("/\\.drirc\\'"))
  '(noxrcp-rspec-mode-patterns '("_spec\\.rb\\'" "/spec[0-9]*\\.rb\\'"))
@@ -639,7 +640,7 @@
  '(noxrcp-systemd--rainbow-identifiers-stop-words 'nil)
  '(noxrcp-systemd-patterns 'nil)
  '(noxrcp-toggle-quotes-modes
-   '(awk-mode cask-mode coffee-mode conf-mode conf-space-mode conf-xdefaults-mode csharp-mode css-mode emacs-lisp-mode enh-ruby-mode haml-mode haskell-mode html-mode java-mode js-mode js2-mode lisp-mode lua-mode makefile-gmake-mode markdown-mode nxml-mode org-mode perl-mode php-mode rhtml-mode ruby-mode sass-mode scss-mode sgml-mode sh-mode shell-mode slim-mode sql-mode xml-mode yaml-mode))
+   '(awk-mode cask-mode coffee-mode conf-mode conf-space-mode conf-xdefaults-mode csharp-mode css-mode emacs-lisp-mode enh-ruby-mode haml-mode haskell-mode html-mode java-mode js-mode js2-mode lisp-mode lua-mode makefile-gmake-mode markdown-mode md-ts-mode nxml-mode org-mode perl-mode php-mode rhtml-mode ruby-mode sass-mode scss-mode sgml-mode sh-mode shell-mode slim-mode sql-mode xml-mode yaml-mode))
  '(noxrcp-web-mode-patterns
    '("/src/vendor/narus/narus-web/.+\\.jsx?\\'" "\\.\\(html\\|text\\)\\.erb\\'" "\\.as[cp]x\\'" "\\.djhtml\\'" "\\.ejs\\'" "\\.html\\'" "\\.js.erb\\'" "\\.jsp\\'" "\\.jst\\.ejs\\'" "\\.jsx\\'" "\\.phtml\\'" "\\.rhtml\\'" "\\.tpl\\.php\\'"))
  '(noxrcp-yaml-mode-patterns
@@ -752,6 +753,7 @@
      markdown-mode
      markdown-toc
      markdownfmt
+     md-ts-mode
      mediawiki
      minitest
      multi-compile
