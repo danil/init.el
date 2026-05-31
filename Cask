@@ -79,6 +79,7 @@
 (depends-on "apache-mode")
 (depends-on "back-button") ; two-way navigation through mark ring forward/backward
 ;(depends-on "bash-completion")
+(depends-on "caddyfile-mode")
 (depends-on "cask-mode")
 (depends-on "column-marker" :git "https://github.com/emacsmirror/column-marker.git")
 (depends-on "corral") ; smartparens replacement (quotes/parentheses/delimiters manager)

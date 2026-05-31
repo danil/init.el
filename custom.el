@@ -357,6 +357,7 @@
    (append init-programming-modes-hooks
            '(
              compilation-mode-hook
+             caddyfile-mode-hook
              dired-mode-hook
              go-test-mode-hook
              graphql-mode-hook
@@ -390,6 +391,7 @@
      (ferm-mode-hook init-ferm-mode-rainbow-identifiers-init)
      (go-dot-mod-mode-hook init-go-dot-mod-mode-rainbow-identifiers-init)
      (go-mode-hook init-go-mode-rainbow-identifiers-init)
+     (caddyfile-mode-hook init-caddyfile-mode-rainbow-identifiers-init)
      (graphql-mode-hook init-graphql-mode-rainbow-identifiers-init)
      (handlebars-mode-hook init-handlebars-mode-rainbow-identifiers-init)
      (haproxy-mode-hook init-haproxy-mode-rainbow-identifiers-init)
@@ -668,6 +670,7 @@
      back-button
      bash-completion
      browse-kill-ring
+     caddyfile-mode
      cask
      cask-mode
      clojure-mode

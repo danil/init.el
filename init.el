@@ -93,6 +93,7 @@ Cancels itself, if this buffer was killed."
                         awk-mode
                         c++-mode
                         c-mode
+                        caddyfile-mode
                         cask-mode
                         change-log-mode
                         coffee-mode
@@ -239,6 +240,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing buff-menu") (require 'init-buff-menu "init-buff-menu") (add-hook 'after-init-hook 'init-buff-menu)
 (message "Initializing built-in-src") (autoload 'init-kill-emacs "init-built-in-src.el" nil t)
 (message "Initializing bytecomp") (require 'init-bytecomp "init-bytecomp") (add-hook 'after-init-hook 'init-bytecomp)
+(message "Initializing caddyfile-mode") (require 'init-caddyfile-mode "init-caddyfile-mode") (add-hook 'after-init-hook 'init-global-caddyfile-mode-on)
 (message "Initializing calendar") (require 'init-calendar "init-calendar") (add-hook 'after-init-hook 'init-calendar)
 (message "Initializing cc-mode") (require 'init-cc-mode "init-cc-mode") (add-hook 'after-init-hook 'init-cc-mode)
 (message "Initializing clojure-mode") (require 'init-clojure-mode "init-clojure-mode") (add-hook 'after-init-hook 'init-clojure-mode)
