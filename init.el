@@ -329,6 +329,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing evil") (require 'init-evil "init-evil") (add-hook 'after-init-hook 'init-evil)
 (message "Initializing evil-collection") (require 'init-evil-collection "init-evil-collection") (add-hook 'after-init-hook 'init-evil-collection)
 (message "Initializing evil-repeat") (require 'init-evil-repeat "init-evil-repeat") (add-hook 'after-init-hook 'init-evil-repeat) ; (autoload 'init--evil-repeat "init-evil-repeat" nil t)
+(message "Initializing evil-russian") (require 'init-evil-russian "init-evil-russian") (add-hook 'after-init-hook 'init-evil-russian)
 
 ;;; ^^^↑^^^ Evil mode <https://github.com/emacs-evil/evil> above this line.
 
