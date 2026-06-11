@@ -534,7 +534,7 @@
  '(init-wdired-bindings ; init-wdired.el
    '(("C-x C-x" . nil)
      ("C-x C-x C-x C-x w" . wdired-change-to-wdired-mode)))
- '(init-text-mode-patterns '("\\.bash_history\\'" "\\.txt#\\'")) ; init-text-mode.el
+ '(init-text-mode-patterns '("\\.bash_history\\'" "\\.pem\\'" "\\.txt#\\'")) ; init-text-mode.el
  '(ivy-count-format "(%d/%d) ") ; ivy.el
  '(ivy-truncate-lines nil) ; ivy.el: it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>
  '(ivy-use-virtual-buffers nil) ; ivy.el: virtual buffers slow down switching between buffers
