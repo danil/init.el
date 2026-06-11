@@ -822,6 +822,7 @@
      wgrep-ag
      wgrep-pt
      window-numbering
+     x509-mode
      yaml-mode
      yasnippet-snippets
      yasnippets
