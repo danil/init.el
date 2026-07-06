@@ -496,6 +496,7 @@
      ("C-x C-x F g" . counsel-git-grep)
      ("C-x C-x F p" . counsel-pt)
      ("C-x C-x F r" . init-counsel-rg)
+     ("C-x C-x F u" . init-counsel-ugrep)
      ;; ("C-x C-x F R R" . init-counsel-rg-no-ignore)
      ("C-x C-x g" . revert-buffer)
 

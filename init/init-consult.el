@@ -12,9 +12,4 @@
   ;;   (with-eval-after-load 'consult (init-consult-init)))
   )
 
-(let ((f (file-name-concat user-emacs-directory "consult-ugrep.el")))
-  (if (file-readable-p f)
-      (require 'consult-ugrep f)
-    (display-warning :consult-ugrep-occur-setup (format "Consult Ugrep setup not found: %s" f))))
-
 (provide 'init-consult)
