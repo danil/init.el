@@ -12,40 +12,9 @@
   ;;   (with-eval-after-load 'consult (init-consult-init)))
   )
 
-;; (defun init-consult-init ()
-;; (message "cccccccccc")
-;;   (require 'consult)
-;;   (require 'consult-ugrep (file-name-concat user-emacs-directory "consult-ugrep.el")))
-
-;; (defvar mu-consult-ugrep-args (string-join '("ugrep"
-;;                                              "--color=never"
-;;                                              "--exclude-dir=.git/"
-;;                                              "--hidden"
-;;                                              "--ignore-binary"
-;;                                              "--ignore-case"
-;;                                              "--line-buffered"
-;;                                              "--line-number"
-;;                                              "--null"
-;;                                              "--recursive")
-;;                                            " "))
-
-;; (defun mu-consult-ugrep-make-builder (paths)
-;;   "Create ugrep command line builder given PATHS."
-;;   (let ((cmd (consult--build-args mu-consult-ugrep-args)))
-;;     (lambda (input)
-;;       (pcase-let* ((`(,arg . ,opts) (consult--command-split input))
-;;                    (`(,re . ,hl)
-;;                     (funcall consult--regexp-compiler arg 'extended t)))
-;;         (when re
-;;           (cons (append cmd
-;;                         (cdr (mapcan (lambda (x) (list "--and" "-e" x)) re))
-;;                         opts paths)
-;;                 hl))))))
-
-;; (defun mu-consult-ugrep (&optional dir initial)
-;;   "Search with `ugrep' for files in DIR with INITIAL input."
-;;   (interactive "P")
-;;   (require 'consult)
-;;   (consult--grep "Ugrep" #'mu-consult-ugrep-make-builder dir initial))
+(let ((f (file-name-concat user-emacs-directory "consult-ugrep.el")))
+  (if (file-readable-p f)
+      (require 'consult-ugrep f)
+    (display-warning :consult-ugrep-occur-setup (format "Consult Ugrep setup not found: %s" f))))
 
 (provide 'init-consult)
