@@ -66,7 +66,6 @@
 
 ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;; terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 (setenv "GIT_PAGER" "")
-(setenv "RIPGREP_CONFIG_PATH" "/home/kutkevich.danil/.config/ripgrep/config")
 
 ;; Seconds to wait for lazy timer.
 (setq init-lazy-seconds 1)
