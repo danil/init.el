@@ -824,6 +824,7 @@
      wgrep-pt
      window-numbering
      x509-mode
+     xclip
      yaml-mode
      yasnippet-snippets
      yasnippets
