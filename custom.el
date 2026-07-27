@@ -481,6 +481,7 @@
      ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
      ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
 
+     ("M-u" . universal-argument)
      ;; ("M-g" . keyboard-quit)
      ("M-x x" . execute-extended-command)
      ("M-x b" . switch-to-buffer)
