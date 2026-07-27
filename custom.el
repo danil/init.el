@@ -196,10 +196,10 @@
  ;; '(ivy-fixed-height-minibuffer t) ; ivy.el
  ;; '(ivy-height 11) ; ivy.el
  '(init-back-button-mode-bindings ; init-back-button.el
-   '(("C-x C-x j j" . back-button-local-backward)
-     ("C-x C-x j k" . back-button-local-forward)
-     ("C-x C-x j J" . back-button-global-backward)
-     ("C-x C-x j K" . back-button-global-forward)))
+   '(("M-x M-x j j" . back-button-local-backward)
+     ("M-x M-x j k" . back-button-local-forward)
+     ("M-x M-x j J" . back-button-global-backward)
+     ("M-x M-x j K" . back-button-global-forward)))
  '(init-c-mode-patterns '("/etc/portage/savedconfig/www-servers/quark" "/etc/portage/savedconfig/x11-misc/dmenu" "/etc/portage/savedconfig/x11-misc/slstatus" "/etc/portage/savedconfig/x11-misc/tabbed" "/etc/portage/savedconfig/x11-terms/st" "/etc/portage/savedconfig/x11-wm/dwm")) ; init-cc-mode.el
  '(init-company-completing-read-function 'init-selectrum-company) ; init-company.el
  '(init-conf-mode-patterns ; init-conf-mode.el
@@ -315,22 +315,22 @@
  '(init-evil-normal-bindings ; init-evil.el
    '(("=" . init-lsp-format-buffer-or-evil-indent) ;init-lsp-format-buffer-or-indent-for-tab-command
      ("TAB". evil-jump-forward)
-     ("C-x C-x s" . evil-insert-state)))
+     ("M-x M-x s" . evil-insert-state)))
  '(init-evil-insert-bindings ; init-evil.el
-   '(("C-x C-x s" . evil-normal-state)))
+   '(("M-x M-x s" . evil-normal-state)))
  '(init-ferm-mode-patterns '("/etc/iptables/rules.v[46]" "\\.rules\\'")) ; init-ferm-mode.el
  '(init-ferm-mode-rainbow-identifiers-stop-words '("ACCEPT" "DROP" "FORWARD" "INPUT" "OUTPUT" "REJECT")) ; init-ferm-mode.el
  ;; '(init-files-bindings
  ;;   '(
  ;;     ;; ("C-x C-x C-f s" . save-some-buffers)
  ;;     ))
- '(init-find-temp-file-mode-bindings '(("C-x C-x C-x t" . find-temp-file))) ; init-find-temp-file-mode.el
+ '(init-find-temp-file-mode-bindings '(("M-x M-x M-x t" . find-temp-file))) ; init-find-temp-file-mode.el
  '(init-find-temp-file-mode-extension-functions '(("go" . init-find-temp-file-go))) ; init-find-temp-file-mode.el
  '(init-find-temp-file-mode-extension-functions '(("zig" . init-find-temp-file-zig))) ; init-find-temp-file-mode.el
  '(init-fundamental-mode-patterns '()) ; init-simple.el
  '(init-go-mode-bindings ; init-go-mode.el
    '(("C-c C-f e" . init-go-mode-end-of-defun)
-     ("C-x C-x ? ? f" . godoc-at-point)))
+     ("M-x M-x ? ? f" . godoc-at-point)))
  '(init-gitconfig-mode-patterns '(("/.gitconfig\\'" gitconfig-mode) ("/.gitconfig\\.[^/]*\\'" gitconfig-mode))) ; init-gitconfig-mode.el
  '(init-graphql-mode-patterns '("\\.graphql\\'"))
  '(init-handlebars-mode-patterns '("\\.go\\.tmpl\\'"))
@@ -463,8 +463,10 @@
      ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
      ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
-     ("C-x C-f" . init-files-find-file)
-     ("C-x C-d" . init-files-list)
+     ("C-x C-f" . init-files-find-file) ("M-x M-f" . init-files-find-file)
+     ;; ("C-x C-f" . init-counsel-find-file) ("M-x M-f" . init-counsel-find-file)
+     ("C-x C-d" . init-files-list) ("M-x M-x M-d" . init-files-list)
+     ;; ("C-x C-r" . counsel-buffer-or-recentf)
      ("M-s h y" . highlight-symbol) ; highlight-symbol.el
      ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
      ;; ("M-s o" occur)
@@ -473,68 +475,109 @@
      ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
-     ;; ("C-x C-f" . init-counsel-find-file)
-     ;; ("C-x C-r" . counsel-buffer-or-recentf)
      ;; ("C-c g" . counsel-git)
      ;; ("C-x b" . ivy-switch-buffer)
-     ("C-x 1" . init-window-delete-other-windows)
-     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
-     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
+     ("C-x 1" . init-window-delete-other-windows) ("M-x 1" . init-window-delete-other-windows)
+     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
+     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
 
-     ("C-x C-x ." . repeat) ; init--repeat
-     ("C-x C-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
-     ("C-x C-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
-     ("C-x C-x ! b" . init--quickrun)
-     ("C-x C-x ! r" . init--quickrun-region)
-     ("C-x C-x ?" . help-command) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
-     ("C-x C-x b" . init-window-bury-buffer-maybe-delete-window)
-     ("C-x C-x B h" . init-highlight-regexp) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
-     ("C-x C-x B r" . rename-buffer)
-     ("C-x C-x f"   . noxrcp-isearch--forward-literal)
-     ("C-x C-x F F" . noxrcp-isearch--backward-literal)
-     ("C-x C-x F a" . init-counsel-ag)
-     ("C-x C-x F g" . counsel-git-grep)
-     ("C-x C-x F p" . counsel-pt)
-     ("C-x C-x F r" . init-counsel-rg)
-     ("C-x C-x F u" . init-counsel-ugrep)
+     ;; ("M-g" . keyboard-quit)
+     ("M-x x" . execute-extended-command)
+     ("M-x b" . switch-to-buffer)
+     ("M-x M-b" . list-buffers)
+     ("M-x M-c" . save-buffers-kill-emacs)
+     ("M-x M-x ." . repeat) ; init--repeat
+     ;; ("M-x M-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
+     ("M-x M-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
+     ("M-x M-x ! b" . init--quickrun)
+     ("M-x M-x ! r" . init--quickrun-region)
+     ("M-x M-x ?" . help-command) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
+     ("M-x M-x b" . init-window-bury-buffer-maybe-delete-window)
+     ("M-x M-x B h" . init-highlight-regexp) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
+     ("M-x M-x B r" . rename-buffer)
+     ("M-x M-x f"   . noxrcp-isearch--forward-literal)
+     ("M-x M-x F F" . noxrcp-isearch--backward-literal)
+     ("M-x M-x F a" . init-counsel-ag)
+     ("M-x M-x F g" . counsel-git-grep)
+     ("M-x M-x F p" . counsel-pt)
+     ("M-x M-x F r" . init-counsel-rg)
+     ("M-x M-x F u" . init-counsel-ugrep)
      ;; ("C-x C-x F R R" . init-counsel-rg-no-ignore)
-     ("C-x C-x g" . revert-buffer)
+     ("M-x M-x g" . revert-buffer)
 
-     ("C-x C-x C-j" . electric-newline-and-maybe-indent)
-     ("C-x C-x C-o" . open-line)
-     ("C-x C-x i t" . init-subr-insert-timestamp-datetime)
-     ("C-x C-x i T u" . init-subr-insert-timestamp-unix)
-     ("C-x C-x i T d" . init-subr-insert-timestamp-date)
-     ("C-x C-x L L" . init-hl-line-on)
-     ("C-x C-x L t" . toggle-truncate-lines)
-     ("C-x C-x m" . less-scroll-stub)
+     ("M-x M-x M-j" . electric-newline-and-maybe-indent)
+     ("M-x M-x M-o" . open-line)
+     ("M-x M-x i t" . init-subr-insert-timestamp-datetime)
+     ("M-x M-x i T u" . init-subr-insert-timestamp-unix)
+     ("M-x M-x i T d" . init-subr-insert-timestamp-date)
+     ("M-x M-x L L" . init-hl-line-on)
+     ("M-x M-x L t" . toggle-truncate-lines)
+     ("M-x M-x m" . less-scroll-stub)
      ;; ("C-x C-x M M" . xterm-mouse-mode)
-     ("C-x C-x r f" . fill-region)
-     ("C-x C-x t" . shell)
+     ("M-x M-x r f" . fill-region)
+     ("M-x M-x t" . shell)
 
-     ("C-x C-x C-x s"   . sort-lines)
-     ("C-x C-x C-x S f" . sort-fields)
-     ("C-x C-x C-x S c" . init-sort-chars)
-     ("C-x C-x C-x S s" . init-sort-symbols)
-     ("C-x C-x C-x S w" . init-sort-words)
-     ("C-x C-x C-x n" . init-deft-init)
-     ("C-x C-x C-x T" . init-transpose-frame)
-     ("C-x C-x C-x u" . init-unique-lines-region)
-     ("C-x C-x C-x U b" . init-unique-lines-buffer)
+     ("M-x M-x M-x s"   . sort-lines)
+     ("M-x M-x M-x S f" . sort-fields)
+     ("M-x M-x M-x S c" . init-sort-chars)
+     ("M-x M-x M-x S s" . init-sort-symbols)
+     ("M-x M-x M-x S w" . init-sort-words)
+     ("M-x M-x M-x n" . init-deft-init)
+     ("M-x M-x M-x T" . init-transpose-frame)
+     ("M-x M-x M-x u" . init-unique-lines-region)
+     ("M-x M-x M-x U b" . init-unique-lines-buffer)
 
-     ("C-x C-x C-x C-x d s" . desktop-save-in-desktop-dir)
-     ("C-x C-x C-x C-x d l" . desktop-read)
-     ("C-x C-x C-x C-x k" . init-kill-emacs)
-     ("C-x C-x C-x C-x s" . init-overview-mode-toggle)
-     ("C-x C-x C-x C-x u" . browse-url-at-point)
+     ("M-x M-x R R"   . magit-status)
+     ("M-x M-x R d"   . magit-diff-buffer-file)
+     ("M-x M-x R D"   . magit-diff)
+     ("M-x M-x R f"   . magit-find-file)
+     ("M-x M-x R l"   . magit-log)
+     ("M-x M-x R L l" . magit-log-long)
+     ("M-x M-x R L f" . magit-file-log)
+     ("M-x M-x R s"   . magit-show-commit)
+     ("M-x M-x R S c" . magit-show)
+     ("M-x M-x R t"   . git-timemachine)
+     ("M-x M-x R b"   . my-magit-blame)
+
+     ("M-x M-x M-x M-x d s" . desktop-save-in-desktop-dir)
+     ("M-x M-x M-x M-x d l" . desktop-read)
+     ("M-x M-x M-x M-x k" . init-kill-emacs)
+     ("M-x M-x M-x M-x s" . init-overview-mode-toggle)
+     ("M-x M-x M-x M-x u" . browse-url-at-point)
 
      ("M-t" . transpose-chars)
      ;; ("M-x" . counsel-M-x)
-     ("M-y" . init-simple-yank-pop)))
+     ("M-y" . init-simple-yank-pop)
+
+     ("M-x M-x c i" . noxrcp-string-inflection--toggle-camelcase-and-underscore)
+     ("M-x M-x c I" . noxrcp-string-inflection--humanize-symbol)
+
+     ("M-x m-x w u" . winner-undo)
+     ("M-x m-x w r" . winner-redo)
+
+     ("M-x M-x p g" . go-playground)
+     ("M-x M-x ! m" . multi-compile-run)
+     ("M-x M-x B R" . re-builder)
+
+     ("M-x M-x e e" . er/expand-region) ; FIXME: A coupling of a global hotkey is a anti-pattern instead must use a best practice and do replacing of a `global-set-key` by `define-key`.~~~~<danil@kutkevich.org>
+     ("M-x M-x e c" . er/mark-comment)
+     ("M-x M-x e d" . er/mark-defun)
+     ("M-x M-x e m c" . er/mark-method-call)
+     ("M-x M-x e m m" . er/mark-email)
+     ("M-x M-x e n" . er/mark-next-accessor)
+     ("M-x M-x e p i" . er/mark-inside-pairs)
+     ("M-x M-x e p o" . er/mark-outside-pairs)
+     ("M-x M-x e q i" . er/mark-inside-quotes)
+     ("M-x M-x e q o" . er/mark-outside-quotes)
+     ("M-x M-x e s p" . er/mark-symbol-with-prefix)
+     ("M-x M-x e s s" . er/mark-symbol)
+     ("M-x M-x e u" . er/mark-url)
+     ("M-x M-x e w" . er/mark-word)
+     ))
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ; init-simple.el
  '(init-wdired-bindings ; init-wdired.el
    '(("C-x C-x" . nil)
-     ("C-x C-x C-x C-x w" . wdired-change-to-wdired-mode)))
+     ("M-x M-x M-x M-x w" . wdired-change-to-wdired-mode)))
  '(init-text-mode-patterns '("\\.bash_history\\'" "\\.pem\\'" "\\.txt#\\'")) ; init-text-mode.el
  '(ivy-count-format "(%d/%d) ") ; ivy.el
  '(ivy-truncate-lines nil) ; ivy.el: it is fixed by <<https://github.com/abo-abo/swiper/issues/1307>

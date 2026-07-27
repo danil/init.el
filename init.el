@@ -432,7 +432,7 @@ Cancels itself, if this buffer was killed."
 
 (defvar noxel-map (make-sparse-keymap) "Default keymap for noxel commands.") ; TODO: Remove me!~~~~<danil@kutkevich.org>
 
-(defun noxel-kbd-fn (key) (kbd (concat "C-x C-x " key))) ; TODO: Remove me!~~~~<danil@kutkevich.org>
+(defun noxel-kbd-fn (key) (kbd (concat "M-x M-x " key))) ; TODO: Remove me!~~~~<danil@kutkevich.org>
 
 (defvar nox-recipes ())
 
@@ -451,7 +451,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(godoctor))
 (nox-recipe '(gotest))
 
-(nox-recipe '(git-timemachine))
 (nox-recipe '(gitignore-mode))
 (nox-recipe '(haproxy-mode))
 (nox-recipe '(hcl-mode))
@@ -479,7 +478,6 @@ Cancels itself, if this buffer was killed."
 
 (autoload 'go-mod-mode (file-name-concat user-emacs-directory "go-mod-mode") nil t)
 
-;; (nox-recipe '(iedit)) ;isearch + edit is an a-la multiple-cursors-mode
 ;; (nox-recipe '(inf-mongo)) ; FAIL: Some dependencies were not available: inf-mongo
 (nox-recipe '(ibuffer))
 (nox-recipe '(ielm))
@@ -535,7 +533,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(pinentry)) ;gnupg password in minibuffer prompt instead of graphical dialog <https://unix.stackexchange.com/questions/55638/can-emacs-use-gpg-agent-in-a-terminal-at-all/278875#278875>
 (nox-recipe '(protobuf-mode))
 (nox-recipe '(python))
-(nox-recipe '(re-builder))
 (nox-recipe '(recentf))
 (nox-recipe '(recentf))
 (nox-recipe '(recentf-ext))
@@ -550,7 +547,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(robe))
 (nox-recipe '(rspec-compilation-mode))
 (nox-recipe '(rspec-mode))
-(nox-recipe '(ruby-hash-syntax))
 (nox-recipe '(ruby-mode))
 (nox-recipe '(ruby-pry))
 (nox-recipe '(ruby-refactor))
@@ -611,12 +607,13 @@ Cancels itself, if this buffer was killed."
 
 (noxrcp-global-mode 1)
 
-(add-hook 'after-init-hook 'noxrcp-init)
+(add-hook 'after-init-hook 'noxrcp-init) ;; TODO: Remove me!~~~~<danil@kutkevich.org>
 
-(defun noxrcp-init ()
+(defun noxrcp-init () ;; TODO: Remove me!~~~~<danil@kutkevich.org>
   "Init."
 
-  (global-set-key (kbd "C-x C-x") noxel-map))
+  (global-set-key (kbd "C-x C-x") noxel-map) ;; TODO: Remove me!~~~~<danil@kutkevich.org>
+  )
 
 (let ((f (file-name-concat user-emacs-directory "noxrcp.el")))
   (if (file-readable-p f)

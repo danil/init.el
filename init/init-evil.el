@@ -86,9 +86,10 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (define-key evil-motion-state-map (kbd "RET") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "TAB") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
 
-  ;; Automatically re-enter Normal State after saving with C-x C-s
+  ;; Automatically re-enter Normal State after saving with C-x C-s and M-x M-s
   ;; <https://reddit.com/r/emacs/comments/4emyt2/how_to_properly_configure_keybindings_for_evil/#t1_d21ia3t>.
-  (evil-define-key '(insert emacs) global-map (kbd "C-x C-s") 'init-evil-init-save-and-goto-normal-state)
+  (evil-define-key '(normal insert emacs) global-map (kbd "C-x C-s") 'init-evil-init-save-and-goto-normal-state)
+  (evil-define-key '(normal insert emacs) global-map (kbd "M-x M-s") 'init-evil-init-save-and-goto-normal-state)
 
   ;; (evil-global-set-key 'normal (kbd "TAB") 'tab-to-tab-stop)
   ;; (evil-define-key 'normal global-map (kbd "TAB") 'evil-jump-forward)

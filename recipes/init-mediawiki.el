@@ -57,6 +57,6 @@
   (noxrcp-removeme-add-mode-to-patterns 'mediawiki-mode "\\.mw\\'")
 
   (add-hook 'mediawiki-mode-hook
-            (lambda () (define-key mediawiki-mode-map "\C-x\C-s" 'save-buffer))))
+            (lambda () (define-key mediawiki-mode-map "\M-x\M-s" 'save-buffer))))
 
 ;;; init-mediawiki.el ends here

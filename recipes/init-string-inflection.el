@@ -36,8 +36,7 @@
 (defun noxrcp-string-inflection ()
   "No X recipe init."
 
-  (define-key noxel-map (kbd "c i") 'noxrcp-string-inflection--toggle-camelcase-and-underscore)
-  (define-key noxel-map (kbd "c I") 'noxrcp-string-inflection--humanize-symbol))
+  )
 
 ;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,

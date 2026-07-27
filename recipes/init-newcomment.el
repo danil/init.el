@@ -37,6 +37,7 @@
   "No X recipe init."
 
   (global-set-key (kbd "C-x ;") nil);unbind comment-set-column
+  ;; (global-set-key (kbd "M-x ;") nil)
   (global-set-key (kbd "C-x ;") 'comment-line))
 
 ;;; init-newcomment.el ends here

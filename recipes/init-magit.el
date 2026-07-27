@@ -39,21 +39,6 @@
 (defun noxrcp-magit ()
   "No X recipe init."
 
-  (define-key noxel-map (kbd "R R") 'magit-status)
-
-  (define-key noxel-map (kbd "R d") 'magit-diff-buffer-file)
-  (define-key noxel-map (kbd "R D") 'magit-diff)
-
-  (define-key noxel-map (kbd "R f") 'magit-find-file)
-
-  (define-key noxel-map (kbd "R l") 'magit-log)
-
-  (define-key noxel-map (kbd "R L l") 'magit-log-long)
-  (define-key noxel-map (kbd "R L f") 'magit-file-log)
-
-  (define-key noxel-map (kbd "R s") 'magit-show-commit)
-  (define-key noxel-map (kbd "R S c") 'magit-show)
-
   (if (boundp 'magit-mode-map) (init-magit-xxxxxxxxxx)
     (with-eval-after-load 'magit (init-magit-xxxxxxxxxx))))
 

@@ -41,10 +41,10 @@
 
   (evil-define-key 'normal occur-mode-map
     ;; Like `wdired-mode'.
-    (kbd "C-x C-q") 'occur-edit-mode
+    (kbd "M-x M-q") 'occur-edit-mode
 
     [mouse-2] 'occur-mode-mouse-goto
-    (kbd "C-c C-c") 'occur-mode-goto-occurrence
+    (kbd "M-c M-c") 'occur-mode-goto-occurrence
 
     ;; open
     (kbd "<return>") 'occur-mode-goto-occurrence

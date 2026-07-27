@@ -44,7 +44,6 @@
     (with-eval-after-load 'winner (init-winner-mode-xxxxxxxxxx))))
 
 (defun init-winner-mode-xxxxxxxxxx ()
-  (define-key noxel-map (kbd "w u") 'winner-undo)
-  (define-key noxel-map (kbd "w r") 'winner-redo))
+  )
 
 ;;; init-winner-mode.el ends here
