@@ -86,6 +86,13 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   (define-key evil-motion-state-map (kbd "RET") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
   (define-key evil-motion-state-map (kbd "TAB") nil) ; FIXME: A hard coded hotkey string is a anti-pattern instead must use a best practice and do adding of the `init-???-bindings` customizable variable and using it.~~~~<danil@kutkevich.org>
 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; (evil-define-key '(normal insert emacs) global-map (kbd "<escape>") 'init-evil-init-goto-normal-state)
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; (evil-global-set-key '(normal insert) (kbd "M-z") 'evil-exit-emacs-state)
+  ;; (evil-global-set-key '(emacs) (kbd "M-z") 'evil-emacs-state)
+
   ;; Automatically re-enter Normal State after saving with C-x C-s and M-x M-s
   ;; <https://reddit.com/r/emacs/comments/4emyt2/how_to_properly_configure_keybindings_for_evil/#t1_d21ia3t>.
   (evil-define-key '(normal insert emacs) global-map (kbd "C-x C-s") 'init-evil-init-save-and-goto-normal-state)
@@ -115,6 +122,12 @@ is (re-)enabled. The keys are strings and the values are command symbols."
 (defun init-evil-mode-line-low ()
   (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "black"))
         ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "black"))))
+
+(defun init-evil-init-goto-normal-state ()
+  "Go to normal state."
+  (interactive)
+  (evil-exit-emacs-state)
+  (evil-normal-state))
 
 (defun init-evil-init-save-and-goto-normal-state ()
   "Save buffer and go to normal state."
