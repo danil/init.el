@@ -6,7 +6,8 @@
   :link   '(url-link :tag "GitHub" "https://github.com/danil/init.el"))
 
 (defun init-xclip ()
-  (if (boundp 'xclip-mode) (xclip-mode 1)
-    (with-eval-after-load 'xclip (xclip-mode 1))))
+  (unless (getenv "SSH_CONNECTION")
+    (if (boundp 'xclip-mode) (xclip-mode 1)
+      (with-eval-after-load 'xclip (xclip-mode 1)))))
 
 (provide 'init-xclip)
