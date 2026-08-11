@@ -708,6 +708,7 @@
  '(package-selected-packages
    '(
      ac-html
+     agent-shell
      amx
      ansi
      anzu
