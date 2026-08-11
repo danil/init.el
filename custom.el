@@ -464,8 +464,8 @@
      ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
      ("C-x C-f" . init-files-find-file) ("M-x M-f" . init-files-find-file)
-     ;; ("C-x C-f" . init-counsel-find-file) ("M-x M-f" . init-counsel-find-file)
-     ("C-x C-d" . init-files-list) ("M-x M-x M-d" . init-files-list)
+     ;; ("C-x C-f" . init-counsel-find-file) ;; FIXME: Remove me: ("M-x M-f" . init-counsel-find-file)
+     ("C-x C-d" . init-files-list) ;; FIXME: Remove me: ("M-x M-x M-d" . init-files-list)
      ;; ("C-x C-r" . counsel-buffer-or-recentf)
      ("M-s h y" . highlight-symbol) ; highlight-symbol.el
      ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
@@ -477,16 +477,16 @@
 
      ;; ("C-c g" . counsel-git)
      ;; ("C-x b" . ivy-switch-buffer)
-     ("C-x 1" . init-window-delete-other-windows) ("M-x 1" . init-window-delete-other-windows)
-     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
-     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
+     ("C-x 1" . init-window-delete-other-windows) ;; FIXME: Remove me: ("M-x 1" . init-window-delete-other-windows)
+     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ;; FIXME: Remove me: ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
+     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; FIXME: Remove me: ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
 
      ("M-u" . universal-argument)
-     ;; ("M-g" . keyboard-quit)
      ("M-x x" . execute-extended-command)
+     ;; FIXME: Remove me: ("M-g" . keyboard-quit)
      ("M-x b" . switch-to-buffer)
      ("M-x M-b" . list-buffers)
-     ("M-x M-c" . save-buffers-kill-emacs)
+     ;; FIXME: Remove me: ("M-x M-c" . save-buffers-kill-emacs)
      ("M-x M-x ." . repeat) ; init--repeat
      ;; ("M-x M-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
      ("M-x M-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
