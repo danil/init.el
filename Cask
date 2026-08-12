@@ -226,11 +226,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; vvv↓vvv AI (ML and LLM) below this line.
+
+(depends-on "agent-shell")
+(depends-on "ai-code")
+
+;;; ^^^↑^^^ AI (ML and LLM) above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (depends-on "browse-kill-ring")
 (depends-on "kill-ring-ido" :git "https://github.com/lalopmak/kill-ring-ido.git")
 (depends-on "noflet")
 
-(depends-on "agent-shell") ; AI, ML, LLM.
 (depends-on "graphql-mode") ; https://github.com/davazp/graphql-mode
 (depends-on "leerzeichen") ; `leerzeichen-mode` is a minor mode to display whitespace characters <https://github.com/fgeller/leerzeichen.el>. ; (depends-on "ethan-wspace")
 (depends-on "less-css-mode")

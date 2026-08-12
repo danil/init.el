@@ -710,6 +710,7 @@
      ac-html
      acp
      agent-shell
+     ai-code
      amx
      ansi
      anzu
@@ -730,6 +731,7 @@
      company-php
      company-shell
      company-web
+     cond-let
      corral
      counsel-fd
      counsel-jq
@@ -858,6 +860,7 @@
      toml-mode
      top-mode
      tramp
+     transient
      transpose-frame
      ;; twittering-mode ; FAIL: Error: error ("Some dependencies were not available: twittering-mode")
      typescript-mode

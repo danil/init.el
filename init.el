@@ -4,6 +4,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; vvv↓vvv Fix `elpa.gnu.org/443 Name or service not known` below this line.
+
+(setq package-archives
+      '(("gnu"    . "https://mirrors.ustc.edu.cn/elpa/gnu/")
+        ("melpa"  . "https://mirrors.ustc.edu.cn/elpa/melpa/")
+        ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
+
+;;; ^^^↑^^^ Fix `elpa.gnu.org/443 Name or service not known` above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; vvv↓vvv User Emacs directory below this line.
 
 ;;; <https://gnu.org/software/emacs/manual/html_node/emacs/Init-File.html>
@@ -231,7 +242,15 @@ Cancels itself, if this buffer was killed."
 
 (add-to-list 'load-path (file-name-concat user-emacs-directory "init"))
 
+;;; vvv↓vvv AI (ML and LLM) below this line.
+
 (message "Initializing agent-shell") (require 'init-agent-shell "init-agent-shell") (add-hook 'after-init-hook 'init-agent-shell)
+(message "Initializing ai-code-reasonix-cli") (require 'init-ai-code-reasonix-cli "init-ai-code-reasonix-cli") (add-hook 'after-init-hook 'init-ai-code-reasonix-cli)
+
+;;; ^^^↑^^^ AI (ML and LLM) above this line.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (message "Initializing align") (require 'init-align "init-align")
 (message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color) ; FIXME: Maybe rename the `init-ansi-color.el` file to the `c-x-c-x-ansi-color.el` and the `init-ansi-color` function to the `c-x-c-x-ansi-color`?~~~~<danil@kutkevich.org>
 (message "Initializing anzu") (require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)
