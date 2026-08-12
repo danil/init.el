@@ -231,6 +231,7 @@ Cancels itself, if this buffer was killed."
 
 (add-to-list 'load-path (file-name-concat user-emacs-directory "init"))
 
+(message "Initializing agent-shell") (require 'init-agent-shell "init-agent-shell") (add-hook 'after-init-hook 'init-agent-shell)
 (message "Initializing align") (require 'init-align "init-align")
 (message "Initializing ansi-color") (require 'init-ansi-color "init-ansi-color") (add-hook 'after-init-hook 'init-ansi-color) ; FIXME: Maybe rename the `init-ansi-color.el` file to the `c-x-c-x-ansi-color.el` and the `init-ansi-color` function to the `c-x-c-x-ansi-color`?~~~~<danil@kutkevich.org>
 (message "Initializing anzu") (require 'init-anzu "init-anzu") (init-anzu) (add-hook 'after-init-hook 'init-global-anzu-mode)

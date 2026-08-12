@@ -708,6 +708,7 @@
  '(package-selected-packages
    '(
      ac-html
+     acp
      agent-shell
      amx
      ansi
@@ -844,6 +845,7 @@
      sed-mode
      selectrum
      selectrum-prescient
+     shell-maker
      shut-up
      simp
      slim-mode
