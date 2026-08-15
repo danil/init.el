@@ -1,8 +1,6 @@
-(source "ELPA" "http://tromey.com/elpa/")
-(source "melpa-stable" "http://stable.melpa.org/packages/")
-(source gnu)
-(source melpa)
-(source org)
+(source "gnu" "https://mirrors.ustc.edu.cn/elpa/gnu/")
+(source "melpa" "https://mirrors.ustc.edu.cn/elpa/melpa/")
+(source "org" "https://mirrors.ustc.edu.cn/elpa/nongnu/")
 
 ;; (depends-on "cask") ; NOTE: error: Some dependencies were not available: cask ~~~~<danil@kutkevich.org>
 
