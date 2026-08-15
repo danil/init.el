@@ -348,8 +348,10 @@
      ("u" . counsel-unicode-char)
      ("v" . describe-variable) ; ("v" . counsel-describe-variable)
      ))
+ '(init-json-mode-patterns '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'")) '(json-encoding-default-indentation "  ") ; init-json-mode.el
+ '(init-jsonc-mode-patterns '("\\.jsonc\\'")) ; init-jsonc-mode.el
  '(init-leerzeichen-mode-hooks (append init-overview-mode-hooks '())) ; init-leerzeichen-mode.el
- '(init-lsp-mode-modes '(c-mode c++-mode go-mode json-mode markdown-mode md-ts-mode sh-mode zig-mode)) ; init-lsp-mode.el
+ '(init-lsp-mode-modes '(c-mode c++-mode go-mode json-mode jsonc-mode markdown-mode md-ts-mode sh-mode zig-mode)) ; init-lsp-mode.el
  '(init-make-gmake-mode-patterns
    '("/Makefile.port\\'" "/Makefile.shlib\\'" "/etc/portage/savedconfig/x11-misc/slock")) ; init-make-mode.el
  '(init-minibuffer-bindings '(("C-r" . counsel-minibuffer-history))) ; init-minibuffer.el
@@ -398,6 +400,7 @@
      (hcl-mode-hook init-hcl-mode-rainbow-identifiers-init)
      (js2-parse-finished-hook init-js2-mode-rainbow-identifiers-init)
      (json-mode-hook init-json-mode-rainbow-identifiers-init)
+     (jsonc-mode-hook init-jsonc-mode-rainbow-identifiers-init)
      (lisp-mode-hook init-lisp-mode-rainbow-identifiers-init)
      (lua-mode-hook init-lua-mode-rainbow-identifiers-init)
      (nginx-mode-hook init-nginx-mode-rainbow-identifiers-init)
@@ -665,8 +668,6 @@
  '(noxrcp-highlight-static-regexps-hooks
    '((go-mode-hook init-go-mode-highlight-static-regexps-init)))
  '(noxrcp-js2-mode-patterns '("\\.htc\\'" "\\.js\\'"))
- '(noxrcp-json-mode-patterns
-   '("/composer\\.lock\\'" "\\.bowerrc\\'" "\\.json\\.example\\'" "\\.json\\.template\\'"))
  '(noxrcp-lisp-mode-patterns
    '("/\\.stumpwmrc\\'" "/\\.sbclrc\\'" "\\.ros\\'" "\\.sexp\\'")) ; init-lisp-mode.el
  '(noxrcp-logview-mode-patterns

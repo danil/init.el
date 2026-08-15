@@ -140,6 +140,7 @@ Cancels itself, if this buffer was killed."
                         js-mode
                         js2-mode
                         json-mode
+                        jsonc-mode
                         jsonnet-mode
                         less-css-mode
                         lisp-mode
@@ -273,6 +274,8 @@ Cancels itself, if this buffer was killed."
 (message "Initializing init-css") (autoload 'init-css-mode-rainbow-identifiers-init "init-css" nil t)
 (message "Initializing cycle-quotes") (require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
 (message "Initializing env") (require 'init-env "init-env") ; TODO: Autoload.~~~~<danil@kutkevich.org>
+(message "Initializing json-mode")  (require 'init-json-mode  "init-json-mode")  (add-hook 'after-init-hook 'init-global-json-mode-on)
+(message "Initializing jsonc-mode") (require 'init-jsonc-mode "init-jsonc-mode") (add-hook 'after-init-hook 'init-global-jsonc-mode-on)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -511,7 +514,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(coffee-mode))
 (nox-recipe '(js-mode))
 (nox-recipe '(js2-mode))
-(nox-recipe '(json-mode))
 (nox-recipe '(typescript-mode))
 
 (nox-recipe '(kill-ring))
