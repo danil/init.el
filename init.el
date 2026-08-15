@@ -272,6 +272,7 @@ Cancels itself, if this buffer was killed."
 (message "Initializing crontab-mode") (require 'init-crontab-mode "init-crontab-mode") (add-hook 'after-init-hook 'init-crontab-mode)
 (message "Initializing init-css") (autoload 'init-css-mode-rainbow-identifiers-init "init-css" nil t)
 (message "Initializing cycle-quotes") (require 'init-cycle-quotes "init-cycle-quotes") (add-hook 'after-init-hook 'init-global-cycle-quotes-mode)
+(message "Initializing env") (require 'init-env "init-env") ; TODO: Autoload.~~~~<danil@kutkevich.org>
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
