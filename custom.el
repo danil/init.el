@@ -463,30 +463,31 @@
      ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
      ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
      ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
-     ("C-x C-f" . init-files-find-file) ("M-x M-f" . init-files-find-file)
-     ;; ("C-x C-f" . init-counsel-find-file) ;; FIXME: Remove me: ("M-x M-f" . init-counsel-find-file)
-     ("C-x C-d" . init-files-list) ;; FIXME: Remove me: ("M-x M-x M-d" . init-files-list)
+     ("C-x C-f" . init-files-find-file) ("M-x M-f" . init-files-find-file) ("M-x M-а" . init-files-find-file) ;; FIXME: Remove alternative hotkey related to M-.
+     ;; ("C-x C-f" . init-counsel-find-file)
+     ("C-x C-d" . init-files-list) ;; ("M-x M-d" . init-files-list) ;; FIXME: Remove alternative hotkey related to M-.
      ;; ("C-x C-r" . counsel-buffer-or-recentf)
-     ("M-s h y" . highlight-symbol) ; highlight-symbol.el
-     ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el
+     ("M-s h y" . highlight-symbol) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
      ;; ("M-s o" occur)
      ;; ("M-s O O" . noccur-dired)
      ;; ("M-s O m" . multi-occur-in-matching-buffers)
-     ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line)
+     ;; ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line) ;; FIXME: Remove alternative hotkey related to M-.
      ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
 
      ;; ("C-c g" . counsel-git)
      ;; ("C-x b" . ivy-switch-buffer)
-     ("C-x 1" . init-window-delete-other-windows) ;; FIXME: Remove me: ("M-x 1" . init-window-delete-other-windows)
-     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ;; FIXME: Remove me: ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`.
-     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; FIXME: Remove me: ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired)
+     ("C-x 1" . init-window-delete-other-windows) ;; ("M-x 1" . init-window-delete-other-windows) ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ;; ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`. ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; FIXME: Remove alternative hotkey related to M-.
 
      ("M-u" . universal-argument)
      ("M-x x" . execute-extended-command)
-     ;; FIXME: Remove me: ("M-g" . keyboard-quit)
-     ("M-x b" . switch-to-buffer)
-     ("M-x M-b" . list-buffers)
-     ;; FIXME: Remove me: ("M-x M-c" . save-buffers-kill-emacs)
+     ;; ("M-g" . keyboard-quit) ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-ч и" . switch-to-buffer)
+     ("M-x b" . switch-to-buffer) ("M-x и" . switch-to-buffer) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-x M-b" . list-buffers) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-x M-c" . save-buffers-kill-emacs) ;; FIXME: Remove alternative hotkey related to M-.
      ("M-x M-x ." . repeat) ; init--repeat
      ;; ("M-x M-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
      ("M-x M-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
