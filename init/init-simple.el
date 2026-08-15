@@ -31,11 +31,11 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   "No X recipe custom variable for the custom yank pop function."
   :group 'noxinit)
 
-(defvar init-simple-mode-map (make-sparse-keymap)
+(defvar my-map (make-sparse-keymap)
   "Keymap for `init-simple-mode'. Populated when mode is enabled.
 See `init-simple-mode-bindings'.")
 
-(define-minor-mode init-simple-mode "init-simple" :init-value nil :lighter init-simple-mode-lighter :keymap init-simple-mode-map
+(define-minor-mode init-simple-mode "init-simple" :init-value nil :lighter init-simple-mode-lighter :keymap my-map
   (init-simple-setup))
 
 (define-globalized-minor-mode init-global-simple-mode init-simple-mode
@@ -57,8 +57,14 @@ See `init-simple-mode-bindings'.")
 
 (defun init-simple-setup ()
   (dolist (b init-simple-mode-bindings)
-    (let ((key (car b)) (cmd (cdr b)) (map init-simple-mode-map))
-      (define-key map (kbd key) cmd))))
+    (let* ((key (car b))     (tail2 (cdr b))
+           (cmd (car tail2)) (tail3 (cdr tail2))
+           (map (car tail3))
+           (f (cdr tail3)))
+      (if (boundp map)
+          (define-key (symbol-value map) (kbd key) cmd)
+        (unless (equal f nil)
+          (with-eval-after-load f (define-key (symbol-value map) (kbd key) cmd)))))))
 
 (defun init-global-simple-setup () (init-simple-mode +1))
 ;; (defun init-global-simple-teardown ())

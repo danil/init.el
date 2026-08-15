@@ -455,129 +455,129 @@
      ))
  '(init-shell-bindings '(("TAB". nil) ("C-x C-x C-l" . init-shell-clear))) ; init-shell.el
  '(init-simple-mode-bindings ; init-simple.el
-   '(("<mouse-4>" . scroll-down-line)
-     ("<mouse-5>" . scroll-up-line)
-     ("<mouse-6>" . init-window-scroll-right)
-     ("<mouse-7>" . init-window-scroll-left)
+   '(("<mouse-4>" scroll-down-line my-map . nil)
+     ("<mouse-5>" scroll-up-line my-map . nil)
+     ("<mouse-6>" init-window-scroll-right my-map . nil)
+     ("<mouse-7>" init-window-scroll-left my-map . nil)
 
-     ("C-c C-f e" . end-of-defun)
-     ("C-c C-f n" . beginning-of-defun)
+     ("C-c C-f e" end-of-defun my-map . nil)
+     ("C-c C-f n" beginning-of-defun my-map . nil)
 
-     ;; ("C-x <" . scroll-left) ; ("<right>" . scroll-left)
-     ;; ("C-x >" . scroll-right) ; ("<left>" . scroll-right)
-     ("C-v" . scroll-up-line) ; ("C-v" . scroll-up-command) ; ("<down>" . scroll-up-line)
-     ("C-x C-f" . init-files-find-file) ("M-x M-f" . init-files-find-file) ("M-x M-а" . init-files-find-file) ;; FIXME: Remove alternative hotkey related to M-.
-     ;; ("C-x C-f" . init-counsel-find-file)
-     ("C-x C-d" . init-files-list) ;; ("M-x M-d" . init-files-list) ;; FIXME: Remove alternative hotkey related to M-.
-     ;; ("C-x C-r" . counsel-buffer-or-recentf)
-     ("M-s h y" . highlight-symbol) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
-     ("M-s h Y r" . highlight-symbol-query-replace) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
+     ;; ("C-x <" scroll-left my-map . nil) ; ("<right>" scroll-left my-map . nil)
+     ;; ("C-x >" scroll-right my-map . nil) ; ("<left>" scroll-right my-map . nil)
+     ("C-v" scroll-up-line my-map . nil) ; ("C-v" scroll-up-command my-map . nil) ; ("<down>" scroll-up-line my-map . nil)
+     ("C-x C-f" init-files-find-file my-map . nil) ("M-x M-f" init-files-find-file my-map . nil) ("M-x M-а" init-files-find-file my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ;; ("C-x C-f" init-counsel-find-file my-map . nil)
+     ("C-x C-d" init-files-list my-map . nil) ;; ("M-x M-d" init-files-list my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ;; ("C-x C-r" counsel-buffer-or-recentf my-map . nil)
+     ("M-s h y" highlight-symbol my-map . nil) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-s h Y r" highlight-symbol-query-replace my-map . nil) ; highlight-symbol.el ;; FIXME: Remove alternative hotkey related to M-.
      ;; ("M-s o" occur)
-     ;; ("M-s O O" . noccur-dired)
-     ;; ("M-s O m" . multi-occur-in-matching-buffers)
-     ;; ("M-v" . scroll-down-line) ; ("M-v" . scroll-down-command) ; ("<up>" . scroll-down-line) ;; FIXME: Remove alternative hotkey related to M-.
-     ("M-|" . init-subr-shell-command-with-region-arg) ; init-subr.el
+     ;; ("M-s O O" noccur-dired my-map . nil)
+     ;; ("M-s O m" multi-occur-in-matching-buffers my-map . nil)
+     ;; ("M-v" scroll-down-line my-map . nil) ; ("M-v" scroll-down-command my-map . nil) ; ("<up>" scroll-down-line my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-|" init-subr-shell-command-with-region-arg my-map . nil) ; init-subr.el
 
-     ;; ("C-c g" . counsel-git)
-     ;; ("C-x b" . ivy-switch-buffer)
-     ("C-x 1" . init-window-delete-other-windows) ;; ("M-x 1" . init-window-delete-other-windows) ;; FIXME: Remove alternative hotkey related to M-.
-     ("C-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ;; ("M-x 4 0" . init-window-maybe-delete-window-maybe-kill-buffer) ; `(kill-buffer-and-window)`. ;; FIXME: Remove alternative hotkey related to M-.
-     ("C-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; ("M-x k" . init-window-maybe-delete-window-maybe-kill-buffer-open-dired) ;; FIXME: Remove alternative hotkey related to M-.
+     ;; ("C-c g" counsel-git my-map . nil)
+     ;; ("C-x b" ivy-switch-buffer my-map . nil)
+     ("C-x 1" init-window-delete-other-windows my-map . nil) ;; ("M-x 1" init-window-delete-other-windows my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-x 4 0" init-window-maybe-delete-window-maybe-kill-buffer my-map . nil) ;; ("M-x 4 0" init-window-maybe-delete-window-maybe-kill-buffer my-map . nil) ; `(kill-buffer-and-window)`. ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-x k" init-window-maybe-delete-window-maybe-kill-buffer-open-dired my-map . nil) ;; ("M-x k" init-window-maybe-delete-window-maybe-kill-buffer-open-dired my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
 
-     ("M-u" . universal-argument)
-     ("M-x x" . execute-extended-command)
-     ;; ("M-g" . keyboard-quit) ;; FIXME: Remove alternative hotkey related to M-.
-     ("C-ч и" . switch-to-buffer)
-     ("M-x b" . switch-to-buffer) ("M-x и" . switch-to-buffer) ;; FIXME: Remove alternative hotkey related to M-.
-     ("M-x M-b" . list-buffers) ;; FIXME: Remove alternative hotkey related to M-.
-     ("M-x M-c" . save-buffers-kill-emacs) ;; FIXME: Remove alternative hotkey related to M-.
-     ("M-x M-x ." . repeat) ; init--repeat
-     ;; ("M-x M-x SPC" . just-one-space) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
-     ("M-x M-x C-i" . init-lsp-format-buffer-or-evil-indent) ;indent-for-tab-command
-     ("M-x M-x ! b" . init--quickrun)
-     ("M-x M-x ! r" . init--quickrun-region)
-     ("M-x M-x ?" . help-command) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
-     ("M-x M-x b" . init-window-bury-buffer-maybe-delete-window)
-     ("M-x M-x B h" . init-highlight-regexp) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
-     ("M-x M-x B r" . rename-buffer)
-     ("M-x M-x f"   . noxrcp-isearch--forward-literal)
-     ("M-x M-x F F" . noxrcp-isearch--backward-literal)
-     ("M-x M-x F a" . init-counsel-ag)
-     ("M-x M-x F g" . counsel-git-grep)
-     ("M-x M-x F p" . counsel-pt)
-     ("M-x M-x F r" . init-counsel-rg)
-     ("M-x M-x F u" . init-counsel-ugrep)
-     ;; ("C-x C-x F R R" . init-counsel-rg-no-ignore)
-     ("M-x M-x g" . revert-buffer)
+     ("M-u" universal-argument my-map . nil)
+     ("M-x x" execute-extended-command my-map . nil)
+     ;; ("M-g" keyboard-quit my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("C-ч и" switch-to-buffer my-map . nil)
+     ("M-x b" switch-to-buffer my-map . nil) ("M-x и" switch-to-buffer my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-x M-b" list-buffers my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-x M-c" save-buffers-kill-emacs my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
+     ("M-x M-x ." repeat my-map . nil) ; init--repeat
+     ;; ("M-x M-x SPC" just-one-space my-map . nil) ; TROUBLESHOOTING: ALT-Space key binding of the WM windows manager, KDE or GNOME.
+     ("M-x M-x C-i" init-lsp-format-buffer-or-evil-indent my-map . nil) ;indent-for-tab-command
+     ("M-x M-x ! b" init--quickrun my-map . nil)
+     ("M-x M-x ! r" init--quickrun-region my-map . nil)
+     ("M-x M-x ?" help-command my-map . nil) ; <http://gnu.org/software/emacs/manual/html_node/elisp/Help-Functions.html>.
+     ("M-x M-x b" init-window-bury-buffer-maybe-delete-window my-map . nil)
+     ("M-x M-x B h" init-highlight-regexp my-map . nil) ; FIXME: Maybe unused key binding?~~~~<danil@kutkevich.org>
+     ("M-x M-x B r" rename-buffer my-map . nil)
+     ("M-x M-x f"   noxrcp-isearch--forward-literal my-map . nil)
+     ("M-x M-x F F" noxrcp-isearch--backward-literal my-map . nil)
+     ("M-x M-x F a" init-counsel-ag my-map . nil)
+     ("M-x M-x F g" counsel-git-grep my-map . nil)
+     ("M-x M-x F p" counsel-pt my-map . nil)
+     ("M-x M-x F r" init-counsel-rg my-map . nil)
+     ("M-x M-x F u" init-counsel-ugrep my-map . nil)
+     ;; ("C-x C-x F R R" init-counsel-rg-no-ignore my-map . nil)
+     ("M-x M-x g" revert-buffer my-map . nil)
 
-     ("M-x M-x M-j" . electric-newline-and-maybe-indent)
-     ("M-x M-x M-o" . open-line)
-     ("M-x M-x i t" . init-subr-insert-timestamp-datetime)
-     ("M-x M-x i T u" . init-subr-insert-timestamp-unix)
-     ("M-x M-x i T d" . init-subr-insert-timestamp-date)
-     ("M-x M-x L L" . init-hl-line-on)
-     ("M-x M-x L t" . toggle-truncate-lines)
-     ("M-x M-x m" . less-scroll-stub)
-     ;; ("C-x C-x M M" . xterm-mouse-mode)
-     ("M-x M-x r f" . fill-region)
-     ("M-x M-x t" . shell)
+     ("M-x M-x M-j" electric-newline-and-maybe-indent my-map . nil)
+     ("M-x M-x M-o" open-line my-map . nil)
+     ("M-x M-x i t" init-subr-insert-timestamp-datetime my-map . nil)
+     ("M-x M-x i T u" init-subr-insert-timestamp-unix my-map . nil)
+     ("M-x M-x i T d" init-subr-insert-timestamp-date my-map . nil)
+     ("M-x M-x L L" init-hl-line-on my-map . nil)
+     ("M-x M-x L t" toggle-truncate-lines my-map . nil)
+     ("M-x M-x m" less-scroll-stub my-map . nil)
+     ;; ("C-x C-x M M" xterm-mouse-mode my-map . nil)
+     ("M-x M-x r f" fill-region my-map . nil)
+     ("M-x M-x t" shell my-map . nil)
 
-     ("M-x M-x M-x s"   . sort-lines)
-     ("M-x M-x M-x S f" . sort-fields)
-     ("M-x M-x M-x S c" . init-sort-chars)
-     ("M-x M-x M-x S s" . init-sort-symbols)
-     ("M-x M-x M-x S w" . init-sort-words)
-     ("M-x M-x M-x n" . init-deft-init)
-     ("M-x M-x M-x T" . init-transpose-frame)
-     ("M-x M-x M-x u" . init-unique-lines-region)
-     ("M-x M-x M-x U b" . init-unique-lines-buffer)
+     ("M-x M-x M-x s"   sort-lines my-map . nil)
+     ("M-x M-x M-x S f" sort-fields my-map . nil)
+     ("M-x M-x M-x S c" init-sort-chars my-map . nil)
+     ("M-x M-x M-x S s" init-sort-symbols my-map . nil)
+     ("M-x M-x M-x S w" init-sort-words my-map . nil)
+     ("M-x M-x M-x n" init-deft-init my-map . nil)
+     ("M-x M-x M-x T" init-transpose-frame my-map . nil)
+     ("M-x M-x M-x u" init-unique-lines-region my-map . nil)
+     ("M-x M-x M-x U b" init-unique-lines-buffer my-map . nil)
 
-     ("M-x M-x R R"   . magit-status)
-     ("M-x M-x R d"   . magit-diff-buffer-file)
-     ("M-x M-x R D"   . magit-diff)
-     ("M-x M-x R f"   . magit-find-file)
-     ("M-x M-x R l"   . magit-log)
-     ("M-x M-x R L l" . magit-log-long)
-     ("M-x M-x R L f" . magit-file-log)
-     ("M-x M-x R s"   . magit-show-commit)
-     ("M-x M-x R S c" . magit-show)
-     ("M-x M-x R t"   . git-timemachine)
-     ("M-x M-x R b"   . my-magit-blame)
+     ("M-x M-x R R"   magit-status my-map . nil)
+     ("M-x M-x R d"   magit-diff-buffer-file my-map . nil)
+     ("M-x M-x R D"   magit-diff my-map . nil)
+     ("M-x M-x R f"   magit-find-file my-map . nil)
+     ("M-x M-x R l"   magit-log my-map . nil)
+     ("M-x M-x R L l" magit-log-long my-map . nil)
+     ("M-x M-x R L f" magit-file-log my-map . nil)
+     ("M-x M-x R s"   magit-show-commit my-map . nil)
+     ("M-x M-x R S c" magit-show my-map . nil)
+     ("M-x M-x R t"   git-timemachine my-map . nil)
+     ("M-x M-x R b"   my-magit-blame my-map . nil)
 
-     ("M-x M-x M-x M-x d s" . desktop-save-in-desktop-dir)
-     ("M-x M-x M-x M-x d l" . desktop-read)
-     ("M-x M-x M-x M-x k" . init-kill-emacs)
-     ("M-x M-x M-x M-x s" . init-overview-mode-toggle)
-     ("M-x M-x M-x M-x u" . browse-url-at-point)
+     ("M-x M-x M-x M-x d s" desktop-save-in-desktop-dir my-map . nil)
+     ("M-x M-x M-x M-x d l" desktop-read my-map . nil)
+     ("M-x M-x M-x M-x k" init-kill-emacs my-map . nil)
+     ("M-x M-x M-x M-x s" init-overview-mode-toggle my-map . nil)
+     ("M-x M-x M-x M-x u" browse-url-at-point my-map . nil)
 
-     ("M-t" . transpose-chars)
-     ;; ("M-x" . counsel-M-x)
-     ("M-y" . init-simple-yank-pop)
+     ("M-t" transpose-chars my-map . nil)
+     ;; ("M-x" counsel-M-x my-map . nil)
+     ("M-y" init-simple-yank-pop my-map . nil)
 
-     ("M-x M-x c i" . noxrcp-string-inflection--toggle-camelcase-and-underscore)
-     ("M-x M-x c I" . noxrcp-string-inflection--humanize-symbol)
+     ("M-x M-x c i" noxrcp-string-inflection--toggle-camelcase-and-underscore my-map . nil)
+     ("M-x M-x c I" noxrcp-string-inflection--humanize-symbol my-map . nil)
 
-     ("M-x m-x w u" . winner-undo)
-     ("M-x m-x w r" . winner-redo)
+     ("M-x m-x w u" winner-undo my-map . nil)
+     ("M-x m-x w r" winner-redo my-map . nil)
 
-     ("M-x M-x p g" . go-playground)
-     ("M-x M-x ! m" . multi-compile-run)
-     ("M-x M-x B R" . re-builder)
+     ("M-x M-x p g" go-playground my-map . nil)
+     ("M-x M-x ! m" multi-compile-run my-map . nil)
+     ("M-x M-x B R" re-builder my-map . nil)
 
-     ("M-x M-x e e" . er/expand-region) ; FIXME: A coupling of a global hotkey is a anti-pattern instead must use a best practice and do replacing of a `global-set-key` by `define-key`.~~~~<danil@kutkevich.org>
-     ("M-x M-x e c" . er/mark-comment)
-     ("M-x M-x e d" . er/mark-defun)
-     ("M-x M-x e m c" . er/mark-method-call)
-     ("M-x M-x e m m" . er/mark-email)
-     ("M-x M-x e n" . er/mark-next-accessor)
-     ("M-x M-x e p i" . er/mark-inside-pairs)
-     ("M-x M-x e p o" . er/mark-outside-pairs)
-     ("M-x M-x e q i" . er/mark-inside-quotes)
-     ("M-x M-x e q o" . er/mark-outside-quotes)
-     ("M-x M-x e s p" . er/mark-symbol-with-prefix)
-     ("M-x M-x e s s" . er/mark-symbol)
-     ("M-x M-x e u" . er/mark-url)
-     ("M-x M-x e w" . er/mark-word)
+     ("M-x M-x e e" er/expand-region my-map . nil) ; FIXME: A coupling of a global hotkey is a anti-pattern instead must use a best practice and do replacing of a `global-set-key` by `define-key`.~~~~<danil@kutkevich.org>
+     ("M-x M-x e c" er/mark-comment my-map . nil)
+     ("M-x M-x e d" er/mark-defun my-map . nil)
+     ("M-x M-x e m c" er/mark-method-call my-map . nil)
+     ("M-x M-x e m m" er/mark-email my-map . nil)
+     ("M-x M-x e n" er/mark-next-accessor my-map . nil)
+     ("M-x M-x e p i" er/mark-inside-pairs my-map . nil)
+     ("M-x M-x e p o" er/mark-outside-pairs my-map . nil)
+     ("M-x M-x e q i" er/mark-inside-quotes my-map . nil)
+     ("M-x M-x e q o" er/mark-outside-quotes my-map . nil)
+     ("M-x M-x e s p" er/mark-symbol-with-prefix my-map . nil)
+     ("M-x M-x e s s" er/mark-symbol my-map . nil)
+     ("M-x M-x e u" er/mark-url my-map . nil)
+     ("M-x M-x e w" er/mark-word my-map . nil)
      ))
  '(init-simple-yank-pop-function 'init-selectrum-yank-pop) ; init-simple.el
  '(init-wdired-bindings ; init-wdired.el
