@@ -817,7 +817,6 @@
      noccur
      nodejs-repl
      noflet
-     org-ac
      origami
      pacfiles-mode
      pack

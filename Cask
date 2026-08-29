@@ -32,8 +32,8 @@
 
 ;;; vvv↓vvv Org mode <https://github.com/bzg/org-mode> below this line.
 
-(depends-on "org" "20150929") ; fixme: respects version!!!!!!!!!!!!!!!!!!!!!!
-(depends-on "org-ac")
+;; (depends-on "org" "20150929")
+;; (depends-on "org-ac")
 
 ;;; ^^^↑^^^ Org mode <https://github.com/bzg/org-mode> above this line.
 
@@ -106,13 +106,13 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; (depends-on "etags-select") ;; FAIL: `Some dependencies were not available: etags-select`.
 (depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
 (depends-on "ebuild-mode" :git "https://github.com/emacsmirror/ebuild-mode.git") ; "Gentoo ebuild and eclass mode <http://wiki.gentoo.org/wiki/Project:Emacs>, <https://packages.gentoo.org/packages/app-emacs/ebuild-mode>" ; http://dev.gentoo.org/~ulm/emacs/ebuild-mode-1.26.tar.xz
 (depends-on "elisp-slime-nav")
 (depends-on "elixir-mode")
 (depends-on "elpa-mirror")
-(depends-on "etags-select")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

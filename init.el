@@ -546,8 +546,6 @@ Cancels itself, if this buffer was killed."
 (nox-recipe '(nodejs))
 (nox-recipe '(nodejs-repl))
 (nox-recipe '(nxml-mode))
-(nox-recipe '(org-mode org-ac))
-(nox-recipe '(org-mode))
 (nox-recipe '(origami))
 
 (nox-recipe '(paren))
