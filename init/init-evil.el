@@ -115,13 +115,13 @@ is (re-)enabled. The keys are strings and the values are command symbols."
   ;; (evil-define-key '(normal insert replace motion visual operator emacs) global-map (kbd "C-s") 'evil-change-to-initial-state)
   )
 
-(defun init-evil-mode-line-high ()
-  (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "red"))
-        ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "red"))))
+;; (defun init-evil-mode-line-high ()
+;;   (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "red"))
+;;         ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "red"))))
 
-(defun init-evil-mode-line-low ()
-  (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "black"))
-        ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "black"))))
+;; (defun init-evil-mode-line-low ()
+;;   (cond ((equal frame-background-mode 'light) (set-face-attribute 'mode-line nil :background "black"))
+;;         ((equal frame-background-mode 'dark)  (set-face-attribute 'mode-line nil :background "black"))))
 
 (defun init-evil-init-goto-normal-state ()
   "Go to normal state."

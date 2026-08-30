@@ -315,9 +315,10 @@
 ;;; vvv↓vvv Mode line below this line.
 
 ;; (depends-on "cyphejor")
+;; (depends-on "delight")
 ;; (depends-on "doom-modeline")
-(depends-on "rich-minority") ;; FAIL: `Couldn’t find minor-mode-alist inside mode-line-modes.
-(depends-on "smart-mode-line") ;; FAIL: `rich-minority` dependency error: `Couldn’t find minor-mode-alist inside mode-line-modes.
+;; (depends-on "rich-minority") ;; FAIL: `Couldn’t find minor-mode-alist inside mode-line-modes.
+(depends-on "smart-mode-line") ;; FIXME: `rich-minority` dependency error: `Couldn’t find minor-mode-alist inside mode-line-modes.
 
 ;;; ^^^↑^^^ Mode line above this line.
 

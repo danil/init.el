@@ -57,6 +57,9 @@ See `init-simple-mode-bindings'.")
     (add-to-list 'auto-mode-alist (cons p 'fundamental-mode))))
 
 (defun init-simple-setup ()
+  (setq mode-line-collapse-minor-modes
+        '(not overwrite-mode flycheck-mode flymake-mode))
+
   (dolist (b init-simple-mode-bindings)
     (let* ((key (car b))     (tail2 (cdr b))
            (cmd (car tail2)) (tail3 (cdr tail2))
