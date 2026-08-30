@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; <http://stackoverflow.com/questions/13397737/ansi-coloring-in-compilation-mode#20788581>.
 (defun init-ansi-color ()
   (require 'ansi-color)

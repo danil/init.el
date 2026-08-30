@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-crontab-mode nil
   "init-crontab-mode"
   :group  'editing

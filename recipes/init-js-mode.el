@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (add-hook 'after-init-hook 'noxrcp-js-mode)
 
 (defun noxrcp-js-mode ()

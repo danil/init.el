@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-caddyfile-mode nil
   "init-caddyfile-mode"
   :group  'editing

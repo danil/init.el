@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-projectile nil
   "init-projectile"
   :group  'editing

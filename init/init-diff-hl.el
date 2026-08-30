@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 (defun init-diff-hl-toggle (arg) ; FIXME: Maybe replace a toggle function by minor mode?~~~~<danil@kutkevich.org>

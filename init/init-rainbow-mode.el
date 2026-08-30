@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-rainbow-mode nil
   "init-rainbow-mode"
   :group  'editing

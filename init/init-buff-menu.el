@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-buff-menu ()
   (setq display-buffer-alist
         (cons

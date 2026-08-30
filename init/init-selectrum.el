@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-selectrum nil
   "init-selectrum"
   :group  'editing

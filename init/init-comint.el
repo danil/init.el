@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
 

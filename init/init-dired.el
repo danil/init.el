@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Reuse directory buffer
 ;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
 

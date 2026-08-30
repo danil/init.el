@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-graphql-mode nil
   "init-graphql-mode"
   :group  'editing

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (require 'subr-x)
 
 (defun init-env-dotenv-parse-value (value)

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; TODO: Move this recipe file to init!!!~~~~<danil@kutkevich.org>
 
 ;; (custom-set-variables '(hl-todo-activate-in-modes '()))

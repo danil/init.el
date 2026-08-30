@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defcustom noxrcp-markdown-mode-patterns '()
   "Regexp patterns associated with `markdown-mode'."
   :group 'noxinit)

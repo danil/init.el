@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 ;; <http://pragmaticemacs.com/emacs/aligning-text/>.

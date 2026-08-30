@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 ;; (setq c-x-c-x-prefix "C-x C-x") ;; "C-x C-x" ; FIXME: Maybe use the `c-x-c-x-prefix` custom hot key prefix?~~~~<danil@kutkevich.org>
@@ -430,7 +431,7 @@ Cancels itself, if this buffer was killed."
 
 ;;; vvv↓vvv Mode line below this line.
 
-(message "Initializing smart-mode-line") (require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line)
+(message "Initializing smart-mode-line") (require 'init-smart-mode-line "init-smart-mode-line") (add-hook 'after-init-hook 'init-smart-mode-line) ;; FAIL: `rich-minority` dependency error: `Couldn’t find minor-mode-alist inside mode-line-modes.
 (message "Initializing window-numbering") (require 'init-window-numbering "init-window-numbering") (add-hook 'after-init-hook 'init-window-numbering)
 
 ;;; ^^^↑^^^ Mode line above this line.

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>.
 

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-dumb-jump ()
   (if (boundp 'xref-backend-functions) (init-dumb-jump--init)
     (with-eval-after-load 'xref (init-dumb-jump--init)))

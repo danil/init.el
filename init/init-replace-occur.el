@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 ;;; `noccur.el` Is a multi-occur on dired files a-la find/grep <https://github.com/nicolaspetton/noccur.el>.

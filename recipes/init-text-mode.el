@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; init-text-mode.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
 ;; Copyright (C) 2022 Danil <https://danil.kutkevich.org>.

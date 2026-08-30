@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; init-magit-blame.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
 ;; Copyright (C) 2023 Danil <https://danil.kutkevich.org>.

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-gitconfig-mode nil
   "init-gitconfig-mode"
   :group  'editing

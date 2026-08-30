@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-leerzeichen-mode nil
   "init-leerzeichen-mode"
   :group  'editing

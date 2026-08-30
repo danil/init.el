@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Set line-wrap and line-truncation characters
 ;; <http://en.wikipedia.org/wiki/Arrow_(symbol)>.
 

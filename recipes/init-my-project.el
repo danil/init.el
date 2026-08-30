@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; My projects.
 (defun my-project-root ()
   (if (fboundp 'projectile-project-root)

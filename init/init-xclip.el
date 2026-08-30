@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-xclip nil
   "init-xclip"
   :group  'editing

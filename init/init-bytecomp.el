@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-bytecomp nil
   "init-bytecomp"
   :group  'editing

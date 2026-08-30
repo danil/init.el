@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-company-web ()
   (if (boundp 'company-mode) (init-company-web-init)
     (with-eval-after-load 'company (init-company-web-init))))

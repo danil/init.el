@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.

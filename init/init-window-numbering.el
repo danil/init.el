@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-window-numbering nil
   "init-window-numbering"
   :group  'editing

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-cycle-quotes nil
   "init-cycle-quotes"
   :group  'editing

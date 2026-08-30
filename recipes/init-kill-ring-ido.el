@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; init-kill-ring-ido.el --- This file is part of Danil <https://danil.kutkevich.org> home.
 
 ;; Copyright (C) 2021 Danil <https://danil.kutkevich.org>.

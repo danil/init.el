@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-rainbow-identifiers nil
   "init-rainbow-identifiers"
   :group  'editing

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; FIXME: Warning: setting attribute ‘:foreground’ of face ‘mode-line-buffer-id’: nil value is invalid, use ‘unspecified’ instead.~~~~<danil@kutkevich.org>
 
 (defun init-smart-mode-line ()

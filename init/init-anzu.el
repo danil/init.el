@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-anzu nil
   "init-anzu"
   :group  'editing

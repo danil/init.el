@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Set whitespace as vertical separator character symbol
 ;; <http://stackoverflow.com/questions/18210631/how-to-change-the-character-composing-the-emacs-vertical-border#18211568>,
 ;; <https://lists.gnu.org/archive/html/help-gnu-emacs/2013-01/msg00271.html>

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-clojure-mode ()
   (add-to-list 'auto-mode-alist '("/\\.lein-env\\'" . clojure-mode)))
 

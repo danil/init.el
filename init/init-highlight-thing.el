@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-highlight-thing nil
   "init-highlight-thing"
   :group  'editing

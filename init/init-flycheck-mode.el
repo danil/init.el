@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-flycheck-mode nil
   "init-flycheck-mode"
   :group  'editing

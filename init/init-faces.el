@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-faces nil
   "init-faces"
   :group  'editing

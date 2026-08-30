@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-make-mode nil
   "init-make-mode"
   :group  'editing

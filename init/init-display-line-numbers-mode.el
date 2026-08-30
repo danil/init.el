@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-display-line-numbers-mode nil
   "init-display-line-numbers-mode"
   :group  'editing

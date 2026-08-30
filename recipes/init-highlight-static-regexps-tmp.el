@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; highlight-static-regexps-tmp.el --- Highlight identifiers according to their names -*- lexical-binding: t -*-
 
 ;; Author: Fanael Linithien <fanael4@gmail.com>

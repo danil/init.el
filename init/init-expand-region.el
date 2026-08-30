@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-expand-region nil
   "init-expand-region"
   :group  'editing

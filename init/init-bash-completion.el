@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-bash-completion ()
   (autoload 'bash-completion-dynamic-complete "bash-completion"
     "BASH completion hook")

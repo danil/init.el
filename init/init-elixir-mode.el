@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-elixir-mode-rainbow-identifiers-init ()
   (when (equal major-mode 'elixir-mode)
     (make-local-variable 'rainbow-identifiers-filter-functions)

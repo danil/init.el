@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (if (boundp 'scss-compile-at-save) (init-scss-mode-xxxxxxxxxx)
     (with-eval-after-load 'scss-mode (init-scss-mode-xxxxxxxxxx)))
 

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-calendar nil
   "init-calendar"
   :group  'editing

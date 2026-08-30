@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-elpa-mirror ()
   (if (boundp 'elpamr-default-output-directory) (init-ielm--init)
     (with-eval-after-load 'elpa-mirror (init-ielm--init))))

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defgroup init-back-button nil
   "init-back-button"
   :group  'editing

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun init-etags-select ()
   ;; (global-set-key (kbd "M-.") 'init-etags-select-find-tag-at-point-or-region)
 

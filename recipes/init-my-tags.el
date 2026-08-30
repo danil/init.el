@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; My tags <http://emacswiki.org/BuildTags#toc2>.
 
 (defun my-build-tags ()

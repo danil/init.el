@@ -316,8 +316,8 @@
 
 ;; (depends-on "cyphejor")
 ;; (depends-on "doom-modeline")
-(depends-on "rich-minority")
-(depends-on "smart-mode-line")
+(depends-on "rich-minority") ;; FAIL: `Couldn’t find minor-mode-alist inside mode-line-modes.
+(depends-on "smart-mode-line") ;; FAIL: `rich-minority` dependency error: `Couldn’t find minor-mode-alist inside mode-line-modes.
 
 ;;; ^^^↑^^^ Mode line above this line.
 

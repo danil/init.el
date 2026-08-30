@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 (defun init-diff-mode () (add-hook 'diff-mode-hook 'init-diff-mode-init))
