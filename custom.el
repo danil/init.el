@@ -558,8 +558,8 @@
      ("M-x M-x c i" noxrcp-string-inflection--toggle-camelcase-and-underscore my-map . nil)
      ("M-x M-x c I" noxrcp-string-inflection--humanize-symbol my-map . nil)
 
-     ("M-x m-x w u" winner-undo my-map . nil)
-     ("M-x m-x w r" winner-redo my-map . nil)
+     ("M-x M-x w u" winner-undo my-map . nil)
+     ("M-x M-x w r" winner-redo my-map . nil)
 
      ("M-x M-x p g" go-playground my-map . nil)
      ("M-x M-x ! m" multi-compile-run my-map . nil)
