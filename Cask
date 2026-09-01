@@ -335,8 +335,9 @@
 
 ;;; vvv↓vvv Selectrum mode <https://github.com/radian-software/selectrum> below this line.
 
-;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>.~~~~<danil@kutkevich.org>
+;;; DEPRECATED: The original author of Selectrum, @raxod502, now uses Vertico mode <https://github.com/minad/vertico>. TODO: Migration to Vertico from Selectrum <https://github.com/minad/vertico/wiki/Migrating-from-Selectrum-to-Vertico>.~~~~<danil@kutkevich.org>
 
+;; (depends-on "vertico") ; a-la ido/ivy/counsel
 (depends-on "selectrum") ; a-la ido/ivy/counsel
 (depends-on "selectrum-prescient") ; selectrum sorting/filtering
 (depends-on "ctrlf") ; a-la isearch replacement?
