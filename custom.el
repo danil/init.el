@@ -486,7 +486,7 @@
      ("C-x k" init-window-maybe-delete-window-maybe-kill-buffer-open-dired my-map . nil) ;; ("M-x k" init-window-maybe-delete-window-maybe-kill-buffer-open-dired my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
 
      ("M-u" universal-argument my-map . nil)
-     ("M-x x" execute-extended-command my-map . nil)
+     ("M-x x" execute-extended-command my-map . nil) ("M-x M-x x" execute-extended-command my-map . nil)
      ;; ("M-g" keyboard-quit my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
      ("C-ч и" switch-to-buffer my-map . nil)
      ("M-x b" switch-to-buffer my-map . nil) ("M-x и" switch-to-buffer my-map . nil) ;; FIXME: Remove alternative hotkey related to M-.
