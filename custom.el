@@ -712,8 +712,8 @@
    '(
      ac-html
      acp
-     agent-shell
-     ai-code
+     agent-shell ;; AI (ML and LLM).
+     ai-cod ;; AI (ML and LLM).
      amx
      ansi
      anzu
